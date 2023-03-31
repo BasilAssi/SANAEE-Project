@@ -26,21 +26,40 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
   final _unfocusNode = FocusNode();
 
   final animationsMap = {
+    'textOnPageLoadAnimation': AnimationInfo(
+      trigger: AnimationTrigger.onPageLoad,
+      effects: [
+        FadeEffect(
+          curve: Curves.easeIn,
+          delay: 0.ms,
+          duration: 1500.ms,
+          begin: 0.0,
+          end: 1.0,
+        ),
+        MoveEffect(
+          curve: Curves.easeInOut,
+          delay: 500.ms,
+          duration: 1000.ms,
+          begin: Offset(-310.0, 0.0),
+          end: Offset(0.0, 0.0),
+        ),
+      ],
+    ),
     'imageOnPageLoadAnimation': AnimationInfo(
       trigger: AnimationTrigger.onPageLoad,
       effects: [
         FadeEffect(
           curve: Curves.easeInOut,
           delay: 0.ms,
-          duration: 2000.ms,
+          duration: 1500.ms,
           begin: 0.0,
           end: 1.0,
         ),
         MoveEffect(
           curve: Curves.easeInOut,
-          delay: 2000.ms,
-          duration: 600.ms,
-          begin: Offset(0.0, -500.0),
+          delay: 500.ms,
+          duration: 1000.ms,
+          begin: Offset(310.0, 0.0),
           end: Offset(0.0, 0.0),
         ),
       ],
@@ -100,24 +119,42 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
                 mainAxisAlignment: MainAxisAlignment.center,
                 crossAxisAlignment: CrossAxisAlignment.center,
                 children: [
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 0.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
+                      child: Text(
+                        '    Welcome                                                                                 \n                    to  SANAEE ',
+                        style: FlutterFlowTheme.of(context).bodyMedium.override(
+                              fontFamily: 'Outfit',
+                              color: Color(0xFFF8B500),
+                              fontSize: 40.0,
+                            ),
+                      ).animateOnPageLoad(
+                          animationsMap['textOnPageLoadAnimation']!),
+                    ),
+                  ),
                   Row(
                     mainAxisSize: MainAxisSize.max,
                     mainAxisAlignment: MainAxisAlignment.center,
                     children: [
                       Container(
-                        width: 100.0,
-                        height: 100.0,
                         decoration: BoxDecoration(
                           color: Color(0xFF384C54),
                           shape: BoxShape.rectangle,
                         ),
-                        child: Image.network(
-                          'https://picsum.photos/seed/714/600',
-                          width: 100.0,
-                          height: 100.0,
-                          fit: BoxFit.cover,
-                        ).animateOnPageLoad(
-                            animationsMap['imageOnPageLoadAnimation']!),
+                        child: Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 30.0),
+                          child: Image.asset(
+                            'assets/images/logo_1.png',
+                            width: 200.0,
+                            height: 200.0,
+                            fit: BoxFit.cover,
+                          ).animateOnPageLoad(
+                              animationsMap['imageOnPageLoadAnimation']!),
+                        ),
                       ),
                     ],
                   ),
