@@ -11,25 +11,6 @@ import '../backend/backend.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import '../../auth/auth_util.dart';
 
-List<String> countryList() {
-  List<String> countries = [
-    "United States",
-    "United Kingdom",
-    "Australia",
-    "India",
-    "Canada",
-    "France",
-    "Germany",
-    "Japan",
-    "Brazil",
-    "China",
-    "Palestine",
-    "The Middle East",
-    "Turkey"
-  ];
-  return countries;
-}
-
 String? countryFlag(String? countryName) {
   if (countryName == null) {
     return null;

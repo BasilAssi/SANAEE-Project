@@ -43,8 +43,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   String? get salary;
 
-  DocumentReference? get company;
-
   bool? get isGuest;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
@@ -95,7 +93,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
           ..likedPosts = snapshot.data['likedPosts']
           ..profileType = snapshot.data['profileType']
           ..salary = snapshot.data['salary']
-          ..company = safeGet(() => toRef(snapshot.data['company']))
           ..isGuest = snapshot.data['isGuest']
           ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
       );
@@ -140,7 +137,6 @@ Map<String, dynamic> createUsersRecordData({
   bool? likedPosts,
   String? profileType,
   String? salary,
-  DocumentReference? company,
   bool? isGuest,
 }) {
   final firestoreData = serializers.toFirestore(
@@ -161,7 +157,6 @@ Map<String, dynamic> createUsersRecordData({
         ..likedPosts = likedPosts
         ..profileType = profileType
         ..salary = salary
-        ..company = company
         ..isGuest = isGuest,
     ),
   );
