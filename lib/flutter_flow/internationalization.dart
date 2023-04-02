@@ -916,10 +916,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إنشاء حساب',
       'en': 'Register',
     },
-    'b8g156oc': {
-      'ar': ' SANAEE ',
-      'en': '',
-    },
     '5x86z4oh': {
       'ar': 'Home',
       'en': '',

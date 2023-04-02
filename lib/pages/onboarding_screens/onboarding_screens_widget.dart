@@ -45,45 +45,6 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-      appBar: PreferredSize(
-        preferredSize: Size.fromHeight(100.0),
-        child: AppBar(
-          backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
-          automaticallyImplyLeading: false,
-          actions: [],
-          flexibleSpace: FlexibleSpaceBar(
-            title: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 14.0),
-              child: Column(
-                mainAxisSize: MainAxisSize.max,
-                mainAxisAlignment: MainAxisAlignment.end,
-                crossAxisAlignment: CrossAxisAlignment.start,
-                children: [
-                  Padding(
-                    padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
-                    child: Text(
-                      FFLocalizations.of(context).getText(
-                        'b8g156oc' /*  SANAEE  */,
-                      ),
-                      textAlign: TextAlign.center,
-                      style: FlutterFlowTheme.of(context).displaySmall.override(
-                            fontFamily: 'Outfit',
-                            color: Color(0xFFF8B500),
-                            fontSize: 40.0,
-                            fontWeight: FontWeight.bold,
-                          ),
-                    ),
-                  ),
-                ],
-              ),
-            ),
-            centerTitle: true,
-            expandedTitleScale: 1.0,
-          ),
-          elevation: 0.0,
-        ),
-      ),
       body: SafeArea(
         child: GestureDetector(
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
@@ -92,8 +53,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
             children: [
               Expanded(
                 child: Container(
-                  width: double.infinity,
-                  height: 500.0,
+                  height: 300.0,
                   child: Stack(
                     children: [
                       Padding(
@@ -107,73 +67,75 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   12.0, 12.0, 12.0, 12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/images/Construction_worker-rafiki.png',
-                                    width: 300.0,
-                                    height: 300.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 16.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '52ramgz3' /* انجاز الاعمال باستخدام الهاتف */,
+                              child: SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.start,
+                                  children: [
+                                    Image.asset(
+                                      'assets/images/Construction_worker-rafiki.png',
+                                      width: 300.0,
+                                      height: 300.0,
+                                      fit: BoxFit.cover,
+                                    ),
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 8.0, 16.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '52ramgz3' /* انجاز الاعمال باستخدام الهاتف */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displayMedium
+                                                        .override(
+                                                          fontFamily: 'Poppins',
+                                                          fontSize: 32.0,
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .displayMedium
-                                                      .override(
-                                                        fontFamily: 'Poppins',
-                                                        fontSize: 32.0,
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 16.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '8pwxetwc' /* تواصل مع الحرفي وتتبع العمل  
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          16.0, 8.0, 16.0, 0.0),
+                                      child: Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        children: [
+                                          Expanded(
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '8pwxetwc' /* تواصل مع الحرفي وتتبع العمل  
 ... */
-                                                ,
+                                                  ,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .headlineMedium,
                                               ),
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium,
                                             ),
                                           ),
-                                        ),
-                                      ],
+                                        ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
                             ),
                             Align(
