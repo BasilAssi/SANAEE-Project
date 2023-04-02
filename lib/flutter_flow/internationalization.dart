@@ -982,8 +982,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Enter your phone number...',
     },
     'iavulzck': {
-      'ar': 'أوافق على جميع التعليمات بناءً على البرنامج',
-      'en': 'I agree to all instructions based on the program',
+      'ar': 'أوافق على جميع التعليمات \nبناءً على البرنامج',
+      'en': 'I agree to all instructions based on \nthe program',
     },
     'tgvhc3xt': {
       'ar': 'الاستمرار',
