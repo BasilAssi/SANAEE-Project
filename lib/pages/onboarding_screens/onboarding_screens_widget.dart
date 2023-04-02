@@ -91,7 +91,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                                               .displayMedium
                                               .override(
                                                 fontFamily: 'Poppins',
-                                                fontSize: 32.0,
+                                                fontSize: 24.0,
                                                 fontWeight: FontWeight.w600,
                                               ),
                                         ),
@@ -117,7 +117,11 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                                             ,
                                           ),
                                           style: FlutterFlowTheme.of(context)
-                                              .headlineMedium,
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                fontSize: 20.0,
+                                              ),
                                         ),
                                       ),
                                     ),
