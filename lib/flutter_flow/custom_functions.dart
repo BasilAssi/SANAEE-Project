@@ -68,3 +68,7 @@ String? countryFlag(String? countryName) {
   }
   return null;
 }
+
+String? phoneNumber(String? phone) {
+  return "+970$phone";
+}
