@@ -253,7 +253,9 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Description',
+                            FFLocalizations.of(context).getText(
+                              'yc9zvkkj' /* Description */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -281,7 +283,9 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Requirements',
+                            FFLocalizations.of(context).getText(
+                              'wnal7u1s' /* Requirements */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -309,7 +313,9 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Text(
-                            'Preferred Skills & Expertise',
+                            FFLocalizations.of(context).getText(
+                              '76cy1d8m' /* Preferred Skills & Expertise */,
+                            ),
                             style: FlutterFlowTheme.of(context).bodySmall,
                           ),
                         ],
@@ -351,7 +357,9 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Your proposal',
+                                FFLocalizations.of(context).getText(
+                                  'dzipi1m7' /* Your proposal */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],
@@ -376,7 +384,9 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Submitted',
+                                FFLocalizations.of(context).getText(
+                                  'yibdxnjq' /* Submitted */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],

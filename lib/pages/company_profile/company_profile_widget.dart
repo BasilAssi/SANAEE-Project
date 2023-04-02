@@ -61,7 +61,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
           size: 30.0,
         ),
         title: Text(
-          'Company Profile',
+          FFLocalizations.of(context).getText(
+            'w8rqbwcg' /* Company Profile */,
+          ),
           textAlign: TextAlign.start,
           style: FlutterFlowTheme.of(context).titleMedium,
         ),
@@ -257,7 +259,10 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 controller: _model.companyNameController,
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'Company Name',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'gi3n8oe0' /* Company Name */,
+                                  ),
                                   labelStyle: FlutterFlowTheme.of(context)
                                       .headlineSmall
                                       .override(
@@ -331,7 +336,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: _model.websiteController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Website',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'x078dny3' /* Website */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .headlineSmall
                                     .override(
@@ -403,7 +410,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: _model.descriptionController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'A little bit about your company',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'qnn9x3d9' /* A little bit about your compan... */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -480,14 +489,27 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                           child: FlutterFlowDropDown<String>(
                             controller: _model.companySizeController ??=
                                 FormFieldController<String>(
-                              _model.companySizeValue ??= 'Company Size',
+                              _model.companySizeValue ??=
+                                  FFLocalizations.of(context).getText(
+                                'ecssdba2' /* Company Size */,
+                              ),
                             ),
                             options: [
-                              'Company Size',
-                              '1-10',
-                              '11-50',
-                              '51-100',
-                              '100+'
+                              FFLocalizations.of(context).getText(
+                                'pnlgitlt' /* Company Size */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '8dohjd7e' /* 1-10 */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'xc9ecefm' /* 11-50 */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'uvvscd2i' /* 51-100 */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'ulxnq47c' /* 100+ */,
+                              )
                             ],
                             onChanged: (val) =>
                                 setState(() => _model.companySizeValue = val),
@@ -534,7 +556,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               controller: _model.locationController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Location',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '9406m4l6' /* Location */,
+                                ),
                                 labelStyle: FlutterFlowTheme.of(context)
                                     .titleSmall
                                     .override(
@@ -612,7 +636,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Skip for Now',
+                            text: FFLocalizations.of(context).getText(
+                              'k3pg613c' /* Skip for Now */,
+                            ),
                             options: FFButtonOptions(
                               width: 130.0,
                               height: 50.0,
@@ -656,7 +682,9 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 ),
                               );
                             },
-                            text: 'Continue',
+                            text: FFLocalizations.of(context).getText(
+                              'f1wkumya' /* Continue */,
+                            ),
                             options: FFButtonOptions(
                               width: 130.0,
                               height: 50.0,

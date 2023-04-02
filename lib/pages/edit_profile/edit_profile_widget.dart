@@ -84,7 +84,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
               ),
             ),
             title: Text(
-              'Edit Profile',
+              FFLocalizations.of(context).getText(
+                '4pai4xr4' /* Edit Profile */,
+              ),
               style: FlutterFlowTheme.of(context).titleMedium,
             ),
             actions: [],
@@ -202,7 +204,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Full Name',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'yanyvndh' /* Full Name */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -283,7 +288,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Postition Title',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '1ejz2wdg' /* Postition Title */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -360,7 +368,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Email',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '4zfowfio' /* Email */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -442,7 +453,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Short Description',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      'jfk984fo' /* Short Description */,
+                                    ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
                                         .override(
@@ -525,7 +539,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
-                                'Experience Level',
+                                FFLocalizations.of(context).getText(
+                                  'le45mzl5' /* Experience Level */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ),
@@ -552,12 +568,24 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                 .experienceLevel,
                                       ),
                                       options: [
-                                        '< 6 Months',
-                                        '6m - 1y',
-                                        '1y - 3y',
-                                        '+3 years',
-                                        '+5 years',
-                                        '+8 years'
+                                        FFLocalizations.of(context).getText(
+                                          'r9v6scp8' /* < 6 Months */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'gnflp2zd' /* 6m - 1y */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'baiz0hn0' /* 1y - 3y */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '7o83b55n' /* +3 years */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'w8bcz6je' /* +5 years */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'ijdbw94t' /* +8 years */,
+                                        )
                                       ],
                                       onChanged: (val) => setState(
                                           () => _model.dropDownValue = val),
@@ -565,7 +593,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                       height: 40.0,
                                       textStyle: FlutterFlowTheme.of(context)
                                           .bodyMedium,
-                                      hintText: 'Experience LEvel',
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '5436q785' /* Experience LEvel */,
+                                      ),
                                       icon: FaIcon(
                                         FontAwesomeIcons.chevronDown,
                                         color: FlutterFlowTheme.of(context)
@@ -612,7 +643,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                   ),
                                   obscureText: false,
                                   decoration: InputDecoration(
-                                    labelText: 'Company',
+                                    labelText:
+                                        FFLocalizations.of(context).getText(
+                                      '5zsud1z2' /* Company */,
+                                    ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).bodySmall,
                                     enabledBorder: UnderlineInputBorder(
@@ -678,7 +712,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           mainAxisSize: MainAxisSize.max,
                           children: [
                             Text(
-                              'Salary',
+                              FFLocalizations.of(context).getText(
+                                '0ppfcbrs' /* Salary */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
                           ],
@@ -692,11 +728,15 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                           mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             Text(
-                              '\$40,000',
+                              FFLocalizations.of(context).getText(
+                                'i83330fp' /* $40,000 */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                             Text(
-                              '\$150,000+',
+                              FFLocalizations.of(context).getText(
+                                '1o8i3mmm' /* $150,000+ */,
+                              ),
                               textAlign: TextAlign.end,
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
@@ -754,7 +794,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 .update(usersUpdateData);
                             Navigator.pop(context);
                           },
-                          text: 'Save Changes',
+                          text: FFLocalizations.of(context).getText(
+                            '1l6u81jm' /* Save Changes */,
+                          ),
                           options: FFButtonOptions(
                             width: 130.0,
                             height: 40.0,

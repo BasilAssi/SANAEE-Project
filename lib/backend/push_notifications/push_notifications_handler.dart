@@ -92,7 +92,7 @@ class _PushNotificationsHandlerState extends State<PushNotificationsHandler> {
 
 final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'Login': (data) async => LoginWidget(),
-  'Register': (data) async => RegisterWidget(),
+  'SignUp': (data) async => SignUpWidget(),
   'CreateProfile': (data) async => CreateProfileWidget(),
   'CompanyProfile': (data) async => CompanyProfileWidget(),
   'AddWorkExp': (data) async => AddWorkExpWidget(),
@@ -140,6 +140,11 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
       ),
   'HomePage_OLD': (data) async => HomePageOLDWidget(),
   'SplashScreen': (data) async => SplashScreenWidget(),
+  'Onboarding_Screens': (data) async => OnboardingScreensWidget(),
+  'verifyMobile': (data) async => VerifyMobileWidget(
+        phoneNumber: getParameter(data, 'phoneNumber'),
+      ),
+  'select_your_role': (data) async => SelectYourRoleWidget(),
 };
 
 bool hasMatchingParameters(Map<String, dynamic> data, Set<String> params) =>

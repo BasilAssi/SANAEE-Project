@@ -75,7 +75,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
               ),
             ),
             title: Text(
-              'Work History',
+              FFLocalizations.of(context).getText(
+                'v61spjfq' /* Work History */,
+              ),
               textAlign: TextAlign.start,
               style: FlutterFlowTheme.of(context).titleMedium,
             ),
@@ -378,7 +380,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                   crossAxisAlignment: CrossAxisAlignment.start,
                                   children: [
                                     Text(
-                                      'Job Title',
+                                      FFLocalizations.of(context).getText(
+                                        'zebn83g1' /* Job Title */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium
                                           .override(
@@ -391,7 +395,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 4.0, 0.0, 0.0),
                                       child: Text(
-                                        'Add Work Experience',
+                                        FFLocalizations.of(context).getText(
+                                          'dnm7v2xn' /* Add Work Experience */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .titleMedium,
                                       ),
@@ -445,7 +451,9 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                               ),
                             );
                           },
-                          text: 'Continue',
+                          text: FFLocalizations.of(context).getText(
+                            'ocvpznwh' /* Continue */,
+                          ),
                           options: FFButtonOptions(
                             width: 130.0,
                             height: 50.0,

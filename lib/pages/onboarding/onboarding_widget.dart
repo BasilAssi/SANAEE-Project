@@ -130,7 +130,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Search for Jobs',
+                                          FFLocalizations.of(context).getText(
+                                            'ndv9wpa4' /* Search for Jobs */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium,
@@ -147,7 +149,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
+                                          FFLocalizations.of(context).getText(
+                                            'ggn2nuvv' /* Search and find jobs in your i... */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall,
@@ -201,7 +205,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Post Jobs Easily',
+                                          FFLocalizations.of(context).getText(
+                                            'y9rnoy6y' /* Post Jobs Easily */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium,
@@ -218,7 +224,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Post jobs for your company easily and find the best talent looking for new opportunities immediately.',
+                                          FFLocalizations.of(context).getText(
+                                            '21ulbuiy' /* Post jobs for your company eas... */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall,
@@ -272,7 +280,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Find the Right Fit',
+                                          FFLocalizations.of(context).getText(
+                                            'qpus6uc6' /* Find the Right Fit */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium,
@@ -289,7 +299,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                                     children: [
                                       Expanded(
                                         child: Text(
-                                          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
+                                          FFLocalizations.of(context).getText(
+                                            'lxhqsm8y' /* Search and find jobs in your i... */,
+                                          ),
                                           textAlign: TextAlign.center,
                                           style: FlutterFlowTheme.of(context)
                                               .titleSmall,
@@ -358,7 +370,9 @@ class _OnboardingWidgetState extends State<OnboardingWidget> {
                         ),
                       );
                     },
-                    text: 'Continue',
+                    text: FFLocalizations.of(context).getText(
+                      'oetl4l1d' /* Continue */,
+                    ),
                     options: FFButtonOptions(
                       width: 170.0,
                       height: 50.0,

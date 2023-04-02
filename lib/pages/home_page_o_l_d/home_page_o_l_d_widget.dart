@@ -88,7 +88,9 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
         backgroundColor: FlutterFlowTheme.of(context).background,
         automaticallyImplyLeading: false,
         title: Text(
-          'Welcome',
+          FFLocalizations.of(context).getText(
+            'rgafq5jb' /* Welcome */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium,
         ),
         actions: [],
@@ -110,7 +112,9 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Featured Jobs',
+                    FFLocalizations.of(context).getText(
+                      '5z5qixic' /* Featured Jobs */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
                           color: FlutterFlowTheme.of(context).grayIcon,
@@ -235,7 +239,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Job Title',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '7ajh8oxq' /* Job Title */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium
@@ -260,7 +267,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   4.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '[Company Name]',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'tbusjhyo' /* [Company Name] */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -274,7 +285,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      '\$50k-\$60k',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'gekzp668' /* $50k-$60k */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -417,7 +432,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Job Title',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    'j33y9uds' /* Job Title */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium
@@ -442,7 +460,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   4.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '[Company Name]',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          'rr8eqgds' /* [Company Name] */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -456,7 +478,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      '\$50k-\$60k',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        'n6iqlh2a' /* $50k-$60k */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -588,7 +614,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  'Job Title',
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    's0auqm42' /* Job Title */,
+                                                  ),
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium
@@ -613,7 +642,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                                   4.0,
                                                                   0.0),
                                                       child: Text(
-                                                        '[Company Name]',
+                                                        FFLocalizations.of(
+                                                                context)
+                                                            .getText(
+                                                          '86205zki' /* [Company Name] */,
+                                                        ),
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -627,7 +660,11 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      '\$50k-\$60k',
+                                                      FFLocalizations.of(
+                                                              context)
+                                                          .getText(
+                                                        '4oadu0pl' /* $50k-$60k */,
+                                                      ),
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -720,8 +757,12 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                   controller: _model.textController,
                   obscureText: false,
                   decoration: InputDecoration(
-                    labelText: 'Search Jobs',
-                    hintText: 'Search jobs here...',
+                    labelText: FFLocalizations.of(context).getText(
+                      'rbiei8sg' /* Search Jobs */,
+                    ),
+                    hintText: FFLocalizations.of(context).getText(
+                      '738fppcz' /* Search jobs here... */,
+                    ),
                     enabledBorder: UnderlineInputBorder(
                       borderSide: BorderSide(
                         color: Color(0x00000000),
@@ -1027,7 +1068,9 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 0.0, 12.0, 12.0),
                                       child: AutoSizeText(
-                                        'Posted On:',
+                                        FFLocalizations.of(context).getText(
+                                          's9apykbc' /* Posted On: */,
+                                        ),
                                         textAlign: TextAlign.start,
                                         style: FlutterFlowTheme.of(context)
                                             .bodySmall

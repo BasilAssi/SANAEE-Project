@@ -50,7 +50,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
           size: 32.0,
         ),
         title: Text(
-          'Forgot Password',
+          FFLocalizations.of(context).getText(
+            'kjwltbio' /* Forgot Password */,
+          ),
           style: FlutterFlowTheme.of(context).titleMedium,
         ),
         actions: [],
@@ -66,9 +68,13 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               controller: _model.emailAddressController,
               obscureText: false,
               decoration: InputDecoration(
-                labelText: 'Your Email',
+                labelText: FFLocalizations.of(context).getText(
+                  'ihpphlie' /* Your Email */,
+                ),
                 labelStyle: FlutterFlowTheme.of(context).titleSmall,
-                hintText: 'Please enter a valid email...',
+                hintText: FFLocalizations.of(context).getText(
+                  '7uq2lba4' /* Please enter a valid email... */,
+                ),
                 hintStyle: FlutterFlowTheme.of(context).titleSmall,
                 enabledBorder: UnderlineInputBorder(
                   borderSide: BorderSide(
@@ -114,7 +120,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               children: [
                 Expanded(
                   child: Text(
-                    'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
+                    FFLocalizations.of(context).getText(
+                      'ifxx3yld' /* We will send you an email with... */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodySmall,
                   ),
                 ),
@@ -140,7 +148,9 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                   context: context,
                 );
               },
-              text: 'Send Reset Password',
+              text: FFLocalizations.of(context).getText(
+                '6tzetzky' /* Send Reset Password */,
+              ),
               options: FFButtonOptions(
                 width: 230.0,
                 height: 50.0,

@@ -266,7 +266,9 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Description',
+                                    FFLocalizations.of(context).getText(
+                                      'ynar0mch' /* Description */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(

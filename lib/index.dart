@@ -1,6 +1,6 @@
 // Export pages
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/pages/register/register_widget.dart' show RegisterWidget;
+export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/create_profile/create_profile_widget.dart'
     show CreateProfileWidget;
 export '/pages/company_profile/company_profile_widget.dart'
@@ -42,3 +42,8 @@ export '/pages/company_details/company_details_widget.dart'
 export '/pages/home_page_o_l_d/home_page_o_l_d_widget.dart'
     show HomePageOLDWidget;
 export '/pages/splash_screen/splash_screen_widget.dart' show SplashScreenWidget;
+export '/pages/onboarding_screens/onboarding_screens_widget.dart'
+    show OnboardingScreensWidget;
+export '/pages/verify_mobile/verify_mobile_widget.dart' show VerifyMobileWidget;
+export '/pages/select_your_role/select_your_role_widget.dart'
+    show SelectYourRoleWidget;

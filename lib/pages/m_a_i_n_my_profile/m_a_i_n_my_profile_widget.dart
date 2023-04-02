@@ -8,7 +8,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/company_details/company_details_widget.dart';
 import '/pages/edit_profile/edit_profile_widget.dart';
-import '/pages/splash_screen/splash_screen_widget.dart';
+import '/pages/sign_up/sign_up_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -130,7 +130,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
             ),
             elevation: 8.0,
             label: Text(
-              'Add Job',
+              FFLocalizations.of(context).getText(
+                'd4ei0voa' /* Add Job */,
+              ),
               style: FlutterFlowTheme.of(context).bodyMedium.override(
                     fontFamily: 'Outfit',
                     color: FlutterFlowTheme.of(context).tertiary,
@@ -211,7 +213,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                                       context,
                                                       MaterialPageRoute(
                                                         builder: (context) =>
-                                                            SplashScreenWidget(),
+                                                            SignUpWidget(),
                                                       ),
                                                       (r) => false,
                                                     );
@@ -392,7 +394,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Switch to Dark Mode',
+                                            FFLocalizations.of(context).getText(
+                                              'b9l8kjh7' /* Switch to Dark Mode */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -514,7 +518,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                             MainAxisAlignment.spaceBetween,
                                         children: [
                                           Text(
-                                            'Switch to Light Mode',
+                                            FFLocalizations.of(context).getText(
+                                              'ehmwoa5b' /* Switch to Light Mode */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -608,7 +614,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         24.0, 12.0, 0.0, 8.0),
                                     child: Text(
-                                      'Short Description',
+                                      FFLocalizations.of(context).getText(
+                                        'qlu9nvs1' /* Short Description */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall,
                                     ),
@@ -640,7 +648,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 0.0, 8.0),
                                 child: Text(
-                                  'Experience Level',
+                                  FFLocalizations.of(context).getText(
+                                    'jjmx2lgp' /* Experience Level */,
+                                  ),
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),
@@ -669,7 +679,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 0.0, 8.0),
                                 child: Text(
-                                  'Company',
+                                  FFLocalizations.of(context).getText(
+                                    'wpg67ray' /* Company */,
+                                  ),
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),
@@ -698,7 +710,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 0.0, 8.0),
                                 child: Text(
-                                  'Salary',
+                                  FFLocalizations.of(context).getText(
+                                    '7dx2fv4u' /* Salary */,
+                                  ),
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),
@@ -767,7 +781,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             24.0, 12.0, 0.0, 8.0),
                                         child: Text(
-                                          'Company Profile',
+                                          FFLocalizations.of(context).getText(
+                                            'stqo2ism' /* Company Profile */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall,
                                         ),
@@ -969,7 +985,9 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 12.0, 0.0, 8.0),
                             child: Text(
-                              'Work Experience',
+                              FFLocalizations.of(context).getText(
+                                'prqswg7t' /* Work Experience */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),

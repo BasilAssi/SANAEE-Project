@@ -83,7 +83,9 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
         backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
-          'My Jobs',
+          FFLocalizations.of(context).getText(
+            'a211198f' /* My Jobs */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,
@@ -112,10 +114,14 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                     indicatorColor: FlutterFlowTheme.of(context).secondary,
                     tabs: [
                       Tab(
-                        text: 'Applied',
+                        text: FFLocalizations.of(context).getText(
+                          'ilubw22a' /* Applied */,
+                        ),
                       ),
                       Tab(
-                        text: 'Posted',
+                        text: FFLocalizations.of(context).getText(
+                          'dsq91la7' /* Posted */,
+                        ),
                       ),
                     ],
                   ),

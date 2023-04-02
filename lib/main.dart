@@ -83,6 +83,7 @@ class _MyAppState extends State<MyApp> {
       ],
       locale: _locale,
       supportedLocales: const [
+        Locale('ar'),
         Locale('en'),
       ],
       theme: ThemeData(brightness: Brightness.light),
@@ -103,7 +104,7 @@ class _MyAppState extends State<MyApp> {
             )
           : currentUser!.loggedIn
               ? PushNotificationsHandler(child: NavBarPage())
-              : SplashScreenWidget(),
+              : SignUpWidget(),
     );
   }
 }
@@ -164,7 +165,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.work_outlined,
               size: 24.0,
             ),
-            label: ' ',
+            label: FFLocalizations.of(context).getText(
+              'taeeoz0g' /*   */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -176,7 +179,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.favorite_sharp,
               size: 24.0,
             ),
-            label: ' ',
+            label: FFLocalizations.of(context).getText(
+              'h25lrbj2' /*   */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -188,7 +193,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.chat_bubble_rounded,
               size: 24.0,
             ),
-            label: 'Chats',
+            label: FFLocalizations.of(context).getText(
+              'fr498yys' /* Chats */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(
@@ -200,7 +207,9 @@ class _NavBarPageState extends State<NavBarPage> {
               Icons.group,
               size: 24.0,
             ),
-            label: ' ',
+            label: FFLocalizations.of(context).getText(
+              'fo50w9kj' /*   */,
+            ),
             tooltip: '',
           ),
           BottomNavigationBarItem(

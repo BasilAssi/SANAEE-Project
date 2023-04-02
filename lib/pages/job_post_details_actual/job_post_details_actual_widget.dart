@@ -333,7 +333,9 @@ class _JobPostDetailsActualWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Description',
+                                    FFLocalizations.of(context).getText(
+                                      'bg3qn8cc' /* Description */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -364,7 +366,9 @@ class _JobPostDetailsActualWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Requirements',
+                                    FFLocalizations.of(context).getText(
+                                      'qcgryrl0' /* Requirements */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -395,7 +399,9 @@ class _JobPostDetailsActualWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Preferred Skills & Expertise',
+                                    FFLocalizations.of(context).getText(
+                                      'zkgs1nv6' /* Preferred Skills & Expertise */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -468,7 +474,9 @@ class _JobPostDetailsActualWidgetState
                                       ),
                                     );
                                   },
-                                  text: 'APPLY NOW',
+                                  text: FFLocalizations.of(context).getText(
+                                    'uenl02ze' /* APPLY NOW */,
+                                  ),
                                   options: FFButtonOptions(
                                     width: 130.0,
                                     height: 40.0,

@@ -4,7 +4,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/main.dart';
-import '/pages/register/register_widget.dart';
+import '/pages/sign_up/sign_up_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -102,7 +102,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                         children: [
                           Expanded(
                             child: Text(
-                              'Welcome Back,',
+                              FFLocalizations.of(context).getText(
+                                'gri19u31' /* Welcome Back, */,
+                              ),
                               style: FlutterFlowTheme.of(context).displaySmall,
                             ),
                           ),
@@ -138,10 +140,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                               controller: _model.emailAddressController,
                               obscureText: false,
                               decoration: InputDecoration(
-                                labelText: 'Email Address',
+                                labelText: FFLocalizations.of(context).getText(
+                                  '7vwo3gsa' /* Email Address */,
+                                ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
-                                hintText: 'Enter your email here...',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '6o89q7ja' /* Enter your email here... */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -203,10 +209,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                               controller: _model.passwordController,
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
-                                labelText: 'Password',
+                                labelText: FFLocalizations.of(context).getText(
+                                  'ea9rckya' /* Password */,
+                                ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
-                                hintText: 'Enter your password here...',
+                                hintText: FFLocalizations.of(context).getText(
+                                  '8f46nx1d' /* Enter your password here... */,
+                                ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -281,7 +291,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                             onPressed: () {
                               print('ButtonForgotPassword pressed ...');
                             },
-                            text: 'Forgot Password?',
+                            text: FFLocalizations.of(context).getText(
+                              '7ukcu0z9' /* Forgot Password? */,
+                            ),
                             options: FFButtonOptions(
                               width: 140.0,
                               height: 40.0,
@@ -323,7 +335,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 (r) => false,
                               );
                             },
-                            text: 'Login',
+                            text: FFLocalizations.of(context).getText(
+                              '5vjc9znt' /* Login */,
+                            ),
                             options: FFButtonOptions(
                               width: 130.0,
                               height: 50.0,
@@ -378,7 +392,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 ),
                               );
                             },
-                            text: 'Continue as Guest',
+                            text: FFLocalizations.of(context).getText(
+                              '5c2vlcdh' /* Continue as Guest */,
+                            ),
                             options: FFButtonOptions(
                               width: 160.0,
                               height: 40.0,
@@ -412,11 +428,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => RegisterWidget(),
+                                  builder: (context) => SignUpWidget(),
                                 ),
                               );
                             },
-                            text: 'Create Account',
+                            text: FFLocalizations.of(context).getText(
+                              'h0rm94lj' /* Create Account */,
+                            ),
                             options: FFButtonOptions(
                               width: 140.0,
                               height: 40.0,

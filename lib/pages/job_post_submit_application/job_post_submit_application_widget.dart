@@ -294,7 +294,9 @@ class _JobPostSubmitApplicationWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Submit your prosoal below',
+                                    FFLocalizations.of(context).getText(
+                                      '8at6kuin' /* Submit your prosoal below */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).titleSmall,
                                   ),
@@ -312,7 +314,10 @@ class _JobPostSubmitApplicationWidgetState
                                       controller: _model.textController,
                                       obscureText: false,
                                       decoration: InputDecoration(
-                                        hintText: 'Start typing here....',
+                                        hintText:
+                                            FFLocalizations.of(context).getText(
+                                          'v2rixpmp' /* Start typing here.... */,
+                                        ),
                                         hintStyle: FlutterFlowTheme.of(context)
                                             .bodySmall,
                                         enabledBorder: UnderlineInputBorder(
@@ -375,7 +380,9 @@ class _JobPostSubmitApplicationWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Add Attachments',
+                                    FFLocalizations.of(context).getText(
+                                      'm5j8txd7' /* Add Attachments */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -780,7 +787,9 @@ class _JobPostSubmitApplicationWidgetState
                                     ),
                                   );
                                 },
-                                text: 'Submit Application',
+                                text: FFLocalizations.of(context).getText(
+                                  '6lye9riv' /* Submit Application */,
+                                ),
                                 options: FFButtonOptions(
                                   width: 130.0,
                                   height: 40.0,

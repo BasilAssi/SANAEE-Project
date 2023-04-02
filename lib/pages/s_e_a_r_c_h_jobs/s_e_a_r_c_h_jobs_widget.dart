@@ -93,7 +93,9 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                         controller: _model.textController,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Search jobs...',
+                          labelText: FFLocalizations.of(context).getText(
+                            '3egeehjp' /* Search jobs... */,
+                          ),
                           labelStyle: FlutterFlowTheme.of(context)
                               .titleMedium
                               .override(
@@ -405,7 +407,9 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 12.0),
                                         child: AutoSizeText(
-                                          'Posted On:',
+                                          FFLocalizations.of(context).getText(
+                                            'qw8giei3' /* Posted On: */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall

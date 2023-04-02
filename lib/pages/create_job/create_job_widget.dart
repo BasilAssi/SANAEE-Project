@@ -70,7 +70,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          'Create Job Post',
+                          FFLocalizations.of(context).getText(
+                            'ukzz8bd8' /* Create Job Post */,
+                          ),
                           style: FlutterFlowTheme.of(context).headlineSmall,
                         ),
                         Card(
@@ -202,7 +204,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: _model.textController1,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Position Title',
+                              labelText: FFLocalizations.of(context).getText(
+                                '8lw3hi06' /* Position Title */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .headlineSmall
                                   .override(
@@ -275,7 +279,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: _model.shortDescriptionController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Short Description',
+                              labelText: FFLocalizations.of(context).getText(
+                                'pap7cb69' /* Short Description */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -347,7 +353,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: _model.requirementsController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Requirements',
+                              labelText: FFLocalizations.of(context).getText(
+                                'gh9w3gm6' /* Requirements */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -355,8 +363,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
-                              hintText:
-                                  'Have to have x many years of experience, education, etc...',
+                              hintText: FFLocalizations.of(context).getText(
+                                '5u0gqynx' /* Have to have x many years of e... */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -427,7 +436,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: _model.preferredSkillsController,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'Preferred Skills & Experiences',
+                              labelText: FFLocalizations.of(context).getText(
+                                'a5gr4a26' /* Preferred Skills & Experiences */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -435,7 +446,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
-                              hintText: 'Knowledge of software or processes...',
+                              hintText: FFLocalizations.of(context).getText(
+                                'c1xeu5hd' /* Knowledge of software or proce... */,
+                              ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -518,19 +531,33 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             controller: _model.experienceLevelController ??=
                                 FormFieldController<String>(null),
                             options: [
-                              '< 6 Months',
-                              '6m - 1y',
-                              '1y - 3y',
-                              '+3 years',
-                              '+5 years',
-                              '+8 years'
+                              FFLocalizations.of(context).getText(
+                                'f8hlklae' /* < 6 Months */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'ilhz9ik4' /* 6m - 1y */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '4ive5b1q' /* 1y - 3y */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'i66yxmwy' /* +3 years */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'bohmm3kp' /* +5 years */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'dxq6o4rl' /* +8 years */,
+                              )
                             ],
                             onChanged: (val) => setState(
                                 () => _model.experienceLevelValue = val),
                             width: MediaQuery.of(context).size.width * 1.0,
                             height: 40.0,
                             textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                            hintText: 'Experience Level',
+                            hintText: FFLocalizations.of(context).getText(
+                              'dqojfllq' /* Experience Level */,
+                            ),
                             icon: FaIcon(
                               FontAwesomeIcons.chevronDown,
                               color: FlutterFlowTheme.of(context).grayIcon400,
@@ -558,7 +585,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Text(
-                          'Salary',
+                          FFLocalizations.of(context).getText(
+                            'pdxr2c8v' /* Salary */,
+                          ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
                         ),
                       ],
@@ -572,11 +601,15 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
-                          '\$40,000',
+                          FFLocalizations.of(context).getText(
+                            'n60zdd0q' /* $40,000 */,
+                          ),
                           style: FlutterFlowTheme.of(context).bodySmall,
                         ),
                         Text(
-                          '\$150,000+',
+                          FFLocalizations.of(context).getText(
+                            '4ficbfr6' /* $150,000+ */,
+                          ),
                           textAlign: TextAlign.end,
                           style: FlutterFlowTheme.of(context).bodySmall,
                         ),
@@ -626,7 +659,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             onSelect: (place) async {
                               setState(() => _model.placePickerValue = place);
                             },
-                            defaultText: 'Location',
+                            defaultText: FFLocalizations.of(context).getText(
+                              '1t54fz83' /* Location */,
+                            ),
                             icon: Icon(
                               Icons.place,
                               color: FlutterFlowTheme.of(context).grayIcon400,
@@ -695,7 +730,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                         .set(jobPostsCreateData);
                     Navigator.pop(context);
                   },
-                  text: 'Create Post',
+                  text: FFLocalizations.of(context).getText(
+                    'px1bkt5b' /* Create Post */,
+                  ),
                   options: FFButtonOptions(
                     width: 130.0,
                     height: 40.0,

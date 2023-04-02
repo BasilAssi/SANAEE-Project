@@ -273,7 +273,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'Job Post',
+                                      FFLocalizations.of(context).getText(
+                                        'f3rwmlwq' /* Job Post */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineSmall,
                                     ),
@@ -288,7 +290,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'SpaceX',
+                                    FFLocalizations.of(context).getText(
+                                      '2kyy06uy' /* SpaceX */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -296,7 +300,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         8.0, 0.0, 0.0, 0.0),
                                     child: Text(
-                                      '\$60k-\$70k',
+                                      FFLocalizations.of(context).getText(
+                                        'd0qvqnft' /* $60k-$70k */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall
                                           .override(
@@ -317,7 +323,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Description',
+                                    FFLocalizations.of(context).getText(
+                                      '2hu13qn7' /* Description */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -332,7 +340,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+                                      FFLocalizations.of(context).getText(
+                                        '0q083037' /* I think from our end -- a run ... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -347,7 +357,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Requirements',
+                                    FFLocalizations.of(context).getText(
+                                      '8g6i2608' /* Requirements */,
+                                    ),
                                     style:
                                         FlutterFlowTheme.of(context).bodySmall,
                                   ),
@@ -362,7 +374,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+                                      FFLocalizations.of(context).getText(
+                                        'otamshvi' /* I think from our end -- a run ... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -377,7 +391,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   Text(
-                                    'Preferred Skills & Expertise',
+                                    FFLocalizations.of(context).getText(
+                                      '1nkaoo51' /* Preferred Skills & Expertise */,
+                                    ),
                                     style: FlutterFlowTheme.of(context)
                                         .bodySmall
                                         .override(
@@ -396,7 +412,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                                 children: [
                                   Expanded(
                                     child: Text(
-                                      'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+                                      FFLocalizations.of(context).getText(
+                                        'vkk1elhl' /* I think from our end -- a run ... */,
+                                      ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
                                     ),
@@ -423,7 +441,9 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
                             onPressed: () {
                               print('Button pressed ...');
                             },
-                            text: 'Submit Application',
+                            text: FFLocalizations.of(context).getText(
+                              'kv1tom07' /* Submit Application */,
+                            ),
                             options: FFButtonOptions(
                               width: 130.0,
                               height: 40.0,

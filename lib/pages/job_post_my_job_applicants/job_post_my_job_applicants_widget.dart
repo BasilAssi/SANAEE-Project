@@ -272,7 +272,9 @@ class _JobPostMyJobApplicantsWidgetState
                               mainAxisSize: MainAxisSize.max,
                               children: [
                                 Text(
-                                  'Description',
+                                  FFLocalizations.of(context).getText(
+                                    'c9stbgea' /* Description */,
+                                  ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodySmall
                                       .override(
@@ -322,7 +324,9 @@ class _JobPostMyJobApplicantsWidgetState
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Text(
-                                'Your Applicants',
+                                FFLocalizations.of(context).getText(
+                                  'wma7kda9' /* Your Applicants */,
+                                ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
                             ],

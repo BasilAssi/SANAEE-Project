@@ -46,7 +46,9 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
         backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
-          'Messages',
+          FFLocalizations.of(context).getText(
+            'zm1cme8s' /* Messages */,
+          ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,

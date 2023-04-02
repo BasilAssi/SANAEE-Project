@@ -220,7 +220,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                                 padding: EdgeInsetsDirectional.fromSTEB(
                                     24.0, 12.0, 0.0, 8.0),
                                 child: Text(
-                                  'Short Description',
+                                  FFLocalizations.of(context).getText(
+                                    'eglsg18o' /* Short Description */,
+                                  ),
                                   style: FlutterFlowTheme.of(context).bodySmall,
                                 ),
                               ),
@@ -251,7 +253,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 12.0, 0.0, 8.0),
                             child: Text(
-                              'Experience Level',
+                              FFLocalizations.of(context).getText(
+                                'zu8yah2m' /* Experience Level */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -279,7 +283,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 12.0, 0.0, 8.0),
                             child: Text(
-                              'Company',
+                              FFLocalizations.of(context).getText(
+                                'dthb7o9n' /* Company */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -307,7 +313,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 24.0, 12.0, 0.0, 8.0),
                             child: Text(
-                              'Salary',
+                              FFLocalizations.of(context).getText(
+                                'rnzvi6y6' /* Salary */,
+                              ),
                               style: FlutterFlowTheme.of(context).bodySmall,
                             ),
                           ),
@@ -354,7 +362,9 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
                           ),
                         );
                       },
-                      text: 'Message Candidate',
+                      text: FFLocalizations.of(context).getText(
+                        'p0z90s05' /* Message Candidate */,
+                      ),
                       options: FFButtonOptions(
                         width: 130.0,
                         height: 40.0,

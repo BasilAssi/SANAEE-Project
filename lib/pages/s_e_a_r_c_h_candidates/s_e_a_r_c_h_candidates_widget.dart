@@ -93,7 +93,9 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                           controller: _model.textController,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Search candidates...',
+                            labelText: FFLocalizations.of(context).getText(
+                              'ncs8gl9m' /* Search candidates... */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .titleMedium
                                 .override(

@@ -84,7 +84,9 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
         backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
-          'Welcome',
+          FFLocalizations.of(context).getText(
+            'r4mqbyug' /* Welcome */,
+          ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,
@@ -349,7 +351,9 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             12.0, 0.0, 12.0, 12.0),
                                         child: AutoSizeText(
-                                          'Posted On:',
+                                          FFLocalizations.of(context).getText(
+                                            'hxlzbffs' /* Posted On: */,
+                                          ),
                                           textAlign: TextAlign.start,
                                           style: FlutterFlowTheme.of(context)
                                               .bodySmall

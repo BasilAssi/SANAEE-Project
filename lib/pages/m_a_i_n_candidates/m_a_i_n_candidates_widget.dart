@@ -45,7 +45,9 @@ class _MAINCandidatesWidgetState extends State<MAINCandidatesWidget> {
         backgroundColor: FlutterFlowTheme.of(context).darkText,
         automaticallyImplyLeading: false,
         title: Text(
-          'Candidates',
+          FFLocalizations.of(context).getText(
+            '22f2lnxe' /* Candidates */,
+          ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,

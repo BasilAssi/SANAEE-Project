@@ -97,7 +97,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
                   child: Text(
-                    'Work Experience',
+                    FFLocalizations.of(context).getText(
+                      '2pw221ef' /* Work Experience */,
+                    ),
                     style: FlutterFlowTheme.of(context).headlineMedium.override(
                           fontFamily: 'Outfit',
                           fontWeight: FontWeight.w600,
@@ -107,7 +109,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(5.0, 4.0, 0.0, 0.0),
                   child: Text(
-                    'Add Credentials below.',
+                    FFLocalizations.of(context).getText(
+                      'zqanj86y' /* Add Credentials below. */,
+                    ),
                     style: FlutterFlowTheme.of(context).bodySmall,
                   ),
                 ),
@@ -127,7 +131,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                           ),
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Position Title',
+                            labelText: FFLocalizations.of(context).getText(
+                              'q2g2iswb' /* Position Title */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
@@ -191,7 +197,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                           ),
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Company',
+                            labelText: FFLocalizations.of(context).getText(
+                              '8ts48khk' /* Company */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context).titleSmall,
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -309,7 +317,10 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                               CrossAxisAlignment.start,
                                           children: [
                                             Text(
-                                              'Start Date',
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'kpji1lye' /* Start Date */,
+                                              ),
                                               style:
                                                   FlutterFlowTheme.of(context)
                                                       .bodyMedium
@@ -410,7 +421,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                             CrossAxisAlignment.start,
                                         children: [
                                           Text(
-                                            'End Date',
+                                            FFLocalizations.of(context).getText(
+                                              'zqo3nhd7' /* End Date */,
+                                            ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium
                                                 .override(
@@ -472,7 +485,10 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 ),
                                 obscureText: false,
                                 decoration: InputDecoration(
-                                  labelText: 'What did you do here?',
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    '257ox33z' /* What did you do here? */,
+                                  ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).titleSmall,
                                   enabledBorder: UnderlineInputBorder(
@@ -559,7 +575,9 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                     .update(workHistoryUpdateData);
                                 Navigator.pop(context);
                               },
-                              text: 'Save Work Experience',
+                              text: FFLocalizations.of(context).getText(
+                                'f879az5k' /* Save Work Experience */,
+                              ),
                               options: FFButtonOptions(
                                 width: 270.0,
                                 height: 50.0,

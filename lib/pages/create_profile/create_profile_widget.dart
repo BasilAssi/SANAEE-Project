@@ -64,7 +64,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
           size: 30.0,
         ),
         title: Text(
-          'Create Profile',
+          FFLocalizations.of(context).getText(
+            '16kqlmhb' /* Create Profile */,
+          ),
           textAlign: TextAlign.start,
           style: FlutterFlowTheme.of(context).titleMedium,
         ),
@@ -113,7 +115,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: _model.textController1,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Full Name',
+                            labelText: FFLocalizations.of(context).getText(
+                              '9cxxqp6a' /* Full Name */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .headlineSmall
                                 .override(
@@ -187,7 +191,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         controller: _model.textController2,
                         obscureText: false,
                         decoration: InputDecoration(
-                          labelText: 'Postition Title',
+                          labelText: FFLocalizations.of(context).getText(
+                            'bzvy9n1f' /* Postition Title */,
+                          ),
                           labelStyle: FlutterFlowTheme.of(context)
                               .headlineSmall
                               .override(
@@ -256,7 +262,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: _model.textController3,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Short Description',
+                            labelText: FFLocalizations.of(context).getText(
+                              'kqq76t54' /* Short Description */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context)
                                 .titleSmall
                                 .override(
@@ -337,19 +345,33 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         controller: _model.dropDownController ??=
                             FormFieldController<String>(null),
                         options: [
-                          '< 6 Months',
-                          '6m - 1y',
-                          '1y - 3y',
-                          '+3 years',
-                          '+5 years',
-                          '+8 years'
+                          FFLocalizations.of(context).getText(
+                            'vjwgllst' /* < 6 Months */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            '4afzu4uv' /* 6m - 1y */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'awm0qeje' /* 1y - 3y */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'vfn9v4of' /* +3 years */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'jdztguln' /* +5 years */,
+                          ),
+                          FFLocalizations.of(context).getText(
+                            'du97ujp9' /* +8 years */,
+                          )
                         ],
                         onChanged: (val) =>
                             setState(() => _model.dropDownValue = val),
                         width: 130.0,
                         height: 40.0,
                         textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                        hintText: 'Experience Level',
+                        hintText: FFLocalizations.of(context).getText(
+                          '8j4bktnh' /* Experience Level */,
+                        ),
                         icon: FaIcon(
                           FontAwesomeIcons.chevronDown,
                           color: FlutterFlowTheme.of(context).grayIcon400,
@@ -388,7 +410,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           controller: _model.textController4,
                           obscureText: false,
                           decoration: InputDecoration(
-                            labelText: 'Company',
+                            labelText: FFLocalizations.of(context).getText(
+                              'otxb705y' /* Company */,
+                            ),
                             labelStyle: FlutterFlowTheme.of(context).titleSmall,
                             enabledBorder: UnderlineInputBorder(
                               borderSide: BorderSide(
@@ -452,7 +476,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      'Salary',
+                      FFLocalizations.of(context).getText(
+                        'tgyak4ap' /* Salary */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodyMedium,
                     ),
                   ],
@@ -465,11 +491,15 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   mainAxisAlignment: MainAxisAlignment.spaceBetween,
                   children: [
                     Text(
-                      '\$40,000',
+                      FFLocalizations.of(context).getText(
+                        'qa9z2iig' /* $40,000 */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
                     Text(
-                      '\$150,000+',
+                      FFLocalizations.of(context).getText(
+                        'dok3j0cl' /* $150,000+ */,
+                      ),
                       textAlign: TextAlign.end,
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
@@ -498,7 +528,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Continue as a(n)',
+                      FFLocalizations.of(context).getText(
+                        'wk05zvzs' /* Continue as a(n) */,
+                      ),
                       style: FlutterFlowTheme.of(context).titleMedium,
                     ),
                   ],
@@ -511,7 +543,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     Text(
-                      'Choose an option below to continue.',
+                      FFLocalizations.of(context).getText(
+                        'k9lfniw4' /* Choose an option below to cont... */,
+                      ),
                       style: FlutterFlowTheme.of(context).bodySmall,
                     ),
                   ],
@@ -564,7 +598,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                           ),
                           Expanded(
                             child: Text(
-                              'As an Individual',
+                              FFLocalizations.of(context).getText(
+                                'zhq28egp' /* As an Individual */,
+                              ),
                               style: FlutterFlowTheme.of(context)
                                   .bodyMedium
                                   .override(
@@ -639,7 +675,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                             ),
                             Expanded(
                               child: Text(
-                                'As a Company',
+                                FFLocalizations.of(context).getText(
+                                  'bxzzpwnh' /* As a Company */,
+                                ),
                                 style: FlutterFlowTheme.of(context)
                                     .bodyMedium
                                     .override(
@@ -685,7 +723,9 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                               ),
                             );
                           },
-                          text: 'Skip for Now',
+                          text: FFLocalizations.of(context).getText(
+                            'uj0rkdlw' /* Skip for Now */,
+                          ),
                           options: FFButtonOptions(
                             width: 130.0,
                             height: 50.0,

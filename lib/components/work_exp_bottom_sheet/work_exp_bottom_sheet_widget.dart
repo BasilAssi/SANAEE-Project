@@ -74,7 +74,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
               child: Text(
-                'Work Experience',
+                FFLocalizations.of(context).getText(
+                  'dnp3ulb4' /* Work Experience */,
+                ),
                 style: FlutterFlowTheme.of(context).headlineMedium.override(
                       fontFamily: 'Outfit',
                       fontWeight: FontWeight.w600,
@@ -84,7 +86,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
             Padding(
               padding: EdgeInsetsDirectional.fromSTEB(5.0, 0.0, 0.0, 0.0),
               child: Text(
-                'Add Credentials below.',
+                FFLocalizations.of(context).getText(
+                  'e6n92fzq' /* Add Credentials below. */,
+                ),
                 style: FlutterFlowTheme.of(context).bodySmall,
               ),
             ),
@@ -100,7 +104,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                       controller: _model.postitionTitleController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Position Title',
+                        labelText: FFLocalizations.of(context).getText(
+                          'xz14f82k' /* Position Title */,
+                        ),
                         labelStyle: FlutterFlowTheme.of(context)
                             .headlineSmall
                             .override(
@@ -164,7 +170,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                       controller: _model.companyController,
                       obscureText: false,
                       decoration: InputDecoration(
-                        labelText: 'Company',
+                        labelText: FFLocalizations.of(context).getText(
+                          '7qbyrkuy' /* Company */,
+                        ),
                         labelStyle: FlutterFlowTheme.of(context)
                             .titleSmall
                             .override(
@@ -286,7 +294,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                           CrossAxisAlignment.start,
                                       children: [
                                         Text(
-                                          'Start Date',
+                                          FFLocalizations.of(context).getText(
+                                            '70fjjqtv' /* Start Date */,
+                                          ),
                                           style: FlutterFlowTheme.of(context)
                                               .bodyMedium
                                               .override(
@@ -379,7 +389,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                         CrossAxisAlignment.start,
                                     children: [
                                       Text(
-                                        'End Date',
+                                        FFLocalizations.of(context).getText(
+                                          't16bvu82' /* End Date */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
                                             .bodyMedium
                                             .override(
@@ -434,7 +446,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                             controller: _model.textController3,
                             obscureText: false,
                             decoration: InputDecoration(
-                              labelText: 'What did you do here?',
+                              labelText: FFLocalizations.of(context).getText(
+                                'lclkf38l' /* What did you do here? */,
+                              ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .titleSmall
                                   .override(
@@ -526,7 +540,9 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                                 .set(workHistoryCreateData);
                             Navigator.pop(context);
                           },
-                          text: 'Save Work Experience',
+                          text: FFLocalizations.of(context).getText(
+                            'ekvc2gv5' /* Save Work Experience */,
+                          ),
                           options: FFButtonOptions(
                             width: 270.0,
                             height: 50.0,

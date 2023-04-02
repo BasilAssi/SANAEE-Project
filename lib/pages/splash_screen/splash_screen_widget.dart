@@ -125,7 +125,9 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
                       padding:
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 80.0),
                       child: Text(
-                        '    Welcome                                                                                 \n                    to  SANAEE ',
+                        FFLocalizations.of(context).getText(
+                          '1y336fcz' /*     Welcome                   ... */,
+                        ),
                         style: FlutterFlowTheme.of(context).bodyMedium.override(
                               fontFamily: 'Outfit',
                               color: Color(0xFFF8B500),
