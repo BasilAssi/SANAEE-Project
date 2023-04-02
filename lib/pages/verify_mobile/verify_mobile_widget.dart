@@ -264,7 +264,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              final smsCodeVal = '+970${widget.phoneNumber}';
+                              final smsCodeVal = _model.pinCodeController!.text;
                               if (smsCodeVal == null || smsCodeVal.isEmpty) {
                                 ScaffoldMessenger.of(context).showSnackBar(
                                   SnackBar(
