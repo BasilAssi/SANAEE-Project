@@ -57,7 +57,7 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
               image: DecorationImage(
                 fit: BoxFit.cover,
                 image: Image.asset(
-                  'assets/images/alexandru-acea--WBYxmW4yuw-unsplash.jpg',
+                  'assets/images/Product_teardown-cuate.png',
                 ).image,
               ),
             ),
@@ -86,7 +86,7 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(0.0, 100.0, 0.0, 0.0),
                     child: Container(
                       width: MediaQuery.of(context).size.width * 1.0,
                       height: 500.0,
@@ -122,12 +122,13 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                       FFLocalizations.of(context).getText(
                                         'j9emr6b2' /* تسجيل الدخول */,
                                       ),
-                                      textAlign: TextAlign.center,
+                                      textAlign: TextAlign.start,
                                       style: FlutterFlowTheme.of(context)
                                           .displayMedium
                                           .override(
                                             fontFamily: 'Poppins',
                                             color: Color(0xFF393333),
+                                            fontSize: 30.0,
                                             fontWeight: FontWeight.w600,
                                             fontStyle: FontStyle.italic,
                                           ),
