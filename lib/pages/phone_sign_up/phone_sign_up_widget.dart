@@ -265,15 +265,9 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                                                   width: 1.0,
                                                                 ),
                                                                 borderRadius:
-                                                                    const BorderRadius
-                                                                        .only(
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                ),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5.0),
                                                               ),
                                                               focusedBorder:
                                                                   UnderlineInputBorder(
@@ -284,15 +278,9 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                                                   width: 1.0,
                                                                 ),
                                                                 borderRadius:
-                                                                    const BorderRadius
-                                                                        .only(
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                ),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5.0),
                                                               ),
                                                               errorBorder:
                                                                   UnderlineInputBorder(
@@ -303,15 +291,9 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                                                   width: 1.0,
                                                                 ),
                                                                 borderRadius:
-                                                                    const BorderRadius
-                                                                        .only(
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                ),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5.0),
                                                               ),
                                                               focusedErrorBorder:
                                                                   UnderlineInputBorder(
@@ -322,15 +304,9 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                                                   width: 1.0,
                                                                 ),
                                                                 borderRadius:
-                                                                    const BorderRadius
-                                                                        .only(
-                                                                  topLeft: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                  topRight: Radius
-                                                                      .circular(
-                                                                          4.0),
-                                                                ),
+                                                                    BorderRadius
+                                                                        .circular(
+                                                                            5.0),
                                                               ),
                                                             ),
                                                             style: FlutterFlowTheme
@@ -411,7 +387,9 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                                               Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'iavulzck' /* أوافق على جميع التعليمات بناءً... */,
+                                                  'iavulzck' /* أوافق على جميع التعليمات 
+بناء... */
+                                                  ,
                                                 ),
                                                 style:
                                                     FlutterFlowTheme.of(context)
