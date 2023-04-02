@@ -117,14 +117,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.company;
-    if (value != null) {
-      result
-        ..add('company')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
-    }
     value = object.isGuest;
     if (value != null) {
       result
@@ -210,12 +202,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.salary = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'company':
-          result.company = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
-          break;
         case 'isGuest':
           result.isGuest = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
@@ -263,8 +249,6 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? salary;
   @override
-  final DocumentReference<Object?>? company;
-  @override
   final bool? isGuest;
   @override
   final DocumentReference<Object?>? ffRef;
@@ -287,7 +271,6 @@ class _$UsersRecord extends UsersRecord {
       this.likedPosts,
       this.profileType,
       this.salary,
-      this.company,
       this.isGuest,
       this.ffRef})
       : super._();
@@ -317,7 +300,6 @@ class _$UsersRecord extends UsersRecord {
         likedPosts == other.likedPosts &&
         profileType == other.profileType &&
         salary == other.salary &&
-        company == other.company &&
         isGuest == other.isGuest &&
         ffRef == other.ffRef;
   }
@@ -339,7 +321,6 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, likedPosts.hashCode);
     _$hash = $jc(_$hash, profileType.hashCode);
     _$hash = $jc(_$hash, salary.hashCode);
-    _$hash = $jc(_$hash, company.hashCode);
     _$hash = $jc(_$hash, isGuest.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
@@ -363,7 +344,6 @@ class _$UsersRecord extends UsersRecord {
           ..add('likedPosts', likedPosts)
           ..add('profileType', profileType)
           ..add('salary', salary)
-          ..add('company', company)
           ..add('isGuest', isGuest)
           ..add('ffRef', ffRef))
         .toString();
@@ -432,10 +412,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get salary => _$this._salary;
   set salary(String? salary) => _$this._salary = salary;
 
-  DocumentReference<Object?>? _company;
-  DocumentReference<Object?>? get company => _$this._company;
-  set company(DocumentReference<Object?>? company) => _$this._company = company;
-
   bool? _isGuest;
   bool? get isGuest => _$this._isGuest;
   set isGuest(bool? isGuest) => _$this._isGuest = isGuest;
@@ -465,7 +441,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _likedPosts = $v.likedPosts;
       _profileType = $v.profileType;
       _salary = $v.salary;
-      _company = $v.company;
       _isGuest = $v.isGuest;
       _ffRef = $v.ffRef;
       _$v = null;
@@ -504,7 +479,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             likedPosts: likedPosts,
             profileType: profileType,
             salary: salary,
-            company: company,
             isGuest: isGuest,
             ffRef: ffRef);
     replace(_$result);
