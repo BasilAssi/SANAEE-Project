@@ -1,6 +1,5 @@
 // Export pages
 export '/pages/login/login_widget.dart' show LoginWidget;
-export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/pages/create_profile/create_profile_widget.dart'
     show CreateProfileWidget;
 export '/pages/company_profile/company_profile_widget.dart'
@@ -46,3 +45,4 @@ export '/pages/onboarding_screens/onboarding_screens_widget.dart'
 export '/pages/verify_mobile/verify_mobile_widget.dart' show VerifyMobileWidget;
 export '/pages/select_your_role/select_your_role_widget.dart'
     show SelectYourRoleWidget;
+export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
