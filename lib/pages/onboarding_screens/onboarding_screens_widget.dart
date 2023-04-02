@@ -50,293 +50,274 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
           onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
           child: Column(
             mainAxisSize: MainAxisSize.max,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Expanded(
-                child: Container(
-                  height: 300.0,
-                  child: Stack(
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 50.0),
-                        child: PageView(
-                          controller: _model.pageViewController ??=
-                              PageController(initialPage: 0),
-                          scrollDirection: Axis.horizontal,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
-                              child: SingleChildScrollView(
-                                child: Column(
-                                  mainAxisSize: MainAxisSize.min,
-                                  mainAxisAlignment: MainAxisAlignment.start,
+                child: Stack(
+                  children: [
+                    PageView(
+                      controller: _model.pageViewController ??=
+                          PageController(initialPage: 0),
+                      scrollDirection: Axis.horizontal,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 0.0, 12.0, 100.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.min,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/Construction_worker-rafiki.png',
+                                width: 300.0,
+                                height: 300.0,
+                                fit: BoxFit.cover,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 8.0, 16.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
                                   children: [
-                                    Image.asset(
-                                      'assets/images/Construction_worker-rafiki.png',
-                                      width: 300.0,
-                                      height: 300.0,
-                                      fit: BoxFit.cover,
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '52ramgz3' /* انجاز الاعمال باستخدام الهاتف */,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .displayMedium
-                                                        .override(
-                                                          fontFamily: 'Poppins',
-                                                          fontSize: 32.0,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                              ),
-                                            ),
+                                    Expanded(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '52ramgz3' /* انجاز الاعمال باستخدام الهاتف */,
                                           ),
-                                        ],
-                                      ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  '8pwxetwc' /* تواصل مع الحرفي وتتبع العمل  
-... */
-                                                  ,
-                                                ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium,
+                                          style: FlutterFlowTheme.of(context)
+                                              .displayMedium
+                                              .override(
+                                                fontFamily: 'Poppins',
+                                                fontSize: 32.0,
+                                                fontWeight: FontWeight.w600,
                                               ),
-                                            ),
-                                          ),
-                                        ],
+                                        ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                            Align(
-                              alignment: AlignmentDirectional(0.25, 0.15),
-                              child: Padding(
+                              Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    12.0, 12.0, 12.0, 12.0),
-                                child: Column(
+                                    16.0, 8.0, 16.0, 0.0),
+                                child: Row(
                                   mainAxisSize: MainAxisSize.max,
-                                  mainAxisAlignment: MainAxisAlignment.center,
                                   children: [
-                                    Image.asset(
-                                      'assets/images/Construction_worker-bro.png',
-                                      width: 300.0,
-                                      height: 300.0,
-                                      fit: BoxFit.cover,
+                                    Expanded(
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '8pwxetwc' /* تواصل مع الحرفي وتتبع العمل  
+... */
+                                            ,
+                                          ),
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium,
+                                        ),
+                                      ),
                                     ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 0.0, 0.0, 10.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    'ls2yrw5x' /* انشر الأعمال التي تحتاجها 
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Align(
+                          alignment: AlignmentDirectional(0.25, 0.15),
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                12.0, 12.0, 12.0, 12.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              mainAxisAlignment: MainAxisAlignment.center,
+                              children: [
+                                Image.asset(
+                                  'assets/images/Construction_worker-bro.png',
+                                  width: 300.0,
+                                  height: 300.0,
+                                  fit: BoxFit.cover,
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 8.0, 16.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 10.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'ls2yrw5x' /* انشر الأعمال التي تحتاجها 
 واح... */
-                                                    ,
-                                                  ),
-                                                  textAlign: TextAlign.center,
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
+                                                ,
+                                              ),
+                                              textAlign: TextAlign.center,
+                                              style:
+                                                  FlutterFlowTheme.of(context)
                                                       .displaySmall
                                                       .override(
                                                         fontFamily: 'Outfit',
                                                         fontWeight:
                                                             FontWeight.w600,
                                                       ),
-                                                ),
-                                              ),
                                             ),
                                           ),
-                                        ],
+                                        ),
                                       ),
-                                    ),
-                                    Padding(
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          16.0, 8.0, 16.0, 0.0),
-                                      child: Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Expanded(
-                                            child: Align(
-                                              alignment: AlignmentDirectional(
-                                                  0.0, 0.0),
-                                              child: Text(
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'zefttcqs' /*     ابحث عن الافضل
+                                    ],
+                                  ),
+                                ),
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 8.0, 16.0, 0.0),
+                                  child: Row(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Expanded(
+                                        child: Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.0),
+                                          child: Text(
+                                            FFLocalizations.of(context).getText(
+                                              'zefttcqs' /*     ابحث عن الافضل
 وقم باختيار... */
-                                                  ,
-                                                ),
-                                                textAlign: TextAlign.center,
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .headlineMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          letterSpacing: 0.5,
-                                                          fontWeight:
-                                                              FontWeight.w600,
-                                                        ),
-                                              ),
+                                              ,
                                             ),
+                                            textAlign: TextAlign.center,
+                                            style: FlutterFlowTheme.of(context)
+                                                .headlineMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  letterSpacing: 0.5,
+                                                  fontWeight: FontWeight.w600,
+                                                ),
                                           ),
-                                        ],
+                                        ),
+                                      ),
+                                    ],
+                                  ),
+                                ),
+                              ],
+                            ),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              12.0, 12.0, 12.0, 12.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.center,
+                            children: [
+                              Image.asset(
+                                'assets/images/Construction_worker-amico.png',
+                                width: 300.0,
+                                height: 300.0,
+                                fit: BoxFit.cover,
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 8.0, 16.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          'f97m5tno' /* انجاز الاعمال باستخدام الهاتف */,
+                                        ),
+                                        textAlign: TextAlign.center,
+                                        style: FlutterFlowTheme.of(context)
+                                            .displayMedium
+                                            .override(
+                                              fontFamily: 'Poppins',
+                                              fontSize: 32.0,
+                                              fontWeight: FontWeight.w600,
+                                            ),
                                       ),
                                     ),
                                   ],
                                 ),
                               ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 12.0, 12.0, 12.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                children: [
-                                  Image.asset(
-                                    'assets/images/Construction_worker-amico.png',
-                                    width: 300.0,
-                                    height: 300.0,
-                                    fit: BoxFit.cover,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 16.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Text(
-                                            FFLocalizations.of(context).getText(
-                                              'f97m5tno' /* انجاز الاعمال باستخدام الهاتف */,
-                                            ),
-                                            textAlign: TextAlign.center,
-                                            style: FlutterFlowTheme.of(context)
-                                                .displayMedium
-                                                .override(
-                                                  fontFamily: 'Poppins',
-                                                  fontSize: 32.0,
-                                                  fontWeight: FontWeight.w600,
-                                                ),
-                                          ),
-                                        ),
-                                      ],
-                                    ),
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        16.0, 8.0, 16.0, 0.0),
-                                    child: Row(
-                                      mainAxisSize: MainAxisSize.max,
-                                      children: [
-                                        Expanded(
-                                          flex: 1,
-                                          child: Align(
-                                            alignment:
-                                                AlignmentDirectional(0.0, 0.0),
-                                            child: Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                '24183xx4' /* تواصل مع الحرفي وتتبع العمل 
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    16.0, 8.0, 16.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      flex: 1,
+                                      child: Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Text(
+                                          FFLocalizations.of(context).getText(
+                                            '24183xx4' /* تواصل مع الحرفي وتتبع العمل 
 و... */
-                                                ,
-                                              ),
-                                              textAlign: TextAlign.center,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .headlineMedium
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
-                                            ),
+                                            ,
                                           ),
+                                          textAlign: TextAlign.center,
+                                          style: FlutterFlowTheme.of(context)
+                                              .headlineMedium
+                                              .override(
+                                                fontFamily: 'Outfit',
+                                                fontWeight: FontWeight.w600,
+                                              ),
                                         ),
-                                      ],
+                                      ),
                                     ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
+                            ],
+                          ),
                         ),
-                      ),
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 10.0),
-                          child: smooth_page_indicator.SmoothPageIndicator(
-                            controller: _model.pageViewController ??=
-                                PageController(initialPage: 0),
-                            count: 3,
-                            axisDirection: Axis.horizontal,
-                            onDotClicked: (i) {
-                              _model.pageViewController!.animateToPage(
-                                i,
-                                duration: Duration(milliseconds: 500),
-                                curve: Curves.ease,
-                              );
-                            },
-                            effect: smooth_page_indicator.ExpandingDotsEffect(
-                              expansionFactor: 2.0,
-                              spacing: 8.0,
-                              radius: 16.0,
-                              dotWidth: 16.0,
-                              dotHeight: 4.0,
-                              dotColor: FlutterFlowTheme.of(context).lineColor,
-                              activeDotColor:
-                                  FlutterFlowTheme.of(context).primaryText,
-                              paintStyle: PaintingStyle.fill,
-                            ),
+                      ],
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 1.0),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 15.0),
+                        child: smooth_page_indicator.SmoothPageIndicator(
+                          controller: _model.pageViewController ??=
+                              PageController(initialPage: 0),
+                          count: 3,
+                          axisDirection: Axis.horizontal,
+                          onDotClicked: (i) {
+                            _model.pageViewController!.animateToPage(
+                              i,
+                              duration: Duration(milliseconds: 500),
+                              curve: Curves.ease,
+                            );
+                          },
+                          effect: smooth_page_indicator.ExpandingDotsEffect(
+                            expansionFactor: 2.0,
+                            spacing: 8.0,
+                            radius: 16.0,
+                            dotWidth: 16.0,
+                            dotHeight: 4.0,
+                            dotColor: FlutterFlowTheme.of(context).lineColor,
+                            activeDotColor:
+                                FlutterFlowTheme.of(context).primaryText,
+                            paintStyle: PaintingStyle.fill,
                           ),
                         ),
                       ),
-                    ],
-                  ),
+                    ),
+                  ],
                 ),
               ),
               Padding(
