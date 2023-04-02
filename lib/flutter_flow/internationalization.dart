@@ -148,38 +148,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // SignUp
-  {
-    'zpbspphy': {
-      'ar': '      صنايعي         ',
-      'en': '    SANAEE      ',
-    },
-    'wl7c1cgx': {
-      'ar': 'إنشاء حساب ',
-      'en': 'Sign up',
-    },
-    'j4jqemn7': {
-      'ar': '+970',
-      'en': '+970',
-    },
-    '1xqy69ln': {
-      'ar': 'أدخل رقم هاتفك المحمول.....',
-      'en': 'Entre your mobile number .....',
-    },
-    '9s0vvjlt': {
-      'ar': 'أوافق على شروط الاستخدام وسياسة الخصوصية الخاصة',
-      'en':
-          'I agree to the Terms of Use and Privacy Policy for the Sanaaei app',
-    },
-    'gfv4faar': {
-      'ar': 'إنشاء حساب',
-      'en': 'Create Account',
-    },
-    '80fh99fr': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // CreateProfile
   {
     '16kqlmhb': {
@@ -948,10 +916,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إنشاء حساب',
       'en': 'Register',
     },
-    'b8g156oc': {
-      'ar': ' SANAEE ',
-      'en': '',
-    },
     '5x86z4oh': {
       'ar': 'Home',
       'en': '',
@@ -995,6 +959,37 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'customer',
     },
     'e4f99234': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // PhoneSignUp
+  {
+    'j9emr6b2': {
+      'ar': 'تسجيل الدخول',
+      'en': 'Sign Up',
+    },
+    'kke6hb3o': {
+      'ar': 'الرجاء ادخال رقم الهاتف لاكمال مرحلة انشاء الحساب ',
+      'en': 'Please enter your phone number to complete the sign up stage ',
+    },
+    'kp9xikjy': {
+      'ar': '+970',
+      'en': '+970',
+    },
+    'va9y9lhi': {
+      'ar': 'أدخل رقم هاتفك ...',
+      'en': 'Enter your phone number...',
+    },
+    'iavulzck': {
+      'ar': 'أوافق على جميع التعليمات بناءً على البرنامج',
+      'en': 'I agree to all instructions based on the program',
+    },
+    'tgvhc3xt': {
+      'ar': 'الاستمرار',
+      'en': 'Continue',
+    },
+    'mz87zvdr': {
       'ar': 'Home',
       'en': '',
     },
