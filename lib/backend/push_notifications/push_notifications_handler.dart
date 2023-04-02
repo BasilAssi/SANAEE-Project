@@ -96,7 +96,6 @@ final pageBuilderMap = <String, Future<Widget> Function(Map<String, dynamic>)>{
   'CreateProfile': (data) async => CreateProfileWidget(),
   'CompanyProfile': (data) async => CompanyProfileWidget(),
   'AddWorkExp': (data) async => AddWorkExpWidget(),
-  'Onboarding': (data) async => OnboardingWidget(),
   'SEARCH_Jobs': (data) async => SEARCHJobsWidget(),
   'MAINSavedJobs': (data) async => NavBarPage(initialPage: 'MAINSavedJobs'),
   'MAIN_Candidates': (data) async => NavBarPage(initialPage: 'MAIN_Candidates'),

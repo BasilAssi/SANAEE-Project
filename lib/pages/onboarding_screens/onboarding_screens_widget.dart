@@ -389,7 +389,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                     );
                   },
                   text: FFLocalizations.of(context).getText(
-                    'izmkirho' /* Login */,
+                    'izmkirho' /* تسجيل الدخول */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
@@ -422,7 +422,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                     );
                   },
                   text: FFLocalizations.of(context).getText(
-                    'fjm217dc' /* Register */,
+                    'fjm217dc' /* إنشاء حساب */,
                   ),
                   options: FFButtonOptions(
                     width: 300.0,
