@@ -1,0 +1,1209 @@
+import 'package:flutter/material.dart';
+import 'package:flutter/foundation.dart';
+import 'package:shared_preferences/shared_preferences.dart';
+
+const _kLocaleStorageKey = '__locale_key__';
+
+class FFLocalizations {
+  FFLocalizations(this.locale);
+
+  final Locale locale;
+
+  static FFLocalizations of(BuildContext context) =>
+      Localizations.of<FFLocalizations>(context, FFLocalizations)!;
+
+  static List<String> languages() => ['ar', 'en'];
+
+  static late SharedPreferences _prefs;
+  static Future initialize() async =>
+      _prefs = await SharedPreferences.getInstance();
+  static Future storeLocale(String locale) =>
+      _prefs.setString(_kLocaleStorageKey, locale);
+  static Locale? getStoredLocale() {
+    final locale = _prefs.getString(_kLocaleStorageKey);
+    return locale != null && locale.isNotEmpty ? createLocale(locale) : null;
+  }
+
+  String get languageCode => locale.toString();
+  String? get languageShortCode =>
+      _languagesWithShortCode.contains(locale.toString())
+          ? '${locale.toString()}_short'
+          : null;
+  int get languageIndex => languages().contains(languageCode)
+      ? languages().indexOf(languageCode)
+      : 0;
+
+  String getText(String key) =>
+      (kTranslationsMap[key] ?? {})[locale.toString()] ?? '';
+
+  String getVariableText({
+    String? arText = '',
+    String? enText = '',
+  }) =>
+      [arText, enText][languageIndex] ?? '';
+
+  static const Set<String> _languagesWithShortCode = {
+    'ar',
+    'az',
+    'ca',
+    'cs',
+    'da',
+    'de',
+    'dv',
+    'en',
+    'es',
+    'et',
+    'fi',
+    'fr',
+    'gr',
+    'he',
+    'hi',
+    'hu',
+    'it',
+    'km',
+    'ku',
+    'mn',
+    'ms',
+    'no',
+    'pt',
+    'ro',
+    'ru',
+    'rw',
+    'sv',
+    'th',
+    'uk',
+    'vi',
+  };
+}
+
+class FFLocalizationsDelegate extends LocalizationsDelegate<FFLocalizations> {
+  const FFLocalizationsDelegate();
+
+  @override
+  bool isSupported(Locale locale) {
+    final language = locale.toString();
+    return FFLocalizations.languages().contains(
+      language.endsWith('_')
+          ? language.substring(0, language.length - 1)
+          : language,
+    );
+  }
+
+  @override
+  Future<FFLocalizations> load(Locale locale) =>
+      SynchronousFuture<FFLocalizations>(FFLocalizations(locale));
+
+  @override
+  bool shouldReload(FFLocalizationsDelegate old) => false;
+}
+
+Locale createLocale(String language) => language.contains('_')
+    ? Locale.fromSubtags(
+        languageCode: language.split('_').first,
+        scriptCode: language.split('_').last,
+      )
+    : Locale(language);
+
+final kTranslationsMap = <Map<String, Map<String, String>>>[
+  // Login
+  {
+    'gri19u31': {
+      'ar': 'Welcome Back,',
+      'en': '',
+    },
+    '7vwo3gsa': {
+      'ar': 'Email Address',
+      'en': '',
+    },
+    '6o89q7ja': {
+      'ar': 'Enter your email here...',
+      'en': '',
+    },
+    'ea9rckya': {
+      'ar': 'Password',
+      'en': '',
+    },
+    '8f46nx1d': {
+      'ar': 'Enter your password here...',
+      'en': '',
+    },
+    '7ukcu0z9': {
+      'ar': 'Forgot Password?',
+      'en': '',
+    },
+    '5vjc9znt': {
+      'ar': 'Login',
+      'en': '',
+    },
+    '5c2vlcdh': {
+      'ar': 'Continue as Guest',
+      'en': '',
+    },
+    'h0rm94lj': {
+      'ar': 'Create Account',
+      'en': '',
+    },
+    'hwccov5i': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // SignUp
+  {
+    'zpbspphy': {
+      'ar': '      صنايعي         ',
+      'en': '    SANAEE      ',
+    },
+    'wl7c1cgx': {
+      'ar': 'إنشاء حساب ',
+      'en': 'Sign up',
+    },
+    'sdom1mvd': {
+      'ar': '+970',
+      'en': '',
+    },
+    'j4jqemn7': {
+      'ar': '+970',
+      'en': '+970',
+    },
+    '1xqy69ln': {
+      'ar': 'أدخل رقم هاتفك المحمول.....',
+      'en': 'Entre your mobile number .....',
+    },
+    '9s0vvjlt': {
+      'ar': 'أوافق على شروط الاستخدام وسياسة الخصوصية الخاصة',
+      'en':
+          'I agree to the Terms of Use and Privacy Policy for the Sanaaei app',
+    },
+    'gfv4faar': {
+      'ar': 'إنشاء حساب',
+      'en': 'Create Account',
+    },
+    '80fh99fr': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // CreateProfile
+  {
+    '16kqlmhb': {
+      'ar': 'Create Profile',
+      'en': '',
+    },
+    '9cxxqp6a': {
+      'ar': 'Full Name',
+      'en': '',
+    },
+    'bzvy9n1f': {
+      'ar': 'Postition Title',
+      'en': '',
+    },
+    'kqq76t54': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    'vjwgllst': {
+      'ar': '< 6 Months',
+      'en': '',
+    },
+    '4afzu4uv': {
+      'ar': '6m - 1y',
+      'en': '',
+    },
+    'awm0qeje': {
+      'ar': '1y - 3y',
+      'en': '',
+    },
+    'vfn9v4of': {
+      'ar': '+3 years',
+      'en': '',
+    },
+    'jdztguln': {
+      'ar': '+5 years',
+      'en': '',
+    },
+    'du97ujp9': {
+      'ar': '+8 years',
+      'en': '',
+    },
+    '8j4bktnh': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'otxb705y': {
+      'ar': 'Company',
+      'en': '',
+    },
+    'tgyak4ap': {
+      'ar': 'Salary',
+      'en': '',
+    },
+    'qa9z2iig': {
+      'ar': '\$40,000',
+      'en': '',
+    },
+    'dok3j0cl': {
+      'ar': '\$150,000+',
+      'en': '',
+    },
+    'wk05zvzs': {
+      'ar': 'Continue as a(n)',
+      'en': '',
+    },
+    'k9lfniw4': {
+      'ar': 'Choose an option below to continue.',
+      'en': '',
+    },
+    'zhq28egp': {
+      'ar': 'As an Individual',
+      'en': '',
+    },
+    'bxzzpwnh': {
+      'ar': 'As a Company',
+      'en': '',
+    },
+    'uj0rkdlw': {
+      'ar': 'Skip for Now',
+      'en': '',
+    },
+    '4c68ji2a': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // CompanyProfile
+  {
+    'w8rqbwcg': {
+      'ar': 'Company Profile',
+      'en': '',
+    },
+    'gi3n8oe0': {
+      'ar': 'Company Name',
+      'en': '',
+    },
+    'x078dny3': {
+      'ar': 'Website',
+      'en': '',
+    },
+    'qnn9x3d9': {
+      'ar': 'A little bit about your company',
+      'en': '',
+    },
+    'ecssdba2': {
+      'ar': 'Company Size',
+      'en': '',
+    },
+    'pnlgitlt': {
+      'ar': 'Company Size',
+      'en': '',
+    },
+    '8dohjd7e': {
+      'ar': '1-10',
+      'en': '',
+    },
+    'xc9ecefm': {
+      'ar': '11-50',
+      'en': '',
+    },
+    'uvvscd2i': {
+      'ar': '51-100',
+      'en': '',
+    },
+    'ulxnq47c': {
+      'ar': '100+',
+      'en': '',
+    },
+    '9406m4l6': {
+      'ar': 'Location',
+      'en': '',
+    },
+    'k3pg613c': {
+      'ar': 'Skip for Now',
+      'en': '',
+    },
+    'f1wkumya': {
+      'ar': 'Continue',
+      'en': '',
+    },
+    'xowv4bby': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // AddWorkExp
+  {
+    'v61spjfq': {
+      'ar': 'Work History',
+      'en': '',
+    },
+    'zebn83g1': {
+      'ar': 'Job Title',
+      'en': '',
+    },
+    'dnm7v2xn': {
+      'ar': 'Add Work Experience',
+      'en': '',
+    },
+    'ocvpznwh': {
+      'ar': 'Continue',
+      'en': '',
+    },
+    '3bg84h8t': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // Onboarding
+  {
+    'ndv9wpa4': {
+      'ar': 'Search for Jobs',
+      'en': '',
+    },
+    'ggn2nuvv': {
+      'ar':
+          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
+      'en': '',
+    },
+    'y9rnoy6y': {
+      'ar': 'Post Jobs Easily',
+      'en': '',
+    },
+    '21ulbuiy': {
+      'ar':
+          'Post jobs for your company easily and find the best talent looking for new opportunities immediately.',
+      'en': '',
+    },
+    'qpus6uc6': {
+      'ar': 'Find the Right Fit',
+      'en': '',
+    },
+    'lxhqsm8y': {
+      'ar':
+          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
+      'en': '',
+    },
+    'oetl4l1d': {
+      'ar': 'Continue',
+      'en': '',
+    },
+    'texn1ev1': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // MAINHome
+  {
+    'r4mqbyug': {
+      'ar': 'Welcome',
+      'en': '',
+    },
+    'hxlzbffs': {
+      'ar': 'Posted On:',
+      'en': '',
+    },
+    'taeeoz0g': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // SEARCH_Jobs
+  {
+    '3egeehjp': {
+      'ar': 'Search jobs...',
+      'en': '',
+    },
+    'qw8giei3': {
+      'ar': 'Posted On:',
+      'en': '',
+    },
+    'h5bwicn9': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // MAINSavedJobs
+  {
+    'a211198f': {
+      'ar': 'My Jobs',
+      'en': '',
+    },
+    'ilubw22a': {
+      'ar': 'Applied',
+      'en': '',
+    },
+    'dsq91la7': {
+      'ar': 'Posted',
+      'en': '',
+    },
+    'h25lrbj2': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // MAIN_Candidates
+  {
+    '22f2lnxe': {
+      'ar': 'Candidates',
+      'en': '',
+    },
+    'fo50w9kj': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // SEARCH_Candidates
+  {
+    'ncs8gl9m': {
+      'ar': 'Search candidates...',
+      'en': '',
+    },
+    '22f61etz': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // MAIN_MyProfile
+  {
+    'd4ei0voa': {
+      'ar': 'Add Job',
+      'en': '',
+    },
+    'b9l8kjh7': {
+      'ar': 'Switch to Dark Mode',
+      'en': '',
+    },
+    'ehmwoa5b': {
+      'ar': 'Switch to Light Mode',
+      'en': '',
+    },
+    'qlu9nvs1': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    'jjmx2lgp': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'wpg67ray': {
+      'ar': 'Company',
+      'en': '',
+    },
+    '7dx2fv4u': {
+      'ar': 'Salary',
+      'en': '',
+    },
+    'stqo2ism': {
+      'ar': 'Company Profile',
+      'en': '',
+    },
+    'prqswg7t': {
+      'ar': 'Work Experience',
+      'en': '',
+    },
+  },
+  // MAIN_Chat
+  {
+    'zm1cme8s': {
+      'ar': 'Messages',
+      'en': '',
+    },
+    'fr498yys': {
+      'ar': 'Chats',
+      'en': '',
+    },
+  },
+  // DETAILS_Chat
+  {
+    'x3pb4o9n': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_DetailsActual
+  {
+    'bg3qn8cc': {
+      'ar': 'Description',
+      'en': '',
+    },
+    'qcgryrl0': {
+      'ar': 'Requirements',
+      'en': '',
+    },
+    'zkgs1nv6': {
+      'ar': 'Preferred Skills & Expertise',
+      'en': '',
+    },
+    'uenl02ze': {
+      'ar': 'APPLY NOW',
+      'en': '',
+    },
+    'lfzwt8x5': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_submitApplication
+  {
+    '8at6kuin': {
+      'ar': 'Submit your prosoal below',
+      'en': '',
+    },
+    'v2rixpmp': {
+      'ar': 'Start typing here....',
+      'en': '',
+    },
+    'm5j8txd7': {
+      'ar': 'Add Attachments',
+      'en': '',
+    },
+    '6lye9riv': {
+      'ar': 'Submit Application',
+      'en': '',
+    },
+    't5pxlbic': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_Applied
+  {
+    'yc9zvkkj': {
+      'ar': 'Description',
+      'en': '',
+    },
+    'wnal7u1s': {
+      'ar': 'Requirements',
+      'en': '',
+    },
+    '76cy1d8m': {
+      'ar': 'Preferred Skills & Expertise',
+      'en': '',
+    },
+    'dzipi1m7': {
+      'ar': 'Your proposal',
+      'en': '',
+    },
+    'yibdxnjq': {
+      'ar': 'Submitted',
+      'en': '',
+    },
+    'kx1677tg': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_MyJob_Applicants
+  {
+    'c9stbgea': {
+      'ar': 'Description',
+      'en': '',
+    },
+    'wma7kda9': {
+      'ar': 'Your Applicants',
+      'en': '',
+    },
+    'hg9zia7x': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // forgotPassword
+  {
+    'kjwltbio': {
+      'ar': 'Forgot Password',
+      'en': '',
+    },
+    'ihpphlie': {
+      'ar': 'Your Email',
+      'en': '',
+    },
+    '7uq2lba4': {
+      'ar': 'Please enter a valid email...',
+      'en': '',
+    },
+    'ifxx3yld': {
+      'ar':
+          'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
+      'en': '',
+    },
+    '6tzetzky': {
+      'ar': 'Send Reset Password',
+      'en': '',
+    },
+    'xz7h2g8g': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // editProfile
+  {
+    '4pai4xr4': {
+      'ar': 'Edit Profile',
+      'en': '',
+    },
+    'yanyvndh': {
+      'ar': 'Full Name',
+      'en': '',
+    },
+    '1ejz2wdg': {
+      'ar': 'Postition Title',
+      'en': '',
+    },
+    '4zfowfio': {
+      'ar': 'Email',
+      'en': '',
+    },
+    'jfk984fo': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    'le45mzl5': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'r9v6scp8': {
+      'ar': '< 6 Months',
+      'en': '',
+    },
+    'gnflp2zd': {
+      'ar': '6m - 1y',
+      'en': '',
+    },
+    'baiz0hn0': {
+      'ar': '1y - 3y',
+      'en': '',
+    },
+    '7o83b55n': {
+      'ar': '+3 years',
+      'en': '',
+    },
+    'w8bcz6je': {
+      'ar': '+5 years',
+      'en': '',
+    },
+    'ijdbw94t': {
+      'ar': '+8 years',
+      'en': '',
+    },
+    '5436q785': {
+      'ar': 'Experience LEvel',
+      'en': '',
+    },
+    '5zsud1z2': {
+      'ar': 'Company',
+      'en': '',
+    },
+    '0ppfcbrs': {
+      'ar': 'Salary',
+      'en': '',
+    },
+    'i83330fp': {
+      'ar': '\$40,000',
+      'en': '',
+    },
+    '1o8i3mmm': {
+      'ar': '\$150,000+',
+      'en': '',
+    },
+    '1l6u81jm': {
+      'ar': 'Save Changes',
+      'en': '',
+    },
+    '9hr4xb2e': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createJob
+  {
+    'ukzz8bd8': {
+      'ar': 'Create Job Post',
+      'en': '',
+    },
+    '8lw3hi06': {
+      'ar': 'Position Title',
+      'en': '',
+    },
+    'pap7cb69': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    'gh9w3gm6': {
+      'ar': 'Requirements',
+      'en': '',
+    },
+    '5u0gqynx': {
+      'ar': 'Have to have x many years of experience, education, etc...',
+      'en': '',
+    },
+    'a5gr4a26': {
+      'ar': 'Preferred Skills & Experiences',
+      'en': '',
+    },
+    'c1xeu5hd': {
+      'ar': 'Knowledge of software or processes...',
+      'en': '',
+    },
+    'f8hlklae': {
+      'ar': '< 6 Months',
+      'en': '',
+    },
+    'ilhz9ik4': {
+      'ar': '6m - 1y',
+      'en': '',
+    },
+    '4ive5b1q': {
+      'ar': '1y - 3y',
+      'en': '',
+    },
+    'i66yxmwy': {
+      'ar': '+3 years',
+      'en': '',
+    },
+    'bohmm3kp': {
+      'ar': '+5 years',
+      'en': '',
+    },
+    'dxq6o4rl': {
+      'ar': '+8 years',
+      'en': '',
+    },
+    'dqojfllq': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'pdxr2c8v': {
+      'ar': 'Salary',
+      'en': '',
+    },
+    'n60zdd0q': {
+      'ar': '\$40,000',
+      'en': '',
+    },
+    '4ficbfr6': {
+      'ar': '\$150,000+',
+      'en': '',
+    },
+    '1t54fz83': {
+      'ar': 'Location',
+      'en': '',
+    },
+    'px1bkt5b': {
+      'ar': 'Create Post',
+      'en': '',
+    },
+    'qlzqz4zr': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // candidateDetails
+  {
+    'eglsg18o': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    'zu8yah2m': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'dthb7o9n': {
+      'ar': 'Company',
+      'en': '',
+    },
+    'rnzvi6y6': {
+      'ar': 'Salary',
+      'en': '',
+    },
+    'p0z90s05': {
+      'ar': 'Message Candidate',
+      'en': '',
+    },
+  },
+  // JobPost_Details
+  {
+    'f3rwmlwq': {
+      'ar': 'Job Post',
+      'en': '',
+    },
+    '2kyy06uy': {
+      'ar': 'SpaceX',
+      'en': '',
+    },
+    'd0qvqnft': {
+      'ar': '\$60k-\$70k',
+      'en': '',
+    },
+    '2hu13qn7': {
+      'ar': 'Description',
+      'en': '',
+    },
+    '0q083037': {
+      'ar':
+          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+      'en': '',
+    },
+    '8g6i2608': {
+      'ar': 'Requirements',
+      'en': '',
+    },
+    'otamshvi': {
+      'ar':
+          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+      'en': '',
+    },
+    '1nkaoo51': {
+      'ar': 'Preferred Skills & Expertise',
+      'en': '',
+    },
+    'vkk1elhl': {
+      'ar':
+          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
+      'en': '',
+    },
+    'kv1tom07': {
+      'ar': 'Submit Application',
+      'en': '',
+    },
+    'qee3cfca': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // companyDetails
+  {
+    'ynar0mch': {
+      'ar': 'Description',
+      'en': '',
+    },
+    'uwmiqvi3': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // HomePage_OLD
+  {
+    'rgafq5jb': {
+      'ar': 'Welcome',
+      'en': '',
+    },
+    '5z5qixic': {
+      'ar': 'Featured Jobs',
+      'en': '',
+    },
+    '7ajh8oxq': {
+      'ar': 'Job Title',
+      'en': '',
+    },
+    'tbusjhyo': {
+      'ar': '[Company Name]',
+      'en': '',
+    },
+    'gekzp668': {
+      'ar': '\$50k-\$60k',
+      'en': '',
+    },
+    'j33y9uds': {
+      'ar': 'Job Title',
+      'en': '',
+    },
+    'rr8eqgds': {
+      'ar': '[Company Name]',
+      'en': '',
+    },
+    'n6iqlh2a': {
+      'ar': '\$50k-\$60k',
+      'en': '',
+    },
+    's0auqm42': {
+      'ar': 'Job Title',
+      'en': '',
+    },
+    '86205zki': {
+      'ar': '[Company Name]',
+      'en': '',
+    },
+    '4oadu0pl': {
+      'ar': '\$50k-\$60k',
+      'en': '',
+    },
+    'rbiei8sg': {
+      'ar': 'Search Jobs',
+      'en': '',
+    },
+    '738fppcz': {
+      'ar': 'Search jobs here...',
+      'en': '',
+    },
+    's9apykbc': {
+      'ar': 'Posted On:',
+      'en': '',
+    },
+    'rcx42jql': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // SplashScreen
+  {
+    '1y336fcz': {
+      'ar':
+          '    Welcome                                                                                 \n                    to  SANAEE ',
+      'en': '',
+    },
+    'twizprbt': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // Onboarding_Screens
+  {
+    '52ramgz3': {
+      'ar': 'انجاز الاعمال باستخدام الهاتف',
+      'en': 'Doing the work using Mobile',
+    },
+    '8pwxetwc': {
+      'ar': 'تواصل مع الحرفي وتتبع العمل  \n            وانجز المزيد',
+      'en': 'Connect with the craftsman, track the work and get more done',
+    },
+    'ls2yrw5x': {
+      'ar': 'انشر الأعمال التي تحتاجها \nواحصل  على عروض عمل.',
+      'en': 'Post projects and \nget proposals.',
+    },
+    'zefttcqs': {
+      'ar': '    ابحث عن الافضل\nوقم باختياره لأداء العمل.',
+      'en': 'Look for the best and choose it to perform the work.',
+    },
+    'f97m5tno': {
+      'ar': 'انجاز الاعمال باستخدام الهاتف',
+      'en': 'Doing the work using Mobile',
+    },
+    '24183xx4': {
+      'ar': 'تواصل مع الحرفي وتتبع العمل \nوانجز المزيد',
+      'en': 'Connect with the craftsman, track the work and get more done',
+    },
+    'izmkirho': {
+      'ar': 'Login',
+      'en': '',
+    },
+    'fjm217dc': {
+      'ar': 'Register',
+      'en': '',
+    },
+    'b8g156oc': {
+      'ar': ' SANAEE ',
+      'en': '',
+    },
+    '5x86z4oh': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // verifyMobile
+  {
+    'khq0cada': {
+      'ar': 'صفحة التاكيد',
+      'en': 'Verify',
+    },
+    '7e3eh0cm': {
+      'ar': 'رقم غير صحيح ؟',
+      'en': 'Wrong number?',
+    },
+    'dmnfvu22': {
+      'ar': 'الاستمرار',
+      'en': 'Continue',
+    },
+    'djir74pf': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // select_your_role
+  {
+    'pmafikm6': {
+      'ar': 'صنايعي',
+      'en': '    SANAEE      ',
+    },
+    '892plwty': {
+      'ar': 'حدد دورك داخل البرنامج',
+      'en': 'select your role',
+    },
+    'mr7moivz': {
+      'ar': 'الحرفي',
+      'en': 'craftsman',
+    },
+    'p4kqkvet': {
+      'ar': 'العميل',
+      'en': 'customer',
+    },
+    'e4f99234': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // WorkExpBottomSheet
+  {
+    'dnp3ulb4': {
+      'ar': 'Work Experience',
+      'en': '',
+    },
+    'e6n92fzq': {
+      'ar': 'Add Credentials below.',
+      'en': '',
+    },
+    'xz14f82k': {
+      'ar': 'Position Title',
+      'en': '',
+    },
+    '7qbyrkuy': {
+      'ar': 'Company',
+      'en': '',
+    },
+    '70fjjqtv': {
+      'ar': 'Start Date',
+      'en': '',
+    },
+    't16bvu82': {
+      'ar': 'End Date',
+      'en': '',
+    },
+    'lclkf38l': {
+      'ar': 'What did you do here?',
+      'en': '',
+    },
+    'ekvc2gv5': {
+      'ar': 'Save Work Experience',
+      'en': '',
+    },
+  },
+  // WorkExp_Edit
+  {
+    '2pw221ef': {
+      'ar': 'Work Experience',
+      'en': '',
+    },
+    'zqanj86y': {
+      'ar': 'Add Credentials below.',
+      'en': '',
+    },
+    'q2g2iswb': {
+      'ar': 'Position Title',
+      'en': '',
+    },
+    '8ts48khk': {
+      'ar': 'Company',
+      'en': '',
+    },
+    'kpji1lye': {
+      'ar': 'Start Date',
+      'en': '',
+    },
+    'zqo3nhd7': {
+      'ar': 'End Date',
+      'en': '',
+    },
+    '257ox33z': {
+      'ar': 'What did you do here?',
+      'en': '',
+    },
+    'f879az5k': {
+      'ar': 'Save Work Experience',
+      'en': '',
+    },
+  },
+  // Miscellaneous
+  {
+    '054sr7z6': {
+      'ar': '',
+      'en': '',
+    },
+    '610t8e2s': {
+      'ar': '',
+      'en': '',
+    },
+    'ytr88yhr': {
+      'ar': '',
+      'en': '',
+    },
+    'ta5kly1y': {
+      'ar': '',
+      'en': '',
+    },
+    'o5nn9l9p': {
+      'ar': '',
+      'en': '',
+    },
+    '0l0mx8py': {
+      'ar': '',
+      'en': '',
+    },
+    'p36fvdli': {
+      'ar': '',
+      'en': '',
+    },
+    '263n7io1': {
+      'ar': '',
+      'en': '',
+    },
+    'c65jg8b1': {
+      'ar': '',
+      'en': '',
+    },
+    '5czp9gvs': {
+      'ar': '',
+      'en': '',
+    },
+    'ntludjxr': {
+      'ar': '',
+      'en': '',
+    },
+    'yoqnvphg': {
+      'ar': '',
+      'en': '',
+    },
+    'afdkbryv': {
+      'ar': '',
+      'en': '',
+    },
+    '2isijnya': {
+      'ar': '',
+      'en': '',
+    },
+    '6ou6ejjc': {
+      'ar': '',
+      'en': '',
+    },
+    'pxusnuia': {
+      'ar': '',
+      'en': '',
+    },
+    'wkb4ltzg': {
+      'ar': '',
+      'en': '',
+    },
+    'xkozptie': {
+      'ar': '',
+      'en': '',
+    },
+    'l5t9rqty': {
+      'ar': '',
+      'en': '',
+    },
+    'lfm4h3lz': {
+      'ar': '',
+      'en': '',
+    },
+    'ze923l0g': {
+      'ar': '',
+      'en': '',
+    },
+    'uka39ds6': {
+      'ar': '',
+      'en': '',
+    },
+    '0m4wd7nf': {
+      'ar': '',
+      'en': '',
+    },
+  },
+].reduce((a, b) => a..addAll(b));

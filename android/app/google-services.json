@@ -1,0 +1,54 @@
+{
+  "project_info": {
+    "project_number": "515642872541",
+    "project_id": "sanaee-project",
+    "storage_bucket": "sanaee-project.appspot.com"
+  },
+  "client": [
+    {
+      "client_info": {
+        "mobilesdk_app_id": "1:515642872541:android:26994e4e1bdf6e924ac134",
+        "android_client_info": {
+          "package_name": "com.sanaee.birzeit"
+        }
+      },
+      "oauth_client": [
+        {
+          "client_id": "515642872541-m0qcm99misvscllhnuuquqbct7bv38j5.apps.googleusercontent.com",
+          "client_type": 1,
+          "android_info": {
+            "package_name": "com.sanaee.birzeit",
+            "certificate_hash": "9bbb3186b2189ef16d8f272bdab59362c395cbb4"
+          }
+        },
+        {
+          "client_id": "515642872541-s9j87vqplloj29s793mn9npqt4b9rpqu.apps.googleusercontent.com",
+          "client_type": 3
+        }
+      ],
+      "api_key": [
+        {
+          "current_key": "AIzaSyBc6bXn-aScQpDTg9vYF2jjFZGx2qOgQPI"
+        }
+      ],
+      "services": {
+        "appinvite_service": {
+          "other_platform_oauth_client": [
+            {
+              "client_id": "515642872541-s9j87vqplloj29s793mn9npqt4b9rpqu.apps.googleusercontent.com",
+              "client_type": 3
+            },
+            {
+              "client_id": "515642872541-odl99rpcame1s4r3vre06pmfrglfjf5b.apps.googleusercontent.com",
+              "client_type": 2,
+              "ios_info": {
+                "bundle_id": "com.sanaee.birzeit"
+              }
+            }
+          ]
+        }
+      }
+    }
+  ],
+  "configuration_version": "1"
+}
