@@ -7,7 +7,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import '/pages/onboarding/onboarding_widget.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -675,12 +674,6 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                               await CompaniesRecord.collection
                                   .doc()
                                   .set(companiesCreateData);
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) => OnboardingWidget(),
-                                ),
-                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'f1wkumya' /* Continue */,

@@ -6,7 +6,6 @@ export '/pages/create_profile/create_profile_widget.dart'
 export '/pages/company_profile/company_profile_widget.dart'
     show CompanyProfileWidget;
 export '/pages/add_work_exp/add_work_exp_widget.dart' show AddWorkExpWidget;
-export '/pages/onboarding/onboarding_widget.dart' show OnboardingWidget;
 export '/pages/m_a_i_n_home/m_a_i_n_home_widget.dart' show MAINHomeWidget;
 export '/pages/s_e_a_r_c_h_jobs/s_e_a_r_c_h_jobs_widget.dart'
     show SEARCHJobsWidget;

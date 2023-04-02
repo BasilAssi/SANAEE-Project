@@ -158,10 +158,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'إنشاء حساب ',
       'en': 'Sign up',
     },
-    'sdom1mvd': {
-      'ar': '+970',
-      'en': '',
-    },
     'j4jqemn7': {
       'ar': '+970',
       'en': '+970',
@@ -349,44 +345,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '3bg84h8t': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // Onboarding
-  {
-    'ndv9wpa4': {
-      'ar': 'Search for Jobs',
-      'en': '',
-    },
-    'ggn2nuvv': {
-      'ar':
-          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
-      'en': '',
-    },
-    'y9rnoy6y': {
-      'ar': 'Post Jobs Easily',
-      'en': '',
-    },
-    '21ulbuiy': {
-      'ar':
-          'Post jobs for your company easily and find the best talent looking for new opportunities immediately.',
-      'en': '',
-    },
-    'qpus6uc6': {
-      'ar': 'Find the Right Fit',
-      'en': '',
-    },
-    'lxhqsm8y': {
-      'ar':
-          'Search and find jobs in your industry for companies that are ready to hire the top talent!',
-      'en': '',
-    },
-    'oetl4l1d': {
-      'ar': 'Continue',
-      'en': '',
-    },
-    'texn1ev1': {
       'ar': 'Home',
       'en': '',
     },
@@ -947,9 +905,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // SplashScreen
   {
     '1y336fcz': {
-      'ar':
+      'ar': '      مرحبا بك في صنايعي             ',
+      'en':
           '    Welcome                                                                                 \n                    to  SANAEE ',
-      'en': '',
     },
     'twizprbt': {
       'ar': 'Home',
@@ -983,12 +941,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Connect with the craftsman, track the work and get more done',
     },
     'izmkirho': {
-      'ar': 'Login',
-      'en': '',
+      'ar': 'تسجيل الدخول',
+      'en': 'Login',
     },
     'fjm217dc': {
-      'ar': 'Register',
-      'en': '',
+      'ar': 'إنشاء حساب',
+      'en': 'Register',
     },
     'b8g156oc': {
       'ar': ' SANAEE ',
