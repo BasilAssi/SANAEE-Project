@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/verify_mobile/verify_mobile_widget.dart';
-import '/flutter_flow/custom_functions.dart' as functions;
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -417,7 +416,7 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
                             FFButtonWidget(
                               onPressed: () async {
                                 final phoneNumberVal =
-                                    functions.phoneNumber(widget.phoneNumber);
+                                    _model.textController.text;
                                 if (phoneNumberVal == null ||
                                     phoneNumberVal.isEmpty ||
                                     !phoneNumberVal.startsWith('+')) {
