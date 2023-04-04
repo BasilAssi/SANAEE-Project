@@ -2,7 +2,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/pages/login/login_widget.dart';
-import '/pages/phone_sign_up/phone_sign_up_widget.dart';
+import '/sign_up/sign_up_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'
     as smooth_page_indicator;
 import 'package:flutter/material.dart';
@@ -364,7 +364,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                     await Navigator.push(
                       context,
                       MaterialPageRoute(
-                        builder: (context) => PhoneSignUpWidget(),
+                        builder: (context) => SignUpWidget(),
                       ),
                     );
                   },
