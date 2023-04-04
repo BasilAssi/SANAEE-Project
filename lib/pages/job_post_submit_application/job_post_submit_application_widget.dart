@@ -1,13 +1,10 @@
-import '/auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
-import '/backend/push_notifications/push_notifications_util.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
-import '/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -747,45 +744,8 @@ class _JobPostSubmitApplicationWidgetState
                               }
                               final buttonUsersRecord = snapshot.data!;
                               return FFButtonWidget(
-                                onPressed: () async {
-                                  final appliedJobsCreateData =
-                                      createAppliedJobsRecordData(
-                                    jobApplied:
-                                        jobPostSubmitApplicationJobPostsRecord
-                                            .reference,
-                                    userApplied: currentUserReference,
-                                    appliedTime: getCurrentTimestamp,
-                                    coverLetter: _model.textController.text,
-                                  );
-                                  await AppliedJobsRecord.collection
-                                      .doc()
-                                      .set(appliedJobsCreateData);
-                                  triggerPushNotification(
-                                    notificationTitle:
-                                        'You have received a Proposal!',
-                                    notificationText:
-                                        'Someone has submitted an application to your job!',
-                                    notificationImageUrl: '0',
-                                    notificationSound: 'default',
-                                    userRefs: [
-                                      jobPostSubmitApplicationJobPostsRecord
-                                          .postedBy!
-                                    ],
-                                    initialPageName: 'JobPost_DetailsActual',
-                                    parameterData: {
-                                      'jobPostDetails':
-                                          jobPostSubmitApplicationJobPostsRecord
-                                              .reference,
-                                      'likedJob': buttonUsersRecord.reference,
-                                    },
-                                  );
-                                  await Navigator.push(
-                                    context,
-                                    MaterialPageRoute(
-                                      builder: (context) => NavBarPage(
-                                          initialPage: 'MAINSavedJobs'),
-                                    ),
-                                  );
+                                onPressed: () {
+                                  print('Button pressed ...');
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   '6lye9riv' /* Submit Application */,

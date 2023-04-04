@@ -994,6 +994,61 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // SignUp
+  {
+    'fwlra2le': {
+      'ar': 'Get Started',
+      'en': '',
+    },
+    't6qu7hfm': {
+      'ar': 'Use the form below to get started.',
+      'en': '',
+    },
+    'wlvoa45b': {
+      'ar': 'Email Address',
+      'en': '',
+    },
+    'sejyxjfw': {
+      'ar': 'Enter your email here...',
+      'en': '',
+    },
+    'm8u2iduz': {
+      'ar': 'Password',
+      'en': '',
+    },
+    '67tj83un': {
+      'ar': 'Enter your email here...',
+      'en': '',
+    },
+    'vxqt97il': {
+      'ar': 'Confirm Password',
+      'en': '',
+    },
+    'bkskmqmn': {
+      'ar': 'Enter your email here...',
+      'en': '',
+    },
+    'rg9hluwv': {
+      'ar': 'Create Account',
+      'en': '',
+    },
+    '35qs5mob': {
+      'ar': 'Use a social platform to continue',
+      'en': '',
+    },
+    'nt2jycuy': {
+      'ar': 'Already have an account?',
+      'en': '',
+    },
+    '6d5hctds': {
+      'ar': 'Log In',
+      'en': '',
+    },
+    'yjcpwg33': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // WorkExpBottomSheet
   {
     'dnp3ulb4': {

@@ -1,5 +1,4 @@
 import '/auth/auth_util.dart';
-import '/backend/push_notifications/push_notifications_handler.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -286,9 +285,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      PushNotificationsHandler(
-                                    child: NavBarPage(initialPage: 'MAINHome'),
-                                  ),
+                                      NavBarPage(initialPage: 'MAINHome'),
                                 ),
                                 (r) => false,
                               );
