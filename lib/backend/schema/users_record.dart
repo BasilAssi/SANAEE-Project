@@ -45,6 +45,10 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   bool? get isGuest;
 
+  bool? get isCustomer;
+
+  bool? get isCraftsman;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -63,7 +67,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..likedPosts = false
     ..profileType = ''
     ..salary = ''
-    ..isGuest = false;
+    ..isGuest = false
+    ..isCustomer = false
+    ..isCraftsman = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -94,6 +100,8 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
           ..profileType = snapshot.data['profileType']
           ..salary = snapshot.data['salary']
           ..isGuest = snapshot.data['isGuest']
+          ..isCustomer = snapshot.data['isCustomer']
+          ..isCraftsman = snapshot.data['isCraftsman']
           ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
       );
 
@@ -138,6 +146,8 @@ Map<String, dynamic> createUsersRecordData({
   String? profileType,
   String? salary,
   bool? isGuest,
+  bool? isCustomer,
+  bool? isCraftsman,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -157,7 +167,9 @@ Map<String, dynamic> createUsersRecordData({
         ..likedPosts = likedPosts
         ..profileType = profileType
         ..salary = salary
-        ..isGuest = isGuest,
+        ..isGuest = isGuest
+        ..isCustomer = isCustomer
+        ..isCraftsman = isCraftsman,
     ),
   );
 
