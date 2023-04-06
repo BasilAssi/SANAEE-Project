@@ -124,6 +124,20 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.isCustomer;
+    if (value != null) {
+      result
+        ..add('isCustomer')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.isCraftsman;
+    if (value != null) {
+      result
+        ..add('isCraftsman')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -206,6 +220,14 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.isGuest = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
+        case 'isCustomer':
+          result.isCustomer = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'isCraftsman':
+          result.isCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -251,6 +273,10 @@ class _$UsersRecord extends UsersRecord {
   @override
   final bool? isGuest;
   @override
+  final bool? isCustomer;
+  @override
+  final bool? isCraftsman;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -272,6 +298,8 @@ class _$UsersRecord extends UsersRecord {
       this.profileType,
       this.salary,
       this.isGuest,
+      this.isCustomer,
+      this.isCraftsman,
       this.ffRef})
       : super._();
 
@@ -301,6 +329,8 @@ class _$UsersRecord extends UsersRecord {
         profileType == other.profileType &&
         salary == other.salary &&
         isGuest == other.isGuest &&
+        isCustomer == other.isCustomer &&
+        isCraftsman == other.isCraftsman &&
         ffRef == other.ffRef;
   }
 
@@ -322,6 +352,8 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, profileType.hashCode);
     _$hash = $jc(_$hash, salary.hashCode);
     _$hash = $jc(_$hash, isGuest.hashCode);
+    _$hash = $jc(_$hash, isCustomer.hashCode);
+    _$hash = $jc(_$hash, isCraftsman.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -345,6 +377,8 @@ class _$UsersRecord extends UsersRecord {
           ..add('profileType', profileType)
           ..add('salary', salary)
           ..add('isGuest', isGuest)
+          ..add('isCustomer', isCustomer)
+          ..add('isCraftsman', isCraftsman)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -416,6 +450,14 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   bool? get isGuest => _$this._isGuest;
   set isGuest(bool? isGuest) => _$this._isGuest = isGuest;
 
+  bool? _isCustomer;
+  bool? get isCustomer => _$this._isCustomer;
+  set isCustomer(bool? isCustomer) => _$this._isCustomer = isCustomer;
+
+  bool? _isCraftsman;
+  bool? get isCraftsman => _$this._isCraftsman;
+  set isCraftsman(bool? isCraftsman) => _$this._isCraftsman = isCraftsman;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -442,6 +484,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _profileType = $v.profileType;
       _salary = $v.salary;
       _isGuest = $v.isGuest;
+      _isCustomer = $v.isCustomer;
+      _isCraftsman = $v.isCraftsman;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -480,6 +524,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             profileType: profileType,
             salary: salary,
             isGuest: isGuest,
+            isCustomer: isCustomer,
+            isCraftsman: isCraftsman,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/main.dart';
+import '/pages/select_your_role/select_your_role_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -87,7 +88,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     ),
                     Text(
                       FFLocalizations.of(context).getText(
-                        'fwlra2le' /* Get Started */,
+                        'rwqq1oce' /* Get Started */,
                       ),
                       style: FlutterFlowTheme.of(context).displaySmall,
                     ),
@@ -96,7 +97,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 4.0, 0.0, 0.0),
                       child: Text(
                         FFLocalizations.of(context).getText(
-                          't6qu7hfm' /* Use the form below to get star... */,
+                          'a2k11ccq' /* Use the form below to get star... */,
                         ),
                         style: FlutterFlowTheme.of(context).bodySmall,
                       ),
@@ -118,12 +119,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'wlvoa45b' /* Email Address */,
+                                    '85nurq4z' /* Email Address */,
                                   ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'sejyxjfw' /* Enter your email here... */,
+                                    'anulj3b0' /* Enter your email here... */,
                                   ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
@@ -188,12 +189,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'm8u2iduz' /* Password */,
+                                  'bx5gqjwl' /* Password */,
                                 ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodySmall,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '67tj83un' /* Enter your email here... */,
+                                  'eu199w5n' /* Enter your email here... */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).bodySmall,
@@ -265,11 +266,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           obscureText: !_model.passwordConfirmVisibility,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
-                              'vxqt97il' /* Confirm Password */,
+                              'sezquagb' /* Confirm Password */,
                             ),
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintText: FFLocalizations.of(context).getText(
-                              'bkskmqmn' /* Enter your email here... */,
+                              'hib5iskd' /* Enter your email here... */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -357,17 +358,15 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 return;
                               }
 
-                              await Navigator.pushAndRemoveUntil(
+                              await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
+                                  builder: (context) => SelectYourRoleWidget(),
                                 ),
-                                (r) => false,
                               );
                             },
                             text: FFLocalizations.of(context).getText(
-                              'rg9hluwv' /* Create Account */,
+                              'hyweexye' /* Create Account */,
                             ),
                             options: FFButtonOptions(
                               width: 190.0,
@@ -402,7 +401,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         children: [
                           AutoSizeText(
                             FFLocalizations.of(context).getText(
-                              '35qs5mob' /* Use a social platform to conti... */,
+                              'yl8038ku' /* Use a social platform to conti... */,
                             ),
                             textAlign: TextAlign.center,
                             style: FlutterFlowTheme.of(context).bodySmall,
@@ -511,7 +510,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         children: [
                           Text(
                             FFLocalizations.of(context).getText(
-                              'nt2jycuy' /* Already have an account? */,
+                              'vvjlhj4m' /* Already have an account? */,
                             ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
@@ -520,7 +519,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               print('Button pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
-                              '6d5hctds' /* Log In */,
+                              'ii7xq6ca' /* Log In */,
                             ),
                             options: FFButtonOptions(
                               width: 90.0,

@@ -39,6 +39,10 @@ abstract class JobPostsRecord
 
   bool? get myJob;
 
+  bool? get isCustomer;
+
+  bool? get isCraftsman;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -53,7 +57,9 @@ abstract class JobPostsRecord
     ..jobPreferredSkills = ''
     ..companyLogo = ''
     ..photoHero = ''
-    ..myJob = false;
+    ..myJob = false
+    ..isCustomer = false
+    ..isCraftsman = false;
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('jobPosts');
@@ -86,6 +92,8 @@ abstract class JobPostsRecord
           ..companyLogo = snapshot.data['companyLogo']
           ..photoHero = snapshot.data['photoHero']
           ..myJob = snapshot.data['myJob']
+          ..isCustomer = snapshot.data['isCustomer']
+          ..isCraftsman = snapshot.data['isCraftsman']
           ..ffRef = JobPostsRecord.collection.doc(snapshot.objectID),
       );
 
@@ -128,6 +136,8 @@ Map<String, dynamic> createJobPostsRecordData({
   String? companyLogo,
   String? photoHero,
   bool? myJob,
+  bool? isCustomer,
+  bool? isCraftsman,
 }) {
   final firestoreData = serializers.toFirestore(
     JobPostsRecord.serializer,
@@ -145,7 +155,9 @@ Map<String, dynamic> createJobPostsRecordData({
         ..jobPreferredSkills = jobPreferredSkills
         ..companyLogo = companyLogo
         ..photoHero = photoHero
-        ..myJob = myJob,
+        ..myJob = myJob
+        ..isCustomer = isCustomer
+        ..isCraftsman = isCraftsman,
     ),
   );
 

@@ -996,55 +996,55 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignUp
   {
-    'fwlra2le': {
+    'rwqq1oce': {
       'ar': 'Get Started',
       'en': '',
     },
-    't6qu7hfm': {
+    'a2k11ccq': {
       'ar': 'Use the form below to get started.',
       'en': '',
     },
-    'wlvoa45b': {
+    '85nurq4z': {
       'ar': 'Email Address',
       'en': '',
     },
-    'sejyxjfw': {
+    'anulj3b0': {
       'ar': 'Enter your email here...',
       'en': '',
     },
-    'm8u2iduz': {
+    'bx5gqjwl': {
       'ar': 'Password',
       'en': '',
     },
-    '67tj83un': {
+    'eu199w5n': {
       'ar': 'Enter your email here...',
       'en': '',
     },
-    'vxqt97il': {
+    'sezquagb': {
       'ar': 'Confirm Password',
       'en': '',
     },
-    'bkskmqmn': {
+    'hib5iskd': {
       'ar': 'Enter your email here...',
       'en': '',
     },
-    'rg9hluwv': {
+    'hyweexye': {
       'ar': 'Create Account',
       'en': '',
     },
-    '35qs5mob': {
+    'yl8038ku': {
       'ar': 'Use a social platform to continue',
       'en': '',
     },
-    'nt2jycuy': {
+    'vvjlhj4m': {
       'ar': 'Already have an account?',
       'en': '',
     },
-    '6d5hctds': {
+    'ii7xq6ca': {
       'ar': 'Log In',
       'en': '',
     },
-    'yjcpwg33': {
+    'z08teily': {
       'ar': 'Home',
       'en': '',
     },

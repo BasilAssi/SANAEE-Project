@@ -46,4 +46,4 @@ export '/pages/verify_mobile/verify_mobile_widget.dart' show VerifyMobileWidget;
 export '/pages/select_your_role/select_your_role_widget.dart'
     show SelectYourRoleWidget;
 export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
-export '/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;

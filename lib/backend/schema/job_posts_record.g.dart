@@ -113,6 +113,20 @@ class _$JobPostsRecordSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.isCustomer;
+    if (value != null) {
+      result
+        ..add('isCustomer')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
+    value = object.isCraftsman;
+    if (value != null) {
+      result
+        ..add('isCraftsman')
+        ..add(
+            serializers.serialize(value, specifiedType: const FullType(bool)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -190,6 +204,14 @@ class _$JobPostsRecordSerializer
           result.myJob = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
+        case 'isCustomer':
+          result.isCustomer = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
+        case 'isCraftsman':
+          result.isCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(bool)) as bool?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -231,6 +253,10 @@ class _$JobPostsRecord extends JobPostsRecord {
   @override
   final bool? myJob;
   @override
+  final bool? isCustomer;
+  @override
+  final bool? isCraftsman;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$JobPostsRecord([void Function(JobPostsRecordBuilder)? updates]) =>
@@ -250,6 +276,8 @@ class _$JobPostsRecord extends JobPostsRecord {
       this.companyLogo,
       this.photoHero,
       this.myJob,
+      this.isCustomer,
+      this.isCraftsman,
       this.ffRef})
       : super._();
 
@@ -278,6 +306,8 @@ class _$JobPostsRecord extends JobPostsRecord {
         companyLogo == other.companyLogo &&
         photoHero == other.photoHero &&
         myJob == other.myJob &&
+        isCustomer == other.isCustomer &&
+        isCraftsman == other.isCraftsman &&
         ffRef == other.ffRef;
   }
 
@@ -297,6 +327,8 @@ class _$JobPostsRecord extends JobPostsRecord {
     _$hash = $jc(_$hash, companyLogo.hashCode);
     _$hash = $jc(_$hash, photoHero.hashCode);
     _$hash = $jc(_$hash, myJob.hashCode);
+    _$hash = $jc(_$hash, isCustomer.hashCode);
+    _$hash = $jc(_$hash, isCraftsman.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -318,6 +350,8 @@ class _$JobPostsRecord extends JobPostsRecord {
           ..add('companyLogo', companyLogo)
           ..add('photoHero', photoHero)
           ..add('myJob', myJob)
+          ..add('isCustomer', isCustomer)
+          ..add('isCraftsman', isCraftsman)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -383,6 +417,14 @@ class JobPostsRecordBuilder
   bool? get myJob => _$this._myJob;
   set myJob(bool? myJob) => _$this._myJob = myJob;
 
+  bool? _isCustomer;
+  bool? get isCustomer => _$this._isCustomer;
+  set isCustomer(bool? isCustomer) => _$this._isCustomer = isCustomer;
+
+  bool? _isCraftsman;
+  bool? get isCraftsman => _$this._isCraftsman;
+  set isCraftsman(bool? isCraftsman) => _$this._isCraftsman = isCraftsman;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -407,6 +449,8 @@ class JobPostsRecordBuilder
       _companyLogo = $v.companyLogo;
       _photoHero = $v.photoHero;
       _myJob = $v.myJob;
+      _isCustomer = $v.isCustomer;
+      _isCraftsman = $v.isCraftsman;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -443,6 +487,8 @@ class JobPostsRecordBuilder
             companyLogo: companyLogo,
             photoHero: photoHero,
             myJob: myJob,
+            isCustomer: isCustomer,
+            isCraftsman: isCraftsman,
             ffRef: ffRef);
     replace(_$result);
     return _$result;
