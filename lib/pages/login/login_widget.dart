@@ -3,6 +3,7 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/main.dart';
+import '/pages/create_profile/create_profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -51,7 +52,7 @@ class _LoginWidgetState extends State<LoginWidget> {
           image: DecorationImage(
             fit: BoxFit.cover,
             image: Image.asset(
-              'assets/images/alexandru-acea--WBYxmW4yuw-unsplash.jpg',
+              'assets/images/Product_teardown-cuate.png',
             ).image,
           ),
         ),
@@ -69,9 +70,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                   mainAxisAlignment: MainAxisAlignment.start,
                   children: [
                     Image.asset(
-                      'assets/images/uiLogo_robinColored.png',
-                      width: 170.0,
-                      height: 60.0,
+                      'assets/images/logo_1.png',
+                      width: 100.0,
+                      height: 100.0,
                       fit: BoxFit.fitWidth,
                     ),
                   ],
@@ -79,7 +80,7 @@ class _LoginWidgetState extends State<LoginWidget> {
               ),
               Container(
                 width: MediaQuery.of(context).size.width * 1.0,
-                height: 370.0,
+                height: 600.0,
                 decoration: BoxDecoration(
                   color: FlutterFlowTheme.of(context).secondaryBackground,
                   borderRadius: BorderRadius.only(
@@ -101,7 +102,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           Expanded(
                             child: Text(
                               FFLocalizations.of(context).getText(
-                                'gri19u31' /* Welcome Back, */,
+                                'gri19u31' /* مرحبًا بعودتك */,
                               ),
                               style: FlutterFlowTheme.of(context).displaySmall,
                             ),
@@ -136,15 +137,16 @@ class _LoginWidgetState extends State<LoginWidget> {
                           Expanded(
                             child: TextFormField(
                               controller: _model.emailAddressController,
+                              autofocus: true,
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '7vwo3gsa' /* Email Address */,
+                                  '7vwo3gsa' /* Email */,
                                 ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '6o89q7ja' /* Enter your email here... */,
+                                  '6o89q7ja' /* ادخل الايميل الخاص بك */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -158,28 +160,28 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         FlutterFlowTheme.of(context).lineColor,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
@@ -213,7 +215,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
                                 hintText: FFLocalizations.of(context).getText(
-                                  '8f46nx1d' /* Enter your password here... */,
+                                  '8f46nx1d' /* ادخل كلمة المرور ... */,
                                 ),
                                 hintStyle: FlutterFlowTheme.of(context)
                                     .bodyMedium
@@ -227,28 +229,28 @@ class _LoginWidgetState extends State<LoginWidget> {
                                         FlutterFlowTheme.of(context).lineColor,
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 focusedBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 errorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 focusedErrorBorder: OutlineInputBorder(
                                   borderSide: BorderSide(
                                     color: Color(0x00000000),
                                     width: 2.0,
                                   ),
-                                  borderRadius: BorderRadius.circular(8.0),
+                                  borderRadius: BorderRadius.circular(16.0),
                                 ),
                                 filled: true,
                                 fillColor: FlutterFlowTheme.of(context)
@@ -290,10 +292,9 @@ class _LoginWidgetState extends State<LoginWidget> {
                               print('ButtonForgotPassword pressed ...');
                             },
                             text: FFLocalizations.of(context).getText(
-                              '7ukcu0z9' /* Forgot Password? */,
+                              '7ukcu0z9' /* هل نسيت كلمة السر؟ */,
                             ),
                             options: FFButtonOptions(
-                              width: 140.0,
                               height: 40.0,
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 0.0),
@@ -301,55 +302,13 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   0.0, 0.0, 0.0, 0.0),
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                          ),
-                          FFButtonWidget(
-                            onPressed: () async {
-                              final user = await signInWithEmail(
-                                context,
-                                _model.emailAddressController.text,
-                                _model.passwordController.text,
-                              );
-                              if (user == null) {
-                                return;
-                              }
-
-                              await Navigator.pushAndRemoveUntil(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
-                                ),
-                                (r) => false,
-                              );
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              '5vjc9znt' /* Login */,
-                            ),
-                            options: FFButtonOptions(
-                              width: 130.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context).primary,
                               textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
+                                  .labelLarge
                                   .override(
-                                    fontFamily: 'Outfit',
-                                    color:
-                                        FlutterFlowTheme.of(context).tertiary,
+                                    fontFamily: 'Poppins',
+                                    fontSize: 20.0,
                                   ),
-                              elevation: 2.0,
+                              elevation: 0.0,
                               borderSide: BorderSide(
                                 color: Colors.transparent,
                                 width: 1.0,
@@ -360,6 +319,69 @@ class _LoginWidgetState extends State<LoginWidget> {
                         ],
                       ),
                     ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          final user = await signInWithEmail(
+                            context,
+                            _model.emailAddressController.text,
+                            _model.passwordController.text,
+                          );
+                          if (user == null) {
+                            return;
+                          }
+
+                          if (valueOrDefault<bool>(
+                                  currentUserDocument?.isCraftsman, false) ==
+                              true) {
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    NavBarPage(initialPage: 'MAINHome'),
+                              ),
+                            );
+                          } else {
+                            if (valueOrDefault<bool>(
+                                    currentUserDocument?.isCustomer, false) ==
+                                true) {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => CreateProfileWidget(),
+                                ),
+                              );
+                            }
+                          }
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '5vjc9znt' /* تسجيل الدخول  */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 330.0,
+                          height: 50.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white,
+                                    fontSize: 20.0,
+                                  ),
+                          elevation: 2.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(32.0),
+                        ),
+                      ),
+                    ),
                     Divider(
                       height: 2.0,
                       thickness: 2.0,
@@ -367,92 +389,174 @@ class _LoginWidgetState extends State<LoginWidget> {
                       endIndent: 20.0,
                       color: FlutterFlowTheme.of(context).lineColor,
                     ),
-                    Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.spaceAround,
-                      children: [
-                        Padding(
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: Text(
+                        FFLocalizations.of(context).getText(
+                          '9ca5005i' /* أو */,
+                        ),
+                        style: FlutterFlowTheme.of(context).bodyMedium,
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
+                      child: Container(
+                        width: 330.0,
+                        height: 50.0,
+                        decoration: BoxDecoration(
+                          color: FlutterFlowTheme.of(context).primary,
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 4.0,
+                              color: Color(0x33000000),
+                              offset: Offset(0.0, 2.0),
+                            )
+                          ],
+                          borderRadius: BorderRadius.circular(32.0),
+                          border: Border.all(
+                            color: Color(0xFFDBE2E7),
+                            width: 1.0,
+                          ),
+                        ),
+                        child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              final user = await signInAnonymously(context);
-                              if (user == null) {
-                                return;
-                              }
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
+                              30.0, 0.0, 30.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            mainAxisAlignment: MainAxisAlignment.spaceAround,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 0.0, 10.0, 0.0),
+                                child: Container(
+                                  width: 40.0,
+                                  height: 40.0,
+                                  clipBehavior: Clip.antiAlias,
+                                  decoration: BoxDecoration(
+                                    shape: BoxShape.circle,
+                                  ),
+                                  child: Image.asset(
+                                    'assets/images/google.png',
+                                    fit: BoxFit.cover,
+                                  ),
                                 ),
-                              );
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              '5c2vlcdh' /* Continue as Guest */,
+                              ),
+                              FFButtonWidget(
+                                onPressed: () {
+                                  print('Button pressed ...');
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'pqy3sthk' /* تسجيل الدخول  بواسطة جوجل */,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 220.0,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleSmall
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Colors.white,
+                                        fontSize: 20.0,
+                                      ),
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Text(
+                            FFLocalizations.of(context).getText(
+                              'o42qqman' /* ليس لديك حساب؟ */,
                             ),
-                            options: FFButtonOptions(
-                              width: 160.0,
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 20.0,
+                                ),
+                          ),
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                5.0, 0.0, 0.0, 0.0),
+                            child: Text(
+                              FFLocalizations.of(context).getText(
+                                'r6pmbkj8' /* أنشئ حساب */,
+                              ),
+                              style: FlutterFlowTheme.of(context)
+                                  .bodyMedium
                                   .override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF4850F1),
+                                    fontSize: 20.0,
+                                  ),
+                            ),
+                          ),
+                        ],
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          final user = await signInAnonymously(context);
+                          if (user == null) {
+                            return;
+                          }
+                          await Navigator.push(
+                            context,
+                            MaterialPageRoute(
+                              builder: (context) =>
+                                  NavBarPage(initialPage: 'MAINHome'),
+                            ),
+                          );
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '5c2vlcdh' /* Continue as Guest */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 160.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color:
+                              FlutterFlowTheme.of(context).secondaryBackground,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
                                     fontFamily: 'Outfit',
                                     color: FlutterFlowTheme.of(context).primary,
                                     fontSize: 14.0,
                                   ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
                           ),
+                          borderRadius: BorderRadius.circular(12.0),
                         ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 8.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () {
-                              print('ButtonCreateAccount pressed ...');
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'h0rm94lj' /* Create Account */,
-                            ),
-                            options: FFButtonOptions(
-                              width: 140.0,
-                              height: 40.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              color: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .titleSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
-                                    fontSize: 14.0,
-                                  ),
-                              elevation: 0.0,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
-                              ),
-                              borderRadius: BorderRadius.circular(12.0),
-                            ),
-                          ),
-                        ),
-                      ],
+                      ),
                     ),
                   ],
                 ),

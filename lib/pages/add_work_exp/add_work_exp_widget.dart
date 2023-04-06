@@ -142,10 +142,11 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                     backgroundColor: Color(0x00000000),
                                     barrierColor: Color(0x00000000),
                                     context: context,
-                                    builder: (context) {
+                                    builder: (bottomSheetContext) {
                                       return Padding(
                                         padding:
-                                            MediaQuery.of(context).viewInsets,
+                                            MediaQuery.of(bottomSheetContext)
+                                                .viewInsets,
                                         child: Container(
                                           height: 500.0,
                                           child: WorkExpBottomSheetWidget(),
@@ -341,9 +342,10 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                           backgroundColor: Color(0x00000000),
                           barrierColor: Color(0x00000000),
                           context: context,
-                          builder: (context) {
+                          builder: (bottomSheetContext) {
                             return Padding(
-                              padding: MediaQuery.of(context).viewInsets,
+                              padding:
+                                  MediaQuery.of(bottomSheetContext).viewInsets,
                               child: Container(
                                 height: 570.0,
                                 child: WorkExpBottomSheetWidget(),
@@ -410,10 +412,11 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                       backgroundColor: Color(0x00000000),
                                       barrierColor: Color(0x00000000),
                                       context: context,
-                                      builder: (context) {
+                                      builder: (bottomSheetContext) {
                                         return Padding(
                                           padding:
-                                              MediaQuery.of(context).viewInsets,
+                                              MediaQuery.of(bottomSheetContext)
+                                                  .viewInsets,
                                           child: WorkExpBottomSheetWidget(),
                                         );
                                       },

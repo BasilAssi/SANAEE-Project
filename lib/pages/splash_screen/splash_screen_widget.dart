@@ -93,14 +93,14 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
 
   @override
   Widget build(BuildContext context) {
-    return WillPopScope(
-      onWillPop: () async => false,
-      child: Scaffold(
-        key: scaffoldKey,
-        backgroundColor: Color(0xFF384C54),
-        body: SafeArea(
-          child: GestureDetector(
-            onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+    return GestureDetector(
+      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      child: WillPopScope(
+        onWillPop: () async => false,
+        child: Scaffold(
+          key: scaffoldKey,
+          backgroundColor: Color(0xFF384C54),
+          body: SafeArea(
             child: InkWell(
               onTap: () async {
                 await Future.delayed(const Duration(milliseconds: 3000));

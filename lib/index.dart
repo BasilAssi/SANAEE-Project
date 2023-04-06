@@ -47,3 +47,7 @@ export '/pages/select_your_role/select_your_role_widget.dart'
     show SelectYourRoleWidget;
 export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
 export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/create_profile_name/create_profile_name_widget.dart'
+    show CreateProfileNameWidget;
+export '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart'
+    show CreateProfileNameStepOneWidget;
