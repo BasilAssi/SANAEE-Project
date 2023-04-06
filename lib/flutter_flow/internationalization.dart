@@ -108,15 +108,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Login
   {
     'gri19u31': {
-      'ar': 'Welcome Back,',
-      'en': '',
+      'ar': 'مرحبًا بعودتك',
+      'en': 'Welcome Back',
     },
     '7vwo3gsa': {
-      'ar': 'Email Address',
-      'en': '',
+      'ar': 'Email',
+      'en': 'Email',
     },
     '6o89q7ja': {
-      'ar': 'Enter your email here...',
+      'ar': 'ادخل الايميل الخاص بك',
+      'en': ' Enter your email here...',
+    },
+    '34tidz7y': {
+      'ar': '',
       'en': '',
     },
     'ea9rckya': {
@@ -124,23 +128,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '8f46nx1d': {
-      'ar': 'Enter your password here...',
+      'ar': 'ادخل كلمة المرور ...',
+      'en': 'Enter your password here...',
+    },
+    'ipd564oo': {
+      'ar': '',
       'en': '',
     },
     '7ukcu0z9': {
-      'ar': 'Forgot Password?',
-      'en': '',
+      'ar': 'هل نسيت كلمة السر؟',
+      'en': 'Forgot Password?',
     },
     '5vjc9znt': {
-      'ar': 'Login',
-      'en': '',
+      'ar': 'تسجيل الدخول ',
+      'en': 'Login',
+    },
+    '9ca5005i': {
+      'ar': 'أو',
+      'en': 'or',
+    },
+    'pqy3sthk': {
+      'ar': 'تسجيل الدخول  بواسطة جوجل',
+      'en': 'sign in with Google',
+    },
+    'o42qqman': {
+      'ar': 'ليس لديك حساب؟',
+      'en': 'Don\'t have  an account ?',
+    },
+    'r6pmbkj8': {
+      'ar': 'أنشئ حساب',
+      'en': 'Create Account',
     },
     '5c2vlcdh': {
       'ar': 'Continue as Guest',
-      'en': '',
-    },
-    'h0rm94lj': {
-      'ar': 'Create Account',
       'en': '',
     },
     'hwccov5i': {
@@ -1045,6 +1065,57 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'z08teily': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfile_Name
+  {
+    '3gfsle3f': {
+      'ar': 'Page Title',
+      'en': '',
+    },
+    'oen5agv4': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileNameStepOne
+  {
+    'b0muce5a': {
+      'ar': 'الاسم الاول',
+      'en': 'first name',
+    },
+    'w0w0vgpe': {
+      'ar': 'الاسم الاول',
+      'en': 'First Name',
+    },
+    'ar38z3j3': {
+      'ar': '',
+      'en': '',
+    },
+    'qppalhqq': {
+      'ar': 'اسم العائلة ',
+      'en': 'last name',
+    },
+    'hcdvvtn0': {
+      'ar': 'اسم العائلة',
+      'en': 'Last Name',
+    },
+    'siwp4rqi': {
+      'ar': '',
+      'en': '',
+    },
+    'wk7dq0gn': {
+      'ar': 'التالي',
+      'en': 'continue',
+    },
+    'r53cjzi7': {
+      'ar': ' الخطوة الاولى ',
+      'en':
+          '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
+    },
+    'gdrznog6': {
       'ar': 'Home',
       'en': '',
     },

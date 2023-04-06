@@ -1,5 +1,6 @@
 import '/auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -257,6 +258,13 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                         await currentUserReference!
                                                             .update(
                                                                 usersUpdateData);
+                                                        await Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CreateProfileNameStepOneWidget(),
+                                                          ),
+                                                        );
                                                       },
                                                       text: FFLocalizations.of(
                                                               context)
