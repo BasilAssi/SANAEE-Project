@@ -119,12 +119,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 decoration: InputDecoration(
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '85nurq4z' /* Email Address */,
+                                    '85nurq4z' /* البريد الالكتروني */,
                                   ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'anulj3b0' /* Enter your email here... */,
+                                    'anulj3b0' /* ادخل البريد الإلكتروني */,
                                   ),
                                   hintStyle:
                                       FlutterFlowTheme.of(context).bodySmall,
@@ -189,12 +189,12 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'bx5gqjwl' /* Password */,
+                                  'bx5gqjwl' /* كلمة المرور */,
                                 ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).bodySmall,
                                 hintText: FFLocalizations.of(context).getText(
-                                  'eu199w5n' /* Enter your email here... */,
+                                  'eu199w5n' /* كلمة المرور */,
                                 ),
                                 hintStyle:
                                     FlutterFlowTheme.of(context).bodySmall,
@@ -266,11 +266,11 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           obscureText: !_model.passwordConfirmVisibility,
                           decoration: InputDecoration(
                             labelText: FFLocalizations.of(context).getText(
-                              'sezquagb' /* Confirm Password */,
+                              'sezquagb' /* تأكيد كلمة المرور */,
                             ),
                             labelStyle: FlutterFlowTheme.of(context).bodySmall,
                             hintText: FFLocalizations.of(context).getText(
-                              'hib5iskd' /* Enter your email here... */,
+                              'hib5iskd' /* تأكيد كلمة المرور */,
                             ),
                             hintStyle: FlutterFlowTheme.of(context).bodySmall,
                             enabledBorder: OutlineInputBorder(
@@ -366,7 +366,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               );
                             },
                             text: FFLocalizations.of(context).getText(
-                              'hyweexye' /* Create Account */,
+                              'hyweexye' /* إنشاء حساب  */,
                             ),
                             options: FFButtonOptions(
                               width: 190.0,

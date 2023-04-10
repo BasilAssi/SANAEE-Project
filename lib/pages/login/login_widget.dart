@@ -141,7 +141,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               obscureText: false,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  '7vwo3gsa' /* Email */,
+                                  '7vwo3gsa' /* البريد الالكتروني  */,
                                 ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
@@ -210,7 +210,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               obscureText: !_model.passwordVisibility,
                               decoration: InputDecoration(
                                 labelText: FFLocalizations.of(context).getText(
-                                  'ea9rckya' /* Password */,
+                                  'ea9rckya' /* كلمة المرور */,
                                 ),
                                 labelStyle:
                                     FlutterFlowTheme.of(context).titleSmall,
@@ -285,7 +285,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           20.0, 12.0, 20.0, 16.0),
                       child: Row(
                         mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                        mainAxisAlignment: MainAxisAlignment.start,
                         children: [
                           FFButtonWidget(
                             onPressed: () {
@@ -451,7 +451,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                   'pqy3sthk' /* تسجيل الدخول  بواسطة جوجل */,
                                 ),
                                 options: FFButtonOptions(
-                                  width: 220.0,
                                   height: 40.0,
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       0.0, 0.0, 0.0, 0.0),

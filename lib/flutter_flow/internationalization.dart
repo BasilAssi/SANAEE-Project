@@ -112,7 +112,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Welcome Back',
     },
     '7vwo3gsa': {
-      'ar': 'Email',
+      'ar': 'البريد الالكتروني ',
       'en': 'Email',
     },
     '6o89q7ja': {
@@ -124,8 +124,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'ea9rckya': {
-      'ar': 'Password',
-      'en': '',
+      'ar': 'كلمة المرور',
+      'en': 'Password',
     },
     '8f46nx1d': {
       'ar': 'ادخل كلمة المرور ...',
@@ -1025,32 +1025,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '85nurq4z': {
-      'ar': 'Email Address',
-      'en': '',
+      'ar': 'البريد الالكتروني',
+      'en': 'Email Address',
     },
     'anulj3b0': {
-      'ar': 'Enter your email here...',
-      'en': '',
+      'ar': 'ادخل البريد الإلكتروني',
+      'en': 'Enter your email here...',
     },
     'bx5gqjwl': {
-      'ar': 'Password',
-      'en': '',
+      'ar': 'كلمة المرور',
+      'en': 'Password',
     },
     'eu199w5n': {
-      'ar': 'Enter your email here...',
-      'en': '',
+      'ar': 'كلمة المرور',
+      'en': 'password',
     },
     'sezquagb': {
-      'ar': 'Confirm Password',
-      'en': '',
+      'ar': 'تأكيد كلمة المرور',
+      'en': 'Confirm Password',
     },
     'hib5iskd': {
-      'ar': 'Enter your email here...',
-      'en': '',
+      'ar': 'تأكيد كلمة المرور',
+      'en': 'Confirm Password',
     },
     'hyweexye': {
-      'ar': 'Create Account',
-      'en': '',
+      'ar': 'إنشاء حساب ',
+      'en': 'Create Account',
     },
     'yl8038ku': {
       'ar': 'Use a social platform to continue',
@@ -1065,17 +1065,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'z08teily': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // createProfile_Name
-  {
-    '3gfsle3f': {
-      'ar': 'Page Title',
-      'en': '',
-    },
-    'oen5agv4': {
       'ar': 'Home',
       'en': '',
     },
@@ -1095,14 +1084,38 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'qppalhqq': {
-      'ar': 'اسم العائلة ',
-      'en': 'last name',
+      'ar': 'اسم الاب',
+      'en': 'Name of the Father',
     },
     'hcdvvtn0': {
-      'ar': 'اسم العائلة',
-      'en': 'Last Name',
+      'ar': 'اسم الأب',
+      'en': 'Name of the Father',
     },
     'siwp4rqi': {
+      'ar': '',
+      'en': '',
+    },
+    '2abshufy': {
+      'ar': 'اسم الجد',
+      'en': 'Grandfather name',
+    },
+    '9bpppzbx': {
+      'ar': 'اسم الجد',
+      'en': 'Grandfather name',
+    },
+    'cowh0wov': {
+      'ar': '',
+      'en': '',
+    },
+    'j1xausqc': {
+      'ar': 'اسم العائلة',
+      'en': 'Family name',
+    },
+    '3t0a6bly': {
+      'ar': 'اسم العائلة',
+      'en': 'family name',
+    },
+    '5m1e0d95': {
       'ar': '',
       'en': '',
     },
@@ -1116,6 +1129,61 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
     },
     'gdrznog6': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // creatProfile_InfoStepTwo
+  {
+    'nf9d2c06': {
+      'ar': 'حرفي المعلومات',
+      'en': 'information craftsman',
+    },
+    'dnscmagr': {
+      'ar': 'المرحلة الثانية :ادخال المعلومات ',
+      'en': 'The second stage: entering information',
+    },
+    't56v94hh': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileNameStepOneCopy
+  {
+    'zttgzld8': {
+      'ar': '',
+      'en': '',
+    },
+    'f455ffmf': {
+      'ar': 'المدينة',
+      'en': 'City',
+    },
+    '0xm7ud6z': {
+      'ar': 'البحث عن المدينة ...',
+      'en': 'Search for an city..',
+    },
+    '0rvsqotd': {
+      'ar': 'المدينة',
+      'en': 'City',
+    },
+    'qpojd8f9': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'lj5c7n2k': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '3a80eaym': {
+      'ar': 'التالي',
+      'en': 'continue',
+    },
+    'uz77ammc': {
+      'ar': ' الخطوة الاولى ',
+      'en':
+          '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
+    },
+    '4wz4578f': {
       'ar': 'Home',
       'en': '',
     },

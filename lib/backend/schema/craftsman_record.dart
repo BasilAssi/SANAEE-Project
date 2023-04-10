@@ -37,6 +37,8 @@ abstract class CraftsmanRecord
 
   DocumentReference? get docRef;
 
+  String? get craftsmanID;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -48,7 +50,8 @@ abstract class CraftsmanRecord
     ..uid = ''
     ..phoneNumber = ''
     ..bio = ''
-    ..userName = '';
+    ..userName = ''
+    ..craftsmanID = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('craftsman');
@@ -82,6 +85,7 @@ Map<String, dynamic> createCraftsmanRecordData({
   String? bio,
   String? userName,
   DocumentReference? docRef,
+  String? craftsmanID,
 }) {
   final firestoreData = serializers.toFirestore(
     CraftsmanRecord.serializer,
@@ -96,7 +100,8 @@ Map<String, dynamic> createCraftsmanRecordData({
         ..editedTime = editedTime
         ..bio = bio
         ..userName = userName
-        ..docRef = docRef,
+        ..docRef = docRef
+        ..craftsmanID = craftsmanID,
     ),
   );
 

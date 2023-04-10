@@ -1,3 +1,4 @@
+import '/auth/auth_util.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -5,7 +6,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -34,7 +34,9 @@ class _CreateProfileNameStepOneWidgetState
     _model = createModel(context, () => CreateProfileNameStepOneModel());
 
     _model.textFieldFirstnameController ??= TextEditingController();
-    _model.textFieldLastnameController ??= TextEditingController();
+    _model.textFieldFatherNameController ??= TextEditingController();
+    _model.textFieldGrandfatherNameController ??= TextEditingController();
+    _model.textFieldfamilyNameController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textFieldFirstnameController?.text =
               FFLocalizations.of(context).getText(
@@ -62,12 +64,37 @@ class _CreateProfileNameStepOneWidgetState
           preferredSize: Size.fromHeight(100.0),
           child: AppBar(
             backgroundColor: Color(0xFFF1F4F8),
-            iconTheme: IconThemeData(color: Color(0xFFF1F4F8)),
-            automaticallyImplyLeading: true,
+            automaticallyImplyLeading: false,
+            leading: FlutterFlowIconButton(
+              borderColor: Colors.transparent,
+              borderRadius: 30.0,
+              borderWidth: 1.0,
+              buttonSize: 60.0,
+              icon: Icon(
+                Icons.arrow_back_rounded,
+                color: FlutterFlowTheme.of(context).secondaryText,
+                size: 30.0,
+              ),
+              onPressed: () async {
+                Navigator.pop(context);
+              },
+            ),
             actions: [],
+            flexibleSpace: FlexibleSpaceBar(
+              background: Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
+                child: ClipRRect(
+                  borderRadius: BorderRadius.circular(16.0),
+                  child: Image.asset(
+                    'assets/images/logo_1.png',
+                    fit: BoxFit.scaleDown,
+                  ),
+                ),
+              ),
+            ),
             centerTitle: true,
-            toolbarHeight: 100.0,
-            elevation: 11111.0,
+            toolbarHeight: 200.0,
+            elevation: 0.0,
           ),
         ),
         body: SafeArea(
@@ -82,17 +109,19 @@ class _CreateProfileNameStepOneWidgetState
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 111.0, 0.0, 0.0),
-                          child: Container(
-                            width: 120.0,
-                            height: 120.0,
-                            clipBehavior: Clip.antiAlias,
-                            decoration: BoxDecoration(
-                              shape: BoxShape.circle,
-                            ),
-                            child: Image.network(
-                              'https://picsum.photos/seed/239/600',
-                              fit: BoxFit.cover,
+                              0.0, 80.0, 0.0, 0.0),
+                          child: AuthUserStreamWidget(
+                            builder: (context) => Container(
+                              width: 120.0,
+                              height: 120.0,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.network(
+                                currentUserPhoto,
+                                fit: BoxFit.cover,
+                              ),
                             ),
                           ),
                         ),
@@ -184,8 +213,12 @@ class _CreateProfileNameStepOneWidgetState
                               hintText: FFLocalizations.of(context).getText(
                                 'w0w0vgpe' /* الاسم الاول */,
                               ),
-                              hintStyle:
-                                  FlutterFlowTheme.of(context).titleMedium,
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF57636C),
+                                  ),
                               enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: FlutterFlowTheme.of(context).primary,
@@ -220,7 +253,12 @@ class _CreateProfileNameStepOneWidgetState
                                 size: 40.0,
                               ),
                             ),
-                            style: FlutterFlowTheme.of(context).titleMedium,
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 20.0,
+                                ),
                             validator: _model
                                 .textFieldFirstnameControllerValidator
                                 .asValidator(context),
@@ -230,16 +268,16 @@ class _CreateProfileNameStepOneWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 0.0, 16.0),
                           child: TextFormField(
-                            controller: _model.textFieldLastnameController,
+                            controller: _model.textFieldFatherNameController,
                             autofocus: true,
                             obscureText: false,
                             decoration: InputDecoration(
                               isDense: true,
                               labelText: FFLocalizations.of(context).getText(
-                                'qppalhqq' /* اسم العائلة  */,
+                                'qppalhqq' /* اسم الاب */,
                               ),
                               hintText: FFLocalizations.of(context).getText(
-                                'hcdvvtn0' /* اسم العائلة */,
+                                'hcdvvtn0' /* اسم الأب */,
                               ),
                               hintStyle: FlutterFlowTheme.of(context)
                                   .titleMedium
@@ -288,80 +326,141 @@ class _CreateProfileNameStepOneWidgetState
                                   fontSize: 20.0,
                                 ),
                             validator: _model
-                                .textFieldLastnameControllerValidator
+                                .textFieldFatherNameControllerValidator
                                 .asValidator(context),
                           ),
                         ),
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 100.0),
-                          child: InkWell(
-                            onTap: () async {
-                              await DatePicker.showDatePicker(
-                                context,
-                                showTitleActions: true,
-                                onConfirm: (date) {
-                                  setState(() {
-                                    _model.datePicked = date;
-                                  });
-                                },
-                                currentTime: getCurrentTimestamp,
-                                minTime: DateTime(0, 0, 0),
-                                locale: LocaleType.values.firstWhere(
-                                  (l) =>
-                                      l.name ==
-                                      FFLocalizations.of(context).languageCode,
-                                  orElse: () => LocaleType.en,
-                                ),
-                              );
-                            },
-                            child: Container(
-                              width: 350.0,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                borderRadius: BorderRadius.circular(16.0),
-                                border: Border.all(
-                                  color: FlutterFlowTheme.of(context).primary,
-                                ),
+                              0.0, 0.0, 0.0, 16.0),
+                          child: TextFormField(
+                            controller:
+                                _model.textFieldGrandfatherNameController,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              isDense: true,
+                              labelText: FFLocalizations.of(context).getText(
+                                '2abshufy' /* اسم الجد */,
                               ),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.start,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        10.0, 0.0, 0.0, 0.0),
-                                    child: Icon(
-                                      Icons.date_range_sharp,
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      size: 30.0,
-                                    ),
+                              hintText: FFLocalizations.of(context).getText(
+                                '9bpppzbx' /* اسم الجد */,
+                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF57636C),
                                   ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        20.0, 0.0, 0.0, 0.0),
-                                    child: Text(
-                                      valueOrDefault<String>(
-                                        dateTimeFormat(
-                                          'd/M/y',
-                                          _model.datePicked,
-                                          locale: FFLocalizations.of(context)
-                                              .languageCode,
-                                        ),
-                                        'day          month             year',
-                                      ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .titleMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            lineHeight: 1.0,
-                                          ),
-                                    ),
-                                  ),
-                                ],
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.person,
+                                color: Color(0xFFF8B500),
+                                size: 40.0,
                               ),
                             ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 20.0,
+                                ),
+                            validator: _model
+                                .textFieldGrandfatherNameControllerValidator
+                                .asValidator(context),
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 40.0),
+                          child: TextFormField(
+                            controller: _model.textFieldfamilyNameController,
+                            autofocus: true,
+                            obscureText: false,
+                            decoration: InputDecoration(
+                              isDense: true,
+                              labelText: FFLocalizations.of(context).getText(
+                                'j1xausqc' /* اسم العائلة */,
+                              ),
+                              hintText: FFLocalizations.of(context).getText(
+                                '3t0a6bly' /* اسم العائلة */,
+                              ),
+                              hintStyle: FlutterFlowTheme.of(context)
+                                  .titleMedium
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    color: Color(0xFF57636C),
+                                  ),
+                              enabledBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              focusedErrorBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: Color(0x00000000),
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(20.0),
+                              ),
+                              prefixIcon: Icon(
+                                Icons.person,
+                                color: Color(0xFFF8B500),
+                                size: 40.0,
+                              ),
+                            ),
+                            style: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 20.0,
+                                ),
+                            validator: _model
+                                .textFieldfamilyNameControllerValidator
+                                .asValidator(context),
                           ),
                         ),
                         FFButtonWidget(

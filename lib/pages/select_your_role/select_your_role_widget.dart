@@ -232,101 +232,130 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                         Column(
                                           mainAxisSize: MainAxisSize.max,
                                           children: [
-                                            Container(
-                                              width: 350.0,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFF8B500),
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                                shape: BoxShape.rectangle,
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -0.15, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    FFButtonWidget(
-                                                      onPressed: () async {
-                                                        final usersUpdateData =
-                                                            createUsersRecordData(
-                                                          isCraftsman: true,
-                                                          isCustomer: false,
-                                                        );
-                                                        await currentUserReference!
-                                                            .update(
-                                                                usersUpdateData);
-                                                        await Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CreateProfileNameStepOneWidget(),
-                                                          ),
-                                                        );
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'mr7moivz' /* الحرفي */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width: 250.0,
-                                                        height: 50.0,
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            Color(0xFFF8B500),
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                            InkWell(
+                                              onTap: () async {
+                                                final usersUpdateData =
+                                                    createUsersRecordData(
+                                                  isCustomer: false,
+                                                  isCraftsman: true,
+                                                );
+                                                await currentUserReference!
+                                                    .update(usersUpdateData);
+
+                                                final craftsmanCreateData =
+                                                    createCraftsmanRecordData(
+                                                  email: currentUserEmail,
+                                                  uid: currentUserUid,
+                                                );
+                                                await CraftsmanRecord.collection
+                                                    .doc()
+                                                    .set(craftsmanCreateData);
+                                              },
+                                              child: Container(
+                                                width: 350.0,
+                                                height: 50.0,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFF8B500),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  shape: BoxShape.rectangle,
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -0.15, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          final usersUpdateData =
+                                                              createUsersRecordData(
+                                                            isCraftsman: true,
+                                                            isCustomer: false,
+                                                          );
+                                                          await currentUserReference!
+                                                              .update(
+                                                                  usersUpdateData);
+                                                          await Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  CreateProfileNameStepOneWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .headlineMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      20.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                        borderSide: BorderSide(
-                                                          color: Colors
-                                                              .transparent,
-                                                          width: 1.0,
+                                                                .getText(
+                                                          'mr7moivz' /* الحرفي */,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 250.0,
+                                                          height: 50.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color:
+                                                              Color(0xFFF8B500),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        20.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                            width: 1.0,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      15.0),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Container(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      clipBehavior:
-                                                          Clip.antiAlias,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
+                                                      Container(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.asset(
+                                                          'assets/images/215116-84.png',
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
-                                                      child: Image.asset(
-                                                        'assets/images/215116-84.png',
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),
@@ -404,8 +433,9 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                   ),
                                                           borderSide:
                                                               BorderSide(
-                                                            color: Colors
-                                                                .transparent,
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
                                                             width: 1.0,
                                                           ),
                                                           borderRadius:
