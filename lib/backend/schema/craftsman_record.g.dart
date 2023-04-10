@@ -92,6 +92,13 @@ class _$CraftsmanRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.craftsmanID;
+    if (value != null) {
+      result
+        ..add('craftsmanID')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -157,6 +164,10 @@ class _$CraftsmanRecordSerializer
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
+        case 'craftsmanID':
+          result.craftsmanID = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -192,6 +203,8 @@ class _$CraftsmanRecord extends CraftsmanRecord {
   @override
   final DocumentReference<Object?>? docRef;
   @override
+  final String? craftsmanID;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$CraftsmanRecord([void Function(CraftsmanRecordBuilder)? updates]) =>
@@ -208,6 +221,7 @@ class _$CraftsmanRecord extends CraftsmanRecord {
       this.bio,
       this.userName,
       this.docRef,
+      this.craftsmanID,
       this.ffRef})
       : super._();
 
@@ -233,6 +247,7 @@ class _$CraftsmanRecord extends CraftsmanRecord {
         bio == other.bio &&
         userName == other.userName &&
         docRef == other.docRef &&
+        craftsmanID == other.craftsmanID &&
         ffRef == other.ffRef;
   }
 
@@ -249,6 +264,7 @@ class _$CraftsmanRecord extends CraftsmanRecord {
     _$hash = $jc(_$hash, bio.hashCode);
     _$hash = $jc(_$hash, userName.hashCode);
     _$hash = $jc(_$hash, docRef.hashCode);
+    _$hash = $jc(_$hash, craftsmanID.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -267,6 +283,7 @@ class _$CraftsmanRecord extends CraftsmanRecord {
           ..add('bio', bio)
           ..add('userName', userName)
           ..add('docRef', docRef)
+          ..add('craftsmanID', craftsmanID)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -316,6 +333,10 @@ class CraftsmanRecordBuilder
   DocumentReference<Object?>? get docRef => _$this._docRef;
   set docRef(DocumentReference<Object?>? docRef) => _$this._docRef = docRef;
 
+  String? _craftsmanID;
+  String? get craftsmanID => _$this._craftsmanID;
+  set craftsmanID(String? craftsmanID) => _$this._craftsmanID = craftsmanID;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -337,6 +358,7 @@ class CraftsmanRecordBuilder
       _bio = $v.bio;
       _userName = $v.userName;
       _docRef = $v.docRef;
+      _craftsmanID = $v.craftsmanID;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -370,6 +392,7 @@ class CraftsmanRecordBuilder
             bio: bio,
             userName: userName,
             docRef: docRef,
+            craftsmanID: craftsmanID,
             ffRef: ffRef);
     replace(_$result);
     return _$result;
