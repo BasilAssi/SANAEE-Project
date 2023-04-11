@@ -23,6 +23,7 @@ class FFAppState extends ChangeNotifier {
     _GrandFatherName =
         await secureStorage.getString('ff_GrandFatherName') ?? _GrandFatherName;
     _familyName = await secureStorage.getString('ff_familyName') ?? _familyName;
+    _photoURL = await secureStorage.getString('ff_photoURL') ?? _photoURL;
   }
 
   void update(VoidCallback callback) {
@@ -74,6 +75,17 @@ class FFAppState extends ChangeNotifier {
 
   void deleteFamilyName() {
     secureStorage.delete(key: 'ff_familyName');
+  }
+
+  String _photoURL = '';
+  String get photoURL => _photoURL;
+  set photoURL(String _value) {
+    _photoURL = _value;
+    secureStorage.setString('ff_photoURL', _value);
+  }
+
+  void deletePhotoURL() {
+    secureStorage.delete(key: 'ff_photoURL');
   }
 }
 

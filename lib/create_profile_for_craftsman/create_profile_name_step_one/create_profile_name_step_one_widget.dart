@@ -1,8 +1,9 @@
-import '/auth/auth_util.dart';
+import '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
+import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -34,8 +35,7 @@ class _CreateProfileNameStepOneWidgetState
     _model.textFieldFirstnameController ??= TextEditingController();
     _model.textFieldFatherNameController ??= TextEditingController();
     _model.textFieldGrandfatherNameController ??= TextEditingController();
-    _model.textFieldfamilyNameController ??=
-        TextEditingController(text: FFAppState().familyName);
+    _model.textFieldfamilyNameController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textFieldFirstnameController?.text =
               FFLocalizations.of(context).getText(
@@ -112,18 +112,16 @@ class _CreateProfileNameStepOneWidgetState
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 80.0, 0.0, 0.0),
-                            child: AuthUserStreamWidget(
-                              builder: (context) => Container(
-                                width: 120.0,
-                                height: 120.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  currentUserPhoto,
-                                  fit: BoxFit.cover,
-                                ),
+                            child: Container(
+                              width: 120.0,
+                              height: 120.0,
+                              clipBehavior: Clip.antiAlias,
+                              decoration: BoxDecoration(
+                                shape: BoxShape.circle,
+                              ),
+                              child: Image.network(
+                                FFAppState().photoURL,
+                                fit: BoxFit.cover,
                               ),
                             ),
                           ),
@@ -140,8 +138,46 @@ class _CreateProfileNameStepOneWidgetState
                         color: Color(0xFFF8B500),
                         size: 35.0,
                       ),
-                      onPressed: () {
-                        print('IconButton pressed ...');
+                      onPressed: () async {
+                        final selectedMedia =
+                            await selectMediaWithSourceBottomSheet(
+                          context: context,
+                          imageQuality: 100,
+                          allowPhoto: true,
+                        );
+                        if (selectedMedia != null &&
+                            selectedMedia.every((m) =>
+                                validateFileFormat(m.storagePath, context))) {
+                          setState(() => _model.isDataUploading = true);
+                          var selectedUploadedFiles = <FFUploadedFile>[];
+
+                          try {
+                            selectedUploadedFiles = selectedMedia
+                                .map((m) => FFUploadedFile(
+                                      name: m.storagePath.split('/').last,
+                                      bytes: m.bytes,
+                                      height: m.dimensions?.height,
+                                      width: m.dimensions?.width,
+                                    ))
+                                .toList();
+                          } finally {
+                            _model.isDataUploading = false;
+                          }
+                          if (selectedUploadedFiles.length ==
+                              selectedMedia.length) {
+                            setState(() {
+                              _model.uploadedLocalFile =
+                                  selectedUploadedFiles.first;
+                            });
+                          } else {
+                            setState(() {});
+                            return;
+                          }
+                        }
+
+                        setState(() {
+                          FFAppState().photoURL = '';
+                        });
                       },
                     ),
                     Padding(
@@ -430,8 +466,24 @@ class _CreateProfileNameStepOneWidgetState
                               ),
                             ),
                             FFButtonWidget(
-                              onPressed: () {
-                                print('Button pressed ...');
+                              onPressed: () async {
+                                setState(() {
+                                  FFAppState().firstName =
+                                      _model.textFieldFirstnameController.text;
+                                  FFAppState().NameOfTheFather =
+                                      _model.textFieldFatherNameController.text;
+                                  FFAppState().GrandFatherName = _model
+                                      .textFieldGrandfatherNameController.text;
+                                  FFAppState().familyName =
+                                      _model.textFieldfamilyNameController.text;
+                                });
+                                await Navigator.push(
+                                  context,
+                                  MaterialPageRoute(
+                                    builder: (context) =>
+                                        CreateProfileNameAddresStepTwoWidget(),
+                                  ),
+                                );
                               },
                               text: FFLocalizations.of(context).getText(
                                 'wk7dq0gn' /* التالي */,

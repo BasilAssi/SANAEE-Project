@@ -199,7 +199,7 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                   Expanded(
                                     child: TextFormField(
                                       controller: _model.textController,
-                                      autofocus: true,
+                                      autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
                                         hintText:
@@ -210,16 +210,16 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                             .bodySmall,
                                         enabledBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1.0,
+                                            color: Color(0xFFF8B500),
+                                            width: 14.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(15.0),
                                         ),
                                         focusedBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: Color(0x00000000),
-                                            width: 1.0,
+                                            color: Color(0xFFF8B500),
+                                            width: 14.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(15.0),
@@ -227,7 +227,7 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                         errorBorder: UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 1.0,
+                                            width: 14.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(15.0),
@@ -236,11 +236,12 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                             UnderlineInputBorder(
                                           borderSide: BorderSide(
                                             color: Color(0x00000000),
-                                            width: 1.0,
+                                            width: 14.0,
                                           ),
                                           borderRadius:
                                               BorderRadius.circular(15.0),
                                         ),
+                                        filled: true,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
@@ -251,34 +252,44 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                 ],
                               ),
                             ),
-                            FlutterFlowRadioButton(
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'l40ka9y6' /* ذكر */,
+                            Align(
+                              alignment: AlignmentDirectional(0.0, 0.0),
+                              child: Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: FlutterFlowRadioButton(
+                                  options: [
+                                    FFLocalizations.of(context).getText(
+                                      'l40ka9y6' /* ذكر */,
+                                    ),
+                                    FFLocalizations.of(context).getText(
+                                      'bffennrn' /* أنثى */,
+                                    )
+                                  ].toList(),
+                                  onChanged: (val) => setState(() {}),
+                                  controller: _model.radioButtonController ??=
+                                      FormFieldController<String>(null),
+                                  optionHeight: 50.0,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .headlineMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        fontWeight: FontWeight.w600,
+                                      ),
+                                  selectedTextStyle:
+                                      FlutterFlowTheme.of(context)
+                                          .headlineMedium,
+                                  textPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 10.0, 0.0),
+                                  buttonPosition: RadioButtonPosition.left,
+                                  direction: Axis.horizontal,
+                                  radioButtonColor: Color(0xFFF8B500),
+                                  inactiveRadioButtonColor: Color(0x8A000000),
+                                  toggleable: false,
+                                  horizontalAlignment: WrapAlignment.center,
+                                  verticalAlignment: WrapCrossAlignment.end,
                                 ),
-                                FFLocalizations.of(context).getText(
-                                  'bffennrn' /* أنثى */,
-                                )
-                              ].toList(),
-                              onChanged: (val) => setState(() {}),
-                              controller: _model.radioButtonController ??=
-                                  FormFieldController<String>(null),
-                              optionHeight: 50.0,
-                              textStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: Colors.black,
-                                  ),
-                              selectedTextStyle:
-                                  FlutterFlowTheme.of(context).titleSmall,
-                              buttonPosition: RadioButtonPosition.right,
-                              direction: Axis.horizontal,
-                              radioButtonColor: Color(0xFFF8B500),
-                              inactiveRadioButtonColor: Color(0x8A000000),
-                              toggleable: false,
-                              horizontalAlignment: WrapAlignment.start,
-                              verticalAlignment: WrapCrossAlignment.end,
+                              ),
                             ),
                           ],
                         ),
