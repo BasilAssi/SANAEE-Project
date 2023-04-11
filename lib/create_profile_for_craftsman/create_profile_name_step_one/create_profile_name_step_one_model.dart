@@ -1,3 +1,4 @@
+import '/backend/firebase_storage/storage.dart';
 import '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -16,6 +17,7 @@ class CreateProfileNameStepOneModel extends FlutterFlowModel {
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
+  String uploadedFileUrl = '';
 
   // State field(s) for TextField_firstname widget.
   TextEditingController? textFieldFirstnameController;

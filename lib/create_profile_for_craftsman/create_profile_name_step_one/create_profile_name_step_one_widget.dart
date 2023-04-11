@@ -1,3 +1,4 @@
+import '/backend/firebase_storage/storage.dart';
 import '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -120,7 +121,7 @@ class _CreateProfileNameStepOneWidgetState
                                 shape: BoxShape.circle,
                               ),
                               child: Image.network(
-                                FFAppState().photoURL,
+                                _model.uploadedFileUrl,
                                 fit: BoxFit.cover,
                               ),
                             ),
@@ -150,7 +151,7 @@ class _CreateProfileNameStepOneWidgetState
                                 validateFileFormat(m.storagePath, context))) {
                           setState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
-
+                          var downloadUrls = <String>[];
                           try {
                             selectedUploadedFiles = selectedMedia
                                 .map((m) => FFUploadedFile(
@@ -160,24 +161,32 @@ class _CreateProfileNameStepOneWidgetState
                                       width: m.dimensions?.width,
                                     ))
                                 .toList();
+
+                            downloadUrls = (await Future.wait(
+                              selectedMedia.map(
+                                (m) async =>
+                                    await uploadData(m.storagePath, m.bytes),
+                              ),
+                            ))
+                                .where((u) => u != null)
+                                .map((u) => u!)
+                                .toList();
                           } finally {
                             _model.isDataUploading = false;
                           }
                           if (selectedUploadedFiles.length ==
-                              selectedMedia.length) {
+                                  selectedMedia.length &&
+                              downloadUrls.length == selectedMedia.length) {
                             setState(() {
                               _model.uploadedLocalFile =
                                   selectedUploadedFiles.first;
+                              _model.uploadedFileUrl = downloadUrls.first;
                             });
                           } else {
                             setState(() {});
                             return;
                           }
                         }
-
-                        setState(() {
-                          FFAppState().photoURL = '';
-                        });
                       },
                     ),
                     Padding(
@@ -467,16 +476,14 @@ class _CreateProfileNameStepOneWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
-                                setState(() {
-                                  FFAppState().firstName =
-                                      _model.textFieldFirstnameController.text;
-                                  FFAppState().NameOfTheFather =
-                                      _model.textFieldFatherNameController.text;
-                                  FFAppState().GrandFatherName = _model
-                                      .textFieldGrandfatherNameController.text;
-                                  FFAppState().familyName =
-                                      _model.textFieldfamilyNameController.text;
-                                });
+                                FFAppState().firstName =
+                                    _model.textFieldFirstnameController.text;
+                                FFAppState().NameOfTheFather =
+                                    _model.textFieldFatherNameController.text;
+                                FFAppState().GrandFatherName = _model
+                                    .textFieldGrandfatherNameController.text;
+                                FFAppState().familyName =
+                                    _model.textFieldfamilyNameController.text;
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
