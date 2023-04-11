@@ -42,6 +42,8 @@ class _PhoneSignUpWidgetState extends State<PhoneSignUpWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return Scaffold(
       key: scaffoldKey,
       backgroundColor: Color(0xFF262D34),

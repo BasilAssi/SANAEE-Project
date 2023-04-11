@@ -43,6 +43,8 @@ class _CompanyDetailsWidgetState extends State<CompanyDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<List<CompaniesRecord>>(
       stream: queryCompaniesRecord(
         singleRecord: true,

@@ -48,6 +48,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<List<WorkHistoryRecord>>(
       stream: queryWorkHistoryRecord(
         singleRecord: true,

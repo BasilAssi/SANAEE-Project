@@ -45,6 +45,8 @@ class _JobPostAppliedWidgetState extends State<JobPostAppliedWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<JobPostsRecord>(
       stream: JobPostsRecord.getDocument(widget.jobPostDetails!),
       builder: (context, snapshot) {

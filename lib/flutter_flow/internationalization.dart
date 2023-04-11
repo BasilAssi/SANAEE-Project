@@ -1115,10 +1115,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم العائلة',
       'en': 'family name',
     },
-    '5m1e0d95': {
-      'ar': '',
-      'en': '',
-    },
     'wk7dq0gn': {
       'ar': 'التالي',
       'en': 'continue',
@@ -1133,57 +1129,300 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // creatProfile_InfoStepTwo
+  // createProfileNameAddresStepTwo
   {
-    'nf9d2c06': {
-      'ar': 'حرفي المعلومات',
-      'en': 'information craftsman',
-    },
-    'dnscmagr': {
-      'ar': 'المرحلة الثانية :ادخال المعلومات ',
-      'en': 'The second stage: entering information',
-    },
-    't56v94hh': {
-      'ar': 'Home',
+    'e1y9f93g': {
+      'ar': 'Option 1',
       'en': '',
     },
-  },
-  // createProfileNameStepOneCopy
-  {
-    'zttgzld8': {
-      'ar': '',
+    'w3fzmffj': {
+      'ar': ' الرجاء الاختيار المدينة',
+      'en': 'Please select in the city',
+    },
+    'z9sheoib': {
+      'ar': 'Search for an item...',
       'en': '',
     },
-    'f455ffmf': {
-      'ar': 'المدينة',
-      'en': 'City',
+    'ly1gh0ws': {
+      'ar': 'Option 1',
+      'en': '',
     },
-    '0xm7ud6z': {
-      'ar': 'البحث عن المدينة ...',
-      'en': 'Search for an city..',
-    },
-    '0rvsqotd': {
-      'ar': 'المدينة',
-      'en': 'City',
-    },
-    'qpojd8f9': {
+    '8992r10n': {
       'ar': 'Please select...',
       'en': '',
     },
-    'lj5c7n2k': {
+    'ym39m2k6': {
       'ar': 'Search for an item...',
       'en': '',
+    },
+    'wk8x1w5l': {
+      'ar': '',
+      'en': '',
+    },
+    '9dhlrjdm': {
+      'ar': 'العنوان',
+      'en': 'the address',
+    },
+    'u5nlt5ra': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'x8nbvq57': {
+      'ar': 'البنود وشروط الخدمة',
+      'en': 'Terms and Conditions of Service',
     },
     '3a80eaym': {
       'ar': 'التالي',
       'en': 'continue',
     },
     'uz77ammc': {
+      'ar': ' الخطوة الثانية ',
+      'en': '\nStep 2  of  4 :Upload address and place of residence',
+    },
+    '4wz4578f': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileSelectTypeJobStepThree
+  {
+    'b5rpqhxs': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    's1qnetcg': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'w9d9y2pf': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '79zxv3dw': {
+      'ar':
+          'تحميل مستندات الشهادة أو الصور\n التي تفيد بأنه صاحب المهنة)اختياري(',
+      'en':
+          'Upload certificate documents\n or photos that he is the owner\n of the profession(Option)',
+    },
+    'hr1x8djm': {
+      'ar': 'ملف',
+      'en': 'File',
+    },
+    'g8ggath2': {
+      'ar': 'صورة',
+      'en': 'photo',
+    },
+    'y7hzsrmy': {
+      'ar': 'التالي',
+      'en': 'continue',
+    },
+    'gamxhpe4': {
+      'ar': ' الخطوة الثالثة ',
+      'en':
+          '\nStep 3  of  4 : Upload certificate documents or photos that he is the owner of the profession',
+    },
+    '1w6g3gmg': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileBioStepFour
+  {
+    '43gk25vt': {
+      'ar': 'الحالة الاجتماعية',
+      'en': 'Marital status',
+    },
+    '2v6eg74w': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    '215plxme': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'yh8xu83e': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '2b4bqlbk': {
+      'ar': ' اكتب السيرة الذاتية الخاصة بك',
+      'en': 'Write your Bio',
+    },
+    'sczg2ach': {
+      'ar': '[Some hint text...]',
+      'en': '',
+    },
+    'r1vey8xo': {
+      'ar': 'انشاء حساب',
+      'en': 'Create an account',
+    },
+    'ehod4dxi': {
+      'ar': ' الخطوة الرابعة ',
+      'en': '\nStep 3  of  4 : Upload your bio ',
+    },
+    'szm92mme': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileNameStepOne_customar
+  {
+    'hmgve1rn': {
+      'ar': 'الاسم الاول',
+      'en': 'first name',
+    },
+    'id8z0n1r': {
+      'ar': 'الاسم الاول',
+      'en': 'First Name',
+    },
+    'c4e1qka2': {
+      'ar': '',
+      'en': '',
+    },
+    'jgbxb53x': {
+      'ar': 'اسم الاب',
+      'en': 'Name of the Father',
+    },
+    'yasi11u1': {
+      'ar': 'اسم الأب',
+      'en': 'Name of the Father',
+    },
+    'rsi2n32x': {
+      'ar': '',
+      'en': '',
+    },
+    'yqytkyhi': {
+      'ar': 'اسم الجد',
+      'en': 'Grandfather name',
+    },
+    'bnt6ewuu': {
+      'ar': 'اسم الجد',
+      'en': 'Grandfather name',
+    },
+    'lah638as': {
+      'ar': '',
+      'en': '',
+    },
+    'hb8rtx80': {
+      'ar': 'اسم العائلة',
+      'en': 'Family name',
+    },
+    'urrh194s': {
+      'ar': 'اسم العائلة',
+      'en': 'family name',
+    },
+    '0vimo8q1': {
+      'ar': 'التالي',
+      'en': 'continue',
+    },
+    'gs7vuc2w': {
       'ar': ' الخطوة الاولى ',
       'en':
           '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
     },
-    '4wz4578f': {
+    '213vtn7i': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileNameAddresStepTwo_customar
+  {
+    '1zx12yeb': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'w5xi6fg3': {
+      'ar': ' الرجاء الاختيار المدينة',
+      'en': 'Please select in the city',
+    },
+    'ky3aclvj': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'bmrroq63': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    '3esq324e': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'h79z13lh': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'c284o8hu': {
+      'ar': '',
+      'en': '',
+    },
+    '55arvmpm': {
+      'ar': 'العنوان',
+      'en': 'the address',
+    },
+    'ab3ez11s': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'dfzg7bo9': {
+      'ar': 'البنود وشروط الخدمة',
+      'en': 'Terms and Conditions of Service',
+    },
+    'xja3aoj4': {
+      'ar': 'التالي',
+      'en': 'continue',
+    },
+    'z43x8hh9': {
+      'ar': ' الخطوة الثانية ',
+      'en': '\nStep 2  of  4 :Upload address and place of residence',
+    },
+    'gmrwmaa6': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createProfileBioStepThree_customar
+  {
+    'y3rxb9c3': {
+      'ar': 'الحالة الاجتماعية',
+      'en': 'Marital status',
+    },
+    'z6gw5qbu': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    '8sje1npb': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'zjaovpel': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'u5yjoclt': {
+      'ar': ' اكتب السيرة الذاتية الخاصة بك',
+      'en': 'Write your Bio',
+    },
+    'v2zyleky': {
+      'ar': '[Some hint text...]',
+      'en': '',
+    },
+    'l40ka9y6': {
+      'ar': 'ذكر',
+      'en': 'male',
+    },
+    'bffennrn': {
+      'ar': 'أنثى',
+      'en': 'feminine',
+    },
+    'ie5jweyk': {
+      'ar': 'انشاء حساب',
+      'en': 'Create an account',
+    },
+    'yqh7vg7v': {
+      'ar': ' الخطوة الرابعة ',
+      'en': '\nStep 3  of  4 : Upload your bio ',
+    },
+    'io5fdh0i': {
       'ar': 'Home',
       'en': '',
     },
