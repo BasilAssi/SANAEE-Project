@@ -45,6 +45,8 @@ class _CandidateDetailsWidgetState extends State<CandidateDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<UsersRecord>(
       stream: UsersRecord.getDocument(widget.candidateDetails!),
       builder: (context, snapshot) {

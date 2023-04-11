@@ -49,7 +49,15 @@ export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
 export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart'
     show CreateProfileNameStepOneWidget;
-export '/create_profile_for_craftsman/creat_profile_info_step_two/creat_profile_info_step_two_widget.dart'
-    show CreatProfileInfoStepTwoWidget;
-export '/create_profile_for_craftsman/create_profile_name_step_one_copy/create_profile_name_step_one_copy_widget.dart'
-    show CreateProfileNameStepOneCopyWidget;
+export '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart'
+    show CreateProfileNameAddresStepTwoWidget;
+export '/create_profile_for_craftsman/create_profile_select_type_job_step_three/create_profile_select_type_job_step_three_widget.dart'
+    show CreateProfileSelectTypeJobStepThreeWidget;
+export '/create_profile_for_craftsman/create_profile_bio_step_four/create_profile_bio_step_four_widget.dart'
+    show CreateProfileBioStepFourWidget;
+export '/creat_profile_for_customar/create_profile_name_step_one_customar/create_profile_name_step_one_customar_widget.dart'
+    show CreateProfileNameStepOneCustomarWidget;
+export '/creat_profile_for_customar/create_profile_name_addres_step_two_customar/create_profile_name_addres_step_two_customar_widget.dart'
+    show CreateProfileNameAddresStepTwoCustomarWidget;
+export '/creat_profile_for_customar/create_profile_bio_step_three_customar/create_profile_bio_step_three_customar_widget.dart'
+    show CreateProfileBioStepThreeCustomarWidget;

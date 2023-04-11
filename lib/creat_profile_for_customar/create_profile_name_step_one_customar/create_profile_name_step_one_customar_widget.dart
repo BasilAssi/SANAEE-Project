@@ -1,4 +1,5 @@
-import '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart';
+import '/auth/auth_util.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -9,20 +10,20 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'package:simple_gradient_text/simple_gradient_text.dart';
-import 'create_profile_name_step_one_model.dart';
-export 'create_profile_name_step_one_model.dart';
+import 'create_profile_name_step_one_customar_model.dart';
+export 'create_profile_name_step_one_customar_model.dart';
 
-class CreateProfileNameStepOneWidget extends StatefulWidget {
-  const CreateProfileNameStepOneWidget({Key? key}) : super(key: key);
+class CreateProfileNameStepOneCustomarWidget extends StatefulWidget {
+  const CreateProfileNameStepOneCustomarWidget({Key? key}) : super(key: key);
 
   @override
-  _CreateProfileNameStepOneWidgetState createState() =>
-      _CreateProfileNameStepOneWidgetState();
+  _CreateProfileNameStepOneCustomarWidgetState createState() =>
+      _CreateProfileNameStepOneCustomarWidgetState();
 }
 
-class _CreateProfileNameStepOneWidgetState
-    extends State<CreateProfileNameStepOneWidget> {
-  late CreateProfileNameStepOneModel _model;
+class _CreateProfileNameStepOneCustomarWidgetState
+    extends State<CreateProfileNameStepOneCustomarWidget> {
+  late CreateProfileNameStepOneCustomarModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -30,16 +31,18 @@ class _CreateProfileNameStepOneWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateProfileNameStepOneModel());
+    _model =
+        createModel(context, () => CreateProfileNameStepOneCustomarModel());
 
     _model.textFieldFirstnameController ??= TextEditingController();
     _model.textFieldFatherNameController ??= TextEditingController();
     _model.textFieldGrandfatherNameController ??= TextEditingController();
-    _model.textFieldfamilyNameController ??= TextEditingController();
+    _model.textFieldfamilyNameController ??=
+        TextEditingController(text: FFAppState().familyName);
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
           _model.textFieldFirstnameController?.text =
               FFLocalizations.of(context).getText(
-            'ar38z3j3' /*  */,
+            'c4e1qka2' /*  */,
           );
         }));
   }
@@ -112,16 +115,18 @@ class _CreateProfileNameStepOneWidgetState
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 80.0, 0.0, 0.0),
-                            child: Container(
-                              width: 120.0,
-                              height: 120.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
-                              ),
-                              child: Image.network(
-                                FFAppState().photoURL,
-                                fit: BoxFit.cover,
+                            child: AuthUserStreamWidget(
+                              builder: (context) => Container(
+                                width: 120.0,
+                                height: 120.0,
+                                clipBehavior: Clip.antiAlias,
+                                decoration: BoxDecoration(
+                                  shape: BoxShape.circle,
+                                ),
+                                child: Image.network(
+                                  currentUserPhoto,
+                                  fit: BoxFit.cover,
+                                ),
                               ),
                             ),
                           ),
@@ -144,13 +149,14 @@ class _CreateProfileNameStepOneWidgetState
                           context: context,
                           imageQuality: 100,
                           allowPhoto: true,
+                          includeDimensions: true,
                         );
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
                                 validateFileFormat(m.storagePath, context))) {
                           setState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
-
+                          var downloadUrls = <String>[];
                           try {
                             selectedUploadedFiles = selectedMedia
                                 .map((m) => FFUploadedFile(
@@ -160,24 +166,32 @@ class _CreateProfileNameStepOneWidgetState
                                       width: m.dimensions?.width,
                                     ))
                                 .toList();
+
+                            downloadUrls = (await Future.wait(
+                              selectedMedia.map(
+                                (m) async =>
+                                    await uploadData(m.storagePath, m.bytes),
+                              ),
+                            ))
+                                .where((u) => u != null)
+                                .map((u) => u!)
+                                .toList();
                           } finally {
                             _model.isDataUploading = false;
                           }
                           if (selectedUploadedFiles.length ==
-                              selectedMedia.length) {
+                                  selectedMedia.length &&
+                              downloadUrls.length == selectedMedia.length) {
                             setState(() {
                               _model.uploadedLocalFile =
                                   selectedUploadedFiles.first;
+                              _model.uploadedFileUrl = downloadUrls.first;
                             });
                           } else {
                             setState(() {});
                             return;
                           }
                         }
-
-                        setState(() {
-                          FFAppState().photoURL = '';
-                        });
                       },
                     ),
                     Padding(
@@ -199,12 +213,12 @@ class _CreateProfileNameStepOneWidgetState
                                   isDense: true,
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'b0muce5a' /* الاسم الاول */,
+                                    'hmgve1rn' /* الاسم الاول */,
                                   ),
                                   labelStyle:
                                       FlutterFlowTheme.of(context).titleMedium,
                                   hintText: FFLocalizations.of(context).getText(
-                                    'w0w0vgpe' /* الاسم الاول */,
+                                    'id8z0n1r' /* الاسم الاول */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -270,10 +284,10 @@ class _CreateProfileNameStepOneWidgetState
                                   isDense: true,
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'qppalhqq' /* اسم الاب */,
+                                    'jgbxb53x' /* اسم الاب */,
                                   ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    'hcdvvtn0' /* اسم الأب */,
+                                    'yasi11u1' /* اسم الأب */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -339,10 +353,10 @@ class _CreateProfileNameStepOneWidgetState
                                   isDense: true,
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    '2abshufy' /* اسم الجد */,
+                                    'yqytkyhi' /* اسم الجد */,
                                   ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '9bpppzbx' /* اسم الجد */,
+                                    'bnt6ewuu' /* اسم الجد */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -408,10 +422,10 @@ class _CreateProfileNameStepOneWidgetState
                                   isDense: true,
                                   labelText:
                                       FFLocalizations.of(context).getText(
-                                    'j1xausqc' /* اسم العائلة */,
+                                    'hb8rtx80' /* اسم العائلة */,
                                   ),
                                   hintText: FFLocalizations.of(context).getText(
-                                    '3t0a6bly' /* اسم العائلة */,
+                                    'urrh194s' /* اسم العائلة */,
                                   ),
                                   hintStyle: FlutterFlowTheme.of(context)
                                       .titleMedium
@@ -466,27 +480,11 @@ class _CreateProfileNameStepOneWidgetState
                               ),
                             ),
                             FFButtonWidget(
-                              onPressed: () async {
-                                setState(() {
-                                  FFAppState().firstName =
-                                      _model.textFieldFirstnameController.text;
-                                  FFAppState().NameOfTheFather =
-                                      _model.textFieldFatherNameController.text;
-                                  FFAppState().GrandFatherName = _model
-                                      .textFieldGrandfatherNameController.text;
-                                  FFAppState().familyName =
-                                      _model.textFieldfamilyNameController.text;
-                                });
-                                await Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        CreateProfileNameAddresStepTwoWidget(),
-                                  ),
-                                );
+                              onPressed: () {
+                                print('Button pressed ...');
                               },
                               text: FFLocalizations.of(context).getText(
-                                'wk7dq0gn' /* التالي */,
+                                '0vimo8q1' /* التالي */,
                               ),
                               options: FFButtonOptions(
                                 width: 350.0,
@@ -516,7 +514,7 @@ class _CreateProfileNameStepOneWidgetState
                 padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
                 child: GradientText(
                   FFLocalizations.of(context).getText(
-                    'r53cjzi7' /*  الخطوة الاولى  */,
+                    'gs7vuc2w' /*  الخطوة الاولى  */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(

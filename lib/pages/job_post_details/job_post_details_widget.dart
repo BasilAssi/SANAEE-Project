@@ -46,6 +46,8 @@ class _JobPostDetailsWidgetState extends State<JobPostDetailsWidget> {
 
   @override
   Widget build(BuildContext context) {
+    context.watch<FFAppState>();
+
     return StreamBuilder<List<JobPostsRecord>>(
       stream: queryJobPostsRecord(
         singleRecord: true,
