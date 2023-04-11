@@ -164,11 +164,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                   FlutterFlowDropDown<String>(
                                     controller: _model.dropDownController2 ??=
                                         FormFieldController<String>(null),
-                                    options: [
-                                      FFLocalizations.of(context).getText(
-                                        'bmrroq63' /* Option 1 */,
-                                      )
-                                    ],
+                                    options: <String>[],
                                     onChanged: (val) => setState(
                                         () => _model.dropDownValue2 = val),
                                     width: 340.0,

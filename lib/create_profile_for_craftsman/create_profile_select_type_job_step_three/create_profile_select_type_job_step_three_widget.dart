@@ -115,7 +115,22 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                         FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        'b5rpqhxs' /* Option 1 */,
+                                        'b5rpqhxs' /* البلاط */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'idsywi99' /* الكهرباء */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '0sv4st4m' /* حداد */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '55dp19wk' /* نجار */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '3yyg9i1y' /* سباك */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '6ukdbdl2' /* دهان */,
                                       )
                                     ],
                                     onChanged: (val) => setState(

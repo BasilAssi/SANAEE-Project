@@ -1136,7 +1136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileNameAddresStepTwo
   {
     'e1y9f93g': {
-      'ar': 'Option 1',
+      'ar': 'Rammllah',
+      'en': 'رام الله ',
+    },
+    '38d42beq': {
+      'ar': 'Jordan',
       'en': '',
     },
     'w3fzmffj': {
@@ -1145,18 +1149,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z9sheoib': {
       'ar': 'Search for an item...',
-      'en': '',
-    },
-    'ly1gh0ws': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '8992r10n': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'ym39m2k6': {
-      'ar': '',
       'en': '',
     },
     'wk8x1w5l': {
@@ -1191,8 +1183,28 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileSelectTypeJobStepThree
   {
     'b5rpqhxs': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'البلاط',
+      'en': 'tiles',
+    },
+    'idsywi99': {
+      'ar': 'الكهرباء',
+      'en': 'electrical',
+    },
+    '0sv4st4m': {
+      'ar': 'حداد',
+      'en': 'Smith',
+    },
+    '55dp19wk': {
+      'ar': 'نجار',
+      'en': 'Carpenter',
+    },
+    '3yyg9i1y': {
+      'ar': 'سباك',
+      'en': 'plumber',
+    },
+    '6ukdbdl2': {
+      'ar': 'دهان',
+      'en': 'paint',
     },
     's1qnetcg': {
       'ar': 'Please select...',
@@ -1341,10 +1353,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ky3aclvj': {
       'ar': 'Search for an item...',
-      'en': '',
-    },
-    'bmrroq63': {
-      'ar': 'Option 1',
       'en': '',
     },
     '3esq324e': {
