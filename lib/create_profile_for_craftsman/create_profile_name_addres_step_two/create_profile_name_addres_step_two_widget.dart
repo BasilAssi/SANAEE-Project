@@ -132,7 +132,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                           FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: '',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -150,9 +150,9 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,
                                       elevation: 2.0,
-                                      borderColor: Colors.transparent,
+                                      borderColor: Color(0xFFF8B500),
                                       borderWidth: 0.0,
-                                      borderRadius: 0.0,
+                                      borderRadius: 16.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 4.0, 12.0, 4.0),
                                       hidesUnderline: true,
@@ -175,7 +175,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                         FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: '',
+                                              fontFamily: 'Roboto',
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
@@ -188,18 +188,18 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                     ),
                                     searchHintText:
                                         FFLocalizations.of(context).getText(
-                                      'ym39m2k6' /* Search for an item... */,
+                                      'ym39m2k6' /*  */,
                                     ),
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     elevation: 2.0,
-                                    borderColor: Colors.transparent,
+                                    borderColor: Color(0xFFF8B500),
                                     borderWidth: 0.0,
-                                    borderRadius: 0.0,
+                                    borderRadius: 16.0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 4.0, 12.0, 4.0),
                                     hidesUnderline: true,
-                                    isSearchable: false,
+                                    isSearchable: true,
                                   ),
                                 ],
                               ),
@@ -289,12 +289,11 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             ),
                                         enabledBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryBtnText,
+                                            color: Color(0xFFF8B500),
                                             width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(15.0),
+                                              BorderRadius.circular(16.0),
                                         ),
                                         focusedBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -303,7 +302,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(15.0),
+                                              BorderRadius.circular(16.0),
                                         ),
                                         errorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -312,7 +311,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(15.0),
+                                              BorderRadius.circular(16.0),
                                         ),
                                         focusedErrorBorder: OutlineInputBorder(
                                           borderSide: BorderSide(
@@ -321,11 +320,11 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             width: 1.0,
                                           ),
                                           borderRadius:
-                                              BorderRadius.circular(15.0),
+                                              BorderRadius.circular(16.0),
                                         ),
                                         filled: true,
                                         fillColor: FlutterFlowTheme.of(context)
-                                            .primary,
+                                            .secondaryBackground,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .headlineMedium

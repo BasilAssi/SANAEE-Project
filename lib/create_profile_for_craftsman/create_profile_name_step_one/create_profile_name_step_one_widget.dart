@@ -145,6 +145,10 @@ class _CreateProfileNameStepOneWidgetState
                           context: context,
                           imageQuality: 100,
                           allowPhoto: true,
+                          backgroundColor:
+                              FlutterFlowTheme.of(context).tertiary,
+                          textColor: Color(0xFF505762),
+                          pickerFontFamily: 'Roboto',
                         );
                         if (selectedMedia != null &&
                             selectedMedia.every((m) =>
