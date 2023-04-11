@@ -236,15 +236,6 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                               );
                                               await currentUserReference!
                                                   .update(usersUpdateData);
-
-                                              final craftsmanCreateData =
-                                                  createCraftsmanRecordData(
-                                                email: currentUserEmail,
-                                                uid: currentUserUid,
-                                              );
-                                              await CraftsmanRecord.collection
-                                                  .doc()
-                                                  .set(craftsmanCreateData);
                                               await Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
