@@ -111,11 +111,27 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                 mainAxisSize: MainAxisSize.max,
                                 children: [
                                   FlutterFlowDropDown<String>(
-                                    controller: _model.dropDownController ??=
-                                        FormFieldController<String>(null),
+                                    controller:
+                                        _model.dropDownValueController ??=
+                                            FormFieldController<String>(null),
                                     options: [
                                       FFLocalizations.of(context).getText(
-                                        'b5rpqhxs' /* Option 1 */,
+                                        'b5rpqhxs' /* البلاط */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        'idsywi99' /* الكهرباء */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '0sv4st4m' /* حداد */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '55dp19wk' /* نجار */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '3yyg9i1y' /* سباك */,
+                                      ),
+                                      FFLocalizations.of(context).getText(
+                                        '6ukdbdl2' /* دهان */,
                                       )
                                     ],
                                     onChanged: (val) => setState(
@@ -130,12 +146,17 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,
+                                              fontSize: 20.0,
                                             ),
-                                    textStyle:
-                                        FlutterFlowTheme.of(context).bodyMedium,
+                                    textStyle: FlutterFlowTheme.of(context)
+                                        .bodyMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          fontSize: 20.0,
+                                        ),
                                     hintText:
                                         FFLocalizations.of(context).getText(
-                                      's1qnetcg' /* Please select... */,
+                                      's1qnetcg' /* الرجاء اختيار حرفتك */,
                                     ),
                                     searchHintText:
                                         FFLocalizations.of(context).getText(
@@ -144,13 +165,14 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                     fillColor: FlutterFlowTheme.of(context)
                                         .secondaryBackground,
                                     elevation: 2.0,
-                                    borderColor: Colors.transparent,
+                                    borderColor:
+                                        FlutterFlowTheme.of(context).primary,
                                     borderWidth: 0.0,
-                                    borderRadius: 0.0,
+                                    borderRadius: 16.0,
                                     margin: EdgeInsetsDirectional.fromSTEB(
                                         12.0, 4.0, 12.0, 4.0),
                                     hidesUnderline: true,
-                                    isSearchable: false,
+                                    isSearchable: true,
                                   ),
                                 ],
                               ),

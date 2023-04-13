@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -563,8 +563,9 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                           .secondaryBackground,
                                     ),
                                     child: FlutterFlowDropDown<String>(
-                                      controller: _model.dropDownController ??=
-                                          FormFieldController<String>(
+                                      controller:
+                                          _model.dropDownValueController ??=
+                                              FormFieldController<String>(
                                         _model.dropDownValue ??=
                                             editProfileUsersRecord
                                                 .experienceLevel,

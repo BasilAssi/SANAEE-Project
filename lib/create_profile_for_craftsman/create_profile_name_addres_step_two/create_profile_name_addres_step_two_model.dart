@@ -15,16 +15,16 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDown widget.
-  String? dropDownValue1;
-  FormFieldController<String>? dropDownController1;
-  // State field(s) for DropDown widget.
-  String? dropDownValue2;
-  FormFieldController<String>? dropDownController2;
+  String? dropDownValue;
+  FormFieldController<String>? dropDownValueController;
   // State field(s) for TextField_addrese widget.
   final textFieldAddreseKey = GlobalKey();
   TextEditingController? textFieldAddreseController;
   String? textFieldAddreseSelectedOption;
   String? Function(BuildContext, String?)? textFieldAddreseControllerValidator;
+  // State field(s) for TextField_ipNumper widget.
+  TextEditingController? textFieldIpNumperController;
+  String? Function(BuildContext, String?)? textFieldIpNumperControllerValidator;
   // State field(s) for Checkbox widget.
   bool? checkboxValue;
 
@@ -32,7 +32,9 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
 
   void initState(BuildContext context) {}
 
-  void dispose() {}
+  void dispose() {
+    textFieldIpNumperController?.dispose();
+  }
 
   /// Additional helper methods are added here.
 

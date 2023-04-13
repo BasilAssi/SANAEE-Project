@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -530,8 +530,9 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                             ],
                           ),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.experienceLevelController ??=
-                                FormFieldController<String>(null),
+                            controller:
+                                _model.experienceLevelValueController ??=
+                                    FormFieldController<String>(null),
                             options: [
                               FFLocalizations.of(context).getText(
                                 'f8hlklae' /* < 6 Months */,

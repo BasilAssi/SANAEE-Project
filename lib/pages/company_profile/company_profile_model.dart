@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -37,7 +37,7 @@ class CompanyProfileModel extends FlutterFlowModel {
   String? Function(BuildContext, String?)? descriptionControllerValidator;
   // State field(s) for companySize widget.
   String? companySizeValue;
-  FormFieldController<String>? companySizeController;
+  FormFieldController<String>? companySizeValueController;
   // State field(s) for location widget.
   TextEditingController? locationController;
   String? Function(BuildContext, String?)? locationControllerValidator;

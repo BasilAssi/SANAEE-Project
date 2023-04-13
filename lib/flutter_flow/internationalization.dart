@@ -1136,7 +1136,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileNameAddresStepTwo
   {
     'e1y9f93g': {
-      'ar': 'Option 1',
+      'ar': 'Rammllah',
+      'en': 'رام الله ',
+    },
+    '38d42beq': {
+      'ar': 'Jordan',
       'en': '',
     },
     'w3fzmffj': {
@@ -1145,18 +1149,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'z9sheoib': {
       'ar': 'Search for an item...',
-      'en': '',
-    },
-    'ly1gh0ws': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '8992r10n': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'ym39m2k6': {
-      'ar': '',
       'en': '',
     },
     'wk8x1w5l': {
@@ -1170,6 +1162,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'u5nlt5ra': {
       'ar': 'Option 1',
       'en': '',
+    },
+    '1x66rnls': {
+      'ar': 'رقم الهوية ',
+      'en': 'ID Number',
     },
     'x8nbvq57': {
       'ar': 'البنود وشروط الخدمة',
@@ -1191,12 +1187,32 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileSelectTypeJobStepThree
   {
     'b5rpqhxs': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'البلاط',
+      'en': 'tiles',
+    },
+    'idsywi99': {
+      'ar': 'الكهرباء',
+      'en': 'electrical',
+    },
+    '0sv4st4m': {
+      'ar': 'حداد',
+      'en': 'Smith',
+    },
+    '55dp19wk': {
+      'ar': 'نجار',
+      'en': 'Carpenter',
+    },
+    '3yyg9i1y': {
+      'ar': 'سباك',
+      'en': 'plumber',
+    },
+    '6ukdbdl2': {
+      'ar': 'دهان',
+      'en': 'paint',
     },
     's1qnetcg': {
-      'ar': 'Please select...',
-      'en': '',
+      'ar': 'الرجاء اختيار حرفتك',
+      'en': 'Please choose your craft',
     },
     'w9d9y2pf': {
       'ar': 'Search for an item...',
@@ -1232,28 +1248,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileBioStepFour
   {
-    '43gk25vt': {
-      'ar': 'الحالة الاجتماعية',
-      'en': 'Marital status',
-    },
-    '2v6eg74w': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '215plxme': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'yh8xu83e': {
-      'ar': 'Search for an item...',
-      'en': '',
-    },
     '2b4bqlbk': {
       'ar': ' اكتب السيرة الذاتية الخاصة بك',
       'en': 'Write your Bio',
     },
+    '14lgq1gt': {
+      'ar': 'اكتب سيرتك الذاتية',
+      'en': 'Write your Bio',
+    },
     'sczg2ach': {
-      'ar': '[Some hint text...]',
+      'ar':
+          '\nاكتب سيرتك الذاتية                                                                                                \n\n\n\n ',
+      'en': '\nWrite your Bio\n\n\n\n\n',
+    },
+    'qg5tlean': {
+      'ar': '',
+      'en':
+          '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
+    },
+    'fcgz39qd': {
+      'ar': 'Option 1',
       'en': '',
     },
     'r1vey8xo': {
@@ -1343,10 +1357,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    'bmrroq63': {
-      'ar': 'Option 1',
-      'en': '',
-    },
     '3esq324e': {
       'ar': 'Please select...',
       'en': '',
@@ -1387,19 +1397,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileBioStepThree_customar
   {
     'y3rxb9c3': {
-      'ar': 'الحالة الاجتماعية',
-      'en': 'Marital status',
+      'ar': 'رقم الهوية',
+      'en': 'ID Number',
     },
-    'z6gw5qbu': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '8sje1npb': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'zjaovpel': {
-      'ar': 'Search for an item...',
+    'vvgw7imm': {
+      'ar': '[Some hint text...]',
       'en': '',
     },
     'u5yjoclt': {

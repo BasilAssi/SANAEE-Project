@@ -114,15 +114,18 @@ class _CreateProfileNameStepOneWidgetState
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 80.0, 0.0, 0.0),
                             child: Container(
-                              width: 120.0,
-                              height: 120.0,
+                              width: 130.0,
+                              height: 130.0,
                               clipBehavior: Clip.antiAlias,
                               decoration: BoxDecoration(
                                 shape: BoxShape.circle,
                               ),
                               child: Image.network(
-                                _model.uploadedFileUrl,
-                                fit: BoxFit.cover,
+                                valueOrDefault<String>(
+                                  _model.uploadedFileUrl,
+                                  'https://picsum.photos/seed/picsum/120/120',
+                                ),
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),

@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -326,7 +326,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 30.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          final user = await signInWithEmail(
+                          final user = await authManager.signInWithEmail(
                             context,
                             _model.emailAddressController.text,
                             _model.passwordController.text,
@@ -520,7 +520,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                           EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 0.0),
                       child: FFButtonWidget(
                         onPressed: () async {
-                          final user = await signInAnonymously(context);
+                          final user =
+                              await authManager.signInAnonymously(context);
                           if (user == null) {
                             return;
                           }

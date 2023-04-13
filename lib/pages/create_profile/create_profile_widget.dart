@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -344,7 +344,7 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                         color: FlutterFlowTheme.of(context).secondaryBackground,
                       ),
                       child: FlutterFlowDropDown<String>(
-                        controller: _model.dropDownController ??=
+                        controller: _model.dropDownValueController ??=
                             FormFieldController<String>(null),
                         options: [
                           FFLocalizations.of(context).getText(

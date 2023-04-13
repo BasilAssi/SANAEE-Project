@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -33,7 +33,7 @@ class CreateJobModel extends FlutterFlowModel {
   String? Function(BuildContext, String?)? preferredSkillsControllerValidator;
   // State field(s) for experienceLevel widget.
   String? experienceLevelValue;
-  FormFieldController<String>? experienceLevelController;
+  FormFieldController<String>? experienceLevelValueController;
   // State field(s) for salaryRange widget.
   double? salaryRangeValue;
   // State field(s) for PlacePicker widget.
