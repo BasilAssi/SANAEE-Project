@@ -34,6 +34,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
     _model = createModel(context, () => CreateProfileNameAddresStepTwoModel());
 
     _model.textFieldAddreseController ??= TextEditingController();
+    _model.textFieldIpNumperController ??= TextEditingController();
   }
 
   @override
@@ -120,7 +121,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             0.0, 0.0, 0.0, 20.0),
                                         child: FlutterFlowDropDown<String>(
                                           controller: _model
-                                                  .dropDownController ??=
+                                                  .dropDownValueController ??=
                                               FormFieldController<String>(null),
                                           options: [
                                             FFLocalizations.of(context).getText(
@@ -300,10 +301,6 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
                                             ),
-                                            filled: true,
-                                            fillColor:
-                                                FlutterFlowTheme.of(context)
-                                                    .secondaryBackground,
                                           ),
                                           style: FlutterFlowTheme.of(context)
                                               .headlineMedium
@@ -326,13 +323,81 @@ class _CreateProfileNameAddresStepTwoWidgetState
                             Row(
                               mainAxisSize: MainAxisSize.max,
                               children: [
+                                Expanded(
+                                  child: TextFormField(
+                                    controller:
+                                        _model.textFieldIpNumperController,
+                                    autofocus: true,
+                                    obscureText: false,
+                                    decoration: InputDecoration(
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        '1x66rnls' /* رقم الهوية  */,
+                                      ),
+                                      hintStyle: FlutterFlowTheme.of(context)
+                                          .headlineMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 20.0,
+                                            fontWeight: FontWeight.w500,
+                                          ),
+                                      enabledBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      focusedBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.white,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      errorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.white,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                      focusedErrorBorder: OutlineInputBorder(
+                                        borderSide: BorderSide(
+                                          color: Colors.white,
+                                          width: 1.0,
+                                        ),
+                                        borderRadius:
+                                            BorderRadius.circular(16.0),
+                                      ),
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineSmall,
+                                    textAlign: TextAlign.center,
+                                    keyboardType:
+                                        const TextInputType.numberWithOptions(
+                                            signed: true, decimal: true),
+                                    validator: _model
+                                        .textFieldIpNumperControllerValidator
+                                        .asValidator(context),
+                                  ),
+                                ),
+                              ],
+                            ),
+                            Row(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
                                 SingleChildScrollView(
                                   child: Column(
                                     mainAxisSize: MainAxisSize.max,
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 30.0),
+                                            0.0, 20.0, 0.0, 30.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
                                           mainAxisAlignment:

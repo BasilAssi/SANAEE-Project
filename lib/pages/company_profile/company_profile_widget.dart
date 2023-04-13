@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
@@ -488,7 +488,7 @@ class _CompanyProfileWidgetState extends State<CompanyProfileWidget> {
                                 .secondaryBackground,
                           ),
                           child: FlutterFlowDropDown<String>(
-                            controller: _model.companySizeController ??=
+                            controller: _model.companySizeValueController ??=
                                 FormFieldController<String>(
                               _model.companySizeValue ??=
                                   FFLocalizations.of(context).getText(

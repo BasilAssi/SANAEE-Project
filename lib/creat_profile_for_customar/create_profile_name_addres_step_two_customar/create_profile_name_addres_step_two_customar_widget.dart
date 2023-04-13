@@ -119,8 +119,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 20.0),
                                     child: FlutterFlowDropDown<String>(
-                                      controller: _model.dropDownController1 ??=
-                                          FormFieldController<String>(null),
+                                      controller:
+                                          _model.dropDownValueController1 ??=
+                                              FormFieldController<String>(null),
                                       options: [
                                         FFLocalizations.of(context).getText(
                                           '1zx12yeb' /* Option 1 */,
@@ -162,8 +163,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                     ),
                                   ),
                                   FlutterFlowDropDown<String>(
-                                    controller: _model.dropDownController2 ??=
-                                        FormFieldController<String>(null),
+                                    controller:
+                                        _model.dropDownValueController2 ??=
+                                            FormFieldController<String>(null),
                                     options: <String>[],
                                     onChanged: (val) => setState(
                                         () => _model.dropDownValue2 = val),

@@ -125,7 +125,7 @@ class _CreateProfileNameStepOneWidgetState
                                   _model.uploadedFileUrl,
                                   'https://picsum.photos/seed/picsum/120/120',
                                 ),
-                                fit: BoxFit.cover,
+                                fit: BoxFit.contain,
                               ),
                             ),
                           ),

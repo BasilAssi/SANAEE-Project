@@ -1,4 +1,3 @@
-import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -34,7 +33,8 @@ class _CreateProfileBioStepThreeCustomarWidgetState
     _model =
         createModel(context, () => CreateProfileBioStepThreeCustomarModel());
 
-    _model.textController ??= TextEditingController();
+    _model.textController1 ??= TextEditingController();
+    _model.textController2 ??= TextEditingController();
   }
 
   @override
@@ -112,7 +112,7 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                   0.0, 0.0, 200.0, 10.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  'y3rxb9c3' /* الحالة الاجتماعية */,
+                                  'y3rxb9c3' /* رقم الهوية */,
                                 ),
                                 textAlign: TextAlign.start,
                                 style: FlutterFlowTheme.of(context)
@@ -125,44 +125,57 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                     ),
                               ),
                             ),
-                            FlutterFlowDropDown<String>(
-                              controller: _model.dropDownController ??=
-                                  FormFieldController<String>(null),
-                              options: [
-                                FFLocalizations.of(context).getText(
-                                  'z6gw5qbu' /* Option 1 */,
-                                )
-                              ],
-                              onChanged: (val) =>
-                                  setState(() => _model.dropDownValue = val),
-                              width: 350.0,
-                              height: 50.0,
-                              searchHintTextStyle: FlutterFlowTheme.of(context)
-                                  .bodyLarge
-                                  .override(
-                                    fontFamily: '',
-                                    color: FlutterFlowTheme.of(context)
-                                        .secondaryText,
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  10.0, 0.0, 10.0, 0.0),
+                              child: TextFormField(
+                                controller: _model.textController1,
+                                autofocus: true,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'vvgw7imm' /* [Some hint text...] */,
                                   ),
-                              textStyle:
-                                  FlutterFlowTheme.of(context).bodyMedium,
-                              hintText: FFLocalizations.of(context).getText(
-                                '8sje1npb' /* Please select... */,
+                                  hintStyle:
+                                      FlutterFlowTheme.of(context).bodySmall,
+                                  enabledBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  focusedBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  errorBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  focusedErrorBorder: UnderlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  filled: true,
+                                ),
+                                style: FlutterFlowTheme.of(context).bodyMedium,
+                                validator: _model.textController1Validator
+                                    .asValidator(context),
                               ),
-                              searchHintText:
-                                  FFLocalizations.of(context).getText(
-                                'zjaovpel' /* Search for an item... */,
-                              ),
-                              fillColor: FlutterFlowTheme.of(context)
-                                  .secondaryBackground,
-                              elevation: 2.0,
-                              borderColor: Colors.transparent,
-                              borderWidth: 0.0,
-                              borderRadius: 0.0,
-                              margin: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 4.0, 12.0, 4.0),
-                              hidesUnderline: true,
-                              isSearchable: false,
                             ),
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
@@ -198,7 +211,7 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                 children: [
                                   Expanded(
                                     child: TextFormField(
-                                      controller: _model.textController,
+                                      controller: _model.textController2,
                                       autofillHints: [AutofillHints.email],
                                       obscureText: false,
                                       decoration: InputDecoration(
@@ -245,7 +258,7 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodyMedium,
-                                      validator: _model.textControllerValidator
+                                      validator: _model.textController2Validator
                                           .asValidator(context),
                                     ),
                                   ),
@@ -267,8 +280,9 @@ class _CreateProfileBioStepThreeCustomarWidgetState
                                     )
                                   ].toList(),
                                   onChanged: (val) => setState(() {}),
-                                  controller: _model.radioButtonController ??=
-                                      FormFieldController<String>(null),
+                                  controller:
+                                      _model.radioButtonValueController ??=
+                                          FormFieldController<String>(null),
                                   optionHeight: 50.0,
                                   textStyle: FlutterFlowTheme.of(context)
                                       .headlineMedium

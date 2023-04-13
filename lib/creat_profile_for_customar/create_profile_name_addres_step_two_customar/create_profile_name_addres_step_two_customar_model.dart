@@ -16,10 +16,10 @@ class CreateProfileNameAddresStepTwoCustomarModel extends FlutterFlowModel {
 
   // State field(s) for DropDown widget.
   String? dropDownValue1;
-  FormFieldController<String>? dropDownController1;
+  FormFieldController<String>? dropDownValueController1;
   // State field(s) for DropDown widget.
   String? dropDownValue2;
-  FormFieldController<String>? dropDownController2;
+  FormFieldController<String>? dropDownValueController2;
   // State field(s) for TextField_addrese widget.
   final textFieldAddreseKey = GlobalKey();
   TextEditingController? textFieldAddreseController;

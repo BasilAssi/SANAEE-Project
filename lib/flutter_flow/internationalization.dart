@@ -1163,6 +1163,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Option 1',
       'en': '',
     },
+    '1x66rnls': {
+      'ar': 'رقم الهوية ',
+      'en': 'ID Number',
+    },
     'x8nbvq57': {
       'ar': 'البنود وشروط الخدمة',
       'en': 'Terms and Conditions of Service',
@@ -1207,8 +1211,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'paint',
     },
     's1qnetcg': {
-      'ar': 'Please select...',
-      'en': '',
+      'ar': 'الرجاء اختيار حرفتك',
+      'en': 'Please choose your craft',
     },
     'w9d9y2pf': {
       'ar': 'Search for an item...',
@@ -1244,28 +1248,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileBioStepFour
   {
-    '43gk25vt': {
-      'ar': 'الحالة الاجتماعية',
-      'en': 'Marital status',
-    },
-    '2v6eg74w': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '215plxme': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'yh8xu83e': {
-      'ar': 'Search for an item...',
-      'en': '',
-    },
     '2b4bqlbk': {
       'ar': ' اكتب السيرة الذاتية الخاصة بك',
       'en': 'Write your Bio',
     },
+    '14lgq1gt': {
+      'ar': 'اكتب سيرتك الذاتية',
+      'en': 'Write your Bio',
+    },
     'sczg2ach': {
-      'ar': '[Some hint text...]',
+      'ar':
+          '\nاكتب سيرتك الذاتية                                                                                                \n\n\n\n ',
+      'en': '\nWrite your Bio\n\n\n\n\n',
+    },
+    'qg5tlean': {
+      'ar': '',
+      'en':
+          '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
+    },
+    'fcgz39qd': {
+      'ar': 'Option 1',
       'en': '',
     },
     'r1vey8xo': {
@@ -1395,19 +1397,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createProfileBioStepThree_customar
   {
     'y3rxb9c3': {
-      'ar': 'الحالة الاجتماعية',
-      'en': 'Marital status',
+      'ar': 'رقم الهوية',
+      'en': 'ID Number',
     },
-    'z6gw5qbu': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    '8sje1npb': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'zjaovpel': {
-      'ar': 'Search for an item...',
+    'vvgw7imm': {
+      'ar': '[Some hint text...]',
       'en': '',
     },
     'u5yjoclt': {

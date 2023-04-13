@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -351,7 +351,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 return;
                               }
 
-                              final user = await createAccountWithEmail(
+                              final user =
+                                  await authManager.createAccountWithEmail(
                                 context,
                                 _model.emailAddressController.text,
                                 _model.passwordController.text,
@@ -420,7 +421,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         children: [
                           InkWell(
                             onTap: () async {
-                              final user = await signInWithGoogle(context);
+                              final user =
+                                  await authManager.signInWithGoogle(context);
                               if (user == null) {
                                 return;
                               }

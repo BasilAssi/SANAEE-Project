@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -17,6 +17,7 @@ class VerifyMobileModel extends FlutterFlowModel {
 
   // State field(s) for PinCode widget.
   TextEditingController? pinCodeController;
+  String? Function(BuildContext, String?)? pinCodeControllerValidator;
   // State field(s) for Timer widget.
   int timerMilliseconds = 10000;
   String timerValue = StopWatchTimer.getDisplayTime(

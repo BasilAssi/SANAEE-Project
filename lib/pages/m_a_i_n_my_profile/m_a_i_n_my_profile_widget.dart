@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/work_exp_bottom_sheet/work_exp_bottom_sheet_widget.dart';
 import '/components/work_exp_edit/work_exp_edit_widget.dart';
@@ -209,7 +209,7 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                                     size: 16.0,
                                                   ),
                                                   onPressed: () async {
-                                                    await signOut();
+                                                    await authManager.signOut();
                                                     await Navigator
                                                         .pushAndRemoveUntil(
                                                       context,

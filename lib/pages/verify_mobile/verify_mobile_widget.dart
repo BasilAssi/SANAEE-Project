@@ -1,4 +1,4 @@
-import '/auth/auth_util.dart';
+import '/auth/firebase_auth/auth_util.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_timer.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -160,6 +160,7 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                                   padding: EdgeInsetsDirectional.fromSTEB(
                                       12.0, 20.0, 12.0, 0.0),
                                   child: PinCodeTextField(
+                                    autoDisposeControllers: false,
                                     appContext: context,
                                     length: 6,
                                     textStyle: FlutterFlowTheme.of(context)
@@ -173,6 +174,8 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                                         MainAxisAlignment.spaceBetween,
                                     enableActiveFill: false,
                                     autoFocus: true,
+                                    enablePinAutofill: true,
+                                    errorTextSpace: 16.0,
                                     showCursor: true,
                                     cursorColor:
                                         FlutterFlowTheme.of(context).primary,
@@ -203,7 +206,11 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                                               .secondaryText,
                                     ),
                                     controller: _model.pinCodeController,
-                                    onChanged: (_) => {},
+                                    onChanged: (_) {},
+                                    autovalidateMode:
+                                        AutovalidateMode.onUserInteraction,
+                                    validator: _model.pinCodeControllerValidator
+                                        .asValidator(context),
                                   ),
                                 ),
                                 Row(
@@ -275,7 +282,8 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                                 );
                                 return;
                               }
-                              final phoneVerifiedUser = await verifySmsCode(
+                              final phoneVerifiedUser =
+                                  await authManager.verifySmsCode(
                                 context: context,
                                 smsCode: smsCodeVal,
                               );
