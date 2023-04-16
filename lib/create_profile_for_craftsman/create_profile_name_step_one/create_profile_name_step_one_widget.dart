@@ -34,14 +34,16 @@ class _CreateProfileNameStepOneWidgetState
     super.initState();
     _model = createModel(context, () => CreateProfileNameStepOneModel());
 
-    _model.textFieldFirstnameController ??=
-        TextEditingController(text: FFAppState().firstName);
-    _model.textFieldFatherNameController ??=
-        TextEditingController(text: FFAppState().NameOfTheFather);
-    _model.textFieldGrandfatherNameController ??=
-        TextEditingController(text: FFAppState().GrandFatherName);
-    _model.textFieldfamilyNameController ??=
-        TextEditingController(text: FFAppState().familyName);
+    _model.textFieldFirstnameController ??= TextEditingController();
+    _model.textFieldFatherNameController ??= TextEditingController();
+    _model.textFieldGrandfatherNameController ??= TextEditingController();
+    _model.textFieldfamilyNameController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.textFieldFirstnameController?.text =
+              FFLocalizations.of(context).getText(
+            'ar38z3j3' /*  */,
+          );
+        }));
   }
 
   @override
@@ -84,13 +86,36 @@ class _CreateProfileNameStepOneWidgetState
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: Image.asset(
-                    'assets/images/logo_1.png',
-                    width: 10.0,
-                    height: 10.0,
-                    fit: BoxFit.scaleDown,
+                child: InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: FlutterFlowExpandedImageView(
+                          image: Image.asset(
+                            'assets/images/logo_1.png',
+                            fit: BoxFit.contain,
+                          ),
+                          allowRotation: false,
+                          tag: 'imageTag',
+                          useHeroAnimation: true,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Hero(
+                    tag: 'imageTag',
+                    transitionOnUserGestures: true,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: Image.asset(
+                        'assets/images/logo_1.png',
+                        width: 10.0,
+                        height: 10.0,
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -114,51 +139,19 @@ class _CreateProfileNameStepOneWidgetState
                         Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 80.0, 0.0, 0.0),
-                          child: InkWell(
-                            onTap: () async {
-                              await Navigator.push(
-                                context,
-                                PageTransition(
-                                  type: PageTransitionType.fade,
-                                  child: FlutterFlowExpandedImageView(
-                                    image: Image.network(
-                                      valueOrDefault<String>(
-                                        _model.uploadedFileUrl,
-                                        'https://picsum.photos/seed/picsum/120/120',
-                                      ),
-                                      fit: BoxFit.contain,
-                                    ),
-                                    allowRotation: false,
-                                    tag: valueOrDefault<String>(
-                                      _model.uploadedFileUrl,
-                                      'https://picsum.photos/seed/picsum/120/120',
-                                    ),
-                                    useHeroAnimation: true,
-                                  ),
-                                ),
-                              );
-                            },
-                            child: Hero(
-                              tag: valueOrDefault<String>(
+                          child: Container(
+                            width: 130.0,
+                            height: 130.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.network(
+                              valueOrDefault<String>(
                                 _model.uploadedFileUrl,
                                 'https://picsum.photos/seed/picsum/120/120',
                               ),
-                              transitionOnUserGestures: true,
-                              child: Container(
-                                width: 130.0,
-                                height: 130.0,
-                                clipBehavior: Clip.antiAlias,
-                                decoration: BoxDecoration(
-                                  shape: BoxShape.circle,
-                                ),
-                                child: Image.network(
-                                  valueOrDefault<String>(
-                                    _model.uploadedFileUrl,
-                                    'https://picsum.photos/seed/picsum/120/120',
-                                  ),
-                                  fit: BoxFit.contain,
-                                ),
-                              ),
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -299,8 +292,6 @@ class _CreateProfileNameStepOneWidgetState
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
                                       fontSize: 20.0,
                                     ),
                                 validator: _model
@@ -370,8 +361,6 @@ class _CreateProfileNameStepOneWidgetState
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
                                       fontSize: 20.0,
                                     ),
                                 validator: _model
@@ -441,8 +430,6 @@ class _CreateProfileNameStepOneWidgetState
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
                                       fontSize: 20.0,
                                     ),
                                 validator: _model
@@ -512,8 +499,6 @@ class _CreateProfileNameStepOneWidgetState
                                     .bodyMedium
                                     .override(
                                       fontFamily: 'Outfit',
-                                      color: FlutterFlowTheme.of(context)
-                                          .secondaryText,
                                       fontSize: 20.0,
                                     ),
                                 validator: _model
@@ -531,7 +516,6 @@ class _CreateProfileNameStepOneWidgetState
                                     .textFieldGrandfatherNameController.text;
                                 FFAppState().familyName =
                                     _model.textFieldfamilyNameController.text;
-                                FFAppState().photoURL = _model.uploadedFileUrl;
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -565,6 +549,26 @@ class _CreateProfileNameStepOneWidgetState
                       ),
                     ),
                   ],
+                ),
+              ),
+              Align(
+                alignment: AlignmentDirectional(-2.88, -1.96),
+                child: Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(50.0, 200.0, 0.0, 0.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'r53cjzi7' /*  الخطوة الاولى  */,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 23,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Outfit',
+                          color: FlutterFlowTheme.of(context).primary,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
+                  ),
                 ),
               ),
             ],
