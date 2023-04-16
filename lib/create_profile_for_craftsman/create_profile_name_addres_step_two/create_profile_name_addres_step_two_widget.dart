@@ -35,8 +35,10 @@ class _CreateProfileNameAddresStepTwoWidgetState
     super.initState();
     _model = createModel(context, () => CreateProfileNameAddresStepTwoModel());
 
-    _model.textFieldIdNumberController ??= TextEditingController();
-    _model.textFieldAddreseController ??= TextEditingController();
+    _model.textFieldIdNumberController ??=
+        TextEditingController(text: FFAppState().idNumber);
+    _model.textFieldAddreseController ??=
+        TextEditingController(text: FFAppState().address);
   }
 
   @override
@@ -117,9 +119,10 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                   Expanded(
                                     child: Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 100.0, 0.0, 20.0),
+                                          0.0, 100.0, 0.0, 15.0),
                                       child: Autocomplete<String>(
-                                        initialValue: TextEditingValue(),
+                                        initialValue: TextEditingValue(
+                                            text: FFAppState().idNumber),
                                         optionsBuilder: (textEditingValue) {
                                           if (textEditingValue.text == '') {
                                             return const Iterable<
@@ -205,41 +208,43 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                                     fontWeight: FontWeight.w500,
                                                     lineHeight: 3.0,
                                                   ),
-                                              enabledBorder: OutlineInputBorder(
+                                              enabledBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: Color(0xFFF8B500),
-                                                  width: 1.0,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
                                               ),
-                                              focusedBorder: OutlineInputBorder(
+                                              focusedBorder:
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
-                                                  width: 1.0,
+                                                      .success,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
                                               ),
-                                              errorBorder: OutlineInputBorder(
+                                              errorBorder: UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
-                                                  width: 1.0,
+                                                      .error,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
                                               ),
                                               focusedErrorBorder:
-                                                  OutlineInputBorder(
+                                                  UnderlineInputBorder(
                                                 borderSide: BorderSide(
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .primaryBtnText,
-                                                  width: 1.0,
+                                                      .error,
+                                                  width: 2.0,
                                                 ),
                                                 borderRadius:
                                                     BorderRadius.circular(16.0),
@@ -257,7 +262,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
-                                                size: 35.0,
+                                                size: 30.0,
                                               ),
                                             ),
                                             style: FlutterFlowTheme.of(context)
@@ -266,7 +271,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                                   fontFamily: 'Roboto',
                                                   color: FlutterFlowTheme.of(
                                                           context)
-                                                      .secondary,
+                                                      .secondaryText,
                                                   fontSize: 20.0,
                                                 ),
                                             textAlign: TextAlign.start,
@@ -292,63 +297,75 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                     child: Column(
                                       mainAxisSize: MainAxisSize.max,
                                       children: [
-                                        FlutterFlowDropDown<String>(
-                                          controller: _model
-                                                  .dropDownCityValueController ??=
-                                              FormFieldController<String>(null),
-                                          options: [
-                                            FFLocalizations.of(context).getText(
-                                              'e1y9f93g' /* رام الله  */,
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 15.0),
+                                          child: FlutterFlowDropDown<String>(
+                                            controller: _model
+                                                    .dropDownCityValueController ??=
+                                                FormFieldController<String>(
+                                              _model.dropDownCityValue ??=
+                                                  FFAppState().city,
                                             ),
-                                            FFLocalizations.of(context).getText(
-                                              '38d42beq' /* الأردن */,
-                                            )
-                                          ],
-                                          onChanged: (val) => setState(() =>
-                                              _model.dropDownCityValue = val),
-                                          width: 350.0,
-                                          height: 50.0,
-                                          searchHintTextStyle:
-                                              FlutterFlowTheme.of(context)
-                                                  .headlineMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .secondary,
-                                                    lineHeight: 3.0,
-                                                  ),
-                                          textStyle: FlutterFlowTheme.of(
-                                                  context)
-                                              .bodyMedium
-                                              .override(
-                                                fontFamily: 'Outfit',
-                                                color:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondary,
-                                                fontSize: 20.0,
-                                              ),
-                                          hintText: FFLocalizations.of(context)
-                                              .getText(
-                                            'w3fzmffj' /*  الرجاء الاختيار المدينة */,
-                                          ),
-                                          searchHintText:
+                                            options: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                            'z9sheoib' /* Search for an item... */,
+                                                'e1y9f93g' /* رام الله  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '38d42beq' /* الأردن */,
+                                              )
+                                            ],
+                                            onChanged: (val) => setState(() =>
+                                                _model.dropDownCityValue = val),
+                                            width: 350.0,
+                                            height: 50.0,
+                                            searchHintTextStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .headlineMedium
+                                                    .override(
+                                                      fontFamily: 'Outfit',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondaryText,
+                                                      lineHeight: 3.0,
+                                                    ),
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium
+                                                    .override(
+                                                      fontFamily: 'Outfit',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .secondary,
+                                                      fontSize: 20.0,
+                                                    ),
+                                            hintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'w3fzmffj' /*  الرجاء الاختيار المدينة */,
+                                            ),
+                                            searchHintText:
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                              'z9sheoib' /* Search for an item... */,
+                                            ),
+                                            fillColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            elevation: 2.0,
+                                            borderColor: Color(0xFFF8B500),
+                                            borderWidth: 1.0,
+                                            borderRadius: 16.0,
+                                            margin:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    12.0, 4.0, 12.0, 4.0),
+                                            isSearchable: true,
                                           ),
-                                          fillColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondaryBackground,
-                                          elevation: 2.0,
-                                          borderColor: Color(0xFFF8B500),
-                                          borderWidth: 0.0,
-                                          borderRadius: 16.0,
-                                          margin:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 4.0, 12.0, 4.0),
-                                          hidesUnderline: true,
-                                          isSearchable: true,
                                         ),
                                       ],
                                     ),
@@ -364,7 +381,8 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                 children: [
                                   Expanded(
                                     child: Autocomplete<String>(
-                                      initialValue: TextEditingValue(),
+                                      initialValue: TextEditingValue(
+                                          text: FFAppState().address),
                                       optionsBuilder: (textEditingValue) {
                                         if (textEditingValue.text == '') {
                                           return const Iterable<String>.empty();
@@ -448,41 +466,41 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                                   fontWeight: FontWeight.w500,
                                                   lineHeight: 3.0,
                                                 ),
-                                            enabledBorder: OutlineInputBorder(
+                                            enabledBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color: Color(0xFFF8B500),
-                                                width: 1.0,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
                                             ),
-                                            focusedBorder: OutlineInputBorder(
+                                            focusedBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                                width: 1.0,
+                                                        .success,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
                                             ),
-                                            errorBorder: OutlineInputBorder(
+                                            errorBorder: UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                                width: 1.0,
+                                                        .error,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
                                             ),
                                             focusedErrorBorder:
-                                                OutlineInputBorder(
+                                                UnderlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .primaryBtnText,
-                                                width: 1.0,
+                                                        .error,
+                                                width: 2.0,
                                               ),
                                               borderRadius:
                                                   BorderRadius.circular(16.0),
@@ -499,7 +517,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .primary,
-                                              size: 35.0,
+                                              size: 30.0,
                                             ),
                                           ),
                                           style: FlutterFlowTheme.of(context)
@@ -508,7 +526,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                                 fontFamily: 'Outfit',
                                                 color:
                                                     FlutterFlowTheme.of(context)
-                                                        .secondary,
+                                                        .secondaryText,
                                                 fontSize: 20.0,
                                               ),
                                           textAlign: TextAlign.start,
@@ -522,121 +540,90 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                 ],
                               ),
                             ),
-                            Row(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                SingleChildScrollView(
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 20.0, 0.0, 30.0),
-                                        child: Row(
-                                          mainAxisSize: MainAxisSize.max,
-                                          mainAxisAlignment:
-                                              MainAxisAlignment.spaceEvenly,
-                                          children: [
-                                            Theme(
-                                              data: ThemeData(
-                                                checkboxTheme:
-                                                    CheckboxThemeData(
-                                                  shape: RoundedRectangleBorder(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            0.0),
-                                                  ),
-                                                ),
-                                                unselectedWidgetColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .accent2,
-                                              ),
-                                              child: Checkbox(
-                                                value: _model.checkboxValue ??=
-                                                    false,
-                                                onChanged: (newValue) async {
-                                                  setState(() =>
-                                                      _model.checkboxValue =
-                                                          newValue!);
-                                                },
-                                                activeColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                              ),
-                                            ),
-                                            Text(
-                                              FFLocalizations.of(context)
-                                                  .getText(
-                                                'x8nbvq57' /* البنود وشروط الخدمة */,
-                                              ),
-                                              style: FlutterFlowTheme.of(
-                                                      context)
-                                                  .titleMedium
-                                                  .override(
-                                                    fontFamily: 'Outfit',
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .info,
-                                                    fontWeight: FontWeight.w600,
-                                                    decoration: TextDecoration
-                                                        .underline,
-                                                  ),
-                                            ),
-                                          ],
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 20.0, 0.0, 30.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Theme(
+                                    data: ThemeData(
+                                      checkboxTheme: CheckboxThemeData(
+                                        shape: RoundedRectangleBorder(
+                                          borderRadius:
+                                              BorderRadius.circular(0.0),
                                         ),
                                       ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 80.0, 0.0, 0.0),
-                                        child: FFButtonWidget(
-                                          onPressed: () async {
-                                            FFAppState().idNumber = _model
-                                                .textFieldIdNumberController
-                                                .text;
-                                            FFAppState().city =
-                                                _model.dropDownCityValue!;
-                                            FFAppState().address = _model
-                                                .textFieldAddreseController
-                                                .text;
-                                            await Navigator.push(
-                                              context,
-                                              MaterialPageRoute(
-                                                builder: (context) =>
-                                                    CreateProfileSelectTypeJobStepThreeWidget(),
-                                              ),
-                                            );
-                                          },
-                                          text: FFLocalizations.of(context)
-                                              .getText(
-                                            '3a80eaym' /* التالي */,
-                                          ),
-                                          options: FFButtonOptions(
-                                            width: 350.0,
-                                            height: 50.0,
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 0.0, 0.0),
-                                            iconPadding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    16.0, 16.0, 16.0, 16.0),
-                                            color: FlutterFlowTheme.of(context)
-                                                .primary,
-                                            textStyle:
-                                                FlutterFlowTheme.of(context)
-                                                    .headlineMedium,
-                                            borderSide: BorderSide(
-                                              color: Colors.transparent,
-                                              width: 1.0,
-                                            ),
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
+                                      unselectedWidgetColor:
+                                          FlutterFlowTheme.of(context).accent2,
+                                    ),
+                                    child: Checkbox(
+                                      value: _model.checkboxValue ??= true,
+                                      onChanged: (newValue) async {
+                                        setState(() =>
+                                            _model.checkboxValue = newValue!);
+                                      },
+                                      activeColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                    ),
                                   ),
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      'x8nbvq57' /* البنود وشروط الخدمة */,
+                                    ),
+                                    style: FlutterFlowTheme.of(context)
+                                        .titleMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color:
+                                              FlutterFlowTheme.of(context).info,
+                                          fontWeight: FontWeight.w600,
+                                          decoration: TextDecoration.underline,
+                                        ),
+                                  ),
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 80.0, 0.0, 0.0),
+                              child: FFButtonWidget(
+                                onPressed: () async {
+                                  FFAppState().idNumber =
+                                      _model.textFieldIdNumberController.text;
+                                  FFAppState().city = _model.dropDownCityValue!;
+                                  FFAppState().address =
+                                      _model.textFieldAddreseController.text;
+                                  await Navigator.push(
+                                    context,
+                                    MaterialPageRoute(
+                                      builder: (context) =>
+                                          CreateProfileSelectTypeJobStepThreeWidget(),
+                                    ),
+                                  );
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  '3a80eaym' /* التالي */,
                                 ),
-                              ],
+                                options: FFButtonOptions(
+                                  width: 350.0,
+                                  height: 50.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      16.0, 16.0, 16.0, 16.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .headlineMedium,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(8.0),
+                                ),
+                              ),
                             ),
                           ],
                         ),
