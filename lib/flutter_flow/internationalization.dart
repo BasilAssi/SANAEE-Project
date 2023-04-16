@@ -1079,6 +1079,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم الاول',
       'en': 'First Name',
     },
+    'ar38z3j3': {
+      'ar': '',
+      'en': '',
+    },
     'qppalhqq': {
       'ar': 'اسم الاب',
       'en': 'Name of the Father',
@@ -1086,6 +1090,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'hcdvvtn0': {
       'ar': 'اسم الأب',
       'en': 'Name of the Father',
+    },
+    'siwp4rqi': {
+      'ar': '',
+      'en': '',
     },
     '2abshufy': {
       'ar': 'اسم الجد',
@@ -1095,6 +1103,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
     },
+    'cowh0wov': {
+      'ar': '',
+      'en': '',
+    },
     'j1xausqc': {
       'ar': 'اسم العائلة',
       'en': 'Family name',
@@ -1103,9 +1115,18 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم العائلة',
       'en': 'family name',
     },
+    '5m1e0d95': {
+      'ar': '',
+      'en': '',
+    },
     'wk7dq0gn': {
       'ar': 'التالي',
       'en': 'continue',
+    },
+    'r53cjzi7': {
+      'ar': ' الخطوة الاولى ',
+      'en':
+          '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
     },
     'gdrznog6': {
       'ar': 'Home',
@@ -1224,17 +1245,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'mzwdvw7k': {
       'ar': '    لا توجد أي صور تم تحميلها',
-      'en': 'no any uploaded\n photos',
+      'en': 'no any uploaded photos',
     },
     'y7hzsrmy': {
       'ar': 'التالي',
       'en': 'continue',
     },
     'gamxhpe4': {
-      'ar':
-          'الخطوة الثالثة: اختر مهنتك وقم بتحميل مستندات الشهادة أو الصور التي تفيد بأنك صاحب المهنة ',
+      'ar': ' الخطوة الثالثة ',
       'en':
-          '\nStep 3  of  4 :Choose your profession and  Upload certificate documents or photos that he is the owner of the profession',
+          '\nStep 3  of  4 : Upload certificate documents or photos that he is the owner of the profession',
     },
     '1w6g3gmg': {
       'ar': 'Home',
@@ -1256,6 +1276,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '\nاكتب سيرتك الذاتية                                                                                                \n\n\n\n ',
       'en': '\nWrite your Bio\n\n\n\n\n',
     },
+    'qg5tlean': {
+      'ar': '',
+      'en':
+          '                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                                  \n\n\n\n\n\n\n\n\n\n\n\n\n\n\n',
+    },
     'fcgz39qd': {
       'ar': 'Option 1',
       'en': '',
@@ -1266,7 +1291,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'ehod4dxi': {
       'ar': ' الخطوة الرابعة ',
-      'en': '\nStep 4 of  4 : Upload your bio ',
+      'en': '\nStep 3  of  4 : Upload your bio ',
     },
     'szm92mme': {
       'ar': 'Home',
@@ -1427,7 +1452,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'mxyjwnr3': {
       'ar': 'ايرجى التحقق من معلوماتك الشخصية',
-      'en': ' Please verify your personal\n information',
+      'en': ' Please verify your personal information',
     },
     '6fjpr7m5': {
       'ar': '',
@@ -1454,7 +1479,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'create profile ',
     },
     'fc087gox': {
-      'ar': 'تسجيل ملف شخصي  جديد',
+      'ar': 'تسجيل ملف شخصي  جديدة',
       'en': 'Register a new profile page',
     },
     'rd0ypprn': {

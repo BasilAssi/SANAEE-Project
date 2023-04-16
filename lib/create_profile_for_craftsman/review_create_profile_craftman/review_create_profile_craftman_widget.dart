@@ -38,7 +38,7 @@ class _ReviewCreateProfileCraftmanWidgetState
 
     _model.fullNameController ??= TextEditingController(
         text:
-            '${FFAppState().firstName}  ${FFAppState().NameOfTheFather}  ${FFAppState().GrandFatherName}  ${FFAppState().familyName}');
+            '${FFAppState().firstName}${FFAppState().NameOfTheFather}${FFAppState().GrandFatherName}${FFAppState().familyName}');
     _model.textFieldIDNumberController ??=
         TextEditingController(text: FFAppState().idNumber);
     _model.textFieldCityController ??=
@@ -122,7 +122,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                           children: [
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 10.0, 0.0, 20.0),
+                                  0.0, 10.0, 0.0, 10.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
                                   'mxyjwnr3' /* ايرجى التحقق من معلوماتك الشخص... */,
@@ -147,41 +147,37 @@ class _ReviewCreateProfileCraftmanWidgetState
                             mainAxisSize: MainAxisSize.max,
                             mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                             children: [
-                              Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 10.0, 0.0, 0.0),
-                                child: InkWell(
-                                  onTap: () async {
-                                    await Navigator.push(
-                                      context,
-                                      PageTransition(
-                                        type: PageTransitionType.fade,
-                                        child: FlutterFlowExpandedImageView(
-                                          image: Image.network(
-                                            FFAppState().photoURL,
-                                            fit: BoxFit.contain,
-                                          ),
-                                          allowRotation: false,
-                                          tag: FFAppState().photoURL,
-                                          useHeroAnimation: true,
+                              InkWell(
+                                onTap: () async {
+                                  await Navigator.push(
+                                    context,
+                                    PageTransition(
+                                      type: PageTransitionType.fade,
+                                      child: FlutterFlowExpandedImageView(
+                                        image: Image.network(
+                                          FFAppState().photoURL,
+                                          fit: BoxFit.contain,
                                         ),
+                                        allowRotation: false,
+                                        tag: FFAppState().photoURL,
+                                        useHeroAnimation: true,
                                       ),
-                                    );
-                                  },
-                                  child: Hero(
-                                    tag: FFAppState().photoURL,
-                                    transitionOnUserGestures: true,
-                                    child: Container(
-                                      width: 120.0,
-                                      height: 120.0,
-                                      clipBehavior: Clip.antiAlias,
-                                      decoration: BoxDecoration(
-                                        shape: BoxShape.circle,
-                                      ),
-                                      child: Image.network(
-                                        FFAppState().photoURL,
-                                        fit: BoxFit.contain,
-                                      ),
+                                    ),
+                                  );
+                                },
+                                child: Hero(
+                                  tag: FFAppState().photoURL,
+                                  transitionOnUserGestures: true,
+                                  child: Container(
+                                    width: 120.0,
+                                    height: 120.0,
+                                    clipBehavior: Clip.antiAlias,
+                                    decoration: BoxDecoration(
+                                      shape: BoxShape.circle,
+                                    ),
+                                    child: Image.network(
+                                      FFAppState().photoURL,
+                                      fit: BoxFit.cover,
                                     ),
                                   ),
                                 ),
@@ -223,8 +219,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
+                                          color: Color(0x00000000),
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
@@ -305,8 +300,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
+                                          color: Color(0x00000000),
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
@@ -386,8 +380,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
+                                          color: Color(0x00000000),
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
@@ -468,8 +461,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
+                                          color: Color(0x00000000),
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
@@ -550,8 +542,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       ),
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
-                                          color: FlutterFlowTheme.of(context)
-                                              .success,
+                                          color: Color(0x00000000),
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(
@@ -679,17 +670,17 @@ class _ReviewCreateProfileCraftmanWidgetState
                     children: [
                       Padding(
                         padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 0.0),
+                            EdgeInsetsDirectional.fromSTEB(0.0, 30.0, 0.0, 0.0),
                         child: Text(
                           FFLocalizations.of(context).getText(
-                            'fc087gox' /* تسجيل ملف شخصي  جديد */,
+                            'fc087gox' /* تسجيل ملف شخصي  جديدة */,
                           ),
                           style: FlutterFlowTheme.of(context)
                               .displayMedium
                               .override(
                                 fontFamily: 'Poppins',
                                 color: FlutterFlowTheme.of(context).darkText,
-                                fontSize: 20.0,
+                                fontSize: 25.0,
                                 fontWeight: FontWeight.w600,
                               ),
                         ),
