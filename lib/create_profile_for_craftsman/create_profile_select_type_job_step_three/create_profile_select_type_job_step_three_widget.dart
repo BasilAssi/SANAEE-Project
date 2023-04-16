@@ -124,14 +124,6 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                             FFAppState().craftType,
                                       ),
                                       options: [
-                                        'Option 1',
-                                        '1',
-                                        '2',
-                                        '3',
-                                        '4',
-                                        '5'
-                                      ],
-                                      optionLabels: [
                                         FFLocalizations.of(context).getText(
                                           'b5rpqhxs' /* البلاط */,
                                         ),
@@ -434,10 +426,10 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    10.0, 0.0, 10.0, 0.0),
+                                    40.0, 0.0, 10.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'blnwkx7a' /* لا توجد أي ملفات  تم تحميلها */,
+                                    'blnwkx7a' /*  ملفات  تم تحميلها */,
                                   ),
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -450,11 +442,12 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                               ),
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    25.0, 0.0, 10.0, 0.0),
+                                    70.0, 0.0, 10.0, 0.0),
                                 child: Text(
                                   FFLocalizations.of(context).getText(
-                                    'mzwdvw7k' /*     لا توجد أي صور تم تحميلها */,
+                                    'mzwdvw7k' /*    صور تم تحميلها */,
                                   ),
+                                  textAlign: TextAlign.center,
                                   maxLines: 2,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
@@ -510,21 +503,25 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                     ),
                   ),
                 ),
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
-                  child: GradientText(
-                    FFLocalizations.of(context).getText(
-                      'gamxhpe4' /* الخطوة الثالثة: اختر مهنتك وقم... */,
+                Align(
+                  alignment: AlignmentDirectional(0.0, -1.0),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 20.0),
+                    child: GradientText(
+                      FFLocalizations.of(context).getText(
+                        'gamxhpe4' /* الخطوة الثالثة: اختر مهنتك وقم... */,
+                      ),
+                      textAlign: TextAlign.center,
+                      style: FlutterFlowTheme.of(context).bodyMedium.override(
+                            fontFamily: 'Outfit',
+                            fontSize: 20.0,
+                            fontWeight: FontWeight.w600,
+                          ),
+                      colors: [Color(0xFFF8B500), Color(0xFFF8B500)],
+                      gradientDirection: GradientDirection.ltr,
+                      gradientType: GradientType.linear,
                     ),
-                    textAlign: TextAlign.justify,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                    colors: [Color(0xFFF8B500), Color(0xFFF8B500)],
-                    gradientDirection: GradientDirection.ltr,
-                    gradientType: GradientType.linear,
                   ),
                 ),
               ],

@@ -224,7 +224,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       focusedBorder: UnderlineInputBorder(
                                         borderSide: BorderSide(
                                           color: FlutterFlowTheme.of(context)
-                                              .success,
+                                              .primary,
                                           width: 1.0,
                                         ),
                                         borderRadius: const BorderRadius.only(

@@ -20,6 +20,8 @@ class CreateProfileSelectTypeJobStepThreeModel extends FlutterFlowModel {
 
   Color? isPhotoUploaded = const Color(0xFFC80F0F);
 
+  String? photoUploaded;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for DropDownDraftType widget.

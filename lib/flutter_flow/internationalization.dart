@@ -1219,12 +1219,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'photo',
     },
     'blnwkx7a': {
-      'ar': 'لا توجد أي ملفات  تم تحميلها',
-      'en': 'no any uploaded file',
+      'ar': ' ملفات  تم تحميلها',
+      'en': ' uploaded file',
     },
     'mzwdvw7k': {
-      'ar': '    لا توجد أي صور تم تحميلها',
-      'en': 'no any uploaded\n photos',
+      'ar': '   صور تم تحميلها',
+      'en': ' uploaded\n photo',
     },
     'y7hzsrmy': {
       'ar': 'التالي',
@@ -1232,9 +1232,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gamxhpe4': {
       'ar':
-          'الخطوة الثالثة: اختر مهنتك وقم بتحميل مستندات الشهادة أو الصور التي تفيد بأنك صاحب المهنة ',
+          'الخطوة الثالثة: اختر مهنتك وقم بتحميل مستندات\n الشهادة أو الصور التي تفيد بأنك صاحب المهنة ',
       'en':
-          '\nStep 3  of  4 :Choose your profession and  Upload certificate documents or photos that he is the owner of the profession',
+          '\nStep 3  of  4 :Choose your profession \nand  Upload certificate documents \nor photos that he is the owner of the profession',
     },
     '1w6g3gmg': {
       'ar': 'Home',

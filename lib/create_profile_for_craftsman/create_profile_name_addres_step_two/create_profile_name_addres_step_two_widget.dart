@@ -268,7 +268,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             style: FlutterFlowTheme.of(context)
                                                 .headlineMedium
                                                 .override(
-                                                  fontFamily: 'Roboto',
+                                                  fontFamily: 'Outfit',
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .secondaryText,
