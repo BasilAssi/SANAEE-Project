@@ -146,7 +146,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                           FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: '',
+                                                fontFamily: 'Roboto',
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
