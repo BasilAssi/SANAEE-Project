@@ -1135,13 +1135,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameAddresStepTwo
   {
+    'pgn98b0i': {
+      'ar': '',
+      'en': '',
+    },
+    'na619d65': {
+      'ar': 'رقم الهوية ',
+      'en': 'Id number',
+    },
+    'a3rqbla0': {
+      'ar': 'Option 1',
+      'en': '',
+    },
     'e1y9f93g': {
-      'ar': 'Rammllah',
-      'en': 'رام الله ',
+      'ar': 'رام الله ',
+      'en': 'Ramlallah',
     },
     '38d42beq': {
-      'ar': 'Jordan',
-      'en': '',
+      'ar': 'الأردن',
+      'en': 'Jordan',
     },
     'w3fzmffj': {
       'ar': ' الرجاء الاختيار المدينة',
@@ -1157,15 +1169,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     '9dhlrjdm': {
       'ar': 'العنوان',
-      'en': 'the address',
+      'en': 'Your address',
     },
     'u5nlt5ra': {
       'ar': 'Option 1',
       'en': '',
-    },
-    '1x66rnls': {
-      'ar': 'رقم الهوية ',
-      'en': 'ID Number',
     },
     'x8nbvq57': {
       'ar': 'البنود وشروط الخدمة',
@@ -1219,10 +1227,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '79zxv3dw': {
-      'ar':
-          'تحميل مستندات الشهادة أو الصور\n التي تفيد بأنه صاحب المهنة)اختياري(',
+      'ar': 'تحميل مستندات الشهادة أو الصور التي تفيد بأنه\n صاحب المهنة',
       'en':
-          'Upload certificate documents\n or photos that he is the owner\n of the profession(Option)',
+          'Upload certificate documents or photos \nthat he is the owner of the profession\n',
     },
     'hr1x8djm': {
       'ar': 'ملف',
@@ -1231,6 +1238,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'g8ggath2': {
       'ar': 'صورة',
       'en': 'photo',
+    },
+    'blnwkx7a': {
+      'ar': 'لا توجد أي ملفات  تم تحميلها',
+      'en': 'no any uploaded file',
+    },
+    'mzwdvw7k': {
+      'ar': '    لا توجد أي صور تم تحميلها',
+      'en': 'no any uploaded photos',
     },
     'y7hzsrmy': {
       'ar': 'التالي',
@@ -1271,8 +1286,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'r1vey8xo': {
-      'ar': 'انشاء حساب',
-      'en': 'Create an account',
+      'ar': 'التالي',
+      'en': 'Continue',
     },
     'ehod4dxi': {
       'ar': ' الخطوة الرابعة ',
@@ -1429,6 +1444,45 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\nStep 3  of  4 : Upload your bio ',
     },
     'io5fdh0i': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // ReviewCreateProfileCraftman
+  {
+    'mxyjwnr3': {
+      'ar': 'ايرجى التحقق من معلوماتك الشخصية',
+      'en': ' Please verify your personal information',
+    },
+    '6fjpr7m5': {
+      'ar': '',
+      'en': '',
+    },
+    '7smuol0j': {
+      'ar': '',
+      'en': '',
+    },
+    'n8b74rgu': {
+      'ar': '',
+      'en': '',
+    },
+    '86ri0ehc': {
+      'ar': '',
+      'en': '',
+    },
+    'rlmq61f8': {
+      'ar': '',
+      'en': '',
+    },
+    '0rf7eqd8': {
+      'ar': 'إنشاء ملف شخصي',
+      'en': 'create profile ',
+    },
+    'fc087gox': {
+      'ar': 'تسجيل ملف شخصي  جديدة',
+      'en': 'Register a new profile page',
+    },
+    'rd0ypprn': {
       'ar': 'Home',
       'en': '',
     },

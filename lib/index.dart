@@ -61,3 +61,5 @@ export '/creat_profile_for_customar/create_profile_name_addres_step_two_customar
     show CreateProfileNameAddresStepTwoCustomarWidget;
 export '/creat_profile_for_customar/create_profile_bio_step_three_customar/create_profile_bio_step_three_customar_widget.dart'
     show CreateProfileBioStepThreeCustomarWidget;
+export '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart'
+    show ReviewCreateProfileCraftmanWidget;

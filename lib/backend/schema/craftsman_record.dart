@@ -11,11 +11,6 @@ abstract class CraftsmanRecord
   static Serializer<CraftsmanRecord> get serializer =>
       _$craftsmanRecordSerializer;
 
-  String? get email;
-
-  @BuiltValueField(wireName: 'display_name')
-  String? get displayName;
-
   @BuiltValueField(wireName: 'photo_url')
   String? get photoUrl;
 
@@ -24,34 +19,48 @@ abstract class CraftsmanRecord
   @BuiltValueField(wireName: 'created_time')
   DateTime? get createdTime;
 
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
-
   @BuiltValueField(wireName: 'edited_time')
   DateTime? get editedTime;
 
   String? get bio;
 
-  @BuiltValueField(wireName: 'user_name')
-  String? get userName;
-
   DocumentReference? get docRef;
 
   String? get craftsmanID;
+
+  String? get firstName;
+
+  String? get fatherName;
+
+  String? get grandfatherName;
+
+  String? get familyName;
+
+  String? get city;
+
+  String? get address;
+
+  String? get idNumber;
+
+  String? get craftType;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
   static void _initializeBuilder(CraftsmanRecordBuilder builder) => builder
-    ..email = ''
-    ..displayName = ''
     ..photoUrl = ''
     ..uid = ''
-    ..phoneNumber = ''
     ..bio = ''
-    ..userName = ''
-    ..craftsmanID = '';
+    ..craftsmanID = ''
+    ..firstName = ''
+    ..fatherName = ''
+    ..grandfatherName = ''
+    ..familyName = ''
+    ..city = ''
+    ..address = ''
+    ..idNumber = ''
+    ..craftType = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('craftsman');
@@ -75,33 +84,41 @@ abstract class CraftsmanRecord
 }
 
 Map<String, dynamic> createCraftsmanRecordData({
-  String? email,
-  String? displayName,
   String? photoUrl,
   String? uid,
   DateTime? createdTime,
-  String? phoneNumber,
   DateTime? editedTime,
   String? bio,
-  String? userName,
   DocumentReference? docRef,
   String? craftsmanID,
+  String? firstName,
+  String? fatherName,
+  String? grandfatherName,
+  String? familyName,
+  String? city,
+  String? address,
+  String? idNumber,
+  String? craftType,
 }) {
   final firestoreData = serializers.toFirestore(
     CraftsmanRecord.serializer,
     CraftsmanRecord(
       (c) => c
-        ..email = email
-        ..displayName = displayName
         ..photoUrl = photoUrl
         ..uid = uid
         ..createdTime = createdTime
-        ..phoneNumber = phoneNumber
         ..editedTime = editedTime
         ..bio = bio
-        ..userName = userName
         ..docRef = docRef
-        ..craftsmanID = craftsmanID,
+        ..craftsmanID = craftsmanID
+        ..firstName = firstName
+        ..fatherName = fatherName
+        ..grandfatherName = grandfatherName
+        ..familyName = familyName
+        ..city = city
+        ..address = address
+        ..idNumber = idNumber
+        ..craftType = craftType,
     ),
   );
 
