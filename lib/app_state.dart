@@ -24,6 +24,12 @@ class FFAppState extends ChangeNotifier {
         await secureStorage.getString('ff_GrandFatherName') ?? _GrandFatherName;
     _familyName = await secureStorage.getString('ff_familyName') ?? _familyName;
     _photoURL = await secureStorage.getString('ff_photoURL') ?? _photoURL;
+    _idNumber = await secureStorage.getString('ff_idNumber') ?? _idNumber;
+    _city = await secureStorage.getString('ff_city') ?? _city;
+    _address = await secureStorage.getString('ff_address') ?? _address;
+    _craftType = await secureStorage.getString('ff_craftType') ?? _craftType;
+    _bioCraftsman =
+        await secureStorage.getString('ff_bioCraftsman') ?? _bioCraftsman;
   }
 
   void update(VoidCallback callback) {
@@ -86,6 +92,61 @@ class FFAppState extends ChangeNotifier {
 
   void deletePhotoURL() {
     secureStorage.delete(key: 'ff_photoURL');
+  }
+
+  String _idNumber = '';
+  String get idNumber => _idNumber;
+  set idNumber(String _value) {
+    _idNumber = _value;
+    secureStorage.setString('ff_idNumber', _value);
+  }
+
+  void deleteIdNumber() {
+    secureStorage.delete(key: 'ff_idNumber');
+  }
+
+  String _city = '';
+  String get city => _city;
+  set city(String _value) {
+    _city = _value;
+    secureStorage.setString('ff_city', _value);
+  }
+
+  void deleteCity() {
+    secureStorage.delete(key: 'ff_city');
+  }
+
+  String _address = '';
+  String get address => _address;
+  set address(String _value) {
+    _address = _value;
+    secureStorage.setString('ff_address', _value);
+  }
+
+  void deleteAddress() {
+    secureStorage.delete(key: 'ff_address');
+  }
+
+  String _craftType = '';
+  String get craftType => _craftType;
+  set craftType(String _value) {
+    _craftType = _value;
+    secureStorage.setString('ff_craftType', _value);
+  }
+
+  void deleteCraftType() {
+    secureStorage.delete(key: 'ff_craftType');
+  }
+
+  String _bioCraftsman = '';
+  String get bioCraftsman => _bioCraftsman;
+  set bioCraftsman(String _value) {
+    _bioCraftsman = _value;
+    secureStorage.setString('ff_bioCraftsman', _value);
+  }
+
+  void deleteBioCraftsman() {
+    secureStorage.delete(key: 'ff_bioCraftsman');
   }
 }
 

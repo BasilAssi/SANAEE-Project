@@ -21,20 +21,6 @@ class _$CraftsmanRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.displayName;
-    if (value != null) {
-      result
-        ..add('display_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.photoUrl;
     if (value != null) {
       result
@@ -56,13 +42,6 @@ class _$CraftsmanRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(DateTime)));
     }
-    value = object.phoneNumber;
-    if (value != null) {
-      result
-        ..add('phone_number')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.editedTime;
     if (value != null) {
       result
@@ -74,13 +53,6 @@ class _$CraftsmanRecordSerializer
     if (value != null) {
       result
         ..add('bio')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.userName;
-    if (value != null) {
-      result
-        ..add('user_name')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -96,6 +68,62 @@ class _$CraftsmanRecordSerializer
     if (value != null) {
       result
         ..add('craftsmanID')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.firstName;
+    if (value != null) {
+      result
+        ..add('firstName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.fatherName;
+    if (value != null) {
+      result
+        ..add('fatherName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.grandfatherName;
+    if (value != null) {
+      result
+        ..add('grandfatherName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.familyName;
+    if (value != null) {
+      result
+        ..add('familyName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.city;
+    if (value != null) {
+      result
+        ..add('city')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.idNumber;
+    if (value != null) {
+      result
+        ..add('idNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.craftType;
+    if (value != null) {
+      result
+        ..add('craftType')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -122,14 +150,6 @@ class _$CraftsmanRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'photo_url':
           result.photoUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -142,20 +162,12 @@ class _$CraftsmanRecordSerializer
           result.createdTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
-        case 'phone_number':
-          result.phoneNumber = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'edited_time':
           result.editedTime = serializers.deserialize(value,
               specifiedType: const FullType(DateTime)) as DateTime?;
           break;
         case 'bio':
           result.bio = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'user_name':
-          result.userName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'docRef':
@@ -166,6 +178,38 @@ class _$CraftsmanRecordSerializer
           break;
         case 'craftsmanID':
           result.craftsmanID = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'firstName':
+          result.firstName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'fatherName':
+          result.fatherName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'grandfatherName':
+          result.grandfatherName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'familyName':
+          result.familyName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'city':
+          result.city = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'idNumber':
+          result.idNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'craftType':
+          result.craftType = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
@@ -183,27 +227,35 @@ class _$CraftsmanRecordSerializer
 
 class _$CraftsmanRecord extends CraftsmanRecord {
   @override
-  final String? email;
-  @override
-  final String? displayName;
-  @override
   final String? photoUrl;
   @override
   final String? uid;
   @override
   final DateTime? createdTime;
   @override
-  final String? phoneNumber;
-  @override
   final DateTime? editedTime;
   @override
   final String? bio;
   @override
-  final String? userName;
-  @override
   final DocumentReference<Object?>? docRef;
   @override
   final String? craftsmanID;
+  @override
+  final String? firstName;
+  @override
+  final String? fatherName;
+  @override
+  final String? grandfatherName;
+  @override
+  final String? familyName;
+  @override
+  final String? city;
+  @override
+  final String? address;
+  @override
+  final String? idNumber;
+  @override
+  final String? craftType;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -211,17 +263,21 @@ class _$CraftsmanRecord extends CraftsmanRecord {
       (new CraftsmanRecordBuilder()..update(updates))._build();
 
   _$CraftsmanRecord._(
-      {this.email,
-      this.displayName,
-      this.photoUrl,
+      {this.photoUrl,
       this.uid,
       this.createdTime,
-      this.phoneNumber,
       this.editedTime,
       this.bio,
-      this.userName,
       this.docRef,
       this.craftsmanID,
+      this.firstName,
+      this.fatherName,
+      this.grandfatherName,
+      this.familyName,
+      this.city,
+      this.address,
+      this.idNumber,
+      this.craftType,
       this.ffRef})
       : super._();
 
@@ -237,34 +293,42 @@ class _$CraftsmanRecord extends CraftsmanRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CraftsmanRecord &&
-        email == other.email &&
-        displayName == other.displayName &&
         photoUrl == other.photoUrl &&
         uid == other.uid &&
         createdTime == other.createdTime &&
-        phoneNumber == other.phoneNumber &&
         editedTime == other.editedTime &&
         bio == other.bio &&
-        userName == other.userName &&
         docRef == other.docRef &&
         craftsmanID == other.craftsmanID &&
+        firstName == other.firstName &&
+        fatherName == other.fatherName &&
+        grandfatherName == other.grandfatherName &&
+        familyName == other.familyName &&
+        city == other.city &&
+        address == other.address &&
+        idNumber == other.idNumber &&
+        craftType == other.craftType &&
         ffRef == other.ffRef;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, displayName.hashCode);
     _$hash = $jc(_$hash, photoUrl.hashCode);
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, createdTime.hashCode);
-    _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, editedTime.hashCode);
     _$hash = $jc(_$hash, bio.hashCode);
-    _$hash = $jc(_$hash, userName.hashCode);
     _$hash = $jc(_$hash, docRef.hashCode);
     _$hash = $jc(_$hash, craftsmanID.hashCode);
+    _$hash = $jc(_$hash, firstName.hashCode);
+    _$hash = $jc(_$hash, fatherName.hashCode);
+    _$hash = $jc(_$hash, grandfatherName.hashCode);
+    _$hash = $jc(_$hash, familyName.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, idNumber.hashCode);
+    _$hash = $jc(_$hash, craftType.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -273,17 +337,21 @@ class _$CraftsmanRecord extends CraftsmanRecord {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CraftsmanRecord')
-          ..add('email', email)
-          ..add('displayName', displayName)
           ..add('photoUrl', photoUrl)
           ..add('uid', uid)
           ..add('createdTime', createdTime)
-          ..add('phoneNumber', phoneNumber)
           ..add('editedTime', editedTime)
           ..add('bio', bio)
-          ..add('userName', userName)
           ..add('docRef', docRef)
           ..add('craftsmanID', craftsmanID)
+          ..add('firstName', firstName)
+          ..add('fatherName', fatherName)
+          ..add('grandfatherName', grandfatherName)
+          ..add('familyName', familyName)
+          ..add('city', city)
+          ..add('address', address)
+          ..add('idNumber', idNumber)
+          ..add('craftType', craftType)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -292,14 +360,6 @@ class _$CraftsmanRecord extends CraftsmanRecord {
 class CraftsmanRecordBuilder
     implements Builder<CraftsmanRecord, CraftsmanRecordBuilder> {
   _$CraftsmanRecord? _$v;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
 
   String? _photoUrl;
   String? get photoUrl => _$this._photoUrl;
@@ -313,10 +373,6 @@ class CraftsmanRecordBuilder
   DateTime? get createdTime => _$this._createdTime;
   set createdTime(DateTime? createdTime) => _$this._createdTime = createdTime;
 
-  String? _phoneNumber;
-  String? get phoneNumber => _$this._phoneNumber;
-  set phoneNumber(String? phoneNumber) => _$this._phoneNumber = phoneNumber;
-
   DateTime? _editedTime;
   DateTime? get editedTime => _$this._editedTime;
   set editedTime(DateTime? editedTime) => _$this._editedTime = editedTime;
@@ -325,10 +381,6 @@ class CraftsmanRecordBuilder
   String? get bio => _$this._bio;
   set bio(String? bio) => _$this._bio = bio;
 
-  String? _userName;
-  String? get userName => _$this._userName;
-  set userName(String? userName) => _$this._userName = userName;
-
   DocumentReference<Object?>? _docRef;
   DocumentReference<Object?>? get docRef => _$this._docRef;
   set docRef(DocumentReference<Object?>? docRef) => _$this._docRef = docRef;
@@ -336,6 +388,39 @@ class CraftsmanRecordBuilder
   String? _craftsmanID;
   String? get craftsmanID => _$this._craftsmanID;
   set craftsmanID(String? craftsmanID) => _$this._craftsmanID = craftsmanID;
+
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _fatherName;
+  String? get fatherName => _$this._fatherName;
+  set fatherName(String? fatherName) => _$this._fatherName = fatherName;
+
+  String? _grandfatherName;
+  String? get grandfatherName => _$this._grandfatherName;
+  set grandfatherName(String? grandfatherName) =>
+      _$this._grandfatherName = grandfatherName;
+
+  String? _familyName;
+  String? get familyName => _$this._familyName;
+  set familyName(String? familyName) => _$this._familyName = familyName;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
+  String? _idNumber;
+  String? get idNumber => _$this._idNumber;
+  set idNumber(String? idNumber) => _$this._idNumber = idNumber;
+
+  String? _craftType;
+  String? get craftType => _$this._craftType;
+  set craftType(String? craftType) => _$this._craftType = craftType;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -348,17 +433,21 @@ class CraftsmanRecordBuilder
   CraftsmanRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _email = $v.email;
-      _displayName = $v.displayName;
       _photoUrl = $v.photoUrl;
       _uid = $v.uid;
       _createdTime = $v.createdTime;
-      _phoneNumber = $v.phoneNumber;
       _editedTime = $v.editedTime;
       _bio = $v.bio;
-      _userName = $v.userName;
       _docRef = $v.docRef;
       _craftsmanID = $v.craftsmanID;
+      _firstName = $v.firstName;
+      _fatherName = $v.fatherName;
+      _grandfatherName = $v.grandfatherName;
+      _familyName = $v.familyName;
+      _city = $v.city;
+      _address = $v.address;
+      _idNumber = $v.idNumber;
+      _craftType = $v.craftType;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -382,17 +471,21 @@ class CraftsmanRecordBuilder
   _$CraftsmanRecord _build() {
     final _$result = _$v ??
         new _$CraftsmanRecord._(
-            email: email,
-            displayName: displayName,
             photoUrl: photoUrl,
             uid: uid,
             createdTime: createdTime,
-            phoneNumber: phoneNumber,
             editedTime: editedTime,
             bio: bio,
-            userName: userName,
             docRef: docRef,
             craftsmanID: craftsmanID,
+            firstName: firstName,
+            fatherName: fatherName,
+            grandfatherName: grandfatherName,
+            familyName: familyName,
+            city: city,
+            address: address,
+            idNumber: idNumber,
+            craftType: craftType,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

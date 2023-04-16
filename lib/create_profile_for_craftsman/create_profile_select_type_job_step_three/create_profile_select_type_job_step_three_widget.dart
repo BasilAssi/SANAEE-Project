@@ -1,3 +1,4 @@
+import '/create_profile_for_craftsman/create_profile_bio_step_four/create_profile_bio_step_four_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -93,225 +94,298 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
             child: Stack(
               children: [
-                Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 10.0, 0.0),
-                  child: Column(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
-                        child: Column(
-                          mainAxisSize: MainAxisSize.max,
-                          children: [
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 80.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  FlutterFlowDropDown<String>(
-                                    controller:
-                                        _model.dropDownValueController ??=
-                                            FormFieldController<String>(null),
-                                    options: [
-                                      FFLocalizations.of(context).getText(
-                                        'b5rpqhxs' /* البلاط */,
+                Align(
+                  alignment: AlignmentDirectional(0.0, 0.0),
+                  child: Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 10.0, 0.0),
+                    child: Column(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 80.0, 0.0, 0.0),
+                          child: Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 80.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    FlutterFlowDropDown<String>(
+                                      controller: _model
+                                              .dropDownDraftTypeValueController ??=
+                                          FormFieldController<String>(null),
+                                      options: [
+                                        FFLocalizations.of(context).getText(
+                                          'b5rpqhxs' /* البلاط */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          'idsywi99' /* الكهرباء */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '0sv4st4m' /* حداد */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '55dp19wk' /* نجار */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '3yyg9i1y' /* سباك */,
+                                        ),
+                                        FFLocalizations.of(context).getText(
+                                          '6ukdbdl2' /* دهان */,
+                                        )
+                                      ],
+                                      onChanged: (val) => setState(() =>
+                                          _model.dropDownDraftTypeValue = val),
+                                      width: 350.0,
+                                      height: 50.0,
+                                      searchHintTextStyle:
+                                          FlutterFlowTheme.of(context)
+                                              .bodyLarge
+                                              .override(
+                                                fontFamily: '',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                fontSize: 20.0,
+                                              ),
+                                      textStyle: FlutterFlowTheme.of(context)
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            fontSize: 20.0,
+                                          ),
+                                      hintText:
+                                          FFLocalizations.of(context).getText(
+                                        's1qnetcg' /* الرجاء اختيار حرفتك */,
                                       ),
-                                      FFLocalizations.of(context).getText(
-                                        'idsywi99' /* الكهرباء */,
+                                      searchHintText:
+                                          FFLocalizations.of(context).getText(
+                                        'w9d9y2pf' /* Search for an item... */,
                                       ),
-                                      FFLocalizations.of(context).getText(
-                                        '0sv4st4m' /* حداد */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '55dp19wk' /* نجار */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '3yyg9i1y' /* سباك */,
-                                      ),
-                                      FFLocalizations.of(context).getText(
-                                        '6ukdbdl2' /* دهان */,
-                                      )
-                                    ],
-                                    onChanged: (val) => setState(
-                                        () => _model.dropDownValue = val),
-                                    width: 350.0,
-                                    height: 50.0,
-                                    searchHintTextStyle:
-                                        FlutterFlowTheme.of(context)
-                                            .bodyLarge
+                                      fillColor: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      elevation: 2.0,
+                                      borderColor:
+                                          FlutterFlowTheme.of(context).primary,
+                                      borderWidth: 0.0,
+                                      borderRadius: 16.0,
+                                      margin: EdgeInsetsDirectional.fromSTEB(
+                                          12.0, 4.0, 12.0, 4.0),
+                                      hidesUnderline: true,
+                                      isSearchable: true,
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 15.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 30.0, 0.0, 0.0),
+                                      child: Text(
+                                        FFLocalizations.of(context).getText(
+                                          '79zxv3dw' /* تحميل مستندات الشهادة أو الصور... */,
+                                        ),
+                                        textAlign: TextAlign.start,
+                                        maxLines: 3,
+                                        style: FlutterFlowTheme.of(context)
+                                            .headlineSmall
                                             .override(
-                                              fontFamily: '',
+                                              fontFamily: 'Outfit',
                                               color:
                                                   FlutterFlowTheme.of(context)
-                                                      .secondaryText,
+                                                      .secondary,
+                                              fontSize: 16.0,
+                                              fontWeight: FontWeight.w600,
+                                              fontStyle: FontStyle.italic,
+                                            ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 50.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment:
+                                      MainAxisAlignment.spaceEvenly,
+                                  children: [
+                                    Padding(
+                                      padding: EdgeInsetsDirectional.fromSTEB(
+                                          0.0, 0.0, 30.0, 0.0),
+                                      child: FFButtonWidget(
+                                        onPressed: () {
+                                          print('Button pressed ...');
+                                        },
+                                        text:
+                                            FFLocalizations.of(context).getText(
+                                          'hr1x8djm' /* ملف */,
+                                        ),
+                                        icon: Icon(
+                                          Icons.cloud_upload,
+                                          size: 15.0,
+                                        ),
+                                        options: FFButtonOptions(
+                                          width: 150.0,
+                                          height: 40.0,
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          iconPadding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 0.0, 0.0),
+                                          color: FlutterFlowTheme.of(context)
+                                              .primary,
+                                          textStyle:
+                                              FlutterFlowTheme.of(context)
+                                                  .titleSmall
+                                                  .override(
+                                                    fontFamily: 'Outfit',
+                                                    color: Colors.white,
+                                                    fontSize: 20.0,
+                                                  ),
+                                          borderSide: BorderSide(
+                                            color: Colors.transparent,
+                                            width: 1.0,
+                                          ),
+                                          borderRadius:
+                                              BorderRadius.circular(8.0),
+                                        ),
+                                      ),
+                                    ),
+                                    FFButtonWidget(
+                                      onPressed: () {
+                                        print('Button pressed ...');
+                                      },
+                                      text: FFLocalizations.of(context).getText(
+                                        'g8ggath2' /* صورة */,
+                                      ),
+                                      icon: Icon(
+                                        Icons.linked_camera,
+                                        size: 15.0,
+                                      ),
+                                      options: FFButtonOptions(
+                                        width: 150.0,
+                                        height: 40.0,
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 0.0),
+                                        iconPadding:
+                                            EdgeInsetsDirectional.fromSTEB(
+                                                0.0, 0.0, 0.0, 0.0),
+                                        color: FlutterFlowTheme.of(context)
+                                            .primary,
+                                        textStyle: FlutterFlowTheme.of(context)
+                                            .titleSmall
+                                            .override(
+                                              fontFamily: 'Outfit',
+                                              color: Colors.white,
                                               fontSize: 20.0,
                                             ),
-                                    textStyle: FlutterFlowTheme.of(context)
-                                        .bodyMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          fontSize: 20.0,
+                                        borderSide: BorderSide(
+                                          color: Colors.transparent,
+                                          width: 1.0,
                                         ),
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      's1qnetcg' /* الرجاء اختيار حرفتك */,
-                                    ),
-                                    searchHintText:
-                                        FFLocalizations.of(context).getText(
-                                      'w9d9y2pf' /* Search for an item... */,
-                                    ),
-                                    fillColor: FlutterFlowTheme.of(context)
-                                        .secondaryBackground,
-                                    elevation: 2.0,
-                                    borderColor:
-                                        FlutterFlowTheme.of(context).primary,
-                                    borderWidth: 0.0,
-                                    borderRadius: 16.0,
-                                    margin: EdgeInsetsDirectional.fromSTEB(
-                                        12.0, 4.0, 12.0, 4.0),
-                                    hidesUnderline: true,
-                                    isSearchable: true,
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 15.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Text(
-                                    FFLocalizations.of(context).getText(
-                                      '79zxv3dw' /* تحميل مستندات الشهادة أو الصور... */,
-                                    ),
-                                    textAlign: TextAlign.start,
-                                    style: FlutterFlowTheme.of(context)
-                                        .headlineSmall
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFFF8B500),
-                                          fontSize: 20.0,
-                                          fontWeight: FontWeight.w600,
-                                          fontStyle: FontStyle.italic,
-                                        ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 50.0, 0.0, 0.0),
-                              child: Row(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment:
-                                    MainAxisAlignment.spaceEvenly,
-                                children: [
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: FFLocalizations.of(context).getText(
-                                      'hr1x8djm' /* ملف */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.cloud_upload,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 130.0,
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: Colors.white,
-                                          ),
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
+                                        borderRadius:
+                                            BorderRadius.circular(8.0),
                                       ),
-                                      borderRadius: BorderRadius.circular(8.0),
                                     ),
-                                  ),
-                                  FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
-                                    text: FFLocalizations.of(context).getText(
-                                      'g8ggath2' /* صورة */,
-                                    ),
-                                    icon: Icon(
-                                      Icons.linked_camera,
-                                      size: 15.0,
-                                    ),
-                                    options: FFButtonOptions(
-                                      width: 130.0,
-                                      height: 40.0,
-                                      padding: EdgeInsetsDirectional.fromSTEB(
-                                          0.0, 0.0, 0.0, 0.0),
-                                      iconPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 0.0, 0.0),
-                                      color:
-                                          FlutterFlowTheme.of(context).primary,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .titleSmall
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            color: Colors.white,
-                                          ),
-                                      borderSide: BorderSide(
-                                        color: Colors.transparent,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(8.0),
-                                    ),
-                                  ),
-                                ],
+                                  ],
+                                ),
                               ),
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
-                        child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
-                          },
-                          text: FFLocalizations.of(context).getText(
-                            'y7hzsrmy' /* التالي */,
-                          ),
-                          options: FFButtonOptions(
-                            width: 350.0,
-                            height: 50.0,
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 0.0),
-                            iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 16.0, 16.0, 16.0),
-                            color: FlutterFlowTheme.of(context).primary,
-                            textStyle:
-                                FlutterFlowTheme.of(context).headlineMedium,
-                            borderSide: BorderSide(
-                              color: Colors.transparent,
-                              width: 1.0,
-                            ),
-                            borderRadius: BorderRadius.circular(8.0),
+                            ],
                           ),
                         ),
-                      ),
-                    ],
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 30.0, 0.0, 0.0),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    10.0, 0.0, 10.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'blnwkx7a' /* لا توجد أي ملفات  تم تحميلها */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFFC80F0F),
+                                        fontSize: 16.0,
+                                      ),
+                                ),
+                              ),
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    25.0, 0.0, 10.0, 0.0),
+                                child: Text(
+                                  FFLocalizations.of(context).getText(
+                                    'mzwdvw7k' /*     لا توجد أي صور تم تحميلها */,
+                                  ),
+                                  style: FlutterFlowTheme.of(context)
+                                      .bodyMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: Color(0xFFC80F0F),
+                                        fontSize: 16.0,
+                                      ),
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 80.0, 0.0, 0.0),
+                          child: FFButtonWidget(
+                            onPressed: () async {
+                              setState(() {
+                                FFAppState().craftType =
+                                    _model.dropDownDraftTypeValue!;
+                              });
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      CreateProfileBioStepFourWidget(),
+                                ),
+                              );
+                            },
+                            text: FFLocalizations.of(context).getText(
+                              'y7hzsrmy' /* التالي */,
+                            ),
+                            options: FFButtonOptions(
+                              width: 350.0,
+                              height: 50.0,
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 0.0, 0.0, 0.0),
+                              iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 16.0, 16.0, 16.0),
+                              color: FlutterFlowTheme.of(context).primary,
+                              textStyle:
+                                  FlutterFlowTheme.of(context).headlineMedium,
+                              borderSide: BorderSide(
+                                color: Colors.transparent,
+                                width: 1.0,
+                              ),
+                              borderRadius: BorderRadius.circular(8.0),
+                            ),
+                          ),
+                        ),
+                      ],
+                    ),
                   ),
                 ),
                 Padding(

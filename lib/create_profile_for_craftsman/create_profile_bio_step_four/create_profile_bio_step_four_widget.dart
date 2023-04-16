@@ -1,3 +1,4 @@
+import '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -335,11 +336,21 @@ class _CreateProfileBioStepFourWidgetState
                         padding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
                         child: FFButtonWidget(
-                          onPressed: () {
-                            print('Button pressed ...');
+                          onPressed: () async {
+                            setState(() {
+                              FFAppState().bioCraftsman =
+                                  _model.textController.text;
+                            });
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ReviewCreateProfileCraftmanWidget(),
+                              ),
+                            );
                           },
                           text: FFLocalizations.of(context).getText(
-                            'r1vey8xo' /* انشاء حساب */,
+                            'r1vey8xo' /* التالي */,
                           ),
                           options: FFButtonOptions(
                             width: 350.0,

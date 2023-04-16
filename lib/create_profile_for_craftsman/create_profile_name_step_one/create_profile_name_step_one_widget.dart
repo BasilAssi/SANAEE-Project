@@ -1,5 +1,6 @@
 import '/backend/firebase_storage/storage.dart';
 import '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
@@ -8,8 +9,8 @@ import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
-import 'package:simple_gradient_text/simple_gradient_text.dart';
 import 'create_profile_name_step_one_model.dart';
 export 'create_profile_name_step_one_model.dart';
 
@@ -85,11 +86,36 @@ class _CreateProfileNameStepOneWidgetState
             flexibleSpace: FlexibleSpaceBar(
               background: Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(0.0, 40.0, 0.0, 0.0),
-                child: ClipRRect(
-                  borderRadius: BorderRadius.circular(16.0),
-                  child: Image.asset(
-                    'assets/images/logo_1.png',
-                    fit: BoxFit.scaleDown,
+                child: InkWell(
+                  onTap: () async {
+                    await Navigator.push(
+                      context,
+                      PageTransition(
+                        type: PageTransitionType.fade,
+                        child: FlutterFlowExpandedImageView(
+                          image: Image.asset(
+                            'assets/images/logo_1.png',
+                            fit: BoxFit.contain,
+                          ),
+                          allowRotation: false,
+                          tag: 'imageTag',
+                          useHeroAnimation: true,
+                        ),
+                      ),
+                    );
+                  },
+                  child: Hero(
+                    tag: 'imageTag',
+                    transitionOnUserGestures: true,
+                    child: ClipRRect(
+                      borderRadius: BorderRadius.circular(16.0),
+                      child: Image.asset(
+                        'assets/images/logo_1.png',
+                        width: 10.0,
+                        height: 10.0,
+                        fit: BoxFit.scaleDown,
+                      ),
+                    ),
                   ),
                 ),
               ),
@@ -108,25 +134,24 @@ class _CreateProfileNameStepOneWidgetState
                   children: [
                     Row(
                       mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.center,
                       children: [
-                        Expanded(
-                          child: Padding(
-                            padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 80.0, 0.0, 0.0),
-                            child: Container(
-                              width: 130.0,
-                              height: 130.0,
-                              clipBehavior: Clip.antiAlias,
-                              decoration: BoxDecoration(
-                                shape: BoxShape.circle,
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 80.0, 0.0, 0.0),
+                          child: Container(
+                            width: 130.0,
+                            height: 130.0,
+                            clipBehavior: Clip.antiAlias,
+                            decoration: BoxDecoration(
+                              shape: BoxShape.circle,
+                            ),
+                            child: Image.network(
+                              valueOrDefault<String>(
+                                _model.uploadedFileUrl,
+                                'https://picsum.photos/seed/picsum/120/120',
                               ),
-                              child: Image.network(
-                                valueOrDefault<String>(
-                                  _model.uploadedFileUrl,
-                                  'https://picsum.photos/seed/picsum/120/120',
-                                ),
-                                fit: BoxFit.contain,
-                              ),
+                              fit: BoxFit.contain,
                             ),
                           ),
                         ),
@@ -526,21 +551,24 @@ class _CreateProfileNameStepOneWidgetState
                   ],
                 ),
               ),
-              Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
-                child: GradientText(
-                  FFLocalizations.of(context).getText(
-                    'r53cjzi7' /*  الخطوة الاولى  */,
+              Align(
+                alignment: AlignmentDirectional(-2.88, -1.96),
+                child: Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(50.0, 200.0, 0.0, 0.0),
+                  child: Text(
+                    FFLocalizations.of(context).getText(
+                      'r53cjzi7' /*  الخطوة الاولى  */,
+                    ),
+                    textAlign: TextAlign.center,
+                    maxLines: 23,
+                    style: FlutterFlowTheme.of(context).bodyMedium.override(
+                          fontFamily: 'Outfit',
+                          color: FlutterFlowTheme.of(context).primary,
+                          fontSize: 20.0,
+                          fontWeight: FontWeight.w600,
+                        ),
                   ),
-                  textAlign: TextAlign.center,
-                  style: FlutterFlowTheme.of(context).bodyMedium.override(
-                        fontFamily: 'Outfit',
-                        fontSize: 20.0,
-                        fontWeight: FontWeight.w600,
-                      ),
-                  colors: [Color(0xFFF8B500), Color(0xFFF8B500)],
-                  gradientDirection: GradientDirection.ltr,
-                  gradientType: GradientType.linear,
                 ),
               ),
             ],
