@@ -1,4 +1,3 @@
-import '/backend/firebase_storage/storage.dart';
 import '/create_profile_for_craftsman/create_profile_bio_step_four/create_profile_bio_step_four_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -6,7 +5,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
-import '/flutter_flow/upload_data.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -119,19 +117,8 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                     FlutterFlowDropDown<String>(
                                       controller: _model
                                               .dropDownDraftTypeValueController ??=
-                                          FormFieldController<String>(
-                                        _model.dropDownDraftTypeValue ??=
-                                            FFAppState().craftType,
-                                      ),
+                                          FormFieldController<String>(null),
                                       options: [
-                                        'Option 1',
-                                        '1',
-                                        '2',
-                                        '3',
-                                        '4',
-                                        '5'
-                                      ],
-                                      optionLabels: [
                                         FFLocalizations.of(context).getText(
                                           'b5rpqhxs' /* البلاط */,
                                         ),
@@ -184,7 +171,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       elevation: 2.0,
                                       borderColor:
                                           FlutterFlowTheme.of(context).primary,
-                                      borderWidth: 1.0,
+                                      borderWidth: 0.0,
                                       borderRadius: 16.0,
                                       margin: EdgeInsetsDirectional.fromSTEB(
                                           12.0, 4.0, 12.0, 4.0),
@@ -237,48 +224,8 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       padding: EdgeInsetsDirectional.fromSTEB(
                                           0.0, 0.0, 30.0, 0.0),
                                       child: FFButtonWidget(
-                                        onPressed: () async {
-                                          final selectedFile =
-                                              await selectFile();
-                                          if (selectedFile != null) {
-                                            setState(() =>
-                                                _model.isDataUploading1 = true);
-                                            FFUploadedFile?
-                                                selectedUploadedFile;
-                                            String? downloadUrl;
-                                            try {
-                                              selectedUploadedFile =
-                                                  FFUploadedFile(
-                                                name: selectedFile.storagePath
-                                                    .split('/')
-                                                    .last,
-                                                bytes: selectedFile.bytes,
-                                              );
-                                              downloadUrl = await uploadData(
-                                                  selectedFile.storagePath,
-                                                  selectedFile.bytes);
-                                            } finally {
-                                              _model.isDataUploading1 = false;
-                                            }
-                                            if (selectedUploadedFile != null &&
-                                                downloadUrl != null) {
-                                              setState(() {
-                                                _model.uploadedLocalFile1 =
-                                                    selectedUploadedFile!;
-                                                _model.uploadedFileUrl1 =
-                                                    downloadUrl!;
-                                              });
-                                            } else {
-                                              setState(() {});
-                                              return;
-                                            }
-                                          }
-
-                                          setState(() {
-                                            _model.isFileUploaded =
-                                                FlutterFlowTheme.of(context)
-                                                    .success;
-                                          });
+                                        onPressed: () {
+                                          print('Button pressed ...');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(
@@ -317,76 +264,8 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       ),
                                     ),
                                     FFButtonWidget(
-                                      onPressed: () async {
-                                        final selectedMedia =
-                                            await selectMediaWithSourceBottomSheet(
-                                          context: context,
-                                          imageQuality: 100,
-                                          allowPhoto: true,
-                                          backgroundColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .primaryBtnText,
-                                          textColor:
-                                              FlutterFlowTheme.of(context)
-                                                  .secondary,
-                                        );
-                                        if (selectedMedia != null &&
-                                            selectedMedia.every((m) =>
-                                                validateFileFormat(
-                                                    m.storagePath, context))) {
-                                          setState(() =>
-                                              _model.isDataUploading2 = true);
-                                          var selectedUploadedFiles =
-                                              <FFUploadedFile>[];
-                                          var downloadUrls = <String>[];
-                                          try {
-                                            selectedUploadedFiles =
-                                                selectedMedia
-                                                    .map((m) => FFUploadedFile(
-                                                          name: m.storagePath
-                                                              .split('/')
-                                                              .last,
-                                                          bytes: m.bytes,
-                                                          height: m.dimensions
-                                                              ?.height,
-                                                          width: m.dimensions
-                                                              ?.width,
-                                                        ))
-                                                    .toList();
-
-                                            downloadUrls = (await Future.wait(
-                                              selectedMedia.map(
-                                                (m) async => await uploadData(
-                                                    m.storagePath, m.bytes),
-                                              ),
-                                            ))
-                                                .where((u) => u != null)
-                                                .map((u) => u!)
-                                                .toList();
-                                          } finally {
-                                            _model.isDataUploading2 = false;
-                                          }
-                                          if (selectedUploadedFiles.length ==
-                                                  selectedMedia.length &&
-                                              downloadUrls.length ==
-                                                  selectedMedia.length) {
-                                            setState(() {
-                                              _model.uploadedLocalFile2 =
-                                                  selectedUploadedFiles.first;
-                                              _model.uploadedFileUrl2 =
-                                                  downloadUrls.first;
-                                            });
-                                          } else {
-                                            setState(() {});
-                                            return;
-                                          }
-                                        }
-
-                                        setState(() {
-                                          _model.isPhotoUploaded =
-                                              FlutterFlowTheme.of(context)
-                                                  .success;
-                                        });
+                                      onPressed: () {
+                                        print('Button pressed ...');
                                       },
                                       text: FFLocalizations.of(context).getText(
                                         'g8ggath2' /* صورة */,
@@ -443,7 +322,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: _model.isFileUploaded,
+                                        color: Color(0xFFC80F0F),
                                         fontSize: 16.0,
                                       ),
                                 ),
@@ -455,12 +334,11 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                   FFLocalizations.of(context).getText(
                                     'mzwdvw7k' /*     لا توجد أي صور تم تحميلها */,
                                   ),
-                                  maxLines: 2,
                                   style: FlutterFlowTheme.of(context)
                                       .bodyMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        color: _model.isPhotoUploaded,
+                                        color: Color(0xFFC80F0F),
                                         fontSize: 16.0,
                                       ),
                                 ),
@@ -514,9 +392,9 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
                   child: GradientText(
                     FFLocalizations.of(context).getText(
-                      'gamxhpe4' /* الخطوة الثالثة: اختر مهنتك وقم... */,
+                      'gamxhpe4' /*  الخطوة الثالثة  */,
                     ),
-                    textAlign: TextAlign.justify,
+                    textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(
                           fontFamily: 'Outfit',
                           fontSize: 20.0,

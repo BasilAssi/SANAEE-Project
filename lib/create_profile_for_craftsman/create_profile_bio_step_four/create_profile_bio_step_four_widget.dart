@@ -33,8 +33,12 @@ class _CreateProfileBioStepFourWidgetState
     super.initState();
     _model = createModel(context, () => CreateProfileBioStepFourModel());
 
-    _model.textController ??=
-        TextEditingController(text: FFAppState().bioCraftsman);
+    _model.textController ??= TextEditingController();
+    WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {
+          _model.textController?.text = FFLocalizations.of(context).getText(
+            'qg5tlean' /*  */,
+          );
+        }));
   }
 
   @override
@@ -98,153 +102,148 @@ class _CreateProfileBioStepFourWidgetState
               children: [
                 Padding(
                   padding: EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 10.0, 0.0),
-                  child: SingleChildScrollView(
-                    child: Column(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 80.0, 0.0, 0.0),
-                          child: SingleChildScrollView(
-                            child: Column(
-                              mainAxisSize: MainAxisSize.max,
-                              children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 15.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Text(
-                                        FFLocalizations.of(context).getText(
-                                          '2b4bqlbk' /*  اكتب السيرة الذاتية الخاصة بك */,
+                  child: Column(
+                    mainAxisSize: MainAxisSize.max,
+                    children: [
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
+                        child: Column(
+                          mainAxisSize: MainAxisSize.max,
+                          children: [
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 15.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                children: [
+                                  Text(
+                                    FFLocalizations.of(context).getText(
+                                      '2b4bqlbk' /*  اكتب السيرة الذاتية الخاصة بك */,
+                                    ),
+                                    textAlign: TextAlign.end,
+                                    style: FlutterFlowTheme.of(context)
+                                        .headlineMedium
+                                        .override(
+                                          fontFamily: 'Outfit',
+                                          color: Color(0xFFF8B500),
+                                          fontSize: 24.0,
+                                          fontWeight: FontWeight.w600,
+                                          fontStyle: FontStyle.italic,
                                         ),
-                                        textAlign: TextAlign.end,
-                                        style: FlutterFlowTheme.of(context)
-                                            .headlineMedium
-                                            .override(
-                                              fontFamily: 'Outfit',
-                                              color: Color(0xFFF8B500),
-                                              fontSize: 24.0,
-                                              fontWeight: FontWeight.w600,
-                                              fontStyle: FontStyle.italic,
-                                            ),
-                                      ),
-                                    ],
                                   ),
-                                ),
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 50.0, 0.0, 0.0),
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    mainAxisAlignment:
-                                        MainAxisAlignment.spaceEvenly,
-                                    children: [
-                                      Container(
-                                        width: 350.0,
-                                        height: 300.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                          borderRadius:
-                                              BorderRadius.circular(16.0),
-                                        ),
-                                        child: Container(
-                                          width: 350.0,
-                                          child: Autocomplete<String>(
-                                            initialValue: TextEditingValue(
-                                                text:
-                                                    FFAppState().bioCraftsman),
-                                            optionsBuilder: (textEditingValue) {
-                                              if (textEditingValue.text == '') {
-                                                return const Iterable<
-                                                    String>.empty();
-                                              }
-                                              return [
-                                                FFLocalizations.of(context)
-                                                    .getText(
-                                                  'fcgz39qd' /* Option 1 */,
-                                                )
-                                              ].where((option) {
-                                                final lowercaseOption =
-                                                    option.toLowerCase();
-                                                return lowercaseOption.contains(
-                                                    textEditingValue.text
-                                                        .toLowerCase());
-                                              });
-                                            },
-                                            optionsViewBuilder:
-                                                (context, onSelected, options) {
-                                              return AutocompleteOptionsList(
-                                                textFieldKey:
-                                                    _model.textFieldKey,
-                                                textController:
-                                                    _model.textController!,
-                                                options: options.toList(),
-                                                onSelected: onSelected,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium,
-                                                textHighlightStyle: TextStyle(),
-                                                elevation: 4.0,
-                                                optionBackgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryBackground,
-                                                optionHighlightColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryBackground,
-                                                maxHeight: 200.0,
-                                              );
-                                            },
-                                            onSelected: (String selection) {
-                                              setState(() => _model
-                                                      .textFieldSelectedOption =
+                                ],
+                              ),
+                            ),
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 50.0, 0.0, 0.0),
+                              child: Row(
+                                mainAxisSize: MainAxisSize.max,
+                                mainAxisAlignment:
+                                    MainAxisAlignment.spaceEvenly,
+                                children: [
+                                  Container(
+                                    width: 350.0,
+                                    height: 300.0,
+                                    decoration: BoxDecoration(
+                                      color: FlutterFlowTheme.of(context)
+                                          .secondaryBackground,
+                                      borderRadius: BorderRadius.circular(16.0),
+                                    ),
+                                    child: Container(
+                                      width: 350.0,
+                                      child: Autocomplete<String>(
+                                        initialValue: TextEditingValue(
+                                            text: FFLocalizations.of(context)
+                                                .getText(
+                                          'qg5tlean' /*  */,
+                                        )),
+                                        optionsBuilder: (textEditingValue) {
+                                          if (textEditingValue.text == '') {
+                                            return const Iterable<
+                                                String>.empty();
+                                          }
+                                          return [
+                                            FFLocalizations.of(context).getText(
+                                              'fcgz39qd' /* Option 1 */,
+                                            )
+                                          ].where((option) {
+                                            final lowercaseOption =
+                                                option.toLowerCase();
+                                            return lowercaseOption.contains(
+                                                textEditingValue.text
+                                                    .toLowerCase());
+                                          });
+                                        },
+                                        optionsViewBuilder:
+                                            (context, onSelected, options) {
+                                          return AutocompleteOptionsList(
+                                            textFieldKey: _model.textFieldKey,
+                                            textController:
+                                                _model.textController!,
+                                            options: options.toList(),
+                                            onSelected: onSelected,
+                                            textStyle:
+                                                FlutterFlowTheme.of(context)
+                                                    .bodyMedium,
+                                            textHighlightStyle: TextStyle(),
+                                            elevation: 4.0,
+                                            optionBackgroundColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .primaryBackground,
+                                            optionHighlightColor:
+                                                FlutterFlowTheme.of(context)
+                                                    .secondaryBackground,
+                                            maxHeight: 200.0,
+                                          );
+                                        },
+                                        onSelected: (String selection) {
+                                          setState(() =>
+                                              _model.textFieldSelectedOption =
                                                   selection);
-                                              FocusScope.of(context).unfocus();
-                                            },
-                                            fieldViewBuilder: (
-                                              context,
-                                              textEditingController,
-                                              focusNode,
-                                              onEditingComplete,
-                                            ) {
-                                              _model.textController =
-                                                  textEditingController;
-                                              return TextFormField(
-                                                key: _model.textFieldKey,
-                                                controller:
-                                                    textEditingController,
-                                                focusNode: focusNode,
-                                                onEditingComplete:
-                                                    onEditingComplete,
-                                                onChanged: (_) =>
-                                                    EasyDebounce.debounce(
-                                                  '_model.textController',
-                                                  Duration(milliseconds: 2000),
-                                                  () => setState(() {}),
-                                                ),
-                                                autofocus: true,
-                                                obscureText: false,
-                                                decoration: InputDecoration(
-                                                  labelText: FFLocalizations.of(
-                                                          context)
+                                          FocusScope.of(context).unfocus();
+                                        },
+                                        fieldViewBuilder: (
+                                          context,
+                                          textEditingController,
+                                          focusNode,
+                                          onEditingComplete,
+                                        ) {
+                                          _model.textController =
+                                              textEditingController;
+                                          return TextFormField(
+                                            key: _model.textFieldKey,
+                                            controller: textEditingController,
+                                            focusNode: focusNode,
+                                            onEditingComplete:
+                                                onEditingComplete,
+                                            onChanged: (_) =>
+                                                EasyDebounce.debounce(
+                                              '_model.textController',
+                                              Duration(milliseconds: 2000),
+                                              () => setState(() {}),
+                                            ),
+                                            autofocus: true,
+                                            obscureText: false,
+                                            decoration: InputDecoration(
+                                              labelText:
+                                                  FFLocalizations.of(context)
                                                       .getText(
-                                                    '14lgq1gt' /* اكتب سيرتك الذاتية */,
-                                                  ),
-                                                  labelStyle:
-                                                      FlutterFlowTheme.of(
-                                                              context)
-                                                          .headlineSmall,
-                                                  hintText: FFLocalizations.of(
-                                                          context)
+                                                '14lgq1gt' /* اكتب سيرتك الذاتية */,
+                                              ),
+                                              labelStyle:
+                                                  FlutterFlowTheme.of(context)
+                                                      .headlineSmall,
+                                              hintText:
+                                                  FFLocalizations.of(context)
                                                       .getText(
-                                                    'sczg2ach' /* 
+                                                'sczg2ach' /* 
 اكتب سيرتك الذاتية           ... */
-                                                    ,
-                                                  ),
-                                                  hintStyle: FlutterFlowTheme
-                                                          .of(context)
+                                                ,
+                                              ),
+                                              hintStyle:
+                                                  FlutterFlowTheme.of(context)
                                                       .displayLarge
                                                       .override(
                                                         fontFamily: 'Poppins',
@@ -254,139 +253,124 @@ class _CreateProfileBioStepFourWidgetState
                                                                 .grayIcon,
                                                         fontSize: 30.0,
                                                       ),
-                                                  enabledBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .primary,
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                  ),
-                                                  focusedBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                  ),
-                                                  errorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                  ),
-                                                  focusedErrorBorder:
-                                                      OutlineInputBorder(
-                                                    borderSide: BorderSide(
-                                                      color: Color(0x00000000),
-                                                      width: 2.0,
-                                                    ),
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            15.0),
-                                                  ),
-                                                  filled: true,
-                                                  fillColor: Colors.white,
-                                                  suffixIcon:
-                                                      _model.textController!
-                                                              .text.isNotEmpty
-                                                          ? InkWell(
-                                                              onTap: () async {
-                                                                _model
-                                                                    .textController
-                                                                    ?.clear();
-                                                                setState(() {});
-                                                              },
-                                                              child: Icon(
-                                                                Icons.clear,
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
-                                                                size: 22,
-                                                              ),
-                                                            )
-                                                          : null,
+                                              enabledBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: FlutterFlowTheme.of(
+                                                          context)
+                                                      .primary,
+                                                  width: 2.0,
                                                 ),
-                                                style:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                          fontSize: 18.0,
-                                                        ),
-                                                textAlign: TextAlign.start,
-                                                maxLines: 40,
-                                                minLines: 1,
-                                                validator: _model
-                                                    .textControllerValidator
-                                                    .asValidator(context),
-                                              );
-                                            },
-                                          ),
-                                        ),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              focusedBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              errorBorder: OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              focusedErrorBorder:
+                                                  OutlineInputBorder(
+                                                borderSide: BorderSide(
+                                                  color: Color(0x00000000),
+                                                  width: 2.0,
+                                                ),
+                                                borderRadius:
+                                                    BorderRadius.circular(15.0),
+                                              ),
+                                              filled: true,
+                                              fillColor: Colors.white,
+                                              suffixIcon: _model.textController!
+                                                      .text.isNotEmpty
+                                                  ? InkWell(
+                                                      onTap: () async {
+                                                        _model.textController
+                                                            ?.clear();
+                                                        setState(() {});
+                                                      },
+                                                      child: Icon(
+                                                        Icons.clear,
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .primary,
+                                                        size: 22,
+                                                      ),
+                                                    )
+                                                  : null,
+                                            ),
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium
+                                                .override(
+                                                  fontFamily: 'Outfit',
+                                                  fontSize: 18.0,
+                                                ),
+                                            textAlign: TextAlign.start,
+                                            maxLines: 40,
+                                            minLines: 1,
+                                            validator: _model
+                                                .textControllerValidator
+                                                .asValidator(context),
+                                          );
+                                        },
                                       ),
-                                    ],
+                                    ),
                                   ),
-                                ),
-                              ],
-                            ),
-                          ),
-                        ),
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 80.0, 0.0, 0.0),
-                          child: FFButtonWidget(
-                            onPressed: () async {
-                              setState(() {
-                                FFAppState().bioCraftsman =
-                                    _model.textController.text;
-                              });
-                              await Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      ReviewCreateProfileCraftmanWidget(),
-                                ),
-                              );
-                            },
-                            text: FFLocalizations.of(context).getText(
-                              'r1vey8xo' /* التالي */,
-                            ),
-                            options: FFButtonOptions(
-                              width: 350.0,
-                              height: 50.0,
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  0.0, 0.0, 0.0, 0.0),
-                              iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                  16.0, 16.0, 16.0, 16.0),
-                              color: FlutterFlowTheme.of(context).primary,
-                              textStyle:
-                                  FlutterFlowTheme.of(context).headlineMedium,
-                              borderSide: BorderSide(
-                                color: Colors.transparent,
-                                width: 1.0,
+                                ],
                               ),
-                              borderRadius: BorderRadius.circular(8.0),
                             ),
+                          ],
+                        ),
+                      ),
+                      Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(0.0, 80.0, 0.0, 0.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            setState(() {
+                              FFAppState().bioCraftsman =
+                                  _model.textController.text;
+                            });
+                            await Navigator.push(
+                              context,
+                              MaterialPageRoute(
+                                builder: (context) =>
+                                    ReviewCreateProfileCraftmanWidget(),
+                              ),
+                            );
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'r1vey8xo' /* التالي */,
+                          ),
+                          options: FFButtonOptions(
+                            width: 350.0,
+                            height: 50.0,
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 16.0, 16.0, 16.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle:
+                                FlutterFlowTheme.of(context).headlineMedium,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
+                            ),
+                            borderRadius: BorderRadius.circular(8.0),
                           ),
                         ),
-                      ],
-                    ),
+                      ),
+                    ],
                   ),
                 ),
                 Padding(
