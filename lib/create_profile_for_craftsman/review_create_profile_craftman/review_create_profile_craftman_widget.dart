@@ -605,7 +605,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                             children: [
                               Padding(
                                 padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 30.0, 0.0, 0.0),
+                                    10.0, 30.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
                                     final craftsmanCreateData =
@@ -642,7 +642,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                     '0rf7eqd8' /* إنشاء ملف شخصي */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 350.0,
+                                    width: 330.0,
                                     height: 40.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),

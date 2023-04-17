@@ -1384,23 +1384,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // createProfileBioStepThree_customar
+  // createAccountForCustomer
   {
-    'y3rxb9c3': {
-      'ar': 'رقم الهوية',
-      'en': 'ID Number',
+    '3jh43xqn': {
+      'ar': 'إنشاء حساب جديد',
+      'en': 'Create a new account',
     },
     'vvgw7imm': {
-      'ar': '[Some hint text...]',
-      'en': '',
+      'ar': 'الاسم الاول',
+      'en': 'first name',
     },
-    'u5yjoclt': {
-      'ar': ' اكتب السيرة الذاتية الخاصة بك',
-      'en': 'Write your Bio',
+    'd2kssmam': {
+      'ar': 'اسم العائلة ',
+      'en': 'last name',
     },
-    'v2zyleky': {
-      'ar': '[Some hint text...]',
-      'en': '',
+    'lgniwzlx': {
+      'ar': 'رقم الهوية',
+      'en': 'id number',
+    },
+    '3dzwr7en': {
+      'ar': 'ذكر',
+      'en': 'male',
     },
     'l40ka9y6': {
       'ar': 'ذكر',
@@ -1408,15 +1412,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'bffennrn': {
       'ar': 'أنثى',
-      'en': 'feminine',
+      'en': 'female',
     },
     'ie5jweyk': {
       'ar': 'انشاء حساب',
       'en': 'Create an account',
-    },
-    'yqh7vg7v': {
-      'ar': ' الخطوة الرابعة ',
-      'en': '\nStep 3  of  4 : Upload your bio ',
     },
     'io5fdh0i': {
       'ar': 'Home',
@@ -1458,6 +1458,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Register a new profile page',
     },
     'rd0ypprn': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // Dashboard
+  {
+    '376vj78d': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'e0kur1i1': {
       'ar': 'Home',
       'en': '',
     },
@@ -1530,6 +1541,53 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'f879az5k': {
       'ar': 'Save Work Experience',
       'en': '',
+    },
+  },
+  // DashboardSidebar
+  {
+    'gt80kxc8': {
+      'ar': 'اسم المستخدم',
+      'en': 'user name',
+    },
+    '6iomz8xz': {
+      'ar': 'لوحة القيادة',
+      'en': 'Dashboard',
+    },
+    'o9jd4ot0': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'nmqeodqi': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'ewetx9oa': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'gi8grckg': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'ixdi1fqb': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'w0s34i6m': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'tpi3vp71': {
+      'ar': 'كتابة منشور',
+      'en': 'Creat Post',
+    },
+    'dd1299yo': {
+      'ar': 'الوضع الداكن',
+      'en': 'Dark Mode',
+    },
+    'u66t1ogl': {
+      'ar': 'تسجيل الخروج',
+      'en': 'Logout',
     },
   },
   // Miscellaneous

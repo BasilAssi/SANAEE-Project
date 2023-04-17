@@ -14,3 +14,7 @@ import '../../auth/firebase_auth/auth_util.dart';
 String? phoneNumber(String? phone) {
   return "+970$phone";
 }
+
+String? phoneNumberCopy(String? phone) {
+  return "+970$phone";
+}
