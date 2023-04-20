@@ -1,19 +1,17 @@
-import '/auth/firebase_auth/auth_util.dart';
-import '/backend/backend.dart';
-import '/creat_profile_for_customar/create_account_for_customer/create_account_for_customer_widget.dart';
-import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
-class SelectYourRoleModel extends FlutterFlowModel {
+class DashboardSidebarModel extends FlutterFlowModel {
+  ///  Local state fields for this component.
+
+  bool? compactView = false;
+
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

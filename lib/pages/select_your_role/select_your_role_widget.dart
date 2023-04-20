@@ -1,5 +1,6 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/creat_profile_for_customar/create_account_for_customer/create_account_for_customer_widget.dart';
 import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -137,15 +138,16 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 1.0,
-                          height: 400.0,
+                          height: 470.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
                             boxShadow: [
                               BoxShadow(
-                                blurRadius: 8.0,
+                                blurRadius: 10.0,
                                 color: Color(0x66000000),
-                                offset: Offset(0.0, -4.0),
+                                offset: Offset(0.0, -10.0),
+                                spreadRadius: 60.0,
                               )
                             ],
                             borderRadius: BorderRadius.only(
@@ -155,8 +157,10 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                               topRight: Radius.circular(16.0),
                             ),
                           ),
+                          alignment:
+                              AlignmentDirectional(-0.050000000000000044, 0.0),
                           child: Align(
-                            alignment: AlignmentDirectional(0.9, 1.0),
+                            alignment: AlignmentDirectional(1.0, 1.0),
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               mainAxisAlignment: MainAxisAlignment.center,
@@ -171,7 +175,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 0.0, 20.0),
+                                                  10.0, 0.0, 0.0, 20.0),
                                           child: Text(
                                             FFLocalizations.of(context).getText(
                                               '892plwty' /* حدد دورك داخل البرنامج */,
@@ -261,9 +265,22 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                       MainAxisSize.min,
                                                   children: [
                                                     FFButtonWidget(
-                                                      onPressed: () {
-                                                        print(
-                                                            'Button pressed ...');
+                                                      onPressed: () async {
+                                                        final usersUpdateData =
+                                                            createUsersRecordData(
+                                                          isCustomer: false,
+                                                          isCraftsman: true,
+                                                        );
+                                                        await currentUserReference!
+                                                            .update(
+                                                                usersUpdateData);
+                                                        await Navigator.push(
+                                                          context,
+                                                          MaterialPageRoute(
+                                                            builder: (context) =>
+                                                                CreateProfileNameStepOneWidget(),
+                                                          ),
+                                                        );
                                                       },
                                                       text: FFLocalizations.of(
                                                               context)
@@ -271,8 +288,8 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                         'mr7moivz' /* الحرفي */,
                                                       ),
                                                       options: FFButtonOptions(
-                                                        width: 250.0,
-                                                        height: 45.0,
+                                                        width: 290.0,
+                                                        height: 50.0,
                                                         padding:
                                                             EdgeInsetsDirectional
                                                                 .fromSTEB(
@@ -309,7 +326,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                         ),
                                                         borderRadius:
                                                             BorderRadius
-                                                                .circular(15.0),
+                                                                .circular(25.0),
                                                       ),
                                                     ),
                                                     Container(
@@ -334,94 +351,127 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
                                                     0.0, 30.0, 0.0, 0.0),
-                                            child: Container(
-                                              width: 350.0,
-                                              height: 50.0,
-                                              decoration: BoxDecoration(
-                                                color: Color(0xFFF8B500),
-                                                borderRadius:
-                                                    BorderRadius.circular(25.0),
-                                                shape: BoxShape.rectangle,
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    -0.15, 0.0),
-                                                child: Row(
-                                                  mainAxisSize:
-                                                      MainAxisSize.min,
-                                                  children: [
-                                                    FFButtonWidget(
-                                                      onPressed: () async {
-                                                        final usersUpdateData =
-                                                            createUsersRecordData(
-                                                          isCustomer: true,
-                                                          isCraftsman: false,
-                                                        );
-                                                        await currentUserReference!
-                                                            .update(
-                                                                usersUpdateData);
-                                                      },
-                                                      text: FFLocalizations.of(
-                                                              context)
-                                                          .getText(
-                                                        'p4kqkvet' /* العميل */,
-                                                      ),
-                                                      options: FFButtonOptions(
-                                                        width: 250.0,
-                                                        height: 45.0,
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        iconPadding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        color:
-                                                            Color(0xFFF8B500),
-                                                        textStyle:
-                                                            FlutterFlowTheme.of(
+                                            child: InkWell(
+                                              onTap: () async {
+                                                final usersUpdateData =
+                                                    createUsersRecordData(
+                                                  isCustomer: true,
+                                                  isCraftsman: false,
+                                                );
+                                                await currentUserReference!
+                                                    .update(usersUpdateData);
+                                                await Navigator.push(
+                                                  context,
+                                                  MaterialPageRoute(
+                                                    builder: (context) =>
+                                                        CreateAccountForCustomerWidget(),
+                                                  ),
+                                                );
+                                              },
+                                              child: Container(
+                                                width: 350.0,
+                                                height: 50.0,
+                                                decoration: BoxDecoration(
+                                                  color: Color(0xFFF8B500),
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          25.0),
+                                                  shape: BoxShape.rectangle,
+                                                ),
+                                                child: Align(
+                                                  alignment:
+                                                      AlignmentDirectional(
+                                                          -0.15, 0.0),
+                                                  child: Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.min,
+                                                    children: [
+                                                      FFButtonWidget(
+                                                        onPressed: () async {
+                                                          final usersUpdateData =
+                                                              createUsersRecordData(
+                                                            isCustomer: true,
+                                                            isCraftsman: false,
+                                                          );
+                                                          await currentUserReference!
+                                                              .update(
+                                                                  usersUpdateData);
+                                                          await Navigator.push(
+                                                            context,
+                                                            MaterialPageRoute(
+                                                              builder: (context) =>
+                                                                  CreateAccountForCustomerWidget(),
+                                                            ),
+                                                          );
+                                                        },
+                                                        text:
+                                                            FFLocalizations.of(
                                                                     context)
-                                                                .headlineMedium
-                                                                .override(
-                                                                  fontFamily:
-                                                                      'Outfit',
-                                                                  fontSize:
-                                                                      20.0,
-                                                                  fontWeight:
-                                                                      FontWeight
-                                                                          .w600,
-                                                                ),
-                                                        borderSide: BorderSide(
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primary,
+                                                                .getText(
+                                                          'p4kqkvet' /* العميل */,
                                                         ),
-                                                        borderRadius:
-                                                            BorderRadius
-                                                                .circular(15.0),
+                                                        options:
+                                                            FFButtonOptions(
+                                                          width: 290.0,
+                                                          height: 50.0,
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          iconPadding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0,
+                                                                      0.0),
+                                                          color:
+                                                              Color(0xFFF8B500),
+                                                          textStyle:
+                                                              FlutterFlowTheme.of(
+                                                                      context)
+                                                                  .headlineMedium
+                                                                  .override(
+                                                                    fontFamily:
+                                                                        'Outfit',
+                                                                    fontSize:
+                                                                        20.0,
+                                                                    fontWeight:
+                                                                        FontWeight
+                                                                            .w600,
+                                                                  ),
+                                                          borderSide:
+                                                              BorderSide(
+                                                            color: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .primary,
+                                                          ),
+                                                          borderRadius:
+                                                              BorderRadius
+                                                                  .circular(
+                                                                      25.0),
+                                                        ),
                                                       ),
-                                                    ),
-                                                    Container(
-                                                      width: 50.0,
-                                                      height: 50.0,
-                                                      clipBehavior:
-                                                          Clip.antiAlias,
-                                                      decoration: BoxDecoration(
-                                                        shape: BoxShape.circle,
+                                                      Container(
+                                                        width: 50.0,
+                                                        height: 50.0,
+                                                        clipBehavior:
+                                                            Clip.antiAlias,
+                                                        decoration:
+                                                            BoxDecoration(
+                                                          shape:
+                                                              BoxShape.circle,
+                                                        ),
+                                                        child: Image.asset(
+                                                          'assets/images/131805-84.png',
+                                                          fit: BoxFit.cover,
+                                                        ),
                                                       ),
-                                                      child: Image.asset(
-                                                        'assets/images/131805-84.png',
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ],
+                                                    ],
+                                                  ),
                                                 ),
                                               ),
                                             ),

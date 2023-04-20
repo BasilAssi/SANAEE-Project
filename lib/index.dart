@@ -59,7 +59,9 @@ export '/creat_profile_for_customar/create_profile_name_step_one_customar/create
     show CreateProfileNameStepOneCustomarWidget;
 export '/creat_profile_for_customar/create_profile_name_addres_step_two_customar/create_profile_name_addres_step_two_customar_widget.dart'
     show CreateProfileNameAddresStepTwoCustomarWidget;
-export '/creat_profile_for_customar/create_profile_bio_step_three_customar/create_profile_bio_step_three_customar_widget.dart'
-    show CreateProfileBioStepThreeCustomarWidget;
+export '/creat_profile_for_customar/create_account_for_customer/create_account_for_customer_widget.dart'
+    show CreateAccountForCustomerWidget;
 export '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart'
     show ReviewCreateProfileCraftmanWidget;
+export '/creat_profile_for_customar/dashboard/dashboard_widget.dart'
+    show DashboardWidget;

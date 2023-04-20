@@ -270,21 +270,22 @@ class _CreateProfileNameStepOneWidgetState
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(16.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(16.0),
@@ -341,21 +342,22 @@ class _CreateProfileNameStepOneWidgetState
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
@@ -412,21 +414,22 @@ class _CreateProfileNameStepOneWidgetState
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
@@ -483,21 +486,22 @@ class _CreateProfileNameStepOneWidgetState
                                   ),
                                   focusedBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color:
+                                          FlutterFlowTheme.of(context).success,
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   errorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
                                   ),
                                   focusedErrorBorder: OutlineInputBorder(
                                     borderSide: BorderSide(
-                                      color: Color(0x00000000),
+                                      color: Color(0xFFC80F0F),
                                       width: 1.0,
                                     ),
                                     borderRadius: BorderRadius.circular(20.0),
