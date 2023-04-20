@@ -106,26 +106,30 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
               initialIndex: 0,
               child: Column(
                 children: [
-                  TabBar(
-                    labelColor: FlutterFlowTheme.of(context).secondary,
-                    unselectedLabelColor: FlutterFlowTheme.of(context).grayIcon,
-                    labelStyle: GoogleFonts.getFont(
-                      'Outfit',
-                      fontWeight: FontWeight.w600,
+                  Align(
+                    alignment: Alignment(0.0, 0),
+                    child: TabBar(
+                      labelColor: FlutterFlowTheme.of(context).secondary,
+                      unselectedLabelColor:
+                          FlutterFlowTheme.of(context).grayIcon,
+                      labelStyle: GoogleFonts.getFont(
+                        'Outfit',
+                        fontWeight: FontWeight.w600,
+                      ),
+                      indicatorColor: FlutterFlowTheme.of(context).secondary,
+                      tabs: [
+                        Tab(
+                          text: FFLocalizations.of(context).getText(
+                            'ilubw22a' /* Applied */,
+                          ),
+                        ),
+                        Tab(
+                          text: FFLocalizations.of(context).getText(
+                            'dsq91la7' /* Posted */,
+                          ),
+                        ),
+                      ],
                     ),
-                    indicatorColor: FlutterFlowTheme.of(context).secondary,
-                    tabs: [
-                      Tab(
-                        text: FFLocalizations.of(context).getText(
-                          'ilubw22a' /* Applied */,
-                        ),
-                      ),
-                      Tab(
-                        text: FFLocalizations.of(context).getText(
-                          'dsq91la7' /* Posted */,
-                        ),
-                      ),
-                    ],
                   ),
                   Expanded(
                     child: TabBarView(
@@ -220,6 +224,10 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                 BorderRadius.circular(8.0),
                                           ),
                                           child: InkWell(
+                                            splashColor: Colors.transparent,
+                                            focusColor: Colors.transparent,
+                                            hoverColor: Colors.transparent,
+                                            highlightColor: Colors.transparent,
                                             onTap: () async {
                                               await Navigator.push(
                                                 context,
@@ -447,6 +455,10 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 6.0, 16.0, 6.0),
                                     child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
                                       onTap: () async {
                                         await Navigator.push(
                                           context,

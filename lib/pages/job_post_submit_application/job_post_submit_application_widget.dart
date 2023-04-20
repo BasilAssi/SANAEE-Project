@@ -397,6 +397,10 @@ class _JobPostSubmitApplicationWidgetState
                                     MainAxisAlignment.spaceAround,
                                 children: [
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       final selectedMedia =
                                           await selectMediaWithSourceBottomSheet(
@@ -433,6 +437,7 @@ class _JobPostSubmitApplicationWidgetState
                                                     height:
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
                                                   ))
                                               .toList();
 
@@ -502,6 +507,10 @@ class _JobPostSubmitApplicationWidgetState
                                     ),
                                   ),
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       final selectedMedia =
                                           await selectMediaWithSourceBottomSheet(
@@ -538,6 +547,7 @@ class _JobPostSubmitApplicationWidgetState
                                                     height:
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
                                                   ))
                                               .toList();
 
@@ -603,6 +613,10 @@ class _JobPostSubmitApplicationWidgetState
                                     ),
                                   ),
                                   InkWell(
+                                    splashColor: Colors.transparent,
+                                    focusColor: Colors.transparent,
+                                    hoverColor: Colors.transparent,
+                                    highlightColor: Colors.transparent,
                                     onTap: () async {
                                       final selectedMedia =
                                           await selectMediaWithSourceBottomSheet(
@@ -639,6 +653,7 @@ class _JobPostSubmitApplicationWidgetState
                                                     height:
                                                         m.dimensions?.height,
                                                     width: m.dimensions?.width,
+                                                    blurHash: m.blurHash,
                                                   ))
                                               .toList();
 

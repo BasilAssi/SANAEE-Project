@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/create_job/create_job_widget.dart';
 import '/pages/job_post_details_actual/job_post_details_actual_widget.dart';
-import '/pages/s_e_a_r_c_h_jobs/s_e_a_r_c_h_jobs_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';

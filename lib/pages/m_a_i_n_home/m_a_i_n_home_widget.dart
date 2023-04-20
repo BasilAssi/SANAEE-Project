@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/pages/create_job/create_job_widget.dart';
 import '/pages/job_post_details_actual/job_post_details_actual_widget.dart';
-import '/pages/s_e_a_r_c_h_jobs/s_e_a_r_c_h_jobs_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -83,40 +82,34 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
         ),
       ),
       appBar: AppBar(
-        backgroundColor: FlutterFlowTheme.of(context).darkText,
+        backgroundColor: FlutterFlowTheme.of(context).primaryText,
         automaticallyImplyLeading: false,
+        leading: FlutterFlowIconButton(
+          borderColor: Colors.transparent,
+          borderRadius: 30.0,
+          borderWidth: 1.0,
+          buttonSize: 60.0,
+          icon: Icon(
+            Icons.arrow_back_rounded,
+            color: FlutterFlowTheme.of(context).secondaryText,
+            size: 30.0,
+          ),
+          onPressed: () async {
+            Navigator.pop(context);
+          },
+        ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'r4mqbyug' /* Welcome */,
+            'vsaeov29' /* Welcome */,
           ),
           style: FlutterFlowTheme.of(context).headlineMedium.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,
               ),
         ),
-        actions: [
-          FlutterFlowIconButton(
-            borderColor: Colors.transparent,
-            borderRadius: 30.0,
-            borderWidth: 1.0,
-            buttonSize: 60.0,
-            icon: Icon(
-              Icons.search_outlined,
-              color: FlutterFlowTheme.of(context).tertiary,
-              size: 30.0,
-            ),
-            onPressed: () async {
-              await Navigator.push(
-                context,
-                MaterialPageRoute(
-                  builder: (context) => SEARCHJobsWidget(),
-                ),
-              );
-            },
-          ),
-        ],
-        centerTitle: false,
-        elevation: 0.0,
+        actions: [],
+        centerTitle: true,
+        elevation: 2.0,
       ),
       body: Column(
         mainAxisSize: MainAxisSize.max,
@@ -180,6 +173,10 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                           }
                           final jobPostCardJobPostsRecord = snapshot.data!;
                           return InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               await Navigator.push(
                                 context,

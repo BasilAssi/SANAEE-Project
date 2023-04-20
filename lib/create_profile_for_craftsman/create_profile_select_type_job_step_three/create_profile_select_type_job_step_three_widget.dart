@@ -343,6 +343,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                                               ?.height,
                                                           width: m.dimensions
                                                               ?.width,
+                                                          blurHash: m.blurHash,
                                                         ))
                                                     .toList();
 

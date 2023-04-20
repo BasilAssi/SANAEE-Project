@@ -339,12 +339,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MAINHome
   {
-    'r4mqbyug': {
-      'ar': 'Welcome',
-      'en': '',
-    },
     'hxlzbffs': {
       'ar': 'Posted On:',
+      'en': '',
+    },
+    'vsaeov29': {
+      'ar': 'Welcome',
       'en': '',
     },
     'taeeoz0g': {
@@ -1464,12 +1464,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // Dashboard
   {
-    '376vj78d': {
+    'h9f4cm5h': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'xk7d2ne4': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'ajalfvb2': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    '64adkye6': {
+      'ar': 'Hello World',
+      'en': '',
+    },
+    'q5u5u459': {
       'ar': 'Hello World',
       'en': '',
     },
     'e0kur1i1': {
       'ar': 'Home',
+      'en': '',
+    },
+  },
+  // createPost
+  {
+    'r2lyl3pz': {
+      'ar': 'إنشاء منشور',
+      'en': 'Create Post',
+    },
+    'wx2rf1d8': {
+      'ar': 'ما الذي يدور في ذهنك!!!',
+      'en': 'What\'s on your mind!!!',
+    },
+    '2h1qlb8d': {
+      'ar': 'أدخل تفاصيل المنشور هنا ...',
+      'en': 'Enter post details here...',
+    },
+    'a7myh8a3': {
+      'ar': '',
+      'en': '',
+    },
+    'q8sszd4y': {
+      'ar': 'نوع العمل',
+      'en': 'type of employment',
+    },
+    '8olswqfv': {
+      'ar': 'Option 1',
+      'en': '',
+    },
+    'vbpp8xz9': {
+      'ar': 'Please select...',
+      'en': '',
+    },
+    'aaaryxkj': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    '159wjk7d': {
+      'ar': 'علامة الموقع',
+      'en': 'Tag Location',
+    },
+    '83jifygh': {
+      'ar': 'Create Post',
       'en': '',
     },
   },

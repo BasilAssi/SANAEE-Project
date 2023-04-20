@@ -66,6 +66,10 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
             iconTheme: IconThemeData(color: Colors.black),
             automaticallyImplyLeading: false,
             leading: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               onTap: () async {
                 Navigator.pop(context);
               },
@@ -138,6 +142,10 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                               final listViewWorkHistoryRecord =
                                   listViewWorkHistoryRecordList[listViewIndex];
                               return InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   await showModalBottomSheet(
                                     isScrollControlled: true,
@@ -338,6 +346,10 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                     padding:
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 16.0),
                     child: InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       onTap: () async {
                         await showModalBottomSheet(
                           isScrollControlled: true,
@@ -408,6 +420,10 @@ class _AddWorkExpWidgetState extends State<AddWorkExpWidget> {
                                   ],
                                 ),
                                 InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
                                   onTap: () async {
                                     await showModalBottomSheet(
                                       isScrollControlled: true,

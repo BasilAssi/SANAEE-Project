@@ -115,6 +115,10 @@ class _CreateProfileNameStepOneWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 80.0, 0.0, 0.0),
                           child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               await Navigator.push(
                                 context,
@@ -198,6 +202,7 @@ class _CreateProfileNameStepOneWidgetState
                                       bytes: m.bytes,
                                       height: m.dimensions?.height,
                                       width: m.dimensions?.width,
+                                      blurHash: m.blurHash,
                                     ))
                                 .toList();
 
