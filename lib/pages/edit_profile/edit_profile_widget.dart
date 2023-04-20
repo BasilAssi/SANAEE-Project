@@ -76,6 +76,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
             backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
             automaticallyImplyLeading: false,
             leading: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               onTap: () async {
                 Navigator.pop(context);
               },
@@ -119,6 +123,10 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                 borderRadius: BorderRadius.circular(10.0),
                               ),
                               child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   final selectedMedia =
                                       await selectMediaWithSourceBottomSheet(
@@ -148,6 +156,7 @@ class _EditProfileWidgetState extends State<EditProfileWidget> {
                                                 bytes: m.bytes,
                                                 height: m.dimensions?.height,
                                                 width: m.dimensions?.width,
+                                                blurHash: m.blurHash,
                                               ))
                                           .toList();
 

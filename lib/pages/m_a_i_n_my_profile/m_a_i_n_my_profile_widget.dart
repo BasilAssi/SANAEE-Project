@@ -358,6 +358,10 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                               if (!(Theme.of(context).brightness ==
                                   Brightness.dark))
                                 InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
                                   onTap: () async {
                                     setDarkModeSetting(context, ThemeMode.dark);
                                     if (animationsMap[
@@ -481,6 +485,10 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                               if (Theme.of(context).brightness ==
                                   Brightness.dark)
                                 InkWell(
+                                  splashColor: Colors.transparent,
+                                  focusColor: Colors.transparent,
+                                  hoverColor: Colors.transparent,
+                                  highlightColor: Colors.transparent,
                                   onTap: () async {
                                     setDarkModeSetting(
                                         context, ThemeMode.light);
@@ -796,6 +804,10 @@ class _MAINMyProfileWidgetState extends State<MAINMyProfileWidget>
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         16.0, 4.0, 16.0, 0.0),
                                     child: InkWell(
+                                      splashColor: Colors.transparent,
+                                      focusColor: Colors.transparent,
+                                      hoverColor: Colors.transparent,
+                                      highlightColor: Colors.transparent,
                                       onTap: () async {
                                         await Navigator.push(
                                           context,

@@ -558,6 +558,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                 mainAxisAlignment: MainAxisAlignment.center,
                 children: [
                   InkWell(
+                    splashColor: Colors.transparent,
+                    focusColor: Colors.transparent,
+                    hoverColor: Colors.transparent,
+                    highlightColor: Colors.transparent,
                     onTap: () async {
                       final usersUpdateData = createUsersRecordData(
                         displayName: _model.textController1.text,
@@ -634,6 +638,10 @@ class _CreateProfileWidgetState extends State<CreateProfileWidget> {
                   mainAxisAlignment: MainAxisAlignment.center,
                   children: [
                     InkWell(
+                      splashColor: Colors.transparent,
+                      focusColor: Colors.transparent,
+                      hoverColor: Colors.transparent,
+                      highlightColor: Colors.transparent,
                       onTap: () async {
                         final usersUpdateData = createUsersRecordData(
                           displayName: _model.textController1.text,

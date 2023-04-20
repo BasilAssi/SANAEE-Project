@@ -245,6 +245,10 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 0.0, 20.0, 0.0),
                           child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               await DatePicker.showDatePicker(
                                 context,
@@ -343,6 +347,10 @@ class _WorkExpBottomSheetWidgetState extends State<WorkExpBottomSheetWidget> {
                           ),
                         ),
                         InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             await DatePicker.showDatePicker(
                               context,

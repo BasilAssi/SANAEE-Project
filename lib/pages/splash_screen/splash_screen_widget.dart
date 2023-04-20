@@ -104,6 +104,10 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
           backgroundColor: Color(0xFF384C54),
           body: SafeArea(
             child: InkWell(
+              splashColor: Colors.transparent,
+              focusColor: Colors.transparent,
+              hoverColor: Colors.transparent,
+              highlightColor: Colors.transparent,
               onTap: () async {
                 await Future.delayed(const Duration(milliseconds: 3000));
                 await Navigator.pushReplacement(

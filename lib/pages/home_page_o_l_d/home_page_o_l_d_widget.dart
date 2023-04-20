@@ -319,6 +319,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                                           ),
                                         ),
                                         InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
                                           onTap: () async {
                                             await Navigator.push(
                                               context,
@@ -871,6 +875,10 @@ class _HomePageOLDWidgetState extends State<HomePageOLDWidget> {
                         padding:
                             EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 0.0),
                         child: InkWell(
+                          splashColor: Colors.transparent,
+                          focusColor: Colors.transparent,
+                          hoverColor: Colors.transparent,
+                          highlightColor: Colors.transparent,
                           onTap: () async {
                             await Navigator.push(
                               context,

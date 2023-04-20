@@ -264,6 +264,10 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 20.0, 0.0),
                               child: InkWell(
+                                splashColor: Colors.transparent,
+                                focusColor: Colors.transparent,
+                                hoverColor: Colors.transparent,
+                                highlightColor: Colors.transparent,
                                 onTap: () async {
                                   await DatePicker.showDatePicker(
                                     context,
@@ -370,6 +374,10 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               ),
                             ),
                             InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
                               onTap: () async {
                                 await DatePicker.showDatePicker(
                                   context,

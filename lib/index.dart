@@ -65,3 +65,4 @@ export '/create_profile_for_craftsman/review_create_profile_craftman/review_crea
     show ReviewCreateProfileCraftmanWidget;
 export '/creat_profile_for_customar/dashboard/dashboard_widget.dart'
     show DashboardWidget;
+export '/create_post/create_post_widget.dart' show CreatePostWidget;

@@ -146,6 +146,10 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
                   if (_model.compactView == false)
                     Expanded(
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           _model.updatePage(() {
                             _model.compactView = true;
@@ -160,6 +164,10 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
                             borderRadius: BorderRadius.circular(48.0),
                           ),
                           child: InkWell(
+                            splashColor: Colors.transparent,
+                            focusColor: Colors.transparent,
+                            hoverColor: Colors.transparent,
+                            highlightColor: Colors.transparent,
                             onTap: () async {
                               _model.updatePage(() {
                                 _model.compactView = true;
@@ -177,6 +185,10 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
                   if (_model.compactView == true)
                     Expanded(
                       child: InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
                         onTap: () async {
                           _model.updatePage(() {
                             _model.compactView = false;
@@ -194,6 +206,10 @@ class _DashboardSidebarWidgetState extends State<DashboardSidebarWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 0.0, 6.0, 0.0),
                             child: InkWell(
+                              splashColor: Colors.transparent,
+                              focusColor: Colors.transparent,
+                              hoverColor: Colors.transparent,
+                              highlightColor: Colors.transparent,
                               onTap: () async {
                                 _model.updatePage(() {
                                   _model.compactView = true;
