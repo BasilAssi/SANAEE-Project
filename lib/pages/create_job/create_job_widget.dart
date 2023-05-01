@@ -793,7 +793,6 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                         currency: '₪',
                                       ),
                                       timeCreated: getCurrentTimestamp,
-                                      createdBy: currentUserReference,
                                     ),
                                     'additionalPhotos': [
                                       _model.uploadedFileUrls
