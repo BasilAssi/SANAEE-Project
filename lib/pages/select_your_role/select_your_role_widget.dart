@@ -138,7 +138,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                             EdgeInsetsDirectional.fromSTEB(0.0, 10.0, 0.0, 0.0),
                         child: Container(
                           width: MediaQuery.of(context).size.width * 1.0,
-                          height: 470.0,
+                          height: 450.0,
                           decoration: BoxDecoration(
                             color: FlutterFlowTheme.of(context)
                                 .secondaryBackground,
@@ -222,7 +222,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                 ),
                                 Padding(
                                   padding: EdgeInsetsDirectional.fromSTEB(
-                                      0.0, 20.0, 0.0, 0.0),
+                                      0.0, 30.0, 0.0, 0.0),
                                   child: Row(
                                     mainAxisSize: MainAxisSize.min,
                                     mainAxisAlignment:

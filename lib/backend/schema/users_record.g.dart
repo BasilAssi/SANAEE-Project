@@ -138,6 +138,22 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.customers;
+    if (value != null) {
+      result
+        ..add('customers')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.crafsmans;
+    if (value != null) {
+      result
+        ..add('crafsmans')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -228,6 +244,18 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.isCraftsman = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
+        case 'customers':
+          result.customers = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
+        case 'crafsmans':
+          result.crafsmans = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -277,6 +305,10 @@ class _$UsersRecord extends UsersRecord {
   @override
   final bool? isCraftsman;
   @override
+  final DocumentReference<Object?>? customers;
+  @override
+  final DocumentReference<Object?>? crafsmans;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$UsersRecord([void Function(UsersRecordBuilder)? updates]) =>
@@ -300,6 +332,8 @@ class _$UsersRecord extends UsersRecord {
       this.isGuest,
       this.isCustomer,
       this.isCraftsman,
+      this.customers,
+      this.crafsmans,
       this.ffRef})
       : super._();
 
@@ -331,6 +365,8 @@ class _$UsersRecord extends UsersRecord {
         isGuest == other.isGuest &&
         isCustomer == other.isCustomer &&
         isCraftsman == other.isCraftsman &&
+        customers == other.customers &&
+        crafsmans == other.crafsmans &&
         ffRef == other.ffRef;
   }
 
@@ -354,6 +390,8 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, isGuest.hashCode);
     _$hash = $jc(_$hash, isCustomer.hashCode);
     _$hash = $jc(_$hash, isCraftsman.hashCode);
+    _$hash = $jc(_$hash, customers.hashCode);
+    _$hash = $jc(_$hash, crafsmans.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -379,6 +417,8 @@ class _$UsersRecord extends UsersRecord {
           ..add('isGuest', isGuest)
           ..add('isCustomer', isCustomer)
           ..add('isCraftsman', isCraftsman)
+          ..add('customers', customers)
+          ..add('crafsmans', crafsmans)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -458,6 +498,16 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   bool? get isCraftsman => _$this._isCraftsman;
   set isCraftsman(bool? isCraftsman) => _$this._isCraftsman = isCraftsman;
 
+  DocumentReference<Object?>? _customers;
+  DocumentReference<Object?>? get customers => _$this._customers;
+  set customers(DocumentReference<Object?>? customers) =>
+      _$this._customers = customers;
+
+  DocumentReference<Object?>? _crafsmans;
+  DocumentReference<Object?>? get crafsmans => _$this._crafsmans;
+  set crafsmans(DocumentReference<Object?>? crafsmans) =>
+      _$this._crafsmans = crafsmans;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -486,6 +536,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _isGuest = $v.isGuest;
       _isCustomer = $v.isCustomer;
       _isCraftsman = $v.isCraftsman;
+      _customers = $v.customers;
+      _crafsmans = $v.crafsmans;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -526,6 +578,8 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             isGuest: isGuest,
             isCustomer: isCustomer,
             isCraftsman: isCraftsman,
+            customers: customers,
+            crafsmans: crafsmans,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -1,3 +1,4 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -115,10 +116,10 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
         mainAxisSize: MainAxisSize.max,
         children: [
           Expanded(
-            child: StreamBuilder<List<JobPostsRecord>>(
-              stream: queryJobPostsRecord(
-                queryBuilder: (jobPostsRecord) =>
-                    jobPostsRecord.orderBy('timeCreated', descending: true),
+            child: StreamBuilder<List<PostRecord>>(
+              stream: queryPostRecord(
+                queryBuilder: (postRecord) =>
+                    postRecord.orderBy('timeCreated', descending: true),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -134,9 +135,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                     ),
                   );
                 }
-                List<JobPostsRecord> listViewJobPostsRecordList =
-                    snapshot.data!;
-                if (listViewJobPostsRecordList.isEmpty) {
+                List<PostRecord> listViewPostRecordList = snapshot.data!;
+                if (listViewPostRecordList.isEmpty) {
                   return Center(
                     child: Image.asset(
                       'assets/images/noJobPosts@2x.png',
@@ -147,16 +147,16 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                 return ListView.builder(
                   padding: EdgeInsets.zero,
                   scrollDirection: Axis.vertical,
-                  itemCount: listViewJobPostsRecordList.length,
+                  itemCount: listViewPostRecordList.length,
                   itemBuilder: (context, listViewIndex) {
-                    final listViewJobPostsRecord =
-                        listViewJobPostsRecordList[listViewIndex];
+                    final listViewPostRecord =
+                        listViewPostRecordList[listViewIndex];
                     return Padding(
                       padding:
                           EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 0.0),
-                      child: StreamBuilder<JobPostsRecord>(
-                        stream: JobPostsRecord.getDocument(
-                            listViewJobPostsRecord.reference),
+                      child: StreamBuilder<PostRecord>(
+                        stream: PostRecord.getDocument(
+                            listViewPostRecord.reference),
                         builder: (context, snapshot) {
                           // Customize what your widget looks like when it's loading.
                           if (!snapshot.hasData) {
@@ -171,7 +171,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                               ),
                             );
                           }
-                          final jobPostCardJobPostsRecord = snapshot.data!;
+                          final jobPostCardPostRecord = snapshot.data!;
                           return InkWell(
                             splashColor: Colors.transparent,
                             focusColor: Colors.transparent,
@@ -184,7 +184,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                   builder: (context) =>
                                       JobPostDetailsActualWidget(
                                     jobPostDetails:
-                                        jobPostCardJobPostsRecord.reference,
+                                        jobPostCardPostRecord.reference,
                                   ),
                                 ),
                               );
@@ -228,21 +228,26 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                               borderRadius:
                                                   BorderRadius.circular(8.0),
                                             ),
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(2.0, 2.0, 2.0, 2.0),
-                                              child: ClipRRect(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                                child: Image.network(
-                                                  valueOrDefault<String>(
-                                                    jobPostCardJobPostsRecord
-                                                        .companyLogo,
-                                                    'https://storage.googleapis.com/flutterflow-io-6f20.appspot.com/projects/robin-job-posts-c6sczn/assets/bsxr9ltsqtg9/logo@2x.png',
+                                            child: Align(
+                                              alignment: AlignmentDirectional(
+                                                  0.0, 0.1),
+                                              child: Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        2.0, 2.0, 2.0, 2.0),
+                                                child: AuthUserStreamWidget(
+                                                  builder: (context) =>
+                                                      ClipRRect(
+                                                    borderRadius:
+                                                        BorderRadius.circular(
+                                                            8.0),
+                                                    child: Image.network(
+                                                      currentUserPhoto,
+                                                      width: 32.0,
+                                                      height: 32.0,
+                                                      fit: BoxFit.cover,
+                                                    ),
                                                   ),
-                                                  width: 32.0,
-                                                  height: 32.0,
-                                                  fit: BoxFit.cover,
                                                 ),
                                               ),
                                             ),
@@ -261,8 +266,14 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                   CrossAxisAlignment.start,
                                               children: [
                                                 Text(
-                                                  jobPostCardJobPostsRecord
-                                                      .jobName!,
+                                                  '${FFAppState().firstName}  ${FFAppState().familyName}',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium,
+                                                ),
+                                                Text(
+                                                  jobPostCardPostRecord
+                                                      .jobTitle!,
                                                   style: FlutterFlowTheme.of(
                                                           context)
                                                       .titleMedium,
@@ -280,8 +291,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                                   4.0,
                                                                   0.0),
                                                       child: Text(
-                                                        jobPostCardJobPostsRecord
-                                                            .jobCompany!,
+                                                        jobPostCardPostRecord
+                                                            .jobType!,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -289,7 +300,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                                       ),
                                                     ),
                                                     Text(
-                                                      '\$${jobPostCardJobPostsRecord.salary}k',
+                                                      listViewPostRecord
+                                                          .estimatedPrice!,
                                                       style:
                                                           FlutterFlowTheme.of(
                                                                   context)
@@ -329,8 +341,8 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                               EdgeInsetsDirectional.fromSTEB(
                                                   12.0, 8.0, 12.0, 4.0),
                                           child: AutoSizeText(
-                                            jobPostCardJobPostsRecord
-                                                .jobDescription!
+                                            jobPostCardPostRecord
+                                                .shortDescription!
                                                 .maybeHandleOverflow(
                                               maxChars: 120,
                                               replacement: '…',
@@ -370,8 +382,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                                         child: AutoSizeText(
                                           dateTimeFormat(
                                             'relative',
-                                            jobPostCardJobPostsRecord
-                                                .timeCreated!,
+                                            jobPostCardPostRecord.timeCreated!,
                                             locale: FFLocalizations.of(context)
                                                 .languageCode,
                                           ),

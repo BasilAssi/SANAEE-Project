@@ -63,6 +63,3 @@ export '/creat_profile_for_customar/create_account_for_customer/create_account_f
     show CreateAccountForCustomerWidget;
 export '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart'
     show ReviewCreateProfileCraftmanWidget;
-export '/creat_profile_for_customar/dashboard/dashboard_widget.dart'
-    show DashboardWidget;
-export '/create_post/create_post_widget.dart' show CreatePostWidget;

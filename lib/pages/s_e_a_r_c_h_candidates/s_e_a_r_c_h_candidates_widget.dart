@@ -171,6 +171,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
                         setState(() => _model.algoliaSearchResults = null);
                         await UsersRecord.search(
                           term: _model.textController.text,
+                          useCache: true,
                         )
                             .then((r) => _model.algoliaSearchResults = r)
                             .onError(
@@ -186,6 +187,7 @@ class _SEARCHCandidatesWidgetState extends State<SEARCHCandidatesWidget> {
               child: FutureBuilder<List<UsersRecord>>(
                 future: UsersRecord.search(
                   term: _model.textController.text,
+                  useCache: true,
                 ),
                 builder: (context, snapshot) {
                   // Customize what your widget looks like when it's loading.

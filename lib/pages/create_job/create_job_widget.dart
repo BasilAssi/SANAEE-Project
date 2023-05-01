@@ -1,6 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/backend/firebase_storage/storage.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_place_picker.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -8,12 +10,15 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/place.dart';
+import '/flutter_flow/upload_data.dart';
 import 'dart:io';
+import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'create_job_model.dart';
 export 'create_job_model.dart';
@@ -37,8 +42,6 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
 
     _model.textController1 ??= TextEditingController();
     _model.shortDescriptionController ??= TextEditingController();
-    _model.requirementsController ??= TextEditingController();
-    _model.preferredSkillsController ??= TextEditingController();
     WidgetsBinding.instance.addPostFrameCallback((_) => setState(() {}));
   }
 
@@ -55,7 +58,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
 
     return Scaffold(
       key: scaffoldKey,
-      backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
+      backgroundColor: FlutterFlowTheme.of(context).tertiary,
       body: Column(
         mainAxisSize: MainAxisSize.max,
         children: [
@@ -66,14 +69,14 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                 children: [
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 44.0, 20.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(20.0, 20.0, 20.0, 0.0),
                     child: Row(
                       mainAxisSize: MainAxisSize.max,
                       mainAxisAlignment: MainAxisAlignment.spaceBetween,
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'ukzz8bd8' /* Create Job Post */,
+                            'ukzz8bd8' /* إنشاء وظيفة */,
                           ),
                           style: FlutterFlowTheme.of(context).headlineSmall,
                         ),
@@ -101,93 +104,155 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       ],
                     ),
                   ),
+                  Divider(
+                    height: 4.0,
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).secondary,
+                  ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(20.0, 8.0, 20.0, 8.0),
-                    child: StreamBuilder<List<CompaniesRecord>>(
-                      stream: queryCompaniesRecord(
-                        singleRecord: true,
-                      ),
-                      builder: (context, snapshot) {
-                        // Customize what your widget looks like when it's loading.
-                        if (!snapshot.hasData) {
-                          return Center(
-                            child: SizedBox(
-                              width: 50.0,
-                              height: 50.0,
-                              child: SpinKitThreeBounce(
-                                color: FlutterFlowTheme.of(context).primary,
-                                size: 50.0,
+                        EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      children: [
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 10.0, 0.0, 10.0),
+                          child: FlutterFlowDropDown<String>(
+                            controller: _model.jobTypeValueController ??=
+                                FormFieldController<String>(null),
+                            options: [
+                              FFLocalizations.of(context).getText(
+                                'f8hlklae' /* البلاط */,
                               ),
+                              FFLocalizations.of(context).getText(
+                                'ilhz9ik4' /* الكهرباء */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '4ive5b1q' /* حداد */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'i66yxmwy' /* نجار */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'bohmm3kp' /* سباك */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'dxq6o4rl' /* اعمال الالمنيوم */,
+                              )
+                            ],
+                            onChanged: (val) =>
+                                setState(() => _model.jobTypeValue = val),
+                            width: MediaQuery.of(context).size.width * 0.9,
+                            height: 70.0,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .bodyMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  fontSize: 16.0,
+                                  fontWeight: FontWeight.normal,
+                                ),
+                            hintText: FFLocalizations.of(context).getText(
+                              'dqojfllq' /* نوع الوظيفة */,
                             ),
-                          );
-                        }
-                        List<CompaniesRecord> rowCompaniesRecordList =
-                            snapshot.data!;
-                        // Return an empty Container when the item does not exist.
-                        if (snapshot.data!.isEmpty) {
-                          return Container();
-                        }
-                        final rowCompaniesRecord =
-                            rowCompaniesRecordList.isNotEmpty
-                                ? rowCompaniesRecordList.first
-                                : null;
-                        return Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.start,
-                          children: [
-                            Card(
-                              clipBehavior: Clip.antiAliasWithSaveLayer,
-                              color: FlutterFlowTheme.of(context).lineColor,
-                              elevation: 2.0,
-                              shape: RoundedRectangleBorder(
-                                borderRadius: BorderRadius.circular(8.0),
-                              ),
-                              child: Padding(
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    2.0, 2.0, 2.0, 2.0),
-                                child: ClipRRect(
-                                  borderRadius: BorderRadius.circular(8.0),
-                                  child: Image.network(
-                                    valueOrDefault<String>(
-                                      rowCompaniesRecord!.companyLogo,
-                                      'https://images.saasworthy.com/flutterflow_13440_logo_1614062469_kgzxm.jpg',
+                            icon: FaIcon(
+                              FontAwesomeIcons.chevronDown,
+                              color: FlutterFlowTheme.of(context).grayIcon400,
+                              size: 16.0,
+                            ),
+                            fillColor: FlutterFlowTheme.of(context)
+                                .secondaryBackground,
+                            elevation: 2.0,
+                            borderColor: Colors.transparent,
+                            borderWidth: 2.0,
+                            borderRadius: 3.0,
+                            margin: EdgeInsetsDirectional.fromSTEB(
+                                16.0, 12.0, 15.0, 12.0),
+                            hidesUnderline: true,
+                            isSearchable: true,
+                          ),
+                        ),
+                      ],
+                    ),
+                  ),
+                  Divider(
+                    height: 4.0,
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).lineColor,
+                  ),
+                  Padding(
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(30.0, 0.0, 20.0, 8.0),
+                    child: Row(
+                      mainAxisSize: MainAxisSize.max,
+                      mainAxisAlignment: MainAxisAlignment.start,
+                      children: [
+                        Expanded(
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                20.0, 0.0, 0.0, 0.0),
+                            child: TextFormField(
+                              controller: _model.textController1,
+                              autofocus: true,
+                              obscureText: false,
+                              decoration: InputDecoration(
+                                hintText: FFLocalizations.of(context).getText(
+                                  'xkp861i0' /* مسمى وظيفي */,
+                                ),
+                                hintStyle: FlutterFlowTheme.of(context)
+                                    .bodySmall
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 16.0,
                                     ),
-                                    width: 60.0,
-                                    height: 60.0,
-                                    fit: BoxFit.cover,
+                                enabledBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                                focusedBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: FlutterFlowTheme.of(context).success,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                                errorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
+                                  ),
+                                ),
+                                focusedErrorBorder: UnderlineInputBorder(
+                                  borderSide: BorderSide(
+                                    color: Color(0x00000000),
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: const BorderRadius.only(
+                                    topLeft: Radius.circular(4.0),
+                                    topRight: Radius.circular(4.0),
                                   ),
                                 ),
                               ),
+                              style: FlutterFlowTheme.of(context).bodyMedium,
+                              validator: _model.textController1Validator
+                                  .asValidator(context),
                             ),
-                            Padding(
-                              padding: EdgeInsetsDirectional.fromSTEB(
-                                  12.0, 0.0, 0.0, 0.0),
-                              child: Column(
-                                mainAxisSize: MainAxisSize.max,
-                                mainAxisAlignment: MainAxisAlignment.center,
-                                crossAxisAlignment: CrossAxisAlignment.start,
-                                children: [
-                                  Text(
-                                    rowCompaniesRecord!.companyName!,
-                                    style: FlutterFlowTheme.of(context)
-                                        .titleMedium,
-                                  ),
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 4.0, 0.0, 0.0),
-                                    child: Text(
-                                      rowCompaniesRecord!.companyCity!,
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
-                                    ),
-                                  ),
-                                ],
-                              ),
-                            ),
-                          ],
-                        );
-                      },
+                          ),
+                        ),
+                      ],
                     ),
                   ),
                   Divider(
@@ -201,88 +266,13 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       Expanded(
                         child: Padding(
                           padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 8.0, 16.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.textController1,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                '8lw3hi06' /* Position Title */,
-                              ),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .headlineSmall
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .grayIcon400,
-                                  ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context)
-                                .headlineSmall
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context).darkText,
-                                ),
-                            validator: _model.textController1Validator
-                                .asValidator(context),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 8.0, 16.0, 0.0),
+                              40.0, 8.0, 20.0, 0.0),
                           child: TextFormField(
                             controller: _model.shortDescriptionController,
                             obscureText: false,
                             decoration: InputDecoration(
                               labelText: FFLocalizations.of(context).getText(
-                                'pap7cb69' /* Short Description */,
+                                'pap7cb69' /* وصف قصير للمنشور */,
                               ),
                               labelStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -291,50 +281,38 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                     color: FlutterFlowTheme.of(context)
                                         .grayIcon400,
                                   ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
+                              enabledBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 1.0,
                                 ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
-                              errorBorder: UnderlineInputBorder(
+                              focusedBorder: OutlineInputBorder(
+                                borderSide: BorderSide(
+                                  color: FlutterFlowTheme.of(context).success,
+                                  width: 1.0,
+                                ),
+                                borderRadius: BorderRadius.circular(15.0),
+                              ),
+                              errorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 1.0,
                                 ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
-                              focusedErrorBorder: UnderlineInputBorder(
+                              focusedErrorBorder: OutlineInputBorder(
                                 borderSide: BorderSide(
                                   color: Color(0x00000000),
                                   width: 1.0,
                                 ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
+                                borderRadius: BorderRadius.circular(15.0),
                               ),
                             ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                             textAlign: TextAlign.start,
-                            maxLines: 3,
+                            maxLines: 4,
                             keyboardType: TextInputType.multiline,
                             validator: _model
                                 .shortDescriptionControllerValidator
@@ -344,242 +322,288 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       ),
                     ],
                   ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 8.0, 16.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.requirementsController,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'gh9w3gm6' /* Requirements */,
-                              ),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .grayIcon400,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                '5u0gqynx' /* Have to have x many years of e... */,
-                              ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .grayIcon400,
-                                  ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                            textAlign: TextAlign.start,
-                            maxLines: 3,
-                            keyboardType: TextInputType.multiline,
-                            validator: _model.requirementsControllerValidator
-                                .asValidator(context),
-                          ),
-                        ),
-                      ),
-                    ],
-                  ),
-                  Row(
-                    mainAxisSize: MainAxisSize.max,
-                    children: [
-                      Expanded(
-                        child: Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              16.0, 8.0, 16.0, 0.0),
-                          child: TextFormField(
-                            controller: _model.preferredSkillsController,
-                            obscureText: false,
-                            decoration: InputDecoration(
-                              labelText: FFLocalizations.of(context).getText(
-                                'a5gr4a26' /* Preferred Skills & Experiences */,
-                              ),
-                              labelStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .grayIcon400,
-                                  ),
-                              hintText: FFLocalizations.of(context).getText(
-                                'c1xeu5hd' /* Knowledge of software or proce... */,
-                              ),
-                              hintStyle: FlutterFlowTheme.of(context)
-                                  .bodyMedium
-                                  .override(
-                                    fontFamily: 'Outfit',
-                                    color: FlutterFlowTheme.of(context)
-                                        .grayIcon400,
-                                  ),
-                              enabledBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: FlutterFlowTheme.of(context).lineColor,
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              errorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                              focusedErrorBorder: UnderlineInputBorder(
-                                borderSide: BorderSide(
-                                  color: Color(0x00000000),
-                                  width: 1.0,
-                                ),
-                                borderRadius: const BorderRadius.only(
-                                  topLeft: Radius.circular(4.0),
-                                  topRight: Radius.circular(4.0),
-                                ),
-                              ),
-                            ),
-                            style: FlutterFlowTheme.of(context).bodyMedium,
-                            textAlign: TextAlign.start,
-                            maxLines: 3,
-                            keyboardType: TextInputType.multiline,
-                            validator: _model.preferredSkillsControllerValidator
-                                .asValidator(context),
-                          ),
-                        ),
-                      ),
-                    ],
+                  Divider(
+                    height: 4.0,
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      mainAxisAlignment: MainAxisAlignment.center,
-                      children: [
-                        Container(
-                          width: MediaQuery.of(context).size.width * 0.92,
-                          height: 50.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            boxShadow: [
-                              BoxShadow(
-                                color: FlutterFlowTheme.of(context).lineColor,
-                                offset: Offset(0.0, 1.0),
-                              )
+                    padding:
+                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          Column(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              Padding(
+                                padding: EdgeInsetsDirectional.fromSTEB(
+                                    0.0, 8.0, 0.0, 0.0),
+                                child: Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  children: [
+                                    if (_model.uploadedFileUrls.length < 1)
+                                      InkWell(
+                                        splashColor: Colors.transparent,
+                                        focusColor: Colors.transparent,
+                                        hoverColor: Colors.transparent,
+                                        highlightColor: Colors.transparent,
+                                        onTap: () async {
+                                          final selectedMedia =
+                                              await selectMedia(
+                                            mediaSource:
+                                                MediaSource.photoGallery,
+                                            multiImage: true,
+                                          );
+                                          if (selectedMedia != null &&
+                                              selectedMedia.every((m) =>
+                                                  validateFileFormat(
+                                                      m.storagePath,
+                                                      context))) {
+                                            setState(() =>
+                                                _model.isDataUploading = true);
+                                            var selectedUploadedFiles =
+                                                <FFUploadedFile>[];
+                                            var downloadUrls = <String>[];
+                                            try {
+                                              showUploadMessage(
+                                                context,
+                                                'Uploading file...',
+                                                showLoading: true,
+                                              );
+                                              selectedUploadedFiles =
+                                                  selectedMedia
+                                                      .map(
+                                                          (m) => FFUploadedFile(
+                                                                name: m
+                                                                    .storagePath
+                                                                    .split('/')
+                                                                    .last,
+                                                                bytes: m.bytes,
+                                                                height: m
+                                                                    .dimensions
+                                                                    ?.height,
+                                                                width: m
+                                                                    .dimensions
+                                                                    ?.width,
+                                                                blurHash:
+                                                                    m.blurHash,
+                                                              ))
+                                                      .toList();
+
+                                              downloadUrls = (await Future.wait(
+                                                selectedMedia.map(
+                                                  (m) async => await uploadData(
+                                                      m.storagePath, m.bytes),
+                                                ),
+                                              ))
+                                                  .where((u) => u != null)
+                                                  .map((u) => u!)
+                                                  .toList();
+                                            } finally {
+                                              ScaffoldMessenger.of(context)
+                                                  .hideCurrentSnackBar();
+                                              _model.isDataUploading = false;
+                                            }
+                                            if (selectedUploadedFiles.length ==
+                                                    selectedMedia.length &&
+                                                downloadUrls.length ==
+                                                    selectedMedia.length) {
+                                              setState(() {
+                                                _model.uploadedLocalFiles =
+                                                    selectedUploadedFiles;
+                                                _model.uploadedFileUrls =
+                                                    downloadUrls;
+                                              });
+                                              showUploadMessage(
+                                                  context, 'Success!');
+                                            } else {
+                                              setState(() {});
+                                              showUploadMessage(context,
+                                                  'Failed to upload data');
+                                              return;
+                                            }
+                                          }
+                                        },
+                                        child: Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Container(
+                                            width: 100.0,
+                                            height: 100.0,
+                                            decoration: BoxDecoration(
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .tertiary400,
+                                              borderRadius:
+                                                  BorderRadius.circular(16.0),
+                                            ),
+                                            child: Column(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: [
+                                                FlutterFlowIconButton(
+                                                  borderColor:
+                                                      Colors.transparent,
+                                                  borderRadius: 30.0,
+                                                  borderWidth: 1.0,
+                                                  buttonSize: 60.0,
+                                                  icon: Icon(
+                                                    Icons.add,
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .primaryText,
+                                                    size: 30.0,
+                                                  ),
+                                                  onPressed: () {
+                                                    print(
+                                                        'IconButton pressed ...');
+                                                  },
+                                                ),
+                                                Text(
+                                                  FFLocalizations.of(context)
+                                                      .getText(
+                                                    '7tskk9a7' /* اضافة صورة */,
+                                                  ),
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .bodyMedium,
+                                                ),
+                                              ],
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    if (_model.uploadedFileUrls.length >= 1)
+                                      Builder(
+                                        builder: (context) {
+                                          final photoslist = _model
+                                              .uploadedFileUrls
+                                              .map((e) => e)
+                                              .toList();
+                                          return SingleChildScrollView(
+                                            scrollDirection: Axis.horizontal,
+                                            child: Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              children: List.generate(
+                                                  photoslist.length,
+                                                  (photoslistIndex) {
+                                                final photoslistItem =
+                                                    photoslist[photoslistIndex];
+                                                return Container(
+                                                  width: 100.0,
+                                                  height: 100.0,
+                                                  decoration: BoxDecoration(
+                                                    color: FlutterFlowTheme.of(
+                                                            context)
+                                                        .secondaryBackground,
+                                                  ),
+                                                  child: Stack(
+                                                    children: [
+                                                      InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          await Navigator.push(
+                                                            context,
+                                                            PageTransition(
+                                                              type:
+                                                                  PageTransitionType
+                                                                      .fade,
+                                                              child:
+                                                                  FlutterFlowExpandedImageView(
+                                                                image: Image
+                                                                    .network(
+                                                                  'https://picsum.photos/seed/526/600',
+                                                                  fit: BoxFit
+                                                                      .contain,
+                                                                ),
+                                                                allowRotation:
+                                                                    false,
+                                                                tag: 'imageTag',
+                                                                useHeroAnimation:
+                                                                    true,
+                                                              ),
+                                                            ),
+                                                          );
+                                                        },
+                                                        child: Hero(
+                                                          tag: 'imageTag',
+                                                          transitionOnUserGestures:
+                                                              true,
+                                                          child: Image.network(
+                                                            'https://picsum.photos/seed/526/600',
+                                                            width: 100.0,
+                                                            height: 100.0,
+                                                            fit: BoxFit.cover,
+                                                          ),
+                                                        ),
+                                                      ),
+                                                      Align(
+                                                        alignment:
+                                                            AlignmentDirectional(
+                                                                1.0, -1.0),
+                                                        child:
+                                                            FlutterFlowIconButton(
+                                                          borderColor: Colors
+                                                              .transparent,
+                                                          borderWidth: 1.0,
+                                                          buttonSize: 40.0,
+                                                          fillColor: Colors
+                                                              .transparent,
+                                                          icon: Icon(
+                                                            Icons
+                                                                .highlight_off_rounded,
+                                                            color: Color(
+                                                                0xFFC80F0F),
+                                                            size: 30.0,
+                                                          ),
+                                                          onPressed: () async {
+                                                            setState(() {
+                                                              _model.isDataUploading =
+                                                                  false;
+                                                              _model.uploadedLocalFiles =
+                                                                  [];
+                                                              _model.uploadedFileUrls =
+                                                                  [];
+                                                            });
+                                                          },
+                                                        ),
+                                                      ),
+                                                    ],
+                                                  ),
+                                                );
+                                              }),
+                                            ),
+                                          );
+                                        },
+                                      ),
+                                  ],
+                                ),
+                              ),
                             ],
                           ),
-                          child: FlutterFlowDropDown<String>(
-                            controller:
-                                _model.experienceLevelValueController ??=
-                                    FormFieldController<String>(null),
-                            options: [
-                              FFLocalizations.of(context).getText(
-                                'f8hlklae' /* < 6 Months */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'ilhz9ik4' /* 6m - 1y */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '4ive5b1q' /* 1y - 3y */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'i66yxmwy' /* +3 years */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'bohmm3kp' /* +5 years */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'dxq6o4rl' /* +8 years */,
-                              )
-                            ],
-                            onChanged: (val) => setState(
-                                () => _model.experienceLevelValue = val),
-                            width: MediaQuery.of(context).size.width * 1.0,
-                            height: 40.0,
-                            textStyle: FlutterFlowTheme.of(context).bodyMedium,
-                            hintText: FFLocalizations.of(context).getText(
-                              'dqojfllq' /* Experience Level */,
-                            ),
-                            icon: FaIcon(
-                              FontAwesomeIcons.chevronDown,
-                              color: FlutterFlowTheme.of(context).grayIcon400,
-                              size: 16.0,
-                            ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Colors.transparent,
-                            borderWidth: 0.0,
-                            borderRadius: 0.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 16.0, 12.0),
-                            hidesUnderline: true,
-                            isSearchable: false,
-                          ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
+                  ),
+                  Divider(
+                    height: 4.0,
+                    thickness: 1.0,
+                    color: FlutterFlowTheme.of(context).lineColor,
                   ),
                   Padding(
                     padding:
@@ -589,9 +613,25 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'pdxr2c8v' /* Salary */,
+                            'pdxr2c8v' /* السعر المقدر */,
                           ),
                           style: FlutterFlowTheme.of(context).bodyMedium,
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              20.0, 0.0, 0.0, 0.0),
+                          child: AutoSizeText(
+                            valueOrDefault<String>(
+                              formatNumber(
+                                _model.salaryRangeValue,
+                                formatType: FormatType.decimal,
+                                decimalType: DecimalType.periodDecimal,
+                                currency: '₪',
+                              ),
+                              '100',
+                            ),
+                            style: FlutterFlowTheme.of(context).bodyMedium,
+                          ),
                         ),
                       ],
                     ),
@@ -605,13 +645,13 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       children: [
                         Text(
                           FFLocalizations.of(context).getText(
-                            'n60zdd0q' /* $40,000 */,
+                            'n60zdd0q' /* ₪00,100 */,
                           ),
                           style: FlutterFlowTheme.of(context).bodySmall,
                         ),
                         Text(
                           FFLocalizations.of(context).getText(
-                            '4ficbfr6' /* $150,000+ */,
+                            '4ficbfr6' /* ₪00,5000 */,
                           ),
                           textAlign: TextAlign.end,
                           style: FlutterFlowTheme.of(context).bodySmall,
@@ -621,15 +661,15 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(16.0, 0.0, 16.0, 10.0),
                     child: Slider(
                       activeColor: FlutterFlowTheme.of(context).secondary,
                       inactiveColor: Color(0xFF9E9E9E),
-                      min: 40000.0,
-                      max: 160000.0,
-                      value: _model.salaryRangeValue ??= 100000.0,
+                      min: 100.0,
+                      max: 5000.0,
+                      value: _model.salaryRangeValue ??= 1000.0,
                       label: _model.salaryRangeValue.toString(),
-                      divisions: 24,
+                      divisions: 49,
                       onChanged: (newValue) {
                         setState(() => _model.salaryRangeValue = newValue);
                       },
@@ -663,7 +703,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                               setState(() => _model.placePickerValue = place);
                             },
                             defaultText: FFLocalizations.of(context).getText(
-                              '1t54fz83' /* Location */,
+                              '1t54fz83' /* موقع */,
                             ),
                             icon: Icon(
                               Icons.place,
@@ -686,7 +726,7 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                 color: Colors.transparent,
                                 width: 1.0,
                               ),
-                              borderRadius: BorderRadius.circular(8.0),
+                              borderRadius: BorderRadius.circular(16.0),
                             ),
                           ),
                         ),
@@ -699,61 +739,96 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
           ),
           Align(
             alignment: AlignmentDirectional(0.0, 1.0),
-            child: Container(
-              width: MediaQuery.of(context).size.width * 1.0,
-              height: 100.0,
-              decoration: BoxDecoration(
-                color: FlutterFlowTheme.of(context).primary,
-                boxShadow: [
-                  BoxShadow(
-                    blurRadius: 3.0,
-                    color: Color(0x33000000),
-                    offset: Offset(0.0, -1.0),
-                  )
-                ],
-              ),
-              child: Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
-                child: FFButtonWidget(
-                  onPressed: () async {
-                    final jobPostsCreateData = createJobPostsRecordData(
-                      jobName: _model.textController1.text,
-                      jobDescription: _model.shortDescriptionController.text,
-                      jobCompany: '',
-                      salary: _model.salaryRangeValue?.toString(),
-                      timeCreated: getCurrentTimestamp,
-                      jobLocation: _model.placePickerValue.latLng,
-                      postedBy: currentUserReference,
-                      jobRequirements: _model.requirementsController.text,
-                      jobPreferredSkills: _model.experienceLevelValue,
-                      myJob: true,
-                    );
-                    await JobPostsRecord.collection
-                        .doc()
-                        .set(jobPostsCreateData);
-                    Navigator.pop(context);
-                  },
-                  text: FFLocalizations.of(context).getText(
-                    'px1bkt5b' /* Create Post */,
-                  ),
-                  options: FFButtonOptions(
-                    width: 130.0,
-                    height: 40.0,
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    iconPadding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
-                    color: FlutterFlowTheme.of(context).primary,
-                    textStyle:
-                        FlutterFlowTheme.of(context).titleMedium.override(
-                              fontFamily: 'Outfit',
-                              color: FlutterFlowTheme.of(context).tertiary,
+            child: Padding(
+              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 60.0),
+              child: Container(
+                width: MediaQuery.of(context).size.width * 0.9,
+                height: 50.0,
+                decoration: BoxDecoration(
+                  color: FlutterFlowTheme.of(context).primary,
+                  boxShadow: [
+                    BoxShadow(
+                      blurRadius: 3.0,
+                      color: Color(0x33000000),
+                      offset: Offset(0.0, -1.0),
+                    )
+                  ],
+                  borderRadius: BorderRadius.circular(16.0),
+                ),
+                child: AuthUserStreamWidget(
+                  builder: (context) => FutureBuilder<CustomersRecord>(
+                    future: CustomersRecord.getDocumentOnce(
+                        currentUserDocument!.customers!),
+                    builder: (context, snapshot) {
+                      // Customize what your widget looks like when it's loading.
+                      if (!snapshot.hasData) {
+                        return Center(
+                          child: SizedBox(
+                            width: 50.0,
+                            height: 50.0,
+                            child: SpinKitThreeBounce(
+                              color: FlutterFlowTheme.of(context).primary,
+                              size: 50.0,
                             ),
-                    elevation: 0.0,
-                    borderSide: BorderSide(
-                      color: Colors.transparent,
-                      width: 1.0,
-                    ),
-                    borderRadius: BorderRadius.circular(0.0),
+                          ),
+                        );
+                      }
+                      final buttonCustomersRecord = snapshot.data!;
+                      return FFButtonWidget(
+                        onPressed: () async {
+                          final postCreateData = {
+                            ...createPostRecordData(
+                              jobType: _model.jobTypeValue,
+                              jobTitle: _model.textController1.text,
+                              shortDescription:
+                                  _model.shortDescriptionController.text,
+                              jobLocation: _model.placePickerValue.latLng,
+                              estimatedPrice: formatNumber(
+                                _model.salaryRangeValue,
+                                formatType: FormatType.decimal,
+                                decimalType: DecimalType.periodDecimal,
+                                currency: '₪',
+                              ),
+                              timeCreated: getCurrentTimestamp,
+                              createdBy: currentUserReference,
+                            ),
+                            'additionalPhotos': [_model.uploadedFileUrls],
+                          };
+                          var postRecordReference = PostRecord.collection.doc();
+                          await postRecordReference.set(postCreateData);
+                          _model.createdSuccessfully =
+                              PostRecord.getDocumentFromData(
+                                  postCreateData, postRecordReference);
+                          Navigator.pop(context);
+
+                          setState(() {});
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'px1bkt5b' /* إنشاء منشور */,
+                        ),
+                        options: FFButtonOptions(
+                          width: 100.0,
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle: FlutterFlowTheme.of(context)
+                              .titleMedium
+                              .override(
+                                fontFamily: 'Outfit',
+                                color: FlutterFlowTheme.of(context).tertiary,
+                              ),
+                          elevation: 0.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(16.0),
+                        ),
+                      );
+                    },
                   ),
                 ),
               ),
