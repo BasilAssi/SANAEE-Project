@@ -530,13 +530,14 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                                                   FlutterFlowExpandedImageView(
                                                                 image: Image
                                                                     .network(
-                                                                  'https://picsum.photos/seed/526/600',
+                                                                  photoslistItem,
                                                                   fit: BoxFit
                                                                       .contain,
                                                                 ),
                                                                 allowRotation:
                                                                     false,
-                                                                tag: 'imageTag',
+                                                                tag:
+                                                                    photoslistItem,
                                                                 useHeroAnimation:
                                                                     true,
                                                               ),
@@ -544,11 +545,11 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                                           );
                                                         },
                                                         child: Hero(
-                                                          tag: 'imageTag',
+                                                          tag: photoslistItem,
                                                           transitionOnUserGestures:
                                                               true,
                                                           child: Image.network(
-                                                            'https://picsum.photos/seed/526/600',
+                                                            photoslistItem,
                                                             width: 100.0,
                                                             height: 100.0,
                                                             fit: BoxFit.cover,
@@ -736,104 +737,111 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                       ],
                     ),
                   ),
-                ],
-              ),
-            ),
-          ),
-          Align(
-            alignment: AlignmentDirectional(0.0, 1.0),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 60.0),
-              child: Container(
-                width: MediaQuery.of(context).size.width * 0.9,
-                height: 50.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primary,
-                  boxShadow: [
-                    BoxShadow(
-                      blurRadius: 3.0,
-                      color: Color(0x33000000),
-                      offset: Offset(0.0, -1.0),
-                    )
-                  ],
-                  borderRadius: BorderRadius.circular(16.0),
-                ),
-                child: AuthUserStreamWidget(
-                  builder: (context) => FutureBuilder<CustomersRecord>(
-                    future: CustomersRecord.getDocumentOnce(
-                        currentUserDocument!.customers!),
-                    builder: (context, snapshot) {
-                      // Customize what your widget looks like when it's loading.
-                      if (!snapshot.hasData) {
-                        return Center(
-                          child: SizedBox(
-                            width: 50.0,
-                            height: 50.0,
-                            child: SpinKitThreeBounce(
-                              color: FlutterFlowTheme.of(context).primary,
-                              size: 50.0,
-                            ),
-                          ),
-                        );
-                      }
-                      final buttonCustomersRecord = snapshot.data!;
-                      return FFButtonWidget(
-                        onPressed: () async {
-                          final postCreateData = {
-                            ...createPostRecordData(
-                              jobType: _model.jobTypeValue,
-                              jobTitle: _model.textController1.text,
-                              shortDescription:
-                                  _model.shortDescriptionController.text,
-                              jobLocation: _model.placePickerValue.latLng,
-                              estimatedPrice: formatNumber(
-                                _model.salaryRangeValue,
-                                formatType: FormatType.decimal,
-                                decimalType: DecimalType.periodDecimal,
-                                currency: '₪',
-                              ),
-                              timeCreated: getCurrentTimestamp,
-                              createdBy: currentUserReference,
-                            ),
-                            'additionalPhotos': [_model.uploadedFileUrls],
-                          };
-                          var postRecordReference = PostRecord.collection.doc();
-                          await postRecordReference.set(postCreateData);
-                          _model.createdSuccessfully =
-                              PostRecord.getDocumentFromData(
-                                  postCreateData, postRecordReference);
-                          Navigator.pop(context);
-
-                          setState(() {});
-                        },
-                        text: FFLocalizations.of(context).getText(
-                          'px1bkt5b' /* إنشاء منشور */,
-                        ),
-                        options: FFButtonOptions(
-                          width: 100.0,
-                          height: 40.0,
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
-                          iconPadding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 0.0, 0.0, 0.0),
+                  Align(
+                    alignment: AlignmentDirectional(0.0, 1.0),
+                    child: Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 20.0, 0.0, 40.0),
+                      child: Container(
+                        width: MediaQuery.of(context).size.width * 0.9,
+                        height: 50.0,
+                        decoration: BoxDecoration(
                           color: FlutterFlowTheme.of(context).primary,
-                          textStyle: FlutterFlowTheme.of(context)
-                              .titleMedium
-                              .override(
-                                fontFamily: 'Outfit',
-                                color: FlutterFlowTheme.of(context).tertiary,
-                              ),
-                          elevation: 0.0,
-                          borderSide: BorderSide(
-                            color: Colors.transparent,
-                            width: 1.0,
-                          ),
+                          boxShadow: [
+                            BoxShadow(
+                              blurRadius: 3.0,
+                              color: Color(0x33000000),
+                              offset: Offset(0.0, -1.0),
+                            )
+                          ],
                           borderRadius: BorderRadius.circular(16.0),
                         ),
-                      );
-                    },
+                        child: AuthUserStreamWidget(
+                          builder: (context) => FutureBuilder<CustomersRecord>(
+                            future: CustomersRecord.getDocumentOnce(
+                                currentUserDocument!.customers!),
+                            builder: (context, snapshot) {
+                              // Customize what your widget looks like when it's loading.
+                              if (!snapshot.hasData) {
+                                return Center(
+                                  child: SizedBox(
+                                    width: 50.0,
+                                    height: 50.0,
+                                    child: SpinKitThreeBounce(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      size: 50.0,
+                                    ),
+                                  ),
+                                );
+                              }
+                              final buttonCustomersRecord = snapshot.data!;
+                              return FFButtonWidget(
+                                onPressed: () async {
+                                  final postCreateData = {
+                                    ...createPostRecordData(
+                                      jobType: _model.jobTypeValue,
+                                      jobTitle: _model.textController1.text,
+                                      shortDescription: _model
+                                          .shortDescriptionController.text,
+                                      jobLocation:
+                                          _model.placePickerValue.latLng,
+                                      estimatedPrice: formatNumber(
+                                        _model.salaryRangeValue,
+                                        formatType: FormatType.decimal,
+                                        decimalType: DecimalType.periodDecimal,
+                                        currency: '₪',
+                                      ),
+                                      timeCreated: getCurrentTimestamp,
+                                      createdBy: currentUserReference,
+                                    ),
+                                    'additionalPhotos': [
+                                      _model.uploadedFileUrls
+                                    ],
+                                  };
+                                  var postRecordReference =
+                                      PostRecord.collection.doc();
+                                  await postRecordReference.set(postCreateData);
+                                  _model.createdSuccessfully =
+                                      PostRecord.getDocumentFromData(
+                                          postCreateData, postRecordReference);
+                                  Navigator.pop(context);
+
+                                  setState(() {});
+                                },
+                                text: FFLocalizations.of(context).getText(
+                                  'px1bkt5b' /* إنشاء منشور */,
+                                ),
+                                options: FFButtonOptions(
+                                  width: 100.0,
+                                  height: 40.0,
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                      0.0, 0.0, 0.0, 0.0),
+                                  color: FlutterFlowTheme.of(context).primary,
+                                  textStyle: FlutterFlowTheme.of(context)
+                                      .titleMedium
+                                      .override(
+                                        fontFamily: 'Outfit',
+                                        color: FlutterFlowTheme.of(context)
+                                            .tertiary,
+                                      ),
+                                  elevation: 0.0,
+                                  borderSide: BorderSide(
+                                    color: Colors.transparent,
+                                    width: 1.0,
+                                  ),
+                                  borderRadius: BorderRadius.circular(16.0),
+                                ),
+                              );
+                            },
+                          ),
+                        ),
+                      ),
+                    ),
                   ),
-                ),
+                ],
               ),
             ),
           ),
