@@ -112,67 +112,70 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                   Padding(
                     padding:
                         EdgeInsetsDirectional.fromSTEB(20.0, 0.0, 20.0, 0.0),
-                    child: Row(
-                      mainAxisSize: MainAxisSize.max,
-                      children: [
-                        Padding(
-                          padding: EdgeInsetsDirectional.fromSTEB(
-                              0.0, 10.0, 0.0, 10.0),
-                          child: FlutterFlowDropDown<String>(
-                            controller: _model.jobTypeValueController ??=
-                                FormFieldController<String>(null),
-                            options: [
-                              FFLocalizations.of(context).getText(
-                                'f8hlklae' /* البلاط */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'ilhz9ik4' /* الكهرباء */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                '4ive5b1q' /* حداد */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'i66yxmwy' /* نجار */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'bohmm3kp' /* سباك */,
-                              ),
-                              FFLocalizations.of(context).getText(
-                                'dxq6o4rl' /* اعمال الالمنيوم */,
-                              )
-                            ],
-                            onChanged: (val) =>
-                                setState(() => _model.jobTypeValue = val),
-                            width: MediaQuery.of(context).size.width * 0.9,
-                            height: 70.0,
-                            textStyle: FlutterFlowTheme.of(context)
-                                .bodyMedium
-                                .override(
-                                  fontFamily: 'Outfit',
-                                  fontSize: 16.0,
-                                  fontWeight: FontWeight.normal,
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        children: [
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 10.0, 0.0, 10.0),
+                            child: FlutterFlowDropDown<String>(
+                              controller: _model.jobTypeValueController ??=
+                                  FormFieldController<String>(null),
+                              options: [
+                                FFLocalizations.of(context).getText(
+                                  'f8hlklae' /* البلاط */,
                                 ),
-                            hintText: FFLocalizations.of(context).getText(
-                              'dqojfllq' /* نوع الوظيفة */,
+                                FFLocalizations.of(context).getText(
+                                  'ilhz9ik4' /* الكهرباء */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '4ive5b1q' /* حداد */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'i66yxmwy' /* نجار */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'bohmm3kp' /* سباك */,
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  'dxq6o4rl' /* اعمال الالمنيوم */,
+                                )
+                              ],
+                              onChanged: (val) =>
+                                  setState(() => _model.jobTypeValue = val),
+                              width: MediaQuery.of(context).size.width * 0.9,
+                              height: 70.0,
+                              textStyle: FlutterFlowTheme.of(context)
+                                  .bodyMedium
+                                  .override(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 16.0,
+                                    fontWeight: FontWeight.normal,
+                                  ),
+                              hintText: FFLocalizations.of(context).getText(
+                                'dqojfllq' /* نوع الوظيفة */,
+                              ),
+                              icon: FaIcon(
+                                FontAwesomeIcons.chevronDown,
+                                color: FlutterFlowTheme.of(context).grayIcon400,
+                                size: 16.0,
+                              ),
+                              fillColor: FlutterFlowTheme.of(context)
+                                  .secondaryBackground,
+                              elevation: 2.0,
+                              borderColor: Colors.transparent,
+                              borderWidth: 2.0,
+                              borderRadius: 3.0,
+                              margin: EdgeInsetsDirectional.fromSTEB(
+                                  16.0, 12.0, 15.0, 12.0),
+                              hidesUnderline: true,
+                              isSearchable: true,
                             ),
-                            icon: FaIcon(
-                              FontAwesomeIcons.chevronDown,
-                              color: FlutterFlowTheme.of(context).grayIcon400,
-                              size: 16.0,
-                            ),
-                            fillColor: FlutterFlowTheme.of(context)
-                                .secondaryBackground,
-                            elevation: 2.0,
-                            borderColor: Colors.transparent,
-                            borderWidth: 2.0,
-                            borderRadius: 3.0,
-                            margin: EdgeInsetsDirectional.fromSTEB(
-                                16.0, 12.0, 15.0, 12.0),
-                            hidesUnderline: true,
-                            isSearchable: true,
                           ),
-                        ),
-                      ],
+                        ],
+                      ),
                     ),
                   ),
                   Divider(
