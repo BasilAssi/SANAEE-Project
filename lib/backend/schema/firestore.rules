@@ -71,5 +71,19 @@ service cloud.firestore {
       allow write: if true;
       allow delete: if true;
     }
+
+    match /poste/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
+
+    match /post/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if true;
+      allow delete: if true;
+    }
   }
 }

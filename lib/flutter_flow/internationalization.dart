@@ -159,10 +159,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'أنشئ حساب',
       'en': 'Create Account',
     },
-    '5c2vlcdh': {
-      'ar': 'Continue as Guest',
-      'en': '',
-    },
     'hwccov5i': {
       'ar': 'Home',
       'en': '',
@@ -663,80 +659,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createJob
   {
     'ukzz8bd8': {
-      'ar': 'Create Job Post',
-      'en': '',
-    },
-    '8lw3hi06': {
-      'ar': 'Position Title',
-      'en': '',
-    },
-    'pap7cb69': {
-      'ar': 'Short Description',
-      'en': '',
-    },
-    'gh9w3gm6': {
-      'ar': 'Requirements',
-      'en': '',
-    },
-    '5u0gqynx': {
-      'ar': 'Have to have x many years of experience, education, etc...',
-      'en': '',
-    },
-    'a5gr4a26': {
-      'ar': 'Preferred Skills & Experiences',
-      'en': '',
-    },
-    'c1xeu5hd': {
-      'ar': 'Knowledge of software or processes...',
-      'en': '',
+      'ar': 'إنشاء وظيفة',
+      'en': 'Create Job Post',
     },
     'f8hlklae': {
-      'ar': '< 6 Months',
-      'en': '',
+      'ar': 'البلاط',
+      'en': 'tiles',
     },
     'ilhz9ik4': {
-      'ar': '6m - 1y',
-      'en': '',
+      'ar': 'الكهرباء',
+      'en': 'electrical',
     },
     '4ive5b1q': {
-      'ar': '1y - 3y',
-      'en': '',
+      'ar': 'حداد',
+      'en': 'Smith',
     },
     'i66yxmwy': {
-      'ar': '+3 years',
-      'en': '',
+      'ar': 'نجار',
+      'en': 'Carpenter',
     },
     'bohmm3kp': {
-      'ar': '+5 years',
-      'en': '',
+      'ar': 'سباك',
+      'en': 'plumber',
     },
     'dxq6o4rl': {
-      'ar': '+8 years',
-      'en': '',
+      'ar': 'اعمال الالمنيوم',
+      'en': 'Aluminum works',
     },
     'dqojfllq': {
-      'ar': 'Experience Level',
-      'en': '',
+      'ar': 'نوع الوظيفة',
+      'en': 'Job Type',
+    },
+    'pw41jc3d': {
+      'ar': '',
+      'en': 'jhgfdsadfg',
+    },
+    'xkp861i0': {
+      'ar': 'مسمى وظيفي',
+      'en': 'Job title',
+    },
+    'pap7cb69': {
+      'ar': 'وصف قصير للمنشور',
+      'en': 'Short Description',
+    },
+    '7tskk9a7': {
+      'ar': 'اضافة صورة',
+      'en': 'Add Photos',
     },
     'pdxr2c8v': {
-      'ar': 'Salary',
-      'en': '',
+      'ar': 'السعر المقدر',
+      'en': 'Estimated Price',
     },
     'n60zdd0q': {
-      'ar': '\$40,000',
-      'en': '',
+      'ar': '₪00,100',
+      'en': '100,00₪',
     },
     '4ficbfr6': {
-      'ar': '\$150,000+',
-      'en': '',
+      'ar': '₪00,5000',
+      'en': '5000,00₪',
     },
     '1t54fz83': {
-      'ar': 'Location',
-      'en': '',
+      'ar': 'موقع',
+      'en': 'Location',
     },
     'px1bkt5b': {
-      'ar': 'Create Post',
-      'en': '',
+      'ar': 'إنشاء منشور',
+      'en': 'Create Post',
     },
     'qlzqz4zr': {
       'ar': 'Home',
@@ -1459,76 +1447,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'rd0ypprn': {
       'ar': 'Home',
-      'en': '',
-    },
-  },
-  // Dashboard
-  {
-    'h9f4cm5h': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'xk7d2ne4': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'ajalfvb2': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    '64adkye6': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'q5u5u459': {
-      'ar': 'Hello World',
-      'en': '',
-    },
-    'e0kur1i1': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // createPost
-  {
-    'r2lyl3pz': {
-      'ar': 'إنشاء منشور',
-      'en': 'Create Post',
-    },
-    'wx2rf1d8': {
-      'ar': 'ما الذي يدور في ذهنك!!!',
-      'en': 'What\'s on your mind!!!',
-    },
-    '2h1qlb8d': {
-      'ar': 'أدخل تفاصيل المنشور هنا ...',
-      'en': 'Enter post details here...',
-    },
-    'a7myh8a3': {
-      'ar': '',
-      'en': '',
-    },
-    'q8sszd4y': {
-      'ar': 'نوع العمل',
-      'en': 'type of employment',
-    },
-    '8olswqfv': {
-      'ar': 'Option 1',
-      'en': '',
-    },
-    'vbpp8xz9': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'aaaryxkj': {
-      'ar': 'Search for an item...',
-      'en': '',
-    },
-    '159wjk7d': {
-      'ar': 'علامة الموقع',
-      'en': 'Tag Location',
-    },
-    '83jifygh': {
-      'ar': 'Create Post',
       'en': '',
     },
   },

@@ -135,7 +135,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                           FlutterFlowTheme.of(context)
                                               .bodyLarge
                                               .override(
-                                                fontFamily: '',
+                                                fontFamily:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyLargeFamily,
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .secondaryText,
@@ -175,7 +177,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                         FlutterFlowTheme.of(context)
                                             .bodyLarge
                                             .override(
-                                              fontFamily: '',
+                                              fontFamily:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyLargeFamily,
                                               color:
                                                   FlutterFlowTheme.of(context)
                                                       .secondaryText,

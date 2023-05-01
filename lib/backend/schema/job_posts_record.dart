@@ -89,11 +89,13 @@ abstract class JobPostsRecord
           ..ffRef = JobPostsRecord.collection.doc(snapshot.objectID),
       );
 
-  static Future<List<JobPostsRecord>> search(
-          {String? term,
-          FutureOr<LatLng>? location,
-          int? maxResults,
-          double? searchRadiusMeters}) =>
+  static Future<List<JobPostsRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
       FFAlgoliaManager.instance
           .algoliaQuery(
             index: 'jobPosts',
@@ -101,6 +103,7 @@ abstract class JobPostsRecord
             maxResults: maxResults,
             location: location,
             searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
           )
           .then((r) => r.map(fromAlgolia).toList());
 

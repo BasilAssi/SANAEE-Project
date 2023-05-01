@@ -49,6 +49,10 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   bool? get isCraftsman;
 
+  DocumentReference? get customers;
+
+  DocumentReference? get crafsmans;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -102,14 +106,18 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
           ..isGuest = snapshot.data['isGuest']
           ..isCustomer = snapshot.data['isCustomer']
           ..isCraftsman = snapshot.data['isCraftsman']
+          ..customers = safeGet(() => toRef(snapshot.data['customers']))
+          ..crafsmans = safeGet(() => toRef(snapshot.data['crafsmans']))
           ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
       );
 
-  static Future<List<UsersRecord>> search(
-          {String? term,
-          FutureOr<LatLng>? location,
-          int? maxResults,
-          double? searchRadiusMeters}) =>
+  static Future<List<UsersRecord>> search({
+    String? term,
+    FutureOr<LatLng>? location,
+    int? maxResults,
+    double? searchRadiusMeters,
+    bool useCache = false,
+  }) =>
       FFAlgoliaManager.instance
           .algoliaQuery(
             index: 'users',
@@ -117,6 +125,7 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
             maxResults: maxResults,
             location: location,
             searchRadiusMeters: searchRadiusMeters,
+            useCache: useCache,
           )
           .then((r) => r.map(fromAlgolia).toList());
 
@@ -148,6 +157,8 @@ Map<String, dynamic> createUsersRecordData({
   bool? isGuest,
   bool? isCustomer,
   bool? isCraftsman,
+  DocumentReference? customers,
+  DocumentReference? crafsmans,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -169,7 +180,9 @@ Map<String, dynamic> createUsersRecordData({
         ..salary = salary
         ..isGuest = isGuest
         ..isCustomer = isCustomer
-        ..isCraftsman = isCraftsman,
+        ..isCraftsman = isCraftsman
+        ..customers = customers
+        ..crafsmans = crafsmans,
     ),
   );
 

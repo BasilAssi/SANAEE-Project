@@ -168,6 +168,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
                       setState(() => _model.algoliaSearchResults = null);
                       await JobPostsRecord.search(
                         term: _model.textController.text,
+                        useCache: true,
                       )
                           .then((r) => _model.algoliaSearchResults = r)
                           .onError((_, __) => _model.algoliaSearchResults = [])
@@ -182,6 +183,7 @@ class _SEARCHJobsWidgetState extends State<SEARCHJobsWidget> {
             child: FutureBuilder<List<JobPostsRecord>>(
               future: JobPostsRecord.search(
                 term: _model.textController.text,
+                useCache: true,
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
