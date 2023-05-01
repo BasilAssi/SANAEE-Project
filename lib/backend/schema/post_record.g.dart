@@ -77,6 +77,14 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.createdByC;
+    if (value != null) {
+      result
+        ..add('createdByC')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(
+                DocumentReference, const [const FullType.nullable(Object)])));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -135,6 +143,12 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
+        case 'createdByC':
+          result.createdByC = serializers.deserialize(value,
+              specifiedType: const FullType(DocumentReference, const [
+                const FullType.nullable(Object)
+              ])) as DocumentReference<Object?>?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -166,6 +180,8 @@ class _$PostRecord extends PostRecord {
   @override
   final DocumentReference<Object?>? createdBy;
   @override
+  final DocumentReference<Object?>? createdByC;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$PostRecord([void Function(PostRecordBuilder)? updates]) =>
@@ -180,6 +196,7 @@ class _$PostRecord extends PostRecord {
       this.estimatedPrice,
       this.timeCreated,
       this.createdBy,
+      this.createdByC,
       this.ffRef})
       : super._();
 
@@ -202,6 +219,7 @@ class _$PostRecord extends PostRecord {
         estimatedPrice == other.estimatedPrice &&
         timeCreated == other.timeCreated &&
         createdBy == other.createdBy &&
+        createdByC == other.createdByC &&
         ffRef == other.ffRef;
   }
 
@@ -216,6 +234,7 @@ class _$PostRecord extends PostRecord {
     _$hash = $jc(_$hash, estimatedPrice.hashCode);
     _$hash = $jc(_$hash, timeCreated.hashCode);
     _$hash = $jc(_$hash, createdBy.hashCode);
+    _$hash = $jc(_$hash, createdByC.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -232,6 +251,7 @@ class _$PostRecord extends PostRecord {
           ..add('estimatedPrice', estimatedPrice)
           ..add('timeCreated', timeCreated)
           ..add('createdBy', createdBy)
+          ..add('createdByC', createdByC)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -277,6 +297,11 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
   set createdBy(DocumentReference<Object?>? createdBy) =>
       _$this._createdBy = createdBy;
 
+  DocumentReference<Object?>? _createdByC;
+  DocumentReference<Object?>? get createdByC => _$this._createdByC;
+  set createdByC(DocumentReference<Object?>? createdByC) =>
+      _$this._createdByC = createdByC;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -296,6 +321,7 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
       _estimatedPrice = $v.estimatedPrice;
       _timeCreated = $v.timeCreated;
       _createdBy = $v.createdBy;
+      _createdByC = $v.createdByC;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -329,6 +355,7 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
               estimatedPrice: estimatedPrice,
               timeCreated: timeCreated,
               createdBy: createdBy,
+              createdByC: createdByC,
               ffRef: ffRef);
     } catch (_) {
       late String _$failedField;

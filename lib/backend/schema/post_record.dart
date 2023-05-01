@@ -25,8 +25,6 @@ abstract class PostRecord implements Built<PostRecord, PostRecordBuilder> {
 
   DocumentReference? get createdBy;
 
-  DocumentReference? get createdByC;
-
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -66,7 +64,6 @@ Map<String, dynamic> createPostRecordData({
   String? estimatedPrice,
   DateTime? timeCreated,
   DocumentReference? createdBy,
-  DocumentReference? createdByC,
 }) {
   final firestoreData = serializers.toFirestore(
     PostRecord.serializer,
@@ -79,8 +76,7 @@ Map<String, dynamic> createPostRecordData({
         ..jobLocation = jobLocation
         ..estimatedPrice = estimatedPrice
         ..timeCreated = timeCreated
-        ..createdBy = createdBy
-        ..createdByC = createdByC,
+        ..createdBy = createdBy,
     ),
   );
 
