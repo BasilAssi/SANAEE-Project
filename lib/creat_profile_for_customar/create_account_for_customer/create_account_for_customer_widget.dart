@@ -447,13 +447,11 @@ class _CreateAccountForCustomerWidgetState
                               await CustomersRecord.collection
                                   .doc()
                                   .set(customersCreateData);
-                              await Navigator.pushReplacement(
+                              await Navigator.push(
                                 context,
-                                PageTransition(
-                                  type: PageTransitionType.leftToRight,
-                                  duration: Duration(milliseconds: 300),
-                                  reverseDuration: Duration(milliseconds: 300),
-                                  child: NavBarPage(initialPage: 'MAINHome'),
+                                MaterialPageRoute(
+                                  builder: (context) =>
+                                      NavBarPage(initialPage: 'MAINHome'),
                                 ),
                               );
                             },
