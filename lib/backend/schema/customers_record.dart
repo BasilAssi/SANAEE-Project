@@ -11,11 +11,6 @@ abstract class CustomersRecord
   static Serializer<CustomersRecord> get serializer =>
       _$customersRecordSerializer;
 
-  String? get email;
-
-  @BuiltValueField(wireName: 'display_name')
-  String? get displayName;
-
   @BuiltValueField(wireName: 'photo_url')
   String? get photoUrl;
 
@@ -36,18 +31,28 @@ abstract class CustomersRecord
 
   DocumentReference? get docRef;
 
+  String? get firstName;
+
+  String? get lastName;
+
+  String? get gender;
+
+  String? get idNumber;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
 
   static void _initializeBuilder(CustomersRecordBuilder builder) => builder
-    ..email = ''
-    ..displayName = ''
     ..photoUrl = ''
     ..uid = ''
     ..phoneNumber = ''
     ..bio = ''
-    ..customerId = '';
+    ..customerId = ''
+    ..firstName = ''
+    ..lastName = ''
+    ..gender = ''
+    ..idNumber = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('customers');
@@ -71,8 +76,6 @@ abstract class CustomersRecord
 }
 
 Map<String, dynamic> createCustomersRecordData({
-  String? email,
-  String? displayName,
   String? photoUrl,
   String? uid,
   DateTime? createdTime,
@@ -81,13 +84,15 @@ Map<String, dynamic> createCustomersRecordData({
   String? bio,
   String? customerId,
   DocumentReference? docRef,
+  String? firstName,
+  String? lastName,
+  String? gender,
+  String? idNumber,
 }) {
   final firestoreData = serializers.toFirestore(
     CustomersRecord.serializer,
     CustomersRecord(
       (c) => c
-        ..email = email
-        ..displayName = displayName
         ..photoUrl = photoUrl
         ..uid = uid
         ..createdTime = createdTime
@@ -95,7 +100,11 @@ Map<String, dynamic> createCustomersRecordData({
         ..editedTime = editedTime
         ..bio = bio
         ..customerId = customerId
-        ..docRef = docRef,
+        ..docRef = docRef
+        ..firstName = firstName
+        ..lastName = lastName
+        ..gender = gender
+        ..idNumber = idNumber,
     ),
   );
 

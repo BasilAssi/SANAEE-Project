@@ -1,8 +1,12 @@
+import '/auth/firebase_auth/auth_util.dart';
+import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
+import '/main.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
@@ -428,8 +432,30 @@ class _CreateAccountForCustomerWidgetState
                           padding: EdgeInsetsDirectional.fromSTEB(
                               0.0, 40.0, 0.0, 0.0),
                           child: FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              final customersCreateData =
+                                  createCustomersRecordData(
+                                uid: '',
+                                createdTime: getCurrentTimestamp,
+                                customerId: 'Customer${currentUserUid}',
+                                docRef: currentUserReference,
+                                firstName: _model.textController1.text,
+                                lastName: _model.textController2.text,
+                                gender: _model.radioButtonValue,
+                                idNumber: _model.textController3.text,
+                              );
+                              await CustomersRecord.collection
+                                  .doc()
+                                  .set(customersCreateData);
+                              await Navigator.pushReplacement(
+                                context,
+                                PageTransition(
+                                  type: PageTransitionType.leftToRight,
+                                  duration: Duration(milliseconds: 300),
+                                  reverseDuration: Duration(milliseconds: 300),
+                                  child: NavBarPage(initialPage: 'MAINHome'),
+                                ),
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'ie5jweyk' /* انشاء حساب */,
