@@ -490,6 +490,8 @@ class _CreateJobWidgetState extends State<CreateJobWidget> {
                                           final photoslist = _model
                                               .uploadedFileUrls
                                               .map((e) => e)
+                                              .toList()
+                                              .take(10)
                                               .toList();
                                           return SingleChildScrollView(
                                             scrollDirection: Axis.horizontal,

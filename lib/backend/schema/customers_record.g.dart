@@ -21,20 +21,6 @@ class _$CustomersRecordSerializer
       {FullType specifiedType = FullType.unspecified}) {
     final result = <Object?>[];
     Object? value;
-    value = object.email;
-    if (value != null) {
-      result
-        ..add('email')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.displayName;
-    if (value != null) {
-      result
-        ..add('display_name')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.photoUrl;
     if (value != null) {
       result
@@ -92,6 +78,34 @@ class _$CustomersRecordSerializer
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
     }
+    value = object.firstName;
+    if (value != null) {
+      result
+        ..add('firstName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.lastName;
+    if (value != null) {
+      result
+        ..add('lastName')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.gender;
+    if (value != null) {
+      result
+        ..add('gender')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.idNumber;
+    if (value != null) {
+      result
+        ..add('idNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -115,14 +129,6 @@ class _$CustomersRecordSerializer
       iterator.moveNext();
       final Object? value = iterator.current;
       switch (key) {
-        case 'email':
-          result.email = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'display_name':
-          result.displayName = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'photo_url':
           result.photoUrl = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -157,6 +163,22 @@ class _$CustomersRecordSerializer
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
           break;
+        case 'firstName':
+          result.firstName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastName':
+          result.lastName = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'gender':
+          result.gender = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'idNumber':
+          result.idNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -171,10 +193,6 @@ class _$CustomersRecordSerializer
 }
 
 class _$CustomersRecord extends CustomersRecord {
-  @override
-  final String? email;
-  @override
-  final String? displayName;
   @override
   final String? photoUrl;
   @override
@@ -192,15 +210,21 @@ class _$CustomersRecord extends CustomersRecord {
   @override
   final DocumentReference<Object?>? docRef;
   @override
+  final String? firstName;
+  @override
+  final String? lastName;
+  @override
+  final String? gender;
+  @override
+  final String? idNumber;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$CustomersRecord([void Function(CustomersRecordBuilder)? updates]) =>
       (new CustomersRecordBuilder()..update(updates))._build();
 
   _$CustomersRecord._(
-      {this.email,
-      this.displayName,
-      this.photoUrl,
+      {this.photoUrl,
       this.uid,
       this.createdTime,
       this.phoneNumber,
@@ -208,6 +232,10 @@ class _$CustomersRecord extends CustomersRecord {
       this.bio,
       this.customerId,
       this.docRef,
+      this.firstName,
+      this.lastName,
+      this.gender,
+      this.idNumber,
       this.ffRef})
       : super._();
 
@@ -223,8 +251,6 @@ class _$CustomersRecord extends CustomersRecord {
   bool operator ==(Object other) {
     if (identical(other, this)) return true;
     return other is CustomersRecord &&
-        email == other.email &&
-        displayName == other.displayName &&
         photoUrl == other.photoUrl &&
         uid == other.uid &&
         createdTime == other.createdTime &&
@@ -233,14 +259,16 @@ class _$CustomersRecord extends CustomersRecord {
         bio == other.bio &&
         customerId == other.customerId &&
         docRef == other.docRef &&
+        firstName == other.firstName &&
+        lastName == other.lastName &&
+        gender == other.gender &&
+        idNumber == other.idNumber &&
         ffRef == other.ffRef;
   }
 
   @override
   int get hashCode {
     var _$hash = 0;
-    _$hash = $jc(_$hash, email.hashCode);
-    _$hash = $jc(_$hash, displayName.hashCode);
     _$hash = $jc(_$hash, photoUrl.hashCode);
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, createdTime.hashCode);
@@ -249,6 +277,10 @@ class _$CustomersRecord extends CustomersRecord {
     _$hash = $jc(_$hash, bio.hashCode);
     _$hash = $jc(_$hash, customerId.hashCode);
     _$hash = $jc(_$hash, docRef.hashCode);
+    _$hash = $jc(_$hash, firstName.hashCode);
+    _$hash = $jc(_$hash, lastName.hashCode);
+    _$hash = $jc(_$hash, gender.hashCode);
+    _$hash = $jc(_$hash, idNumber.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -257,8 +289,6 @@ class _$CustomersRecord extends CustomersRecord {
   @override
   String toString() {
     return (newBuiltValueToStringHelper(r'CustomersRecord')
-          ..add('email', email)
-          ..add('displayName', displayName)
           ..add('photoUrl', photoUrl)
           ..add('uid', uid)
           ..add('createdTime', createdTime)
@@ -267,6 +297,10 @@ class _$CustomersRecord extends CustomersRecord {
           ..add('bio', bio)
           ..add('customerId', customerId)
           ..add('docRef', docRef)
+          ..add('firstName', firstName)
+          ..add('lastName', lastName)
+          ..add('gender', gender)
+          ..add('idNumber', idNumber)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -275,14 +309,6 @@ class _$CustomersRecord extends CustomersRecord {
 class CustomersRecordBuilder
     implements Builder<CustomersRecord, CustomersRecordBuilder> {
   _$CustomersRecord? _$v;
-
-  String? _email;
-  String? get email => _$this._email;
-  set email(String? email) => _$this._email = email;
-
-  String? _displayName;
-  String? get displayName => _$this._displayName;
-  set displayName(String? displayName) => _$this._displayName = displayName;
 
   String? _photoUrl;
   String? get photoUrl => _$this._photoUrl;
@@ -316,6 +342,22 @@ class CustomersRecordBuilder
   DocumentReference<Object?>? get docRef => _$this._docRef;
   set docRef(DocumentReference<Object?>? docRef) => _$this._docRef = docRef;
 
+  String? _firstName;
+  String? get firstName => _$this._firstName;
+  set firstName(String? firstName) => _$this._firstName = firstName;
+
+  String? _lastName;
+  String? get lastName => _$this._lastName;
+  set lastName(String? lastName) => _$this._lastName = lastName;
+
+  String? _gender;
+  String? get gender => _$this._gender;
+  set gender(String? gender) => _$this._gender = gender;
+
+  String? _idNumber;
+  String? get idNumber => _$this._idNumber;
+  set idNumber(String? idNumber) => _$this._idNumber = idNumber;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -327,8 +369,6 @@ class CustomersRecordBuilder
   CustomersRecordBuilder get _$this {
     final $v = _$v;
     if ($v != null) {
-      _email = $v.email;
-      _displayName = $v.displayName;
       _photoUrl = $v.photoUrl;
       _uid = $v.uid;
       _createdTime = $v.createdTime;
@@ -337,6 +377,10 @@ class CustomersRecordBuilder
       _bio = $v.bio;
       _customerId = $v.customerId;
       _docRef = $v.docRef;
+      _firstName = $v.firstName;
+      _lastName = $v.lastName;
+      _gender = $v.gender;
+      _idNumber = $v.idNumber;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -360,8 +404,6 @@ class CustomersRecordBuilder
   _$CustomersRecord _build() {
     final _$result = _$v ??
         new _$CustomersRecord._(
-            email: email,
-            displayName: displayName,
             photoUrl: photoUrl,
             uid: uid,
             createdTime: createdTime,
@@ -370,6 +412,10 @@ class CustomersRecordBuilder
             bio: bio,
             customerId: customerId,
             docRef: docRef,
+            firstName: firstName,
+            lastName: lastName,
+            gender: gender,
+            idNumber: idNumber,
             ffRef: ffRef);
     replace(_$result);
     return _$result;
