@@ -39,6 +39,10 @@ abstract class JobPostsRecord
 
   bool? get myJob;
 
+  String? get positionTitle;
+
+  String? get experienceLevel;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -53,7 +57,9 @@ abstract class JobPostsRecord
     ..jobPreferredSkills = ''
     ..companyLogo = ''
     ..photoHero = ''
-    ..myJob = false;
+    ..myJob = false
+    ..positionTitle = ''
+    ..experienceLevel = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('jobPosts');
@@ -86,6 +92,8 @@ abstract class JobPostsRecord
           ..companyLogo = snapshot.data['companyLogo']
           ..photoHero = snapshot.data['photoHero']
           ..myJob = snapshot.data['myJob']
+          ..positionTitle = snapshot.data['positionTitle']
+          ..experienceLevel = snapshot.data['experienceLevel']
           ..ffRef = JobPostsRecord.collection.doc(snapshot.objectID),
       );
 
@@ -131,6 +139,8 @@ Map<String, dynamic> createJobPostsRecordData({
   String? companyLogo,
   String? photoHero,
   bool? myJob,
+  String? positionTitle,
+  String? experienceLevel,
 }) {
   final firestoreData = serializers.toFirestore(
     JobPostsRecord.serializer,
@@ -148,7 +158,9 @@ Map<String, dynamic> createJobPostsRecordData({
         ..jobPreferredSkills = jobPreferredSkills
         ..companyLogo = companyLogo
         ..photoHero = photoHero
-        ..myJob = myJob,
+        ..myJob = myJob
+        ..positionTitle = positionTitle
+        ..experienceLevel = experienceLevel,
     ),
   );
 

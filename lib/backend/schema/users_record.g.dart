@@ -61,27 +61,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.positionTitle;
-    if (value != null) {
-      result
-        ..add('positionTitle')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.experienceLevel;
-    if (value != null) {
-      result
-        ..add('experienceLevel')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
-    value = object.currentCompany;
-    if (value != null) {
-      result
-        ..add('currentCompany')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.uid;
     if (value != null) {
       result
@@ -117,13 +96,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.isGuest;
-    if (value != null) {
-      result
-        ..add('isGuest')
-        ..add(
-            serializers.serialize(value, specifiedType: const FullType(bool)));
-    }
     value = object.isCustomer;
     if (value != null) {
       result
@@ -138,21 +110,103 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
-    value = object.customers;
+    value = object.positionTitle;
     if (value != null) {
       result
-        ..add('customers')
+        ..add('positionTitle')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
+            specifiedType: const FullType(String)));
     }
-    value = object.crafsmans;
+    value = object.experienceLevel;
     if (value != null) {
       result
-        ..add('crafsmans')
+        ..add('experienceLevel')
         ..add(serializers.serialize(value,
-            specifiedType: const FullType(
-                DocumentReference, const [const FullType.nullable(Object)])));
+            specifiedType: const FullType(String)));
+    }
+    value = object.currentCompany;
+    if (value != null) {
+      result
+        ..add('currentCompany')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.editedTime;
+    if (value != null) {
+      result
+        ..add('edited_time')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(DateTime)));
+    }
+    value = object.firstNameCustomer;
+    if (value != null) {
+      result
+        ..add('firstNameCustomer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.lastNameCustomer;
+    if (value != null) {
+      result
+        ..add('lastNameCustomer')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.firstnameCraftsman;
+    if (value != null) {
+      result
+        ..add('firstnameCraftsman')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.fatherNameCraftsman;
+    if (value != null) {
+      result
+        ..add('fatherNameCraftsman')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.grandFatherNameCraftsman;
+    if (value != null) {
+      result
+        ..add('grandFatherNameCraftsman')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.familyNameCraftsman;
+    if (value != null) {
+      result
+        ..add('familyNameCraftsman')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.city;
+    if (value != null) {
+      result
+        ..add('city')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.address;
+    if (value != null) {
+      result
+        ..add('address')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.idNumber;
+    if (value != null) {
+      result
+        ..add('idNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.craftType;
+    if (value != null) {
+      result
+        ..add('craftType')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -200,18 +254,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.bio = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'positionTitle':
-          result.positionTitle = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'experienceLevel':
-          result.experienceLevel = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
-        case 'currentCompany':
-          result.currentCompany = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'uid':
           result.uid = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -232,10 +274,6 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.salary = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'isGuest':
-          result.isGuest = serializers.deserialize(value,
-              specifiedType: const FullType(bool)) as bool?;
-          break;
         case 'isCustomer':
           result.isCustomer = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
@@ -244,17 +282,61 @@ class _$UsersRecordSerializer implements StructuredSerializer<UsersRecord> {
           result.isCraftsman = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
-        case 'customers':
-          result.customers = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+        case 'positionTitle':
+          result.positionTitle = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
-        case 'crafsmans':
-          result.crafsmans = serializers.deserialize(value,
-              specifiedType: const FullType(DocumentReference, const [
-                const FullType.nullable(Object)
-              ])) as DocumentReference<Object?>?;
+        case 'experienceLevel':
+          result.experienceLevel = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'currentCompany':
+          result.currentCompany = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'edited_time':
+          result.editedTime = serializers.deserialize(value,
+              specifiedType: const FullType(DateTime)) as DateTime?;
+          break;
+        case 'firstNameCustomer':
+          result.firstNameCustomer = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'lastNameCustomer':
+          result.lastNameCustomer = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'firstnameCraftsman':
+          result.firstnameCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'fatherNameCraftsman':
+          result.fatherNameCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'grandFatherNameCraftsman':
+          result.grandFatherNameCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'familyNameCraftsman':
+          result.familyNameCraftsman = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'city':
+          result.city = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'address':
+          result.address = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'idNumber':
+          result.idNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'craftType':
+          result.craftType = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -283,12 +365,6 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? bio;
   @override
-  final String? positionTitle;
-  @override
-  final String? experienceLevel;
-  @override
-  final String? currentCompany;
-  @override
   final String? uid;
   @override
   final String? phoneNumber;
@@ -299,15 +375,37 @@ class _$UsersRecord extends UsersRecord {
   @override
   final String? salary;
   @override
-  final bool? isGuest;
-  @override
   final bool? isCustomer;
   @override
   final bool? isCraftsman;
   @override
-  final DocumentReference<Object?>? customers;
+  final String? positionTitle;
   @override
-  final DocumentReference<Object?>? crafsmans;
+  final String? experienceLevel;
+  @override
+  final String? currentCompany;
+  @override
+  final DateTime? editedTime;
+  @override
+  final String? firstNameCustomer;
+  @override
+  final String? lastNameCustomer;
+  @override
+  final String? firstnameCraftsman;
+  @override
+  final String? fatherNameCraftsman;
+  @override
+  final String? grandFatherNameCraftsman;
+  @override
+  final String? familyNameCraftsman;
+  @override
+  final String? city;
+  @override
+  final String? address;
+  @override
+  final String? idNumber;
+  @override
+  final String? craftType;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -321,19 +419,27 @@ class _$UsersRecord extends UsersRecord {
       this.createdTime,
       this.photoUrl,
       this.bio,
-      this.positionTitle,
-      this.experienceLevel,
-      this.currentCompany,
       this.uid,
       this.phoneNumber,
       this.likedPosts,
       this.profileType,
       this.salary,
-      this.isGuest,
       this.isCustomer,
       this.isCraftsman,
-      this.customers,
-      this.crafsmans,
+      this.positionTitle,
+      this.experienceLevel,
+      this.currentCompany,
+      this.editedTime,
+      this.firstNameCustomer,
+      this.lastNameCustomer,
+      this.firstnameCraftsman,
+      this.fatherNameCraftsman,
+      this.grandFatherNameCraftsman,
+      this.familyNameCraftsman,
+      this.city,
+      this.address,
+      this.idNumber,
+      this.craftType,
       this.ffRef})
       : super._();
 
@@ -354,19 +460,27 @@ class _$UsersRecord extends UsersRecord {
         createdTime == other.createdTime &&
         photoUrl == other.photoUrl &&
         bio == other.bio &&
-        positionTitle == other.positionTitle &&
-        experienceLevel == other.experienceLevel &&
-        currentCompany == other.currentCompany &&
         uid == other.uid &&
         phoneNumber == other.phoneNumber &&
         likedPosts == other.likedPosts &&
         profileType == other.profileType &&
         salary == other.salary &&
-        isGuest == other.isGuest &&
         isCustomer == other.isCustomer &&
         isCraftsman == other.isCraftsman &&
-        customers == other.customers &&
-        crafsmans == other.crafsmans &&
+        positionTitle == other.positionTitle &&
+        experienceLevel == other.experienceLevel &&
+        currentCompany == other.currentCompany &&
+        editedTime == other.editedTime &&
+        firstNameCustomer == other.firstNameCustomer &&
+        lastNameCustomer == other.lastNameCustomer &&
+        firstnameCraftsman == other.firstnameCraftsman &&
+        fatherNameCraftsman == other.fatherNameCraftsman &&
+        grandFatherNameCraftsman == other.grandFatherNameCraftsman &&
+        familyNameCraftsman == other.familyNameCraftsman &&
+        city == other.city &&
+        address == other.address &&
+        idNumber == other.idNumber &&
+        craftType == other.craftType &&
         ffRef == other.ffRef;
   }
 
@@ -379,19 +493,27 @@ class _$UsersRecord extends UsersRecord {
     _$hash = $jc(_$hash, createdTime.hashCode);
     _$hash = $jc(_$hash, photoUrl.hashCode);
     _$hash = $jc(_$hash, bio.hashCode);
-    _$hash = $jc(_$hash, positionTitle.hashCode);
-    _$hash = $jc(_$hash, experienceLevel.hashCode);
-    _$hash = $jc(_$hash, currentCompany.hashCode);
     _$hash = $jc(_$hash, uid.hashCode);
     _$hash = $jc(_$hash, phoneNumber.hashCode);
     _$hash = $jc(_$hash, likedPosts.hashCode);
     _$hash = $jc(_$hash, profileType.hashCode);
     _$hash = $jc(_$hash, salary.hashCode);
-    _$hash = $jc(_$hash, isGuest.hashCode);
     _$hash = $jc(_$hash, isCustomer.hashCode);
     _$hash = $jc(_$hash, isCraftsman.hashCode);
-    _$hash = $jc(_$hash, customers.hashCode);
-    _$hash = $jc(_$hash, crafsmans.hashCode);
+    _$hash = $jc(_$hash, positionTitle.hashCode);
+    _$hash = $jc(_$hash, experienceLevel.hashCode);
+    _$hash = $jc(_$hash, currentCompany.hashCode);
+    _$hash = $jc(_$hash, editedTime.hashCode);
+    _$hash = $jc(_$hash, firstNameCustomer.hashCode);
+    _$hash = $jc(_$hash, lastNameCustomer.hashCode);
+    _$hash = $jc(_$hash, firstnameCraftsman.hashCode);
+    _$hash = $jc(_$hash, fatherNameCraftsman.hashCode);
+    _$hash = $jc(_$hash, grandFatherNameCraftsman.hashCode);
+    _$hash = $jc(_$hash, familyNameCraftsman.hashCode);
+    _$hash = $jc(_$hash, city.hashCode);
+    _$hash = $jc(_$hash, address.hashCode);
+    _$hash = $jc(_$hash, idNumber.hashCode);
+    _$hash = $jc(_$hash, craftType.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -406,19 +528,27 @@ class _$UsersRecord extends UsersRecord {
           ..add('createdTime', createdTime)
           ..add('photoUrl', photoUrl)
           ..add('bio', bio)
-          ..add('positionTitle', positionTitle)
-          ..add('experienceLevel', experienceLevel)
-          ..add('currentCompany', currentCompany)
           ..add('uid', uid)
           ..add('phoneNumber', phoneNumber)
           ..add('likedPosts', likedPosts)
           ..add('profileType', profileType)
           ..add('salary', salary)
-          ..add('isGuest', isGuest)
           ..add('isCustomer', isCustomer)
           ..add('isCraftsman', isCraftsman)
-          ..add('customers', customers)
-          ..add('crafsmans', crafsmans)
+          ..add('positionTitle', positionTitle)
+          ..add('experienceLevel', experienceLevel)
+          ..add('currentCompany', currentCompany)
+          ..add('editedTime', editedTime)
+          ..add('firstNameCustomer', firstNameCustomer)
+          ..add('lastNameCustomer', lastNameCustomer)
+          ..add('firstnameCraftsman', firstnameCraftsman)
+          ..add('fatherNameCraftsman', fatherNameCraftsman)
+          ..add('grandFatherNameCraftsman', grandFatherNameCraftsman)
+          ..add('familyNameCraftsman', familyNameCraftsman)
+          ..add('city', city)
+          ..add('address', address)
+          ..add('idNumber', idNumber)
+          ..add('craftType', craftType)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -451,21 +581,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get bio => _$this._bio;
   set bio(String? bio) => _$this._bio = bio;
 
-  String? _positionTitle;
-  String? get positionTitle => _$this._positionTitle;
-  set positionTitle(String? positionTitle) =>
-      _$this._positionTitle = positionTitle;
-
-  String? _experienceLevel;
-  String? get experienceLevel => _$this._experienceLevel;
-  set experienceLevel(String? experienceLevel) =>
-      _$this._experienceLevel = experienceLevel;
-
-  String? _currentCompany;
-  String? get currentCompany => _$this._currentCompany;
-  set currentCompany(String? currentCompany) =>
-      _$this._currentCompany = currentCompany;
-
   String? _uid;
   String? get uid => _$this._uid;
   set uid(String? uid) => _$this._uid = uid;
@@ -486,10 +601,6 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   String? get salary => _$this._salary;
   set salary(String? salary) => _$this._salary = salary;
 
-  bool? _isGuest;
-  bool? get isGuest => _$this._isGuest;
-  set isGuest(bool? isGuest) => _$this._isGuest = isGuest;
-
   bool? _isCustomer;
   bool? get isCustomer => _$this._isCustomer;
   set isCustomer(bool? isCustomer) => _$this._isCustomer = isCustomer;
@@ -498,15 +609,70 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
   bool? get isCraftsman => _$this._isCraftsman;
   set isCraftsman(bool? isCraftsman) => _$this._isCraftsman = isCraftsman;
 
-  DocumentReference<Object?>? _customers;
-  DocumentReference<Object?>? get customers => _$this._customers;
-  set customers(DocumentReference<Object?>? customers) =>
-      _$this._customers = customers;
+  String? _positionTitle;
+  String? get positionTitle => _$this._positionTitle;
+  set positionTitle(String? positionTitle) =>
+      _$this._positionTitle = positionTitle;
 
-  DocumentReference<Object?>? _crafsmans;
-  DocumentReference<Object?>? get crafsmans => _$this._crafsmans;
-  set crafsmans(DocumentReference<Object?>? crafsmans) =>
-      _$this._crafsmans = crafsmans;
+  String? _experienceLevel;
+  String? get experienceLevel => _$this._experienceLevel;
+  set experienceLevel(String? experienceLevel) =>
+      _$this._experienceLevel = experienceLevel;
+
+  String? _currentCompany;
+  String? get currentCompany => _$this._currentCompany;
+  set currentCompany(String? currentCompany) =>
+      _$this._currentCompany = currentCompany;
+
+  DateTime? _editedTime;
+  DateTime? get editedTime => _$this._editedTime;
+  set editedTime(DateTime? editedTime) => _$this._editedTime = editedTime;
+
+  String? _firstNameCustomer;
+  String? get firstNameCustomer => _$this._firstNameCustomer;
+  set firstNameCustomer(String? firstNameCustomer) =>
+      _$this._firstNameCustomer = firstNameCustomer;
+
+  String? _lastNameCustomer;
+  String? get lastNameCustomer => _$this._lastNameCustomer;
+  set lastNameCustomer(String? lastNameCustomer) =>
+      _$this._lastNameCustomer = lastNameCustomer;
+
+  String? _firstnameCraftsman;
+  String? get firstnameCraftsman => _$this._firstnameCraftsman;
+  set firstnameCraftsman(String? firstnameCraftsman) =>
+      _$this._firstnameCraftsman = firstnameCraftsman;
+
+  String? _fatherNameCraftsman;
+  String? get fatherNameCraftsman => _$this._fatherNameCraftsman;
+  set fatherNameCraftsman(String? fatherNameCraftsman) =>
+      _$this._fatherNameCraftsman = fatherNameCraftsman;
+
+  String? _grandFatherNameCraftsman;
+  String? get grandFatherNameCraftsman => _$this._grandFatherNameCraftsman;
+  set grandFatherNameCraftsman(String? grandFatherNameCraftsman) =>
+      _$this._grandFatherNameCraftsman = grandFatherNameCraftsman;
+
+  String? _familyNameCraftsman;
+  String? get familyNameCraftsman => _$this._familyNameCraftsman;
+  set familyNameCraftsman(String? familyNameCraftsman) =>
+      _$this._familyNameCraftsman = familyNameCraftsman;
+
+  String? _city;
+  String? get city => _$this._city;
+  set city(String? city) => _$this._city = city;
+
+  String? _address;
+  String? get address => _$this._address;
+  set address(String? address) => _$this._address = address;
+
+  String? _idNumber;
+  String? get idNumber => _$this._idNumber;
+  set idNumber(String? idNumber) => _$this._idNumber = idNumber;
+
+  String? _craftType;
+  String? get craftType => _$this._craftType;
+  set craftType(String? craftType) => _$this._craftType = craftType;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -525,19 +691,27 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
       _createdTime = $v.createdTime;
       _photoUrl = $v.photoUrl;
       _bio = $v.bio;
-      _positionTitle = $v.positionTitle;
-      _experienceLevel = $v.experienceLevel;
-      _currentCompany = $v.currentCompany;
       _uid = $v.uid;
       _phoneNumber = $v.phoneNumber;
       _likedPosts = $v.likedPosts;
       _profileType = $v.profileType;
       _salary = $v.salary;
-      _isGuest = $v.isGuest;
       _isCustomer = $v.isCustomer;
       _isCraftsman = $v.isCraftsman;
-      _customers = $v.customers;
-      _crafsmans = $v.crafsmans;
+      _positionTitle = $v.positionTitle;
+      _experienceLevel = $v.experienceLevel;
+      _currentCompany = $v.currentCompany;
+      _editedTime = $v.editedTime;
+      _firstNameCustomer = $v.firstNameCustomer;
+      _lastNameCustomer = $v.lastNameCustomer;
+      _firstnameCraftsman = $v.firstnameCraftsman;
+      _fatherNameCraftsman = $v.fatherNameCraftsman;
+      _grandFatherNameCraftsman = $v.grandFatherNameCraftsman;
+      _familyNameCraftsman = $v.familyNameCraftsman;
+      _city = $v.city;
+      _address = $v.address;
+      _idNumber = $v.idNumber;
+      _craftType = $v.craftType;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -567,19 +741,27 @@ class UsersRecordBuilder implements Builder<UsersRecord, UsersRecordBuilder> {
             createdTime: createdTime,
             photoUrl: photoUrl,
             bio: bio,
-            positionTitle: positionTitle,
-            experienceLevel: experienceLevel,
-            currentCompany: currentCompany,
             uid: uid,
             phoneNumber: phoneNumber,
             likedPosts: likedPosts,
             profileType: profileType,
             salary: salary,
-            isGuest: isGuest,
             isCustomer: isCustomer,
             isCraftsman: isCraftsman,
-            customers: customers,
-            crafsmans: crafsmans,
+            positionTitle: positionTitle,
+            experienceLevel: experienceLevel,
+            currentCompany: currentCompany,
+            editedTime: editedTime,
+            firstNameCustomer: firstNameCustomer,
+            lastNameCustomer: lastNameCustomer,
+            firstnameCraftsman: firstnameCraftsman,
+            fatherNameCraftsman: fatherNameCraftsman,
+            grandFatherNameCraftsman: grandFatherNameCraftsman,
+            familyNameCraftsman: familyNameCraftsman,
+            city: city,
+            address: address,
+            idNumber: idNumber,
+            craftType: craftType,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

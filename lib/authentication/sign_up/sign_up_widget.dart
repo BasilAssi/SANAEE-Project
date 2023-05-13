@@ -433,8 +433,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               await Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
+                                  builder: (context) => NavBarPage(
+                                      initialPage: 'MAINHomeCustomer'),
                                 ),
                                 (r) => false,
                               );

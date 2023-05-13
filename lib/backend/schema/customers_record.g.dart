@@ -92,17 +92,17 @@ class _$CustomersRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.gender;
-    if (value != null) {
-      result
-        ..add('gender')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(String)));
-    }
     value = object.idNumber;
     if (value != null) {
       result
         ..add('idNumber')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.gender;
+    if (value != null) {
+      result
+        ..add('gender')
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
@@ -171,12 +171,12 @@ class _$CustomersRecordSerializer
           result.lastName = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'gender':
-          result.gender = serializers.deserialize(value,
-              specifiedType: const FullType(String)) as String?;
-          break;
         case 'idNumber':
           result.idNumber = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'gender':
+          result.gender = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
@@ -214,9 +214,9 @@ class _$CustomersRecord extends CustomersRecord {
   @override
   final String? lastName;
   @override
-  final String? gender;
-  @override
   final String? idNumber;
+  @override
+  final String? gender;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -234,8 +234,8 @@ class _$CustomersRecord extends CustomersRecord {
       this.docRef,
       this.firstName,
       this.lastName,
-      this.gender,
       this.idNumber,
+      this.gender,
       this.ffRef})
       : super._();
 
@@ -261,8 +261,8 @@ class _$CustomersRecord extends CustomersRecord {
         docRef == other.docRef &&
         firstName == other.firstName &&
         lastName == other.lastName &&
-        gender == other.gender &&
         idNumber == other.idNumber &&
+        gender == other.gender &&
         ffRef == other.ffRef;
   }
 
@@ -279,8 +279,8 @@ class _$CustomersRecord extends CustomersRecord {
     _$hash = $jc(_$hash, docRef.hashCode);
     _$hash = $jc(_$hash, firstName.hashCode);
     _$hash = $jc(_$hash, lastName.hashCode);
-    _$hash = $jc(_$hash, gender.hashCode);
     _$hash = $jc(_$hash, idNumber.hashCode);
+    _$hash = $jc(_$hash, gender.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -299,8 +299,8 @@ class _$CustomersRecord extends CustomersRecord {
           ..add('docRef', docRef)
           ..add('firstName', firstName)
           ..add('lastName', lastName)
-          ..add('gender', gender)
           ..add('idNumber', idNumber)
+          ..add('gender', gender)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -350,13 +350,13 @@ class CustomersRecordBuilder
   String? get lastName => _$this._lastName;
   set lastName(String? lastName) => _$this._lastName = lastName;
 
-  String? _gender;
-  String? get gender => _$this._gender;
-  set gender(String? gender) => _$this._gender = gender;
-
   String? _idNumber;
   String? get idNumber => _$this._idNumber;
   set idNumber(String? idNumber) => _$this._idNumber = idNumber;
+
+  String? _gender;
+  String? get gender => _$this._gender;
+  set gender(String? gender) => _$this._gender = gender;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -379,8 +379,8 @@ class CustomersRecordBuilder
       _docRef = $v.docRef;
       _firstName = $v.firstName;
       _lastName = $v.lastName;
-      _gender = $v.gender;
       _idNumber = $v.idNumber;
+      _gender = $v.gender;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -414,8 +414,8 @@ class CustomersRecordBuilder
             docRef: docRef,
             firstName: firstName,
             lastName: lastName,
-            gender: gender,
             idNumber: idNumber,
+            gender: gender,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

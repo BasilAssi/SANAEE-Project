@@ -294,8 +294,8 @@ class _VerifyMobileWidgetState extends State<VerifyMobileWidget> {
                               await Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
+                                  builder: (context) => NavBarPage(
+                                      initialPage: 'MAINHomeCustomer'),
                                 ),
                                 (r) => false,
                               );
