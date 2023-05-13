@@ -76,7 +76,12 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                           FFLocalizations.of(context).getText(
                             'ukzz8bd8' /* إنشاء وظيفة */,
                           ),
-                          style: FlutterFlowTheme.of(context).headlineSmall,
+                          style: FlutterFlowTheme.of(context)
+                              .headlineSmall
+                              .override(
+                                fontFamily: 'Outfit',
+                                fontSize: 32.0,
+                              ),
                         ),
                         Card(
                           clipBehavior: Clip.antiAliasWithSaveLayer,
@@ -313,7 +318,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                             ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                             textAlign: TextAlign.start,
-                            maxLines: 4,
+                            maxLines: 3,
                             keyboardType: TextInputType.multiline,
                             validator: _model
                                 .shortDescriptionControllerValidator
@@ -328,22 +333,29 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                     thickness: 1.0,
                     color: FlutterFlowTheme.of(context).lineColor,
                   ),
-                  Padding(
-                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
-                    child: SingleChildScrollView(
-                      scrollDirection: Axis.horizontal,
-                      child: Row(
-                        mainAxisSize: MainAxisSize.max,
-                        mainAxisAlignment: MainAxisAlignment.center,
-                        children: [
-                          if (_model.uploadedFileUrls.length < 1)
-                            InkWell(
+                  Row(
+                    mainAxisSize: MainAxisSize.max,
+                    mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                    children: [
+                      Card(
+                        clipBehavior: Clip.antiAliasWithSaveLayer,
+                        color: FlutterFlowTheme.of(context).primary,
+                        shape: RoundedRectangleBorder(
+                          borderRadius: BorderRadius.circular(25.0),
+                        ),
+                        child: Visibility(
+                          visible: _model.uploadedFileUrls.length < 1,
+                          child: Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 5.0, 0.0, 0.0),
+                            child: InkWell(
                               splashColor: Colors.transparent,
                               focusColor: Colors.transparent,
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
                                 final selectedMedia = await selectMedia(
+                                  imageQuality: 100,
                                   mediaSource: MediaSource.photoGallery,
                                   multiImage: true,
                                 );
@@ -405,154 +417,254 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                 }
                               },
                               child: Container(
-                                width: 100.0,
-                                height: 100.0,
+                                width: 150.0,
+                                height: 40.0,
                                 decoration: BoxDecoration(
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
+                                  color: FlutterFlowTheme.of(context).primary,
                                   boxShadow: [
                                     BoxShadow(
                                       blurRadius: 4.0,
-                                      color: Color(0x33000000),
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
                                       offset: Offset(0.0, 2.0),
                                     )
                                   ],
+                                  borderRadius: BorderRadius.circular(25.0),
+                                  shape: BoxShape.rectangle,
                                 ),
-                                child: Container(
-                                  width: 100.0,
-                                  height: 100.0,
-                                  decoration: BoxDecoration(
-                                    color: FlutterFlowTheme.of(context)
-                                        .tertiary400,
-                                    borderRadius: BorderRadius.circular(16.0),
-                                  ),
-                                  child: SingleChildScrollView(
-                                    child: Column(
-                                      mainAxisSize: MainAxisSize.min,
-                                      crossAxisAlignment:
-                                          CrossAxisAlignment.center,
-                                      children: [
-                                        FlutterFlowIconButton(
-                                          borderColor: Colors.transparent,
-                                          borderRadius: 30.0,
-                                          borderWidth: 1.0,
-                                          buttonSize: 60.0,
-                                          icon: Icon(
-                                            Icons.add,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 30.0,
+                                child: SingleChildScrollView(
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.min,
+                                    crossAxisAlignment:
+                                        CrossAxisAlignment.center,
+                                    children: [
+                                      Row(
+                                        mainAxisSize: MainAxisSize.max,
+                                        mainAxisAlignment:
+                                            MainAxisAlignment.center,
+                                        children: [
+                                          Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 5.0),
+                                            child: FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 35.0,
+                                              icon: Icon(
+                                                Icons.add,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 30.0,
+                                              ),
+                                              onPressed: () {
+                                                print('IconButton pressed ...');
+                                              },
+                                            ),
                                           ),
-                                          onPressed: () {
-                                            print('IconButton pressed ...');
-                                          },
-                                        ),
-                                        Text(
-                                          FFLocalizations.of(context).getText(
-                                            '7tskk9a7' /* اضافة صورة */,
+                                          Align(
+                                            alignment: AlignmentDirectional(
+                                                -0.05, 0.1),
+                                            child: Padding(
+                                              padding: EdgeInsetsDirectional
+                                                  .fromSTEB(
+                                                      10.0, 5.0, 10.0, 0.0),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '7tskk9a7' /* إضافة صورة */,
+                                                ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 20.0,
+                                                        ),
+                                              ),
+                                            ),
                                           ),
-                                          style: FlutterFlowTheme.of(context)
-                                              .bodyMedium,
-                                        ),
-                                      ],
-                                    ),
+                                        ],
+                                      ),
+                                    ],
                                   ),
                                 ),
                               ),
                             ),
-                          if (_model.uploadedFileUrls.length >= 1)
-                            Builder(
-                              builder: (context) {
-                                final photoslist = _model.uploadedFileUrls
-                                    .map((e) => e)
-                                    .toList()
-                                    .take(10)
-                                    .toList();
-                                return SingleChildScrollView(
-                                  scrollDirection: Axis.horizontal,
-                                  child: Row(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: List.generate(photoslist.length,
-                                        (photoslistIndex) {
-                                      final photoslistItem =
-                                          photoslist[photoslistIndex];
-                                      return Container(
-                                        width: 100.0,
-                                        height: 100.0,
-                                        decoration: BoxDecoration(
-                                          color: FlutterFlowTheme.of(context)
-                                              .secondaryBackground,
-                                        ),
-                                        child: Stack(
-                                          children: [
-                                            InkWell(
-                                              splashColor: Colors.transparent,
-                                              focusColor: Colors.transparent,
-                                              hoverColor: Colors.transparent,
-                                              highlightColor:
-                                                  Colors.transparent,
-                                              onTap: () async {
-                                                await Navigator.push(
-                                                  context,
-                                                  PageTransition(
-                                                    type:
-                                                        PageTransitionType.fade,
-                                                    child:
-                                                        FlutterFlowExpandedImageView(
-                                                      image: Image.network(
-                                                        photoslistItem,
-                                                        fit: BoxFit.contain,
-                                                      ),
-                                                      allowRotation: false,
-                                                      tag: photoslistItem,
-                                                      useHeroAnimation: true,
-                                                    ),
-                                                  ),
-                                                );
+                          ),
+                        ),
+                      ),
+                      InkWell(
+                        splashColor: Colors.transparent,
+                        focusColor: Colors.transparent,
+                        hoverColor: Colors.transparent,
+                        highlightColor: Colors.transparent,
+                        onTap: () async {
+                          setState(() {
+                            _model.isDataUploading = false;
+                            _model.uploadedLocalFiles = [];
+                            _model.uploadedFileUrls = [];
+                          });
+                        },
+                        child: Card(
+                          clipBehavior: Clip.antiAliasWithSaveLayer,
+                          color: FlutterFlowTheme.of(context).primary,
+                          shape: RoundedRectangleBorder(
+                            borderRadius: BorderRadius.circular(25.0),
+                          ),
+                          child: Row(
+                            mainAxisSize: MainAxisSize.max,
+                            children: [
+                              SingleChildScrollView(
+                                child: Column(
+                                  mainAxisSize: MainAxisSize.min,
+                                  mainAxisAlignment: MainAxisAlignment.center,
+                                  crossAxisAlignment: CrossAxisAlignment.center,
+                                  children: [
+                                    Row(
+                                      mainAxisSize: MainAxisSize.min,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.center,
+                                      children: [
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(0.0, 0.2),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    0.0, 0.0, 0.0, 5.0),
+                                            child: FlutterFlowIconButton(
+                                              borderColor: Colors.transparent,
+                                              borderRadius: 30.0,
+                                              borderWidth: 1.0,
+                                              buttonSize: 35.0,
+                                              icon: Icon(
+                                                Icons.delete,
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                size: 30.0,
+                                              ),
+                                              onPressed: () {
+                                                print('IconButton pressed ...');
                                               },
-                                              child: Hero(
-                                                tag: photoslistItem,
-                                                transitionOnUserGestures: true,
-                                                child: Image.network(
-                                                  photoslistItem,
-                                                  width: 100.0,
-                                                  height: 100.0,
-                                                  fit: BoxFit.cover,
-                                                ),
-                                              ),
                                             ),
-                                            Align(
-                                              alignment: AlignmentDirectional(
-                                                  1.0, -1.0),
-                                              child: FlutterFlowIconButton(
-                                                borderColor: Colors.transparent,
-                                                borderWidth: 1.0,
-                                                buttonSize: 40.0,
-                                                fillColor: Colors.transparent,
-                                                icon: Icon(
-                                                  Icons.highlight_off_rounded,
-                                                  color: Color(0xFFC80F0F),
-                                                  size: 30.0,
-                                                ),
-                                                onPressed: () async {
-                                                  setState(() {
-                                                    _model.isDataUploading =
-                                                        false;
-                                                    _model.uploadedLocalFiles =
-                                                        [];
-                                                    _model.uploadedFileUrls =
-                                                        [];
-                                                  });
-                                                },
-                                              ),
-                                            ),
-                                          ],
+                                          ),
                                         ),
-                                      );
-                                    }),
-                                  ),
-                                );
-                              },
+                                        Align(
+                                          alignment:
+                                              AlignmentDirectional(-0.05, 0.1),
+                                          child: Padding(
+                                            padding:
+                                                EdgeInsetsDirectional.fromSTEB(
+                                                    15.0, 10.0, 15.0, 10.0),
+                                            child: Text(
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '456rycwp' /* حذف الصور  */,
+                                              ),
+                                              style:
+                                                  FlutterFlowTheme.of(context)
+                                                      .bodyMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        fontSize: 20.0,
+                                                      ),
+                                            ),
+                                          ),
+                                        ),
+                                      ],
+                                    ),
+                                  ],
+                                ),
+                              ),
+                            ],
+                          ),
+                        ),
+                      ),
+                    ],
+                  ),
+                  Padding(
+                    padding: EdgeInsetsDirectional.fromSTEB(0.0, 8.0, 0.0, 8.0),
+                    child: SingleChildScrollView(
+                      scrollDirection: Axis.horizontal,
+                      child: Row(
+                        mainAxisSize: MainAxisSize.max,
+                        mainAxisAlignment: MainAxisAlignment.center,
+                        children: [
+                          if (_model.uploadedFileUrls.length >= 1)
+                            Padding(
+                              padding: EdgeInsetsDirectional.fromSTEB(
+                                  0.0, 10.0, 0.0, 0.0),
+                              child: Builder(
+                                builder: (context) {
+                                  final photoslist = _model.uploadedFileUrls
+                                      .map((e) => e)
+                                      .toList();
+                                  return SingleChildScrollView(
+                                    scrollDirection: Axis.horizontal,
+                                    child: Row(
+                                      mainAxisSize: MainAxisSize.max,
+                                      children: List.generate(photoslist.length,
+                                          (photoslistIndex) {
+                                        final photoslistItem =
+                                            photoslist[photoslistIndex];
+                                        return Container(
+                                          width: 100.0,
+                                          height: 100.0,
+                                          decoration: BoxDecoration(
+                                            color: FlutterFlowTheme.of(context)
+                                                .secondaryBackground,
+                                          ),
+                                          child: Stack(
+                                            children: [
+                                              InkWell(
+                                                splashColor: Colors.transparent,
+                                                focusColor: Colors.transparent,
+                                                hoverColor: Colors.transparent,
+                                                highlightColor:
+                                                    Colors.transparent,
+                                                onTap: () async {
+                                                  await Navigator.push(
+                                                    context,
+                                                    PageTransition(
+                                                      type: PageTransitionType
+                                                          .fade,
+                                                      child:
+                                                          FlutterFlowExpandedImageView(
+                                                        image: Image.network(
+                                                          photoslistItem,
+                                                          fit: BoxFit.contain,
+                                                        ),
+                                                        allowRotation: false,
+                                                        tag: photoslistItem,
+                                                        useHeroAnimation: true,
+                                                      ),
+                                                    ),
+                                                  );
+                                                },
+                                                child: Hero(
+                                                  tag: photoslistItem,
+                                                  transitionOnUserGestures:
+                                                      true,
+                                                  child: Image.network(
+                                                    photoslistItem,
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.cover,
+                                                  ),
+                                                ),
+                                              ),
+                                            ],
+                                          ),
+                                        );
+                                      }),
+                                    ),
+                                  );
+                                },
+                              ),
                             ),
                         ],
                       ),
@@ -651,14 +763,25 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                               currency: '₪',
                             ),
                             timeCreated: getCurrentTimestamp,
+                            createdBy: currentUserReference,
                           ),
                           'additionalPhotos': [_model.uploadedFileUrls],
                         };
-                        await PostRecord.collection.doc().set(postCreateData);
+                        var postRecordReference = PostRecord.collection.doc();
+                        await postRecordReference.set(postCreateData);
+                        _model.successfullycreated =
+                            PostRecord.getDocumentFromData(
+                                postCreateData, postRecordReference);
                         Navigator.pop(context);
+
+                        setState(() {});
                       },
                       text: FFLocalizations.of(context).getText(
                         'px1bkt5b' /* إنشاء منشور */,
+                      ),
+                      icon: Icon(
+                        Icons.post_add_sharp,
+                        size: 15.0,
                       ),
                       options: FFButtonOptions(
                         width: 350.0,
@@ -668,11 +791,12 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                         iconPadding:
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 0.0),
                         color: FlutterFlowTheme.of(context).primary,
-                        textStyle:
-                            FlutterFlowTheme.of(context).titleMedium.override(
-                                  fontFamily: 'Outfit',
-                                  color: FlutterFlowTheme.of(context).tertiary,
-                                ),
+                        textStyle: FlutterFlowTheme.of(context)
+                            .titleMedium
+                            .override(
+                              fontFamily: 'Outfit',
+                              color: FlutterFlowTheme.of(context).primaryText,
+                            ),
                         elevation: 0.0,
                         borderSide: BorderSide(
                           color: Colors.transparent,
