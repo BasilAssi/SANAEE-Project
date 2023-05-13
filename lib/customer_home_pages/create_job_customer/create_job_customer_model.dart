@@ -36,6 +36,8 @@ class CreateJobCustomerModel extends FlutterFlowModel {
 
   // State field(s) for salaryRange widget.
   double? salaryRangeValue;
+  // Stores action output result for [Backend Call - Create Document] action in Button widget.
+  PostRecord? successfullycreated;
 
   /// Initialization and disposal methods.
 

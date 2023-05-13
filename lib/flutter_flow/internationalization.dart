@@ -703,7 +703,11 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Short Description',
     },
     '7tskk9a7': {
-      'ar': 'اضافة صورة',
+      'ar': 'إضافة صورة',
+      'en': 'Add Photos',
+    },
+    '456rycwp': {
+      'ar': 'حذف الصور ',
       'en': 'Add Photos',
     },
     'pdxr2c8v': {
