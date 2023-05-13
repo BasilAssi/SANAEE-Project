@@ -612,33 +612,33 @@ class _ReviewCreateProfileCraftmanWidgetState
                                     10.0, 30.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    final craftsmanCreateData =
-                                        createCraftsmanRecordData(
+                                    final usersUpdateData =
+                                        createUsersRecordData(
                                       photoUrl: FFAppState().photoURL,
-                                      uid: currentUserUid,
                                       createdTime: getCurrentTimestamp,
-                                      editedTime: getCurrentTimestamp,
                                       bio: FFAppState().bioCraftsman,
-                                      docRef: currentUserReference,
-                                      craftsmanID: 'Craftsman${currentUserUid}',
-                                      firstName: FFAppState().firstName,
-                                      fatherName: FFAppState().NameOfTheFather,
-                                      grandfatherName:
+                                      firstnameCraftsman:
+                                          FFAppState().firstName,
+                                      fatherNameCraftsman:
+                                          FFAppState().NameOfTheFather,
+                                      grandFatherNameCraftsman:
                                           FFAppState().GrandFatherName,
-                                      familyName: FFAppState().familyName,
+                                      familyNameCraftsman:
+                                          FFAppState().familyName,
                                       city: FFAppState().city,
                                       address: FFAppState().address,
+                                      displayName: '',
                                       idNumber: FFAppState().idNumber,
+                                      email: '',
                                       craftType: FFAppState().craftType,
                                     );
-                                    await CraftsmanRecord.collection
-                                        .doc()
-                                        .set(craftsmanCreateData);
+                                    await currentUserReference!
+                                        .update(usersUpdateData);
                                     await Navigator.push(
                                       context,
                                       MaterialPageRoute(
-                                        builder: (context) =>
-                                            NavBarPage(initialPage: 'MAINHome'),
+                                        builder: (context) => NavBarPage(
+                                            initialPage: 'MAINHomeCustomer'),
                                       ),
                                     );
                                   },

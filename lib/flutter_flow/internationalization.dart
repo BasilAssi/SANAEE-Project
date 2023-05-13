@@ -333,7 +333,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // MAINHome
+  // MAINHomeCustomer
   {
     'hxlzbffs': {
       'ar': 'Posted On:',
@@ -656,7 +656,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // createJob
+  // CreateJobCustomer
   {
     'ukzz8bd8': {
       'ar': 'إنشاء وظيفة',
@@ -717,10 +717,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4ficbfr6': {
       'ar': '₪00,5000',
       'en': '5000,00₪',
-    },
-    '1t54fz83': {
-      'ar': 'موقع',
-      'en': 'Location',
     },
     'px1bkt5b': {
       'ar': 'إنشاء منشور',
@@ -1390,18 +1386,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'رقم الهوية',
       'en': 'id number',
     },
-    '3dzwr7en': {
-      'ar': 'ذكر',
-      'en': 'male',
-    },
-    'l40ka9y6': {
-      'ar': 'ذكر',
-      'en': 'male',
-    },
-    'bffennrn': {
-      'ar': 'أنثى',
-      'en': 'female',
-    },
     'ie5jweyk': {
       'ar': 'انشاء حساب',
       'en': 'Create an account',
@@ -1518,53 +1502,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'f879az5k': {
       'ar': 'Save Work Experience',
       'en': '',
-    },
-  },
-  // DashboardSidebar
-  {
-    'gt80kxc8': {
-      'ar': 'اسم المستخدم',
-      'en': 'user name',
-    },
-    '6iomz8xz': {
-      'ar': 'لوحة القيادة',
-      'en': 'Dashboard',
-    },
-    'o9jd4ot0': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'nmqeodqi': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'ewetx9oa': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'gi8grckg': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'ixdi1fqb': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'w0s34i6m': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'tpi3vp71': {
-      'ar': 'كتابة منشور',
-      'en': 'Creat Post',
-    },
-    'dd1299yo': {
-      'ar': 'الوضع الداكن',
-      'en': 'Dark Mode',
-    },
-    'u66t1ogl': {
-      'ar': 'تسجيل الخروج',
-      'en': 'Logout',
     },
   },
   // Miscellaneous

@@ -1,10 +1,8 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/flutter_flow/flutter_flow_radio_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import '/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -379,51 +377,6 @@ class _CreateAccountForCustomerWidgetState
                                     ],
                                   ),
                                 ),
-                                Align(
-                                  alignment: AlignmentDirectional(0.0, 0.0),
-                                  child: Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        0.0, 15.0, 0.0, 0.0),
-                                    child: FlutterFlowRadioButton(
-                                      options: [
-                                        FFLocalizations.of(context).getText(
-                                          'l40ka9y6' /* ذكر */,
-                                        ),
-                                        FFLocalizations.of(context).getText(
-                                          'bffennrn' /* أنثى */,
-                                        )
-                                      ].toList(),
-                                      onChanged: (val) => setState(() {}),
-                                      controller:
-                                          _model.radioButtonValueController ??=
-                                              FormFieldController<String>(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                        '3dzwr7en' /* ذكر */,
-                                      )),
-                                      optionHeight: 50.0,
-                                      textStyle: FlutterFlowTheme.of(context)
-                                          .headlineMedium
-                                          .override(
-                                            fontFamily: 'Outfit',
-                                            fontWeight: FontWeight.w600,
-                                          ),
-                                      textPadding:
-                                          EdgeInsetsDirectional.fromSTEB(
-                                              0.0, 0.0, 10.0, 0.0),
-                                      buttonPosition: RadioButtonPosition.left,
-                                      direction: Axis.horizontal,
-                                      radioButtonColor:
-                                          FlutterFlowTheme.of(context).primary,
-                                      inactiveRadioButtonColor:
-                                          FlutterFlowTheme.of(context)
-                                              .secondary,
-                                      toggleable: false,
-                                      horizontalAlignment: WrapAlignment.center,
-                                      verticalAlignment: WrapCrossAlignment.end,
-                                    ),
-                                  ),
-                                ),
                               ],
                             ),
                           ),
@@ -433,27 +386,18 @@ class _CreateAccountForCustomerWidgetState
                               0.0, 40.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              final customersCreateData =
-                                  createCustomersRecordData(
-                                uid: '',
-                                createdTime: getCurrentTimestamp,
-                                customerId: 'Customer${currentUserUid}',
-                                docRef: currentUserReference,
-                                firstName: _model.textController1.text,
-                                lastName: _model.textController2.text,
-                                gender: _model.radioButtonValue,
+                              final usersUpdateData = createUsersRecordData(
+                                firstNameCustomer: _model.textController1.text,
+                                lastNameCustomer: _model.textController2.text,
                                 idNumber: _model.textController3.text,
                               );
-                              await CustomersRecord.collection
-                                  .doc()
-                                  .set(customersCreateData);
-                              await Navigator.pushReplacement(
+                              await currentUserReference!
+                                  .update(usersUpdateData);
+                              await Navigator.push(
                                 context,
-                                PageTransition(
-                                  type: PageTransitionType.leftToRight,
-                                  duration: Duration(milliseconds: 300),
-                                  reverseDuration: Duration(milliseconds: 300),
-                                  child: NavBarPage(initialPage: 'MAINHome'),
+                                MaterialPageRoute(
+                                  builder: (context) => NavBarPage(
+                                      initialPage: 'MAINHomeCustomer'),
                                 ),
                               );
                             },

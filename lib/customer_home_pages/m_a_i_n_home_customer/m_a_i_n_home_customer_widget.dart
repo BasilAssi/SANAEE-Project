@@ -1,34 +1,34 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
+import '/customer_home_pages/create_job_customer/create_job_customer_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/create_job/create_job_widget.dart';
 import '/pages/job_post_details_actual/job_post_details_actual_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'm_a_i_n_home_model.dart';
-export 'm_a_i_n_home_model.dart';
+import 'm_a_i_n_home_customer_model.dart';
+export 'm_a_i_n_home_customer_model.dart';
 
-class MAINHomeWidget extends StatefulWidget {
-  const MAINHomeWidget({Key? key}) : super(key: key);
+class MAINHomeCustomerWidget extends StatefulWidget {
+  const MAINHomeCustomerWidget({Key? key}) : super(key: key);
 
   @override
-  _MAINHomeWidgetState createState() => _MAINHomeWidgetState();
+  _MAINHomeCustomerWidgetState createState() => _MAINHomeCustomerWidgetState();
 }
 
-class _MAINHomeWidgetState extends State<MAINHomeWidget> {
-  late MAINHomeModel _model;
+class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
+  late MAINHomeCustomerModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
 
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => MAINHomeModel());
+    _model = createModel(context, () => MAINHomeCustomerModel());
   }
 
   @override
@@ -53,7 +53,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
               type: PageTransitionType.bottomToTop,
               duration: Duration(milliseconds: 250),
               reverseDuration: Duration(milliseconds: 250),
-              child: CreateJobWidget(),
+              child: CreateJobCustomerWidget(),
             ),
           );
         },
@@ -76,7 +76,7 @@ class _MAINHomeWidgetState extends State<MAINHomeWidget> {
                 type: PageTransitionType.bottomToTop,
                 duration: Duration(milliseconds: 250),
                 reverseDuration: Duration(milliseconds: 250),
-                child: CreateJobWidget(),
+                child: CreateJobCustomerWidget(),
               ),
             );
           },

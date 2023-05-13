@@ -26,12 +26,6 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   String? get bio;
 
-  String? get positionTitle;
-
-  String? get experienceLevel;
-
-  String? get currentCompany;
-
   String? get uid;
 
   @BuiltValueField(wireName: 'phone_number')
@@ -43,15 +37,38 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
 
   String? get salary;
 
-  bool? get isGuest;
-
   bool? get isCustomer;
 
   bool? get isCraftsman;
 
-  DocumentReference? get customers;
+  String? get positionTitle;
 
-  DocumentReference? get crafsmans;
+  String? get experienceLevel;
+
+  String? get currentCompany;
+
+  @BuiltValueField(wireName: 'edited_time')
+  DateTime? get editedTime;
+
+  String? get firstNameCustomer;
+
+  String? get lastNameCustomer;
+
+  String? get firstnameCraftsman;
+
+  String? get fatherNameCraftsman;
+
+  String? get grandFatherNameCraftsman;
+
+  String? get familyNameCraftsman;
+
+  String? get city;
+
+  String? get address;
+
+  String? get idNumber;
+
+  String? get craftType;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -63,17 +80,26 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
     ..password = ''
     ..photoUrl = ''
     ..bio = ''
-    ..positionTitle = ''
-    ..experienceLevel = ''
-    ..currentCompany = ''
     ..uid = ''
     ..phoneNumber = ''
     ..likedPosts = false
     ..profileType = ''
     ..salary = ''
-    ..isGuest = false
     ..isCustomer = false
-    ..isCraftsman = false;
+    ..isCraftsman = false
+    ..positionTitle = ''
+    ..experienceLevel = ''
+    ..currentCompany = ''
+    ..firstNameCustomer = ''
+    ..lastNameCustomer = ''
+    ..firstnameCraftsman = ''
+    ..fatherNameCraftsman = ''
+    ..grandFatherNameCraftsman = ''
+    ..familyNameCraftsman = ''
+    ..city = ''
+    ..address = ''
+    ..idNumber = ''
+    ..craftType = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
@@ -95,19 +121,28 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
               snapshot.data['created_time']))
           ..photoUrl = snapshot.data['photo_url']
           ..bio = snapshot.data['bio']
-          ..positionTitle = snapshot.data['positionTitle']
-          ..experienceLevel = snapshot.data['experienceLevel']
-          ..currentCompany = snapshot.data['currentCompany']
           ..uid = snapshot.data['uid']
           ..phoneNumber = snapshot.data['phone_number']
           ..likedPosts = snapshot.data['likedPosts']
           ..profileType = snapshot.data['profileType']
           ..salary = snapshot.data['salary']
-          ..isGuest = snapshot.data['isGuest']
           ..isCustomer = snapshot.data['isCustomer']
           ..isCraftsman = snapshot.data['isCraftsman']
-          ..customers = safeGet(() => toRef(snapshot.data['customers']))
-          ..crafsmans = safeGet(() => toRef(snapshot.data['crafsmans']))
+          ..positionTitle = snapshot.data['positionTitle']
+          ..experienceLevel = snapshot.data['experienceLevel']
+          ..currentCompany = snapshot.data['currentCompany']
+          ..editedTime = safeGet(() =>
+              DateTime.fromMillisecondsSinceEpoch(snapshot.data['edited_time']))
+          ..firstNameCustomer = snapshot.data['firstNameCustomer']
+          ..lastNameCustomer = snapshot.data['lastNameCustomer']
+          ..firstnameCraftsman = snapshot.data['firstnameCraftsman']
+          ..fatherNameCraftsman = snapshot.data['fatherNameCraftsman']
+          ..grandFatherNameCraftsman = snapshot.data['grandFatherNameCraftsman']
+          ..familyNameCraftsman = snapshot.data['familyNameCraftsman']
+          ..city = snapshot.data['city']
+          ..address = snapshot.data['address']
+          ..idNumber = snapshot.data['idNumber']
+          ..craftType = snapshot.data['craftType']
           ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
       );
 
@@ -146,19 +181,27 @@ Map<String, dynamic> createUsersRecordData({
   DateTime? createdTime,
   String? photoUrl,
   String? bio,
-  String? positionTitle,
-  String? experienceLevel,
-  String? currentCompany,
   String? uid,
   String? phoneNumber,
   bool? likedPosts,
   String? profileType,
   String? salary,
-  bool? isGuest,
   bool? isCustomer,
   bool? isCraftsman,
-  DocumentReference? customers,
-  DocumentReference? crafsmans,
+  String? positionTitle,
+  String? experienceLevel,
+  String? currentCompany,
+  DateTime? editedTime,
+  String? firstNameCustomer,
+  String? lastNameCustomer,
+  String? firstnameCraftsman,
+  String? fatherNameCraftsman,
+  String? grandFatherNameCraftsman,
+  String? familyNameCraftsman,
+  String? city,
+  String? address,
+  String? idNumber,
+  String? craftType,
 }) {
   final firestoreData = serializers.toFirestore(
     UsersRecord.serializer,
@@ -170,19 +213,27 @@ Map<String, dynamic> createUsersRecordData({
         ..createdTime = createdTime
         ..photoUrl = photoUrl
         ..bio = bio
-        ..positionTitle = positionTitle
-        ..experienceLevel = experienceLevel
-        ..currentCompany = currentCompany
         ..uid = uid
         ..phoneNumber = phoneNumber
         ..likedPosts = likedPosts
         ..profileType = profileType
         ..salary = salary
-        ..isGuest = isGuest
         ..isCustomer = isCustomer
         ..isCraftsman = isCraftsman
-        ..customers = customers
-        ..crafsmans = crafsmans,
+        ..positionTitle = positionTitle
+        ..experienceLevel = experienceLevel
+        ..currentCompany = currentCompany
+        ..editedTime = editedTime
+        ..firstNameCustomer = firstNameCustomer
+        ..lastNameCustomer = lastNameCustomer
+        ..firstnameCraftsman = firstnameCraftsman
+        ..fatherNameCraftsman = fatherNameCraftsman
+        ..grandFatherNameCraftsman = grandFatherNameCraftsman
+        ..familyNameCraftsman = familyNameCraftsman
+        ..city = city
+        ..address = address
+        ..idNumber = idNumber
+        ..craftType = craftType,
     ),
   );
 

@@ -113,6 +113,20 @@ class _$JobPostsRecordSerializer
         ..add(
             serializers.serialize(value, specifiedType: const FullType(bool)));
     }
+    value = object.positionTitle;
+    if (value != null) {
+      result
+        ..add('positionTitle')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.experienceLevel;
+    if (value != null) {
+      result
+        ..add('experienceLevel')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -190,6 +204,14 @@ class _$JobPostsRecordSerializer
           result.myJob = serializers.deserialize(value,
               specifiedType: const FullType(bool)) as bool?;
           break;
+        case 'positionTitle':
+          result.positionTitle = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'experienceLevel':
+          result.experienceLevel = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -231,6 +253,10 @@ class _$JobPostsRecord extends JobPostsRecord {
   @override
   final bool? myJob;
   @override
+  final String? positionTitle;
+  @override
+  final String? experienceLevel;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$JobPostsRecord([void Function(JobPostsRecordBuilder)? updates]) =>
@@ -250,6 +276,8 @@ class _$JobPostsRecord extends JobPostsRecord {
       this.companyLogo,
       this.photoHero,
       this.myJob,
+      this.positionTitle,
+      this.experienceLevel,
       this.ffRef})
       : super._();
 
@@ -278,6 +306,8 @@ class _$JobPostsRecord extends JobPostsRecord {
         companyLogo == other.companyLogo &&
         photoHero == other.photoHero &&
         myJob == other.myJob &&
+        positionTitle == other.positionTitle &&
+        experienceLevel == other.experienceLevel &&
         ffRef == other.ffRef;
   }
 
@@ -297,6 +327,8 @@ class _$JobPostsRecord extends JobPostsRecord {
     _$hash = $jc(_$hash, companyLogo.hashCode);
     _$hash = $jc(_$hash, photoHero.hashCode);
     _$hash = $jc(_$hash, myJob.hashCode);
+    _$hash = $jc(_$hash, positionTitle.hashCode);
+    _$hash = $jc(_$hash, experienceLevel.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -318,6 +350,8 @@ class _$JobPostsRecord extends JobPostsRecord {
           ..add('companyLogo', companyLogo)
           ..add('photoHero', photoHero)
           ..add('myJob', myJob)
+          ..add('positionTitle', positionTitle)
+          ..add('experienceLevel', experienceLevel)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -383,6 +417,16 @@ class JobPostsRecordBuilder
   bool? get myJob => _$this._myJob;
   set myJob(bool? myJob) => _$this._myJob = myJob;
 
+  String? _positionTitle;
+  String? get positionTitle => _$this._positionTitle;
+  set positionTitle(String? positionTitle) =>
+      _$this._positionTitle = positionTitle;
+
+  String? _experienceLevel;
+  String? get experienceLevel => _$this._experienceLevel;
+  set experienceLevel(String? experienceLevel) =>
+      _$this._experienceLevel = experienceLevel;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -407,6 +451,8 @@ class JobPostsRecordBuilder
       _companyLogo = $v.companyLogo;
       _photoHero = $v.photoHero;
       _myJob = $v.myJob;
+      _positionTitle = $v.positionTitle;
+      _experienceLevel = $v.experienceLevel;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -443,6 +489,8 @@ class JobPostsRecordBuilder
             companyLogo: companyLogo,
             photoHero: photoHero,
             myJob: myJob,
+            positionTitle: positionTitle,
+            experienceLevel: experienceLevel,
             ffRef: ffRef);
     replace(_$result);
     return _$result;

@@ -1,9 +1,9 @@
 import '/backend/backend.dart';
+import '/customer_home_pages/create_job_customer/create_job_customer_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_toggle_icon.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/create_job/create_job_widget.dart';
 import '/pages/create_profile/create_profile_widget.dart';
 import '/pages/job_post_details_actual/job_post_details_actual_widget.dart';
 import 'package:smooth_page_indicator/smooth_page_indicator.dart'

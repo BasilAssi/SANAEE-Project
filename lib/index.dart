@@ -1,11 +1,12 @@
 // Export pages
-export '/pages/login/login_widget.dart' show LoginWidget;
+export '/authentication/login/login_widget.dart' show LoginWidget;
 export '/pages/create_profile/create_profile_widget.dart'
     show CreateProfileWidget;
 export '/pages/company_profile/company_profile_widget.dart'
     show CompanyProfileWidget;
 export '/pages/add_work_exp/add_work_exp_widget.dart' show AddWorkExpWidget;
-export '/pages/m_a_i_n_home/m_a_i_n_home_widget.dart' show MAINHomeWidget;
+export '/customer_home_pages/m_a_i_n_home_customer/m_a_i_n_home_customer_widget.dart'
+    show MAINHomeCustomerWidget;
 export '/pages/s_e_a_r_c_h_jobs/s_e_a_r_c_h_jobs_widget.dart'
     show SEARCHJobsWidget;
 export '/pages/m_a_i_n_saved_jobs/m_a_i_n_saved_jobs_widget.dart'
@@ -27,10 +28,11 @@ export '/pages/job_post_applied/job_post_applied_widget.dart'
     show JobPostAppliedWidget;
 export '/pages/job_post_my_job_applicants/job_post_my_job_applicants_widget.dart'
     show JobPostMyJobApplicantsWidget;
-export '/pages/forgot_password/forgot_password_widget.dart'
+export '/authentication/forgot_password/forgot_password_widget.dart'
     show ForgotPasswordWidget;
 export '/pages/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
-export '/pages/create_job/create_job_widget.dart' show CreateJobWidget;
+export '/customer_home_pages/create_job_customer/create_job_customer_widget.dart'
+    show CreateJobCustomerWidget;
 export '/pages/candidate_details/candidate_details_widget.dart'
     show CandidateDetailsWidget;
 export '/pages/job_post_details/job_post_details_widget.dart'
@@ -46,7 +48,7 @@ export '/pages/verify_mobile/verify_mobile_widget.dart' show VerifyMobileWidget;
 export '/pages/select_your_role/select_your_role_widget.dart'
     show SelectYourRoleWidget;
 export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
-export '/pages/sign_up/sign_up_widget.dart' show SignUpWidget;
+export '/authentication/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart'
     show CreateProfileNameStepOneWidget;
 export '/create_profile_for_craftsman/create_profile_name_addres_step_two/create_profile_name_addres_step_two_widget.dart'

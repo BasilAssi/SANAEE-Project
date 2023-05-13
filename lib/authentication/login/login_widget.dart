@@ -352,8 +352,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'MAINHome'),
+                                  builder: (context) => NavBarPage(
+                                      initialPage: 'MAINHomeCustomer'),
                                 ),
                               );
                             } else {
