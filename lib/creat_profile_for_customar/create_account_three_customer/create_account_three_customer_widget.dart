@@ -10,20 +10,20 @@ import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
-import 'create_account_for_customer_model.dart';
-export 'create_account_for_customer_model.dart';
+import 'create_account_three_customer_model.dart';
+export 'create_account_three_customer_model.dart';
 
-class CreateAccountForCustomerWidget extends StatefulWidget {
-  const CreateAccountForCustomerWidget({Key? key}) : super(key: key);
+class CreateAccountThreeCustomerWidget extends StatefulWidget {
+  const CreateAccountThreeCustomerWidget({Key? key}) : super(key: key);
 
   @override
-  _CreateAccountForCustomerWidgetState createState() =>
-      _CreateAccountForCustomerWidgetState();
+  _CreateAccountThreeCustomerWidgetState createState() =>
+      _CreateAccountThreeCustomerWidgetState();
 }
 
-class _CreateAccountForCustomerWidgetState
-    extends State<CreateAccountForCustomerWidget> {
-  late CreateAccountForCustomerModel _model;
+class _CreateAccountThreeCustomerWidgetState
+    extends State<CreateAccountThreeCustomerWidget> {
+  late CreateAccountThreeCustomerModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
   final _unfocusNode = FocusNode();
@@ -31,7 +31,7 @@ class _CreateAccountForCustomerWidgetState
   @override
   void initState() {
     super.initState();
-    _model = createModel(context, () => CreateAccountForCustomerModel());
+    _model = createModel(context, () => CreateAccountThreeCustomerModel());
 
     _model.textController1 ??= TextEditingController();
     _model.textController2 ??= TextEditingController();

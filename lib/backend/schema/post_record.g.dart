@@ -40,21 +40,6 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
-    value = object.additionalPhotos;
-    if (value != null) {
-      result
-        ..add('additionalPhotos')
-        ..add(serializers.serialize(value,
-            specifiedType:
-                const FullType(BuiltList, const [const FullType(String)])));
-    }
-    value = object.jobLocation;
-    if (value != null) {
-      result
-        ..add('jobLocation')
-        ..add(serializers.serialize(value,
-            specifiedType: const FullType(LatLng)));
-    }
     value = object.estimatedPrice;
     if (value != null) {
       result
@@ -76,6 +61,34 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
         ..add(serializers.serialize(value,
             specifiedType: const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])));
+    }
+    value = object.image1;
+    if (value != null) {
+      result
+        ..add('image_1')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.image2;
+    if (value != null) {
+      result
+        ..add('image_2')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.image3;
+    if (value != null) {
+      result
+        ..add('image_3')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
+    value = object.jobLocation;
+    if (value != null) {
+      result
+        ..add('jobLocation')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
     }
     value = object.ffRef;
     if (value != null) {
@@ -111,16 +124,6 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
           result.shortDescription = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
-        case 'additionalPhotos':
-          result.additionalPhotos.replace(serializers.deserialize(value,
-                  specifiedType: const FullType(
-                      BuiltList, const [const FullType(String)]))!
-              as BuiltList<Object?>);
-          break;
-        case 'jobLocation':
-          result.jobLocation = serializers.deserialize(value,
-              specifiedType: const FullType(LatLng)) as LatLng?;
-          break;
         case 'estimatedPrice':
           result.estimatedPrice = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
@@ -134,6 +137,22 @@ class _$PostRecordSerializer implements StructuredSerializer<PostRecord> {
               specifiedType: const FullType(DocumentReference, const [
                 const FullType.nullable(Object)
               ])) as DocumentReference<Object?>?;
+          break;
+        case 'image_1':
+          result.image1 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'image_2':
+          result.image2 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'image_3':
+          result.image3 = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
+        case 'jobLocation':
+          result.jobLocation = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
           break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
@@ -156,15 +175,19 @@ class _$PostRecord extends PostRecord {
   @override
   final String? shortDescription;
   @override
-  final BuiltList<String>? additionalPhotos;
-  @override
-  final LatLng? jobLocation;
-  @override
   final String? estimatedPrice;
   @override
   final DateTime? timeCreated;
   @override
   final DocumentReference<Object?>? createdBy;
+  @override
+  final String? image1;
+  @override
+  final String? image2;
+  @override
+  final String? image3;
+  @override
+  final String? jobLocation;
   @override
   final DocumentReference<Object?>? ffRef;
 
@@ -175,11 +198,13 @@ class _$PostRecord extends PostRecord {
       {this.jobType,
       this.jobTitle,
       this.shortDescription,
-      this.additionalPhotos,
-      this.jobLocation,
       this.estimatedPrice,
       this.timeCreated,
       this.createdBy,
+      this.image1,
+      this.image2,
+      this.image3,
+      this.jobLocation,
       this.ffRef})
       : super._();
 
@@ -197,11 +222,13 @@ class _$PostRecord extends PostRecord {
         jobType == other.jobType &&
         jobTitle == other.jobTitle &&
         shortDescription == other.shortDescription &&
-        additionalPhotos == other.additionalPhotos &&
-        jobLocation == other.jobLocation &&
         estimatedPrice == other.estimatedPrice &&
         timeCreated == other.timeCreated &&
         createdBy == other.createdBy &&
+        image1 == other.image1 &&
+        image2 == other.image2 &&
+        image3 == other.image3 &&
+        jobLocation == other.jobLocation &&
         ffRef == other.ffRef;
   }
 
@@ -211,11 +238,13 @@ class _$PostRecord extends PostRecord {
     _$hash = $jc(_$hash, jobType.hashCode);
     _$hash = $jc(_$hash, jobTitle.hashCode);
     _$hash = $jc(_$hash, shortDescription.hashCode);
-    _$hash = $jc(_$hash, additionalPhotos.hashCode);
-    _$hash = $jc(_$hash, jobLocation.hashCode);
     _$hash = $jc(_$hash, estimatedPrice.hashCode);
     _$hash = $jc(_$hash, timeCreated.hashCode);
     _$hash = $jc(_$hash, createdBy.hashCode);
+    _$hash = $jc(_$hash, image1.hashCode);
+    _$hash = $jc(_$hash, image2.hashCode);
+    _$hash = $jc(_$hash, image3.hashCode);
+    _$hash = $jc(_$hash, jobLocation.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -227,11 +256,13 @@ class _$PostRecord extends PostRecord {
           ..add('jobType', jobType)
           ..add('jobTitle', jobTitle)
           ..add('shortDescription', shortDescription)
-          ..add('additionalPhotos', additionalPhotos)
-          ..add('jobLocation', jobLocation)
           ..add('estimatedPrice', estimatedPrice)
           ..add('timeCreated', timeCreated)
           ..add('createdBy', createdBy)
+          ..add('image1', image1)
+          ..add('image2', image2)
+          ..add('image3', image3)
+          ..add('jobLocation', jobLocation)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -253,16 +284,6 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
   set shortDescription(String? shortDescription) =>
       _$this._shortDescription = shortDescription;
 
-  ListBuilder<String>? _additionalPhotos;
-  ListBuilder<String> get additionalPhotos =>
-      _$this._additionalPhotos ??= new ListBuilder<String>();
-  set additionalPhotos(ListBuilder<String>? additionalPhotos) =>
-      _$this._additionalPhotos = additionalPhotos;
-
-  LatLng? _jobLocation;
-  LatLng? get jobLocation => _$this._jobLocation;
-  set jobLocation(LatLng? jobLocation) => _$this._jobLocation = jobLocation;
-
   String? _estimatedPrice;
   String? get estimatedPrice => _$this._estimatedPrice;
   set estimatedPrice(String? estimatedPrice) =>
@@ -276,6 +297,22 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
   DocumentReference<Object?>? get createdBy => _$this._createdBy;
   set createdBy(DocumentReference<Object?>? createdBy) =>
       _$this._createdBy = createdBy;
+
+  String? _image1;
+  String? get image1 => _$this._image1;
+  set image1(String? image1) => _$this._image1 = image1;
+
+  String? _image2;
+  String? get image2 => _$this._image2;
+  set image2(String? image2) => _$this._image2 = image2;
+
+  String? _image3;
+  String? get image3 => _$this._image3;
+  set image3(String? image3) => _$this._image3 = image3;
+
+  String? _jobLocation;
+  String? get jobLocation => _$this._jobLocation;
+  set jobLocation(String? jobLocation) => _$this._jobLocation = jobLocation;
 
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
@@ -291,11 +328,13 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
       _jobType = $v.jobType;
       _jobTitle = $v.jobTitle;
       _shortDescription = $v.shortDescription;
-      _additionalPhotos = $v.additionalPhotos?.toBuilder();
-      _jobLocation = $v.jobLocation;
       _estimatedPrice = $v.estimatedPrice;
       _timeCreated = $v.timeCreated;
       _createdBy = $v.createdBy;
+      _image1 = $v.image1;
+      _image2 = $v.image2;
+      _image3 = $v.image3;
+      _jobLocation = $v.jobLocation;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -317,30 +356,19 @@ class PostRecordBuilder implements Builder<PostRecord, PostRecordBuilder> {
   PostRecord build() => _build();
 
   _$PostRecord _build() {
-    _$PostRecord _$result;
-    try {
-      _$result = _$v ??
-          new _$PostRecord._(
-              jobType: jobType,
-              jobTitle: jobTitle,
-              shortDescription: shortDescription,
-              additionalPhotos: _additionalPhotos?.build(),
-              jobLocation: jobLocation,
-              estimatedPrice: estimatedPrice,
-              timeCreated: timeCreated,
-              createdBy: createdBy,
-              ffRef: ffRef);
-    } catch (_) {
-      late String _$failedField;
-      try {
-        _$failedField = 'additionalPhotos';
-        _additionalPhotos?.build();
-      } catch (e) {
-        throw new BuiltValueNestedFieldError(
-            r'PostRecord', _$failedField, e.toString());
-      }
-      rethrow;
-    }
+    final _$result = _$v ??
+        new _$PostRecord._(
+            jobType: jobType,
+            jobTitle: jobTitle,
+            shortDescription: shortDescription,
+            estimatedPrice: estimatedPrice,
+            timeCreated: timeCreated,
+            createdBy: createdBy,
+            image1: image1,
+            image2: image2,
+            image3: image3,
+            jobLocation: jobLocation,
+            ffRef: ffRef);
     replace(_$result);
     return _$result;
   }

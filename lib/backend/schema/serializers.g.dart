@@ -15,7 +15,6 @@ Serializers _$serializers = (new Serializers().toBuilder()
       ..add(CustomersRecord.serializer)
       ..add(JobPostsRecord.serializer)
       ..add(PostRecord.serializer)
-      ..add(PosteRecord.serializer)
       ..add(SavedJobsRecord.serializer)
       ..add(UsersRecord.serializer)
       ..add(WorkHistoryRecord.serializer)
@@ -30,13 +29,7 @@ Serializers _$serializers = (new Serializers().toBuilder()
             const FullType(
                 DocumentReference, const [const FullType.nullable(Object)])
           ]),
-          () => new ListBuilder<DocumentReference<Object?>>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>())
-      ..addBuilderFactory(
-          const FullType(BuiltList, const [const FullType(String)]),
-          () => new ListBuilder<String>()))
+          () => new ListBuilder<DocumentReference<Object?>>()))
     .build();
 
 // ignore_for_file: deprecated_member_use_from_same_package,type=lint

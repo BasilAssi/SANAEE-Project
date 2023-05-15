@@ -698,21 +698,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'مسمى وظيفي',
       'en': 'Job title',
     },
+    'u85bc950': {
+      'ar': 'عنوان العمل ',
+      'en': 'address',
+    },
+    'j2lianoh': {
+      'ar': '',
+      'en': '',
+    },
     'pap7cb69': {
       'ar': 'وصف قصير للمنشور',
       'en': 'Short Description',
     },
-    '7tskk9a7': {
-      'ar': 'إضافة صورة',
-      'en': 'Add Photos',
-    },
-    '456rycwp': {
-      'ar': 'حذف الصور ',
-      'en': 'Add Photos',
-    },
     'pdxr2c8v': {
-      'ar': 'السعر المقدر',
-      'en': 'Estimated Price',
+      'ar': 'السعر المقدر لإتمام العمل ',
+      'en': 'Estimated price to complete the work',
     },
     'n60zdd0q': {
       'ar': '₪00,100',
@@ -721,6 +721,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '4ficbfr6': {
       'ar': '₪00,5000',
       'en': '5000,00₪',
+    },
+    'vd6abmr5': {
+      'ar': 'إضافة صور للعمل ',
+      'en': 'Add photos to work',
     },
     'px1bkt5b': {
       'ar': 'إنشاء منشور',
@@ -1271,10 +1275,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الاسم الاول',
       'en': 'First Name',
     },
-    'c4e1qka2': {
-      'ar': '',
-      'en': '',
-    },
     'jgbxb53x': {
       'ar': 'اسم الاب',
       'en': 'Name of the Father',
@@ -1372,7 +1372,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // createAccountForCustomer
+  // createAccountThreeCustomer
   {
     '3jh43xqn': {
       'ar': 'إنشاء حساب جديد',

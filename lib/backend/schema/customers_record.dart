@@ -39,6 +39,9 @@ abstract class CustomersRecord
 
   String? get gender;
 
+  @BuiltValueField(wireName: 'address_customar')
+  String? get addressCustomar;
+
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
   DocumentReference get reference => ffRef!;
@@ -52,7 +55,8 @@ abstract class CustomersRecord
     ..firstName = ''
     ..lastName = ''
     ..idNumber = ''
-    ..gender = '';
+    ..gender = ''
+    ..addressCustomar = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('customers');
@@ -88,6 +92,7 @@ Map<String, dynamic> createCustomersRecordData({
   String? lastName,
   String? idNumber,
   String? gender,
+  String? addressCustomar,
 }) {
   final firestoreData = serializers.toFirestore(
     CustomersRecord.serializer,
@@ -104,7 +109,8 @@ Map<String, dynamic> createCustomersRecordData({
         ..firstName = firstName
         ..lastName = lastName
         ..idNumber = idNumber
-        ..gender = gender,
+        ..gender = gender
+        ..addressCustomar = addressCustomar,
     ),
   );
 

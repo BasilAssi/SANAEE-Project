@@ -106,6 +106,13 @@ class _$CustomersRecordSerializer
         ..add(serializers.serialize(value,
             specifiedType: const FullType(String)));
     }
+    value = object.addressCustomar;
+    if (value != null) {
+      result
+        ..add('address_customar')
+        ..add(serializers.serialize(value,
+            specifiedType: const FullType(String)));
+    }
     value = object.ffRef;
     if (value != null) {
       result
@@ -179,6 +186,10 @@ class _$CustomersRecordSerializer
           result.gender = serializers.deserialize(value,
               specifiedType: const FullType(String)) as String?;
           break;
+        case 'address_customar':
+          result.addressCustomar = serializers.deserialize(value,
+              specifiedType: const FullType(String)) as String?;
+          break;
         case 'Document__Reference__Field':
           result.ffRef = serializers.deserialize(value,
               specifiedType: const FullType(DocumentReference, const [
@@ -218,6 +229,8 @@ class _$CustomersRecord extends CustomersRecord {
   @override
   final String? gender;
   @override
+  final String? addressCustomar;
+  @override
   final DocumentReference<Object?>? ffRef;
 
   factory _$CustomersRecord([void Function(CustomersRecordBuilder)? updates]) =>
@@ -236,6 +249,7 @@ class _$CustomersRecord extends CustomersRecord {
       this.lastName,
       this.idNumber,
       this.gender,
+      this.addressCustomar,
       this.ffRef})
       : super._();
 
@@ -263,6 +277,7 @@ class _$CustomersRecord extends CustomersRecord {
         lastName == other.lastName &&
         idNumber == other.idNumber &&
         gender == other.gender &&
+        addressCustomar == other.addressCustomar &&
         ffRef == other.ffRef;
   }
 
@@ -281,6 +296,7 @@ class _$CustomersRecord extends CustomersRecord {
     _$hash = $jc(_$hash, lastName.hashCode);
     _$hash = $jc(_$hash, idNumber.hashCode);
     _$hash = $jc(_$hash, gender.hashCode);
+    _$hash = $jc(_$hash, addressCustomar.hashCode);
     _$hash = $jc(_$hash, ffRef.hashCode);
     _$hash = $jf(_$hash);
     return _$hash;
@@ -301,6 +317,7 @@ class _$CustomersRecord extends CustomersRecord {
           ..add('lastName', lastName)
           ..add('idNumber', idNumber)
           ..add('gender', gender)
+          ..add('addressCustomar', addressCustomar)
           ..add('ffRef', ffRef))
         .toString();
   }
@@ -358,6 +375,11 @@ class CustomersRecordBuilder
   String? get gender => _$this._gender;
   set gender(String? gender) => _$this._gender = gender;
 
+  String? _addressCustomar;
+  String? get addressCustomar => _$this._addressCustomar;
+  set addressCustomar(String? addressCustomar) =>
+      _$this._addressCustomar = addressCustomar;
+
   DocumentReference<Object?>? _ffRef;
   DocumentReference<Object?>? get ffRef => _$this._ffRef;
   set ffRef(DocumentReference<Object?>? ffRef) => _$this._ffRef = ffRef;
@@ -381,6 +403,7 @@ class CustomersRecordBuilder
       _lastName = $v.lastName;
       _idNumber = $v.idNumber;
       _gender = $v.gender;
+      _addressCustomar = $v.addressCustomar;
       _ffRef = $v.ffRef;
       _$v = null;
     }
@@ -416,6 +439,7 @@ class CustomersRecordBuilder
             lastName: lastName,
             idNumber: idNumber,
             gender: gender,
+            addressCustomar: addressCustomar,
             ffRef: ffRef);
     replace(_$result);
     return _$result;
