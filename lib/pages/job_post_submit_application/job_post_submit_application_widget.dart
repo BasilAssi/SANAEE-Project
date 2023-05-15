@@ -621,6 +621,7 @@ class _JobPostSubmitApplicationWidgetState
                                       final selectedMedia =
                                           await selectMediaWithSourceBottomSheet(
                                         context: context,
+                                        imageQuality: 100,
                                         allowPhoto: true,
                                         backgroundColor:
                                             FlutterFlowTheme.of(context)
@@ -697,12 +698,6 @@ class _JobPostSubmitApplicationWidgetState
                                       decoration: BoxDecoration(
                                         color: FlutterFlowTheme.of(context)
                                             .lineColor,
-                                        image: DecorationImage(
-                                          fit: BoxFit.cover,
-                                          image: Image.asset(
-                                            'assets/images/uploadAvatar@2x.png',
-                                          ).image,
-                                        ),
                                         borderRadius:
                                             BorderRadius.circular(10.0),
                                       ),

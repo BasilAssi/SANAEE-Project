@@ -1,4 +1,4 @@
-# SANAEE Project
+# SANAEE
 
 A new Flutter project.
 

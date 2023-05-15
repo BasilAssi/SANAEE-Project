@@ -15,15 +15,22 @@ abstract class PostRecord implements Built<PostRecord, PostRecordBuilder> {
 
   String? get shortDescription;
 
-  BuiltList<String>? get additionalPhotos;
-
-  LatLng? get jobLocation;
-
   String? get estimatedPrice;
 
   DateTime? get timeCreated;
 
   DocumentReference? get createdBy;
+
+  @BuiltValueField(wireName: 'image_1')
+  String? get image1;
+
+  @BuiltValueField(wireName: 'image_2')
+  String? get image2;
+
+  @BuiltValueField(wireName: 'image_3')
+  String? get image3;
+
+  String? get jobLocation;
 
   @BuiltValueField(wireName: kDocumentReferenceField)
   DocumentReference? get ffRef;
@@ -33,8 +40,11 @@ abstract class PostRecord implements Built<PostRecord, PostRecordBuilder> {
     ..jobType = ''
     ..jobTitle = ''
     ..shortDescription = ''
-    ..additionalPhotos = ListBuilder()
-    ..estimatedPrice = '';
+    ..estimatedPrice = ''
+    ..image1 = ''
+    ..image2 = ''
+    ..image3 = ''
+    ..jobLocation = '';
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('post');
@@ -60,10 +70,13 @@ Map<String, dynamic> createPostRecordData({
   String? jobType,
   String? jobTitle,
   String? shortDescription,
-  LatLng? jobLocation,
   String? estimatedPrice,
   DateTime? timeCreated,
   DocumentReference? createdBy,
+  String? image1,
+  String? image2,
+  String? image3,
+  String? jobLocation,
 }) {
   final firestoreData = serializers.toFirestore(
     PostRecord.serializer,
@@ -72,11 +85,13 @@ Map<String, dynamic> createPostRecordData({
         ..jobType = jobType
         ..jobTitle = jobTitle
         ..shortDescription = shortDescription
-        ..additionalPhotos = null
-        ..jobLocation = jobLocation
         ..estimatedPrice = estimatedPrice
         ..timeCreated = timeCreated
-        ..createdBy = createdBy,
+        ..createdBy = createdBy
+        ..image1 = image1
+        ..image2 = image2
+        ..image3 = image3
+        ..jobLocation = jobLocation,
     ),
   );
 

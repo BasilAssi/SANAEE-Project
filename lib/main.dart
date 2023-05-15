@@ -52,7 +52,7 @@ class _MyAppState extends State<MyApp> {
   @override
   void initState() {
     super.initState();
-    userStream = sANAEEProjectFirebaseUserStream()
+    userStream = sanaeeFirebaseUserStream()
       ..listen((user) => initialUser ?? setState(() => initialUser = user));
     jwtTokenStream.listen((_) {});
     Future.delayed(
@@ -80,7 +80,7 @@ class _MyAppState extends State<MyApp> {
   @override
   Widget build(BuildContext context) {
     return MaterialApp(
-      title: 'SANAEE Project',
+      title: 'SANAEE',
       localizationsDelegates: [
         FFLocalizationsDelegate(),
         GlobalMaterialLocalizations.delegate,
@@ -98,13 +98,10 @@ class _MyAppState extends State<MyApp> {
       home: initialUser == null || displaySplashImage
           ? Builder(
               builder: (context) => Container(
-                color: Colors.transparent,
-                child: Center(
-                  child: Image.asset(
-                    'assets/images/splash@2x.png',
-                    width: MediaQuery.of(context).size.width * 1.0,
-                    fit: BoxFit.fitWidth,
-                  ),
+                color: Color(0xFF384C54),
+                child: Image.asset(
+                  'assets/images/logo_1.png',
+                  fit: BoxFit.none,
                 ),
               ),
             )
@@ -158,7 +155,7 @@ class _NavBarPageState extends State<NavBarPage> {
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         selectedItemColor: FlutterFlowTheme.of(context).secondary,
         unselectedItemColor: Color(0xFFABB3BA),
-        showSelectedLabels: false,
+        showSelectedLabels: true,
         showUnselectedLabels: false,
         type: BottomNavigationBarType.fixed,
         items: <BottomNavigationBarItem>[
