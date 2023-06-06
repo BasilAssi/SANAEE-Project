@@ -58,21 +58,14 @@ service cloud.firestore {
       allow delete: if false;
     }
 
-    match /customers/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
-    match /craftsman/{document} {
-      allow create: if true;
-      allow read: if true;
-      allow write: if false;
-      allow delete: if false;
-    }
-
     match /post/{document} {
+      allow create: if true;
+      allow read: if true;
+      allow write: if false;
+      allow delete: if false;
+    }
+
+    match /Applications/{document} {
       allow create: if true;
       allow read: if true;
       allow write: if false;

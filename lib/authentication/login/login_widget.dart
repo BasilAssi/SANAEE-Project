@@ -1,9 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/main.dart';
-import '/pages/create_profile/create_profile_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -352,8 +352,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) => NavBarPage(
-                                      initialPage: 'MAINHomeCustomer'),
+                                  builder: (context) =>
+                                      MAINHomeCraftsmanWidget(),
                                 ),
                               );
                             } else {
@@ -363,7 +363,8 @@ class _LoginWidgetState extends State<LoginWidget> {
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
-                                    builder: (context) => CreateProfileWidget(),
+                                    builder: (context) => NavBarPage(
+                                        initialPage: 'MAINHomeCustomer'),
                                   ),
                                 );
                               }

@@ -164,181 +164,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // CreateProfile
-  {
-    '16kqlmhb': {
-      'ar': 'Create Profile',
-      'en': '',
-    },
-    '9cxxqp6a': {
-      'ar': 'Full Name',
-      'en': '',
-    },
-    'bzvy9n1f': {
-      'ar': 'Postition Title',
-      'en': '',
-    },
-    'kqq76t54': {
-      'ar': 'Short Description',
-      'en': '',
-    },
-    'vjwgllst': {
-      'ar': '< 6 Months',
-      'en': '',
-    },
-    '4afzu4uv': {
-      'ar': '6m - 1y',
-      'en': '',
-    },
-    'awm0qeje': {
-      'ar': '1y - 3y',
-      'en': '',
-    },
-    'vfn9v4of': {
-      'ar': '+3 years',
-      'en': '',
-    },
-    'jdztguln': {
-      'ar': '+5 years',
-      'en': '',
-    },
-    'du97ujp9': {
-      'ar': '+8 years',
-      'en': '',
-    },
-    '8j4bktnh': {
-      'ar': 'Experience Level',
-      'en': '',
-    },
-    'otxb705y': {
-      'ar': 'Company',
-      'en': '',
-    },
-    'tgyak4ap': {
-      'ar': 'Salary',
-      'en': '',
-    },
-    'qa9z2iig': {
-      'ar': '\$40,000',
-      'en': '',
-    },
-    'dok3j0cl': {
-      'ar': '\$150,000+',
-      'en': '',
-    },
-    'wk05zvzs': {
-      'ar': 'Continue as a(n)',
-      'en': '',
-    },
-    'k9lfniw4': {
-      'ar': 'Choose an option below to continue.',
-      'en': '',
-    },
-    'zhq28egp': {
-      'ar': 'As an Individual',
-      'en': '',
-    },
-    'bxzzpwnh': {
-      'ar': 'As a Company',
-      'en': '',
-    },
-    'uj0rkdlw': {
-      'ar': 'Skip for Now',
-      'en': '',
-    },
-    '4c68ji2a': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // CompanyProfile
-  {
-    'w8rqbwcg': {
-      'ar': 'Company Profile',
-      'en': '',
-    },
-    'gi3n8oe0': {
-      'ar': 'Company Name',
-      'en': '',
-    },
-    'x078dny3': {
-      'ar': 'Website',
-      'en': '',
-    },
-    'qnn9x3d9': {
-      'ar': 'A little bit about your company',
-      'en': '',
-    },
-    'ecssdba2': {
-      'ar': 'Company Size',
-      'en': '',
-    },
-    'pnlgitlt': {
-      'ar': 'Company Size',
-      'en': '',
-    },
-    '8dohjd7e': {
-      'ar': '1-10',
-      'en': '',
-    },
-    'xc9ecefm': {
-      'ar': '11-50',
-      'en': '',
-    },
-    'uvvscd2i': {
-      'ar': '51-100',
-      'en': '',
-    },
-    'ulxnq47c': {
-      'ar': '100+',
-      'en': '',
-    },
-    '9406m4l6': {
-      'ar': 'Location',
-      'en': '',
-    },
-    'k3pg613c': {
-      'ar': 'Skip for Now',
-      'en': '',
-    },
-    'f1wkumya': {
-      'ar': 'Continue',
-      'en': '',
-    },
-    'xowv4bby': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // AddWorkExp
-  {
-    'v61spjfq': {
-      'ar': 'Work History',
-      'en': '',
-    },
-    'zebn83g1': {
-      'ar': 'Job Title',
-      'en': '',
-    },
-    'dnm7v2xn': {
-      'ar': 'Add Work Experience',
-      'en': '',
-    },
-    'ocvpznwh': {
-      'ar': 'Continue',
-      'en': '',
-    },
-    '3bg84h8t': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // MAINHomeCustomer
   {
-    'hxlzbffs': {
-      'ar': 'Posted On:',
-      'en': '',
-    },
     'vsaeov29': {
       'ar': 'Welcome',
       'en': '',
@@ -348,68 +175,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // SEARCH_Jobs
-  {
-    '3egeehjp': {
-      'ar': 'Search jobs...',
-      'en': '',
-    },
-    'qw8giei3': {
-      'ar': 'Posted On:',
-      'en': '',
-    },
-    'h5bwicn9': {
-      'ar': ' ',
-      'en': '',
-    },
-  },
   // MAINSavedJobs
   {
     'a211198f': {
-      'ar': 'My Jobs',
-      'en': '',
+      'ar': 'الأعمال الخاصة بي',
+      'en': 'My Jobs',
     },
     'ilubw22a': {
-      'ar': 'Applied',
-      'en': '',
+      'ar': 'الوظائف المقبولة',
+      'en': 'Accepted jobs',
     },
     'dsq91la7': {
-      'ar': 'Posted',
-      'en': '',
+      'ar': 'الأعمال المنجزة ',
+      'en': 'Work Performed',
     },
     'h25lrbj2': {
       'ar': ' ',
       'en': '',
     },
   },
-  // MAIN_Candidates
+  // MAIN_ProfileCustomer
   {
-    '22f2lnxe': {
-      'ar': 'Candidates',
-      'en': '',
-    },
-    'fo50w9kj': {
-      'ar': ' ',
-      'en': '',
-    },
-  },
-  // SEARCH_Candidates
-  {
-    'ncs8gl9m': {
-      'ar': 'Search candidates...',
-      'en': '',
-    },
-    '22f61etz': {
-      'ar': ' ',
-      'en': '',
-    },
-  },
-  // MAIN_MyProfile
-  {
-    'd4ei0voa': {
-      'ar': 'Add Job',
-      'en': '',
-    },
     'b9l8kjh7': {
       'ar': 'Switch to Dark Mode',
       'en': '',
@@ -419,28 +205,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'qlu9nvs1': {
-      'ar': 'Short Description',
-      'en': '',
+      'ar': 'السيرة الذاتية',
+      'en': 'Bio',
     },
     'jjmx2lgp': {
-      'ar': 'Experience Level',
-      'en': '',
+      'ar': 'الايميل ',
+      'en': 'Email',
     },
     'wpg67ray': {
-      'ar': 'Company',
-      'en': '',
+      'ar': 'المدينة',
+      'en': 'City',
     },
-    '7dx2fv4u': {
-      'ar': 'Salary',
-      'en': '',
-    },
-    'stqo2ism': {
-      'ar': 'Company Profile',
-      'en': '',
-    },
-    'prqswg7t': {
-      'ar': 'Work Experience',
-      'en': '',
+    '1vh063zf': {
+      'ar': 'العنوان',
+      'en': 'Address',
     },
   },
   // MAIN_Chat
@@ -450,7 +228,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'fr498yys': {
-      'ar': 'Chats',
+      'ar': '',
       'en': '',
     },
   },
@@ -463,83 +241,17 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // JobPost_DetailsActual
   {
-    'bg3qn8cc': {
-      'ar': 'Description',
-      'en': '',
-    },
-    'qcgryrl0': {
-      'ar': 'Requirements',
-      'en': '',
-    },
-    'zkgs1nv6': {
-      'ar': 'Preferred Skills & Expertise',
-      'en': '',
-    },
     'uenl02ze': {
-      'ar': 'APPLY NOW',
-      'en': '',
+      'ar': 'قدم للعمل ',
+      'en': 'Apply to work',
     },
     'lfzwt8x5': {
       'ar': 'Home',
       'en': '',
     },
   },
-  // JobPost_submitApplication
-  {
-    '8at6kuin': {
-      'ar': 'Submit your prosoal below',
-      'en': '',
-    },
-    'v2rixpmp': {
-      'ar': 'Start typing here....',
-      'en': '',
-    },
-    'm5j8txd7': {
-      'ar': 'Add Attachments',
-      'en': '',
-    },
-    '6lye9riv': {
-      'ar': 'Submit Application',
-      'en': '',
-    },
-    't5pxlbic': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // JobPost_Applied
-  {
-    'yc9zvkkj': {
-      'ar': 'Description',
-      'en': '',
-    },
-    'wnal7u1s': {
-      'ar': 'Requirements',
-      'en': '',
-    },
-    '76cy1d8m': {
-      'ar': 'Preferred Skills & Expertise',
-      'en': '',
-    },
-    'dzipi1m7': {
-      'ar': 'Your proposal',
-      'en': '',
-    },
-    'yibdxnjq': {
-      'ar': 'Submitted',
-      'en': '',
-    },
-    'kx1677tg': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // JobPost_MyJob_Applicants
   {
-    'c9stbgea': {
-      'ar': 'Description',
-      'en': '',
-    },
     'wma7kda9': {
       'ar': 'Your Applicants',
       'en': '',
@@ -573,85 +285,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'xz7h2g8g': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // editProfile
-  {
-    '4pai4xr4': {
-      'ar': 'Edit Profile',
-      'en': '',
-    },
-    'yanyvndh': {
-      'ar': 'Full Name',
-      'en': '',
-    },
-    '1ejz2wdg': {
-      'ar': 'Postition Title',
-      'en': '',
-    },
-    '4zfowfio': {
-      'ar': 'Email',
-      'en': '',
-    },
-    'jfk984fo': {
-      'ar': 'Short Description',
-      'en': '',
-    },
-    'le45mzl5': {
-      'ar': 'Experience Level',
-      'en': '',
-    },
-    'r9v6scp8': {
-      'ar': '< 6 Months',
-      'en': '',
-    },
-    'gnflp2zd': {
-      'ar': '6m - 1y',
-      'en': '',
-    },
-    'baiz0hn0': {
-      'ar': '1y - 3y',
-      'en': '',
-    },
-    '7o83b55n': {
-      'ar': '+3 years',
-      'en': '',
-    },
-    'w8bcz6je': {
-      'ar': '+5 years',
-      'en': '',
-    },
-    'ijdbw94t': {
-      'ar': '+8 years',
-      'en': '',
-    },
-    '5436q785': {
-      'ar': 'Experience LEvel',
-      'en': '',
-    },
-    '5zsud1z2': {
-      'ar': 'Company',
-      'en': '',
-    },
-    '0ppfcbrs': {
-      'ar': 'Salary',
-      'en': '',
-    },
-    'i83330fp': {
-      'ar': '\$40,000',
-      'en': '',
-    },
-    '1o8i3mmm': {
-      'ar': '\$150,000+',
-      'en': '',
-    },
-    '1l6u81jm': {
-      'ar': 'Save Changes',
-      'en': '',
-    },
-    '9hr4xb2e': {
       'ar': 'Home',
       'en': '',
     },
@@ -711,7 +344,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Short Description',
     },
     'pdxr2c8v': {
-      'ar': 'السعر المقدر لإتمام العمل ',
+      'ar': 'السعر المقدر لإتمام العمل:',
       'en': 'Estimated price to complete the work',
     },
     'n60zdd0q': {
@@ -735,151 +368,39 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // candidateDetails
+  // CraftsmanDetails
   {
-    'eglsg18o': {
-      'ar': 'Short Description',
-      'en': '',
+    'z0so3i7x': {
+      'ar': 'السيرة الذاتية',
+      'en': 'Bio',
     },
-    'zu8yah2m': {
-      'ar': 'Experience Level',
-      'en': '',
+    'lo9pu30k': {
+      'ar': 'الايميل ',
+      'en': 'Email',
     },
-    'dthb7o9n': {
-      'ar': 'Company',
-      'en': '',
+    'ehpn914b': {
+      'ar': 'المدينة',
+      'en': 'City',
     },
-    'rnzvi6y6': {
-      'ar': 'Salary',
-      'en': '',
+    '2jpip3s6': {
+      'ar': 'العنوان',
+      'en': 'Address',
+    },
+    'd9z7pjs8': {
+      'ar': 'اقبل او ارفض  هذا الحرفي للعمل ',
+      'en': 'Accept or reject this craftsman\n to work',
+    },
+    'dr2wx4gg': {
+      'ar': 'قبول',
+      'en': 'Accept',
+    },
+    'tk8wzu1t': {
+      'ar': 'رفض',
+      'en': ' Reject',
     },
     'p0z90s05': {
-      'ar': 'Message Candidate',
-      'en': '',
-    },
-  },
-  // JobPost_Details
-  {
-    'f3rwmlwq': {
-      'ar': 'Job Post',
-      'en': '',
-    },
-    '2kyy06uy': {
-      'ar': 'SpaceX',
-      'en': '',
-    },
-    'd0qvqnft': {
-      'ar': '\$60k-\$70k',
-      'en': '',
-    },
-    '2hu13qn7': {
-      'ar': 'Description',
-      'en': '',
-    },
-    '0q083037': {
-      'ar':
-          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-      'en': '',
-    },
-    '8g6i2608': {
-      'ar': 'Requirements',
-      'en': '',
-    },
-    'otamshvi': {
-      'ar':
-          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-      'en': '',
-    },
-    '1nkaoo51': {
-      'ar': 'Preferred Skills & Expertise',
-      'en': '',
-    },
-    'vkk1elhl': {
-      'ar':
-          'I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.\n I think from our end -- a run through of test accounts, staging environment access. And a deep dive into current layout, reasoning, exploration. I have read through the document Alexis sent over and have been doing some preliminary research for the & after we get some test accounts we can complete the audit which I have put the deadline as next Tuesday as I feel that will be helpful to be thorough in our audit.',
-      'en': '',
-    },
-    'kv1tom07': {
-      'ar': 'Submit Application',
-      'en': '',
-    },
-    'qee3cfca': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // companyDetails
-  {
-    'ynar0mch': {
-      'ar': 'Description',
-      'en': '',
-    },
-    'uwmiqvi3': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // HomePage_OLD
-  {
-    'rgafq5jb': {
-      'ar': 'Welcome',
-      'en': '',
-    },
-    '5z5qixic': {
-      'ar': 'Featured Jobs',
-      'en': '',
-    },
-    '7ajh8oxq': {
-      'ar': 'Job Title',
-      'en': '',
-    },
-    'tbusjhyo': {
-      'ar': '[Company Name]',
-      'en': '',
-    },
-    'gekzp668': {
-      'ar': '\$50k-\$60k',
-      'en': '',
-    },
-    'j33y9uds': {
-      'ar': 'Job Title',
-      'en': '',
-    },
-    'rr8eqgds': {
-      'ar': '[Company Name]',
-      'en': '',
-    },
-    'n6iqlh2a': {
-      'ar': '\$50k-\$60k',
-      'en': '',
-    },
-    's0auqm42': {
-      'ar': 'Job Title',
-      'en': '',
-    },
-    '86205zki': {
-      'ar': '[Company Name]',
-      'en': '',
-    },
-    '4oadu0pl': {
-      'ar': '\$50k-\$60k',
-      'en': '',
-    },
-    'rbiei8sg': {
-      'ar': 'Search Jobs',
-      'en': '',
-    },
-    '738fppcz': {
-      'ar': 'Search jobs here...',
-      'en': '',
-    },
-    's9apykbc': {
-      'ar': 'Posted On:',
-      'en': '',
-    },
-    'rcx42jql': {
-      'ar': ' ',
-      'en': '',
+      'ar': 'مراسلة الحرفي ',
+      'en': 'Message Craftsman',
     },
   },
   // SplashScreen
@@ -933,25 +454,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // verifyMobile
-  {
-    'khq0cada': {
-      'ar': 'صفحة التاكيد',
-      'en': 'Verify',
-    },
-    '7e3eh0cm': {
-      'ar': 'رقم غير صحيح ؟',
-      'en': 'Wrong number?',
-    },
-    'dmnfvu22': {
-      'ar': 'الاستمرار',
-      'en': 'Continue',
-    },
-    'djir74pf': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
   // select_your_role
   {
     'pmafikm6': {
@@ -971,37 +473,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'customer',
     },
     'e4f99234': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // PhoneSignUp
-  {
-    'j9emr6b2': {
-      'ar': 'تسجيل الدخول',
-      'en': 'Sign Up',
-    },
-    'kke6hb3o': {
-      'ar': 'الرجاء ادخال رقم الهاتف لاكمال مرحلة انشاء الحساب ',
-      'en': 'Please enter your phone number to complete the sign up stage ',
-    },
-    'kp9xikjy': {
-      'ar': '+970',
-      'en': '+970',
-    },
-    'va9y9lhi': {
-      'ar': 'أدخل رقم هاتفك ...',
-      'en': 'Enter your phone number...',
-    },
-    'iavulzck': {
-      'ar': 'أوافق على جميع التعليمات \nبناءً على البرنامج',
-      'en': 'I agree to all instructions based on \nthe program',
-    },
-    'tgvhc3xt': {
-      'ar': 'الاستمرار',
-      'en': 'Continue',
-    },
-    'mz87zvdr': {
       'ar': 'Home',
       'en': '',
     },
@@ -1198,7 +669,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '79zxv3dw': {
-      'ar': 'تحميل مستندات الشهادة أو الصور التي تفيد بأنه\n صاحب المهنة',
+      'ar': 'تحميل مستندات الشهادة أو الصور التي\n تفيد بأنه صاحب المهنة',
       'en':
           'Upload certificate documents or photos \nthat he is the owner of the profession\n',
     },
@@ -1283,10 +754,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'اسم الأب',
       'en': 'Name of the Father',
     },
-    'rsi2n32x': {
-      'ar': '',
-      'en': '',
-    },
     'yqytkyhi': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
@@ -1294,10 +761,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'bnt6ewuu': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
-    },
-    'lah638as': {
-      'ar': '',
-      'en': '',
     },
     'hb8rtx80': {
       'ar': 'اسم العائلة',
@@ -1312,9 +775,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'continue',
     },
     'gs7vuc2w': {
-      'ar': ' الخطوة الاولى ',
-      'en':
-          '\nStep 1  of  4 : upload photo  for you , \nusername and date of birth',
+      'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
+      'en': 'Step 1  of  3 : upload photo  for you , \nand your full name',
     },
     '213vtn7i': {
       'ar': 'Home',
@@ -1323,6 +785,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameAddresStepTwo_customar
   {
+    '16050tsr': {
+      'ar': 'الرجاء اختيار المدينة',
+      'en': 'Please select the city',
+    },
     '1zx12yeb': {
       'ar': 'Option 1',
       'en': '',
@@ -1335,13 +801,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Search for an item...',
       'en': '',
     },
-    '3esq324e': {
-      'ar': 'Please select...',
-      'en': '',
-    },
-    'h79z13lh': {
-      'ar': 'Search for an item...',
-      'en': '',
+    'iu90dri3': {
+      'ar': 'الرجاء ادخال العنوان',
+      'en': 'Please eneter your address',
     },
     'c284o8hu': {
       'ar': '',
@@ -1355,17 +817,13 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'Option 1',
       'en': '',
     },
-    'dfzg7bo9': {
-      'ar': 'البنود وشروط الخدمة',
-      'en': 'Terms and Conditions of Service',
-    },
     'xja3aoj4': {
       'ar': 'التالي',
       'en': 'continue',
     },
     'z43x8hh9': {
-      'ar': ' الخطوة الثانية ',
-      'en': '\nStep 2  of  4 :Upload address and place of residence',
+      'ar': 'الخطوة الثانية : اختيار المدينة وعنوان السكن ',
+      'en': 'Second Step: Choose the city and address of residence',
     },
     'gmrwmaa6': {
       'ar': 'Home',
@@ -1375,16 +833,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // createAccountThreeCustomer
   {
     '3jh43xqn': {
-      'ar': 'إنشاء حساب جديد',
-      'en': 'Create a new account',
-    },
-    'vvgw7imm': {
-      'ar': 'الاسم الاول',
-      'en': 'first name',
-    },
-    'd2kssmam': {
-      'ar': 'اسم العائلة ',
-      'en': 'last name',
+      'ar': 'ادخل رقم هويتك ',
+      'en': 'Enter your ID number',
     },
     'lgniwzlx': {
       'ar': 'رقم الهوية',
@@ -1438,38 +888,254 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
-  // WorkExpBottomSheet
+  // MAIN_ProfileCraftsman
   {
-    'dnp3ulb4': {
+    'ekzd45vf': {
+      'ar': 'Switch to Dark Mode',
+      'en': '',
+    },
+    'wg6vumnn': {
+      'ar': 'Switch to Light Mode',
+      'en': '',
+    },
+    'wsh65opx': {
+      'ar': 'السيرة الذاتية',
+      'en': 'Bio',
+    },
+    '8rj9agv3': {
+      'ar': 'الايميل ',
+      'en': 'Email',
+    },
+    'jbftr24m': {
+      'ar': 'المدينة',
+      'en': 'City',
+    },
+    'lc33a0yu': {
+      'ar': 'العنوان',
+      'en': 'Address',
+    },
+    'xog3be4m': {
       'ar': 'Work Experience',
       'en': '',
     },
-    'e6n92fzq': {
-      'ar': 'Add Credentials below.',
+  },
+  // MAIN_ChatCraftsman
+  {
+    'rhzabwn4': {
+      'ar': 'Messages',
       'en': '',
     },
-    'xz14f82k': {
-      'ar': 'Position Title',
+    's4lcz0un': {
+      'ar': 'Chats',
       'en': '',
     },
-    '7qbyrkuy': {
+  },
+  // MAINSavedJobsCraftsman
+  {
+    'ncsx1r98': {
+      'ar': 'وظائفي ',
+      'en': 'My Jobs',
+    },
+    'kq9pvrta': {
+      'ar': 'الوظائف المقبولة ',
+      'en': 'Accepted Jobs',
+    },
+    'pgqoqm4o': {
+      'ar': 'قيد الانتظار',
+      'en': 'Pending',
+    },
+    '9qojjn9o': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // MAINHomeCraftsman
+  {
+    'kgnt2lxe': {
+      'ar': ' ',
+      'en': '',
+    },
+  },
+  // editProfileForCustomer
+  {
+    'jpfut087': {
+      'ar': 'Edit Profile',
+      'en': '',
+    },
+    'u3mjqy5a': {
+      'ar': 'Full Name',
+      'en': '',
+    },
+    'clzntux0': {
+      'ar': 'Postition Title',
+      'en': '',
+    },
+    'h1uozzfx': {
+      'ar': 'Email',
+      'en': '',
+    },
+    'z0zwlc21': {
+      'ar': 'Short Description',
+      'en': '',
+    },
+    '0ydbx1hy': {
+      'ar': 'Experience Level',
+      'en': '',
+    },
+    'ixi1stxz': {
+      'ar': '< 6 Months',
+      'en': '',
+    },
+    'iipim0v4': {
+      'ar': '6m - 1y',
+      'en': '',
+    },
+    'ngqyz33e': {
+      'ar': '1y - 3y',
+      'en': '',
+    },
+    'hr297c0t': {
+      'ar': '+3 years',
+      'en': '',
+    },
+    '46tymedl': {
+      'ar': '+5 years',
+      'en': '',
+    },
+    'gx726o2n': {
+      'ar': '+8 years',
+      'en': '',
+    },
+    'l8u3sybu': {
+      'ar': 'Experience LEvel',
+      'en': '',
+    },
+    '6rp8qdhq': {
       'ar': 'Company',
       'en': '',
     },
-    '70fjjqtv': {
-      'ar': 'Start Date',
+    'bec95w9t': {
+      'ar': 'Salary',
       'en': '',
     },
-    't16bvu82': {
-      'ar': 'End Date',
+    'v3zgqvcm': {
+      'ar': '\$40,000',
       'en': '',
     },
-    'lclkf38l': {
-      'ar': 'What did you do here?',
+    'eh7227zx': {
+      'ar': '\$150,000+',
       'en': '',
     },
-    'ekvc2gv5': {
-      'ar': 'Save Work Experience',
+    'wle8rhwa': {
+      'ar': 'Save Changes',
+      'en': '',
+    },
+    'ziudyova': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // editProfileCraftsman
+  {
+    'en6e0w1p': {
+      'ar': 'تعديل الملف الشخصي',
+      'en': 'Modify profile',
+    },
+    'r3ql3q26': {
+      'ar': '',
+      'en': '',
+    },
+    'xnoa3u0m': {
+      'ar': 'السيرة الذاتية',
+      'en': 'Bio',
+    },
+    '8kuhhcuu': {
+      'ar': 'العنوان',
+      'en': 'ِAddress',
+    },
+    'kayofzwf': {
+      'ar': 'رام الله ',
+      'en': 'Ramlallah',
+    },
+    're3rbj6p': {
+      'ar': 'الأردن',
+      'en': 'Jordan',
+    },
+    'ui1uh09m': {
+      'ar': ' الرجاء الاختيار المدينة',
+      'en': 'Please select in the city',
+    },
+    'y0w64wdj': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'n4j767op': {
+      'ar': 'نوع العمل:',
+      'en': 'type of employment:',
+    },
+    'suygf57l': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // CustomarEditProfile
+  {
+    '5qjrl1nq': {
+      'ar': 'تعديل الملف الشخصي',
+      'en': 'Modify profile',
+    },
+    'yupz19ue': {
+      'ar': '',
+      'en': '',
+    },
+    '1vj1gzu0': {
+      'ar': 'العنوان',
+      'en': 'ِAddress',
+    },
+    '37akoyco': {
+      'ar': 'رام الله ',
+      'en': 'Ramlallah',
+    },
+    '99g20peh': {
+      'ar': 'الأردن',
+      'en': 'Jordan',
+    },
+    'p58bl21n': {
+      'ar': ' الرجاء الاختيار المدينة',
+      'en': 'Please select in the city',
+    },
+    '58lnoqhs': {
+      'ar': 'Search for an item...',
+      'en': '',
+    },
+    'kexsyo01': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_Accepted
+  {
+    'q27y733t': {
+      'ar': 'الوظيفة مقبولة',
+      'en': 'Job Accepted',
+    },
+    'wu0v2e7a': {
+      'ar': 'حالة الوظيفة:  مقبولة',
+      'en': 'Job Status :  Accepted',
+    },
+    'i3id9au7': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
+  // JobPost_Pending
+  {
+    'lfugsafo': {
+      'ar': 'حالة الوظيفة:  قيد الانتظار',
+      'en': 'Job status: Pending',
+    },
+    '6fs9fy85': {
+      'ar': 'Home',
       'en': '',
     },
   },
@@ -1506,6 +1172,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'f879az5k': {
       'ar': 'Save Work Experience',
       'en': '',
+    },
+  },
+  // ChangPhoto
+  {
+    'l6dk16qo': {
+      'ar': 'غير الصوره',
+      'en': 'Change Photo',
+    },
+    'fd6dgg7o': {
+      'ar':
+          'قم بتحميل صورة جديدة أدناه لتغيير الصورة الرمزية التي يراها الآخرون.',
+      'en':
+          'Upload a new photo below in order to change your avatar seen by others.',
+    },
+    'z5lpfu29': {
+      'ar': 'تحميل الصور',
+      'en': 'Upload Image',
+    },
+    'enb8vg4e': {
+      'ar': 'حفظ التغييرات',
+      'en': 'Save Changes',
     },
   },
   // Miscellaneous

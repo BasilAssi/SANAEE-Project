@@ -1,53 +1,25 @@
 {
   "indexes": [
     {
-      "collectionGroup": "workHistory",
+      "collectionGroup": "Applications",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "user",
+          "fieldPath": "status",
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "endDate",
-          "order": "ASCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "workHistory",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "user",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "endDate",
+          "fieldPath": "timeApplied",
           "order": "DESCENDING"
         }
       ]
     },
     {
-      "collectionGroup": "appliedJobs",
+      "collectionGroup": "post",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "userApplied",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "appliedTime",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
-      "collectionGroup": "jobPosts",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "postedBy",
+          "fieldPath": "createdBy",
           "order": "ASCENDING"
         },
         {
@@ -71,15 +43,15 @@
       ]
     },
     {
-      "collectionGroup": "appliedJobs",
+      "collectionGroup": "workHistory",
       "queryScope": "COLLECTION",
       "fields": [
         {
-          "fieldPath": "jobApplied",
+          "fieldPath": "user",
           "order": "ASCENDING"
         },
         {
-          "fieldPath": "appliedTime",
+          "fieldPath": "endDate",
           "order": "DESCENDING"
         }
       ]

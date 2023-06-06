@@ -1,14 +1,16 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/customer_home_pages/create_job_customer/create_job_customer_widget.dart';
+import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/job_post_details_actual/job_post_details_actual_widget.dart';
+import '/pages/job_post_my_job_applicants/job_post_my_job_applicants_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
+import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 import 'm_a_i_n_home_customer_model.dart';
 export 'm_a_i_n_home_customer_model.dart';
@@ -118,8 +120,9 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
           Expanded(
             child: StreamBuilder<List<PostRecord>>(
               stream: queryPostRecord(
-                queryBuilder: (postRecord) =>
-                    postRecord.orderBy('timeCreated', descending: true),
+                queryBuilder: (postRecord) => postRecord
+                    .where('createdBy', isEqualTo: currentUserReference)
+                    .orderBy('timeCreated', descending: true),
               ),
               builder: (context, snapshot) {
                 // Customize what your widget looks like when it's loading.
@@ -153,7 +156,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                         listViewPostRecordList[listViewIndex];
                     return Padding(
                       padding:
-                          EdgeInsetsDirectional.fromSTEB(8.0, 12.0, 8.0, 0.0),
+                          EdgeInsetsDirectional.fromSTEB(12.0, 12.0, 12.0, 0.0),
                       child: StreamBuilder<PostRecord>(
                         stream: PostRecord.getDocument(
                             listViewPostRecord.reference),
@@ -182,7 +185,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      JobPostDetailsActualWidget(),
+                                      JobPostMyJobApplicantsWidget(),
                                 ),
                               );
                             },
@@ -212,46 +215,6 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                       child: Row(
                                         mainAxisSize: MainAxisSize.max,
                                         children: [
-                                          Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 0.0, 8.0, 0.0),
-                                            child: Card(
-                                              clipBehavior:
-                                                  Clip.antiAliasWithSaveLayer,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .tertiary,
-                                              elevation: 2.0,
-                                              shape: RoundedRectangleBorder(
-                                                borderRadius:
-                                                    BorderRadius.circular(8.0),
-                                              ),
-                                              child: Align(
-                                                alignment: AlignmentDirectional(
-                                                    0.0, 0.1),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          2.0, 2.0, 2.0, 2.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) =>
-                                                        ClipRRect(
-                                                      borderRadius:
-                                                          BorderRadius.circular(
-                                                              8.0),
-                                                      child: Image.network(
-                                                        currentUserPhoto,
-                                                        width: 32.0,
-                                                        height: 32.0,
-                                                        fit: BoxFit.cover,
-                                                      ),
-                                                    ),
-                                                  ),
-                                                ),
-                                              ),
-                                            ),
-                                          ),
                                           Expanded(
                                             child: Padding(
                                               padding: EdgeInsetsDirectional
@@ -264,14 +227,14 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                     CrossAxisAlignment.start,
                                                 children: [
                                                   Text(
-                                                    '${FFAppState().firstName}  ${FFAppState().familyName}',
+                                                    listViewPostRecord.jobType,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium,
                                                   ),
                                                   Text(
                                                     jobPostCardPostRecord
-                                                        .jobTitle!,
+                                                        .jobTitle,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .titleMedium,
@@ -280,25 +243,276 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                     mainAxisSize:
                                                         MainAxisSize.max,
                                                     children: [
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    0.0,
-                                                                    4.0,
-                                                                    0.0),
-                                                        child: Text(
-                                                          jobPostCardPostRecord
-                                                              .jobType!,
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodySmall,
+                                                      Expanded(
+                                                        child: Padding(
+                                                          padding:
+                                                              EdgeInsetsDirectional
+                                                                  .fromSTEB(
+                                                                      12.0,
+                                                                      8.0,
+                                                                      12.0,
+                                                                      4.0),
+                                                          child: AutoSizeText(
+                                                            jobPostCardPostRecord
+                                                                .shortDescription
+                                                                .maybeHandleOverflow(
+                                                              maxChars: 120,
+                                                              replacement: '…',
+                                                            ),
+                                                            textAlign:
+                                                                TextAlign.start,
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodySmall,
+                                                          ),
                                                         ),
                                                       ),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    mainAxisAlignment:
+                                                        MainAxisAlignment
+                                                            .spaceEvenly,
+                                                    children: [
+                                                      Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: [
+                                                          if (jobPostCardPostRecord
+                                                                  .image1 ==
+                                                              ' ')
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image1,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
+                                                                            .image1,
+                                                                        useHeroAnimation:
+                                                                            true,
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image1,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
+                                                                          .image1,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (jobPostCardPostRecord
+                                                                  .image2 ==
+                                                              ' ')
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image2,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
+                                                                            .image2,
+                                                                        useHeroAnimation:
+                                                                            true,
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image2,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
+                                                                          .image2,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                          if (jobPostCardPostRecord
+                                                                  .image3 ==
+                                                              ' ')
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image3,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
+                                                                            .image3,
+                                                                        useHeroAnimation:
+                                                                            true,
+                                                                      ),
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image3,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
+                                                                          .image3,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
+                                                                  ),
+                                                                ),
+                                                              ),
+                                                            ),
+                                                        ],
+                                                      ),
+                                                    ],
+                                                  ),
+                                                  Row(
+                                                    mainAxisSize:
+                                                        MainAxisSize.max,
+                                                    children: [
                                                       Text(
                                                         listViewPostRecord
-                                                            .estimatedPrice!,
+                                                            .estimatedPrice,
                                                         style:
                                                             FlutterFlowTheme.of(
                                                                     context)
@@ -320,83 +534,39 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                               ),
                                             ),
                                           ),
-                                          Icon(
-                                            Icons.chevron_right_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .grayIcon400,
-                                            size: 24.0,
-                                          ),
                                         ],
                                       ),
                                     ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
-                                        Expanded(
-                                          child: Padding(
-                                            padding:
-                                                EdgeInsetsDirectional.fromSTEB(
-                                                    12.0, 8.0, 12.0, 4.0),
-                                            child: AutoSizeText(
-                                              jobPostCardPostRecord
-                                                  .shortDescription!
-                                                  .maybeHandleOverflow(
-                                                maxChars: 120,
-                                                replacement: '…',
-                                              ),
-                                              textAlign: TextAlign.start,
-                                              style:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodySmall,
-                                            ),
+                                        Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  12.0, 8.0, 12.0, 8.0),
+                                          child: Text(
+                                            'Created on : ${jobPostCardPostRecord.timeCreated?.toString()}',
+                                            style: FlutterFlowTheme.of(context)
+                                                .bodyMedium,
                                           ),
                                         ),
                                       ],
                                     ),
                                     Row(
                                       mainAxisSize: MainAxisSize.max,
+                                      mainAxisAlignment:
+                                          MainAxisAlignment.start,
                                       children: [
                                         Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  12.0, 0.0, 12.0, 12.0),
-                                          child: AutoSizeText(
-                                            FFLocalizations.of(context).getText(
-                                              'hxlzbffs' /* Posted On: */,
-                                            ),
-                                            textAlign: TextAlign.start,
+                                                  12.0, 8.0, 12.0, 8.0),
+                                          child: Text(
+                                            'Location: ${jobPostCardPostRecord.jobLocation}',
                                             style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .grayIcon400,
-                                                ),
-                                          ),
-                                        ),
-                                        Padding(
-                                          padding:
-                                              EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 12.0, 12.0),
-                                          child: AutoSizeText(
-                                            dateTimeFormat(
-                                              'relative',
-                                              jobPostCardPostRecord
-                                                  .timeCreated!,
-                                              locale:
-                                                  FFLocalizations.of(context)
-                                                      .languageCode,
-                                            ),
-                                            textAlign: TextAlign.start,
-                                            style: FlutterFlowTheme.of(context)
-                                                .bodySmall
-                                                .override(
-                                                  fontFamily: 'Outfit',
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .grayIcon,
-                                                ),
+                                                .bodyMedium,
                                           ),
                                         ),
                                       ],

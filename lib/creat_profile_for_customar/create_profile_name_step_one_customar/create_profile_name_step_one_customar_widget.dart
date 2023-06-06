@@ -47,10 +47,12 @@ class _CreateProfileNameStepOneCustomarWidgetState
       );
     });
 
-    _model.textFieldFirstnameController ??= TextEditingController(
-        text: valueOrDefault(currentUserDocument?.firstNameCustomer, ''));
-    _model.textFieldFatherNameController ??= TextEditingController();
-    _model.textFieldGrandfatherNameController ??= TextEditingController();
+    _model.textFieldFirstnameController ??=
+        TextEditingController(text: FFAppState().firstName);
+    _model.textFieldFatherNameController ??=
+        TextEditingController(text: FFAppState().NameOfTheFather);
+    _model.textFieldGrandfatherNameController ??=
+        TextEditingController(text: FFAppState().GrandFatherName);
     _model.textFieldfamilyNameController ??= TextEditingController(
         text: valueOrDefault(currentUserDocument?.lastNameCustomer, ''));
   }
@@ -110,6 +112,7 @@ class _CreateProfileNameStepOneCustomarWidgetState
           ),
         ),
         body: SafeArea(
+          top: true,
           child: Stack(
             children: [
               SingleChildScrollView(
@@ -214,75 +217,71 @@ class _CreateProfileNameStepOneCustomarWidgetState
                             Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 0.0, 0.0, 20.0),
-                              child: AuthUserStreamWidget(
-                                builder: (context) => TextFormField(
-                                  controller:
-                                      _model.textFieldFirstnameController,
-                                  autofocus: true,
-                                  obscureText: false,
-                                  decoration: InputDecoration(
-                                    isDense: true,
-                                    labelText:
-                                        FFLocalizations.of(context).getText(
-                                      'hmgve1rn' /* الاسم الاول */,
-                                    ),
-                                    labelStyle: FlutterFlowTheme.of(context)
-                                        .titleMedium,
-                                    hintText:
-                                        FFLocalizations.of(context).getText(
-                                      'id8z0n1r' /* الاسم الاول */,
-                                    ),
-                                    hintStyle: FlutterFlowTheme.of(context)
-                                        .titleMedium
-                                        .override(
-                                          fontFamily: 'Outfit',
-                                          color: Color(0xFF57636C),
-                                        ),
-                                    enabledBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: FlutterFlowTheme.of(context)
-                                            .primary,
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    focusedBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    errorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    focusedErrorBorder: OutlineInputBorder(
-                                      borderSide: BorderSide(
-                                        color: Color(0x00000000),
-                                        width: 1.0,
-                                      ),
-                                      borderRadius: BorderRadius.circular(16.0),
-                                    ),
-                                    prefixIcon: Icon(
-                                      Icons.person,
-                                      color: Color(0xFFF8B500),
-                                      size: 40.0,
-                                    ),
+                              child: TextFormField(
+                                controller: _model.textFieldFirstnameController,
+                                autofocus: true,
+                                obscureText: false,
+                                decoration: InputDecoration(
+                                  isDense: true,
+                                  labelText:
+                                      FFLocalizations.of(context).getText(
+                                    'hmgve1rn' /* الاسم الاول */,
                                   ),
-                                  style: FlutterFlowTheme.of(context)
-                                      .bodyMedium
+                                  labelStyle:
+                                      FlutterFlowTheme.of(context).titleMedium,
+                                  hintText: FFLocalizations.of(context).getText(
+                                    'id8z0n1r' /* الاسم الاول */,
+                                  ),
+                                  hintStyle: FlutterFlowTheme.of(context)
+                                      .titleMedium
                                       .override(
                                         fontFamily: 'Outfit',
-                                        fontSize: 20.0,
+                                        color: Color(0xFF57636C),
                                       ),
-                                  validator: _model
-                                      .textFieldFirstnameControllerValidator
-                                      .asValidator(context),
+                                  enabledBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color:
+                                          FlutterFlowTheme.of(context).primary,
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  focusedBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  errorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  focusedErrorBorder: OutlineInputBorder(
+                                    borderSide: BorderSide(
+                                      color: Color(0x00000000),
+                                      width: 1.0,
+                                    ),
+                                    borderRadius: BorderRadius.circular(16.0),
+                                  ),
+                                  prefixIcon: Icon(
+                                    Icons.person,
+                                    color: Color(0xFFF8B500),
+                                    size: 40.0,
+                                  ),
                                 ),
+                                style: FlutterFlowTheme.of(context)
+                                    .bodyMedium
+                                    .override(
+                                      fontFamily: 'Outfit',
+                                      fontSize: 20.0,
+                                    ),
+                                validator: _model
+                                    .textFieldFirstnameControllerValidator
+                                    .asValidator(context),
                               ),
                             ),
                             Padding(
@@ -497,6 +496,16 @@ class _CreateProfileNameStepOneCustomarWidgetState
                             ),
                             FFButtonWidget(
                               onPressed: () async {
+                                setState(() {
+                                  FFAppState().firstName =
+                                      _model.textFieldFirstnameController.text;
+                                  FFAppState().NameOfTheFather =
+                                      _model.textFieldFatherNameController.text;
+                                  FFAppState().GrandFatherName = _model
+                                      .textFieldGrandfatherNameController.text;
+                                  FFAppState().familyName =
+                                      _model.textFieldfamilyNameController.text;
+                                });
                                 await Navigator.push(
                                   context,
                                   MaterialPageRoute(
@@ -533,10 +542,10 @@ class _CreateProfileNameStepOneCustomarWidgetState
                 ),
               ),
               Padding(
-                padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
+                padding: EdgeInsetsDirectional.fromSTEB(50.0, 5.0, 0.0, 0.0),
                 child: GradientText(
                   FFLocalizations.of(context).getText(
-                    'gs7vuc2w' /*  الخطوة الاولى  */,
+                    'gs7vuc2w' /* الخطوة 1 من 3:  قم بتحميل صورة... */,
                   ),
                   textAlign: TextAlign.center,
                   style: FlutterFlowTheme.of(context).bodyMedium.override(

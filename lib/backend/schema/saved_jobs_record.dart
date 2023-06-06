@@ -1,47 +1,64 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'saved_jobs_record.g.dart';
+class SavedJobsRecord extends FirestoreRecord {
+  SavedJobsRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class SavedJobsRecord
-    implements Built<SavedJobsRecord, SavedJobsRecordBuilder> {
-  static Serializer<SavedJobsRecord> get serializer =>
-      _$savedJobsRecordSerializer;
+  // "jobSaved" field.
+  DocumentReference? _jobSaved;
+  DocumentReference? get jobSaved => _jobSaved;
+  bool hasJobSaved() => _jobSaved != null;
 
-  DocumentReference? get jobSaved;
+  // "user" field.
+  DocumentReference? _user;
+  DocumentReference? get user => _user;
+  bool hasUser() => _user != null;
 
-  DocumentReference? get user;
+  // "savedTime" field.
+  DateTime? _savedTime;
+  DateTime? get savedTime => _savedTime;
+  bool hasSavedTime() => _savedTime != null;
 
-  DateTime? get savedTime;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(SavedJobsRecordBuilder builder) => builder;
+  void _initializeFields() {
+    _jobSaved = snapshotData['jobSaved'] as DocumentReference?;
+    _user = snapshotData['user'] as DocumentReference?;
+    _savedTime = snapshotData['savedTime'] as DateTime?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('savedJobs');
 
-  static Stream<SavedJobsRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<SavedJobsRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => SavedJobsRecord.fromSnapshot(s));
 
-  static Future<SavedJobsRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<SavedJobsRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => SavedJobsRecord.fromSnapshot(s));
 
-  SavedJobsRecord._();
-  factory SavedJobsRecord([void Function(SavedJobsRecordBuilder) updates]) =
-      _$SavedJobsRecord;
+  static SavedJobsRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      SavedJobsRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static SavedJobsRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      SavedJobsRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'SavedJobsRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createSavedJobsRecordData({
@@ -49,14 +66,12 @@ Map<String, dynamic> createSavedJobsRecordData({
   DocumentReference? user,
   DateTime? savedTime,
 }) {
-  final firestoreData = serializers.toFirestore(
-    SavedJobsRecord.serializer,
-    SavedJobsRecord(
-      (s) => s
-        ..jobSaved = jobSaved
-        ..user = user
-        ..savedTime = savedTime,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'jobSaved': jobSaved,
+      'user': user,
+      'savedTime': savedTime,
+    }.withoutNulls,
   );
 
   return firestoreData;

@@ -92,6 +92,7 @@ class _CreateProfileBioStepFourWidgetState
           ),
         ),
         body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
             child: Stack(
@@ -125,7 +126,7 @@ class _CreateProfileBioStepFourWidgetState
                                             .override(
                                               fontFamily: 'Outfit',
                                               color: Color(0xFFF8B500),
-                                              fontSize: 24.0,
+                                              fontSize: 20.0,
                                               fontWeight: FontWeight.w600,
                                               fontStyle: FontStyle.italic,
                                             ),
@@ -142,7 +143,7 @@ class _CreateProfileBioStepFourWidgetState
                                         MainAxisAlignment.spaceEvenly,
                                     children: [
                                       Container(
-                                        width: 350.0,
+                                        width: 320.0,
                                         height: 300.0,
                                         decoration: BoxDecoration(
                                           color: FlutterFlowTheme.of(context)
@@ -151,7 +152,7 @@ class _CreateProfileBioStepFourWidgetState
                                               BorderRadius.circular(16.0),
                                         ),
                                         child: Container(
-                                          width: 350.0,
+                                          width: 320.0,
                                           child: Autocomplete<String>(
                                             initialValue: TextEditingValue(
                                                 text:

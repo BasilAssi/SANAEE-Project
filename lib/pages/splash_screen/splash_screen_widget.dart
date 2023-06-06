@@ -103,6 +103,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
           key: scaffoldKey,
           backgroundColor: Color(0xFF384C54),
           body: SafeArea(
+            top: true,
             child: InkWell(
               splashColor: Colors.transparent,
               focusColor: Colors.transparent,

@@ -90,7 +90,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
           },
         ),
         title: Text(
-          widget.chatUser!.displayName!,
+          widget.chatUser!.displayName,
           style: FlutterFlowTheme.of(context).titleSmall.override(
                 fontFamily: 'Outfit',
                 color: FlutterFlowTheme.of(context).tertiary,
@@ -101,6 +101,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
         elevation: 1.0,
       ),
       body: SafeArea(
+        top: true,
         child: StreamBuilder<FFChatInfo>(
           stream: FFChatManager.instance.getChatInfo(
             otherUserRecord: widget.chatUser,

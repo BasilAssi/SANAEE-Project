@@ -1,62 +1,88 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'applied_jobs_record.g.dart';
+class AppliedJobsRecord extends FirestoreRecord {
+  AppliedJobsRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class AppliedJobsRecord
-    implements Built<AppliedJobsRecord, AppliedJobsRecordBuilder> {
-  static Serializer<AppliedJobsRecord> get serializer =>
-      _$appliedJobsRecordSerializer;
+  // "jobApplied" field.
+  DocumentReference? _jobApplied;
+  DocumentReference? get jobApplied => _jobApplied;
+  bool hasJobApplied() => _jobApplied != null;
 
-  DocumentReference? get jobApplied;
+  // "userApplied" field.
+  DocumentReference? _userApplied;
+  DocumentReference? get userApplied => _userApplied;
+  bool hasUserApplied() => _userApplied != null;
 
-  DocumentReference? get userApplied;
+  // "appliedTime" field.
+  DateTime? _appliedTime;
+  DateTime? get appliedTime => _appliedTime;
+  bool hasAppliedTime() => _appliedTime != null;
 
-  DateTime? get appliedTime;
+  // "coverLetter" field.
+  String? _coverLetter;
+  String get coverLetter => _coverLetter ?? '';
+  bool hasCoverLetter() => _coverLetter != null;
 
-  String? get coverLetter;
+  // "image_1" field.
+  String? _image1;
+  String get image1 => _image1 ?? '';
+  bool hasImage1() => _image1 != null;
 
-  @BuiltValueField(wireName: 'image_1')
-  String? get image1;
+  // "image_2" field.
+  String? _image2;
+  String get image2 => _image2 ?? '';
+  bool hasImage2() => _image2 != null;
 
-  @BuiltValueField(wireName: 'image_2')
-  String? get image2;
+  // "image_3" field.
+  String? _image3;
+  String get image3 => _image3 ?? '';
+  bool hasImage3() => _image3 != null;
 
-  @BuiltValueField(wireName: 'image_3')
-  String? get image3;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(AppliedJobsRecordBuilder builder) => builder
-    ..coverLetter = ''
-    ..image1 = ''
-    ..image2 = ''
-    ..image3 = '';
+  void _initializeFields() {
+    _jobApplied = snapshotData['jobApplied'] as DocumentReference?;
+    _userApplied = snapshotData['userApplied'] as DocumentReference?;
+    _appliedTime = snapshotData['appliedTime'] as DateTime?;
+    _coverLetter = snapshotData['coverLetter'] as String?;
+    _image1 = snapshotData['image_1'] as String?;
+    _image2 = snapshotData['image_2'] as String?;
+    _image3 = snapshotData['image_3'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('appliedJobs');
 
-  static Stream<AppliedJobsRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<AppliedJobsRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => AppliedJobsRecord.fromSnapshot(s));
 
-  static Future<AppliedJobsRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<AppliedJobsRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => AppliedJobsRecord.fromSnapshot(s));
 
-  AppliedJobsRecord._();
-  factory AppliedJobsRecord([void Function(AppliedJobsRecordBuilder) updates]) =
-      _$AppliedJobsRecord;
+  static AppliedJobsRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      AppliedJobsRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static AppliedJobsRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      AppliedJobsRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'AppliedJobsRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createAppliedJobsRecordData({
@@ -68,18 +94,16 @@ Map<String, dynamic> createAppliedJobsRecordData({
   String? image2,
   String? image3,
 }) {
-  final firestoreData = serializers.toFirestore(
-    AppliedJobsRecord.serializer,
-    AppliedJobsRecord(
-      (a) => a
-        ..jobApplied = jobApplied
-        ..userApplied = userApplied
-        ..appliedTime = appliedTime
-        ..coverLetter = coverLetter
-        ..image1 = image1
-        ..image2 = image2
-        ..image3 = image3,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'jobApplied': jobApplied,
+      'userApplied': userApplied,
+      'appliedTime': appliedTime,
+      'coverLetter': coverLetter,
+      'image_1': image1,
+      'image_2': image2,
+      'image_3': image3,
+    }.withoutNulls,
   );
 
   return firestoreData;

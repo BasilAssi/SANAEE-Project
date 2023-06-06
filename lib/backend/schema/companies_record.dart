@@ -1,66 +1,100 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'companies_record.g.dart';
+class CompaniesRecord extends FirestoreRecord {
+  CompaniesRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class CompaniesRecord
-    implements Built<CompaniesRecord, CompaniesRecordBuilder> {
-  static Serializer<CompaniesRecord> get serializer =>
-      _$companiesRecordSerializer;
+  // "companyName" field.
+  String? _companyName;
+  String get companyName => _companyName ?? '';
+  bool hasCompanyName() => _companyName != null;
 
-  String? get companyName;
+  // "companyLogo" field.
+  String? _companyLogo;
+  String get companyLogo => _companyLogo ?? '';
+  bool hasCompanyLogo() => _companyLogo != null;
 
-  String? get companyLogo;
+  // "companyHero" field.
+  String? _companyHero;
+  String get companyHero => _companyHero ?? '';
+  bool hasCompanyHero() => _companyHero != null;
 
-  String? get companyHero;
+  // "companyDescription" field.
+  String? _companyDescription;
+  String get companyDescription => _companyDescription ?? '';
+  bool hasCompanyDescription() => _companyDescription != null;
 
-  String? get companyDescription;
+  // "companyLocation" field.
+  LatLng? _companyLocation;
+  LatLng? get companyLocation => _companyLocation;
+  bool hasCompanyLocation() => _companyLocation != null;
 
-  LatLng? get companyLocation;
+  // "companyCity" field.
+  String? _companyCity;
+  String get companyCity => _companyCity ?? '';
+  bool hasCompanyCity() => _companyCity != null;
 
-  String? get companyCity;
+  // "companyWebSite" field.
+  String? _companyWebSite;
+  String get companyWebSite => _companyWebSite ?? '';
+  bool hasCompanyWebSite() => _companyWebSite != null;
 
-  String? get companyWebSite;
+  // "companySize" field.
+  String? _companySize;
+  String get companySize => _companySize ?? '';
+  bool hasCompanySize() => _companySize != null;
 
-  String? get companySize;
+  // "employees" field.
+  DocumentReference? _employees;
+  DocumentReference? get employees => _employees;
+  bool hasEmployees() => _employees != null;
 
-  DocumentReference? get employees;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(CompaniesRecordBuilder builder) => builder
-    ..companyName = ''
-    ..companyLogo = ''
-    ..companyHero = ''
-    ..companyDescription = ''
-    ..companyCity = ''
-    ..companyWebSite = ''
-    ..companySize = '';
+  void _initializeFields() {
+    _companyName = snapshotData['companyName'] as String?;
+    _companyLogo = snapshotData['companyLogo'] as String?;
+    _companyHero = snapshotData['companyHero'] as String?;
+    _companyDescription = snapshotData['companyDescription'] as String?;
+    _companyLocation = snapshotData['companyLocation'] as LatLng?;
+    _companyCity = snapshotData['companyCity'] as String?;
+    _companyWebSite = snapshotData['companyWebSite'] as String?;
+    _companySize = snapshotData['companySize'] as String?;
+    _employees = snapshotData['employees'] as DocumentReference?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('companies');
 
-  static Stream<CompaniesRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<CompaniesRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => CompaniesRecord.fromSnapshot(s));
 
-  static Future<CompaniesRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<CompaniesRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => CompaniesRecord.fromSnapshot(s));
 
-  CompaniesRecord._();
-  factory CompaniesRecord([void Function(CompaniesRecordBuilder) updates]) =
-      _$CompaniesRecord;
+  static CompaniesRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      CompaniesRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static CompaniesRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      CompaniesRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'CompaniesRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createCompaniesRecordData({
@@ -74,20 +108,18 @@ Map<String, dynamic> createCompaniesRecordData({
   String? companySize,
   DocumentReference? employees,
 }) {
-  final firestoreData = serializers.toFirestore(
-    CompaniesRecord.serializer,
-    CompaniesRecord(
-      (c) => c
-        ..companyName = companyName
-        ..companyLogo = companyLogo
-        ..companyHero = companyHero
-        ..companyDescription = companyDescription
-        ..companyLocation = companyLocation
-        ..companyCity = companyCity
-        ..companyWebSite = companyWebSite
-        ..companySize = companySize
-        ..employees = employees,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'companyName': companyName,
+      'companyLogo': companyLogo,
+      'companyHero': companyHero,
+      'companyDescription': companyDescription,
+      'companyLocation': companyLocation,
+      'companyCity': companyCity,
+      'companyWebSite': companyWebSite,
+      'companySize': companySize,
+      'employees': employees,
+    }.withoutNulls,
   );
 
   return firestoreData;
