@@ -60,3 +60,4 @@ export '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart'
     show JobPostAcceptedWidget;
 export '/craftsman_home_pages/job_post_pending/job_post_pending_widget.dart'
     show JobPostPendingWidget;
+export '/success_page/success_page_widget.dart' show SuccessPageWidget;
