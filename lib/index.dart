@@ -1,53 +1,30 @@
 // Export pages
 export '/authentication/login/login_widget.dart' show LoginWidget;
-export '/pages/create_profile/create_profile_widget.dart'
-    show CreateProfileWidget;
-export '/pages/company_profile/company_profile_widget.dart'
-    show CompanyProfileWidget;
-export '/pages/add_work_exp/add_work_exp_widget.dart' show AddWorkExpWidget;
 export '/customer_home_pages/m_a_i_n_home_customer/m_a_i_n_home_customer_widget.dart'
     show MAINHomeCustomerWidget;
-export '/pages/s_e_a_r_c_h_jobs/s_e_a_r_c_h_jobs_widget.dart'
-    show SEARCHJobsWidget;
-export '/pages/m_a_i_n_saved_jobs/m_a_i_n_saved_jobs_widget.dart'
+export '/customer_home_pages/m_a_i_n_saved_jobs/m_a_i_n_saved_jobs_widget.dart'
     show MAINSavedJobsWidget;
-export '/pages/m_a_i_n_candidates/m_a_i_n_candidates_widget.dart'
-    show MAINCandidatesWidget;
-export '/pages/s_e_a_r_c_h_candidates/s_e_a_r_c_h_candidates_widget.dart'
-    show SEARCHCandidatesWidget;
-export '/pages/m_a_i_n_my_profile/m_a_i_n_my_profile_widget.dart'
-    show MAINMyProfileWidget;
-export '/pages/m_a_i_n_chat/m_a_i_n_chat_widget.dart' show MAINChatWidget;
+export '/customer_home_pages/m_a_i_n_profile_customer/m_a_i_n_profile_customer_widget.dart'
+    show MAINProfileCustomerWidget;
+export '/customer_home_pages/m_a_i_n_chat/m_a_i_n_chat_widget.dart'
+    show MAINChatWidget;
 export '/pages/d_e_t_a_i_l_s_chat/d_e_t_a_i_l_s_chat_widget.dart'
     show DETAILSChatWidget;
 export '/pages/job_post_details_actual/job_post_details_actual_widget.dart'
     show JobPostDetailsActualWidget;
-export '/pages/job_post_submit_application/job_post_submit_application_widget.dart'
-    show JobPostSubmitApplicationWidget;
-export '/pages/job_post_applied/job_post_applied_widget.dart'
-    show JobPostAppliedWidget;
 export '/pages/job_post_my_job_applicants/job_post_my_job_applicants_widget.dart'
     show JobPostMyJobApplicantsWidget;
 export '/authentication/forgot_password/forgot_password_widget.dart'
     show ForgotPasswordWidget;
-export '/pages/edit_profile/edit_profile_widget.dart' show EditProfileWidget;
 export '/customer_home_pages/create_job_customer/create_job_customer_widget.dart'
     show CreateJobCustomerWidget;
-export '/pages/candidate_details/candidate_details_widget.dart'
-    show CandidateDetailsWidget;
-export '/pages/job_post_details/job_post_details_widget.dart'
-    show JobPostDetailsWidget;
-export '/pages/company_details/company_details_widget.dart'
-    show CompanyDetailsWidget;
-export '/pages/home_page_o_l_d/home_page_o_l_d_widget.dart'
-    show HomePageOLDWidget;
+export '/pages/craftsman_details/craftsman_details_widget.dart'
+    show CraftsmanDetailsWidget;
 export '/pages/splash_screen/splash_screen_widget.dart' show SplashScreenWidget;
 export '/pages/onboarding_screens/onboarding_screens_widget.dart'
     show OnboardingScreensWidget;
-export '/pages/verify_mobile/verify_mobile_widget.dart' show VerifyMobileWidget;
 export '/pages/select_your_role/select_your_role_widget.dart'
     show SelectYourRoleWidget;
-export '/pages/phone_sign_up/phone_sign_up_widget.dart' show PhoneSignUpWidget;
 export '/authentication/sign_up/sign_up_widget.dart' show SignUpWidget;
 export '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart'
     show CreateProfileNameStepOneWidget;
@@ -65,3 +42,21 @@ export '/creat_profile_for_customar/create_account_three_customer/create_account
     show CreateAccountThreeCustomerWidget;
 export '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart'
     show ReviewCreateProfileCraftmanWidget;
+export '/craftsman_home_pages/m_a_i_n_profile_craftsman/m_a_i_n_profile_craftsman_widget.dart'
+    show MAINProfileCraftsmanWidget;
+export '/craftsman_home_pages/m_a_i_n_chat_craftsman/m_a_i_n_chat_craftsman_widget.dart'
+    show MAINChatCraftsmanWidget;
+export '/craftsman_home_pages/m_a_i_n_saved_jobs_craftsman/m_a_i_n_saved_jobs_craftsman_widget.dart'
+    show MAINSavedJobsCraftsmanWidget;
+export '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart'
+    show MAINHomeCraftsmanWidget;
+export '/creat_profile_for_customar/edit_profile_for_customer/edit_profile_for_customer_widget.dart'
+    show EditProfileForCustomerWidget;
+export '/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart'
+    show EditProfileCraftsmanWidget;
+export '/hunew/customar_edit_profile/customar_edit_profile_widget.dart'
+    show CustomarEditProfileWidget;
+export '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart'
+    show JobPostAcceptedWidget;
+export '/craftsman_home_pages/job_post_pending/job_post_pending_widget.dart'
+    show JobPostPendingWidget;

@@ -3,6 +3,7 @@ import 'package:flutter/gestures.dart';
 import 'package:flutter/material.dart';
 
 import 'package:flutter_localizations/flutter_localizations.dart';
+
 import 'package:firebase_core/firebase_core.dart';
 import 'auth/firebase_auth/firebase_user_provider.dart';
 import 'auth/firebase_auth/auth_util.dart';
@@ -17,6 +18,7 @@ import 'index.dart';
 
 void main() async {
   WidgetsFlutterBinding.ensureInitialized();
+
   await initFirebase();
 
   await FlutterFlowTheme.initialize();
@@ -138,12 +140,12 @@ class _NavBarPageState extends State<NavBarPage> {
   Widget build(BuildContext context) {
     final tabs = {
       'MAINHomeCustomer': MAINHomeCustomerWidget(),
-      'MAINSavedJobs': MAINSavedJobsWidget(),
       'MAIN_Chat': MAINChatWidget(),
-      'MAIN_Candidates': MAINCandidatesWidget(),
-      'MAIN_MyProfile': MAINMyProfileWidget(),
+      'MAIN_ProfileCustomer': MAINProfileCustomerWidget(),
+      'MAINSavedJobs': MAINSavedJobsWidget(),
     };
     final currentIndex = tabs.keys.toList().indexOf(_currentPageName);
+
     return Scaffold(
       body: _currentPage ?? tabs[_currentPageName],
       bottomNavigationBar: BottomNavigationBar(
@@ -161,29 +163,15 @@ class _NavBarPageState extends State<NavBarPage> {
         items: <BottomNavigationBarItem>[
           BottomNavigationBarItem(
             icon: Icon(
-              Icons.work_outline,
-              size: 24.0,
+              Icons.home_outlined,
+              size: 26.0,
             ),
             activeIcon: Icon(
-              Icons.work_outlined,
+              Icons.home,
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
               'taeeoz0g' /*   */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.favorite_border,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.favorite_sharp,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'h25lrbj2' /*   */,
             ),
             tooltip: '',
           ),
@@ -197,21 +185,7 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: FFLocalizations.of(context).getText(
-              'fr498yys' /* Chats */,
-            ),
-            tooltip: '',
-          ),
-          BottomNavigationBarItem(
-            icon: Icon(
-              Icons.group_outlined,
-              size: 24.0,
-            ),
-            activeIcon: Icon(
-              Icons.group,
-              size: 24.0,
-            ),
-            label: FFLocalizations.of(context).getText(
-              'fo50w9kj' /*   */,
+              'fr498yys' /*  */,
             ),
             tooltip: '',
           ),
@@ -225,6 +199,20 @@ class _NavBarPageState extends State<NavBarPage> {
               size: 24.0,
             ),
             label: '',
+            tooltip: '',
+          ),
+          BottomNavigationBarItem(
+            icon: Icon(
+              Icons.work_outline,
+              size: 24.0,
+            ),
+            activeIcon: Icon(
+              Icons.work_outlined,
+              size: 24.0,
+            ),
+            label: FFLocalizations.of(context).getText(
+              'h25lrbj2' /*   */,
+            ),
             tooltip: '',
           )
         ],

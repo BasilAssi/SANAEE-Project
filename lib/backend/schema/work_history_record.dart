@@ -1,59 +1,88 @@
 import 'dart:async';
 
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
+
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'work_history_record.g.dart';
+class WorkHistoryRecord extends FirestoreRecord {
+  WorkHistoryRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class WorkHistoryRecord
-    implements Built<WorkHistoryRecord, WorkHistoryRecordBuilder> {
-  static Serializer<WorkHistoryRecord> get serializer =>
-      _$workHistoryRecordSerializer;
+  // "jobTitle" field.
+  String? _jobTitle;
+  String get jobTitle => _jobTitle ?? '';
+  bool hasJobTitle() => _jobTitle != null;
 
-  String? get jobTitle;
+  // "companyName" field.
+  String? _companyName;
+  String get companyName => _companyName ?? '';
+  bool hasCompanyName() => _companyName != null;
 
-  String? get companyName;
+  // "startDate" field.
+  DateTime? _startDate;
+  DateTime? get startDate => _startDate;
+  bool hasStartDate() => _startDate != null;
 
-  DateTime? get startDate;
+  // "endDate" field.
+  DateTime? _endDate;
+  DateTime? get endDate => _endDate;
+  bool hasEndDate() => _endDate != null;
 
-  DateTime? get endDate;
+  // "jobDescription" field.
+  String? _jobDescription;
+  String get jobDescription => _jobDescription ?? '';
+  bool hasJobDescription() => _jobDescription != null;
 
-  String? get jobDescription;
+  // "user" field.
+  DocumentReference? _user;
+  DocumentReference? get user => _user;
+  bool hasUser() => _user != null;
 
-  DocumentReference? get user;
+  // "companyLogo" field.
+  String? _companyLogo;
+  String get companyLogo => _companyLogo ?? '';
+  bool hasCompanyLogo() => _companyLogo != null;
 
-  String? get companyLogo;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(WorkHistoryRecordBuilder builder) => builder
-    ..jobTitle = ''
-    ..companyName = ''
-    ..jobDescription = ''
-    ..companyLogo = '';
+  void _initializeFields() {
+    _jobTitle = snapshotData['jobTitle'] as String?;
+    _companyName = snapshotData['companyName'] as String?;
+    _startDate = snapshotData['startDate'] as DateTime?;
+    _endDate = snapshotData['endDate'] as DateTime?;
+    _jobDescription = snapshotData['jobDescription'] as String?;
+    _user = snapshotData['user'] as DocumentReference?;
+    _companyLogo = snapshotData['companyLogo'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('workHistory');
 
-  static Stream<WorkHistoryRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<WorkHistoryRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => WorkHistoryRecord.fromSnapshot(s));
 
-  static Future<WorkHistoryRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<WorkHistoryRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => WorkHistoryRecord.fromSnapshot(s));
 
-  WorkHistoryRecord._();
-  factory WorkHistoryRecord([void Function(WorkHistoryRecordBuilder) updates]) =
-      _$WorkHistoryRecord;
+  static WorkHistoryRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      WorkHistoryRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
 
   static WorkHistoryRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      WorkHistoryRecord._(reference, mapFromFirestore(data));
+
+  @override
+  String toString() =>
+      'WorkHistoryRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createWorkHistoryRecordData({
@@ -65,18 +94,16 @@ Map<String, dynamic> createWorkHistoryRecordData({
   DocumentReference? user,
   String? companyLogo,
 }) {
-  final firestoreData = serializers.toFirestore(
-    WorkHistoryRecord.serializer,
-    WorkHistoryRecord(
-      (w) => w
-        ..jobTitle = jobTitle
-        ..companyName = companyName
-        ..startDate = startDate
-        ..endDate = endDate
-        ..jobDescription = jobDescription
-        ..user = user
-        ..companyLogo = companyLogo,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'jobTitle': jobTitle,
+      'companyName': companyName,
+      'startDate': startDate,
+      'endDate': endDate,
+      'jobDescription': jobDescription,
+      'user': user,
+      'companyLogo': companyLogo,
+    }.withoutNulls,
   );
 
   return firestoreData;

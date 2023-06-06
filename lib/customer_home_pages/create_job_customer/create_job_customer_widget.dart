@@ -432,7 +432,22 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                               16.0, 0.0, 0.0, 0.0),
                           child: Text(
                             FFLocalizations.of(context).getText(
-                              'pdxr2c8v' /* السعر المقدر لإتمام العمل  */,
+                              'pdxr2c8v' /* السعر المقدر لإتمام العمل: */,
+                            ),
+                            style: FlutterFlowTheme.of(context).bodyMedium,
+                          ),
+                        ),
+                        Padding(
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              5.0, 0.0, 0.0, 0.0),
+                          child: Text(
+                            valueOrDefault<String>(
+                              formatNumber(
+                                _model.estimatedPrice,
+                                formatType: FormatType.decimal,
+                                decimalType: DecimalType.commaDecimal,
+                              ),
+                              '₪',
                             ),
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
@@ -520,8 +535,10 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
                               allowPhoto: true,
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).tertiary,
                               textColor:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
+                                  FlutterFlowTheme.of(context).primaryText,
                             );
                             if (selectedMedia != null &&
                                 selectedMedia.every((m) => validateFileFormat(
@@ -657,8 +674,10 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
                               allowPhoto: true,
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).tertiary,
                               textColor:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
+                                  FlutterFlowTheme.of(context).primaryText,
                             );
                             if (selectedMedia != null &&
                                 selectedMedia.every((m) => validateFileFormat(
@@ -732,8 +751,10 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                 await selectMediaWithSourceBottomSheet(
                               context: context,
                               allowPhoto: true,
+                              backgroundColor:
+                                  FlutterFlowTheme.of(context).tertiary,
                               textColor:
-                                  FlutterFlowTheme.of(context).primaryBtnText,
+                                  FlutterFlowTheme.of(context).primaryText,
                             );
                             if (selectedMedia != null &&
                                 selectedMedia.every((m) => validateFileFormat(

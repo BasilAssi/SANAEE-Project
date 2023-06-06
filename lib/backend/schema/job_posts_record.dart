@@ -1,100 +1,166 @@
 import 'dart:async';
 
 import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/algolia_manager.dart';
+
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'job_posts_record.g.dart';
+class JobPostsRecord extends FirestoreRecord {
+  JobPostsRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class JobPostsRecord
-    implements Built<JobPostsRecord, JobPostsRecordBuilder> {
-  static Serializer<JobPostsRecord> get serializer =>
-      _$jobPostsRecordSerializer;
+  // "jobName" field.
+  String? _jobName;
+  String get jobName => _jobName ?? '';
+  bool hasJobName() => _jobName != null;
 
-  String? get jobName;
+  // "jobCompany" field.
+  String? _jobCompany;
+  String get jobCompany => _jobCompany ?? '';
+  bool hasJobCompany() => _jobCompany != null;
 
-  String? get jobCompany;
+  // "salary" field.
+  String? _salary;
+  String get salary => _salary ?? '';
+  bool hasSalary() => _salary != null;
 
-  String? get salary;
+  // "jobDescription" field.
+  String? _jobDescription;
+  String get jobDescription => _jobDescription ?? '';
+  bool hasJobDescription() => _jobDescription != null;
 
-  String? get jobDescription;
+  // "timeCreated" field.
+  DateTime? _timeCreated;
+  DateTime? get timeCreated => _timeCreated;
+  bool hasTimeCreated() => _timeCreated != null;
 
-  DateTime? get timeCreated;
+  // "jobLocation" field.
+  LatLng? _jobLocation;
+  LatLng? get jobLocation => _jobLocation;
+  bool hasJobLocation() => _jobLocation != null;
 
-  LatLng? get jobLocation;
+  // "postedBy" field.
+  DocumentReference? _postedBy;
+  DocumentReference? get postedBy => _postedBy;
+  bool hasPostedBy() => _postedBy != null;
 
-  DocumentReference? get postedBy;
+  // "likedPost" field.
+  bool? _likedPost;
+  bool get likedPost => _likedPost ?? false;
+  bool hasLikedPost() => _likedPost != null;
 
-  bool? get likedPost;
+  // "jobRequirements" field.
+  String? _jobRequirements;
+  String get jobRequirements => _jobRequirements ?? '';
+  bool hasJobRequirements() => _jobRequirements != null;
 
-  String? get jobRequirements;
+  // "jobPreferredSkills" field.
+  String? _jobPreferredSkills;
+  String get jobPreferredSkills => _jobPreferredSkills ?? '';
+  bool hasJobPreferredSkills() => _jobPreferredSkills != null;
 
-  String? get jobPreferredSkills;
+  // "companyLogo" field.
+  String? _companyLogo;
+  String get companyLogo => _companyLogo ?? '';
+  bool hasCompanyLogo() => _companyLogo != null;
 
-  String? get companyLogo;
+  // "photoHero" field.
+  String? _photoHero;
+  String get photoHero => _photoHero ?? '';
+  bool hasPhotoHero() => _photoHero != null;
 
-  String? get photoHero;
+  // "myJob" field.
+  bool? _myJob;
+  bool get myJob => _myJob ?? false;
+  bool hasMyJob() => _myJob != null;
 
-  bool? get myJob;
+  // "positionTitle" field.
+  String? _positionTitle;
+  String get positionTitle => _positionTitle ?? '';
+  bool hasPositionTitle() => _positionTitle != null;
 
-  String? get positionTitle;
+  // "experienceLevel" field.
+  String? _experienceLevel;
+  String get experienceLevel => _experienceLevel ?? '';
+  bool hasExperienceLevel() => _experienceLevel != null;
 
-  String? get experienceLevel;
-
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
-
-  static void _initializeBuilder(JobPostsRecordBuilder builder) => builder
-    ..jobName = ''
-    ..jobCompany = ''
-    ..salary = ''
-    ..jobDescription = ''
-    ..likedPost = false
-    ..jobRequirements = ''
-    ..jobPreferredSkills = ''
-    ..companyLogo = ''
-    ..photoHero = ''
-    ..myJob = false
-    ..positionTitle = ''
-    ..experienceLevel = '';
+  void _initializeFields() {
+    _jobName = snapshotData['jobName'] as String?;
+    _jobCompany = snapshotData['jobCompany'] as String?;
+    _salary = snapshotData['salary'] as String?;
+    _jobDescription = snapshotData['jobDescription'] as String?;
+    _timeCreated = snapshotData['timeCreated'] as DateTime?;
+    _jobLocation = snapshotData['jobLocation'] as LatLng?;
+    _postedBy = snapshotData['postedBy'] as DocumentReference?;
+    _likedPost = snapshotData['likedPost'] as bool?;
+    _jobRequirements = snapshotData['jobRequirements'] as String?;
+    _jobPreferredSkills = snapshotData['jobPreferredSkills'] as String?;
+    _companyLogo = snapshotData['companyLogo'] as String?;
+    _photoHero = snapshotData['photoHero'] as String?;
+    _myJob = snapshotData['myJob'] as bool?;
+    _positionTitle = snapshotData['positionTitle'] as String?;
+    _experienceLevel = snapshotData['experienceLevel'] as String?;
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('jobPosts');
 
-  static Stream<JobPostsRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<JobPostsRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => JobPostsRecord.fromSnapshot(s));
 
-  static Future<JobPostsRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<JobPostsRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => JobPostsRecord.fromSnapshot(s));
+
+  static JobPostsRecord fromSnapshot(DocumentSnapshot snapshot) =>
+      JobPostsRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
+
+  static JobPostsRecord getDocumentFromData(
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      JobPostsRecord._(reference, mapFromFirestore(data));
 
   static JobPostsRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
-      JobPostsRecord(
-        (c) => c
-          ..jobName = snapshot.data['jobName']
-          ..jobCompany = snapshot.data['jobCompany']
-          ..salary = snapshot.data['salary']
-          ..jobDescription = snapshot.data['jobDescription']
-          ..timeCreated = safeGet(() =>
-              DateTime.fromMillisecondsSinceEpoch(snapshot.data['timeCreated']))
-          ..jobLocation = safeGet(() => LatLng(
-                snapshot.data['_geoloc']['lat'],
-                snapshot.data['_geoloc']['lng'],
-              ))
-          ..postedBy = safeGet(() => toRef(snapshot.data['postedBy']))
-          ..likedPost = snapshot.data['likedPost']
-          ..jobRequirements = snapshot.data['jobRequirements']
-          ..jobPreferredSkills = snapshot.data['jobPreferredSkills']
-          ..companyLogo = snapshot.data['companyLogo']
-          ..photoHero = snapshot.data['photoHero']
-          ..myJob = snapshot.data['myJob']
-          ..positionTitle = snapshot.data['positionTitle']
-          ..experienceLevel = snapshot.data['experienceLevel']
-          ..ffRef = JobPostsRecord.collection.doc(snapshot.objectID),
+      JobPostsRecord.getDocumentFromData(
+        {
+          'jobName': snapshot.data['jobName'],
+          'jobCompany': snapshot.data['jobCompany'],
+          'salary': snapshot.data['salary'],
+          'jobDescription': snapshot.data['jobDescription'],
+          'timeCreated': safeGet(
+            () => DateTime.fromMillisecondsSinceEpoch(
+                snapshot.data['timeCreated']),
+          ),
+          'jobLocation': safeGet(
+            () => LatLng(
+              snapshot.data['_geoloc']['lat'],
+              snapshot.data['_geoloc']['lng'],
+            ),
+          ),
+          'postedBy': safeGet(
+            () => toRef(snapshot.data['postedBy']),
+          ),
+          'likedPost': snapshot.data['likedPost'],
+          'jobRequirements': snapshot.data['jobRequirements'],
+          'jobPreferredSkills': snapshot.data['jobPreferredSkills'],
+          'companyLogo': snapshot.data['companyLogo'],
+          'photoHero': snapshot.data['photoHero'],
+          'myJob': snapshot.data['myJob'],
+          'positionTitle': snapshot.data['positionTitle'],
+          'experienceLevel': snapshot.data['experienceLevel'],
+        },
+        JobPostsRecord.collection.doc(snapshot.objectID),
       );
 
   static Future<List<JobPostsRecord>> search({
@@ -115,14 +181,9 @@ abstract class JobPostsRecord
           )
           .then((r) => r.map(fromAlgolia).toList());
 
-  JobPostsRecord._();
-  factory JobPostsRecord([void Function(JobPostsRecordBuilder) updates]) =
-      _$JobPostsRecord;
-
-  static JobPostsRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+  @override
+  String toString() =>
+      'JobPostsRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createJobPostsRecordData({
@@ -142,26 +203,24 @@ Map<String, dynamic> createJobPostsRecordData({
   String? positionTitle,
   String? experienceLevel,
 }) {
-  final firestoreData = serializers.toFirestore(
-    JobPostsRecord.serializer,
-    JobPostsRecord(
-      (j) => j
-        ..jobName = jobName
-        ..jobCompany = jobCompany
-        ..salary = salary
-        ..jobDescription = jobDescription
-        ..timeCreated = timeCreated
-        ..jobLocation = jobLocation
-        ..postedBy = postedBy
-        ..likedPost = likedPost
-        ..jobRequirements = jobRequirements
-        ..jobPreferredSkills = jobPreferredSkills
-        ..companyLogo = companyLogo
-        ..photoHero = photoHero
-        ..myJob = myJob
-        ..positionTitle = positionTitle
-        ..experienceLevel = experienceLevel,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'jobName': jobName,
+      'jobCompany': jobCompany,
+      'salary': salary,
+      'jobDescription': jobDescription,
+      'timeCreated': timeCreated,
+      'jobLocation': jobLocation,
+      'postedBy': postedBy,
+      'likedPost': likedPost,
+      'jobRequirements': jobRequirements,
+      'jobPreferredSkills': jobPreferredSkills,
+      'companyLogo': companyLogo,
+      'photoHero': photoHero,
+      'myJob': myJob,
+      'positionTitle': positionTitle,
+      'experienceLevel': experienceLevel,
+    }.withoutNulls,
   );
 
   return firestoreData;

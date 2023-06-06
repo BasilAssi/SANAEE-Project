@@ -16,6 +16,10 @@ import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 
 class CreateJobCustomerModel extends FlutterFlowModel {
+  ///  Local state fields for this page.
+
+  double? estimatedPrice = 500.0;
+
   ///  State fields for stateful widgets in this page.
 
   // State field(s) for JobType widget.

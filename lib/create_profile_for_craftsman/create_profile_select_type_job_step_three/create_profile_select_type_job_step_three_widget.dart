@@ -92,6 +92,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
           ),
         ),
         body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
             child: Stack(
@@ -145,7 +146,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       ],
                                       onChanged: (val) => setState(() =>
                                           _model.dropDownDraftTypeValue = val),
-                                      width: 350.0,
+                                      width: 320.0,
                                       height: 50.0,
                                       searchHintTextStyle:
                                           FlutterFlowTheme.of(context)
@@ -191,6 +192,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                     0.0, 15.0, 0.0, 0.0),
                                 child: Row(
                                   mainAxisSize: MainAxisSize.max,
+                                  mainAxisAlignment: MainAxisAlignment.start,
                                   children: [
                                     Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(

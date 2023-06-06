@@ -1,5 +1,5 @@
 import 'package:flutter/material.dart';
-import 'backend/backend.dart';
+import '/backend/backend.dart';
 import 'package:flutter_secure_storage/flutter_secure_storage.dart';
 import 'package:csv/csv.dart';
 import 'package:synchronized/synchronized.dart';
@@ -16,19 +16,40 @@ class FFAppState extends ChangeNotifier {
 
   Future initializePersistedState() async {
     secureStorage = FlutterSecureStorage();
-    _firstName = await secureStorage.getString('ff_firstName') ?? _firstName;
-    _NameOfTheFather =
-        await secureStorage.getString('ff_NameOfTheFather') ?? _NameOfTheFather;
-    _GrandFatherName =
-        await secureStorage.getString('ff_GrandFatherName') ?? _GrandFatherName;
-    _familyName = await secureStorage.getString('ff_familyName') ?? _familyName;
-    _photoURL = await secureStorage.getString('ff_photoURL') ?? _photoURL;
-    _idNumber = await secureStorage.getString('ff_idNumber') ?? _idNumber;
-    _city = await secureStorage.getString('ff_city') ?? _city;
-    _address = await secureStorage.getString('ff_address') ?? _address;
-    _craftType = await secureStorage.getString('ff_craftType') ?? _craftType;
-    _bioCraftsman =
-        await secureStorage.getString('ff_bioCraftsman') ?? _bioCraftsman;
+    await _safeInitAsync(() async {
+      _firstName = await secureStorage.getString('ff_firstName') ?? _firstName;
+    });
+    await _safeInitAsync(() async {
+      _NameOfTheFather = await secureStorage.getString('ff_NameOfTheFather') ??
+          _NameOfTheFather;
+    });
+    await _safeInitAsync(() async {
+      _GrandFatherName = await secureStorage.getString('ff_GrandFatherName') ??
+          _GrandFatherName;
+    });
+    await _safeInitAsync(() async {
+      _familyName =
+          await secureStorage.getString('ff_familyName') ?? _familyName;
+    });
+    await _safeInitAsync(() async {
+      _photoURL = await secureStorage.getString('ff_photoURL') ?? _photoURL;
+    });
+    await _safeInitAsync(() async {
+      _idNumber = await secureStorage.getString('ff_idNumber') ?? _idNumber;
+    });
+    await _safeInitAsync(() async {
+      _city = await secureStorage.getString('ff_city') ?? _city;
+    });
+    await _safeInitAsync(() async {
+      _address = await secureStorage.getString('ff_address') ?? _address;
+    });
+    await _safeInitAsync(() async {
+      _craftType = await secureStorage.getString('ff_craftType') ?? _craftType;
+    });
+    await _safeInitAsync(() async {
+      _bioCraftsman =
+          await secureStorage.getString('ff_bioCraftsman') ?? _bioCraftsman;
+    });
   }
 
   void update(VoidCallback callback) {
@@ -157,6 +178,18 @@ LatLng? _latLngFromString(String? val) {
   final lat = double.parse(split.first);
   final lng = double.parse(split.last);
   return LatLng(lat, lng);
+}
+
+void _safeInit(Function() initializeField) {
+  try {
+    initializeField();
+  } catch (_) {}
+}
+
+Future _safeInitAsync(Function() initializeField) async {
+  try {
+    await initializeField();
+  } catch (_) {}
 }
 
 extension FlutterSecureStorageExtensions on FlutterSecureStorage {

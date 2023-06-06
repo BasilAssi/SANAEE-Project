@@ -1,149 +1,270 @@
 import 'dart:async';
 
 import 'package:from_css_color/from_css_color.dart';
+import '/backend/algolia/algolia_manager.dart';
+
+import '/backend/schema/util/firestore_util.dart';
+import '/backend/schema/util/schema_util.dart';
 
 import 'index.dart';
-import 'serializers.dart';
-import 'package:built_value/built_value.dart';
+import '/flutter_flow/flutter_flow_util.dart';
 
-part 'users_record.g.dart';
+class UsersRecord extends FirestoreRecord {
+  UsersRecord._(
+    DocumentReference reference,
+    Map<String, dynamic> data,
+  ) : super(reference, data) {
+    _initializeFields();
+  }
 
-abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
-  static Serializer<UsersRecord> get serializer => _$usersRecordSerializer;
+  // "display_name" field.
+  String? _displayName;
+  String get displayName => _displayName ?? '';
+  bool hasDisplayName() => _displayName != null;
 
-  @BuiltValueField(wireName: 'display_name')
-  String? get displayName;
+  // "email" field.
+  String? _email;
+  String get email => _email ?? '';
+  bool hasEmail() => _email != null;
 
-  String? get email;
+  // "password" field.
+  String? _password;
+  String get password => _password ?? '';
+  bool hasPassword() => _password != null;
 
-  String? get password;
+  // "created_time" field.
+  DateTime? _createdTime;
+  DateTime? get createdTime => _createdTime;
+  bool hasCreatedTime() => _createdTime != null;
 
-  @BuiltValueField(wireName: 'created_time')
-  DateTime? get createdTime;
+  // "photo_url" field.
+  String? _photoUrl;
+  String get photoUrl => _photoUrl ?? '';
+  bool hasPhotoUrl() => _photoUrl != null;
 
-  @BuiltValueField(wireName: 'photo_url')
-  String? get photoUrl;
+  // "bio" field.
+  String? _bio;
+  String get bio => _bio ?? '';
+  bool hasBio() => _bio != null;
 
-  String? get bio;
+  // "uid" field.
+  String? _uid;
+  String get uid => _uid ?? '';
+  bool hasUid() => _uid != null;
 
-  String? get uid;
+  // "phone_number" field.
+  String? _phoneNumber;
+  String get phoneNumber => _phoneNumber ?? '';
+  bool hasPhoneNumber() => _phoneNumber != null;
 
-  @BuiltValueField(wireName: 'phone_number')
-  String? get phoneNumber;
+  // "likedPosts" field.
+  bool? _likedPosts;
+  bool get likedPosts => _likedPosts ?? false;
+  bool hasLikedPosts() => _likedPosts != null;
 
-  bool? get likedPosts;
+  // "profileType" field.
+  String? _profileType;
+  String get profileType => _profileType ?? '';
+  bool hasProfileType() => _profileType != null;
 
-  String? get profileType;
+  // "salary" field.
+  String? _salary;
+  String get salary => _salary ?? '';
+  bool hasSalary() => _salary != null;
 
-  String? get salary;
+  // "isCustomer" field.
+  bool? _isCustomer;
+  bool get isCustomer => _isCustomer ?? false;
+  bool hasIsCustomer() => _isCustomer != null;
 
-  bool? get isCustomer;
+  // "isCraftsman" field.
+  bool? _isCraftsman;
+  bool get isCraftsman => _isCraftsman ?? false;
+  bool hasIsCraftsman() => _isCraftsman != null;
 
-  bool? get isCraftsman;
+  // "positionTitle" field.
+  String? _positionTitle;
+  String get positionTitle => _positionTitle ?? '';
+  bool hasPositionTitle() => _positionTitle != null;
 
-  String? get positionTitle;
+  // "experienceLevel" field.
+  String? _experienceLevel;
+  String get experienceLevel => _experienceLevel ?? '';
+  bool hasExperienceLevel() => _experienceLevel != null;
 
-  String? get experienceLevel;
+  // "currentCompany" field.
+  String? _currentCompany;
+  String get currentCompany => _currentCompany ?? '';
+  bool hasCurrentCompany() => _currentCompany != null;
 
-  String? get currentCompany;
+  // "edited_time" field.
+  DateTime? _editedTime;
+  DateTime? get editedTime => _editedTime;
+  bool hasEditedTime() => _editedTime != null;
 
-  @BuiltValueField(wireName: 'edited_time')
-  DateTime? get editedTime;
+  // "firstNameCustomer" field.
+  String? _firstNameCustomer;
+  String get firstNameCustomer => _firstNameCustomer ?? '';
+  bool hasFirstNameCustomer() => _firstNameCustomer != null;
 
-  String? get firstNameCustomer;
+  // "lastNameCustomer" field.
+  String? _lastNameCustomer;
+  String get lastNameCustomer => _lastNameCustomer ?? '';
+  bool hasLastNameCustomer() => _lastNameCustomer != null;
 
-  String? get lastNameCustomer;
+  // "firstnameCraftsman" field.
+  String? _firstnameCraftsman;
+  String get firstnameCraftsman => _firstnameCraftsman ?? '';
+  bool hasFirstnameCraftsman() => _firstnameCraftsman != null;
 
-  String? get firstnameCraftsman;
+  // "fatherNameCraftsman" field.
+  String? _fatherNameCraftsman;
+  String get fatherNameCraftsman => _fatherNameCraftsman ?? '';
+  bool hasFatherNameCraftsman() => _fatherNameCraftsman != null;
 
-  String? get fatherNameCraftsman;
+  // "grandFatherNameCraftsman" field.
+  String? _grandFatherNameCraftsman;
+  String get grandFatherNameCraftsman => _grandFatherNameCraftsman ?? '';
+  bool hasGrandFatherNameCraftsman() => _grandFatherNameCraftsman != null;
 
-  String? get grandFatherNameCraftsman;
+  // "familyNameCraftsman" field.
+  String? _familyNameCraftsman;
+  String get familyNameCraftsman => _familyNameCraftsman ?? '';
+  bool hasFamilyNameCraftsman() => _familyNameCraftsman != null;
 
-  String? get familyNameCraftsman;
+  // "city" field.
+  String? _city;
+  String get city => _city ?? '';
+  bool hasCity() => _city != null;
 
-  String? get city;
+  // "address" field.
+  String? _address;
+  String get address => _address ?? '';
+  bool hasAddress() => _address != null;
 
-  String? get address;
+  // "idNumber" field.
+  String? _idNumber;
+  String get idNumber => _idNumber ?? '';
+  bool hasIdNumber() => _idNumber != null;
 
-  String? get idNumber;
+  // "craftType" field.
+  String? _craftType;
+  String get craftType => _craftType ?? '';
+  bool hasCraftType() => _craftType != null;
 
-  String? get craftType;
+  // "fatherNameCustomer" field.
+  String? _fatherNameCustomer;
+  String get fatherNameCustomer => _fatherNameCustomer ?? '';
+  bool hasFatherNameCustomer() => _fatherNameCustomer != null;
 
-  @BuiltValueField(wireName: kDocumentReferenceField)
-  DocumentReference? get ffRef;
-  DocumentReference get reference => ffRef!;
+  // "grandFatherNameCustomer" field.
+  String? _grandFatherNameCustomer;
+  String get grandFatherNameCustomer => _grandFatherNameCustomer ?? '';
+  bool hasGrandFatherNameCustomer() => _grandFatherNameCustomer != null;
 
-  static void _initializeBuilder(UsersRecordBuilder builder) => builder
-    ..displayName = ''
-    ..email = ''
-    ..password = ''
-    ..photoUrl = ''
-    ..bio = ''
-    ..uid = ''
-    ..phoneNumber = ''
-    ..likedPosts = false
-    ..profileType = ''
-    ..salary = ''
-    ..isCustomer = false
-    ..isCraftsman = false
-    ..positionTitle = ''
-    ..experienceLevel = ''
-    ..currentCompany = ''
-    ..firstNameCustomer = ''
-    ..lastNameCustomer = ''
-    ..firstnameCraftsman = ''
-    ..fatherNameCraftsman = ''
-    ..grandFatherNameCraftsman = ''
-    ..familyNameCraftsman = ''
-    ..city = ''
-    ..address = ''
-    ..idNumber = ''
-    ..craftType = '';
+  // "CraftsmanStarRating" field.
+  double? _craftsmanStarRating;
+  double get craftsmanStarRating => _craftsmanStarRating ?? 0.0;
+  bool hasCraftsmanStarRating() => _craftsmanStarRating != null;
+
+  void _initializeFields() {
+    _displayName = snapshotData['display_name'] as String?;
+    _email = snapshotData['email'] as String?;
+    _password = snapshotData['password'] as String?;
+    _createdTime = snapshotData['created_time'] as DateTime?;
+    _photoUrl = snapshotData['photo_url'] as String?;
+    _bio = snapshotData['bio'] as String?;
+    _uid = snapshotData['uid'] as String?;
+    _phoneNumber = snapshotData['phone_number'] as String?;
+    _likedPosts = snapshotData['likedPosts'] as bool?;
+    _profileType = snapshotData['profileType'] as String?;
+    _salary = snapshotData['salary'] as String?;
+    _isCustomer = snapshotData['isCustomer'] as bool?;
+    _isCraftsman = snapshotData['isCraftsman'] as bool?;
+    _positionTitle = snapshotData['positionTitle'] as String?;
+    _experienceLevel = snapshotData['experienceLevel'] as String?;
+    _currentCompany = snapshotData['currentCompany'] as String?;
+    _editedTime = snapshotData['edited_time'] as DateTime?;
+    _firstNameCustomer = snapshotData['firstNameCustomer'] as String?;
+    _lastNameCustomer = snapshotData['lastNameCustomer'] as String?;
+    _firstnameCraftsman = snapshotData['firstnameCraftsman'] as String?;
+    _fatherNameCraftsman = snapshotData['fatherNameCraftsman'] as String?;
+    _grandFatherNameCraftsman =
+        snapshotData['grandFatherNameCraftsman'] as String?;
+    _familyNameCraftsman = snapshotData['familyNameCraftsman'] as String?;
+    _city = snapshotData['city'] as String?;
+    _address = snapshotData['address'] as String?;
+    _idNumber = snapshotData['idNumber'] as String?;
+    _craftType = snapshotData['craftType'] as String?;
+    _fatherNameCustomer = snapshotData['fatherNameCustomer'] as String?;
+    _grandFatherNameCustomer =
+        snapshotData['grandFatherNameCustomer'] as String?;
+    _craftsmanStarRating =
+        castToType<double>(snapshotData['CraftsmanStarRating']);
+  }
 
   static CollectionReference get collection =>
       FirebaseFirestore.instance.collection('users');
 
-  static Stream<UsersRecord> getDocument(DocumentReference ref) => ref
-      .snapshots()
-      .map((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Stream<UsersRecord> getDocument(DocumentReference ref) =>
+      ref.snapshots().map((s) => UsersRecord.fromSnapshot(s));
 
-  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) => ref
-      .get()
-      .then((s) => serializers.deserializeWith(serializer, serializedData(s))!);
+  static Future<UsersRecord> getDocumentOnce(DocumentReference ref) =>
+      ref.get().then((s) => UsersRecord.fromSnapshot(s));
 
-  static UsersRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) => UsersRecord(
-        (c) => c
-          ..displayName = snapshot.data['display_name']
-          ..email = snapshot.data['email']
-          ..password = snapshot.data['password']
-          ..createdTime = safeGet(() => DateTime.fromMillisecondsSinceEpoch(
-              snapshot.data['created_time']))
-          ..photoUrl = snapshot.data['photo_url']
-          ..bio = snapshot.data['bio']
-          ..uid = snapshot.data['uid']
-          ..phoneNumber = snapshot.data['phone_number']
-          ..likedPosts = snapshot.data['likedPosts']
-          ..profileType = snapshot.data['profileType']
-          ..salary = snapshot.data['salary']
-          ..isCustomer = snapshot.data['isCustomer']
-          ..isCraftsman = snapshot.data['isCraftsman']
-          ..positionTitle = snapshot.data['positionTitle']
-          ..experienceLevel = snapshot.data['experienceLevel']
-          ..currentCompany = snapshot.data['currentCompany']
-          ..editedTime = safeGet(() =>
-              DateTime.fromMillisecondsSinceEpoch(snapshot.data['edited_time']))
-          ..firstNameCustomer = snapshot.data['firstNameCustomer']
-          ..lastNameCustomer = snapshot.data['lastNameCustomer']
-          ..firstnameCraftsman = snapshot.data['firstnameCraftsman']
-          ..fatherNameCraftsman = snapshot.data['fatherNameCraftsman']
-          ..grandFatherNameCraftsman = snapshot.data['grandFatherNameCraftsman']
-          ..familyNameCraftsman = snapshot.data['familyNameCraftsman']
-          ..city = snapshot.data['city']
-          ..address = snapshot.data['address']
-          ..idNumber = snapshot.data['idNumber']
-          ..craftType = snapshot.data['craftType']
-          ..ffRef = UsersRecord.collection.doc(snapshot.objectID),
+  static UsersRecord fromSnapshot(DocumentSnapshot snapshot) => UsersRecord._(
+        snapshot.reference,
+        mapFromFirestore(snapshot.data() as Map<String, dynamic>),
+      );
+
+  static UsersRecord getDocumentFromData(
+    Map<String, dynamic> data,
+    DocumentReference reference,
+  ) =>
+      UsersRecord._(reference, mapFromFirestore(data));
+
+  static UsersRecord fromAlgolia(AlgoliaObjectSnapshot snapshot) =>
+      UsersRecord.getDocumentFromData(
+        {
+          'display_name': snapshot.data['display_name'],
+          'email': snapshot.data['email'],
+          'password': snapshot.data['password'],
+          'created_time': safeGet(
+            () => DateTime.fromMillisecondsSinceEpoch(
+                snapshot.data['created_time']),
+          ),
+          'photo_url': snapshot.data['photo_url'],
+          'bio': snapshot.data['bio'],
+          'uid': snapshot.data['uid'],
+          'phone_number': snapshot.data['phone_number'],
+          'likedPosts': snapshot.data['likedPosts'],
+          'profileType': snapshot.data['profileType'],
+          'salary': snapshot.data['salary'],
+          'isCustomer': snapshot.data['isCustomer'],
+          'isCraftsman': snapshot.data['isCraftsman'],
+          'positionTitle': snapshot.data['positionTitle'],
+          'experienceLevel': snapshot.data['experienceLevel'],
+          'currentCompany': snapshot.data['currentCompany'],
+          'edited_time': safeGet(
+            () => DateTime.fromMillisecondsSinceEpoch(
+                snapshot.data['edited_time']),
+          ),
+          'firstNameCustomer': snapshot.data['firstNameCustomer'],
+          'lastNameCustomer': snapshot.data['lastNameCustomer'],
+          'firstnameCraftsman': snapshot.data['firstnameCraftsman'],
+          'fatherNameCraftsman': snapshot.data['fatherNameCraftsman'],
+          'grandFatherNameCraftsman': snapshot.data['grandFatherNameCraftsman'],
+          'familyNameCraftsman': snapshot.data['familyNameCraftsman'],
+          'city': snapshot.data['city'],
+          'address': snapshot.data['address'],
+          'idNumber': snapshot.data['idNumber'],
+          'craftType': snapshot.data['craftType'],
+          'fatherNameCustomer': snapshot.data['fatherNameCustomer'],
+          'grandFatherNameCustomer': snapshot.data['grandFatherNameCustomer'],
+          'CraftsmanStarRating':
+              snapshot.data['CraftsmanStarRating']?.toDouble(),
+        },
+        UsersRecord.collection.doc(snapshot.objectID),
       );
 
   static Future<List<UsersRecord>> search({
@@ -164,14 +285,9 @@ abstract class UsersRecord implements Built<UsersRecord, UsersRecordBuilder> {
           )
           .then((r) => r.map(fromAlgolia).toList());
 
-  UsersRecord._();
-  factory UsersRecord([void Function(UsersRecordBuilder) updates]) =
-      _$UsersRecord;
-
-  static UsersRecord getDocumentFromData(
-          Map<String, dynamic> data, DocumentReference reference) =>
-      serializers.deserializeWith(serializer,
-          {...mapFromFirestore(data), kDocumentReferenceField: reference})!;
+  @override
+  String toString() =>
+      'UsersRecord(reference: ${reference.path}, data: $snapshotData)';
 }
 
 Map<String, dynamic> createUsersRecordData({
@@ -202,39 +318,43 @@ Map<String, dynamic> createUsersRecordData({
   String? address,
   String? idNumber,
   String? craftType,
+  String? fatherNameCustomer,
+  String? grandFatherNameCustomer,
+  double? craftsmanStarRating,
 }) {
-  final firestoreData = serializers.toFirestore(
-    UsersRecord.serializer,
-    UsersRecord(
-      (u) => u
-        ..displayName = displayName
-        ..email = email
-        ..password = password
-        ..createdTime = createdTime
-        ..photoUrl = photoUrl
-        ..bio = bio
-        ..uid = uid
-        ..phoneNumber = phoneNumber
-        ..likedPosts = likedPosts
-        ..profileType = profileType
-        ..salary = salary
-        ..isCustomer = isCustomer
-        ..isCraftsman = isCraftsman
-        ..positionTitle = positionTitle
-        ..experienceLevel = experienceLevel
-        ..currentCompany = currentCompany
-        ..editedTime = editedTime
-        ..firstNameCustomer = firstNameCustomer
-        ..lastNameCustomer = lastNameCustomer
-        ..firstnameCraftsman = firstnameCraftsman
-        ..fatherNameCraftsman = fatherNameCraftsman
-        ..grandFatherNameCraftsman = grandFatherNameCraftsman
-        ..familyNameCraftsman = familyNameCraftsman
-        ..city = city
-        ..address = address
-        ..idNumber = idNumber
-        ..craftType = craftType,
-    ),
+  final firestoreData = mapToFirestore(
+    <String, dynamic>{
+      'display_name': displayName,
+      'email': email,
+      'password': password,
+      'created_time': createdTime,
+      'photo_url': photoUrl,
+      'bio': bio,
+      'uid': uid,
+      'phone_number': phoneNumber,
+      'likedPosts': likedPosts,
+      'profileType': profileType,
+      'salary': salary,
+      'isCustomer': isCustomer,
+      'isCraftsman': isCraftsman,
+      'positionTitle': positionTitle,
+      'experienceLevel': experienceLevel,
+      'currentCompany': currentCompany,
+      'edited_time': editedTime,
+      'firstNameCustomer': firstNameCustomer,
+      'lastNameCustomer': lastNameCustomer,
+      'firstnameCraftsman': firstnameCraftsman,
+      'fatherNameCraftsman': fatherNameCraftsman,
+      'grandFatherNameCraftsman': grandFatherNameCraftsman,
+      'familyNameCraftsman': familyNameCraftsman,
+      'city': city,
+      'address': address,
+      'idNumber': idNumber,
+      'craftType': craftType,
+      'fatherNameCustomer': fatherNameCustomer,
+      'grandFatherNameCustomer': grandFatherNameCustomer,
+      'CraftsmanStarRating': craftsmanStarRating,
+    }.withoutNulls,
   );
 
   return firestoreData;

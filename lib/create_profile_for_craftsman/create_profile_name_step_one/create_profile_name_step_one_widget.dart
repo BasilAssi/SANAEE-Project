@@ -101,6 +101,7 @@ class _CreateProfileNameStepOneWidgetState
           ),
         ),
         body: SafeArea(
+          top: true,
           child: Stack(
             children: [
               SingleChildScrollView(

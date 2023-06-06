@@ -104,6 +104,7 @@ class _ReviewCreateProfileCraftmanWidgetState
           ),
         ),
         body: SafeArea(
+          top: true,
           child: Padding(
             padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 10.0, 0.0),
             child: Stack(
@@ -646,7 +647,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                     '0rf7eqd8' /* إنشاء ملف شخصي */,
                                   ),
                                   options: FFButtonOptions(
-                                    width: 330.0,
+                                    width: 320.0,
                                     height: 40.0,
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         0.0, 0.0, 0.0, 0.0),
