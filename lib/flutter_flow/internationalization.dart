@@ -1139,6 +1139,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
   },
+  // SuccessPage
+  {
+    'p6ximpgw': {
+      'ar': 'مرحبا ',
+      'en': 'Welcome',
+    },
+    'xwyjsd2y': {
+      'ar': 'اهلا بك في صنايعي ',
+      'en': 'Welcome to SANAEE',
+    },
+    'fo2zru40': {
+      'ar': 'Home',
+      'en': '',
+    },
+  },
   // WorkExp_Edit
   {
     '2pw221ef': {
