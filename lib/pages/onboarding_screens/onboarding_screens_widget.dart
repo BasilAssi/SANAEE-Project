@@ -24,12 +24,6 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
   late OnboardingScreensModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
-  int get pageViewCurrentIndex => _model.pageViewController != null &&
-          _model.pageViewController!.hasClients &&
-          _model.pageViewController!.page != null
-      ? _model.pageViewController!.page!.round()
-      : 0;
 
   @override
   void initState() {
@@ -41,7 +35,6 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -50,7 +43,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(

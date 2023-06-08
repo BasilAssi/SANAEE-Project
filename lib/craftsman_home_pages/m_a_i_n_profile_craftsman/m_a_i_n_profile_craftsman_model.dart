@@ -20,8 +20,6 @@ import 'package:provider/provider.dart';
 class MAINProfileCraftsmanModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
-  // State field(s) for RatingBar widget.
-  double? ratingBarValue;
   // Model for NavBarCraftsman component.
   late NavBarCraftsmanModel navBarCraftsmanModel;
 
@@ -34,6 +32,8 @@ class MAINProfileCraftsmanModel extends FlutterFlowModel {
   void dispose() {
     navBarCraftsmanModel.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

@@ -1,6 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/creat_profile_for_customar/create_account_three_customer/create_account_three_customer_widget.dart';
+import '/creat_profile_for_customar/create_profile_name_step_one_customar/create_profile_name_step_one_customar_widget.dart';
 import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -473,7 +474,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                         context,
                                                                         MaterialPageRoute(
                                                                           builder: (context) =>
-                                                                              CreateAccountThreeCustomerWidget(),
+                                                                              CreateProfileNameStepOneCustomarWidget(),
                                                                         ),
                                                                       );
                                                                     },

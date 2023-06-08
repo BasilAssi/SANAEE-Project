@@ -143,14 +143,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'تسجيل الدخول ',
       'en': 'Login',
     },
-    '9ca5005i': {
-      'ar': 'أو',
-      'en': 'or',
-    },
-    'pqy3sthk': {
-      'ar': 'تسجيل الدخول  بواسطة جوجل',
-      'en': 'sign in with Google',
-    },
     'o42qqman': {
       'ar': 'ليس لديك حساب؟',
       'en': 'Don\'t have  an account ?',
@@ -1135,21 +1127,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Job status: Pending',
     },
     '6fs9fy85': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // SuccessPage
-  {
-    'p6ximpgw': {
-      'ar': 'مرحبا ',
-      'en': 'Welcome',
-    },
-    'xwyjsd2y': {
-      'ar': 'اهلا بك في صنايعي ',
-      'en': 'Welcome to SANAEE',
-    },
-    'fo2zru40': {
       'ar': 'Home',
       'en': '',
     },

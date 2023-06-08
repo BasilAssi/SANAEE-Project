@@ -106,6 +106,14 @@ class PostRecord extends FirestoreRecord {
   @override
   String toString() =>
       'PostRecord(reference: ${reference.path}, data: $snapshotData)';
+
+  @override
+  int get hashCode => reference.path.hashCode;
+
+  @override
+  bool operator ==(other) =>
+      other is PostRecord &&
+      reference.path.hashCode == other.reference.path.hashCode;
 }
 
 Map<String, dynamic> createPostRecordData({

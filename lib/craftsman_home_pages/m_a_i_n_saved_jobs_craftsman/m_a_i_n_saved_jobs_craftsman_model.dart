@@ -25,6 +25,8 @@ class MAINSavedJobsCraftsmanModel extends FlutterFlowModel {
     navBarCraftsmanModel.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }

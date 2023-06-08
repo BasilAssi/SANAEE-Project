@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 class EditProfileCraftsmanModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for fullName widget.
   TextEditingController? fullNameController;
   String? Function(BuildContext, String?)? fullNameControllerValidator;
@@ -39,11 +40,14 @@ class EditProfileCraftsmanModel extends FlutterFlowModel {
   }
 
   void dispose() {
+    unfocusNode.dispose();
     fullNameController?.dispose();
     textController2?.dispose();
     textController3?.dispose();
     navBarCraftsmanModel.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

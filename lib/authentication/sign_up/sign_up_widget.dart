@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/authentication/login/login_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -24,7 +25,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   late SignUpModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -40,7 +40,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -49,7 +48,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
@@ -433,8 +432,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               await Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
-                                  builder: (context) =>
-                                      NavBarPage(initialPage: 'SuccessPage'),
+                                  builder: (context) => NavBarPage(
+                                      initialPage: 'MAINHomeCustomer'),
                                 ),
                                 (r) => false,
                               );
@@ -523,8 +522,13 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             style: FlutterFlowTheme.of(context).bodyMedium,
                           ),
                           FFButtonWidget(
-                            onPressed: () {
-                              print('Button pressed ...');
+                            onPressed: () async {
+                              await Navigator.push(
+                                context,
+                                MaterialPageRoute(
+                                  builder: (context) => LoginWidget(),
+                                ),
+                              );
                             },
                             text: FFLocalizations.of(context).getText(
                               'ii7xq6ca' /* Log In */,
@@ -541,8 +545,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                   .titleSmall
                                   .override(
                                     fontFamily: 'Outfit',
-                                    color:
-                                        FlutterFlowTheme.of(context).secondary,
+                                    color: Color(0xFF4850F1),
                                   ),
                               elevation: 0.0,
                               borderSide: BorderSide(
