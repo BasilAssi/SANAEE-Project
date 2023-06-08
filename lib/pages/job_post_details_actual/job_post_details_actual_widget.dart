@@ -150,50 +150,44 @@ class _JobPostDetailsActualWidgetState
                                               child: Column(
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
-                                                  Row(
-                                                    mainAxisSize:
-                                                        MainAxisSize.max,
-                                                    mainAxisAlignment:
-                                                        MainAxisAlignment
-                                                            .spaceEvenly,
-                                                    children: [
-                                                      Align(
-                                                        alignment:
-                                                            AlignmentDirectional(
-                                                                -0.84, 0.88),
-                                                        child: Padding(
-                                                          padding:
-                                                              EdgeInsetsDirectional
-                                                                  .fromSTEB(
-                                                                      2.0,
-                                                                      2.0,
-                                                                      2.0,
-                                                                      2.0),
-                                                          child: ClipRRect(
-                                                            borderRadius:
-                                                                BorderRadius
-                                                                    .circular(
-                                                                        8.0),
-                                                            child:
-                                                                Image.network(
-                                                              customerInfoUsersRecord
-                                                                  .photoUrl,
-                                                              width: 60.0,
-                                                              height: 60.0,
-                                                              fit: BoxFit.cover,
+                                                  Flexible(
+                                                    child: Row(
+                                                      mainAxisSize:
+                                                          MainAxisSize.min,
+                                                      mainAxisAlignment:
+                                                          MainAxisAlignment
+                                                              .spaceAround,
+                                                      children: [
+                                                        Align(
+                                                          alignment:
+                                                              AlignmentDirectional(
+                                                                  -0.84, 0.88),
+                                                          child: Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        0.0,
+                                                                        30.0,
+                                                                        0.0),
+                                                            child: ClipRRect(
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          8.0),
+                                                              child:
+                                                                  Image.network(
+                                                                customerInfoUsersRecord
+                                                                    .photoUrl,
+                                                                width: 60.0,
+                                                                height: 60.0,
+                                                                fit: BoxFit
+                                                                    .cover,
+                                                              ),
                                                             ),
                                                           ),
                                                         ),
-                                                      ),
-                                                      Padding(
-                                                        padding:
-                                                            EdgeInsetsDirectional
-                                                                .fromSTEB(
-                                                                    0.0,
-                                                                    10.0,
-                                                                    0.0,
-                                                                    0.0),
-                                                        child: Text(
+                                                        Text(
                                                           '${customerInfoUsersRecord.firstNameCustomer} ${customerInfoUsersRecord.fatherNameCustomer} ${customerInfoUsersRecord.grandFatherNameCustomer} ${customerInfoUsersRecord.lastNameCustomer}',
                                                           style: FlutterFlowTheme
                                                                   .of(context)
@@ -204,8 +198,8 @@ class _JobPostDetailsActualWidgetState
                                                                 fontSize: 20.0,
                                                               ),
                                                         ),
-                                                      ),
-                                                    ],
+                                                      ],
+                                                    ),
                                                   ),
                                                 ],
                                               ),
@@ -651,66 +645,54 @@ class _JobPostDetailsActualWidgetState
                         ),
                       ),
                     ),
-                    if (valueOrDefault<bool>(
-                      jobPostDetailsActualPostRecord.image1 == ' ',
-                      false,
-                    ))
-                      Align(
-                        alignment: AlignmentDirectional(0.0, 1.0),
-                        child: Container(
-                          width: MediaQuery.of(context).size.width * 1.0,
-                          height: 100.0,
-                          decoration: BoxDecoration(
-                            color: FlutterFlowTheme.of(context).primary,
+                    Align(
+                      alignment: AlignmentDirectional(0.0, 0.7),
+                      child: Padding(
+                        padding: EdgeInsetsDirectional.fromSTEB(
+                            20.0, 0.0, 20.0, 30.0),
+                        child: FFButtonWidget(
+                          onPressed: () async {
+                            final applicationsCreateData =
+                                createApplicationsRecordData(
+                              jobId: widget.posts?.id,
+                              craftsmanId: currentUserReference.id,
+                              status: 'Pending',
+                              craftsmanApplied: currentUserReference,
+                              jobApplied: widget.posts,
+                            );
+                            await ApplicationsRecord.collection
+                                .doc()
+                                .set(applicationsCreateData);
+                          },
+                          text: FFLocalizations.of(context).getText(
+                            'uenl02ze' /* قدم للعمل  */,
                           ),
-                          child: Padding(
+                          options: FFButtonOptions(
+                            width: 330.0,
+                            height: 50.0,
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 0.0, 0.0, 36.0),
-                            child: FFButtonWidget(
-                              onPressed: () async {
-                                final applicationsCreateData =
-                                    createApplicationsRecordData(
-                                  jobId: widget.posts?.id,
-                                  craftsmanId: currentUserReference.id,
-                                  status: 'Pending',
-                                  craftsmanApplied: currentUserReference,
-                                  jobApplied: widget.posts,
-                                );
-                                await ApplicationsRecord.collection
-                                    .doc()
-                                    .set(applicationsCreateData);
-                              },
-                              text: FFLocalizations.of(context).getText(
-                                'uenl02ze' /* قدم للعمل  */,
-                              ),
-                              options: FFButtonOptions(
-                                width: 130.0,
-                                height: 40.0,
-                                padding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                iconPadding: EdgeInsetsDirectional.fromSTEB(
-                                    0.0, 0.0, 0.0, 0.0),
-                                color: FlutterFlowTheme.of(context).primary,
-                                textStyle: FlutterFlowTheme.of(context)
-                                    .titleMedium
-                                    .override(
-                                      fontFamily: 'Outfit',
-                                      color:
-                                          FlutterFlowTheme.of(context).tertiary,
-                                      fontSize: 28.0,
-                                      fontWeight: FontWeight.bold,
-                                    ),
-                                elevation: 0.0,
-                                borderSide: BorderSide(
-                                  color: Colors.transparent,
-                                  width: 1.0,
+                                0.0, 0.0, 0.0, 0.0),
+                            iconPadding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 0.0, 0.0, 0.0),
+                            color: FlutterFlowTheme.of(context).primary,
+                            textStyle: FlutterFlowTheme.of(context)
+                                .titleMedium
+                                .override(
+                                  fontFamily: 'Outfit',
+                                  color: FlutterFlowTheme.of(context).tertiary,
+                                  fontSize: 28.0,
+                                  fontWeight: FontWeight.bold,
                                 ),
-                                borderRadius: BorderRadius.circular(0.0),
-                              ),
+                            elevation: 0.0,
+                            borderSide: BorderSide(
+                              color: Colors.transparent,
+                              width: 1.0,
                             ),
+                            borderRadius: BorderRadius.circular(15.0),
                           ),
                         ),
                       ),
+                    ),
                   ],
                 ),
               ),
