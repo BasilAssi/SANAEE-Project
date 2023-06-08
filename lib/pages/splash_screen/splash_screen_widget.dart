@@ -23,7 +23,6 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
   late SplashScreenModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   final animationsMap = {
     'textOnPageLoadAnimation': AnimationInfo(
@@ -87,7 +86,6 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -96,7 +94,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(

@@ -325,11 +325,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                                   ),
                                                             ),
                                                           ),
-                                                          RatingBar.builder(
-                                                            onRatingUpdate: (newValue) =>
-                                                                setState(() =>
-                                                                    _model.ratingBarValue =
-                                                                        newValue),
+                                                          RatingBarIndicator(
                                                             itemBuilder:
                                                                 (context,
                                                                         index) =>
@@ -342,20 +338,14 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                             ),
                                                             direction:
                                                                 Axis.horizontal,
-                                                            initialRating: _model
-                                                                    .ratingBarValue ??=
-                                                                mAINProfileCraftsmanUsersRecord
-                                                                    .craftsmanStarRating,
+                                                            rating: mAINProfileCraftsmanUsersRecord
+                                                                .craftsmanStarRating,
                                                             unratedColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
                                                                     .accent3,
                                                             itemCount: 5,
                                                             itemSize: 25.0,
-                                                            glowColor:
-                                                                FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .primary,
                                                           ),
                                                         ],
                                                       ),
@@ -1214,17 +1204,21 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
               ),
               Align(
                 alignment: AlignmentDirectional(-0.03, 0.98),
-                child: Container(
-                  width: 340.0,
-                  height: 70.0,
-                  decoration: BoxDecoration(
-                    color: FlutterFlowTheme.of(context).secondaryBackground,
-                    borderRadius: BorderRadius.circular(25.0),
-                  ),
-                  child: wrapWithModel(
-                    model: _model.navBarCraftsmanModel,
-                    updateCallback: () => setState(() {}),
-                    child: NavBarCraftsmanWidget(),
+                child: Padding(
+                  padding:
+                      EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
+                  child: Container(
+                    width: 340.0,
+                    height: 70.0,
+                    decoration: BoxDecoration(
+                      color: FlutterFlowTheme.of(context).secondaryBackground,
+                      borderRadius: BorderRadius.circular(25.0),
+                    ),
+                    child: wrapWithModel(
+                      model: _model.navBarCraftsmanModel,
+                      updateCallback: () => setState(() {}),
+                      child: NavBarCraftsmanWidget(),
+                    ),
                   ),
                 ),
               ),

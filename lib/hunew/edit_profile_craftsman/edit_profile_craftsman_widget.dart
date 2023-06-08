@@ -29,7 +29,6 @@ class _EditProfileCraftsmanWidgetState
   late EditProfileCraftsmanModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -49,7 +48,6 @@ class _EditProfileCraftsmanWidgetState
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -58,7 +56,7 @@ class _EditProfileCraftsmanWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -269,7 +267,8 @@ class _EditProfileCraftsmanWidgetState
                                         builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,

@@ -29,7 +29,6 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
   late CreateProfileNameAddresStepTwoCustomarModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -44,7 +43,6 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -53,7 +51,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -161,26 +159,11 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                             () => _model.dropDownValue = val),
                                         width: 330.0,
                                         height: 50.0,
-                                        searchHintTextStyle: FlutterFlowTheme
-                                                .of(context)
-                                            .bodyLarge
-                                            .override(
-                                              fontFamily:
-                                                  FlutterFlowTheme.of(context)
-                                                      .bodyLargeFamily,
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .secondaryText,
-                                            ),
                                         textStyle: FlutterFlowTheme.of(context)
                                             .bodyMedium,
                                         hintText:
                                             FFLocalizations.of(context).getText(
                                           'w5xi6fg3' /*  الرجاء الاختيار المدينة */,
-                                        ),
-                                        searchHintText:
-                                            FFLocalizations.of(context).getText(
-                                          'ky3aclvj' /* Search for an item... */,
                                         ),
                                         fillColor: FlutterFlowTheme.of(context)
                                             .secondaryBackground,

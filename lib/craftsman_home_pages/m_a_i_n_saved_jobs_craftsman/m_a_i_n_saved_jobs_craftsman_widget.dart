@@ -609,7 +609,7 @@ class _MAINSavedJobsCraftsmanWidgetState
           Align(
             alignment: AlignmentDirectional(-0.02, 0.98),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
               child: Container(
                 width: 340.0,
                 height: 70.0,

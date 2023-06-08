@@ -89,9 +89,8 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                   Expanded(
                     child: StreamBuilder<List<PostRecord>>(
                       stream: queryPostRecord(
-                        queryBuilder: (postRecord) => postRecord
-                            .where('createdBy', isEqualTo: currentUserReference)
-                            .orderBy('timeCreated', descending: true),
+                        queryBuilder: (postRecord) =>
+                            postRecord.orderBy('timeCreated', descending: true),
                       ),
                       builder: (context, snapshot) {
                         // Customize what your widget looks like when it's loading.
@@ -643,7 +642,7 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
           Align(
             alignment: AlignmentDirectional(0.04, 0.96),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 10.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
               child: Container(
                 width: 340.0,
                 height: 70.0,
@@ -651,10 +650,13 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                   color: FlutterFlowTheme.of(context).primaryBackground,
                   borderRadius: BorderRadius.circular(25.0),
                 ),
-                child: wrapWithModel(
-                  model: _model.navBarCraftsmanModel,
-                  updateCallback: () => setState(() {}),
-                  child: NavBarCraftsmanWidget(),
+                child: Align(
+                  alignment: AlignmentDirectional(0.0, 1.0),
+                  child: wrapWithModel(
+                    model: _model.navBarCraftsmanModel,
+                    updateCallback: () => setState(() {}),
+                    child: NavBarCraftsmanWidget(),
+                  ),
                 ),
               ),
             ),

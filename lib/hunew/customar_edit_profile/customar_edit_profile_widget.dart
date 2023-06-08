@@ -28,7 +28,6 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
   late CustomarEditProfileModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -46,7 +45,6 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -55,7 +53,7 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: WillPopScope(
         onWillPop: () async => false,
         child: Scaffold(
@@ -280,7 +278,8 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                                         builder: (context) {
                                           return GestureDetector(
                                             onTap: () => FocusScope.of(context)
-                                                .requestFocus(_unfocusNode),
+                                                .requestFocus(
+                                                    _model.unfocusNode),
                                             child: Padding(
                                               padding: MediaQuery.of(context)
                                                   .viewInsets,
@@ -419,7 +418,7 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                   ),
                   Padding(
                     padding:
-                        EdgeInsetsDirectional.fromSTEB(0.0, 200.0, 0.0, 0.0),
+                        EdgeInsetsDirectional.fromSTEB(10.0, 200.0, 10.0, 0.0),
                     child: wrapWithModel(
                       model: _model.navBarCraftsmanModel,
                       updateCallback: () => setState(() {}),

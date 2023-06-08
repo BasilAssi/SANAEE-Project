@@ -59,6 +59,14 @@ class SavedJobsRecord extends FirestoreRecord {
   @override
   String toString() =>
       'SavedJobsRecord(reference: ${reference.path}, data: $snapshotData)';
+
+  @override
+  int get hashCode => reference.path.hashCode;
+
+  @override
+  bool operator ==(other) =>
+      other is SavedJobsRecord &&
+      reference.path.hashCode == other.reference.path.hashCode;
 }
 
 Map<String, dynamic> createSavedJobsRecordData({

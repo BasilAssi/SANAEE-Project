@@ -15,6 +15,7 @@ import 'package:provider/provider.dart';
 class CreateProfileNameStepOneModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   bool isDataUploading = false;
   FFUploadedFile uploadedLocalFile =
       FFUploadedFile(bytes: Uint8List.fromList([]));
@@ -42,11 +43,14 @@ class CreateProfileNameStepOneModel extends FlutterFlowModel {
   void initState(BuildContext context) {}
 
   void dispose() {
+    unfocusNode.dispose();
     textFieldFirstnameController?.dispose();
     textFieldFatherNameController?.dispose();
     textFieldGrandfatherNameController?.dispose();
     textFieldfamilyNameController?.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

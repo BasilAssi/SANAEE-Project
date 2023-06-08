@@ -26,7 +26,6 @@ class _CreateAccountThreeCustomerWidgetState
   late CreateAccountThreeCustomerModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
-  final _unfocusNode = FocusNode();
 
   @override
   void initState() {
@@ -40,7 +39,6 @@ class _CreateAccountThreeCustomerWidgetState
   void dispose() {
     _model.dispose();
 
-    _unfocusNode.dispose();
     super.dispose();
   }
 
@@ -49,7 +47,7 @@ class _CreateAccountThreeCustomerWidgetState
     context.watch<FFAppState>();
 
     return GestureDetector(
-      onTap: () => FocusScope.of(context).requestFocus(_unfocusNode),
+      onTap: () => FocusScope.of(context).requestFocus(_model.unfocusNode),
       child: Scaffold(
         key: scaffoldKey,
         backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
@@ -243,7 +241,7 @@ class _CreateAccountThreeCustomerWidgetState
                   child: Image.asset(
                     'assets/images/SignUpScreen.png',
                     width: 450.0,
-                    height: 400.0,
+                    height: 366.0,
                     fit: BoxFit.cover,
                   ),
                 ),

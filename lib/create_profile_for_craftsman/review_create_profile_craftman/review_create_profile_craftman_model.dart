@@ -17,6 +17,7 @@ import 'package:provider/provider.dart';
 class ReviewCreateProfileCraftmanModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for fullName widget.
   TextEditingController? fullNameController;
   String? Function(BuildContext, String?)? fullNameControllerValidator;
@@ -39,12 +40,15 @@ class ReviewCreateProfileCraftmanModel extends FlutterFlowModel {
   void initState(BuildContext context) {}
 
   void dispose() {
+    unfocusNode.dispose();
     fullNameController?.dispose();
     textFieldIDNumberController?.dispose();
     textFieldCityController?.dispose();
     textFieldAddressController?.dispose();
     textFieldCraftTypeController?.dispose();
   }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

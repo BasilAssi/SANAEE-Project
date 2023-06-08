@@ -14,6 +14,7 @@ import 'package:simple_gradient_text/simple_gradient_text.dart';
 class CreateProfileBioStepFourModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final unfocusNode = FocusNode();
   // State field(s) for TextField widget.
   final textFieldKey = GlobalKey();
   TextEditingController? textController;
@@ -24,7 +25,11 @@ class CreateProfileBioStepFourModel extends FlutterFlowModel {
 
   void initState(BuildContext context) {}
 
-  void dispose() {}
+  void dispose() {
+    unfocusNode.dispose();
+  }
+
+  /// Action blocks are added here.
 
   /// Additional helper methods are added here.
 

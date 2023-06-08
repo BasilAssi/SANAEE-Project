@@ -69,6 +69,8 @@ class CreateJobCustomerModel extends FlutterFlowModel {
     shortDescriptionController?.dispose();
   }
 
+  /// Action blocks are added here.
+
   /// Additional helper methods are added here.
 
 }
