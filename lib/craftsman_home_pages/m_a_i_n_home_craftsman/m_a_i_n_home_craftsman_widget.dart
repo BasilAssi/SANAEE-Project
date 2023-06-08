@@ -228,17 +228,11 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                                                                             0.0,
                                                                             10.0),
                                                                 child: StreamBuilder<
-                                                                    List<
-                                                                        UsersRecord>>(
-                                                                  stream:
-                                                                      queryUsersRecord(
-                                                                    queryBuilder: (usersRecord) => usersRecord.where(
-                                                                        'isCustomer',
-                                                                        isEqualTo:
-                                                                            true),
-                                                                    singleRecord:
-                                                                        true,
-                                                                  ),
+                                                                    UsersRecord>(
+                                                                  stream: UsersRecord
+                                                                      .getDocument(
+                                                                          jobPostCardPostRecord
+                                                                              .createdBy!),
                                                                   builder: (context,
                                                                       snapshot) {
                                                                     // Customize what your widget looks like when it's loading.
@@ -261,21 +255,9 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                                                                         ),
                                                                       );
                                                                     }
-                                                                    List<UsersRecord>
-                                                                        rowUsersRecordList =
+                                                                    final rowUsersRecord =
                                                                         snapshot
                                                                             .data!;
-                                                                    // Return an empty Container when the item does not exist.
-                                                                    if (snapshot
-                                                                        .data!
-                                                                        .isEmpty) {
-                                                                      return Container();
-                                                                    }
-                                                                    final rowUsersRecord = rowUsersRecordList
-                                                                            .isNotEmpty
-                                                                        ? rowUsersRecordList
-                                                                            .first
-                                                                        : null;
                                                                     return Row(
                                                                       mainAxisSize:
                                                                           MainAxisSize
@@ -289,7 +271,7 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                                                                               BorderRadius.circular(8.0),
                                                                           child:
                                                                               Image.network(
-                                                                            rowUsersRecord!.photoUrl,
+                                                                            rowUsersRecord.photoUrl,
                                                                             width:
                                                                                 50.0,
                                                                             height:
@@ -306,7 +288,7 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                                                                               0.0),
                                                                           child:
                                                                               Text(
-                                                                            '${rowUsersRecord!.firstNameCustomer} ${rowUsersRecord!.fatherNameCustomer} ${rowUsersRecord!.grandFatherNameCustomer} ${rowUsersRecord!.lastNameCustomer}',
+                                                                            '${rowUsersRecord.firstNameCustomer} ${rowUsersRecord.fatherNameCustomer} ${rowUsersRecord.grandFatherNameCustomer} ${rowUsersRecord.lastNameCustomer}',
                                                                             style: FlutterFlowTheme.of(context).bodyMedium.override(
                                                                                   fontFamily: 'Outfit',
                                                                                   fontSize: 20.0,
@@ -642,7 +624,7 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
           Align(
             alignment: AlignmentDirectional(0.04, 0.96),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
+              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 30.0),
               child: Container(
                 width: 340.0,
                 height: 70.0,
@@ -651,7 +633,7 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                   borderRadius: BorderRadius.circular(25.0),
                 ),
                 child: Align(
-                  alignment: AlignmentDirectional(0.0, 1.0),
+                  alignment: AlignmentDirectional(0.0, 0.0),
                   child: wrapWithModel(
                     model: _model.navBarCraftsmanModel,
                     updateCallback: () => setState(() {}),
