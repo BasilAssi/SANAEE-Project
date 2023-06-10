@@ -334,7 +334,10 @@ class _MAINSavedJobsCraftsmanWidgetState
                                 stream: queryApplicationsRecord(
                                   queryBuilder: (applicationsRecord) =>
                                       applicationsRecord.where('status',
-                                          isEqualTo: 'Pending'),
+                                          isEqualTo: valueOrDefault<String>(
+                                            'Pending',
+                                            'Pending',
+                                          )),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
