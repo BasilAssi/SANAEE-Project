@@ -651,19 +651,24 @@ class _JobPostDetailsActualWidgetState
                         padding: EdgeInsetsDirectional.fromSTEB(
                             20.0, 0.0, 20.0, 30.0),
                         child: FFButtonWidget(
-                          onPressed: () async {
-                            final applicationsCreateData =
-                                createApplicationsRecordData(
-                              jobId: widget.posts?.id,
-                              craftsmanId: currentUserReference.id,
-                              status: 'Pending',
-                              craftsmanApplied: currentUserReference,
-                              jobApplied: widget.posts,
-                            );
-                            await ApplicationsRecord.collection
-                                .doc()
-                                .set(applicationsCreateData);
-                          },
+                          onPressed: _model.clicked == true
+                              ? null
+                              : () async {
+                                  final applicationsCreateData =
+                                      createApplicationsRecordData(
+                                    jobId: widget.posts?.id,
+                                    craftsmanId: currentUserReference.id,
+                                    status: 'Pending',
+                                    craftsmanApplied: currentUserReference,
+                                    jobApplied: widget.posts,
+                                  );
+                                  await ApplicationsRecord.collection
+                                      .doc()
+                                      .set(applicationsCreateData);
+                                  setState(() {
+                                    _model.clicked = true;
+                                  });
+                                },
                           text: FFLocalizations.of(context).getText(
                             'uenl02ze' /* قدم للعمل  */,
                           ),
@@ -689,6 +694,10 @@ class _JobPostDetailsActualWidgetState
                               width: 1.0,
                             ),
                             borderRadius: BorderRadius.circular(15.0),
+                            disabledColor:
+                                FlutterFlowTheme.of(context).secondaryText,
+                            disabledTextColor:
+                                FlutterFlowTheme.of(context).primary,
                           ),
                         ),
                       ),

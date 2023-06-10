@@ -14,6 +14,10 @@ import 'package:page_transition/page_transition.dart';
 import 'package:provider/provider.dart';
 
 class JobPostDetailsActualModel extends FlutterFlowModel {
+  ///  Local state fields for this page.
+
+  bool? clicked = true;
+
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {}

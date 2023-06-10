@@ -1,20 +1,6 @@
 {
   "indexes": [
     {
-      "collectionGroup": "Applications",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "status",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "timeApplied",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "post",
       "queryScope": "COLLECTION",
       "fields": [

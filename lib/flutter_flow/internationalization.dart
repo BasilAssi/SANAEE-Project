@@ -173,10 +173,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'الأعمال الخاصة بي',
       'en': 'My Jobs',
     },
-    'ilubw22a': {
-      'ar': 'الوظائف المقبولة',
-      'en': 'Accepted jobs',
-    },
     'dsq91la7': {
       'ar': 'الأعمال المنجزة ',
       'en': 'Work Performed',
