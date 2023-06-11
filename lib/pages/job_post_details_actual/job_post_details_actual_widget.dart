@@ -657,17 +657,15 @@ class _JobPostDetailsActualWidgetState
                                   final applicationsCreateData =
                                       createApplicationsRecordData(
                                     jobId: widget.posts?.id,
-                                    craftsmanId: currentUserReference?.id,
+                                    craftsmanId: currentUserReference.id,
                                     status: 'Pending',
                                     craftsmanApplied: currentUserReference,
                                     jobApplied: widget.posts,
+                                    timeApplied: getCurrentTimestamp,
                                   );
                                   await ApplicationsRecord.collection
                                       .doc()
                                       .set(applicationsCreateData);
-                                  setState(() {
-                                    _model.clicked = true;
-                                  });
                                 },
                           text: FFLocalizations.of(context).getText(
                             'uenl02ze' /* قدم للعمل  */,

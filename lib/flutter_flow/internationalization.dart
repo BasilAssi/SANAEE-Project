@@ -764,7 +764,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'gs7vuc2w': {
       'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
-      'en': 'Step 1  of  3 : upload photo  for you , \nand your full name',
+      'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
     },
     '213vtn7i': {
       'ar': 'Home',

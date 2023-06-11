@@ -3,14 +3,12 @@ import '/backend/backend.dart';
 import '/creat_profile_for_customar/create_account_three_customer/create_account_three_customer_widget.dart';
 import '/creat_profile_for_customar/create_profile_name_step_one_customar/create_profile_name_step_one_customar_widget.dart';
 import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
-import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'select_your_role_model.dart';
@@ -103,22 +101,6 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                           fontSize: 40.0,
                                         ),
                                   ),
-                                  FlutterFlowIconButton(
-                                    borderColor: Color(0xFF505762),
-                                    borderRadius: 40.0,
-                                    borderWidth: 1.0,
-                                    buttonSize: 60.0,
-                                    fillColor: Color(0xFFF8B500),
-                                    icon: FaIcon(
-                                      FontAwesomeIcons.arrowCircleLeft,
-                                      color: FlutterFlowTheme.of(context)
-                                          .primaryText,
-                                      size: 25.0,
-                                    ),
-                                    onPressed: () {
-                                      print('IconButton pressed ...');
-                                    },
-                                  ),
                                 ],
                               ),
                             ),
@@ -180,60 +162,32 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                     children: [
                                       Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
-                                            20.0, 0.0, 20.0, 0.0),
+                                            30.0, 0.0, 30.0, 0.0),
                                         child: Row(
                                           mainAxisSize: MainAxisSize.max,
+                                          mainAxisAlignment:
+                                              MainAxisAlignment.center,
                                           children: [
                                             Expanded(
-                                              child: Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        10.0, 0.0, 0.0, 20.0),
-                                                child: Text(
-                                                  FFLocalizations.of(context)
-                                                      .getText(
-                                                    '892plwty' /* حدد دورك داخل البرنامج */,
-                                                  ),
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .displaySmall
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        fontWeight:
-                                                            FontWeight.w600,
-                                                      ),
+                                              child: Text(
+                                                FFLocalizations.of(context)
+                                                    .getText(
+                                                  '892plwty' /* حدد دورك داخل البرنامج */,
                                                 ),
+                                                style:
+                                                    FlutterFlowTheme.of(context)
+                                                        .displaySmall
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontWeight:
+                                                              FontWeight.w600,
+                                                        ),
                                               ),
                                             ),
-                                            Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      0.0, 0.0, 20.0, 20.0),
-                                              child: Container(
-                                                width: 40.0,
-                                                height: 40.0,
-                                                decoration: BoxDecoration(
-                                                  color: FlutterFlowTheme.of(
-                                                          context)
-                                                      .secondaryBackground,
-                                                  shape: BoxShape.circle,
-                                                  border: Border.all(
-                                                    color: FlutterFlowTheme.of(
-                                                            context)
-                                                        .lineColor,
-                                                  ),
-                                                ),
-                                                child: Padding(
-                                                  padding: EdgeInsetsDirectional
-                                                      .fromSTEB(
-                                                          0.0, 0.0, 40.0, 0.0),
-                                                  child: Icon(
-                                                    Icons.contacts,
-                                                    color: Color(0xFFF8B500),
-                                                    size: 40.0,
-                                                  ),
-                                                ),
-                                              ),
+                                            Icon(
+                                              Icons.contacts,
+                                              color: Color(0xFFF8B500),
+                                              size: 40.0,
                                             ),
                                           ],
                                         ),

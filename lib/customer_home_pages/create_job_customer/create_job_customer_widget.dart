@@ -826,11 +826,6 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 30.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-
-
-
-                        var postRecordReference = PostRecord.collection.doc();
-
                         final postCreateData = createPostRecordData(
                           jobType: _model.jobTypeValue,
                           jobTitle: _model.textController1.text,
@@ -848,22 +843,12 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                           image2: _model.uploadedFileUrl2,
                           image3: _model.uploadedFileUrl3,
                           jobLocation: _model.textFieldAddressController.text,
-
-
-
-                          jobId: postRecordReference.id,
-
                         );
-
-
-
-
-
+                        var postRecordReference = PostRecord.collection.doc();
                         await postRecordReference.set(postCreateData);
                         _model.successfullycreated =
                             PostRecord.getDocumentFromData(
                                 postCreateData, postRecordReference);
-
                         Navigator.pop(context);
 
                         setState(() {});
@@ -904,10 +889,6 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
           ],
         ),
       ),
-
     );
-
-
-
   }
 }
