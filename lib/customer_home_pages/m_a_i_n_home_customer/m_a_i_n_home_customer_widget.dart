@@ -201,7 +201,9 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>
-                                      JobPostMyJobApplicantsWidget(),
+                                      JobPostMyJobApplicantsWidget(
+                                    post: jobPostCardPostRecord.reference,
+                                  ),
                                 ),
                               );
                             },

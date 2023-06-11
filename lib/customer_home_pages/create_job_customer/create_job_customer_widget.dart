@@ -8,7 +8,6 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import '/flutter_flow/form_field_controller.dart';
 import '/flutter_flow/upload_data.dart';
-import '/custom_code/actions/index.dart' as actions;
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -851,7 +850,9 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                           jobLocation: _model.textFieldAddressController.text,
 
 
+
                           jobId: postRecordReference.id,
+
                         );
 
 
@@ -862,7 +863,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                         _model.successfullycreated =
                             PostRecord.getDocumentFromData(
                                 postCreateData, postRecordReference);
-                       // await actions.setJobPostId();
+
                         Navigator.pop(context);
 
                         setState(() {});
