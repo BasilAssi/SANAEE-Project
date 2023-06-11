@@ -567,8 +567,8 @@ class _JobPostMyJobApplicantsWidgetState
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
-                              child: StreamBuilder<List<ApplicationsRecord>>(
-                                stream: queryApplicationsRecord(
+                              child: FutureBuilder<List<ApplicationsRecord>>(
+                                future: queryApplicationsRecordOnce(
                                   queryBuilder: (applicationsRecord) =>
                                       applicationsRecord.where('jobId',
                                           isEqualTo:
