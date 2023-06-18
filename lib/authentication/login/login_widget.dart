@@ -98,7 +98,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                               15.0, 10.0, 15.0, 180.0),
                           child: Container(
                             width: MediaQuery.of(context).size.width * 1.059,
-                            height: 439.0,
+                            height: 480.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
                                   .secondaryBackground,
@@ -121,26 +121,6 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .displaySmall,
-                                          ),
-                                        ),
-                                        Container(
-                                          width: 40.0,
-                                          height: 40.0,
-                                          decoration: BoxDecoration(
-                                            color: FlutterFlowTheme.of(context)
-                                                .secondaryBackground,
-                                            shape: BoxShape.circle,
-                                            border: Border.all(
-                                              color:
-                                                  FlutterFlowTheme.of(context)
-                                                      .lineColor,
-                                            ),
-                                          ),
-                                          child: Icon(
-                                            Icons.call_rounded,
-                                            color: FlutterFlowTheme.of(context)
-                                                .primaryText,
-                                            size: 24.0,
                                           ),
                                         ),
                                       ],

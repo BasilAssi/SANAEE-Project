@@ -657,7 +657,7 @@ class _JobPostDetailsActualWidgetState
                                   final applicationsCreateData =
                                       createApplicationsRecordData(
                                     jobId: widget.posts?.id,
-                                    craftsmanId: currentUserReference.id,
+                                    craftsmanId: currentUserReference?.id,
                                     status: 'Pending',
                                     craftsmanApplied: currentUserReference,
                                     jobApplied: widget.posts,
