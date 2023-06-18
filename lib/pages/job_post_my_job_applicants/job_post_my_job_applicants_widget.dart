@@ -611,8 +611,8 @@ class _JobPostMyJobApplicantsWidgetState
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             0.0, 6.0, 0.0, 6.0),
-                                        child: FutureBuilder<UsersRecord>(
-                                          future: UsersRecord.getDocumentOnce(
+                                        child: StreamBuilder<UsersRecord>(
+                                          stream: UsersRecord.getDocument(
                                               listViewApplicationsRecord
                                                   .craftsmanApplied!),
                                           builder: (context, snapshot) {
