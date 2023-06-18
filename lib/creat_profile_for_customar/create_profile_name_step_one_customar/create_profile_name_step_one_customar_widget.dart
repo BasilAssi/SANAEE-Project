@@ -117,13 +117,35 @@ class _CreateProfileNameStepOneCustomarWidgetState
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
                   children: [
+                    Align(
+                      alignment: AlignmentDirectional(0.0, -1.0),
+                      child: Padding(
+                        padding:
+                            EdgeInsetsDirectional.fromSTEB(30.0, 5.0, 0.0, 0.0),
+                        child: GradientText(
+                          FFLocalizations.of(context).getText(
+                            'gs7vuc2w' /* الخطوة 1 من 3:  قم بتحميل صورة... */,
+                          ),
+                          textAlign: TextAlign.center,
+                          style:
+                              FlutterFlowTheme.of(context).bodyMedium.override(
+                                    fontFamily: 'Outfit',
+                                    fontSize: 20.0,
+                                    fontWeight: FontWeight.w600,
+                                  ),
+                          colors: [Color(0xFFF8B500), Color(0xFFF8B500)],
+                          gradientDirection: GradientDirection.ltr,
+                          gradientType: GradientType.linear,
+                        ),
+                      ),
+                    ),
                     Row(
                       mainAxisSize: MainAxisSize.max,
                       children: [
                         Expanded(
                           child: Padding(
                             padding: EdgeInsetsDirectional.fromSTEB(
-                                0.0, 80.0, 0.0, 0.0),
+                                0.0, 50.0, 0.0, 0.0),
                             child: AuthUserStreamWidget(
                               builder: (context) => Container(
                                 width: 120.0,
@@ -527,26 +549,6 @@ class _CreateProfileNameStepOneCustomarWidgetState
                       ),
                     ),
                   ],
-                ),
-              ),
-              Align(
-                alignment: AlignmentDirectional(0.0, -1.0),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(30.0, 5.0, 0.0, 0.0),
-                  child: GradientText(
-                    FFLocalizations.of(context).getText(
-                      'gs7vuc2w' /* الخطوة 1 من 3:  قم بتحميل صورة... */,
-                    ),
-                    textAlign: TextAlign.center,
-                    style: FlutterFlowTheme.of(context).bodyMedium.override(
-                          fontFamily: 'Outfit',
-                          fontSize: 20.0,
-                          fontWeight: FontWeight.w600,
-                        ),
-                    colors: [Color(0xFFF8B500), Color(0xFFF8B500)],
-                    gradientDirection: GradientDirection.ltr,
-                    gradientType: GradientType.linear,
-                  ),
                 ),
               ),
             ],

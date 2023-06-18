@@ -567,14 +567,8 @@ class _JobPostMyJobApplicantsWidgetState
                             child: Padding(
                               padding: EdgeInsetsDirectional.fromSTEB(
                                   0.0, 12.0, 0.0, 0.0),
-                              child: FutureBuilder<List<ApplicationsRecord>>(
-                                future: queryApplicationsRecordOnce(
-                                  queryBuilder: (applicationsRecord) =>
-                                      applicationsRecord.where('jobId',
-                                          isEqualTo:
-                                              jobPostMyJobApplicantsPostRecord
-                                                  .jobId),
-                                ),
+                              child: StreamBuilder<List<ApplicationsRecord>>(
+                                stream: queryApplicationsRecord(),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
                                   if (!snapshot.hasData) {

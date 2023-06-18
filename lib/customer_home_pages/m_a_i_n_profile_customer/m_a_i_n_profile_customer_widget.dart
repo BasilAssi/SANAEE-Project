@@ -237,55 +237,50 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                           ],
                                         ),
                                       ),
-                                      Row(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          ClipRRect(
-                                            borderRadius:
-                                                BorderRadius.circular(8.0),
-                                            child: Image.network(
-                                              mAINProfileCustomerUsersRecord
-                                                  .photoUrl,
-                                              width: 90.0,
-                                              height: 90.0,
-                                              fit: BoxFit.cover,
-                                            ),
-                                          ),
-                                          Expanded(
-                                            child: Padding(
-                                              padding: EdgeInsetsDirectional
-                                                  .fromSTEB(
-                                                      12.0, 0.0, 0.0, 0.0),
-                                              child: Column(
-                                                mainAxisSize: MainAxisSize.max,
-                                                crossAxisAlignment:
-                                                    CrossAxisAlignment.start,
-                                                children: [
-                                                  Padding(
-                                                    padding:
-                                                        EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 8.0,
-                                                                0.0, 0.0),
-                                                    child: AutoSizeText(
-                                                      '${mAINProfileCustomerUsersRecord.firstNameCustomer} ${mAINProfileCustomerUsersRecord.lastNameCustomer}',
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .titleMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                color: FlutterFlowTheme.of(
-                                                                        context)
-                                                                    .tertiary,
-                                                              ),
-                                                    ),
+                                      Align(
+                                        alignment:
+                                            AlignmentDirectional(0.0, 0.0),
+                                        child: Padding(
+                                          padding:
+                                              EdgeInsetsDirectional.fromSTEB(
+                                                  0.0, 0.0, 20.0, 0.0),
+                                          child: Row(
+                                            mainAxisSize: MainAxisSize.max,
+                                            children: [
+                                              AuthUserStreamWidget(
+                                                builder: (context) => ClipRRect(
+                                                  borderRadius:
+                                                      BorderRadius.circular(
+                                                          8.0),
+                                                  child: Image.network(
+                                                    currentUserPhoto,
+                                                    width: 100.0,
+                                                    height: 100.0,
+                                                    fit: BoxFit.cover,
                                                   ),
-                                                ],
+                                                ),
                                               ),
-                                            ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        20.0, 8.0, 0.0, 0.0),
+                                                child: AutoSizeText(
+                                                  '${mAINProfileCustomerUsersRecord.firstNameCustomer} ${mAINProfileCustomerUsersRecord.lastNameCustomer}',
+                                                  style: FlutterFlowTheme.of(
+                                                          context)
+                                                      .titleMedium
+                                                      .override(
+                                                        fontFamily: 'Outfit',
+                                                        color:
+                                                            FlutterFlowTheme.of(
+                                                                    context)
+                                                                .tertiary,
+                                                      ),
+                                                ),
+                                              ),
+                                            ],
                                           ),
-                                        ],
+                                        ),
                                       ),
                                     ],
                                   ),
@@ -342,7 +337,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'b9l8kjh7' /* Switch to Dark Mode */,
+                                              'b9l8kjh7' /*  قم بالتبديل إلى الوضع المظلم */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium

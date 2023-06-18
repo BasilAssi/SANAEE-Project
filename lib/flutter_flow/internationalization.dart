@@ -149,7 +149,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'r6pmbkj8': {
       'ar': 'أنشئ حساب',
-      'en': 'Create Account',
+      'en': 'Sign Up',
     },
     'hwccov5i': {
       'ar': 'Home',
@@ -185,8 +185,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // MAIN_ProfileCustomer
   {
     'b9l8kjh7': {
-      'ar': 'Switch to Dark Mode',
-      'en': '',
+      'ar': ' قم بالتبديل إلى الوضع المظلم',
+      'en': 'Switch to dark mode',
     },
     'ehmwoa5b': {
       'ar': 'Switch to Light Mode',
@@ -522,6 +522,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameStepOne
   {
+    'iuj97t6y': {
+      'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
+      'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
+    },
     'b0muce5a': {
       'ar': 'الاسم الاول',
       'en': 'first name',
@@ -726,6 +730,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameStepOne_customar
   {
+    'gs7vuc2w': {
+      'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
+      'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
+    },
     'hmgve1rn': {
       'ar': 'الاسم الاول',
       'en': 'first name',
@@ -761,10 +769,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     '0vimo8q1': {
       'ar': 'التالي',
       'en': 'continue',
-    },
-    'gs7vuc2w': {
-      'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
-      'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
     },
     '213vtn7i': {
       'ar': 'Home',
