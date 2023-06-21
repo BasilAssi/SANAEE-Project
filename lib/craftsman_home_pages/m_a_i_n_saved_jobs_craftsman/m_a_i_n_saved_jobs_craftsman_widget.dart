@@ -114,10 +114,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                 stream: queryApplicationsRecord(
                                   queryBuilder: (applicationsRecord) =>
                                       applicationsRecord.where('status',
-                                          isEqualTo: valueOrDefault<String>(
-                                            'Accepted',
-                                            'Accepted',
-                                          )),
+                                          isEqualTo: 'Accepted'),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -337,10 +334,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                 stream: queryApplicationsRecord(
                                   queryBuilder: (applicationsRecord) =>
                                       applicationsRecord.where('status',
-                                          isEqualTo: valueOrDefault<String>(
-                                            'Pending',
-                                            'Pending',
-                                          )),
+                                          isEqualTo: 'Pending'),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -612,24 +606,12 @@ class _MAINSavedJobsCraftsmanWidgetState
               ),
             ],
           ),
-          Align(
-            alignment: AlignmentDirectional(-0.02, 0.98),
-            child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
-              child: Container(
-                width: 340.0,
-                height: 70.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).secondaryBackground,
-                  borderRadius: BorderRadius.circular(25.0),
-                  shape: BoxShape.rectangle,
-                ),
-                child: wrapWithModel(
-                  model: _model.navBarCraftsmanModel,
-                  updateCallback: () => setState(() {}),
-                  child: NavBarCraftsmanWidget(),
-                ),
-              ),
+          Padding(
+            padding: EdgeInsetsDirectional.fromSTEB(15.0, 630.0, 15.0, 0.0),
+            child: wrapWithModel(
+              model: _model.navBarCraftsmanModel,
+              updateCallback: () => setState(() {}),
+              child: NavBarCraftsmanWidget(),
             ),
           ),
         ],
