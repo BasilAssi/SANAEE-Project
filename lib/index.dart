@@ -52,9 +52,9 @@ export '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widg
     show MAINHomeCraftsmanWidget;
 export '/creat_profile_for_customar/edit_profile_for_customer/edit_profile_for_customer_widget.dart'
     show EditProfileForCustomerWidget;
-export '/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart'
+export '/authentication/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart'
     show EditProfileCraftsmanWidget;
-export '/hunew/customar_edit_profile/customar_edit_profile_widget.dart'
+export '/authentication/hunew/customar_edit_profile/customar_edit_profile_widget.dart'
     show CustomarEditProfileWidget;
 export '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart'
     show JobPostAcceptedWidget;

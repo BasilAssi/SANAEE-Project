@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/authentication/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart';
 import '/backend/backend.dart';
 import '/components/nav_bar_craftsman/nav_bar_craftsman_widget.dart';
 import '/components/work_exp_edit/work_exp_edit_widget.dart';
@@ -6,7 +7,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart';
 import '/pages/splash_screen/splash_screen_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
@@ -1210,24 +1210,12 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                   ),
                 ],
               ),
-              Align(
-                alignment: AlignmentDirectional(-0.03, 0.98),
-                child: Padding(
-                  padding:
-                      EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 20.0),
-                  child: Container(
-                    width: 340.0,
-                    height: 70.0,
-                    decoration: BoxDecoration(
-                      color: FlutterFlowTheme.of(context).secondaryBackground,
-                      borderRadius: BorderRadius.circular(25.0),
-                    ),
-                    child: wrapWithModel(
-                      model: _model.navBarCraftsmanModel,
-                      updateCallback: () => setState(() {}),
-                      child: NavBarCraftsmanWidget(),
-                    ),
-                  ),
+              Padding(
+                padding: EdgeInsetsDirectional.fromSTEB(15.0, 680.0, 15.0, 0.0),
+                child: wrapWithModel(
+                  model: _model.navBarCraftsmanModel,
+                  updateCallback: () => setState(() {}),
+                  child: NavBarCraftsmanWidget(),
                 ),
               ),
             ],
