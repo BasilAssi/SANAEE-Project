@@ -258,44 +258,47 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
                                                                     final rowUsersRecord =
                                                                         snapshot
                                                                             .data!;
-                                                                    return Row(
-                                                                      mainAxisSize:
-                                                                          MainAxisSize
-                                                                              .max,
-                                                                      mainAxisAlignment:
-                                                                          MainAxisAlignment
-                                                                              .start,
-                                                                      children: [
-                                                                        ClipRRect(
-                                                                          borderRadius:
-                                                                              BorderRadius.circular(8.0),
-                                                                          child:
-                                                                              Image.network(
-                                                                            rowUsersRecord.photoUrl,
-                                                                            width:
-                                                                                50.0,
-                                                                            height:
-                                                                                50.0,
-                                                                            fit:
-                                                                                BoxFit.cover,
+                                                                    return SingleChildScrollView(
+                                                                      scrollDirection:
+                                                                          Axis.horizontal,
+                                                                      child:
+                                                                          Row(
+                                                                        mainAxisSize:
+                                                                            MainAxisSize.max,
+                                                                        mainAxisAlignment:
+                                                                            MainAxisAlignment.start,
+                                                                        children: [
+                                                                          Align(
+                                                                            alignment:
+                                                                                AlignmentDirectional(0.0, 0.0),
+                                                                            child:
+                                                                                ClipRRect(
+                                                                              borderRadius: BorderRadius.circular(8.0),
+                                                                              child: Image.network(
+                                                                                rowUsersRecord.photoUrl,
+                                                                                width: 60.0,
+                                                                                height: 60.0,
+                                                                                fit: BoxFit.cover,
+                                                                              ),
+                                                                            ),
                                                                           ),
-                                                                        ),
-                                                                        Padding(
-                                                                          padding: EdgeInsetsDirectional.fromSTEB(
-                                                                              30.0,
-                                                                              0.0,
-                                                                              0.0,
-                                                                              0.0),
-                                                                          child:
-                                                                              Text(
-                                                                            '${rowUsersRecord.firstNameCustomer} ${rowUsersRecord.fatherNameCustomer} ${rowUsersRecord.grandFatherNameCustomer} ${rowUsersRecord.lastNameCustomer}',
-                                                                            style: FlutterFlowTheme.of(context).bodyMedium.override(
-                                                                                  fontFamily: 'Outfit',
-                                                                                  fontSize: 20.0,
-                                                                                ),
+                                                                          Padding(
+                                                                            padding: EdgeInsetsDirectional.fromSTEB(
+                                                                                30.0,
+                                                                                0.0,
+                                                                                0.0,
+                                                                                0.0),
+                                                                            child:
+                                                                                Text(
+                                                                              '${rowUsersRecord.firstNameCustomer} ${rowUsersRecord.fatherNameCustomer} ${rowUsersRecord.grandFatherNameCustomer} ${rowUsersRecord.lastNameCustomer}',
+                                                                              style: FlutterFlowTheme.of(context).bodyMedium.override(
+                                                                                    fontFamily: 'Outfit',
+                                                                                    fontSize: 20.0,
+                                                                                  ),
+                                                                            ),
                                                                           ),
-                                                                        ),
-                                                                      ],
+                                                                        ],
+                                                                      ),
                                                                     );
                                                                   },
                                                                 ),
@@ -622,24 +625,13 @@ class _MAINHomeCraftsmanWidgetState extends State<MAINHomeCraftsmanWidget> {
             ],
           ),
           Align(
-            alignment: AlignmentDirectional(0.04, 0.96),
+            alignment: AlignmentDirectional(0.0, 0.0),
             child: Padding(
-              padding: EdgeInsetsDirectional.fromSTEB(10.0, 0.0, 10.0, 30.0),
-              child: Container(
-                width: 340.0,
-                height: 70.0,
-                decoration: BoxDecoration(
-                  color: FlutterFlowTheme.of(context).primaryBackground,
-                  borderRadius: BorderRadius.circular(25.0),
-                ),
-                child: Align(
-                  alignment: AlignmentDirectional(0.0, 0.0),
-                  child: wrapWithModel(
-                    model: _model.navBarCraftsmanModel,
-                    updateCallback: () => setState(() {}),
-                    child: NavBarCraftsmanWidget(),
-                  ),
-                ),
+              padding: EdgeInsetsDirectional.fromSTEB(15.0, 630.0, 15.0, 0.0),
+              child: wrapWithModel(
+                model: _model.navBarCraftsmanModel,
+                updateCallback: () => setState(() {}),
+                child: NavBarCraftsmanWidget(),
               ),
             ),
           ),

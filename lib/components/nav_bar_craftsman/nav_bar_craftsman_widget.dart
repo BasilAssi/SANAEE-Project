@@ -51,7 +51,6 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
         borderRadius: BorderRadius.circular(40.0),
       ),
       child: Container(
-        width: double.infinity,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).primaryBackground,
           boxShadow: [
@@ -69,12 +68,14 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
         child: Padding(
           padding: EdgeInsetsDirectional.fromSTEB(4.0, 4.0, 4.0, 4.0),
           child: Column(
-            mainAxisSize: MainAxisSize.max,
+            mainAxisSize: MainAxisSize.min,
+            mainAxisAlignment: MainAxisAlignment.center,
             children: [
               Padding(
                 padding: EdgeInsetsDirectional.fromSTEB(8.0, 0.0, 8.0, 8.0),
                 child: Column(
                   mainAxisSize: MainAxisSize.max,
+                  mainAxisAlignment: MainAxisAlignment.spaceEvenly,
                   crossAxisAlignment: CrossAxisAlignment.start,
                   children: [
                     Padding(
@@ -93,7 +94,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
+                                _model.updatePage(() {
                                   _model.home =
                                       FlutterFlowTheme.of(context).primary;
                                   _model.profile = Color(0xFF57636C);
@@ -120,7 +121,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
+                                        _model.updatePage(() {
                                           _model.home =
                                               FlutterFlowTheme.of(context)
                                                   .primary;
@@ -156,7 +157,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
+                                _model.updatePage(() {
                                   _model.home = FlutterFlowTheme.of(context)
                                       .secondaryText;
                                   _model.profile = FlutterFlowTheme.of(context)
@@ -186,7 +187,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
+                                        _model.updatePage(() {
                                           _model.home =
                                               FlutterFlowTheme.of(context)
                                                   .secondaryText;
@@ -228,7 +229,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
+                                _model.updatePage(() {
                                   _model.home = Color(0xFF57636C);
                                   _model.profile = Color(0xFF57636C);
                                   _model.chat =
@@ -255,7 +256,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
+                                        _model.updatePage(() {
                                           _model.home = Color(0xFF57636C);
                                           _model.profile = Color(0xFF57636C);
                                           _model.chat =
@@ -291,7 +292,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                setState(() {
+                                _model.updatePage(() {
                                   _model.home = Color(0xFF57636C);
                                   _model.profile =
                                       FlutterFlowTheme.of(context).primary;
@@ -318,7 +319,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        setState(() {
+                                        _model.updatePage(() {
                                           _model.home = Color(0xFF57636C);
                                           _model.profile =
                                               FlutterFlowTheme.of(context)

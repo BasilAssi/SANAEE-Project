@@ -114,7 +114,10 @@ class _MAINSavedJobsCraftsmanWidgetState
                                 stream: queryApplicationsRecord(
                                   queryBuilder: (applicationsRecord) =>
                                       applicationsRecord.where('status',
-                                          isEqualTo: 'Accepted'),
+                                          isEqualTo: valueOrDefault<String>(
+                                            'Accepted',
+                                            'Accepted',
+                                          )),
                                 ),
                                 builder: (context, snapshot) {
                                   // Customize what your widget looks like when it's loading.
@@ -154,8 +157,8 @@ class _MAINSavedJobsCraftsmanWidgetState
                                       return Padding(
                                         padding: EdgeInsetsDirectional.fromSTEB(
                                             16.0, 12.0, 16.0, 0.0),
-                                        child: StreamBuilder<PostRecord>(
-                                          stream: PostRecord.getDocument(
+                                        child: FutureBuilder<PostRecord>(
+                                          future: PostRecord.getDocumentOnce(
                                               listViewApplicationsRecord
                                                   .jobApplied!),
                                           builder: (context, snapshot) {
@@ -621,13 +624,10 @@ class _MAINSavedJobsCraftsmanWidgetState
                   borderRadius: BorderRadius.circular(25.0),
                   shape: BoxShape.rectangle,
                 ),
-                child: Padding(
-                  padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
-                  child: wrapWithModel(
-                    model: _model.navBarCraftsmanModel,
-                    updateCallback: () => setState(() {}),
-                    child: NavBarCraftsmanWidget(),
-                  ),
+                child: wrapWithModel(
+                  model: _model.navBarCraftsmanModel,
+                  updateCallback: () => setState(() {}),
+                  child: NavBarCraftsmanWidget(),
                 ),
               ),
             ),
