@@ -126,6 +126,7 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                               );
                               await currentUserReference!
                                   .update(usersUpdateData);
+                              Navigator.pop(context);
                             },
                           ),
                         ),

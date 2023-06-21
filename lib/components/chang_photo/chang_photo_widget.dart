@@ -270,6 +270,7 @@ class _ChangPhotoWidgetState extends State<ChangPhotoWidget> {
                                   );
                                   await currentUserReference!
                                       .update(usersUpdateData);
+                                  Navigator.pop(context);
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'enb8vg4e' /* حفظ التغييرات */,
