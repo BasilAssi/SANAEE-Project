@@ -233,7 +233,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'قدم للعمل ',
       'en': 'Apply to work',
     },
-    'v185ba4k': {
+    'prhcxdtz': {
       'ar': 'Button',
       'en': '',
     },
