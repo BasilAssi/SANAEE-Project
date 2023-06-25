@@ -661,6 +661,7 @@ class _JobPostDetailsActualWidgetState
                                         craftsmanApplied: currentUserReference,
                                         jobApplied: widget.posts,
                                         timeApplied: getCurrentTimestamp,
+                                        jobId: '12',
                                       ));
                                 },
                           text: FFLocalizations.of(context).getText(
