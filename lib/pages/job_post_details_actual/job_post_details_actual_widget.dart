@@ -705,7 +705,6 @@ class _JobPostDetailsActualWidgetState
                           await ApplicationsRecord.collection
                               .doc()
                               .set(createApplicationsRecordData(
-                                jobId: '12',
                                 status: 'Pending',
                                 craftsmanApplied: currentUserReference,
                                 jobApplied: widget.posts,
@@ -713,7 +712,7 @@ class _JobPostDetailsActualWidgetState
                               ));
                         },
                         text: FFLocalizations.of(context).getText(
-                          'v185ba4k' /* Button */,
+                          'prhcxdtz' /* Button */,
                         ),
                         options: FFButtonOptions(
                           height: 40.0,
