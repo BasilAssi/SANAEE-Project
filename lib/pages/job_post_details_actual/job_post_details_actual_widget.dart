@@ -657,8 +657,6 @@ class _JobPostDetailsActualWidgetState
                                   await ApplicationsRecord.collection
                                       .doc()
                                       .set(createApplicationsRecordData(
-                                        jobId: widget.posts?.id,
-                                        craftsmanId: currentUserReference?.id,
                                         status: 'Pending',
                                         craftsmanApplied: currentUserReference,
                                         jobApplied: widget.posts,
