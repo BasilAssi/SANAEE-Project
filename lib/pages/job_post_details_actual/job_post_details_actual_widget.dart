@@ -649,7 +649,7 @@ class _JobPostDetailsActualWidgetState
                       alignment: AlignmentDirectional(0.0, 0.7),
                       child: Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            20.0, 0.0, 20.0, 30.0),
+                            20.0, 50.0, 20.0, 30.0),
                         child: FFButtonWidget(
                           onPressed: _model.clicked == true
                               ? null
@@ -694,6 +694,45 @@ class _JobPostDetailsActualWidgetState
                             disabledTextColor:
                                 FlutterFlowTheme.of(context).primary,
                           ),
+                        ),
+                      ),
+                    ),
+                    Padding(
+                      padding:
+                          EdgeInsetsDirectional.fromSTEB(0.0, 750.0, 0.0, 0.0),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await ApplicationsRecord.collection
+                              .doc()
+                              .set(createApplicationsRecordData(
+                                jobId: '12',
+                                status: 'Pending',
+                                craftsmanApplied: currentUserReference,
+                                jobApplied: widget.posts,
+                                timeApplied: getCurrentTimestamp,
+                              ));
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          'v185ba4k' /* Button */,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
