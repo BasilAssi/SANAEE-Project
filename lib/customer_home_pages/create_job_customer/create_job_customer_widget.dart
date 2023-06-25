@@ -826,7 +826,8 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 50.0, 0.0, 30.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        final postCreateData = createPostRecordData(
+                        var postRecordReference = PostRecord.collection.doc();
+                        await postRecordReference.set(createPostRecordData(
                           jobType: _model.jobTypeValue,
                           jobTitle: _model.textController1.text,
                           shortDescription:
@@ -843,12 +844,29 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                           image2: _model.uploadedFileUrl2,
                           image3: _model.uploadedFileUrl3,
                           jobLocation: _model.textFieldAddressController.text,
-                        );
-                        var postRecordReference = PostRecord.collection.doc();
-                        await postRecordReference.set(postCreateData);
+                        ));
                         _model.successfullycreated =
                             PostRecord.getDocumentFromData(
-                                postCreateData, postRecordReference);
+                                createPostRecordData(
+                                  jobType: _model.jobTypeValue,
+                                  jobTitle: _model.textController1.text,
+                                  shortDescription:
+                                      _model.shortDescriptionController.text,
+                                  estimatedPrice: formatNumber(
+                                    _model.salaryRangeValue,
+                                    formatType: FormatType.decimal,
+                                    decimalType: DecimalType.periodDecimal,
+                                    currency: '₪',
+                                  ),
+                                  timeCreated: getCurrentTimestamp,
+                                  createdBy: currentUserReference,
+                                  image1: _model.uploadedFileUrl1,
+                                  image2: _model.uploadedFileUrl2,
+                                  image3: _model.uploadedFileUrl3,
+                                  jobLocation:
+                                      _model.textFieldAddressController.text,
+                                ),
+                                postRecordReference);
                         Navigator.pop(context);
 
                         setState(() {});

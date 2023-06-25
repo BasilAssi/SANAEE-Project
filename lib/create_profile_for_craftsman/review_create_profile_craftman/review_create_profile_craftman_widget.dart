@@ -611,8 +611,8 @@ class _ReviewCreateProfileCraftmanWidgetState
                                     10.0, 30.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    final usersUpdateData =
-                                        createUsersRecordData(
+                                    await currentUserReference!
+                                        .update(createUsersRecordData(
                                       photoUrl: FFAppState().photoURL,
                                       createdTime: getCurrentTimestamp,
                                       bio: FFAppState().bioCraftsman,
@@ -630,9 +630,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       idNumber: FFAppState().idNumber,
                                       email: '',
                                       craftType: FFAppState().craftType,
-                                    );
-                                    await currentUserReference!
-                                        .update(usersUpdateData);
+                                    ));
                                     await Navigator.push(
                                       context,
                                       MaterialPageRoute(

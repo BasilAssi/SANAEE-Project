@@ -654,18 +654,16 @@ class _JobPostDetailsActualWidgetState
                           onPressed: _model.clicked == true
                               ? null
                               : () async {
-                                  final applicationsCreateData =
-                                      createApplicationsRecordData(
-                                    jobId: widget.posts?.id,
-                                    craftsmanId: currentUserReference?.id,
-                                    status: 'Pending',
-                                    craftsmanApplied: currentUserReference,
-                                    jobApplied: widget.posts,
-                                    timeApplied: getCurrentTimestamp,
-                                  );
                                   await ApplicationsRecord.collection
                                       .doc()
-                                      .set(applicationsCreateData);
+                                      .set(createApplicationsRecordData(
+                                        jobId: widget.posts?.id,
+                                        craftsmanId: currentUserReference?.id,
+                                        status: 'Pending',
+                                        craftsmanApplied: currentUserReference,
+                                        jobApplied: widget.posts,
+                                        timeApplied: getCurrentTimestamp,
+                                      ));
                                 },
                           text: FFLocalizations.of(context).getText(
                             'uenl02ze' /* قدم للعمل  */,

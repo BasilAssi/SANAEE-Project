@@ -182,7 +182,8 @@ class _CreateAccountThreeCustomerWidgetState
                               0.0, 150.0, 0.0, 0.0),
                           child: FFButtonWidget(
                             onPressed: () async {
-                              final usersUpdateData = createUsersRecordData(
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
                                 firstNameCustomer: FFAppState().firstName,
                                 fatherNameCustomer:
                                     FFAppState().NameOfTheFather,
@@ -192,9 +193,7 @@ class _CreateAccountThreeCustomerWidgetState
                                 city: FFAppState().city,
                                 address: FFAppState().address,
                                 idNumber: _model.textController.text,
-                              );
-                              await currentUserReference!
-                                  .update(usersUpdateData);
+                              ));
                               await Navigator.push(
                                 context,
                                 MaterialPageRoute(

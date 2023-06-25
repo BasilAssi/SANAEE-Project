@@ -219,14 +219,12 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                       highlightColor:
                                                           Colors.transparent,
                                                       onTap: () async {
-                                                        final usersUpdateData =
-                                                            createUsersRecordData(
-                                                          isCustomer: false,
-                                                          isCraftsman: true,
-                                                        );
                                                         await currentUserReference!
                                                             .update(
-                                                                usersUpdateData);
+                                                                createUsersRecordData(
+                                                          isCustomer: false,
+                                                          isCraftsman: true,
+                                                        ));
                                                         await Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
@@ -261,16 +259,14 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                               FFButtonWidget(
                                                                 onPressed:
                                                                     () async {
-                                                                  final usersUpdateData =
-                                                                      createUsersRecordData(
+                                                                  await currentUserReference!
+                                                                      .update(
+                                                                          createUsersRecordData(
                                                                     isCustomer:
                                                                         false,
                                                                     isCraftsman:
                                                                         true,
-                                                                  );
-                                                                  await currentUserReference!
-                                                                      .update(
-                                                                          usersUpdateData);
+                                                                  ));
                                                                   await Navigator
                                                                       .push(
                                                                     context,
@@ -367,14 +363,12 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                         highlightColor:
                                                             Colors.transparent,
                                                         onTap: () async {
-                                                          final usersUpdateData =
-                                                              createUsersRecordData(
-                                                            isCustomer: true,
-                                                            isCraftsman: false,
-                                                          );
                                                           await currentUserReference!
                                                               .update(
-                                                                  usersUpdateData);
+                                                                  createUsersRecordData(
+                                                            isCustomer: true,
+                                                            isCraftsman: false,
+                                                          ));
                                                           await Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
@@ -413,16 +407,14 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                   FFButtonWidget(
                                                                     onPressed:
                                                                         () async {
-                                                                      final usersUpdateData =
-                                                                          createUsersRecordData(
+                                                                      await currentUserReference!
+                                                                          .update(
+                                                                              createUsersRecordData(
                                                                         isCustomer:
                                                                             true,
                                                                         isCraftsman:
                                                                             false,
-                                                                      );
-                                                                      await currentUserReference!
-                                                                          .update(
-                                                                              usersUpdateData);
+                                                                      ));
                                                                       await Navigator
                                                                           .push(
                                                                         context,
