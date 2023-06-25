@@ -14,20 +14,10 @@ class ApplicationsRecord extends FirestoreRecord {
     _initializeFields();
   }
 
-  // "applicationId" field.
-  String? _applicationId;
-  String get applicationId => _applicationId ?? '';
-  bool hasApplicationId() => _applicationId != null;
-
   // "jobId" field.
   String? _jobId;
   String get jobId => _jobId ?? '';
   bool hasJobId() => _jobId != null;
-
-  // "craftsmanId" field.
-  String? _craftsmanId;
-  String get craftsmanId => _craftsmanId ?? '';
-  bool hasCraftsmanId() => _craftsmanId != null;
 
   // "status" field.
   String? _status;
@@ -50,9 +40,7 @@ class ApplicationsRecord extends FirestoreRecord {
   bool hasTimeApplied() => _timeApplied != null;
 
   void _initializeFields() {
-    _applicationId = snapshotData['applicationId'] as String?;
     _jobId = snapshotData['jobId'] as String?;
-    _craftsmanId = snapshotData['craftsmanId'] as String?;
     _status = snapshotData['status'] as String?;
     _craftsmanApplied = snapshotData['craftsmanApplied'] as DocumentReference?;
     _jobApplied = snapshotData['jobApplied'] as DocumentReference?;
@@ -94,9 +82,7 @@ class ApplicationsRecord extends FirestoreRecord {
 }
 
 Map<String, dynamic> createApplicationsRecordData({
-  String? applicationId,
   String? jobId,
-  String? craftsmanId,
   String? status,
   DocumentReference? craftsmanApplied,
   DocumentReference? jobApplied,
@@ -104,9 +90,7 @@ Map<String, dynamic> createApplicationsRecordData({
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
-      'applicationId': applicationId,
       'jobId': jobId,
-      'craftsmanId': craftsmanId,
       'status': status,
       'craftsmanApplied': craftsmanApplied,
       'jobApplied': jobApplied,
