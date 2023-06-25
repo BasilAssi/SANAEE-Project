@@ -801,7 +801,8 @@ class _EditProfileForCustomerWidgetState
                             EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
                         child: FFButtonWidget(
                           onPressed: () async {
-                            final usersUpdateData = createUsersRecordData(
+                            await editProfileForCustomerUsersRecord.reference
+                                .update(createUsersRecordData(
                               displayName: _model.textController1.text,
                               email: _model.textController3.text,
                               positionTitle: _model.textController2.text,
@@ -810,9 +811,7 @@ class _EditProfileForCustomerWidgetState
                               bio: _model.textController4.text,
                               photoUrl: _model.uploadedFileUrl,
                               salary: _model.salaryRangeValue?.toString(),
-                            );
-                            await editProfileForCustomerUsersRecord.reference
-                                .update(usersUpdateData);
+                            ));
                             Navigator.pop(context);
                           },
                           text: FFLocalizations.of(context).getText(

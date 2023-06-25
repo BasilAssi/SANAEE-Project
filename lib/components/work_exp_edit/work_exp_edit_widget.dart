@@ -5,7 +5,7 @@ import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
-import 'package:flutter_datetime_picker/flutter_datetime_picker.dart';
+import 'package:flutter_datetime_picker_plus/flutter_datetime_picker_plus.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
@@ -569,8 +569,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 0.0, 12.0, 0.0, 24.0),
                             child: FFButtonWidget(
                               onPressed: () async {
-                                final workHistoryUpdateData =
-                                    createWorkHistoryRecordData(
+                                await containerWorkHistoryRecord!.reference
+                                    .update(createWorkHistoryRecordData(
                                   jobTitle:
                                       containerWorkHistoryRecord!.jobTitle,
                                   companyName:
@@ -580,9 +580,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                   jobDescription: containerWorkHistoryRecord!
                                       .jobDescription,
                                   user: currentUserReference,
-                                );
-                                await containerWorkHistoryRecord!.reference
-                                    .update(workHistoryUpdateData);
+                                ));
                                 Navigator.pop(context);
                               },
                               text: FFLocalizations.of(context).getText(

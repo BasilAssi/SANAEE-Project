@@ -265,11 +265,10 @@ class _ChangPhotoWidgetState extends State<ChangPhotoWidget> {
                               ),
                               FFButtonWidget(
                                 onPressed: () async {
-                                  final usersUpdateData = createUsersRecordData(
-                                    photoUrl: _model.uploadedFileUrl,
-                                  );
                                   await currentUserReference!
-                                      .update(usersUpdateData);
+                                      .update(createUsersRecordData(
+                                    photoUrl: _model.uploadedFileUrl,
+                                  ));
                                   Navigator.pop(context);
                                 },
                                 text: FFLocalizations.of(context).getText(

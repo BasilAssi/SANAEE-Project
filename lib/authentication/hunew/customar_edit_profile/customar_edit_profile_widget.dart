@@ -120,12 +120,11 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                               size: 30.0,
                             ),
                             onPressed: () async {
-                              final usersUpdateData = createUsersRecordData(
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
                                 address: _model.textController2.text,
                                 city: _model.dropDownCityValue,
-                              );
-                              await currentUserReference!
-                                  .update(usersUpdateData);
+                              ));
                               Navigator.pop(context);
                             },
                           ),

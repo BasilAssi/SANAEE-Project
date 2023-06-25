@@ -123,13 +123,12 @@ class _EditProfileCraftsmanWidgetState
                               size: 30.0,
                             ),
                             onPressed: () async {
-                              final usersUpdateData = createUsersRecordData(
+                              await currentUserReference!
+                                  .update(createUsersRecordData(
                                 bio: _model.textController2.text,
                                 address: _model.textController3.text,
                                 city: _model.dropDownCityValue,
-                              );
-                              await currentUserReference!
-                                  .update(usersUpdateData);
+                              ));
                             },
                           ),
                         ),
