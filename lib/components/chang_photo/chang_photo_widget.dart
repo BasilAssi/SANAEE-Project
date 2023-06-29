@@ -49,7 +49,7 @@ class _ChangPhotoWidgetState extends State<ChangPhotoWidget> {
     return Padding(
       padding: EdgeInsetsDirectional.fromSTEB(0.0, 60.0, 0.0, 60.0),
       child: Container(
-        width: MediaQuery.of(context).size.width * 1.0,
+        width: MediaQuery.sizeOf(context).width * 1.0,
         height: 350.0,
         decoration: BoxDecoration(
           color: FlutterFlowTheme.of(context).secondaryBackground,
@@ -200,6 +200,7 @@ class _ChangPhotoWidgetState extends State<ChangPhotoWidget> {
                                         () => _model.isDataUploading = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
+
                                     var downloadUrls = <String>[];
                                     try {
                                       selectedUploadedFiles = selectedMedia

@@ -105,7 +105,7 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                       16.0, 6.0, 16.0, 6.0),
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,

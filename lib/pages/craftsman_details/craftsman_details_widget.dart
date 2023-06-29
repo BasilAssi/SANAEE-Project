@@ -19,9 +19,11 @@ class CraftsmanDetailsWidget extends StatefulWidget {
   const CraftsmanDetailsWidget({
     Key? key,
     this.candidateDetails,
+    required this.application,
   }) : super(key: key);
 
   final DocumentReference? candidateDetails;
+  final ApplicationsRecord? application;
 
   @override
   _CraftsmanDetailsWidgetState createState() => _CraftsmanDetailsWidgetState();
@@ -84,7 +86,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                         mainAxisSize: MainAxisSize.max,
                         children: [
                           Container(
-                            width: MediaQuery.of(context).size.width * 1.0,
+                            width: MediaQuery.sizeOf(context).width * 1.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context).darkText,
                             ),
@@ -438,10 +440,13 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: () async {
-                                      await widget.candidateDetails!
-                                          .update(createUsersRecordData());
-                                    },
+                                    onPressed: _model.accepted == true
+                                        ? null
+                                        : () async {
+                                            await widget.candidateDetails!
+                                                .update(
+                                                    createUsersRecordData());
+                                          },
                                     text: FFLocalizations.of(context).getText(
                                       'dr2wx4gg' /* قبول */,
                                     ),
@@ -468,12 +473,21 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
+                                      disabledColor:
+                                          FlutterFlowTheme.of(context).grayIcon,
+                                      disabledTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .background,
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: () {
-                                      print('Button pressed ...');
-                                    },
+                                    onPressed: _model.accepted == true
+                                        ? null
+                                        : () async {
+                                            await widget.application!.reference
+                                                .delete();
+                                            Navigator.pop(context);
+                                          },
                                     text: FFLocalizations.of(context).getText(
                                       'tk8wzu1t' /* رفض */,
                                     ),
@@ -499,6 +513,11 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
+                                      disabledColor:
+                                          FlutterFlowTheme.of(context).grayIcon,
+                                      disabledTextColor:
+                                          FlutterFlowTheme.of(context)
+                                              .background,
                                     ),
                                   ),
                                 ],
@@ -514,7 +533,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
               Align(
                 alignment: AlignmentDirectional(0.0, 1.0),
                 child: Container(
-                  width: MediaQuery.of(context).size.width * 1.0,
+                  width: MediaQuery.sizeOf(context).width * 1.0,
                   height: 100.0,
                   decoration: BoxDecoration(
                     color: FlutterFlowTheme.of(context).primary,
@@ -524,7 +543,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        await Navigator.push(
+                        Navigator.push(
                           context,
                           MaterialPageRoute(
                             builder: (context) => DETAILSChatWidget(

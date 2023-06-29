@@ -334,7 +334,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      await Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => LoginWidget(),
@@ -369,7 +369,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      await Navigator.push(
+                      Navigator.push(
                         context,
                         MaterialPageRoute(
                           builder: (context) => SignUpWidget(),

@@ -631,7 +631,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       email: '',
                                       craftType: FFAppState().craftType,
                                     ));
-                                    await Navigator.push(
+                                    Navigator.push(
                                       context,
                                       MaterialPageRoute(
                                         builder: (context) => NavBarPage(

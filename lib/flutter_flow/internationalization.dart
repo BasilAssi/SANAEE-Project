@@ -233,7 +233,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'قدم للعمل ',
       'en': 'Apply to work',
     },
-    'prhcxdtz': {
+    '4ct895p5': {
       'ar': 'Button',
       'en': '',
     },
@@ -256,25 +256,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // forgotPassword
   {
     'kjwltbio': {
-      'ar': 'Forgot Password',
-      'en': '',
+      'ar': 'هل نسيت كلمة السر',
+      'en': 'Forgot your password',
     },
     'ihpphlie': {
-      'ar': 'Your Email',
-      'en': '',
+      'ar': 'بريدك الالكتروني',
+      'en': 'Your Email',
     },
     '7uq2lba4': {
-      'ar': 'Please enter a valid email...',
-      'en': '',
+      'ar': 'يرجى إدخال البريد الإلكتروني الصحيح...',
+      'en': 'Please enter a valid email...',
     },
     'ifxx3yld': {
       'ar':
+          'سنرسل لك بريدًا إلكترونيًا يحتوي على رابط لإعادة تعيين كلمة المرور الخاصة بك ، يرجى إدخال البريد الإلكتروني المرتبط بحسابك أعلاه.',
+      'en':
           'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
-      'en': '',
     },
     '6tzetzky': {
-      'ar': 'Send Reset Password',
-      'en': '',
+      'ar': 'إرسال إعادة تعيين كلمة المرور',
+      'en': 'Send Reset Password',
     },
     'xz7h2g8g': {
       'ar': 'Home',

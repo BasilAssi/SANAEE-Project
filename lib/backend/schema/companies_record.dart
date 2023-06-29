@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
+
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
@@ -131,4 +133,37 @@ Map<String, dynamic> createCompaniesRecordData({
   );
 
   return firestoreData;
+}
+
+class CompaniesRecordDocumentEquality implements Equality<CompaniesRecord> {
+  const CompaniesRecordDocumentEquality();
+
+  @override
+  bool equals(CompaniesRecord? e1, CompaniesRecord? e2) {
+    return e1?.companyName == e2?.companyName &&
+        e1?.companyLogo == e2?.companyLogo &&
+        e1?.companyHero == e2?.companyHero &&
+        e1?.companyDescription == e2?.companyDescription &&
+        e1?.companyLocation == e2?.companyLocation &&
+        e1?.companyCity == e2?.companyCity &&
+        e1?.companyWebSite == e2?.companyWebSite &&
+        e1?.companySize == e2?.companySize &&
+        e1?.employees == e2?.employees;
+  }
+
+  @override
+  int hash(CompaniesRecord? e) => const ListEquality().hash([
+        e?.companyName,
+        e?.companyLogo,
+        e?.companyHero,
+        e?.companyDescription,
+        e?.companyLocation,
+        e?.companyCity,
+        e?.companyWebSite,
+        e?.companySize,
+        e?.employees
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is CompaniesRecord;
 }

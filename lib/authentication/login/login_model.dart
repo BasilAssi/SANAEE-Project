@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/authentication/forgot_password/forgot_password_widget.dart';
 import '/authentication/sign_up/sign_up_widget.dart';
 import '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';

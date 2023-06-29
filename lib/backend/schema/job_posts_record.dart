@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:from_css_color/from_css_color.dart';
 import '/backend/algolia/algolia_manager.dart';
+import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
@@ -232,4 +233,49 @@ Map<String, dynamic> createJobPostsRecordData({
   );
 
   return firestoreData;
+}
+
+class JobPostsRecordDocumentEquality implements Equality<JobPostsRecord> {
+  const JobPostsRecordDocumentEquality();
+
+  @override
+  bool equals(JobPostsRecord? e1, JobPostsRecord? e2) {
+    return e1?.jobName == e2?.jobName &&
+        e1?.jobCompany == e2?.jobCompany &&
+        e1?.salary == e2?.salary &&
+        e1?.jobDescription == e2?.jobDescription &&
+        e1?.timeCreated == e2?.timeCreated &&
+        e1?.jobLocation == e2?.jobLocation &&
+        e1?.postedBy == e2?.postedBy &&
+        e1?.likedPost == e2?.likedPost &&
+        e1?.jobRequirements == e2?.jobRequirements &&
+        e1?.jobPreferredSkills == e2?.jobPreferredSkills &&
+        e1?.companyLogo == e2?.companyLogo &&
+        e1?.photoHero == e2?.photoHero &&
+        e1?.myJob == e2?.myJob &&
+        e1?.positionTitle == e2?.positionTitle &&
+        e1?.experienceLevel == e2?.experienceLevel;
+  }
+
+  @override
+  int hash(JobPostsRecord? e) => const ListEquality().hash([
+        e?.jobName,
+        e?.jobCompany,
+        e?.salary,
+        e?.jobDescription,
+        e?.timeCreated,
+        e?.jobLocation,
+        e?.postedBy,
+        e?.likedPost,
+        e?.jobRequirements,
+        e?.jobPreferredSkills,
+        e?.companyLogo,
+        e?.photoHero,
+        e?.myJob,
+        e?.positionTitle,
+        e?.experienceLevel
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is JobPostsRecord;
 }

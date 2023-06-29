@@ -355,7 +355,7 @@ class _CreateProfileBioStepFourWidgetState
                                 FFAppState().bioCraftsman =
                                     _model.textController.text;
                               });
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>

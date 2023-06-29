@@ -167,53 +167,36 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
                                         borderRadius:
                                             BorderRadius.circular(8.0),
                                       ),
-                                      child: Column(
-                                        mainAxisSize: MainAxisSize.max,
-                                        children: [
-                                          Row(
-                                            mainAxisSize: MainAxisSize.max,
-                                            mainAxisAlignment:
-                                                MainAxisAlignment.spaceEvenly,
-                                            children: [
-                                              Align(
-                                                alignment: AlignmentDirectional(
-                                                    -0.84, 0.88),
-                                                child: Padding(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 10.0, 0.0, 0.0),
+                                        child: Column(
+                                          mainAxisSize: MainAxisSize.max,
+                                          children: [
+                                            Row(
+                                              mainAxisSize: MainAxisSize.max,
+                                              mainAxisAlignment:
+                                                  MainAxisAlignment.spaceEvenly,
+                                              children: [
+                                                Padding(
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
-                                                          2.0, 2.0, 2.0, 2.0),
-                                                  child: ClipRRect(
-                                                    borderRadius:
-                                                        BorderRadius.circular(
-                                                            8.0),
-                                                    child: Image.network(
-                                                      customerInfoUsersRecord
-                                                          .photoUrl,
-                                                      width: 60.0,
-                                                      height: 60.0,
-                                                      fit: BoxFit.cover,
-                                                    ),
+                                                          0.0, 10.0, 0.0, 0.0),
+                                                  child: Text(
+                                                    '${customerInfoUsersRecord.firstNameCustomer} ${customerInfoUsersRecord.fatherNameCustomer} ${customerInfoUsersRecord.grandFatherNameCustomer} ${customerInfoUsersRecord.lastNameCustomer}',
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          fontSize: 20.0,
+                                                        ),
                                                   ),
                                                 ),
-                                              ),
-                                              Padding(
-                                                padding: EdgeInsetsDirectional
-                                                    .fromSTEB(
-                                                        0.0, 10.0, 0.0, 0.0),
-                                                child: Text(
-                                                  '${customerInfoUsersRecord.firstNameCustomer} ${customerInfoUsersRecord.fatherNameCustomer} ${customerInfoUsersRecord.grandFatherNameCustomer} ${customerInfoUsersRecord.lastNameCustomer}',
-                                                  style: FlutterFlowTheme.of(
-                                                          context)
-                                                      .bodyMedium
-                                                      .override(
-                                                        fontFamily: 'Outfit',
-                                                        fontSize: 20.0,
-                                                      ),
-                                                ),
-                                              ),
-                                            ],
-                                          ),
-                                        ],
+                                              ],
+                                            ),
+                                          ],
+                                        ),
                                       ),
                                     ),
                                   );

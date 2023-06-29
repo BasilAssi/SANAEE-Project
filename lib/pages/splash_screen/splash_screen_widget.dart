@@ -73,7 +73,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 3000));
-      await Navigator.push(
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => OnboardingScreensWidget(),
@@ -109,7 +109,7 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
               highlightColor: Colors.transparent,
               onTap: () async {
                 await Future.delayed(const Duration(milliseconds: 3000));
-                await Navigator.pushReplacement(
+                Navigator.pushReplacement(
                   context,
                   PageTransition(
                     type: PageTransitionType.leftToRight,

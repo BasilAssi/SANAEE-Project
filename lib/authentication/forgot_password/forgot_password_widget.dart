@@ -46,14 +46,23 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
       appBar: AppBar(
         backgroundColor: FlutterFlowTheme.of(context).secondaryBackground,
         automaticallyImplyLeading: false,
-        leading: Icon(
-          Icons.chevron_left_rounded,
-          color: FlutterFlowTheme.of(context).darkText,
-          size: 32.0,
+        leading: InkWell(
+          splashColor: Colors.transparent,
+          focusColor: Colors.transparent,
+          hoverColor: Colors.transparent,
+          highlightColor: Colors.transparent,
+          onTap: () async {
+            Navigator.pop(context);
+          },
+          child: Icon(
+            Icons.chevron_left_rounded,
+            color: FlutterFlowTheme.of(context).darkText,
+            size: 32.0,
+          ),
         ),
         title: Text(
           FFLocalizations.of(context).getText(
-            'kjwltbio' /* Forgot Password */,
+            'kjwltbio' /* هل نسيت كلمة السر */,
           ),
           style: FlutterFlowTheme.of(context).titleMedium,
         ),
@@ -71,11 +80,11 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
               obscureText: false,
               decoration: InputDecoration(
                 labelText: FFLocalizations.of(context).getText(
-                  'ihpphlie' /* Your Email */,
+                  'ihpphlie' /* بريدك الالكتروني */,
                 ),
                 labelStyle: FlutterFlowTheme.of(context).titleSmall,
                 hintText: FFLocalizations.of(context).getText(
-                  '7uq2lba4' /* Please enter a valid email... */,
+                  '7uq2lba4' /* يرجى إدخال البريد الإلكتروني ا... */,
                 ),
                 hintStyle: FlutterFlowTheme.of(context).titleSmall,
                 enabledBorder: UnderlineInputBorder(
@@ -123,7 +132,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 Expanded(
                   child: Text(
                     FFLocalizations.of(context).getText(
-                      'ifxx3yld' /* We will send you an email with... */,
+                      'ifxx3yld' /* سنرسل لك بريدًا إلكترونيًا يحت... */,
                     ),
                     style: FlutterFlowTheme.of(context).bodySmall,
                   ),
@@ -151,7 +160,7 @@ class _ForgotPasswordWidgetState extends State<ForgotPasswordWidget> {
                 );
               },
               text: FFLocalizations.of(context).getText(
-                '6tzetzky' /* Send Reset Password */,
+                '6tzetzky' /* إرسال إعادة تعيين كلمة المرور */,
               ),
               options: FFButtonOptions(
                 width: 230.0,

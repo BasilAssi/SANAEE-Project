@@ -39,7 +39,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
       await Future.delayed(const Duration(milliseconds: 50));
       if (valueOrDefault<bool>(currentUserDocument?.isCustomer, false) !=
           true) {
-        await Navigator.push(
+        Navigator.push(
           context,
           MaterialPageRoute(
             builder: (context) => MAINHomeCraftsmanWidget(),
@@ -65,7 +65,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
       backgroundColor: FlutterFlowTheme.of(context).primaryBackground,
       floatingActionButton: FloatingActionButton(
         onPressed: () async {
-          await Navigator.push(
+          Navigator.push(
             context,
             PageTransition(
               type: PageTransitionType.bottomToTop,
@@ -88,7 +88,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
             size: 30.0,
           ),
           onPressed: () async {
-            await Navigator.push(
+            Navigator.push(
               context,
               PageTransition(
                 type: PageTransitionType.bottomToTop,
@@ -197,7 +197,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                             hoverColor: Colors.transparent,
                             highlightColor: Colors.transparent,
                             onTap: () async {
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>

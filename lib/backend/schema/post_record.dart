@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
+
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
@@ -146,4 +148,41 @@ Map<String, dynamic> createPostRecordData({
   );
 
   return firestoreData;
+}
+
+class PostRecordDocumentEquality implements Equality<PostRecord> {
+  const PostRecordDocumentEquality();
+
+  @override
+  bool equals(PostRecord? e1, PostRecord? e2) {
+    return e1?.jobType == e2?.jobType &&
+        e1?.jobTitle == e2?.jobTitle &&
+        e1?.shortDescription == e2?.shortDescription &&
+        e1?.estimatedPrice == e2?.estimatedPrice &&
+        e1?.timeCreated == e2?.timeCreated &&
+        e1?.createdBy == e2?.createdBy &&
+        e1?.image1 == e2?.image1 &&
+        e1?.image2 == e2?.image2 &&
+        e1?.image3 == e2?.image3 &&
+        e1?.jobLocation == e2?.jobLocation &&
+        e1?.jobId == e2?.jobId;
+  }
+
+  @override
+  int hash(PostRecord? e) => const ListEquality().hash([
+        e?.jobType,
+        e?.jobTitle,
+        e?.shortDescription,
+        e?.estimatedPrice,
+        e?.timeCreated,
+        e?.createdBy,
+        e?.image1,
+        e?.image2,
+        e?.image3,
+        e?.jobLocation,
+        e?.jobId
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is PostRecord;
 }

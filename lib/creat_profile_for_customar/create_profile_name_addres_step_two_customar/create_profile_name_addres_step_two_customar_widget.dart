@@ -386,7 +386,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                                 .textFieldAddreseController
                                                 .text;
                                           });
-                                          await Navigator.push(
+                                          Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
