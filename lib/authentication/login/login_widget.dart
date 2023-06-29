@@ -1,4 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
+import '/authentication/forgot_password/forgot_password_widget.dart';
 import '/authentication/sign_up/sign_up_widget.dart';
 import '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -54,8 +55,8 @@ class _LoginWidgetState extends State<LoginWidget> {
             mainAxisSize: MainAxisSize.max,
             children: [
               Container(
-                width: MediaQuery.of(context).size.width * 1.0,
-                height: MediaQuery.of(context).size.height * 1.0,
+                width: MediaQuery.sizeOf(context).width * 1.0,
+                height: MediaQuery.sizeOf(context).height * 1.0,
                 decoration: BoxDecoration(
                   color: Color(0xFF262D34),
                   image: DecorationImage(
@@ -97,7 +98,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                           padding: EdgeInsetsDirectional.fromSTEB(
                               15.0, 10.0, 15.0, 180.0),
                           child: Container(
-                            width: MediaQuery.of(context).size.width * 1.059,
+                            width: MediaQuery.sizeOf(context).width * 1.059,
                             height: 480.0,
                             decoration: BoxDecoration(
                               color: FlutterFlowTheme.of(context)
@@ -334,9 +335,14 @@ class _LoginWidgetState extends State<LoginWidget> {
                                           MainAxisAlignment.start,
                                       children: [
                                         FFButtonWidget(
-                                          onPressed: () {
-                                            print(
-                                                'ButtonForgotPassword pressed ...');
+                                          onPressed: () async {
+                                            Navigator.push(
+                                              context,
+                                              MaterialPageRoute(
+                                                builder: (context) =>
+                                                    ForgotPasswordWidget(),
+                                              ),
+                                            );
                                           },
                                           text: FFLocalizations.of(context)
                                               .getText(
@@ -357,6 +363,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     .labelLarge
                                                     .override(
                                                       fontFamily: 'Poppins',
+                                                      color: Color(0xFF4850F1),
                                                       fontSize: 20.0,
                                                     ),
                                             elevation: 0.0,
@@ -391,7 +398,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                     ?.isCraftsman,
                                                 false) ==
                                             true) {
-                                          await Navigator.push(
+                                          Navigator.push(
                                             context,
                                             MaterialPageRoute(
                                               builder: (context) =>
@@ -404,7 +411,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                                       ?.isCustomer,
                                                   false) ==
                                               true) {
-                                            await Navigator.push(
+                                            Navigator.push(
                                               context,
                                               MaterialPageRoute(
                                                 builder: (context) =>
@@ -483,7 +490,7 @@ class _LoginWidgetState extends State<LoginWidget> {
                                             hoverColor: Colors.transparent,
                                             highlightColor: Colors.transparent,
                                             onTap: () async {
-                                              await Navigator.push(
+                                              Navigator.push(
                                                 context,
                                                 MaterialPageRoute(
                                                   builder: (context) =>

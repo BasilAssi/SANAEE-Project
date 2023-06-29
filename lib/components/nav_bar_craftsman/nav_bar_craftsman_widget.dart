@@ -101,7 +101,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.chat = Color(0xFF57636C);
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                await Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
@@ -129,7 +129,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                           _model.chat = Color(0xFF57636C);
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        await Navigator.push(
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
@@ -167,7 +167,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.myJob =
                                       FlutterFlowTheme.of(context).primary;
                                 });
-                                await Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
@@ -201,7 +201,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primary;
                                         });
-                                        await Navigator.push(
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
@@ -236,7 +236,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       FlutterFlowTheme.of(context).primary;
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                await Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
@@ -264,7 +264,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                                   .primary;
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        await Navigator.push(
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>
@@ -299,7 +299,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.chat = Color(0xFF57636C);
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                await Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>
@@ -327,7 +327,7 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                           _model.chat = Color(0xFF57636C);
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        await Navigator.push(
+                                        Navigator.push(
                                           context,
                                           MaterialPageRoute(
                                             builder: (context) =>

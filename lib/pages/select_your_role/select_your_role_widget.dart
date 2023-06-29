@@ -54,8 +54,8 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
             Stack(
               children: [
                 Container(
-                  width: MediaQuery.of(context).size.width * 1.0,
-                  height: MediaQuery.of(context).size.height * 1.0,
+                  width: MediaQuery.sizeOf(context).width * 1.0,
+                  height: MediaQuery.sizeOf(context).height * 1.0,
                   decoration: BoxDecoration(
                     color: Color(0xFF262D34),
                     image: DecorationImage(
@@ -128,7 +128,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                             padding: EdgeInsetsDirectional.fromSTEB(
                                 0.0, 10.0, 0.0, 0.0),
                             child: Container(
-                              width: MediaQuery.of(context).size.width * 1.0,
+                              width: MediaQuery.sizeOf(context).width * 1.0,
                               height: 400.0,
                               decoration: BoxDecoration(
                                 color: FlutterFlowTheme.of(context)
@@ -225,7 +225,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                           isCustomer: false,
                                                           isCraftsman: true,
                                                         ));
-                                                        await Navigator.push(
+                                                        Navigator.push(
                                                           context,
                                                           MaterialPageRoute(
                                                             builder: (context) =>
@@ -267,7 +267,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                     isCraftsman:
                                                                         true,
                                                                   ));
-                                                                  await Navigator
+                                                                  Navigator
                                                                       .push(
                                                                     context,
                                                                     MaterialPageRoute(
@@ -369,7 +369,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                             isCustomer: true,
                                                             isCraftsman: false,
                                                           ));
-                                                          await Navigator.push(
+                                                          Navigator.push(
                                                             context,
                                                             MaterialPageRoute(
                                                               builder: (context) =>
@@ -415,7 +415,7 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                         isCraftsman:
                                                                             false,
                                                                       ));
-                                                                      await Navigator
+                                                                      Navigator
                                                                           .push(
                                                                         context,
                                                                         MaterialPageRoute(

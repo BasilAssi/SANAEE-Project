@@ -168,6 +168,12 @@ class FFAppState extends ChangeNotifier {
   void deleteBioCraftsman() {
     secureStorage.delete(key: 'ff_bioCraftsman');
   }
+
+  bool _appliedApplicationJob = false;
+  bool get appliedApplicationJob => _appliedApplicationJob;
+  set appliedApplicationJob(bool _value) {
+    _appliedApplicationJob = _value;
+  }
 }
 
 LatLng? _latLngFromString(String? val) {

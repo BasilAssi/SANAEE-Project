@@ -239,17 +239,18 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                                 _model.isDataUploading1 = true);
                                             var selectedUploadedFiles =
                                                 <FFUploadedFile>[];
+
                                             var downloadUrls = <String>[];
                                             try {
                                               selectedUploadedFiles =
                                                   selectedFiles
                                                       .map(
-                                                          (f) => FFUploadedFile(
-                                                                name: f
+                                                          (m) => FFUploadedFile(
+                                                                name: m
                                                                     .storagePath
                                                                     .split('/')
                                                                     .last,
-                                                                bytes: f.bytes,
+                                                                bytes: m.bytes,
                                                               ))
                                                       .toList();
 
@@ -345,6 +346,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                               _model.isDataUploading2 = true);
                                           var selectedUploadedFiles =
                                               <FFUploadedFile>[];
+
                                           var downloadUrls = <String>[];
                                           try {
                                             selectedUploadedFiles =
@@ -486,7 +488,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                 FFAppState().craftType =
                                     _model.dropDownDraftTypeValue!;
                               });
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>

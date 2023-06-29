@@ -146,6 +146,7 @@ class _EditProfileForCustomerWidgetState
                                         () => _model.isDataUploading = true);
                                     var selectedUploadedFiles =
                                         <FFUploadedFile>[];
+
                                     var downloadUrls = <String>[];
                                     try {
                                       showUploadMessage(
@@ -573,7 +574,7 @@ class _EditProfileForCustomerWidgetState
                                 children: [
                                   Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 0.9,
+                                        MediaQuery.sizeOf(context).width * 0.9,
                                     height: 50.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
@@ -791,7 +792,7 @@ class _EditProfileForCustomerWidgetState
                   Align(
                     alignment: AlignmentDirectional(0.0, 1.0),
                     child: Container(
-                      width: MediaQuery.of(context).size.width * 1.0,
+                      width: MediaQuery.sizeOf(context).width * 1.0,
                       height: 100.0,
                       decoration: BoxDecoration(
                         color: FlutterFlowTheme.of(context).primary,

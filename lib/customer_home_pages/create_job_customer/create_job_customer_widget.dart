@@ -151,7 +151,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                               ],
                               onChanged: (val) =>
                                   setState(() => _model.jobTypeValue = val),
-                              width: MediaQuery.of(context).size.width * 0.9,
+                              width: MediaQuery.sizeOf(context).width * 0.9,
                               height: 70.0,
                               textStyle: FlutterFlowTheme.of(context)
                                   .bodyMedium
@@ -545,6 +545,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                     m.storagePath, context))) {
                               setState(() => _model.isDataUploading1 = true);
                               var selectedUploadedFiles = <FFUploadedFile>[];
+
                               var downloadUrls = <String>[];
                               try {
                                 selectedUploadedFiles = selectedMedia
@@ -611,6 +612,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                       () => _model.isDataUploading2 = true);
                                   var selectedUploadedFiles =
                                       <FFUploadedFile>[];
+
                                   var downloadUrls = <String>[];
                                   try {
                                     selectedUploadedFiles = selectedMedia
@@ -684,6 +686,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                     m.storagePath, context))) {
                               setState(() => _model.isDataUploading3 = true);
                               var selectedUploadedFiles = <FFUploadedFile>[];
+
                               var downloadUrls = <String>[];
                               try {
                                 selectedUploadedFiles = selectedMedia
@@ -761,6 +764,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                     m.storagePath, context))) {
                               setState(() => _model.isDataUploading4 = true);
                               var selectedUploadedFiles = <FFUploadedFile>[];
+
                               var downloadUrls = <String>[];
                               try {
                                 selectedUploadedFiles = selectedMedia

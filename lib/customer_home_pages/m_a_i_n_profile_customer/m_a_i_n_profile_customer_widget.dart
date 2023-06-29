@@ -122,7 +122,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                             mainAxisSize: MainAxisSize.max,
                             children: [
                               Container(
-                                width: MediaQuery.of(context).size.width * 1.0,
+                                width: MediaQuery.sizeOf(context).width * 1.0,
                                 height: 170.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).darkText,
@@ -176,7 +176,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                   ),
                                                   onPressed: () async {
                                                     await authManager.signOut();
-                                                    await Navigator
+                                                    Navigator
                                                         .pushAndRemoveUntil(
                                                       context,
                                                       MaterialPageRoute(
@@ -223,7 +223,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                     size: 20.0,
                                                   ),
                                                   onPressed: () async {
-                                                    await Navigator.push(
+                                                    Navigator.push(
                                                       context,
                                                       MaterialPageRoute(
                                                         builder: (context) =>
@@ -315,7 +315,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                   },
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     decoration: BoxDecoration(
                                       color:
                                           FlutterFlowTheme.of(context).darkText,
@@ -443,7 +443,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                   },
                                   child: Container(
                                     width:
-                                        MediaQuery.of(context).size.width * 1.0,
+                                        MediaQuery.sizeOf(context).width * 1.0,
                                     decoration: BoxDecoration(
                                       color: FlutterFlowTheme.of(context)
                                           .secondaryBackground,

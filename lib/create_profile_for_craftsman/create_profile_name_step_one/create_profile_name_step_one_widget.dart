@@ -218,6 +218,7 @@ class _CreateProfileNameStepOneWidgetState
                                 validateFileFormat(m.storagePath, context))) {
                           setState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
+
                           var downloadUrls = <String>[];
                           try {
                             selectedUploadedFiles = selectedMedia
@@ -565,7 +566,7 @@ class _CreateProfileNameStepOneWidgetState
                                 FFAppState().familyName =
                                     _model.textFieldfamilyNameController.text;
                                 FFAppState().photoURL = _model.uploadedFileUrl;
-                                await Navigator.push(
+                                Navigator.push(
                                   context,
                                   MaterialPageRoute(
                                     builder: (context) =>

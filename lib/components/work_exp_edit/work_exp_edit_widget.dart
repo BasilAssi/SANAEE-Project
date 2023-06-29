@@ -78,8 +78,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                 ? containerWorkHistoryRecordList.first
                 : null;
         return Container(
-          width: MediaQuery.of(context).size.width * 1.0,
-          height: MediaQuery.of(context).size.height * 1.0,
+          width: MediaQuery.sizeOf(context).width * 1.0,
+          height: MediaQuery.sizeOf(context).height * 1.0,
           decoration: BoxDecoration(
             color: FlutterFlowTheme.of(context).secondaryBackground,
           ),
@@ -290,11 +290,11 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 },
                                 child: Container(
                                   width:
-                                      MediaQuery.of(context).size.width * 0.48,
+                                      MediaQuery.sizeOf(context).width * 0.48,
                                   height: 50.0,
                                   constraints: BoxConstraints(
                                     maxWidth:
-                                        MediaQuery.of(context).size.width * 0.4,
+                                        MediaQuery.sizeOf(context).width * 0.4,
                                   ),
                                   decoration: BoxDecoration(
                                     color: FlutterFlowTheme.of(context)
@@ -399,11 +399,11 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 );
                               },
                               child: Container(
-                                width: MediaQuery.of(context).size.width * 0.48,
+                                width: MediaQuery.sizeOf(context).width * 0.48,
                                 height: 50.0,
                                 constraints: BoxConstraints(
                                   maxWidth:
-                                      MediaQuery.of(context).size.width * 0.4,
+                                      MediaQuery.sizeOf(context).width * 0.4,
                                 ),
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context)

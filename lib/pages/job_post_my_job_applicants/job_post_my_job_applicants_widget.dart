@@ -598,7 +598,7 @@ class _JobPostMyJobApplicantsWidgetState
                                       child: Image.asset(
                                         'assets/images/noAppliedJobs@2x.png',
                                         width:
-                                            MediaQuery.of(context).size.width *
+                                            MediaQuery.sizeOf(context).width *
                                                 0.7,
                                         height: 330.0,
                                       ),
@@ -646,7 +646,7 @@ class _JobPostMyJobApplicantsWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                await Navigator.push(
+                                                Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
@@ -654,6 +654,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                       candidateDetails:
                                                           containerUsersRecord
                                                               .reference,
+                                                      application:
+                                                          listViewApplicationsRecord,
                                                     ),
                                                   ),
                                                 );

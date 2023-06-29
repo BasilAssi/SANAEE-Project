@@ -38,7 +38,7 @@ class _CreateProfileNameStepOneCustomarWidgetState
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       setState(() {});
-      await Navigator.push(
+      Navigator.push(
         context,
         MaterialPageRoute(
           builder: (context) => CreateProfileNameAddresStepTwoCustomarWidget(),
@@ -187,6 +187,7 @@ class _CreateProfileNameStepOneCustomarWidgetState
                                 validateFileFormat(m.storagePath, context))) {
                           setState(() => _model.isDataUploading = true);
                           var selectedUploadedFiles = <FFUploadedFile>[];
+
                           var downloadUrls = <String>[];
                           try {
                             selectedUploadedFiles = selectedMedia
@@ -517,7 +518,7 @@ class _CreateProfileNameStepOneCustomarWidgetState
                                 FFAppState().familyName =
                                     _model.textFieldfamilyNameController.text;
                               });
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) =>

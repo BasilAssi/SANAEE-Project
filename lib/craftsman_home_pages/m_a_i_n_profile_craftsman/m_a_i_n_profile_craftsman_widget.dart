@@ -130,7 +130,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                     children: [
                                       Container(
                                         width:
-                                            MediaQuery.of(context).size.width *
+                                            MediaQuery.sizeOf(context).width *
                                                 1.0,
                                         height: 170.0,
                                         decoration: BoxDecoration(
@@ -198,7 +198,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                           onPressed: () async {
                                                             await authManager
                                                                 .signOut();
-                                                            await Navigator
+                                                            Navigator
                                                                 .pushAndRemoveUntil(
                                                               context,
                                                               MaterialPageRoute(
@@ -253,8 +253,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                             size: 20.0,
                                                           ),
                                                           onPressed: () async {
-                                                            await Navigator
-                                                                .push(
+                                                            Navigator.push(
                                                               context,
                                                               MaterialPageRoute(
                                                                 builder:
@@ -395,8 +394,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                             }
                                           },
                                           child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
+                                            width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             decoration: BoxDecoration(
@@ -544,8 +542,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                             }
                                           },
                                           child: Container(
-                                            width: MediaQuery.of(context)
-                                                    .size
+                                            width: MediaQuery.sizeOf(context)
                                                     .width *
                                                 1.0,
                                             decoration: BoxDecoration(
@@ -946,10 +943,10 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                               final jobPostCardWorkHistoryRecord =
                                                   snapshot.data!;
                                               return Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
                                                 height: 70.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
@@ -1168,9 +1165,9 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                                 builder:
                                                                     (context) {
                                                                   return Padding(
-                                                                    padding: MediaQuery.of(
-                                                                            context)
-                                                                        .viewInsets,
+                                                                    padding: MediaQuery
+                                                                        .viewInsetsOf(
+                                                                            context),
                                                                     child:
                                                                         Container(
                                                                       height:

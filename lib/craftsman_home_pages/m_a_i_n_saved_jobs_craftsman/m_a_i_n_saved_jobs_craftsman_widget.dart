@@ -183,7 +183,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                await Navigator.push(
+                                                Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
@@ -417,7 +417,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                await Navigator.push(
+                                                Navigator.push(
                                                   context,
                                                   MaterialPageRoute(
                                                     builder: (context) =>
@@ -428,15 +428,18 @@ class _MAINSavedJobsCraftsmanWidgetState
                                                       application:
                                                           listViewApplicationsRecord
                                                               .reference,
+                                                      userCustomer:
+                                                          jobPostCardPostRecord!
+                                                              .createdBy,
                                                     ),
                                                   ),
                                                 );
                                               },
                                               child: Container(
-                                                width: MediaQuery.of(context)
-                                                        .size
-                                                        .width *
-                                                    1.0,
+                                                width:
+                                                    MediaQuery.sizeOf(context)
+                                                            .width *
+                                                        1.0,
                                                 decoration: BoxDecoration(
                                                   color: FlutterFlowTheme.of(
                                                           context)

@@ -2,6 +2,7 @@ import 'dart:async';
 
 import 'package:from_css_color/from_css_color.dart';
 import '/backend/algolia/algolia_manager.dart';
+import 'package:collection/collection.dart';
 
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
@@ -366,4 +367,79 @@ Map<String, dynamic> createUsersRecordData({
   );
 
   return firestoreData;
+}
+
+class UsersRecordDocumentEquality implements Equality<UsersRecord> {
+  const UsersRecordDocumentEquality();
+
+  @override
+  bool equals(UsersRecord? e1, UsersRecord? e2) {
+    return e1?.displayName == e2?.displayName &&
+        e1?.email == e2?.email &&
+        e1?.password == e2?.password &&
+        e1?.createdTime == e2?.createdTime &&
+        e1?.photoUrl == e2?.photoUrl &&
+        e1?.bio == e2?.bio &&
+        e1?.uid == e2?.uid &&
+        e1?.phoneNumber == e2?.phoneNumber &&
+        e1?.likedPosts == e2?.likedPosts &&
+        e1?.profileType == e2?.profileType &&
+        e1?.salary == e2?.salary &&
+        e1?.isCustomer == e2?.isCustomer &&
+        e1?.isCraftsman == e2?.isCraftsman &&
+        e1?.positionTitle == e2?.positionTitle &&
+        e1?.experienceLevel == e2?.experienceLevel &&
+        e1?.currentCompany == e2?.currentCompany &&
+        e1?.editedTime == e2?.editedTime &&
+        e1?.firstNameCustomer == e2?.firstNameCustomer &&
+        e1?.lastNameCustomer == e2?.lastNameCustomer &&
+        e1?.firstnameCraftsman == e2?.firstnameCraftsman &&
+        e1?.fatherNameCraftsman == e2?.fatherNameCraftsman &&
+        e1?.grandFatherNameCraftsman == e2?.grandFatherNameCraftsman &&
+        e1?.familyNameCraftsman == e2?.familyNameCraftsman &&
+        e1?.city == e2?.city &&
+        e1?.address == e2?.address &&
+        e1?.idNumber == e2?.idNumber &&
+        e1?.craftType == e2?.craftType &&
+        e1?.fatherNameCustomer == e2?.fatherNameCustomer &&
+        e1?.grandFatherNameCustomer == e2?.grandFatherNameCustomer &&
+        e1?.craftsmanStarRating == e2?.craftsmanStarRating;
+  }
+
+  @override
+  int hash(UsersRecord? e) => const ListEquality().hash([
+        e?.displayName,
+        e?.email,
+        e?.password,
+        e?.createdTime,
+        e?.photoUrl,
+        e?.bio,
+        e?.uid,
+        e?.phoneNumber,
+        e?.likedPosts,
+        e?.profileType,
+        e?.salary,
+        e?.isCustomer,
+        e?.isCraftsman,
+        e?.positionTitle,
+        e?.experienceLevel,
+        e?.currentCompany,
+        e?.editedTime,
+        e?.firstNameCustomer,
+        e?.lastNameCustomer,
+        e?.firstnameCraftsman,
+        e?.fatherNameCraftsman,
+        e?.grandFatherNameCraftsman,
+        e?.familyNameCraftsman,
+        e?.city,
+        e?.address,
+        e?.idNumber,
+        e?.craftType,
+        e?.fatherNameCustomer,
+        e?.grandFatherNameCustomer,
+        e?.craftsmanStarRating
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is UsersRecord;
 }

@@ -615,7 +615,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                   FFAppState().city = _model.dropDownCityValue!;
                                   FFAppState().address =
                                       _model.textFieldAddreseController.text;
-                                  await Navigator.push(
+                                  Navigator.push(
                                     context,
                                     MaterialPageRoute(
                                       builder: (context) =>

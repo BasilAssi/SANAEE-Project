@@ -360,7 +360,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 return;
                               }
 
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => SelectYourRoleWidget(),
@@ -429,7 +429,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               if (user == null) {
                                 return;
                               }
-                              await Navigator.pushAndRemoveUntil(
+                              Navigator.pushAndRemoveUntil(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => NavBarPage(
@@ -523,7 +523,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           ),
                           FFButtonWidget(
                             onPressed: () async {
-                              await Navigator.push(
+                              Navigator.push(
                                 context,
                                 MaterialPageRoute(
                                   builder: (context) => LoginWidget(),

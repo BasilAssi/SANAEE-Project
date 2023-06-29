@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
+
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
@@ -115,4 +117,33 @@ Map<String, dynamic> createWorkHistoryRecordData({
   );
 
   return firestoreData;
+}
+
+class WorkHistoryRecordDocumentEquality implements Equality<WorkHistoryRecord> {
+  const WorkHistoryRecordDocumentEquality();
+
+  @override
+  bool equals(WorkHistoryRecord? e1, WorkHistoryRecord? e2) {
+    return e1?.jobTitle == e2?.jobTitle &&
+        e1?.companyName == e2?.companyName &&
+        e1?.startDate == e2?.startDate &&
+        e1?.endDate == e2?.endDate &&
+        e1?.jobDescription == e2?.jobDescription &&
+        e1?.user == e2?.user &&
+        e1?.companyLogo == e2?.companyLogo;
+  }
+
+  @override
+  int hash(WorkHistoryRecord? e) => const ListEquality().hash([
+        e?.jobTitle,
+        e?.companyName,
+        e?.startDate,
+        e?.endDate,
+        e?.jobDescription,
+        e?.user,
+        e?.companyLogo
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is WorkHistoryRecord;
 }

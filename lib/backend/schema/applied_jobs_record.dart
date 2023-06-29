@@ -1,5 +1,7 @@
 import 'dart:async';
 
+import 'package:collection/collection.dart';
+
 import '/backend/schema/util/firestore_util.dart';
 import '/backend/schema/util/schema_util.dart';
 
@@ -115,4 +117,33 @@ Map<String, dynamic> createAppliedJobsRecordData({
   );
 
   return firestoreData;
+}
+
+class AppliedJobsRecordDocumentEquality implements Equality<AppliedJobsRecord> {
+  const AppliedJobsRecordDocumentEquality();
+
+  @override
+  bool equals(AppliedJobsRecord? e1, AppliedJobsRecord? e2) {
+    return e1?.jobApplied == e2?.jobApplied &&
+        e1?.userApplied == e2?.userApplied &&
+        e1?.appliedTime == e2?.appliedTime &&
+        e1?.coverLetter == e2?.coverLetter &&
+        e1?.image1 == e2?.image1 &&
+        e1?.image2 == e2?.image2 &&
+        e1?.image3 == e2?.image3;
+  }
+
+  @override
+  int hash(AppliedJobsRecord? e) => const ListEquality().hash([
+        e?.jobApplied,
+        e?.userApplied,
+        e?.appliedTime,
+        e?.coverLetter,
+        e?.image1,
+        e?.image2,
+        e?.image3
+      ]);
+
+  @override
+  bool isValidKey(Object? o) => o is AppliedJobsRecord;
 }
