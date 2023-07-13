@@ -4,7 +4,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/pages/d_e_t_a_i_l_s_chat/d_e_t_a_i_l_s_chat_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +61,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -130,7 +129,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () async {
-                                                Navigator.pop(context);
+                                                context.pop();
                                               },
                                             ),
                                           ),
@@ -486,7 +485,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                         : () async {
                                             await widget.application!.reference
                                                 .delete();
-                                            Navigator.pop(context);
+                                            context.safePop();
                                           },
                                     text: FFLocalizations.of(context).getText(
                                       'tk8wzu1t' /* رفض */,
@@ -543,13 +542,17 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                         EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 36.0),
                     child: FFButtonWidget(
                       onPressed: () async {
-                        Navigator.push(
-                          context,
-                          MaterialPageRoute(
-                            builder: (context) => DETAILSChatWidget(
-                              chatUser: craftsmanDetailsUsersRecord,
+                        context.pushNamed(
+                          'DETAILS_Chat',
+                          queryParameters: {
+                            'chatUser': serializeParam(
+                              craftsmanDetailsUsersRecord,
+                              ParamType.Document,
                             ),
-                          ),
+                          }.withoutNulls,
+                          extra: <String, dynamic>{
+                            'chatUser': craftsmanDetailsUsersRecord,
+                          },
                         );
                       },
                       text: FFLocalizations.of(context).getText(

@@ -1,7 +1,3 @@
-import '/craftsman_home_pages/m_a_i_n_chat_craftsman/m_a_i_n_chat_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_profile_craftsman/m_a_i_n_profile_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_saved_jobs_craftsman/m_a_i_n_saved_jobs_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';

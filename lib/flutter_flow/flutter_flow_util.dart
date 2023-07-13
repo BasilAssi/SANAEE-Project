@@ -27,6 +27,7 @@ export 'package:cloud_firestore/cloud_firestore.dart'
     show DocumentReference, FirebaseFirestore;
 export 'package:page_transition/page_transition.dart';
 export 'internationalization.dart' show FFLocalizations;
+export 'nav/nav.dart';
 
 T valueOrDefault<T>(T? value, T defaultValue) =>
     (value is String && value.isEmpty) || value == null ? defaultValue : value;
@@ -44,7 +45,7 @@ String dateTimeFormat(String format, DateTime? dateTime, {String? locale}) {
   }
   if (format == 'relative') {
     _setTimeagoLocales();
-    return timeago.format(dateTime, locale: locale);
+    return timeago.format(dateTime, locale: locale, allowFromNow: true);
   }
   return DateFormat(format, locale).format(dateTime);
 }
@@ -289,9 +290,7 @@ extension ListDivideExt<T extends Widget> on Iterable<T> {
       : (enumerate.map((e) => [e.value, t]).expand((i) => i).toList()
         ..removeLast());
 
-  List<T> around(T t) => toList()
-    ..insert(0, t)
-    ..add(t);
+  List<Widget> around(Widget t) => addToStart(t).addToEnd(t);
 
   List<Widget> addToStart(Widget t) =>
       enumerate.map((e) => e.value).toList()..insert(0, t);

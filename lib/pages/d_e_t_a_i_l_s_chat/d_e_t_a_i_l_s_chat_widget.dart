@@ -86,7 +86,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
             size: 24.0,
           ),
           onPressed: () async {
-            Navigator.pop(context);
+            context.pop();
           },
         ),
         title: Text(
@@ -165,7 +165,7 @@ class _DETAILSChatWidgetState extends State<DETAILSChatWidget> {
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
-                    child: SpinKitThreeBounce(
+                    child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
                       size: 50.0,
                     ),

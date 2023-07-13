@@ -1,7 +1,3 @@
-import '/craftsman_home_pages/m_a_i_n_chat_craftsman/m_a_i_n_chat_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_home_craftsman/m_a_i_n_home_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_profile_craftsman/m_a_i_n_profile_craftsman_widget.dart';
-import '/craftsman_home_pages/m_a_i_n_saved_jobs_craftsman/m_a_i_n_saved_jobs_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -101,13 +97,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.chat = Color(0xFF57636C);
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        MAINHomeCraftsmanWidget(),
-                                  ),
-                                );
+
+                                context.pushNamed('MAINHomeCraftsman');
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -129,13 +120,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                           _model.chat = Color(0xFF57636C);
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                MAINHomeCraftsmanWidget(),
-                                          ),
-                                        );
+
+                                        context.pushNamed('MAINHomeCraftsman');
                                       },
                                       child: Icon(
                                         Icons.home,
@@ -167,13 +153,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.myJob =
                                       FlutterFlowTheme.of(context).primary;
                                 });
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        MAINSavedJobsCraftsmanWidget(),
-                                  ),
-                                );
+
+                                context.pushNamed('MAINSavedJobsCraftsman');
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -201,13 +182,9 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                               FlutterFlowTheme.of(context)
                                                   .primary;
                                         });
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                MAINSavedJobsCraftsmanWidget(),
-                                          ),
-                                        );
+
+                                        context.pushNamed(
+                                            'MAINSavedJobsCraftsman');
                                       },
                                       child: Icon(
                                         Icons.work,
@@ -236,13 +213,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       FlutterFlowTheme.of(context).primary;
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        MAINChatCraftsmanWidget(),
-                                  ),
-                                );
+
+                                context.pushNamed('MAIN_ChatCraftsman');
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -264,13 +236,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                                   .primary;
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                MAINChatCraftsmanWidget(),
-                                          ),
-                                        );
+
+                                        context.pushNamed('MAIN_ChatCraftsman');
                                       },
                                       child: Icon(
                                         Icons.chat_bubble,
@@ -299,13 +266,8 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                   _model.chat = Color(0xFF57636C);
                                   _model.myJob = Color(0xFF57636C);
                                 });
-                                Navigator.push(
-                                  context,
-                                  MaterialPageRoute(
-                                    builder: (context) =>
-                                        MAINProfileCraftsmanWidget(),
-                                  ),
-                                );
+
+                                context.pushNamed('MAIN_ProfileCraftsman');
                               },
                               child: Row(
                                 mainAxisSize: MainAxisSize.max,
@@ -327,13 +289,9 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                           _model.chat = Color(0xFF57636C);
                                           _model.myJob = Color(0xFF57636C);
                                         });
-                                        Navigator.push(
-                                          context,
-                                          MaterialPageRoute(
-                                            builder: (context) =>
-                                                MAINProfileCraftsmanWidget(),
-                                          ),
-                                        );
+
+                                        context
+                                            .pushNamed('MAIN_ProfileCraftsman');
                                       },
                                       child: Icon(
                                         Icons.person,

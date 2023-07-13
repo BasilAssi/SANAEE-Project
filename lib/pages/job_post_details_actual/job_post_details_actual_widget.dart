@@ -64,7 +64,7 @@ class _JobPostDetailsActualWidgetState
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -119,7 +119,7 @@ class _JobPostDetailsActualWidgetState
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
-                                                child: SpinKitThreeBounce(
+                                                child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -240,7 +240,7 @@ class _JobPostDetailsActualWidgetState
                                                 size: 24.0,
                                               ),
                                               onPressed: () async {
-                                                Navigator.pop(context);
+                                                context.pop();
                                               },
                                             ),
                                           ),

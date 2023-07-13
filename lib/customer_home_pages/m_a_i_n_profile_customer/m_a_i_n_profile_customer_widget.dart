@@ -1,11 +1,9 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/authentication/hunew/customar_edit_profile/customar_edit_profile_widget.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/splash_screen/splash_screen_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -95,7 +93,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -175,16 +173,15 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                     size: 16.0,
                                                   ),
                                                   onPressed: () async {
+                                                    GoRouter.of(context)
+                                                        .prepareAuthEvent();
                                                     await authManager.signOut();
-                                                    Navigator
-                                                        .pushAndRemoveUntil(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            SplashScreenWidget(),
-                                                      ),
-                                                      (r) => false,
-                                                    );
+                                                    GoRouter.of(context)
+                                                        .clearRedirectLocation();
+
+                                                    context.goNamedAuth(
+                                                        'SplashScreen',
+                                                        context.mounted);
                                                   },
                                                 ),
                                               ),
@@ -223,13 +220,8 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                     size: 20.0,
                                                   ),
                                                   onPressed: () async {
-                                                    Navigator.push(
-                                                      context,
-                                                      MaterialPageRoute(
-                                                        builder: (context) =>
-                                                            CustomarEditProfileWidget(),
-                                                      ),
-                                                    );
+                                                    context.pushNamed(
+                                                        'CustomarEditProfile');
                                                   },
                                                 ),
                                               ),

@@ -270,7 +270,7 @@ class _ChangPhotoWidgetState extends State<ChangPhotoWidget> {
                                       .update(createUsersRecordData(
                                     photoUrl: _model.uploadedFileUrl,
                                   ));
-                                  Navigator.pop(context);
+                                  context.safePop();
                                 },
                                 text: FFLocalizations.of(context).getText(
                                   'enb8vg4e' /* حفظ التغييرات */,

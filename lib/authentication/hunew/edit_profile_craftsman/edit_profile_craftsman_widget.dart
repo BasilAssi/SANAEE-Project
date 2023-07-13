@@ -419,7 +419,49 @@ class _EditProfileCraftsmanWidgetState
                                 'kayofzwf' /* رام الله  */,
                               ),
                               FFLocalizations.of(context).getText(
-                                're3rbj6p' /* الأردن */,
+                                're3rbj6p' /* بيت لحم */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'pd5sx7xc' /* القدس  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'zxth8qg0' /* الخليل */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '0nyl9b2x' /* نابلس */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '7h40s0yu' /* سلفيت  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '6jeuq42n' /* قلقيلية  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'yqa07cz2' /* طولكرم */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '7stmat34' /* جنين  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '5kb8sc4d' /* طوباس  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'hk4rqzng' /* اريحا  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'p4free5u' /* البيرة  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '9nh524kj' /* بيت جالا */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '4kiy3v6i' /* بيت ساحور */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'klb2f1ya' /* الظاهرية */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'pmoy7xk0' /* دورا */,
                               )
                             ],
                             onChanged: (val) =>

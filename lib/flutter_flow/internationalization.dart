@@ -107,49 +107,81 @@ Locale createLocale(String language) => language.contains('_')
 final kTranslationsMap = <Map<String, Map<String, String>>>[
   // Login
   {
-    'gri19u31': {
+    '39p9a49o': {
       'ar': 'مرحبًا بعودتك',
       'en': 'Welcome Back',
     },
-    '7vwo3gsa': {
+    'pstykokm': {
       'ar': 'البريد الالكتروني ',
       'en': 'Email',
     },
-    '6o89q7ja': {
+    'jxc0aohu': {
       'ar': 'ادخل الايميل الخاص بك',
       'en': ' Enter your email here...',
     },
-    '34tidz7y': {
+    'h0adoj0g': {
       'ar': '',
       'en': '',
     },
-    'ea9rckya': {
+    '3h481amo': {
       'ar': 'كلمة المرور',
       'en': 'Password',
     },
-    '8f46nx1d': {
+    'za0mg4i1': {
       'ar': 'ادخل كلمة المرور ...',
       'en': 'Enter your password here...',
     },
-    'ipd564oo': {
+    'e51aq7vc': {
       'ar': '',
       'en': '',
     },
-    '7ukcu0z9': {
+    'rx04m40z': {
       'ar': 'هل نسيت كلمة السر؟',
       'en': 'Forgot Password?',
     },
-    '5vjc9znt': {
+    'myne6c2l': {
       'ar': 'تسجيل الدخول ',
       'en': 'Login',
     },
-    'o42qqman': {
+    'gpzx2mar': {
       'ar': 'ليس لديك حساب؟',
       'en': 'Don\'t have  an account ?',
     },
-    'r6pmbkj8': {
+    '38akft11': {
       'ar': 'أنشئ حساب',
       'en': 'Sign Up',
+    },
+    'r7f2rfge': {
+      'ar': 'Email is required',
+      'en': '',
+    },
+    'mmagg0f3': {
+      'ar': 'Should be a valid email address',
+      'en': '',
+    },
+    'bhx8fux8': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'gcbmhlrp': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'bocjdwxb': {
+      'ar': 'Should be lest 6 characters',
+      'en': '',
+    },
+    '1n82v10c': {
+      'ar': 'Should be lest then 15 characters',
+      'en': '',
+    },
+    'imsbutcj': {
+      'ar': 'Should have one number and 1 aspcial character',
+      'en': '',
+    },
+    'pen0qdd9': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     'hwccov5i': {
       'ar': 'Home',
@@ -158,10 +190,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MAINHomeCustomer
   {
-    'vsaeov29': {
-      'ar': 'Welcome',
-      'en': '',
-    },
     'taeeoz0g': {
       'ar': ' ',
       'en': '',
@@ -174,8 +202,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'My Jobs',
     },
     'dsq91la7': {
-      'ar': 'الأعمال المنجزة ',
-      'en': 'Work Performed',
+      'ar': 'الأعمال قيد التنفيذ',
+      'en': 'Works in progress',
+    },
+    'evf1hwrj': {
+      'ar': 'الدفع وانهاء العمل ',
+      'en': '',
     },
     'h25lrbj2': {
       'ar': ' ',
@@ -213,7 +245,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   {
     'zm1cme8s': {
       'ar': 'Messages',
-      'en': '',
+      'en': 'المحادثات',
     },
     'fr498yys': {
       'ar': '',
@@ -259,23 +291,35 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'هل نسيت كلمة السر',
       'en': 'Forgot your password',
     },
-    'ihpphlie': {
+    'x5k1qfme': {
       'ar': 'بريدك الالكتروني',
       'en': 'Your Email',
     },
-    '7uq2lba4': {
+    'yt16eqya': {
       'ar': 'يرجى إدخال البريد الإلكتروني الصحيح...',
       'en': 'Please enter a valid email...',
     },
-    'ifxx3yld': {
+    '2lo0yv4r': {
       'ar':
           'سنرسل لك بريدًا إلكترونيًا يحتوي على رابط لإعادة تعيين كلمة المرور الخاصة بك ، يرجى إدخال البريد الإلكتروني المرتبط بحسابك أعلاه.',
       'en':
           'We will send you an email with a link to reset your password, please enter the email associated with your account above.',
     },
-    '6tzetzky': {
+    'mhyb8d2x': {
       'ar': 'إرسال إعادة تعيين كلمة المرور',
       'en': 'Send Reset Password',
+    },
+    'lkkdbwnt': {
+      'ar': 'Email is required',
+      'en': '',
+    },
+    'an8p149a': {
+      'ar': 'Should be a valid email address',
+      'en': '',
+    },
+    'fl553gx7': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     'xz7h2g8g': {
       'ar': 'Home',
@@ -311,6 +355,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'dxq6o4rl': {
       'ar': 'اعمال الالمنيوم',
       'en': 'Aluminum works',
+    },
+    '8grdgmgd': {
+      'ar': '',
+      'en': '',
     },
     'dqojfllq': {
       'ar': 'نوع الوظيفة',
@@ -472,52 +520,112 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignUp
   {
-    'rwqq1oce': {
-      'ar': 'Get Started',
-      'en': '',
+    '22aqfxf1': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
     },
-    'a2k11ccq': {
-      'ar': 'Use the form below to get started.',
-      'en': '',
+    'hhpegmuj': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
     },
-    '85nurq4z': {
+    'khzspjr2': {
+      'ar': ' إنشاء حساب',
+      'en': 'Create an account',
+    },
+    'x2e1bx3v': {
+      'ar': 'املأ النموذج أدناه للبدء.',
+      'en': 'Use the form below to get started.',
+    },
+    '6lkmgosl': {
       'ar': 'البريد الالكتروني',
       'en': 'Email Address',
     },
-    'anulj3b0': {
+    '81ps77f6': {
       'ar': 'ادخل البريد الإلكتروني',
       'en': 'Enter your email here...',
     },
-    'bx5gqjwl': {
+    'mzupag41': {
       'ar': 'كلمة المرور',
       'en': 'Password',
     },
-    'eu199w5n': {
+    'iy7gni9e': {
       'ar': 'كلمة المرور',
       'en': 'password',
     },
-    'sezquagb': {
+    '9n5zsa5a': {
       'ar': 'تأكيد كلمة المرور',
       'en': 'Confirm Password',
     },
-    'hib5iskd': {
+    '1cu6vixh': {
       'ar': 'تأكيد كلمة المرور',
       'en': 'Confirm Password',
     },
-    'hyweexye': {
+    'b9cz3hiv': {
       'ar': 'إنشاء حساب ',
       'en': 'Create Account',
     },
-    'yl8038ku': {
+    've2zy4vm': {
       'ar': 'Use a social platform to continue',
       'en': '',
     },
-    'vvjlhj4m': {
+    'phcb2n1x': {
       'ar': 'Already have an account?',
       'en': '',
     },
-    'ii7xq6ca': {
+    '1bl7wnow': {
       'ar': 'Log In',
+      'en': '',
+    },
+    '4vwjis2u': {
+      'ar': 'Email is required',
+      'en': '',
+    },
+    'j8qon7bu': {
+      'ar': 'Should be a valid email address',
+      'en': '',
+    },
+    's85qgokq': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'bx7lyow2': {
+      'ar': 'password is required',
+      'en': '',
+    },
+    '6jhd0064': {
+      'ar': 'Should be lest 6 characters',
+      'en': '',
+    },
+    'h6x0aj3w': {
+      'ar': 'Should be lest then 15 characters',
+      'en': '',
+    },
+    '0025rc92': {
+      'ar': 'Should have one number and 1 aspcial character',
+      'en': '',
+    },
+    'fo8wxsdy': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'gpyud16l': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    'ahvpevy8': {
+      'ar': 'Should be lest 6 characters',
+      'en': '',
+    },
+    'd6n7cpja': {
+      'ar': 'Should be lest then 15 characters',
+      'en': '',
+    },
+    's69gs540': {
+      'ar': 'Should have one number and 1 aspcial character',
+      'en': '',
+    },
+    'xo4muwj2': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     'z08teily': {
@@ -527,45 +635,125 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameStepOne
   {
-    'iuj97t6y': {
+    'z23r1o6a': {
       'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
       'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
     },
-    'b0muce5a': {
+    'fp6p66g9': {
       'ar': 'الاسم الاول',
       'en': 'first name',
     },
-    'w0w0vgpe': {
+    '52413umc': {
       'ar': 'الاسم الاول',
       'en': 'First Name',
     },
-    'qppalhqq': {
+    'fketoiqo': {
       'ar': 'اسم الاب',
       'en': 'Name of the Father',
     },
-    'hcdvvtn0': {
+    '5q9cgpvp': {
       'ar': 'اسم الأب',
       'en': 'Name of the Father',
     },
-    '2abshufy': {
+    'fni5hg1g': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
     },
-    '9bpppzbx': {
+    'enkl9kxs': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
     },
-    'j1xausqc': {
+    'oct0lhox': {
       'ar': 'اسم العائلة',
       'en': 'Family name',
     },
-    '3t0a6bly': {
+    'y5t21zcr': {
       'ar': 'اسم العائلة',
       'en': 'family name',
     },
-    'wk7dq0gn': {
+    'y2myw9mq': {
       'ar': 'التالي',
       'en': 'continue',
+    },
+    'dnd6xtun': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    '9xyu4bkh': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'hdpsa53a': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    'kw8ffdps': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'y9qqjv44': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'w19i9yxf': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'e1apd3bf': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'uve6knjj': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    'joadpexv': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'x333dgcc': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'mjnte8bi': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'gyohfqda': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'l1qijlf7': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    '1q33c8tk': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'r2bql6st': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    '73tff2v3': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'va5ylzaf': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'ath6kyry': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    '5y1v241d': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'i4m617qx': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     'gdrznog6': {
       'ar': 'Home',
@@ -574,57 +762,137 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameAddresStepTwo
   {
-    'pgn98b0i': {
+    'typsv17x': {
       'ar': '',
       'en': '',
     },
-    'na619d65': {
+    'c5ny5mbu': {
       'ar': 'رقم الهوية ',
       'en': 'Id number',
     },
-    'a3rqbla0': {
+    'u4zkv50f': {
       'ar': 'Option 1',
       'en': '',
     },
-    'e1y9f93g': {
+    'm2tyro30': {
       'ar': 'رام الله ',
       'en': 'Ramlallah',
     },
-    '38d42beq': {
-      'ar': 'الأردن',
-      'en': 'Jordan',
+    'kkbps1sg': {
+      'ar': 'بيت لحم',
+      'en': 'Bethlehem',
     },
-    'w3fzmffj': {
+    '01559g06': {
+      'ar': 'القدس ',
+      'en': 'Jerusalem ',
+    },
+    'm26qjtdu': {
+      'ar': 'الخليل',
+      'en': 'Hebron  ',
+    },
+    '4pfax65t': {
+      'ar': 'نابلس',
+      'en': 'Nablus ',
+    },
+    'rirxyhht': {
+      'ar': 'سلفيت ',
+      'en': 'Salfit ',
+    },
+    '71el0i8n': {
+      'ar': 'قلقيلية ',
+      'en': 'Qalqilya ',
+    },
+    'l3aukg6s': {
+      'ar': 'طولكرم',
+      'en': 'Tulkarm ',
+    },
+    '19pvdhu8': {
+      'ar': 'جنين ',
+      'en': 'Jenin  ',
+    },
+    'k886uz8i': {
+      'ar': 'طوباس ',
+      'en': 'Tubas  ',
+    },
+    'ocu9tr1f': {
+      'ar': 'اريحا ',
+      'en': 'Jericho ',
+    },
+    '80q07kxp': {
+      'ar': 'البيرة ',
+      'en': 'Beer ',
+    },
+    'f8jtk8nd': {
+      'ar': 'بيت جالا',
+      'en': 'Beit Jala',
+    },
+    '7ii2fb1b': {
+      'ar': 'بيت ساحور',
+      'en': 'Beit Sahour',
+    },
+    'gvcqell8': {
+      'ar': 'الظاهرية',
+      'en': 'Dhahria ',
+    },
+    'vvb8vm9d': {
+      'ar': 'دورا',
+      'en': 'Role ',
+    },
+    '3zgqo6j8': {
       'ar': ' الرجاء الاختيار المدينة',
       'en': 'Please select in the city',
     },
-    'z9sheoib': {
+    'wh67g5q2': {
       'ar': 'Search for an item...',
       'en': '',
     },
-    'wk8x1w5l': {
+    'wega6lg8': {
       'ar': '',
       'en': '',
     },
-    '9dhlrjdm': {
+    '089rqcz3': {
       'ar': 'العنوان',
       'en': 'Your address',
     },
-    'u5nlt5ra': {
+    'qahuna4t': {
       'ar': 'Option 1',
       'en': '',
     },
-    'x8nbvq57': {
+    'dk672j2g': {
       'ar': 'البنود وشروط الخدمة',
       'en': 'Terms and Conditions of Service',
     },
-    '3a80eaym': {
+    '3smy14gh': {
       'ar': 'التالي',
       'en': 'continue',
     },
-    'uz77ammc': {
+    'iw1hpfnc': {
       'ar': ' الخطوة الثانية ',
       'en': '\nStep 2  of  4 :Upload address and place of residence',
+    },
+    'j0hv1wkr': {
+      'ar': 'id number is required',
+      'en': '',
+    },
+    'qtpqfssd': {
+      'ar': 'The maximum ID number',
+      'en': '',
+    },
+    '5bdnd8dt': {
+      'ar': 'The maximum ID number 9,only number',
+      'en': '',
+    },
+    'r75guw8g': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    's7c3j1ss': {
+      'ar': 'Field is required',
+      'en': '',
+    },
+    '2vjkk4at': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     '4wz4578f': {
       'ar': 'Home',
@@ -725,7 +993,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Continue',
     },
     'ehod4dxi': {
-      'ar': ' الخطوة الرابعة ',
+      'ar': 'الخطوة 4 من 4: قم بتحميل سيرتك الذاتية',
       'en': '\nStep 4 of  4 : Upload your bio ',
     },
     'szm92mme': {
@@ -735,45 +1003,125 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameStepOne_customar
   {
-    'gs7vuc2w': {
+    '53baebxn': {
       'ar': 'الخطوة 1 من 3:  قم بتحميل صورة لك\n واسمك الكامل',
       'en': 'Step 1  of  3 : upload photo  for you\n ,  and your name ',
     },
-    'hmgve1rn': {
+    '5lppelbg': {
       'ar': 'الاسم الاول',
       'en': 'first name',
     },
-    'id8z0n1r': {
+    'eqoptg76': {
       'ar': 'الاسم الاول',
       'en': 'First Name',
     },
-    'jgbxb53x': {
+    'zermctsu': {
       'ar': 'اسم الاب',
       'en': 'Name of the Father',
     },
-    'yasi11u1': {
+    '8d0wsddz': {
       'ar': 'اسم الأب',
       'en': 'Name of the Father',
     },
-    'yqytkyhi': {
+    'ckr6niu7': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
     },
-    'bnt6ewuu': {
+    'xmoqsr9w': {
       'ar': 'اسم الجد',
       'en': 'Grandfather name',
     },
-    'hb8rtx80': {
+    'liulrkle': {
       'ar': 'اسم العائلة',
       'en': 'Family name',
     },
-    'urrh194s': {
+    'm9lb4t2u': {
       'ar': 'اسم العائلة',
       'en': 'family name',
     },
-    '0vimo8q1': {
+    'yxhxrrxs': {
       'ar': 'التالي',
       'en': 'continue',
+    },
+    '9mduiyjx': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'p5g588iu': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'xasig2f2': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    'fegllspw': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    '54tbpvlh': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'vrd7epmz': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'tuxl4mc4': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'cw0u0fuf': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    'a5wdx2zo': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'g6gpn8gg': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'kg687u74': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'zk0eki9x': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'r22ttmhs': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    '8vb5mli0': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    '7ekc0kci': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
+    },
+    'q2hru9a6': {
+      'ar': 'مطلوب ادخال الاسم',
+      'en': 'Name is required',
+    },
+    'g8jxq8dv': {
+      'ar': 'يجب أن يكون الاسم الأصغر حرفين',
+      'en': 'The smallest name must be two letters',
+    },
+    'y4folasj': {
+      'ar': 'يجب أن يحتوي الاسم الأكبر على 15 حرفًا',
+      'en': 'The largest name must contain 15 letters',
+    },
+    'j032ar1c': {
+      'ar': 'يجبل ان يكون الاسم يتراوح بين حرفين الى 15 حرف',
+      'en': 'The name must be between 2 and 15 letters',
+    },
+    'b75fiqq8': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     '213vtn7i': {
       'ar': 'Home',
@@ -787,8 +1135,68 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please select the city',
     },
     '1zx12yeb': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'رام الله',
+      'en': 'Ramallah ',
+    },
+    'zqo8bibn': {
+      'ar': 'بيت لحم',
+      'en': 'Bethlehem ',
+    },
+    'fi77vrkf': {
+      'ar': 'القدس ',
+      'en': 'Jerusalem ',
+    },
+    '951o2ch3': {
+      'ar': 'الخليل',
+      'en': 'Hebron  ',
+    },
+    'mawp5dkn': {
+      'ar': 'نابلس',
+      'en': 'Nablus ',
+    },
+    'vt8rb4jf': {
+      'ar': 'سلفيت ',
+      'en': 'Salfit ',
+    },
+    'vy8gwqly': {
+      'ar': 'قلقيلية ',
+      'en': 'Qalqilya ',
+    },
+    'taxfjgqo': {
+      'ar': 'طولكرم',
+      'en': 'Tulkarm ',
+    },
+    'e8ls7er2': {
+      'ar': 'جنين ',
+      'en': 'Jenin  ',
+    },
+    'xzhnjqyr': {
+      'ar': 'طوباس ',
+      'en': 'Tubas  ',
+    },
+    '6wghlha6': {
+      'ar': 'اريحا ',
+      'en': 'Jericho ',
+    },
+    '9xgy6zxu': {
+      'ar': 'البيرة ',
+      'en': 'Beer ',
+    },
+    '4hzv6m8l': {
+      'ar': 'بيت جالا',
+      'en': 'Beit Jala',
+    },
+    'uwbftzij': {
+      'ar': 'بيت ساحور',
+      'en': 'Beit Sahour',
+    },
+    '3nyfezmd': {
+      'ar': 'الظاهرية',
+      'en': 'Dhahria ',
+    },
+    'vyabxndq': {
+      'ar': 'دورا',
+      'en': 'Role ',
     },
     'w5xi6fg3': {
       'ar': ' الرجاء الاختيار المدينة',
@@ -829,17 +1237,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createAccountThreeCustomer
   {
-    '3jh43xqn': {
+    'pbwvn9uy': {
       'ar': 'ادخل رقم هويتك ',
       'en': 'Enter your ID number',
     },
-    'lgniwzlx': {
+    'ius5bqtn': {
       'ar': 'رقم الهوية',
       'en': 'id number',
     },
-    'ie5jweyk': {
+    'dc06yvi9': {
       'ar': 'انشاء حساب',
       'en': 'Create an account',
+    },
+    '23yfr90d': {
+      'ar': 'idnumber is required',
+      'en': '',
+    },
+    'tsnydcl9': {
+      'ar': ' ID number',
+      'en': '',
+    },
+    'ml0csbtk': {
+      'ar': 'The maximum ID number9, only numbers',
+      'en': '',
+    },
+    's54ej40p': {
+      'ar': 'Please choose an option from the dropdown',
+      'en': '',
     },
     'io5fdh0i': {
       'ar': 'Home',
@@ -1055,8 +1479,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ramlallah',
     },
     're3rbj6p': {
-      'ar': 'الأردن',
-      'en': 'Jordan',
+      'ar': 'بيت لحم',
+      'en': 'Bethlehem ',
+    },
+    'pd5sx7xc': {
+      'ar': 'القدس ',
+      'en': 'Jerusalem ',
+    },
+    'zxth8qg0': {
+      'ar': 'الخليل',
+      'en': 'Hebron  ',
+    },
+    '0nyl9b2x': {
+      'ar': 'نابلس',
+      'en': 'Nablus ',
+    },
+    '7h40s0yu': {
+      'ar': 'سلفيت ',
+      'en': 'Salfit ',
+    },
+    '6jeuq42n': {
+      'ar': 'قلقيلية ',
+      'en': 'Qalqilya ',
+    },
+    'yqa07cz2': {
+      'ar': 'طولكرم',
+      'en': 'Tulkarm ',
+    },
+    '7stmat34': {
+      'ar': 'جنين ',
+      'en': 'Jenin  ',
+    },
+    '5kb8sc4d': {
+      'ar': 'طوباس ',
+      'en': 'Tubas  ',
+    },
+    'hk4rqzng': {
+      'ar': 'اريحا ',
+      'en': 'Jericho ',
+    },
+    'p4free5u': {
+      'ar': 'البيرة ',
+      'en': 'Beer ',
+    },
+    '9nh524kj': {
+      'ar': 'بيت جالا',
+      'en': 'Beit Jala',
+    },
+    '4kiy3v6i': {
+      'ar': 'بيت ساحور',
+      'en': 'Beit Sahour',
+    },
+    'klb2f1ya': {
+      'ar': 'الظاهرية',
+      'en': 'Dhahria ',
+    },
+    'pmoy7xk0': {
+      'ar': 'دورا',
+      'en': 'Role ',
     },
     'ui1uh09m': {
       'ar': ' الرجاء الاختيار المدينة',
@@ -1094,8 +1574,64 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Ramlallah',
     },
     '99g20peh': {
-      'ar': 'الأردن',
-      'en': 'Jordan',
+      'ar': 'بيت لحم',
+      'en': 'Bethlehem',
+    },
+    'in9pdjfj': {
+      'ar': 'القدس ',
+      'en': 'Jerusalem ',
+    },
+    'c8kjnv13': {
+      'ar': 'الخليل',
+      'en': 'Hebron  ',
+    },
+    'upshgnb7': {
+      'ar': 'نابلس',
+      'en': 'Nablus ',
+    },
+    'pqmqmqfd': {
+      'ar': 'سلفيت ',
+      'en': 'Salfit ',
+    },
+    'qsyvvu76': {
+      'ar': 'قلقيلية ',
+      'en': 'Qalqilya ',
+    },
+    'zwd7hhsx': {
+      'ar': 'طولكرم',
+      'en': 'Tulkarm ',
+    },
+    '8e5s5gi2': {
+      'ar': 'جنين ',
+      'en': 'Jenin  ',
+    },
+    '2ojog1ys': {
+      'ar': 'طوباس ',
+      'en': 'Tubas  ',
+    },
+    '84brt96j': {
+      'ar': 'اريحا ',
+      'en': 'Jericho ',
+    },
+    '725i9ml2': {
+      'ar': 'البيرة ',
+      'en': 'Beer ',
+    },
+    '1ilogogy': {
+      'ar': 'بيت جالا',
+      'en': 'Beit Jala',
+    },
+    'm6h53wtd': {
+      'ar': 'بيت ساحور',
+      'en': 'Beit Sahour',
+    },
+    'uoyf6i31': {
+      'ar': 'الظاهرية',
+      'en': 'Dhahria ',
+    },
+    '8rjsqeco': {
+      'ar': 'دورا',
+      'en': 'Role ',
     },
     'p58bl21n': {
       'ar': ' الرجاء الاختيار المدينة',
@@ -1190,6 +1726,25 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'enb8vg4e': {
       'ar': 'حفظ التغييرات',
       'en': 'Save Changes',
+    },
+  },
+  // RateCraftsman
+  {
+    'cqar90ql': {
+      'ar': 'قيم الحرفي    🤗 🤗 🤗 ',
+      'en': 'Rate the craftsman 🤗 🤗 🤗',
+    },
+    'fxqxtvbp': {
+      'ar': 'قيم الحرفي وادخل تعليقك على عمله...',
+      'en': '',
+    },
+    'nncrdhoq': {
+      'ar': '',
+      'en': '',
+    },
+    'cm7pefeo': {
+      'ar': 'حفظ وارسال ',
+      'en': 'Save and send',
     },
   },
   // Miscellaneous

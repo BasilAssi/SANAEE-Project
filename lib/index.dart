@@ -54,7 +54,7 @@ export '/creat_profile_for_customar/edit_profile_for_customer/edit_profile_for_c
     show EditProfileForCustomerWidget;
 export '/authentication/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart'
     show EditProfileCraftsmanWidget;
-export '/authentication/hunew/customar_edit_profile/customar_edit_profile_widget.dart'
+export '/authentication/customar_edit_profile/customar_edit_profile_widget.dart'
     show CustomarEditProfileWidget;
 export '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart'
     show JobPostAcceptedWidget;
