@@ -10,13 +10,30 @@ import 'package:provider/provider.dart';
 class ForgotPasswordModel extends FlutterFlowModel {
   ///  State fields for stateful widgets in this page.
 
+  final formKey = GlobalKey<FormState>();
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;
+  String? _emailAddressControllerValidator(BuildContext context, String? val) {
+    if (val == null || val.isEmpty) {
+      return FFLocalizations.of(context).getText(
+        'lkkdbwnt' /* Email is required */,
+      );
+    }
+
+    if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
+      return FFLocalizations.of(context).getText(
+        'an8p149a' /* Should be a valid email addres... */,
+      );
+    }
+    return null;
+  }
 
   /// Initialization and disposal methods.
 
-  void initState(BuildContext context) {}
+  void initState(BuildContext context) {
+    emailAddressControllerValidator = _emailAddressControllerValidator;
+  }
 
   void dispose() {
     emailAddressController?.dispose();

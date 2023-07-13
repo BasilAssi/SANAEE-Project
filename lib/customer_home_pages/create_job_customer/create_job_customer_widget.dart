@@ -103,7 +103,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                               size: 24.0,
                             ),
                             onPressed: () async {
-                              Navigator.pop(context);
+                              context.pop();
                             },
                           ),
                         ),
@@ -147,7 +147,15 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                 ),
                                 FFLocalizations.of(context).getText(
                                   'dxq6o4rl' /* اعمال الالمنيوم */,
-                                )
+                                ),
+                                FFLocalizations.of(context).getText(
+                                  '8grdgmgd' /*  */,
+                                ),
+                                '',
+                                '',
+                                '',
+                                '',
+                                ''
                               ],
                               onChanged: (val) =>
                                   setState(() => _model.jobTypeValue = val),
@@ -871,7 +879,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                       _model.textFieldAddressController.text,
                                 ),
                                 postRecordReference);
-                        Navigator.pop(context);
+                        context.pop();
 
                         setState(() {});
                       },

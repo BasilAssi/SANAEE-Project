@@ -3,7 +3,6 @@ import '/flutter_flow/flutter_flow_expanded_image_view.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/craftsman_details/craftsman_details_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
@@ -62,7 +61,7 @@ class _JobPostMyJobApplicantsWidgetState
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -116,7 +115,7 @@ class _JobPostMyJobApplicantsWidgetState
                                             size: 24.0,
                                           ),
                                           onPressed: () async {
-                                            Navigator.pop(context);
+                                            context.pop();
                                           },
                                         ),
                                       ),
@@ -140,7 +139,7 @@ class _JobPostMyJobApplicantsWidgetState
                                             child: SizedBox(
                                               width: 50.0,
                                               height: 50.0,
-                                              child: SpinKitThreeBounce(
+                                              child: SpinKitFadingCircle(
                                                 color:
                                                     FlutterFlowTheme.of(context)
                                                         .primary,
@@ -582,7 +581,7 @@ class _JobPostMyJobApplicantsWidgetState
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
-                                        child: SpinKitThreeBounce(
+                                        child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           size: 50.0,
@@ -628,7 +627,7 @@ class _JobPostMyJobApplicantsWidgetState
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child: SpinKitThreeBounce(
+                                                  child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -646,18 +645,26 @@ class _JobPostMyJobApplicantsWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        CraftsmanDetailsWidget(
-                                                      candidateDetails:
-                                                          containerUsersRecord
-                                                              .reference,
-                                                      application:
-                                                          listViewApplicationsRecord,
+                                                context.pushNamed(
+                                                  'CraftsmanDetails',
+                                                  queryParameters: {
+                                                    'candidateDetails':
+                                                        serializeParam(
+                                                      containerUsersRecord
+                                                          .reference,
+                                                      ParamType
+                                                          .DocumentReference,
                                                     ),
-                                                  ),
+                                                    'application':
+                                                        serializeParam(
+                                                      listViewApplicationsRecord,
+                                                      ParamType.Document,
+                                                    ),
+                                                  }.withoutNulls,
+                                                  extra: <String, dynamic>{
+                                                    'application':
+                                                        listViewApplicationsRecord,
+                                                  },
                                                 );
                                               },
                                               child: Container(

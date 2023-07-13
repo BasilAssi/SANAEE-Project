@@ -1,4 +1,3 @@
-import '/create_profile_for_craftsman/review_create_profile_craftman/review_create_profile_craftman_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -68,7 +67,7 @@ class _CreateProfileBioStepFourWidgetState
                 size: 30.0,
               ),
               onPressed: () async {
-                Navigator.pop(context);
+                context.pop();
               },
             ),
             actions: [],
@@ -355,13 +354,8 @@ class _CreateProfileBioStepFourWidgetState
                                 FFAppState().bioCraftsman =
                                     _model.textController.text;
                               });
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      ReviewCreateProfileCraftmanWidget(),
-                                ),
-                              );
+
+                              context.pushNamed('ReviewCreateProfileCraftman');
                             },
                             text: FFLocalizations.of(context).getText(
                               'r1vey8xo' /* التالي */,
@@ -392,7 +386,7 @@ class _CreateProfileBioStepFourWidgetState
                   padding: EdgeInsetsDirectional.fromSTEB(50.0, 0.0, 0.0, 0.0),
                   child: GradientText(
                     FFLocalizations.of(context).getText(
-                      'ehod4dxi' /*  الخطوة الرابعة  */,
+                      'ehod4dxi' /* الخطوة 4 من 4: قم بتحميل سيرتك... */,
                     ),
                     textAlign: TextAlign.center,
                     style: FlutterFlowTheme.of(context).bodyMedium.override(

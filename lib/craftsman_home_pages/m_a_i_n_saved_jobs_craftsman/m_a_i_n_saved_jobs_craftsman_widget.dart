@@ -1,7 +1,5 @@
 import '/backend/backend.dart';
 import '/components/nav_bar_craftsman/nav_bar_craftsman_widget.dart';
-import '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart';
-import '/craftsman_home_pages/job_post_pending/job_post_pending_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';
@@ -123,7 +121,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
-                                        child: SpinKitThreeBounce(
+                                        child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           size: 50.0,
@@ -165,7 +163,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child: SpinKitThreeBounce(
+                                                  child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -183,22 +181,30 @@ class _MAINSavedJobsCraftsmanWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        JobPostAcceptedWidget(
-                                                      posts:
-                                                          listViewApplicationsRecord
-                                                              .jobApplied!,
-                                                      userCustomer:
-                                                          jobPostCardPostRecord
-                                                              .createdBy,
-                                                      application:
-                                                          listViewApplicationsRecord
-                                                              .reference,
+                                                context.pushNamed(
+                                                  'JobPost_Accepted',
+                                                  queryParameters: {
+                                                    'posts': serializeParam(
+                                                      listViewApplicationsRecord
+                                                          .jobApplied,
+                                                      ParamType
+                                                          .DocumentReference,
                                                     ),
-                                                  ),
+                                                    'userCustomer':
+                                                        serializeParam(
+                                                      jobPostCardPostRecord
+                                                          .createdBy,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'application':
+                                                        serializeParam(
+                                                      listViewApplicationsRecord
+                                                          .reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
                                                 );
                                               },
                                               child: Container(
@@ -343,7 +349,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
-                                        child: SpinKitThreeBounce(
+                                        child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           size: 50.0,
@@ -388,7 +394,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                                 child: SizedBox(
                                                   width: 50.0,
                                                   height: 50.0,
-                                                  child: SpinKitThreeBounce(
+                                                  child: SpinKitFadingCircle(
                                                     color: FlutterFlowTheme.of(
                                                             context)
                                                         .primary,
@@ -417,22 +423,30 @@ class _MAINSavedJobsCraftsmanWidgetState
                                               highlightColor:
                                                   Colors.transparent,
                                               onTap: () async {
-                                                Navigator.push(
-                                                  context,
-                                                  MaterialPageRoute(
-                                                    builder: (context) =>
-                                                        JobPostPendingWidget(
-                                                      posts:
-                                                          listViewApplicationsRecord
-                                                              .jobApplied!,
-                                                      application:
-                                                          listViewApplicationsRecord
-                                                              .reference,
-                                                      userCustomer:
-                                                          jobPostCardPostRecord!
-                                                              .createdBy,
+                                                context.pushNamed(
+                                                  'JobPost_Pending',
+                                                  queryParameters: {
+                                                    'posts': serializeParam(
+                                                      listViewApplicationsRecord
+                                                          .jobApplied,
+                                                      ParamType
+                                                          .DocumentReference,
                                                     ),
-                                                  ),
+                                                    'application':
+                                                        serializeParam(
+                                                      listViewApplicationsRecord
+                                                          .reference,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                    'userCustomer':
+                                                        serializeParam(
+                                                      jobPostCardPostRecord
+                                                          ?.createdBy,
+                                                      ParamType
+                                                          .DocumentReference,
+                                                    ),
+                                                  }.withoutNulls,
                                                 );
                                               },
                                               child: Container(
@@ -525,7 +539,7 @@ class _MAINSavedJobsCraftsmanWidgetState
                                                                         ),
                                                                       ),
                                                                       Text(
-                                                                        'estimated price: ${jobPostCardPostRecord!.estimatedPrice}',
+                                                                        'estimated price: ${jobPostCardPostRecord?.estimatedPrice}',
                                                                         style: FlutterFlowTheme.of(context)
                                                                             .bodyMedium
                                                                             .override(

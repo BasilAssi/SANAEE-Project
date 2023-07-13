@@ -62,7 +62,7 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -90,7 +90,7 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
                   size: 30.0,
                 ),
                 onPressed: () async {
-                  Navigator.pop(context);
+                  context.pop();
                 },
               ),
               title: Align(
@@ -142,7 +142,7 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
                                       child: SizedBox(
                                         width: 50.0,
                                         height: 50.0,
-                                        child: SpinKitThreeBounce(
+                                        child: SpinKitFadingCircle(
                                           color: FlutterFlowTheme.of(context)
                                               .primary,
                                           size: 50.0,
@@ -314,7 +314,7 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
                                     child: SizedBox(
                                       width: 50.0,
                                       height: 50.0,
-                                      child: SpinKitThreeBounce(
+                                      child: SpinKitFadingCircle(
                                         color: FlutterFlowTheme.of(context)
                                             .primary,
                                         size: 50.0,

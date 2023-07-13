@@ -1,5 +1,3 @@
-import '/authentication/login/login_widget.dart';
-import '/authentication/sign_up/sign_up_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -16,6 +14,7 @@ class OnboardingScreensModel extends FlutterFlowModel {
   final unfocusNode = FocusNode();
   // State field(s) for PageView widget.
   PageController? pageViewController;
+
   int get pageViewCurrentIndex => pageViewController != null &&
           pageViewController!.hasClients &&
           pageViewController!.page != null

@@ -1,5 +1,4 @@
 import '/backend/firebase_storage/storage.dart';
-import '/create_profile_for_craftsman/create_profile_bio_step_four/create_profile_bio_step_four_widget.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
@@ -68,7 +67,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                 size: 30.0,
               ),
               onPressed: () async {
-                Navigator.pop(context);
+                context.pop();
               },
             ),
             actions: [],
@@ -488,13 +487,8 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                 FFAppState().craftType =
                                     _model.dropDownDraftTypeValue!;
                               });
-                              Navigator.push(
-                                context,
-                                MaterialPageRoute(
-                                  builder: (context) =>
-                                      CreateProfileBioStepFourWidget(),
-                                ),
-                              );
+
+                              context.pushNamed('createProfileBioStepFour');
                             },
                             text: FFLocalizations.of(context).getText(
                               'y7hzsrmy' /* التالي */,

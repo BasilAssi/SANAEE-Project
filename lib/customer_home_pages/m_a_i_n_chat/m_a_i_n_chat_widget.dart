@@ -4,7 +4,6 @@ import '/components/empty_messages/empty_messages_widget.dart';
 import '/flutter_flow/chat/index.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/d_e_t_a_i_l_s_chat/d_e_t_a_i_l_s_chat_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -77,7 +76,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                   child: SizedBox(
                     width: 50.0,
                     height: 50.0,
-                    child: SpinKitThreeBounce(
+                    child: SpinKitFadingCircle(
                       color: FlutterFlowTheme.of(context).primary,
                       size: 50.0,
                     ),
@@ -111,7 +110,7 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                           child: SizedBox(
                             width: 50.0,
                             height: 50.0,
-                            child: SpinKitThreeBounce(
+                            child: SpinKitFadingCircle(
                               color: FlutterFlowTheme.of(context).primary,
                               size: 50.0,
                             ),
@@ -126,16 +125,25 @@ class _MAINChatWidgetState extends State<MAINChatWidget> {
                           final chatInfo = snapshot.data ??
                               FFChatInfo(chatPreviewChatsRecord);
                           return FFChatPreview(
-                            onTap: () => Navigator.push(
-                              context,
-                              MaterialPageRoute(
-                                builder: (context) => DETAILSChatWidget(
-                                  chatUser: chatInfo.otherUsers.length == 1
+                            onTap: () => context.pushNamed(
+                              'DETAILS_Chat',
+                              queryParameters: {
+                                'chatUser': serializeParam(
+                                  chatInfo.otherUsers.length == 1
                                       ? chatInfo.otherUsersList.first
                                       : null,
-                                  chatRef: chatInfo.chatRecord.reference,
+                                  ParamType.Document,
                                 ),
-                              ),
+                                'chatRef': serializeParam(
+                                  chatInfo.chatRecord.reference,
+                                  ParamType.DocumentReference,
+                                ),
+                              }.withoutNulls,
+                              extra: <String, dynamic>{
+                                'chatUser': chatInfo.otherUsers.length == 1
+                                    ? chatInfo.otherUsersList.first
+                                    : null,
+                              },
                             ),
                             lastChatText: chatInfo.chatPreviewMessage(),
                             lastChatTime:

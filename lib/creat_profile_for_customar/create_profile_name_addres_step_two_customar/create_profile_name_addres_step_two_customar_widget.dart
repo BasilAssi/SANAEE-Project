@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/creat_profile_for_customar/create_account_three_customer/create_account_three_customer_widget.dart';
 import '/flutter_flow/flutter_flow_autocomplete_options_list.dart';
 import '/flutter_flow/flutter_flow_drop_down.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
@@ -71,7 +70,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                 size: 30.0,
               ),
               onPressed: () async {
-                Navigator.pop(context);
+                context.pop();
               },
             ),
             actions: [],
@@ -159,7 +158,67 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                             options: [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                '1zx12yeb' /* Option 1 */,
+                                                '1zx12yeb' /* رام الله */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'zqo8bibn' /* بيت لحم */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'fi77vrkf' /* القدس  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '951o2ch3' /* الخليل */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'mawp5dkn' /* نابلس */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vt8rb4jf' /* سلفيت  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vy8gwqly' /* قلقيلية  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'taxfjgqo' /* طولكرم */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'e8ls7er2' /* جنين  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'xzhnjqyr' /* طوباس  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '6wghlha6' /* اريحا  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '9xgy6zxu' /* البيرة  */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '4hzv6m8l' /* بيت جالا */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'uwbftzij' /* بيت ساحور */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                '3nyfezmd' /* الظاهرية */,
+                                              ),
+                                              FFLocalizations.of(context)
+                                                  .getText(
+                                                'vyabxndq' /* دورا */,
                                               )
                                             ],
                                             onChanged: (val) => setState(() =>
@@ -386,13 +445,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                                 .textFieldAddreseController
                                                 .text;
                                           });
-                                          Navigator.push(
-                                            context,
-                                            MaterialPageRoute(
-                                              builder: (context) =>
-                                                  CreateAccountThreeCustomerWidget(),
-                                            ),
-                                          );
+
+                                          context.pushNamed(
+                                              'createAccountThreeCustomer');
                                         },
                                         text:
                                             FFLocalizations.of(context).getText(

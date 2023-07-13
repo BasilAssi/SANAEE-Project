@@ -1,7 +1,5 @@
 import '/backend/backend.dart';
 import '/components/nav_bar_craftsman/nav_bar_craftsman_widget.dart';
-import '/craftsman_home_pages/job_post_accepted/job_post_accepted_widget.dart';
-import '/craftsman_home_pages/job_post_pending/job_post_pending_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import 'package:flutter/material.dart';

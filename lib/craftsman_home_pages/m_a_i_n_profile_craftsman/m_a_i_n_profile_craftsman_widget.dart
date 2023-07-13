@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/authentication/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart';
 import '/backend/backend.dart';
 import '/components/nav_bar_craftsman/nav_bar_craftsman_widget.dart';
 import '/components/work_exp_edit/work_exp_edit_widget.dart';
@@ -7,7 +6,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/splash_screen/splash_screen_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -98,7 +96,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -196,18 +194,17 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                             size: 16.0,
                                                           ),
                                                           onPressed: () async {
+                                                            GoRouter.of(context)
+                                                                .prepareAuthEvent();
                                                             await authManager
                                                                 .signOut();
-                                                            Navigator
-                                                                .pushAndRemoveUntil(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        SplashScreenWidget(),
-                                                              ),
-                                                              (r) => false,
-                                                            );
+                                                            GoRouter.of(context)
+                                                                .clearRedirectLocation();
+
+                                                            context.goNamedAuth(
+                                                                'SplashScreen',
+                                                                context
+                                                                    .mounted);
                                                           },
                                                         ),
                                                       ),
@@ -253,14 +250,8 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                             size: 20.0,
                                                           ),
                                                           onPressed: () async {
-                                                            Navigator.push(
-                                                              context,
-                                                              MaterialPageRoute(
-                                                                builder:
-                                                                    (context) =>
-                                                                        EditProfileCraftsmanWidget(),
-                                                              ),
-                                                            );
+                                                            context.pushNamed(
+                                                                'editProfileCraftsman');
                                                           },
                                                         ),
                                                       ),
@@ -745,7 +736,8 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
                                                   child: Text(
-                                                    currentUserEmail,
+                                                    mAINProfileCraftsmanUsersRecord
+                                                        .email,
                                                     style: FlutterFlowTheme.of(
                                                             context)
                                                         .bodyMedium,
@@ -781,17 +773,12 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                   padding: EdgeInsetsDirectional
                                                       .fromSTEB(
                                                           24.0, 0.0, 24.0, 0.0),
-                                                  child: AuthUserStreamWidget(
-                                                    builder: (context) => Text(
-                                                      valueOrDefault(
-                                                          currentUserDocument
-                                                              ?.city,
-                                                          ''),
-                                                      style:
-                                                          FlutterFlowTheme.of(
-                                                                  context)
-                                                              .bodyMedium,
-                                                    ),
+                                                  child: Text(
+                                                    mAINProfileCraftsmanUsersRecord
+                                                        .city,
+                                                    style: FlutterFlowTheme.of(
+                                                            context)
+                                                        .bodyMedium,
                                                   ),
                                                 ),
                                               ),
@@ -883,7 +870,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                         child: SizedBox(
                                           width: 50.0,
                                           height: 50.0,
-                                          child: SpinKitThreeBounce(
+                                          child: SpinKitFadingCircle(
                                             color: FlutterFlowTheme.of(context)
                                                 .primary,
                                             size: 50.0,
@@ -930,7 +917,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                   child: SizedBox(
                                                     width: 50.0,
                                                     height: 50.0,
-                                                    child: SpinKitThreeBounce(
+                                                    child: SpinKitFadingCircle(
                                                       color:
                                                           FlutterFlowTheme.of(
                                                                   context)

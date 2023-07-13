@@ -5,7 +5,6 @@ import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/main.dart';
 import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -80,7 +79,7 @@ class _ReviewCreateProfileCraftmanWidgetState
                 size: 30.0,
               ),
               onPressed: () async {
-                Navigator.pop(context);
+                context.pop();
               },
             ),
             actions: [],
@@ -631,13 +630,8 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       email: '',
                                       craftType: FFAppState().craftType,
                                     ));
-                                    Navigator.push(
-                                      context,
-                                      MaterialPageRoute(
-                                        builder: (context) => NavBarPage(
-                                            initialPage: 'MAINHomeCustomer'),
-                                      ),
-                                    );
+
+                                    context.pushNamed('MAINHomeCraftsman');
                                   },
                                   text: FFLocalizations.of(context).getText(
                                     '0rf7eqd8' /* إنشاء ملف شخصي */,

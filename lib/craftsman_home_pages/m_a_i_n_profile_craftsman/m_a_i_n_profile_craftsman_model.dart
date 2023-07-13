@@ -1,5 +1,4 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/authentication/hunew/edit_profile_craftsman/edit_profile_craftsman_widget.dart';
 import '/backend/backend.dart';
 import '/components/nav_bar_craftsman/nav_bar_craftsman_widget.dart';
 import '/components/work_exp_edit/work_exp_edit_widget.dart';
@@ -7,7 +6,6 @@ import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/splash_screen/splash_screen_widget.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';

@@ -168,6 +168,21 @@ class UsersRecord extends FirestoreRecord {
   double get craftsmanStarRating => _craftsmanStarRating ?? 0.0;
   bool hasCraftsmanStarRating() => _craftsmanStarRating != null;
 
+  // "comments" field.
+  List<String>? _comments;
+  List<String> get comments => _comments ?? const [];
+  bool hasComments() => _comments != null;
+
+  // "rate" field.
+  double? _rate;
+  double get rate => _rate ?? 0.0;
+  bool hasRate() => _rate != null;
+
+  // "numberOfRates" field.
+  int? _numberOfRates;
+  int get numberOfRates => _numberOfRates ?? 0;
+  bool hasNumberOfRates() => _numberOfRates != null;
+
   void _initializeFields() {
     _displayName = snapshotData['display_name'] as String?;
     _email = snapshotData['email'] as String?;
@@ -202,6 +217,9 @@ class UsersRecord extends FirestoreRecord {
         snapshotData['grandFatherNameCustomer'] as String?;
     _craftsmanStarRating =
         castToType<double>(snapshotData['CraftsmanStarRating']);
+    _comments = getDataList(snapshotData['comments']);
+    _rate = castToType<double>(snapshotData['rate']);
+    _numberOfRates = castToType<int>(snapshotData['numberOfRates']);
   }
 
   static CollectionReference get collection =>
@@ -264,6 +282,11 @@ class UsersRecord extends FirestoreRecord {
           'grandFatherNameCustomer': snapshot.data['grandFatherNameCustomer'],
           'CraftsmanStarRating':
               snapshot.data['CraftsmanStarRating']?.toDouble(),
+          'comments': safeGet(
+            () => snapshot.data['comments'].toList(),
+          ),
+          'rate': snapshot.data['rate']?.toDouble(),
+          'numberOfRates': snapshot.data['numberOfRates']?.round(),
         },
         UsersRecord.collection.doc(snapshot.objectID),
       );
@@ -330,6 +353,8 @@ Map<String, dynamic> createUsersRecordData({
   String? fatherNameCustomer,
   String? grandFatherNameCustomer,
   double? craftsmanStarRating,
+  double? rate,
+  int? numberOfRates,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -363,6 +388,8 @@ Map<String, dynamic> createUsersRecordData({
       'fatherNameCustomer': fatherNameCustomer,
       'grandFatherNameCustomer': grandFatherNameCustomer,
       'CraftsmanStarRating': craftsmanStarRating,
+      'rate': rate,
+      'numberOfRates': numberOfRates,
     }.withoutNulls,
   );
 
@@ -374,6 +401,7 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
 
   @override
   bool equals(UsersRecord? e1, UsersRecord? e2) {
+    const listEquality = ListEquality();
     return e1?.displayName == e2?.displayName &&
         e1?.email == e2?.email &&
         e1?.password == e2?.password &&
@@ -403,7 +431,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e1?.craftType == e2?.craftType &&
         e1?.fatherNameCustomer == e2?.fatherNameCustomer &&
         e1?.grandFatherNameCustomer == e2?.grandFatherNameCustomer &&
-        e1?.craftsmanStarRating == e2?.craftsmanStarRating;
+        e1?.craftsmanStarRating == e2?.craftsmanStarRating &&
+        listEquality.equals(e1?.comments, e2?.comments) &&
+        e1?.rate == e2?.rate &&
+        e1?.numberOfRates == e2?.numberOfRates;
   }
 
   @override
@@ -437,7 +468,10 @@ class UsersRecordDocumentEquality implements Equality<UsersRecord> {
         e?.craftType,
         e?.fatherNameCustomer,
         e?.grandFatherNameCustomer,
-        e?.craftsmanStarRating
+        e?.craftsmanStarRating,
+        e?.comments,
+        e?.rate,
+        e?.numberOfRates
       ]);
 
   @override

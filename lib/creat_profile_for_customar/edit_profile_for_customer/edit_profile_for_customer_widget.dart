@@ -65,7 +65,7 @@ class _EditProfileForCustomerWidgetState
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -86,7 +86,7 @@ class _EditProfileForCustomerWidgetState
               hoverColor: Colors.transparent,
               highlightColor: Colors.transparent,
               onTap: () async {
-                Navigator.pop(context);
+                context.pop();
               },
               child: Icon(
                 Icons.chevron_left_rounded,
@@ -813,7 +813,7 @@ class _EditProfileForCustomerWidgetState
                               photoUrl: _model.uploadedFileUrl,
                               salary: _model.salaryRangeValue?.toString(),
                             ));
-                            Navigator.pop(context);
+                            context.pop();
                           },
                           text: FFLocalizations.of(context).getText(
                             'wle8rhwa' /* Save Changes */,

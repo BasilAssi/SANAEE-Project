@@ -125,7 +125,7 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                                 address: _model.textController2.text,
                                 city: _model.dropDownCityValue,
                               ));
-                              Navigator.pop(context);
+                              context.safePop();
                             },
                           ),
                         ),
@@ -374,7 +374,49 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                                 '37akoyco' /* رام الله  */,
                               ),
                               FFLocalizations.of(context).getText(
-                                '99g20peh' /* الأردن */,
+                                '99g20peh' /* بيت لحم */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'in9pdjfj' /* القدس  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'c8kjnv13' /* الخليل */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'upshgnb7' /* نابلس */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'pqmqmqfd' /* سلفيت  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'qsyvvu76' /* قلقيلية  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'zwd7hhsx' /* طولكرم */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '8e5s5gi2' /* جنين  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '2ojog1ys' /* طوباس  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '84brt96j' /* اريحا  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '725i9ml2' /* البيرة  */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '1ilogogy' /* بيت جالا */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'm6h53wtd' /* بيت ساحور */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                'uoyf6i31' /* الظاهرية */,
+                              ),
+                              FFLocalizations.of(context).getText(
+                                '8rjsqeco' /* دورا */,
                               )
                             ],
                             onChanged: (val) =>

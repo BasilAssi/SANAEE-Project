@@ -1,8 +1,5 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
-import '/creat_profile_for_customar/create_account_three_customer/create_account_three_customer_widget.dart';
-import '/creat_profile_for_customar/create_profile_name_step_one_customar/create_profile_name_step_one_customar_widget.dart';
-import '/create_profile_for_craftsman/create_profile_name_step_one/create_profile_name_step_one_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -225,13 +222,9 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                           isCustomer: false,
                                                           isCraftsman: true,
                                                         ));
-                                                        Navigator.push(
-                                                          context,
-                                                          MaterialPageRoute(
-                                                            builder: (context) =>
-                                                                CreateProfileNameStepOneWidget(),
-                                                          ),
-                                                        );
+
+                                                        context.pushNamed(
+                                                            'createProfileNameStepOne');
                                                       },
                                                       child: Container(
                                                         width: 350.0,
@@ -267,15 +260,9 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                     isCraftsman:
                                                                         true,
                                                                   ));
-                                                                  Navigator
-                                                                      .push(
-                                                                    context,
-                                                                    MaterialPageRoute(
-                                                                      builder:
-                                                                          (context) =>
-                                                                              CreateProfileNameStepOneWidget(),
-                                                                    ),
-                                                                  );
+
+                                                                  context.pushNamed(
+                                                                      'createProfileNameStepOne');
                                                                 },
                                                                 text: FFLocalizations.of(
                                                                         context)
@@ -369,13 +356,9 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                             isCustomer: true,
                                                             isCraftsman: false,
                                                           ));
-                                                          Navigator.push(
-                                                            context,
-                                                            MaterialPageRoute(
-                                                              builder: (context) =>
-                                                                  CreateAccountThreeCustomerWidget(),
-                                                            ),
-                                                          );
+
+                                                          context.pushNamed(
+                                                              'createAccountThreeCustomer');
                                                         },
                                                         child: Container(
                                                           width: 350.0,
@@ -415,14 +398,9 @@ class _SelectYourRoleWidgetState extends State<SelectYourRoleWidget> {
                                                                         isCraftsman:
                                                                             false,
                                                                       ));
-                                                                      Navigator
-                                                                          .push(
-                                                                        context,
-                                                                        MaterialPageRoute(
-                                                                          builder: (context) =>
-                                                                              CreateProfileNameStepOneCustomarWidget(),
-                                                                        ),
-                                                                      );
+
+                                                                      context.pushNamed(
+                                                                          'createProfileNameStepOne_customar');
                                                                     },
                                                                     text: FFLocalizations.of(
                                                                             context)

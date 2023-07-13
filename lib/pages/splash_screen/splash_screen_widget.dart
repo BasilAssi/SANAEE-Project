@@ -1,7 +1,6 @@
 import '/flutter_flow/flutter_flow_animations.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
-import '/pages/onboarding_screens/onboarding_screens_widget.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
 import 'package:flutter_animate/flutter_animate.dart';
@@ -73,12 +72,8 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
     // On page load action.
     SchedulerBinding.instance.addPostFrameCallback((_) async {
       await Future.delayed(const Duration(milliseconds: 3000));
-      Navigator.push(
-        context,
-        MaterialPageRoute(
-          builder: (context) => OnboardingScreensWidget(),
-        ),
-      );
+
+      context.pushNamed('Onboarding_Screens');
     });
   }
 
@@ -109,14 +104,18 @@ class _SplashScreenWidgetState extends State<SplashScreenWidget>
               highlightColor: Colors.transparent,
               onTap: () async {
                 await Future.delayed(const Duration(milliseconds: 3000));
-                Navigator.pushReplacement(
-                  context,
-                  PageTransition(
-                    type: PageTransitionType.leftToRight,
-                    duration: Duration(milliseconds: 1000),
-                    reverseDuration: Duration(milliseconds: 1000),
-                    child: OnboardingScreensWidget(),
-                  ),
+                if (Navigator.of(context).canPop()) {
+                  context.pop();
+                }
+                context.pushNamed(
+                  'Onboarding_Screens',
+                  extra: <String, dynamic>{
+                    kTransitionInfoKey: TransitionInfo(
+                      hasTransition: true,
+                      transitionType: PageTransitionType.leftToRight,
+                      duration: Duration(milliseconds: 1000),
+                    ),
+                  },
                 );
               },
               child: Column(

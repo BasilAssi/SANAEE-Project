@@ -61,7 +61,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
             child: SizedBox(
               width: 50.0,
               height: 50.0,
-              child: SpinKitThreeBounce(
+              child: SpinKitFadingCircle(
                 color: FlutterFlowTheme.of(context).primary,
                 size: 50.0,
               ),
@@ -129,7 +129,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                         child: TextFormField(
                           controller: _model.postitionTitleController ??=
                               TextEditingController(
-                            text: containerWorkHistoryRecord!.jobTitle,
+                            text: containerWorkHistoryRecord?.jobTitle,
                           ),
                           obscureText: false,
                           decoration: InputDecoration(
@@ -195,7 +195,7 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                         child: TextFormField(
                           controller: _model.companyController ??=
                               TextEditingController(
-                            text: containerWorkHistoryRecord!.companyName,
+                            text: containerWorkHistoryRecord?.companyName,
                           ),
                           obscureText: false,
                           decoration: InputDecoration(
@@ -490,8 +490,8 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                               child: TextFormField(
                                 controller: _model.textController3 ??=
                                     TextEditingController(
-                                  text: containerWorkHistoryRecord!
-                                      .jobDescription,
+                                  text: containerWorkHistoryRecord
+                                      ?.jobDescription,
                                 ),
                                 obscureText: false,
                                 decoration: InputDecoration(
@@ -572,16 +572,16 @@ class _WorkExpEditWidgetState extends State<WorkExpEditWidget> {
                                 await containerWorkHistoryRecord!.reference
                                     .update(createWorkHistoryRecordData(
                                   jobTitle:
-                                      containerWorkHistoryRecord!.jobTitle,
+                                      containerWorkHistoryRecord?.jobTitle,
                                   companyName:
-                                      containerWorkHistoryRecord!.companyName,
+                                      containerWorkHistoryRecord?.companyName,
                                   startDate: _model.datePicked1,
                                   endDate: _model.datePicked2,
-                                  jobDescription: containerWorkHistoryRecord!
-                                      .jobDescription,
+                                  jobDescription: containerWorkHistoryRecord
+                                      ?.jobDescription,
                                   user: currentUserReference,
                                 ));
-                                Navigator.pop(context);
+                                context.pop();
                               },
                               text: FFLocalizations.of(context).getText(
                                 'f879az5k' /* Save Work Experience */,

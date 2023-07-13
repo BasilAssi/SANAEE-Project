@@ -1,5 +1,3 @@
-import '/authentication/login/login_widget.dart';
-import '/authentication/sign_up/sign_up_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
@@ -334,12 +332,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 12.0, 0.0, 16.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => LoginWidget(),
-                        ),
-                      );
+                      context.pushNamed('Login');
                     },
                     text: FFLocalizations.of(context).getText(
                       'izmkirho' /* تسجيل الدخول */,
@@ -369,12 +362,7 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                   padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 24.0),
                   child: FFButtonWidget(
                     onPressed: () async {
-                      Navigator.push(
-                        context,
-                        MaterialPageRoute(
-                          builder: (context) => SignUpWidget(),
-                        ),
-                      );
+                      context.pushNamed('SignUp');
                     },
                     text: FFLocalizations.of(context).getText(
                       'fjm217dc' /* إنشاء حساب */,

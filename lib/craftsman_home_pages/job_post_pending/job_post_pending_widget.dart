@@ -62,7 +62,7 @@ class _JobPostPendingWidgetState extends State<JobPostPendingWidget> {
               child: SizedBox(
                 width: 50.0,
                 height: 50.0,
-                child: SpinKitThreeBounce(
+                child: SpinKitFadingCircle(
                   color: FlutterFlowTheme.of(context).primary,
                   size: 50.0,
                 ),
@@ -126,7 +126,7 @@ class _JobPostPendingWidgetState extends State<JobPostPendingWidget> {
                                               child: SizedBox(
                                                 width: 50.0,
                                                 height: 50.0,
-                                                child: SpinKitThreeBounce(
+                                                child: SpinKitFadingCircle(
                                                   color: FlutterFlowTheme.of(
                                                           context)
                                                       .primary,
@@ -232,7 +232,7 @@ class _JobPostPendingWidgetState extends State<JobPostPendingWidget> {
                                                 size: 24.0,
                                               ),
                                               onPressed: () async {
-                                                Navigator.pop(context);
+                                                context.pop();
                                               },
                                             ),
                                           ),
