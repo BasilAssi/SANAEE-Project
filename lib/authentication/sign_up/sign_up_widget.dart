@@ -7,7 +7,6 @@ import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
-import 'package:font_awesome_flutter/font_awesome_flutter.dart';
 import 'package:google_fonts/google_fonts.dart';
 import 'package:provider/provider.dart';
 import 'sign_up_model.dart';
@@ -601,100 +600,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context).bodySmall,
-                            ),
-                          ],
-                        ),
-                      ),
-                      Padding(
-                        padding:
-                            EdgeInsetsDirectional.fromSTEB(8.0, 8.0, 8.0, 8.0),
-                        child: Row(
-                          mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
-                          children: [
-                            InkWell(
-                              splashColor: Colors.transparent,
-                              focusColor: Colors.transparent,
-                              hoverColor: Colors.transparent,
-                              highlightColor: Colors.transparent,
-                              onTap: () async {
-                                GoRouter.of(context).prepareAuthEvent();
-                                final user =
-                                    await authManager.signInWithGoogle(context);
-                                if (user == null) {
-                                  return;
-                                }
-
-                                context.pushNamedAuth(
-                                    'select_your_role', context.mounted);
-                              },
-                              child: Container(
-                                width: 50.0,
-                                height: 50.0,
-                                decoration: BoxDecoration(
-                                  color:
-                                      FlutterFlowTheme.of(context).primaryText,
-                                  boxShadow: [
-                                    BoxShadow(
-                                      blurRadius: 5.0,
-                                      color: Color(0x3314181B),
-                                      offset: Offset(0.0, 2.0),
-                                    )
-                                  ],
-                                  shape: BoxShape.circle,
-                                ),
-                                alignment: AlignmentDirectional(0.0, 0.0),
-                                child: FaIcon(
-                                  FontAwesomeIcons.google,
-                                  color: FlutterFlowTheme.of(context)
-                                      .secondaryBackground,
-                                  size: 24.0,
-                                ),
-                              ),
-                            ),
-                            Container(
-                              width: 50.0,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 5.0,
-                                    color: Color(0x3314181B),
-                                    offset: Offset(0.0, 2.0),
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                              ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: FaIcon(
-                                FontAwesomeIcons.facebookF,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                size: 24.0,
-                              ),
-                            ),
-                            Container(
-                              width: 50.0,
-                              height: 50.0,
-                              decoration: BoxDecoration(
-                                color: FlutterFlowTheme.of(context).primaryText,
-                                boxShadow: [
-                                  BoxShadow(
-                                    blurRadius: 5.0,
-                                    color: Color(0x3314181B),
-                                    offset: Offset(0.0, 2.0),
-                                  )
-                                ],
-                                shape: BoxShape.circle,
-                              ),
-                              alignment: AlignmentDirectional(0.0, 0.0),
-                              child: Icon(
-                                Icons.phone_sharp,
-                                color: FlutterFlowTheme.of(context)
-                                    .secondaryBackground,
-                                size: 24.0,
-                              ),
                             ),
                           ],
                         ),
