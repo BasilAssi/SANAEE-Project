@@ -299,7 +299,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                               bool>(
                                                             jobPostCardPostRecord
                                                                     .image1 ==
-                                                                ' ',
+                                                                '',
                                                             true,
                                                           ))
                                                             Padding(
@@ -376,7 +376,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                               bool>(
                                                             jobPostCardPostRecord
                                                                     .image2 ==
-                                                                ' ',
+                                                                '',
                                                             true,
                                                           ))
                                                             Padding(
@@ -453,7 +453,7 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                               bool>(
                                                             jobPostCardPostRecord
                                                                     .image3 ==
-                                                                ' ',
+                                                                '',
                                                             true,
                                                           ))
                                                             Padding(
