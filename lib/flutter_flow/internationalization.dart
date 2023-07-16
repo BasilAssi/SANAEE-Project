@@ -224,6 +224,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': 'قم بالتبديل إلى وضع الإضاءة العادي',
       'en': 'Switch to Light Mode',
     },
+    'bg8jlh25': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'er1jo8ln': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
+    },
     'qlu9nvs1': {
       'ar': 'السيرة الذاتية',
       'en': 'Bio',
@@ -1302,6 +1310,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'wg6vumnn': {
       'ar': 'قم بالتبديل إلى وضع الإضاءة',
       'en': 'Switch to Light Mode',
+    },
+    'ty6rs2ri': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'gtxnenf4': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
     },
     'wsh65opx': {
       'ar': 'السيرة الذاتية',

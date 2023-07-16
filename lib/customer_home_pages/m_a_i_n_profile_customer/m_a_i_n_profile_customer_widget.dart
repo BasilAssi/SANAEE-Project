@@ -1,9 +1,11 @@
 import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/flutter_flow/flutter_flow_animations.dart';
+import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_icon_button.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
+import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter/scheduler.dart';
@@ -542,138 +544,325 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                 ),
                             ],
                           ),
-                          Column(
-                            mainAxisSize: MainAxisSize.max,
-                            children: [
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 12.0, 0.0, 8.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'qlu9nvs1' /* السيرة الذاتية */,
+                          Padding(
+                            padding: EdgeInsetsDirectional.fromSTEB(
+                                0.0, 20.0, 0.0, 0.0),
+                            child: Column(
+                              mainAxisSize: MainAxisSize.max,
+                              children: [
+                                Padding(
+                                  padding: EdgeInsetsDirectional.fromSTEB(
+                                      30.0, 0.0, 0.0, 0.0),
+                                  child: Column(
+                                    mainAxisSize: MainAxisSize.max,
+                                    children: [
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 0.0, 0.0, 8.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            setAppLanguage(context, 'ar');
+                                          },
+                                          child: Container(
+                                            width: 100.0,
+                                            decoration: BoxDecoration(),
+                                            child: FlutterFlowChoiceChips(
+                                              options: [
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'bg8jlh25' /*  عربي   */,
+                                                    ),
+                                                    Icons.language)
+                                              ],
+                                              onChanged: (val) async {
+                                                setState(() => _model
+                                                    .choiceChipsValues1 = val);
+                                                setAppLanguage(context, 'ar');
+                                              },
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                iconSize: 18.0,
+                                                elevation: 4.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .alternate,
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              chipSpacing: 14.0,
+                                              rowSpacing: 20.0,
+                                              multiselect: true,
+                                              initialized:
+                                                  _model.choiceChipsValues1 !=
+                                                      null,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController1 ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
-                                    ),
+                                      Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            0.0, 8.0, 0.0, 0.0),
+                                        child: InkWell(
+                                          splashColor: Colors.transparent,
+                                          focusColor: Colors.transparent,
+                                          hoverColor: Colors.transparent,
+                                          highlightColor: Colors.transparent,
+                                          onTap: () async {
+                                            setAppLanguage(context, 'en');
+                                          },
+                                          child: Container(
+                                            width: 100.0,
+                                            height: 30.0,
+                                            decoration: BoxDecoration(),
+                                            child: FlutterFlowChoiceChips(
+                                              options: [
+                                                ChipData(
+                                                    FFLocalizations.of(context)
+                                                        .getText(
+                                                      'er1jo8ln' /* انجليزي */,
+                                                    ),
+                                                    Icons.language)
+                                              ],
+                                              onChanged: (val) async {
+                                                setState(() => _model
+                                                    .choiceChipsValues2 = val);
+                                                setAppLanguage(context, 'en');
+                                              },
+                                              selectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    Color(0x613922F9),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .primaryText,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primaryText,
+                                                iconSize: 18.0,
+                                                elevation: 4.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              unselectedChipStyle: ChipStyle(
+                                                backgroundColor:
+                                                    Color(0x613922F9),
+                                                textStyle:
+                                                    FlutterFlowTheme.of(context)
+                                                        .bodyMedium
+                                                        .override(
+                                                          fontFamily: 'Outfit',
+                                                          color: FlutterFlowTheme
+                                                                  .of(context)
+                                                              .secondaryText,
+                                                        ),
+                                                iconColor:
+                                                    FlutterFlowTheme.of(context)
+                                                        .secondaryText,
+                                                iconSize: 18.0,
+                                                elevation: 0.0,
+                                                borderRadius:
+                                                    BorderRadius.circular(16.0),
+                                              ),
+                                              chipSpacing: 14.0,
+                                              rowSpacing: 20.0,
+                                              multiselect: true,
+                                              initialized:
+                                                  _model.choiceChipsValues2 !=
+                                                      null,
+                                              alignment: WrapAlignment.start,
+                                              controller: _model
+                                                      .choiceChipsValueController2 ??=
+                                                  FormFieldController<
+                                                      List<String>>(
+                                                [],
+                                              ),
+                                            ),
+                                          ),
+                                        ),
+                                      ),
+                                    ],
                                   ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        mAINProfileCustomerUsersRecord.bio,
+                                        FFLocalizations.of(context).getText(
+                                          'qlu9nvs1' /* السيرة الذاتية */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodySmall,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 12.0, 0.0, 8.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'jjmx2lgp' /* الايميل  */,
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Text(
+                                          mAINProfileCustomerUsersRecord.bio,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        mAINProfileCustomerUsersRecord.email,
+                                        FFLocalizations.of(context).getText(
+                                          'jjmx2lgp' /* الايميل  */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodySmall,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 12.0, 0.0, 8.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        'wpg67ray' /* المدينة */,
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Text(
+                                          mAINProfileCustomerUsersRecord.email,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        mAINProfileCustomerUsersRecord.city,
+                                        FFLocalizations.of(context).getText(
+                                          'wpg67ray' /* المدينة */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodySmall,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Padding(
-                                    padding: EdgeInsetsDirectional.fromSTEB(
-                                        24.0, 12.0, 0.0, 8.0),
-                                    child: Text(
-                                      FFLocalizations.of(context).getText(
-                                        '1vh063zf' /* العنوان */,
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Text(
+                                          mAINProfileCustomerUsersRecord.city,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
                                       ),
-                                      style: FlutterFlowTheme.of(context)
-                                          .bodySmall,
                                     ),
-                                  ),
-                                ],
-                              ),
-                              Row(
-                                mainAxisSize: MainAxisSize.max,
-                                children: [
-                                  Expanded(
-                                    child: Padding(
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Padding(
                                       padding: EdgeInsetsDirectional.fromSTEB(
-                                          24.0, 0.0, 24.0, 0.0),
+                                          24.0, 12.0, 0.0, 8.0),
                                       child: Text(
-                                        mAINProfileCustomerUsersRecord.address,
+                                        FFLocalizations.of(context).getText(
+                                          '1vh063zf' /* العنوان */,
+                                        ),
                                         style: FlutterFlowTheme.of(context)
-                                            .bodyMedium,
+                                            .bodySmall,
                                       ),
                                     ),
-                                  ),
-                                ],
-                              ),
-                            ],
+                                  ],
+                                ),
+                                Row(
+                                  mainAxisSize: MainAxisSize.max,
+                                  children: [
+                                    Expanded(
+                                      child: Padding(
+                                        padding: EdgeInsetsDirectional.fromSTEB(
+                                            24.0, 0.0, 24.0, 0.0),
+                                        child: Text(
+                                          mAINProfileCustomerUsersRecord
+                                              .address,
+                                          style: FlutterFlowTheme.of(context)
+                                              .bodyMedium,
+                                        ),
+                                      ),
+                                    ),
+                                  ],
+                                ),
+                              ],
+                            ),
                           ),
                         ],
                       ),
