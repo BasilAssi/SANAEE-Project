@@ -156,8 +156,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'mmagg0f3': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     'bhx8fux8': {
       'ar': 'Please choose an option from the dropdown',
@@ -168,16 +168,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'bocjdwxb': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عدد الأحرف عن 6 أحرف',
+      'en': 'Should be lest 6 characters',
     },
     '1n82v10c': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     'imsbutcj': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'pen0qdd9': {
       'ar': 'Please choose an option from the dropdown',
@@ -310,12 +310,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Send Reset Password',
     },
     'lkkdbwnt': {
-      'ar': 'Email is required',
-      'en': '',
+      'ar': 'البريد الالكتروني مطلوب',
+      'en': 'Email is required',
     },
     'an8p149a': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     'fl553gx7': {
       'ar': 'Please choose an option from the dropdown',
@@ -577,52 +577,52 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     '4vwjis2u': {
-      'ar': 'Email is required',
-      'en': '',
+      'ar': 'البريد الالكتروني مطلوب',
+      'en': 'Email is required',
     },
     'j8qon7bu': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     's85qgokq': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     'bx7lyow2': {
-      'ar': 'password is required',
-      'en': '',
+      'ar': 'كلمة المرور مطلوبة',
+      'en': 'password is required',
     },
     '6jhd0064': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عدد الأحرف عن 6 أحرف',
+      'en': 'Should be lest 6 characters',
     },
     'h6x0aj3w': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     '0025rc92': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'fo8wxsdy': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     'gpyud16l': {
-      'ar': 'Field is required',
-      'en': '',
+      'ar': 'كلمة المرور مطلوبة',
+      'en': 'password is required',
     },
     'ahvpevy8': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عن 6 أحرف',
+      'en': 'Shoulda be lest 6 characters',
     },
     'd6n7cpja': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     's69gs540': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'xo4muwj2': {
       'ar': 'Please choose an option from the dropdown',
@@ -871,20 +871,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\nStep 2  of  4 :Upload address and place of residence',
     },
     'j0hv1wkr': {
-      'ar': 'id number is required',
-      'en': '',
+      'ar': 'رقم الهوية مطلوب',
+      'en': 'id number is required',
     },
     'qtpqfssd': {
-      'ar': 'The maximum ID number',
-      'en': '',
+      'ar': 'الحد الأقصى لرقم الهوية 9',
+      'en': 'The maximum ID number 9',
     },
     '5bdnd8dt': {
-      'ar': 'The maximum ID number 9,only number',
-      'en': '',
+      'ar': 'الرقم التعريفي الأقصى 9 ، الرقم فقط',
+      'en': 'The maximum ID number 9,only number',
     },
     'r75guw8g': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء إدخال رقم الهوية',
+      'en': 'Please enter the ID number',
     },
     's7c3j1ss': {
       'ar': 'Field is required',
@@ -1250,16 +1250,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Create an account',
     },
     '23yfr90d': {
-      'ar': 'idnumber is required',
-      'en': '',
+      'ar': 'رقم الهوية مطلوب',
+      'en': 'id number is required',
     },
     'tsnydcl9': {
-      'ar': ' ID number',
-      'en': '',
+      'ar': ' الحد الأقصى لرقم الهوية 9',
+      'en': 'The maximum ID number 9',
     },
     'ml0csbtk': {
-      'ar': 'The maximum ID number9, only numbers',
-      'en': '',
+      'ar': 'الرقم التعريفي الأقصى 9 ، الرقم فقط',
+      'en': 'The maximum ID number9, only numbers',
     },
     's54ej40p': {
       'ar': 'Please choose an option from the dropdown',

@@ -28,13 +28,13 @@ class SignUpModel extends FlutterFlowModel {
   String? _emailAddressControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '4vwjis2u' /* Email is required */,
+        '4vwjis2u' /* البريد الالكتروني مطلوب */,
       );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'j8qon7bu' /* Should be a valid email addres... */,
+        'j8qon7bu' /* يجب أن يكون عنوان بريد إلكترون... */,
       );
     }
     return null;
@@ -47,23 +47,23 @@ class SignUpModel extends FlutterFlowModel {
   String? _passwordControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'bx7lyow2' /* password is required */,
+        'bx7lyow2' /* كلمة المرور مطلوبة */,
       );
     }
 
     if (val.length < 6) {
       return FFLocalizations.of(context).getText(
-        '6jhd0064' /* Should be lest 6 characters */,
+        '6jhd0064' /* يجب ألا يقل عدد الأحرف عن 6 أح... */,
       );
     }
     if (val.length > 15) {
       return FFLocalizations.of(context).getText(
-        'h6x0aj3w' /* Should be lest then 15 charact... */,
+        'h6x0aj3w' /* يجب أن يكون أقل من 15 حرفًا */,
       );
     }
     if (!RegExp('^(?=.*[a-zA-Z0-9]).{6,15}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '0025rc92' /* Should have one number and 1 a... */,
+        '0025rc92' /* يجب أن يحتوي على رقم واحد وحرف... */,
       );
     }
     return null;
@@ -77,23 +77,23 @@ class SignUpModel extends FlutterFlowModel {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'gpyud16l' /* Field is required */,
+        'gpyud16l' /* كلمة المرور مطلوبة */,
       );
     }
 
     if (val.length < 6) {
       return FFLocalizations.of(context).getText(
-        'ahvpevy8' /* Should be lest 6 characters */,
+        'ahvpevy8' /* يجب ألا يقل عن 6 أحرف */,
       );
     }
     if (val.length > 15) {
       return FFLocalizations.of(context).getText(
-        'd6n7cpja' /* Should be lest then 15 charact... */,
+        'd6n7cpja' /* يجب أن يكون أقل من 15 حرفًا */,
       );
     }
     if (!RegExp('^(?=.*[a-zA-Z0-9]).{6,15}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        's69gs540' /* Should have one number and 1 a... */,
+        's69gs540' /* يجب أن يحتوي على رقم واحد وحرف... */,
       );
     }
     return null;

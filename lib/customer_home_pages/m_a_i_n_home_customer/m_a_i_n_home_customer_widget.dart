@@ -295,216 +295,237 @@ class _MAINHomeCustomerWidgetState extends State<MAINHomeCustomerWidget> {
                                                             MainAxisAlignment
                                                                 .spaceEvenly,
                                                         children: [
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    child:
-                                                                        FlutterFlowExpandedImageView(
-                                                                      image: Image
-                                                                          .network(
-                                                                        jobPostCardPostRecord
+                                                          if (valueOrDefault<
+                                                              bool>(
+                                                            jobPostCardPostRecord
+                                                                    .image1 ==
+                                                                ' ',
+                                                            true,
+                                                          ))
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image1,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
                                                                             .image1,
-                                                                        fit: BoxFit
-                                                                            .contain,
+                                                                        useHeroAnimation:
+                                                                            true,
                                                                       ),
-                                                                      allowRotation:
-                                                                          false,
-                                                                      tag: jobPostCardPostRecord
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image1,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
                                                                           .image1,
-                                                                      useHeroAnimation:
-                                                                          true,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
                                                                     ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: Hero(
-                                                                tag:
-                                                                    jobPostCardPostRecord
-                                                                        .image1,
-                                                                transitionOnUserGestures:
-                                                                    true,
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    jobPostCardPostRecord
-                                                                        .image1,
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    fit: BoxFit
-                                                                        .cover,
                                                                   ),
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0,
-                                                                        8.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    child:
-                                                                        FlutterFlowExpandedImageView(
-                                                                      image: Image
-                                                                          .network(
-                                                                        jobPostCardPostRecord
+                                                          if (valueOrDefault<
+                                                              bool>(
+                                                            jobPostCardPostRecord
+                                                                    .image2 ==
+                                                                ' ',
+                                                            true,
+                                                          ))
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image2,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
                                                                             .image2,
-                                                                        fit: BoxFit
-                                                                            .contain,
+                                                                        useHeroAnimation:
+                                                                            true,
                                                                       ),
-                                                                      allowRotation:
-                                                                          false,
-                                                                      tag: jobPostCardPostRecord
+                                                                    ),
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image2,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
                                                                           .image2,
-                                                                      useHeroAnimation:
-                                                                          true,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
                                                                     ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: Hero(
-                                                                tag:
-                                                                    jobPostCardPostRecord
-                                                                        .image2,
-                                                                transitionOnUserGestures:
-                                                                    true,
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    jobPostCardPostRecord
-                                                                        .image2,
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    fit: BoxFit
-                                                                        .cover,
                                                                   ),
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
-                                                          Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        0.0,
-                                                                        8.0),
-                                                            child: InkWell(
-                                                              splashColor: Colors
-                                                                  .transparent,
-                                                              focusColor: Colors
-                                                                  .transparent,
-                                                              hoverColor: Colors
-                                                                  .transparent,
-                                                              highlightColor:
-                                                                  Colors
-                                                                      .transparent,
-                                                              onTap: () async {
-                                                                await Navigator
-                                                                    .push(
-                                                                  context,
-                                                                  PageTransition(
-                                                                    type: PageTransitionType
-                                                                        .fade,
-                                                                    child:
-                                                                        FlutterFlowExpandedImageView(
-                                                                      image: Image
-                                                                          .network(
-                                                                        jobPostCardPostRecord
+                                                          if (valueOrDefault<
+                                                              bool>(
+                                                            jobPostCardPostRecord
+                                                                    .image3 ==
+                                                                ' ',
+                                                            true,
+                                                          ))
+                                                            Padding(
+                                                              padding:
+                                                                  EdgeInsetsDirectional
+                                                                      .fromSTEB(
+                                                                          0.0,
+                                                                          0.0,
+                                                                          0.0,
+                                                                          8.0),
+                                                              child: InkWell(
+                                                                splashColor: Colors
+                                                                    .transparent,
+                                                                focusColor: Colors
+                                                                    .transparent,
+                                                                hoverColor: Colors
+                                                                    .transparent,
+                                                                highlightColor:
+                                                                    Colors
+                                                                        .transparent,
+                                                                onTap:
+                                                                    () async {
+                                                                  await Navigator
+                                                                      .push(
+                                                                    context,
+                                                                    PageTransition(
+                                                                      type: PageTransitionType
+                                                                          .fade,
+                                                                      child:
+                                                                          FlutterFlowExpandedImageView(
+                                                                        image: Image
+                                                                            .network(
+                                                                          jobPostCardPostRecord
+                                                                              .image3,
+                                                                          fit: BoxFit
+                                                                              .contain,
+                                                                        ),
+                                                                        allowRotation:
+                                                                            false,
+                                                                        tag: jobPostCardPostRecord
                                                                             .image3,
-                                                                        fit: BoxFit
-                                                                            .contain,
+                                                                        useHeroAnimation:
+                                                                            true,
                                                                       ),
-                                                                      allowRotation:
-                                                                          false,
-                                                                      tag: jobPostCardPostRecord
-                                                                          .image3,
-                                                                      useHeroAnimation:
-                                                                          true,
                                                                     ),
-                                                                  ),
-                                                                );
-                                                              },
-                                                              child: Hero(
-                                                                tag:
-                                                                    jobPostCardPostRecord
-                                                                        .image3,
-                                                                transitionOnUserGestures:
-                                                                    true,
-                                                                child:
-                                                                    ClipRRect(
-                                                                  borderRadius:
-                                                                      BorderRadius
-                                                                          .circular(
-                                                                              8.0),
-                                                                  child: Image
-                                                                      .network(
-                                                                    jobPostCardPostRecord
-                                                                        .image3,
-                                                                    width: 50.0,
-                                                                    height:
-                                                                        50.0,
-                                                                    fit: BoxFit
-                                                                        .cover,
+                                                                  );
+                                                                },
+                                                                child: Hero(
+                                                                  tag: jobPostCardPostRecord
+                                                                      .image3,
+                                                                  transitionOnUserGestures:
+                                                                      true,
+                                                                  child:
+                                                                      ClipRRect(
+                                                                    borderRadius:
+                                                                        BorderRadius.circular(
+                                                                            8.0),
+                                                                    child: Image
+                                                                        .network(
+                                                                      jobPostCardPostRecord
+                                                                          .image3,
+                                                                      width:
+                                                                          0.0,
+                                                                      height:
+                                                                          0.0,
+                                                                      fit: BoxFit
+                                                                          .cover,
+                                                                    ),
                                                                   ),
                                                                 ),
                                                               ),
                                                             ),
-                                                          ),
                                                         ],
                                                       ),
                                                     ],
