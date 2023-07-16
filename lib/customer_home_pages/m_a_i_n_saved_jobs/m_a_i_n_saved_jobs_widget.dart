@@ -241,38 +241,58 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                           CrossAxisAlignment
                                                                               .start,
                                                                       children: [
-                                                                        Row(
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              5.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                jobPostCardPostRecord.jobTitle,
+                                                                                style: FlutterFlowTheme.of(context).titleMedium,
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceEvenly,
                                                                           children: [
-                                                                            Text(
-                                                                              jobPostCardPostRecord.jobTitle,
-                                                                              style: FlutterFlowTheme.of(context).titleMedium,
-                                                                            ),
-                                                                            Text(
-                                                                              jobPostCardPostRecord.jobType,
-                                                                              style: FlutterFlowTheme.of(context).titleMedium,
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                              child: Text(
+                                                                                jobPostCardPostRecord.jobType,
+                                                                                style: FlutterFlowTheme.of(context).titleMedium,
+                                                                              ),
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                        Row(
+                                                                        Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            Expanded(
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 10.0, 12.0, 5.0),
-                                                                                child: AutoSizeText(
-                                                                                  jobPostCardPostRecord.shortDescription.maybeHandleOverflow(
-                                                                                    maxChars: 120,
-                                                                                    replacement: '…',
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Expanded(
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 10.0, 12.0, 5.0),
+                                                                                    child: AutoSizeText(
+                                                                                      jobPostCardPostRecord.shortDescription.maybeHandleOverflow(
+                                                                                        maxChars: 120,
+                                                                                        replacement: '…',
+                                                                                      ),
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    ),
                                                                                   ),
-                                                                                  textAlign: TextAlign.start,
-                                                                                  style: FlutterFlowTheme.of(context).bodySmall,
                                                                                 ),
-                                                                              ),
+                                                                              ],
                                                                             ),
                                                                           ],
                                                                         ),
