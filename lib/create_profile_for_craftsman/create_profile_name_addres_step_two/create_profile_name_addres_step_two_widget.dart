@@ -96,7 +96,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
           top: true,
           child: Form(
             key: _model.formKey,
-            autovalidateMode: AutovalidateMode.disabled,
+            autovalidateMode: AutovalidateMode.always,
             child: Stack(
               children: [
                 SingleChildScrollView(

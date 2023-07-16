@@ -875,8 +875,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The maximum ID number 9,only number',
     },
     'r75guw8g': {
-      'ar': 'الرجاء إدخال رقم الهوية',
-      'en': 'Please enter the ID number',
+      'ar': '',
+      'en': '',
     },
     's7c3j1ss': {
       'ar': 'الحقل مطلوب',
