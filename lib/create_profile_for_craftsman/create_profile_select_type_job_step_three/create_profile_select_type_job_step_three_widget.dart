@@ -167,7 +167,7 @@ class _CreateProfileSelectTypeJobStepThreeWidgetState
                                       ),
                                       searchHintText:
                                           FFLocalizations.of(context).getText(
-                                        'w9d9y2pf' /* Search for an item... */,
+                                        'w9d9y2pf' /* البحث عن عنصر ... */,
                                       ),
                                       fillColor: FlutterFlowTheme.of(context)
                                           .secondaryBackground,

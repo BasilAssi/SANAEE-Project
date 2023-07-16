@@ -457,7 +457,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                         children: [
                                           Text(
                                             FFLocalizations.of(context).getText(
-                                              'ehmwoa5b' /* Switch to Light Mode */,
+                                              'ehmwoa5b' /* قم بالتبديل إلى وضع الإضاءة ال... */,
                                             ),
                                             style: FlutterFlowTheme.of(context)
                                                 .bodyMedium

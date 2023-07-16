@@ -51,7 +51,6 @@ dependencies:
   firebase_storage_web: 3.6.2
   flutter_animate: 4.1.1+1
   flutter_cache_manager: 3.3.0
-  flutter_datetime_picker_plus: 2.0.1
   flutter_plugin_android_lifecycle: 2.0.9
   flutter_rating_bar: 4.0.1
   flutter_secure_storage: 8.0.0

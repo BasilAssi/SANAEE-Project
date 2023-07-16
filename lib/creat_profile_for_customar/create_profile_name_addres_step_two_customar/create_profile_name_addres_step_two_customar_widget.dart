@@ -295,7 +295,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                         }
                                         return [
                                           FFLocalizations.of(context).getText(
-                                            'ab3ez11s' /* Option 1 */,
+                                            'ab3ez11s' /* الخيار 1 */,
                                           )
                                         ].where((option) {
                                           final lowercaseOption =

@@ -18,7 +18,7 @@ class LoginModel extends FlutterFlowModel {
   String? _emailAddressControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'r7f2rfge' /* Email is required */,
+        'r7f2rfge' /* البريد الالكتروني مطلوب */,
       );
     }
 
@@ -37,7 +37,7 @@ class LoginModel extends FlutterFlowModel {
   String? _passwordControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'gcbmhlrp' /* Field is required */,
+        'gcbmhlrp' /* الحقل مطلوب */,
       );
     }
 
