@@ -67,13 +67,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                         mainAxisSize: MainAxisSize.max,
                         mainAxisAlignment: MainAxisAlignment.spaceAround,
                         children: [
-                          if (Theme.of(context).brightness == Brightness.dark)
-                            Image.asset(
-                              'assets/images/logo_1.png',
-                              width: 242.0,
-                              height: 60.0,
-                              fit: BoxFit.fitWidth,
-                            ),
                           ClipRRect(
                             borderRadius: BorderRadius.circular(8.0),
                             child: Image.asset(
