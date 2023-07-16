@@ -1,9 +1,7 @@
 import '/auth/firebase_auth/auth_util.dart';
-import '/flutter_flow/flutter_flow_choice_chips.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
-import '/flutter_flow/form_field_controller.dart';
 import 'package:auto_size_text/auto_size_text.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
@@ -15,12 +13,6 @@ class SignUpModel extends FlutterFlowModel {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for ChoiceChips widget.
-  List<String>? choiceChipsValues1;
-  FormFieldController<List<String>>? choiceChipsValueController1;
-  // State field(s) for ChoiceChips widget.
-  List<String>? choiceChipsValues2;
-  FormFieldController<List<String>>? choiceChipsValueController2;
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;
   String? Function(BuildContext, String?)? emailAddressControllerValidator;

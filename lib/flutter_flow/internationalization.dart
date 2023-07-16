@@ -512,14 +512,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // SignUp
   {
-    '22aqfxf1': {
-      'ar': ' عربي  ',
-      'en': ' AR   ',
-    },
-    'hhpegmuj': {
-      'ar': 'انجليزي',
-      'en': 'ENG',
-    },
     'khzspjr2': {
       'ar': ' إنشاء حساب',
       'en': 'Create an account',
