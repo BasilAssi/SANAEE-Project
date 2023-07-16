@@ -688,11 +688,6 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                     0.0, 80.0, 0.0, 0.0),
                                 child: FFButtonWidget(
                                   onPressed: () async {
-                                    if (_model.formKey.currentState == null ||
-                                        !_model.formKey.currentState!
-                                            .validate()) {
-                                      return;
-                                    }
                                     FFAppState().idNumber =
                                         _model.textFieldIdNumberController.text;
                                     FFAppState().city =
