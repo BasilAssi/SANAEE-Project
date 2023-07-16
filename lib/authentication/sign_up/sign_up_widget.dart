@@ -69,7 +69,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             0.0, 40.0, 0.0, 30.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceEvenly,
+                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
                           children: [
                             if (Theme.of(context).brightness ==
                                 Brightness.light)
