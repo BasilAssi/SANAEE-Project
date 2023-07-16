@@ -487,7 +487,7 @@ class _EditProfileCraftsmanWidgetState
                               'ui1uh09m' /*  الرجاء الاختيار المدينة */,
                             ),
                             searchHintText: FFLocalizations.of(context).getText(
-                              'y0w64wdj' /* Search for an item... */,
+                              'y0w64wdj' /* البحث عن عنصر ... */,
                             ),
                             fillColor:
                                 FlutterFlowTheme.of(context).primaryBackground,

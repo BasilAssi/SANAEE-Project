@@ -596,7 +596,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           children: [
                             AutoSizeText(
                               FFLocalizations.of(context).getText(
-                                've2zy4vm' /* Use a social platform to conti... */,
+                                've2zy4vm' /* استخدم منصة اجتماعية للمتابعة */,
                               ),
                               textAlign: TextAlign.center,
                               style: FlutterFlowTheme.of(context).bodySmall,
@@ -613,7 +613,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'phcb2n1x' /* Already have an account? */,
+                                'phcb2n1x' /* هل لديك حساب؟ */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
@@ -622,7 +622,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 context.pushNamed('Login');
                               },
                               text: FFLocalizations.of(context).getText(
-                                '1bl7wnow' /* Log In */,
+                                '1bl7wnow' /* تسجيل الدخول */,
                               ),
                               options: FFButtonOptions(
                                 width: 90.0,

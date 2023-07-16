@@ -134,7 +134,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                               return [
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'u4zkv50f' /* Option 1 */,
+                                                  'u4zkv50f' /* الخيار 1 */,
                                                 )
                                               ].where((option) {
                                                 final lowercaseOption =
@@ -429,7 +429,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                               searchHintText:
                                                   FFLocalizations.of(context)
                                                       .getText(
-                                                'wh67g5q2' /* Search for an item... */,
+                                                'wh67g5q2' /* البحث عن عنصر ... */,
                                               ),
                                               fillColor:
                                                   FlutterFlowTheme.of(context)
@@ -470,7 +470,7 @@ class _CreateProfileNameAddresStepTwoWidgetState
                                             return [
                                               FFLocalizations.of(context)
                                                   .getText(
-                                                'qahuna4t' /* Option 1 */,
+                                                'qahuna4t' /* الخيار 1 */,
                                               )
                                             ].where((option) {
                                               final lowercaseOption =

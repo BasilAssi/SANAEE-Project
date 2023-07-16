@@ -412,7 +412,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'ekzd45vf' /* Switch to Dark Mode */,
+                                                      'ekzd45vf' /* قم بالتبديل إلى الوضع الداكن */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -560,7 +560,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                   Text(
                                                     FFLocalizations.of(context)
                                                         .getText(
-                                                      'wg6vumnn' /* Switch to Light Mode */,
+                                                      'wg6vumnn' /* قم بالتبديل إلى وضع الإضاءة */,
                                                     ),
                                                     style: FlutterFlowTheme.of(
                                                             context)
@@ -840,7 +840,7 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                         24.0, 12.0, 0.0, 8.0),
                                     child: Text(
                                       FFLocalizations.of(context).getText(
-                                        'xog3be4m' /* Work Experience */,
+                                        'xog3be4m' /* خبرة في العمل */,
                                       ),
                                       style: FlutterFlowTheme.of(context)
                                           .bodySmall,
