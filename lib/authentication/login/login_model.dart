@@ -24,7 +24,7 @@ class LoginModel extends FlutterFlowModel {
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'mmagg0f3' /* Should be a valid email addres... */,
+        'mmagg0f3' /* يجب أن يكون عنوان بريد إلكترون... */,
       );
     }
     return null;
@@ -43,17 +43,17 @@ class LoginModel extends FlutterFlowModel {
 
     if (val.length < 6) {
       return FFLocalizations.of(context).getText(
-        'bocjdwxb' /* Should be lest 6 characters */,
+        'bocjdwxb' /* يجب ألا يقل عدد الأحرف عن 6 أح... */,
       );
     }
     if (val.length > 15) {
       return FFLocalizations.of(context).getText(
-        '1n82v10c' /* Should be lest then 15 charact... */,
+        '1n82v10c' /* يجب أن يكون أقل من 15 حرفًا */,
       );
     }
     if (!RegExp('^(?=.*[a-zA-Z0-9]).{6,15}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'imsbutcj' /* Should have one number and 1 a... */,
+        'imsbutcj' /* يجب أن يحتوي على رقم واحد وحرف... */,
       );
     }
     return null;

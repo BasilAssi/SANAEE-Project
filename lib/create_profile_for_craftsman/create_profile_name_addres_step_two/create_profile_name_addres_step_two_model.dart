@@ -26,23 +26,23 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
       BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'j0hv1wkr' /* id number is required */,
+        'j0hv1wkr' /* رقم الهوية مطلوب */,
       );
     }
     if (val != textFieldIdNumberSelectedOption) {
       return FFLocalizations.of(context).getText(
-        'r75guw8g' /* Please choose an option from t... */,
+        'r75guw8g' /* الرجاء إدخال رقم الهوية */,
       );
     }
 
     if (val.length > 9) {
       return FFLocalizations.of(context).getText(
-        'qtpqfssd' /* The maximum ID number */,
+        'qtpqfssd' /* الحد الأقصى لرقم الهوية 9 */,
       );
     }
     if (!RegExp('^\\d{9}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '5bdnd8dt' /* The maximum ID number 9,only n... */,
+        '5bdnd8dt' /* الرقم التعريفي الأقصى 9 ، الرق... */,
       );
     }
     return null;
