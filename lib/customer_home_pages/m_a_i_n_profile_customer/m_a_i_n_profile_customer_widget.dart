@@ -123,7 +123,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                             children: [
                               Container(
                                 width: MediaQuery.sizeOf(context).width * 1.0,
-                                height: 170.0,
+                                height: 200.0,
                                 decoration: BoxDecoration(
                                   color: FlutterFlowTheme.of(context).darkText,
                                 ),
@@ -237,9 +237,11 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                         child: Padding(
                                           padding:
                                               EdgeInsetsDirectional.fromSTEB(
-                                                  0.0, 0.0, 20.0, 0.0),
+                                                  0.0, 30.0, 20.0, 0.0),
                                           child: Row(
                                             mainAxisSize: MainAxisSize.max,
+                                            mainAxisAlignment:
+                                                MainAxisAlignment.spaceAround,
                                             children: [
                                               AuthUserStreamWidget(
                                                 builder: (context) => ClipRRect(
@@ -257,7 +259,7 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                               Padding(
                                                 padding: EdgeInsetsDirectional
                                                     .fromSTEB(
-                                                        20.0, 8.0, 0.0, 0.0),
+                                                        10.0, 8.0, 0.0, 0.0),
                                                 child: AutoSizeText(
                                                   '${mAINProfileCustomerUsersRecord.firstNameCustomer} ${mAINProfileCustomerUsersRecord.lastNameCustomer}',
                                                   style: FlutterFlowTheme.of(
@@ -270,6 +272,254 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                                     context)
                                                                 .tertiary,
                                                       ),
+                                                ),
+                                              ),
+                                              Padding(
+                                                padding: EdgeInsetsDirectional
+                                                    .fromSTEB(
+                                                        60.0, 0.0, 0.0, 0.0),
+                                                child: Column(
+                                                  mainAxisSize:
+                                                      MainAxisSize.max,
+                                                  children: [
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  5.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          setAppLanguage(
+                                                              context, 'ar');
+                                                        },
+                                                        child: Container(
+                                                          width: 100.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child:
+                                                              FlutterFlowChoiceChips(
+                                                            options: [
+                                                              ChipData(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'bg8jlh25' /*  عربي   */,
+                                                                  ),
+                                                                  Icons
+                                                                      .language)
+                                                            ],
+                                                            onChanged:
+                                                                (val) async {
+                                                              setState(() =>
+                                                                  _model.choiceChipsValues1 =
+                                                                      val);
+                                                              setAppLanguage(
+                                                                  context,
+                                                                  'ar');
+                                                            },
+                                                            selectedChipStyle:
+                                                                ChipStyle(
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primary,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                              iconColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              iconSize: 18.0,
+                                                              elevation: 4.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                            ),
+                                                            unselectedChipStyle:
+                                                                ChipStyle(
+                                                              backgroundColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .alternate,
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                              iconColor: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              iconSize: 18.0,
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                            ),
+                                                            chipSpacing: 14.0,
+                                                            rowSpacing: 20.0,
+                                                            multiselect: true,
+                                                            initialized: _model
+                                                                    .choiceChipsValues1 !=
+                                                                null,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            controller: _model
+                                                                    .choiceChipsValueController1 ??=
+                                                                FormFieldController<
+                                                                    List<
+                                                                        String>>(
+                                                              [],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                    Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  5.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: InkWell(
+                                                        splashColor:
+                                                            Colors.transparent,
+                                                        focusColor:
+                                                            Colors.transparent,
+                                                        hoverColor:
+                                                            Colors.transparent,
+                                                        highlightColor:
+                                                            Colors.transparent,
+                                                        onTap: () async {
+                                                          setAppLanguage(
+                                                              context, 'en');
+                                                        },
+                                                        child: Container(
+                                                          width: 100.0,
+                                                          height: 30.0,
+                                                          decoration:
+                                                              BoxDecoration(),
+                                                          child:
+                                                              FlutterFlowChoiceChips(
+                                                            options: [
+                                                              ChipData(
+                                                                  FFLocalizations.of(
+                                                                          context)
+                                                                      .getText(
+                                                                    'er1jo8ln' /* انجليزي */,
+                                                                  ),
+                                                                  Icons
+                                                                      .language)
+                                                            ],
+                                                            onChanged:
+                                                                (val) async {
+                                                              setState(() =>
+                                                                  _model.choiceChipsValues2 =
+                                                                      val);
+                                                              setAppLanguage(
+                                                                  context,
+                                                                  'en');
+                                                            },
+                                                            selectedChipStyle:
+                                                                ChipStyle(
+                                                              backgroundColor:
+                                                                  Color(
+                                                                      0x613922F9),
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .primaryText,
+                                                                      ),
+                                                              iconColor:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .primaryText,
+                                                              iconSize: 18.0,
+                                                              elevation: 4.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                            ),
+                                                            unselectedChipStyle:
+                                                                ChipStyle(
+                                                              backgroundColor:
+                                                                  Color(
+                                                                      0x613922F9),
+                                                              textStyle:
+                                                                  FlutterFlowTheme.of(
+                                                                          context)
+                                                                      .bodyMedium
+                                                                      .override(
+                                                                        fontFamily:
+                                                                            'Outfit',
+                                                                        color: FlutterFlowTheme.of(context)
+                                                                            .secondaryText,
+                                                                      ),
+                                                              iconColor: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .secondaryText,
+                                                              iconSize: 18.0,
+                                                              elevation: 0.0,
+                                                              borderRadius:
+                                                                  BorderRadius
+                                                                      .circular(
+                                                                          16.0),
+                                                            ),
+                                                            chipSpacing: 14.0,
+                                                            rowSpacing: 20.0,
+                                                            multiselect: true,
+                                                            initialized: _model
+                                                                    .choiceChipsValues2 !=
+                                                                null,
+                                                            alignment:
+                                                                WrapAlignment
+                                                                    .start,
+                                                            controller: _model
+                                                                    .choiceChipsValueController2 ??=
+                                                                FormFieldController<
+                                                                    List<
+                                                                        String>>(
+                                                              [],
+                                                            ),
+                                                          ),
+                                                        ),
+                                                      ),
+                                                    ),
+                                                  ],
                                                 ),
                                               ),
                                             ],
@@ -550,188 +800,6 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                             child: Column(
                               mainAxisSize: MainAxisSize.max,
                               children: [
-                                Padding(
-                                  padding: EdgeInsetsDirectional.fromSTEB(
-                                      30.0, 0.0, 0.0, 0.0),
-                                  child: Column(
-                                    mainAxisSize: MainAxisSize.max,
-                                    children: [
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 0.0, 0.0, 8.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            setAppLanguage(context, 'ar');
-                                          },
-                                          child: Container(
-                                            width: 100.0,
-                                            decoration: BoxDecoration(),
-                                            child: FlutterFlowChoiceChips(
-                                              options: [
-                                                ChipData(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'bg8jlh25' /*  عربي   */,
-                                                    ),
-                                                    Icons.language)
-                                              ],
-                                              onChanged: (val) async {
-                                                setState(() => _model
-                                                    .choiceChipsValues1 = val);
-                                                setAppLanguage(context, 'ar');
-                                              },
-                                              selectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primary,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                iconSize: 18.0,
-                                                elevation: 4.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              unselectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .alternate,
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              chipSpacing: 14.0,
-                                              rowSpacing: 20.0,
-                                              multiselect: true,
-                                              initialized:
-                                                  _model.choiceChipsValues1 !=
-                                                      null,
-                                              alignment: WrapAlignment.start,
-                                              controller: _model
-                                                      .choiceChipsValueController1 ??=
-                                                  FormFieldController<
-                                                      List<String>>(
-                                                [],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                      Padding(
-                                        padding: EdgeInsetsDirectional.fromSTEB(
-                                            0.0, 8.0, 0.0, 0.0),
-                                        child: InkWell(
-                                          splashColor: Colors.transparent,
-                                          focusColor: Colors.transparent,
-                                          hoverColor: Colors.transparent,
-                                          highlightColor: Colors.transparent,
-                                          onTap: () async {
-                                            setAppLanguage(context, 'en');
-                                          },
-                                          child: Container(
-                                            width: 100.0,
-                                            height: 30.0,
-                                            decoration: BoxDecoration(),
-                                            child: FlutterFlowChoiceChips(
-                                              options: [
-                                                ChipData(
-                                                    FFLocalizations.of(context)
-                                                        .getText(
-                                                      'er1jo8ln' /* انجليزي */,
-                                                    ),
-                                                    Icons.language)
-                                              ],
-                                              onChanged: (val) async {
-                                                setState(() => _model
-                                                    .choiceChipsValues2 = val);
-                                                setAppLanguage(context, 'en');
-                                              },
-                                              selectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    Color(0x613922F9),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .primaryText,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .primaryText,
-                                                iconSize: 18.0,
-                                                elevation: 4.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              unselectedChipStyle: ChipStyle(
-                                                backgroundColor:
-                                                    Color(0x613922F9),
-                                                textStyle:
-                                                    FlutterFlowTheme.of(context)
-                                                        .bodyMedium
-                                                        .override(
-                                                          fontFamily: 'Outfit',
-                                                          color: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .secondaryText,
-                                                        ),
-                                                iconColor:
-                                                    FlutterFlowTheme.of(context)
-                                                        .secondaryText,
-                                                iconSize: 18.0,
-                                                elevation: 0.0,
-                                                borderRadius:
-                                                    BorderRadius.circular(16.0),
-                                              ),
-                                              chipSpacing: 14.0,
-                                              rowSpacing: 20.0,
-                                              multiselect: true,
-                                              initialized:
-                                                  _model.choiceChipsValues2 !=
-                                                      null,
-                                              alignment: WrapAlignment.start,
-                                              controller: _model
-                                                      .choiceChipsValueController2 ??=
-                                                  FormFieldController<
-                                                      List<String>>(
-                                                [],
-                                              ),
-                                            ),
-                                          ),
-                                        ),
-                                      ),
-                                    ],
-                                  ),
-                                ),
                                 Row(
                                   mainAxisSize: MainAxisSize.max,
                                   children: [

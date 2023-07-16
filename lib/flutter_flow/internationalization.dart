@@ -216,14 +216,6 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MAIN_ProfileCustomer
   {
-    'b9l8kjh7': {
-      'ar': ' قم بالتبديل إلى الوضع المظلم',
-      'en': 'Switch to dark mode',
-    },
-    'ehmwoa5b': {
-      'ar': 'قم بالتبديل إلى وضع الإضاءة العادي',
-      'en': 'Switch to Light Mode',
-    },
     'bg8jlh25': {
       'ar': ' عربي  ',
       'en': ' AR   ',
@@ -231,6 +223,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'er1jo8ln': {
       'ar': 'انجليزي',
       'en': 'ENG',
+    },
+    'b9l8kjh7': {
+      'ar': ' قم بالتبديل إلى الوضع المظلم',
+      'en': 'Switch to dark mode',
+    },
+    'ehmwoa5b': {
+      'ar': 'قم بالتبديل إلى وضع الإضاءة العادي',
+      'en': 'Switch to Light Mode',
     },
     'qlu9nvs1': {
       'ar': 'السيرة الذاتية',
