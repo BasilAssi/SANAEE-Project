@@ -69,7 +69,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                             0.0, 40.0, 0.0, 30.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
-                          mainAxisAlignment: MainAxisAlignment.spaceBetween,
+                          mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
                             if (Theme.of(context).brightness ==
                                 Brightness.light)
@@ -77,7 +77,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 'assets/images/logo_1.png',
                                 width: 70.0,
                                 height: 70.0,
-                                fit: BoxFit.fitWidth,
+                                fit: BoxFit.cover,
                               ),
                             if (Theme.of(context).brightness == Brightness.dark)
                               Image.asset(
@@ -116,9 +116,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 Icons.language)
                                           ],
                                           onChanged: (val) async {
-                                            setState(() =>
-                                                _model.choiceChipsValue1 =
-                                                    val?.first);
+                                            setState(() => _model
+                                                .choiceChipsValues1 = val);
                                             setAppLanguage(context, 'ar');
                                           },
                                           selectedChipStyle: ChipStyle(
@@ -167,7 +166,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                           ),
                                           chipSpacing: 14.0,
                                           rowSpacing: 20.0,
-                                          multiselect: false,
+                                          multiselect: true,
+                                          initialized:
+                                              _model.choiceChipsValues1 != null,
                                           alignment: WrapAlignment.start,
                                           controller: _model
                                                   .choiceChipsValueController1 ??=
@@ -203,9 +204,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                                 Icons.language)
                                           ],
                                           onChanged: (val) async {
-                                            setState(() =>
-                                                _model.choiceChipsValue2 =
-                                                    val?.first);
+                                            setState(() => _model
+                                                .choiceChipsValues2 = val);
                                             setAppLanguage(context, 'en');
                                           },
                                           selectedChipStyle: ChipStyle(
@@ -250,7 +250,9 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                           ),
                                           chipSpacing: 14.0,
                                           rowSpacing: 20.0,
-                                          multiselect: false,
+                                          multiselect: true,
+                                          initialized:
+                                              _model.choiceChipsValues2 != null,
                                           alignment: WrapAlignment.start,
                                           controller: _model
                                                   .choiceChipsValueController2 ??=

@@ -16,10 +16,10 @@ class SignUpModel extends FlutterFlowModel {
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
   // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue1;
+  List<String>? choiceChipsValues1;
   FormFieldController<List<String>>? choiceChipsValueController1;
   // State field(s) for ChoiceChips widget.
-  String? choiceChipsValue2;
+  List<String>? choiceChipsValues2;
   FormFieldController<List<String>>? choiceChipsValueController2;
   // State field(s) for emailAddress widget.
   TextEditingController? emailAddressController;

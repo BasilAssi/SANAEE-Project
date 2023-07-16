@@ -246,8 +246,8 @@ class _MAINProfileCustomerWidgetState extends State<MAINProfileCustomerWidget>
                                                           8.0),
                                                   child: Image.network(
                                                     currentUserPhoto,
-                                                    width: 100.0,
-                                                    height: 100.0,
+                                                    width: 70.0,
+                                                    height: 70.0,
                                                     fit: BoxFit.cover,
                                                   ),
                                                 ),
