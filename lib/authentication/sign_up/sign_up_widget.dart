@@ -66,7 +66,7 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                     children: [
                       Padding(
                         padding: EdgeInsetsDirectional.fromSTEB(
-                            0.0, 70.0, 0.0, 30.0),
+                            0.0, 40.0, 0.0, 30.0),
                         child: Row(
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceEvenly,
@@ -75,8 +75,8 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                                 Brightness.light)
                               Image.asset(
                                 'assets/images/logo_1.png',
-                                width: 100.0,
-                                height: 100.0,
+                                width: 70.0,
+                                height: 70.0,
                                 fit: BoxFit.fitWidth,
                               ),
                             if (Theme.of(context).brightness == Brightness.dark)
