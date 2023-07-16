@@ -71,14 +71,6 @@ class _SignUpWidgetState extends State<SignUpWidget> {
                           mainAxisSize: MainAxisSize.max,
                           mainAxisAlignment: MainAxisAlignment.spaceAround,
                           children: [
-                            if (Theme.of(context).brightness ==
-                                Brightness.light)
-                              Image.asset(
-                                'assets/images/logo_1.png',
-                                width: 70.0,
-                                height: 70.0,
-                                fit: BoxFit.cover,
-                              ),
                             if (Theme.of(context).brightness == Brightness.dark)
                               Image.asset(
                                 'assets/images/logo_1.png',
