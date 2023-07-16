@@ -149,54 +149,35 @@ class _JobPostDetailsActualWidgetState
                                                 mainAxisSize: MainAxisSize.max,
                                                 children: [
                                                   Flexible(
-                                                    child: Row(
-                                                      mainAxisSize:
-                                                          MainAxisSize.min,
-                                                      mainAxisAlignment:
-                                                          MainAxisAlignment
-                                                              .spaceAround,
-                                                      children: [
-                                                        Align(
-                                                          alignment:
-                                                              AlignmentDirectional(
-                                                                  -0.84, 0.88),
-                                                          child: Padding(
-                                                            padding:
-                                                                EdgeInsetsDirectional
-                                                                    .fromSTEB(
-                                                                        0.0,
-                                                                        0.0,
-                                                                        30.0,
-                                                                        0.0),
-                                                            child: ClipRRect(
-                                                              borderRadius:
-                                                                  BorderRadius
-                                                                      .circular(
-                                                                          8.0),
-                                                              child:
-                                                                  Image.network(
-                                                                customerInfoUsersRecord
-                                                                    .photoUrl,
-                                                                width: 60.0,
-                                                                height: 60.0,
-                                                                fit: BoxFit
-                                                                    .cover,
-                                                              ),
-                                                            ),
+                                                    child: Padding(
+                                                      padding:
+                                                          EdgeInsetsDirectional
+                                                              .fromSTEB(
+                                                                  0.0,
+                                                                  15.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.min,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceAround,
+                                                        children: [
+                                                          Text(
+                                                            '${customerInfoUsersRecord.firstNameCustomer} ${customerInfoUsersRecord.fatherNameCustomer} ${customerInfoUsersRecord.grandFatherNameCustomer} ${customerInfoUsersRecord.lastNameCustomer}',
+                                                            style: FlutterFlowTheme
+                                                                    .of(context)
+                                                                .bodyMedium
+                                                                .override(
+                                                                  fontFamily:
+                                                                      'Outfit',
+                                                                  fontSize:
+                                                                      20.0,
+                                                                ),
                                                           ),
-                                                        ),
-                                                        Text(
-                                                          '${customerInfoUsersRecord.firstNameCustomer} ${customerInfoUsersRecord.fatherNameCustomer} ${customerInfoUsersRecord.grandFatherNameCustomer} ${customerInfoUsersRecord.lastNameCustomer}',
-                                                          style: FlutterFlowTheme
-                                                                  .of(context)
-                                                              .bodyMedium
-                                                              .override(
-                                                                fontFamily:
-                                                                    'Outfit',
-                                                                fontSize: 20.0,
-                                                              ),
-                                                        ),
-                                                      ],
+                                                        ],
+                                                      ),
                                                     ),
                                                   ),
                                                 ],
