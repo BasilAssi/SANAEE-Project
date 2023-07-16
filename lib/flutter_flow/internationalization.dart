@@ -216,6 +216,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MAIN_ProfileCustomer
   {
+    'bg8jlh25': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'er1jo8ln': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
+    },
     'b9l8kjh7': {
       'ar': ' قم بالتبديل إلى الوضع المظلم',
       'en': 'Switch to dark mode',
@@ -867,8 +875,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The maximum ID number 9,only number',
     },
     'r75guw8g': {
-      'ar': 'الرجاء إدخال رقم الهوية',
-      'en': 'Please enter the ID number',
+      'ar': '',
+      'en': '',
     },
     's7c3j1ss': {
       'ar': 'الحقل مطلوب',
@@ -1302,6 +1310,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     'wg6vumnn': {
       'ar': 'قم بالتبديل إلى وضع الإضاءة',
       'en': 'Switch to Light Mode',
+    },
+    'ty6rs2ri': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'gtxnenf4': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
     },
     'wsh65opx': {
       'ar': 'السيرة الذاتية',

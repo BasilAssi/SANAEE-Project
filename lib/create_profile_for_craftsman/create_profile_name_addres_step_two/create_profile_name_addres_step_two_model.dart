@@ -30,9 +30,7 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
       );
     }
     if (val != textFieldIdNumberSelectedOption) {
-      return FFLocalizations.of(context).getText(
-        'r75guw8g' /* الرجاء إدخال رقم الهوية */,
-      );
+      return 'Please choose an option from the dropdown';
     }
     if (val.length < 8) {
       return 'Requires at least 8 characters.';
