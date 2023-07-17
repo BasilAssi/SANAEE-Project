@@ -14,6 +14,8 @@ import 'job_post_details_actual_model.dart';
 export 'job_post_details_actual_model.dart';
 
 class JobPostDetailsActualWidget extends StatefulWidget {
+
+
   const JobPostDetailsActualWidget({
     Key? key,
     this.userCustomer,
@@ -22,6 +24,7 @@ class JobPostDetailsActualWidget extends StatefulWidget {
 
   final DocumentReference? userCustomer;
   final DocumentReference? posts;
+
 
   @override
   _JobPostDetailsActualWidgetState createState() =>
@@ -33,6 +36,8 @@ class _JobPostDetailsActualWidgetState
   late JobPostDetailsActualModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool _isEnabled = true;
 
   @override
   void initState() {
@@ -420,6 +425,7 @@ class _JobPostDetailsActualWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 50.0, 20.0, 30.0),
                                     child: FFButtonWidget(
+
                                       onPressed: () async {
                                         await ApplicationsRecord.collection
                                             .doc()
@@ -429,7 +435,7 @@ class _JobPostDetailsActualWidgetState
                                                   currentUserReference,
                                               jobApplied: widget.posts,
                                               timeApplied: getCurrentTimestamp,
-                                              jobId: '12',
+                                                   jobId: widget.posts?.id,
                                               isApplied: true,
                                             ));
                                         setState(() {
@@ -437,6 +443,7 @@ class _JobPostDetailsActualWidgetState
                                               'Applied Successfully';
                                         });
                                       },
+
                                       text: _model.applyToWork,
                                       options: FFButtonOptions(
                                         width: 330.0,
