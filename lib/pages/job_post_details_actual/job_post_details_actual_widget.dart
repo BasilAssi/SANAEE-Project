@@ -420,27 +420,23 @@ class _JobPostDetailsActualWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 50.0, 20.0, 30.0),
                                     child: FFButtonWidget(
-                                      onPressed: _model.clicked == true
-                                          ? null
-                                          : () async {
-                                              await ApplicationsRecord
-                                                  .collection
-                                                  .doc()
-                                                  .set(
-                                                      createApplicationsRecordData(
-                                                    status: 'Pending',
-                                                    craftsmanApplied:
-                                                        currentUserReference,
-                                                    jobApplied: widget.posts,
-                                                    timeApplied:
-                                                        getCurrentTimestamp,
-                                                    jobId: '12',
-                                                  ));
-                                              setState(() {
-                                                _model.applyToWork =
-                                                    'Applied Successfully';
-                                              });
-                                            },
+                                      onPressed: () async {
+                                        await ApplicationsRecord.collection
+                                            .doc()
+                                            .set(createApplicationsRecordData(
+                                              status: 'Pending',
+                                              craftsmanApplied:
+                                                  currentUserReference,
+                                              jobApplied: widget.posts,
+                                              timeApplied: getCurrentTimestamp,
+                                              jobId: '12',
+                                              isApplied: true,
+                                            ));
+                                        setState(() {
+                                          _model.applyToWork =
+                                              'Applied Successfully';
+                                        });
+                                      },
                                       text: _model.applyToWork,
                                       options: FFButtonOptions(
                                         width: 330.0,
@@ -469,12 +465,6 @@ class _JobPostDetailsActualWidgetState
                                         ),
                                         borderRadius:
                                             BorderRadius.circular(15.0),
-                                        disabledColor:
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText,
-                                        disabledTextColor:
-                                            FlutterFlowTheme.of(context)
-                                                .primary,
                                       ),
                                     ),
                                   ),
@@ -482,6 +472,45 @@ class _JobPostDetailsActualWidgetState
                               ],
                             ),
                           ],
+                        ),
+                      ),
+                    ),
+                    Align(
+                      alignment: AlignmentDirectional(-0.12, 0.55),
+                      child: FFButtonWidget(
+                        onPressed: () async {
+                          await ApplicationsRecord.collection
+                              .doc()
+                              .set(createApplicationsRecordData(
+                                status: 'Pending',
+                                craftsmanApplied: currentUserReference,
+                                jobApplied: widget.posts,
+                                timeApplied: getCurrentTimestamp,
+                                jobId: '12',
+                                isApplied: true,
+                              ));
+                        },
+                        text: FFLocalizations.of(context).getText(
+                          '34sxy4ut' /* قدم لهذا العمل */,
+                        ),
+                        options: FFButtonOptions(
+                          height: 40.0,
+                          padding: EdgeInsetsDirectional.fromSTEB(
+                              24.0, 0.0, 24.0, 0.0),
+                          iconPadding: EdgeInsetsDirectional.fromSTEB(
+                              0.0, 0.0, 0.0, 0.0),
+                          color: FlutterFlowTheme.of(context).primary,
+                          textStyle:
+                              FlutterFlowTheme.of(context).titleSmall.override(
+                                    fontFamily: 'Outfit',
+                                    color: Colors.white,
+                                  ),
+                          elevation: 3.0,
+                          borderSide: BorderSide(
+                            color: Colors.transparent,
+                            width: 1.0,
+                          ),
+                          borderRadius: BorderRadius.circular(8.0),
                         ),
                       ),
                     ),
