@@ -439,13 +439,10 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                     MainAxisAlignment.spaceEvenly,
                                 children: [
                                   FFButtonWidget(
-                                    onPressed: _model.accepted == true
-                                        ? null
-                                        : () async {
-                                            await widget.candidateDetails!
-                                                .update(
-                                                    createUsersRecordData());
-                                          },
+                                    onPressed: () async {
+                                      await widget.candidateDetails!
+                                          .update(createUsersRecordData());
+                                    },
                                     text: FFLocalizations.of(context).getText(
                                       'dr2wx4gg' /* قبول */,
                                     ),
@@ -472,21 +469,14 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
-                                      disabledColor:
-                                          FlutterFlowTheme.of(context).grayIcon,
-                                      disabledTextColor:
-                                          FlutterFlowTheme.of(context)
-                                              .background,
                                     ),
                                   ),
                                   FFButtonWidget(
-                                    onPressed: _model.accepted == true
-                                        ? null
-                                        : () async {
-                                            await widget.application!.reference
-                                                .delete();
-                                            context.safePop();
-                                          },
+                                    onPressed: () async {
+                                      await widget.application!.reference
+                                          .delete();
+                                      context.safePop();
+                                    },
                                     text: FFLocalizations.of(context).getText(
                                       'tk8wzu1t' /* رفض */,
                                     ),
@@ -512,11 +502,6 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                         width: 1.0,
                                       ),
                                       borderRadius: BorderRadius.circular(8.0),
-                                      disabledColor:
-                                          FlutterFlowTheme.of(context).grayIcon,
-                                      disabledTextColor:
-                                          FlutterFlowTheme.of(context)
-                                              .background,
                                     ),
                                   ),
                                 ],
