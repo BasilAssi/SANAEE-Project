@@ -30,17 +30,17 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
       );
     }
     if (val != textFieldIdNumberSelectedOption) {
-      return FFLocalizations.of(context).getText(
-        'r75guw8g' /* الرجاء إدخال رقم الهوية */,
-      );
+      return 'Please choose an option from the dropdown';
     }
-
+    if (val.length < 8) {
+      return 'Requires at least 8 characters.';
+    }
     if (val.length > 9) {
       return FFLocalizations.of(context).getText(
         'qtpqfssd' /* الحد الأقصى لرقم الهوية 9 */,
       );
     }
-    if (!RegExp('^\\d{9}\$').hasMatch(val)) {
+    if (!RegExp('^(?=.*[a-zA-Z0-9]).{8,9}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
         '5bdnd8dt' /* الرقم التعريفي الأقصى 9 ، الرق... */,
       );
