@@ -18,14 +18,12 @@ class LoginModel extends FlutterFlowModel {
   String? _emailAddressControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'r7f2rfge' /* البريد الالكتروني مطلوب */,
+        'r7f2rfge' /* Email is required */,
       );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return FFLocalizations.of(context).getText(
-        'mmagg0f3' /* يجب أن يكون عنوان بريد إلكترون... */,
-      );
+      return 'Has to be a valid email address.';
     }
     return null;
   }
@@ -37,23 +35,23 @@ class LoginModel extends FlutterFlowModel {
   String? _passwordControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'gcbmhlrp' /* الحقل مطلوب */,
+        'gcbmhlrp' /* Field is required */,
       );
     }
 
     if (val.length < 6) {
       return FFLocalizations.of(context).getText(
-        'bocjdwxb' /* يجب ألا يقل عدد الأحرف عن 6 أح... */,
+        'bocjdwxb' /* Should be lest 6 characters */,
       );
     }
     if (val.length > 15) {
       return FFLocalizations.of(context).getText(
-        '1n82v10c' /* يجب أن يكون أقل من 15 حرفًا */,
+        '1n82v10c' /* Should be lest then 15 charact... */,
       );
     }
     if (!RegExp('^(?=.*[a-zA-Z0-9]).{6,15}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'imsbutcj' /* يجب أن يحتوي على رقم واحد وحرف... */,
+        'imsbutcj' /* Should have one number and 1 a... */,
       );
     }
     return null;
@@ -73,7 +71,7 @@ class LoginModel extends FlutterFlowModel {
     passwordController?.dispose();
   }
 
-/// Action blocks are added here.
+  /// Action blocks are added here.
 
-/// Additional helper methods are added here.
+  /// Additional helper methods are added here.
 }

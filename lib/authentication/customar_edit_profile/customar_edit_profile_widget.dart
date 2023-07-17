@@ -442,7 +442,7 @@ class _CustomarEditProfileWidgetState extends State<CustomarEditProfileWidget> {
                               'p58bl21n' /*  الرجاء الاختيار المدينة */,
                             ),
                             searchHintText: FFLocalizations.of(context).getText(
-                              '58lnoqhs' /* البحث عن عنصر ... */,
+                              '58lnoqhs' /* Search for an item... */,
                             ),
                             fillColor: FlutterFlowTheme.of(context)
                                 .secondaryBackground,

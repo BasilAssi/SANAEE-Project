@@ -50,7 +50,7 @@ class _MAINChatCraftsmanWidgetState extends State<MAINChatCraftsmanWidget> {
         automaticallyImplyLeading: false,
         title: Text(
           FFLocalizations.of(context).getText(
-            'rhzabwn4' /* رسائل */,
+            'rhzabwn4' /* Messages */,
           ),
           style: FlutterFlowTheme.of(context).headlineSmall.override(
                 fontFamily: 'Outfit',

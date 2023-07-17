@@ -21,21 +21,18 @@ class CreateAccountThreeCustomerModel extends FlutterFlowModel {
   String? _textControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        '23yfr90d' /* رقم الهوية مطلوب */,
+        '23yfr90d' /* idnumber is required */,
       );
     }
 
-    if (val.length < 8) {
-      return 'Requires at least 8 characters.';
-    }
     if (val.length > 9) {
       return FFLocalizations.of(context).getText(
-        'tsnydcl9' /*  الحد الأقصى لرقم الهوية 9 */,
+        'tsnydcl9' /*  ID number */,
       );
     }
-    if (!RegExp('^(?=.*[a-zA-Z0-9]).{8,9}\$').hasMatch(val)) {
+    if (!RegExp('^\\d{9}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'ml0csbtk' /* الرقم التعريفي الأقصى 9 ، الرق... */,
+        'ml0csbtk' /* The maximum ID number9, only n... */,
       );
     }
     return null;

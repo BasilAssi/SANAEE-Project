@@ -164,8 +164,8 @@ class _OnboardingScreensWidgetState extends State<OnboardingScreensWidget> {
                                               child: Text(
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'ls2yrw5x' /* Post projects and 
-get proposa... */
+                                                  'ls2yrw5x' /* انشر الأعمال التي تحتاجها 
+واح... */
                                                   ,
                                                 ),
                                                 textAlign: TextAlign.center,
