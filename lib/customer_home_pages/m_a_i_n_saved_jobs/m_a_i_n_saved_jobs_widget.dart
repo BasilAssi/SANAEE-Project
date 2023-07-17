@@ -406,7 +406,12 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                     .viewInsetsOf(
                                                                         context),
                                                                 child:
-                                                                    RateCraftsmanWidget(),
+                                                                    RateCraftsmanWidget(
+                                                                  comment: '',
+                                                                  starRate: 0,
+                                                                  users: listViewApplicationsRecord
+                                                                      .craftsmanApplied!,
+                                                                ),
                                                               );
                                                             },
                                                           ).then((value) =>
