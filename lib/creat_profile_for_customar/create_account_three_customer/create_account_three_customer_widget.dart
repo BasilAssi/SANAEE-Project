@@ -91,7 +91,7 @@ class _CreateAccountThreeCustomerWidgetState
                                       .override(
                                         fontFamily: 'Outfit',
                                         color: FlutterFlowTheme.of(context)
-                                            .dark400,
+                                            .primary,
                                         fontSize: 24.0,
                                         fontWeight: FontWeight.w800,
                                       ),
@@ -122,6 +122,9 @@ class _CreateAccountThreeCustomerWidgetState
                                             .bodySmall
                                             .override(
                                               fontFamily: 'Outfit',
+                                              color:
+                                                  FlutterFlowTheme.of(context)
+                                                      .primary,
                                               fontSize: 16.0,
                                             ),
                                         enabledBorder: UnderlineInputBorder(
@@ -172,7 +175,12 @@ class _CreateAccountThreeCustomerWidgetState
                                         ),
                                       ),
                                       style: FlutterFlowTheme.of(context)
-                                          .bodyMedium,
+                                          .bodyMedium
+                                          .override(
+                                            fontFamily: 'Outfit',
+                                            color: FlutterFlowTheme.of(context)
+                                                .primary,
+                                          ),
                                       validator: _model.textControllerValidator
                                           .asValidator(context),
                                     ),

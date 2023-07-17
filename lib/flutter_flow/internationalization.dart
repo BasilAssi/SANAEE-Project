@@ -269,6 +269,10 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // JobPost_DetailsActual
   {
+    '34sxy4ut': {
+      'ar': 'قدم لهذا العمل',
+      'en': 'apply  to this work',
+    },
     'lfzwt8x5': {
       'ar': 'الصفحة الرئيسية',
       'en': 'Home',
@@ -754,17 +758,9 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // createProfileNameAddresStepTwo
   {
-    'typsv17x': {
-      'ar': '',
-      'en': '',
-    },
-    'c5ny5mbu': {
-      'ar': 'رقم الهوية ',
-      'en': 'Id number',
-    },
-    'u4zkv50f': {
-      'ar': 'الخيار 1',
-      'en': 'Option 1',
+    'dp1owq1c': {
+      'ar': 'رقم الهوية',
+      'en': 'id number',
     },
     'm2tyro30': {
       'ar': 'رام الله ',
@@ -862,20 +858,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': ' الخطوة الثانية ',
       'en': '\nStep 2  of  4 :Upload address and place of residence',
     },
-    'j0hv1wkr': {
+    'lf70u77t': {
       'ar': 'رقم الهوية مطلوب',
       'en': 'id number is required',
     },
-    'qtpqfssd': {
-      'ar': 'الحد الأقصى لرقم الهوية 9',
+    'zooiy5db': {
+      'ar': ' الحد الأقصى لرقم الهوية 9',
       'en': 'The maximum ID number 9',
     },
-    '5bdnd8dt': {
+    '2yy1gee6': {
       'ar': 'الرقم التعريفي الأقصى 9 ، الرقم فقط',
-      'en': 'The maximum ID number 9,only number',
+      'en': 'The maximum ID number9, only numbers',
     },
-    'r75guw8g': {
-      'ar': '',
+    'n7kzymqe': {
+      'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     's7c3j1ss': {
