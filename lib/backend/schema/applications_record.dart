@@ -41,18 +41,12 @@ class ApplicationsRecord extends FirestoreRecord {
   DateTime? get timeApplied => _timeApplied;
   bool hasTimeApplied() => _timeApplied != null;
 
-  // "isApplied" field.
-  bool? _isApplied;
-  bool get isApplied => _isApplied ?? false;
-  bool hasIsApplied() => _isApplied != null;
-
   void _initializeFields() {
     _jobId = snapshotData['jobId'] as String?;
     _status = snapshotData['status'] as String?;
     _craftsmanApplied = snapshotData['craftsmanApplied'] as DocumentReference?;
     _jobApplied = snapshotData['jobApplied'] as DocumentReference?;
     _timeApplied = snapshotData['timeApplied'] as DateTime?;
-    _isApplied = snapshotData['isApplied'] as bool?;
   }
 
   static CollectionReference get collection =>
@@ -95,7 +89,6 @@ Map<String, dynamic> createApplicationsRecordData({
   DocumentReference? craftsmanApplied,
   DocumentReference? jobApplied,
   DateTime? timeApplied,
-  bool? isApplied,
 }) {
   final firestoreData = mapToFirestore(
     <String, dynamic>{
@@ -104,7 +97,6 @@ Map<String, dynamic> createApplicationsRecordData({
       'craftsmanApplied': craftsmanApplied,
       'jobApplied': jobApplied,
       'timeApplied': timeApplied,
-      'isApplied': isApplied,
     }.withoutNulls,
   );
 
@@ -121,8 +113,7 @@ class ApplicationsRecordDocumentEquality
         e1?.status == e2?.status &&
         e1?.craftsmanApplied == e2?.craftsmanApplied &&
         e1?.jobApplied == e2?.jobApplied &&
-        e1?.timeApplied == e2?.timeApplied &&
-        e1?.isApplied == e2?.isApplied;
+        e1?.timeApplied == e2?.timeApplied;
   }
 
   @override
@@ -131,8 +122,7 @@ class ApplicationsRecordDocumentEquality
         e?.status,
         e?.craftsmanApplied,
         e?.jobApplied,
-        e?.timeApplied,
-        e?.isApplied
+        e?.timeApplied
       ]);
 
   @override

@@ -90,11 +90,13 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                _model.home =
-                                    FlutterFlowTheme.of(context).primary;
-                                _model.profile = Color(0xFF57636C);
-                                _model.chat = Color(0xFF57636C);
-                                _model.myJob = Color(0xFF57636C);
+                                _model.updatePage(() {
+                                  _model.home =
+                                      FlutterFlowTheme.of(context).primary;
+                                  _model.profile = Color(0xFF57636C);
+                                  _model.chat = Color(0xFF57636C);
+                                  _model.myJob = Color(0xFF57636C);
+                                });
 
                                 context.pushNamed('MAINHomeCraftsman');
                               },
@@ -110,12 +112,14 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        _model.home =
-                                            FlutterFlowTheme.of(context)
-                                                .primary;
-                                        _model.profile = Color(0xFF57636C);
-                                        _model.chat = Color(0xFF57636C);
-                                        _model.myJob = Color(0xFF57636C);
+                                        _model.updatePage(() {
+                                          _model.home =
+                                              FlutterFlowTheme.of(context)
+                                                  .primary;
+                                          _model.profile = Color(0xFF57636C);
+                                          _model.chat = Color(0xFF57636C);
+                                          _model.myJob = Color(0xFF57636C);
+                                        });
 
                                         context.pushNamed('MAINHomeCraftsman');
                                       },
@@ -139,14 +143,16 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                               hoverColor: Colors.transparent,
                               highlightColor: Colors.transparent,
                               onTap: () async {
-                                _model.home =
-                                    FlutterFlowTheme.of(context).secondaryText;
-                                _model.profile =
-                                    FlutterFlowTheme.of(context).secondaryText;
-                                _model.chat =
-                                    FlutterFlowTheme.of(context).secondaryText;
-                                _model.myJob =
-                                    FlutterFlowTheme.of(context).primary;
+                                _model.updatePage(() {
+                                  _model.home = FlutterFlowTheme.of(context)
+                                      .secondaryText;
+                                  _model.profile = FlutterFlowTheme.of(context)
+                                      .secondaryText;
+                                  _model.chat = FlutterFlowTheme.of(context)
+                                      .secondaryText;
+                                  _model.myJob =
+                                      FlutterFlowTheme.of(context).primary;
+                                });
 
                                 context.pushNamed('MAINSavedJobsCraftsman');
                               },
@@ -162,18 +168,20 @@ class _NavBarCraftsmanWidgetState extends State<NavBarCraftsmanWidget> {
                                       hoverColor: Colors.transparent,
                                       highlightColor: Colors.transparent,
                                       onTap: () async {
-                                        _model.home =
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText;
-                                        _model.profile =
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText;
-                                        _model.chat =
-                                            FlutterFlowTheme.of(context)
-                                                .secondaryText;
-                                        _model.myJob =
-                                            FlutterFlowTheme.of(context)
-                                                .primary;
+                                        _model.updatePage(() {
+                                          _model.home =
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText;
+                                          _model.profile =
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText;
+                                          _model.chat =
+                                              FlutterFlowTheme.of(context)
+                                                  .secondaryText;
+                                          _model.myJob =
+                                              FlutterFlowTheme.of(context)
+                                                  .primary;
+                                        });
 
                                         context.pushNamed(
                                             'MAINSavedJobsCraftsman');
