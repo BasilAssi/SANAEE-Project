@@ -544,6 +544,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                           timeCreated: getCurrentTimestamp,
                           createdBy: currentUserReference,
                           jobLocation: _model.textFieldAddressController.text,
+                            jobId: postRecordReference.id
                         ));
                         _model.successfullycreated =
                             PostRecord.getDocumentFromData(
@@ -562,6 +563,7 @@ class _CreateJobCustomerWidgetState extends State<CreateJobCustomerWidget> {
                                   createdBy: currentUserReference,
                                   jobLocation:
                                       _model.textFieldAddressController.text,
+                                    jobId: postRecordReference.id
                                 ),
                                 postRecordReference);
                         context.pop();

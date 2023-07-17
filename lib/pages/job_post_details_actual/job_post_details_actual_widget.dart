@@ -429,7 +429,7 @@ class _JobPostDetailsActualWidgetState
                                                   currentUserReference,
                                               jobApplied: widget.posts,
                                               timeApplied: getCurrentTimestamp,
-                                              jobId: '12',
+                                              jobId: widget.posts?.id,
                                               isApplied: true,
                                             ));
                                         setState(() {
