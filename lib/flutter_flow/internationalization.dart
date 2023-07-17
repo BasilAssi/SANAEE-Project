@@ -152,40 +152,40 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Sign Up',
     },
     'r7f2rfge': {
-      'ar': 'Email is required',
-      'en': '',
+      'ar': 'البريد الالكتروني مطلوب',
+      'en': 'Email is required',
     },
     'mmagg0f3': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     'bhx8fux8': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة',
+      'en': 'Please choose an option from the dropdown',
     },
     'gcbmhlrp': {
-      'ar': 'Field is required',
-      'en': '',
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
     },
     'bocjdwxb': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عدد الأحرف عن 6 أحرف',
+      'en': 'Should be lest 6 characters',
     },
     '1n82v10c': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     'imsbutcj': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'pen0qdd9': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة ',
+      'en': 'Please choose an option from the dropdown',
     },
     'hwccov5i': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // MAINHomeCustomer
@@ -207,7 +207,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'evf1hwrj': {
       'ar': 'الدفع وانهاء العمل ',
-      'en': '',
+      'en': 'Pay and finish work',
     },
     'h25lrbj2': {
       'ar': ' ',
@@ -216,13 +216,21 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   },
   // MAIN_ProfileCustomer
   {
+    'bg8jlh25': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'er1jo8ln': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
+    },
     'b9l8kjh7': {
       'ar': ' قم بالتبديل إلى الوضع المظلم',
       'en': 'Switch to dark mode',
     },
     'ehmwoa5b': {
-      'ar': 'Switch to Light Mode',
-      'en': '',
+      'ar': 'قم بالتبديل إلى وضع الإضاءة العادي',
+      'en': 'Switch to Light Mode',
     },
     'qlu9nvs1': {
       'ar': 'السيرة الذاتية',
@@ -255,34 +263,26 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
   // DETAILS_Chat
   {
     'x3pb4o9n': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // JobPost_DetailsActual
   {
-    'uenl02ze': {
-      'ar': 'قدم للعمل ',
-      'en': 'Apply to work',
-    },
-    '4ct895p5': {
-      'ar': 'Button',
-      'en': '',
-    },
     'lfzwt8x5': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // JobPost_MyJob_Applicants
   {
     'wma7kda9': {
-      'ar': 'Your Applicants',
-      'en': '',
+      'ar': 'المتقدمين الخاصين بك',
+      'en': 'Your Applicants',
     },
     'hg9zia7x': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // forgotPassword
@@ -310,20 +310,20 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Send Reset Password',
     },
     'lkkdbwnt': {
-      'ar': 'Email is required',
-      'en': '',
+      'ar': 'البريد الالكتروني مطلوب',
+      'en': 'Email is required',
     },
     'an8p149a': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     'fl553gx7': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة ',
+      'en': 'Please choose an option from the dropdown',
     },
     'xz7h2g8g': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الرئيسية',
+      'en': 'Home',
     },
   },
   // CreateJobCustomer
@@ -366,7 +366,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'pw41jc3d': {
       'ar': '',
-      'en': 'jhgfdsadfg',
+      'en': '',
     },
     'xkp861i0': {
       'ar': 'مسمى وظيفي',
@@ -405,8 +405,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Create Post',
     },
     'qlzqz4zr': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // CraftsmanDetails
@@ -452,8 +452,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '    Welcome                                                                                 \n                    to  SANAEE ',
     },
     'twizprbt': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // Onboarding_Screens
@@ -467,8 +467,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Connect with the craftsman, track the work and get more done',
     },
     'ls2yrw5x': {
-      'ar': 'انشر الأعمال التي تحتاجها \nواحصل  على عروض عمل.',
-      'en': 'Post projects and \nget proposals.',
+      'ar': 'Post projects and \nget proposals.',
+      'en': 'انشر الأعمال التي تحتاجها \nواحصل  على عروض عمل.',
     },
     'zefttcqs': {
       'ar': '    ابحث عن الافضل\nوقم باختياره لأداء العمل.',
@@ -491,8 +491,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Register',
     },
     '5x86z4oh': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // select_your_role
@@ -514,20 +514,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'customer',
     },
     'e4f99234': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // SignUp
   {
-    '22aqfxf1': {
-      'ar': ' عربي  ',
-      'en': ' AR   ',
-    },
-    'hhpegmuj': {
-      'ar': 'انجليزي',
-      'en': 'ENG',
-    },
     'khzspjr2': {
       'ar': ' إنشاء حساب',
       'en': 'Create an account',
@@ -565,71 +557,71 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Create Account',
     },
     've2zy4vm': {
-      'ar': 'Use a social platform to continue',
-      'en': '',
+      'ar': 'استخدم منصة اجتماعية للمتابعة',
+      'en': 'Use a social platform to continue',
     },
     'phcb2n1x': {
-      'ar': 'Already have an account?',
-      'en': '',
+      'ar': 'هل لديك حساب؟',
+      'en': 'Already have an account?',
     },
     '1bl7wnow': {
-      'ar': 'Log In',
-      'en': '',
+      'ar': 'تسجيل الدخول',
+      'en': 'Log In',
     },
     '4vwjis2u': {
-      'ar': 'Email is required',
-      'en': '',
+      'ar': 'البريد الالكتروني مطلوب',
+      'en': 'Email is required',
     },
     'j8qon7bu': {
-      'ar': 'Should be a valid email address',
-      'en': '',
+      'ar': 'يجب أن يكون عنوان بريد إلكتروني صالحًا',
+      'en': 'Should be a valid email address',
     },
     's85qgokq': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'bx7lyow2': {
-      'ar': 'password is required',
-      'en': '',
+      'ar': 'كلمة المرور مطلوبة',
+      'en': 'password is required',
     },
     '6jhd0064': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عدد الأحرف عن 6 أحرف',
+      'en': 'Should be lest 6 characters',
     },
     'h6x0aj3w': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     '0025rc92': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'fo8wxsdy': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'gpyud16l': {
-      'ar': 'Field is required',
-      'en': '',
+      'ar': 'كلمة المرور مطلوبة',
+      'en': 'password is required',
     },
     'ahvpevy8': {
-      'ar': 'Should be lest 6 characters',
-      'en': '',
+      'ar': 'يجب ألا يقل عن 6 أحرف',
+      'en': 'Shoulda be lest 6 characters',
     },
     'd6n7cpja': {
-      'ar': 'Should be lest then 15 characters',
-      'en': '',
+      'ar': 'يجب أن يكون أقل من 15 حرفًا',
+      'en': 'Should be lest then 15 characters',
     },
     's69gs540': {
-      'ar': 'Should have one number and 1 aspcial character',
-      'en': '',
+      'ar': 'يجب أن يحتوي على رقم واحد وحرف خاص واحد',
+      'en': 'Should have one number and 1 aspcial character',
     },
     'xo4muwj2': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'z08teily': {
-      'ar': 'Home',
+      'ar': 'الصفحة الرئيسية',
       'en': '',
     },
   },
@@ -692,8 +684,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'y9qqjv44': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'w19i9yxf': {
       'ar': 'مطلوب ادخال الاسم',
@@ -712,8 +704,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'x333dgcc': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'mjnte8bi': {
       'ar': 'مطلوب ادخال الاسم',
@@ -732,8 +724,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'r2bql6st': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     '73tff2v3': {
       'ar': 'مطلوب ادخال الاسم',
@@ -752,27 +744,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'i4m617qx': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'gdrznog6': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createProfileNameAddresStepTwo
   {
-    'typsv17x': {
-      'ar': '',
-      'en': '',
-    },
-    'c5ny5mbu': {
-      'ar': 'رقم الهوية ',
-      'en': 'Id number',
-    },
-    'u4zkv50f': {
-      'ar': 'Option 1',
-      'en': '',
+    'dp1owq1c': {
+      'ar': 'رقم الهوية',
+      'en': 'id number',
     },
     'm2tyro30': {
       'ar': 'رام الله ',
@@ -843,8 +827,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please select in the city',
     },
     'wh67g5q2': {
-      'ar': 'Search for an item...',
-      'en': '',
+      'ar': 'البحث عن عنصر ...',
+      'en': 'Search for an item...',
     },
     'wega6lg8': {
       'ar': '',
@@ -855,8 +839,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Your address',
     },
     'qahuna4t': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'الخيار 1',
+      'en': 'Option 1',
     },
     'dk672j2g': {
       'ar': 'البنود وشروط الخدمة',
@@ -870,33 +854,33 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'ar': ' الخطوة الثانية ',
       'en': '\nStep 2  of  4 :Upload address and place of residence',
     },
-    'j0hv1wkr': {
-      'ar': 'id number is required',
-      'en': '',
+    'lf70u77t': {
+      'ar': 'رقم الهوية مطلوب',
+      'en': 'id number is required',
     },
-    'qtpqfssd': {
-      'ar': 'The maximum ID number',
-      'en': '',
+    'zooiy5db': {
+      'ar': ' الحد الأقصى لرقم الهوية 9',
+      'en': 'The maximum ID number 9',
     },
-    '5bdnd8dt': {
-      'ar': 'The maximum ID number 9,only number',
-      'en': '',
+    '2yy1gee6': {
+      'ar': 'الرقم التعريفي الأقصى 9 ، الرقم فقط',
+      'en': 'The maximum ID number9, only numbers',
     },
-    'r75guw8g': {
+    'n7kzymqe': {
       'ar': 'Please choose an option from the dropdown',
       'en': '',
     },
     's7c3j1ss': {
-      'ar': 'Field is required',
-      'en': '',
+      'ar': 'الحقل مطلوب',
+      'en': 'Field is required',
     },
     '2vjkk4at': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     '4wz4578f': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createProfileSelectTypeJobStepThree
@@ -930,8 +914,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please choose your craft',
     },
     'w9d9y2pf': {
-      'ar': 'Search for an item...',
-      'en': '',
+      'ar': 'البحث عن عنصر ...',
+      'en': 'Search for an item...',
     },
     '79zxv3dw': {
       'ar': 'تحميل مستندات الشهادة أو الصور التي\n تفيد بأنه صاحب المهنة',
@@ -965,8 +949,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
           '\nStep 3  of  4 :Choose your profession \nand  Upload certificate documents \nor photos that he is the owner of the profession',
     },
     '1w6g3gmg': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createProfileBioStepFour
@@ -985,8 +969,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\nWrite your Bio\n\n\n\n\n',
     },
     'fcgz39qd': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'الخيار 1',
+      'en': 'Option 1',
     },
     'r1vey8xo': {
       'ar': 'التالي',
@@ -997,8 +981,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '\nStep 4 of  4 : Upload your bio ',
     },
     'szm92mme': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createProfileNameStepOne_customar
@@ -1060,7 +1044,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     '54tbpvlh': {
-      'ar': 'Please choose an option from the dropdown',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
       'en': '',
     },
     'vrd7epmz': {
@@ -1080,8 +1064,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'g6gpn8gg': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'kg687u74': {
       'ar': 'مطلوب ادخال الاسم',
@@ -1100,8 +1084,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     '7ekc0kci': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'q2hru9a6': {
       'ar': 'مطلوب ادخال الاسم',
@@ -1120,12 +1104,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'The name must be between 2 and 15 letters',
     },
     'b75fiqq8': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     '213vtn7i': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createProfileNameAddresStepTwo_customar
@@ -1203,8 +1187,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please select in the city',
     },
     'ky3aclvj': {
-      'ar': 'Search for an item...',
-      'en': '',
+      'ar': 'البحث عن عنصر ...',
+      'en': 'Search for an item...',
     },
     'iu90dri3': {
       'ar': 'الرجاء ادخال العنوان',
@@ -1219,8 +1203,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'the address',
     },
     'ab3ez11s': {
-      'ar': 'Option 1',
-      'en': '',
+      'ar': 'الخيار 1',
+      'en': 'Option 1',
     },
     'xja3aoj4': {
       'ar': 'التالي',
@@ -1231,8 +1215,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Second Step: Choose the city and address of residence',
     },
     'gmrwmaa6': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // createAccountThreeCustomer
@@ -1250,24 +1234,24 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Create an account',
     },
     '23yfr90d': {
-      'ar': 'idnumber is required',
-      'en': '',
+      'ar': 'رقم الهوية مطلوب',
+      'en': 'id number is required',
     },
     'tsnydcl9': {
-      'ar': ' ID number',
-      'en': '',
+      'ar': ' الحد الأقصى لرقم الهوية 9',
+      'en': 'The maximum ID number 9',
     },
     'ml0csbtk': {
-      'ar': 'The maximum ID number9, only numbers',
-      'en': '',
+      'ar': 'الرقم التعريفي الأقصى 9 ، الرقم فقط',
+      'en': 'The maximum ID number9, only numbers',
     },
     's54ej40p': {
-      'ar': 'Please choose an option from the dropdown',
-      'en': '',
+      'ar': 'الرجاء تحديد خيار من القائمة المنسدلة',
+      'en': 'Please choose an option from the dropdown',
     },
     'io5fdh0i': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // ReviewCreateProfileCraftman
@@ -1305,19 +1289,27 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Register a new profile page',
     },
     'rd0ypprn': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // MAIN_ProfileCraftsman
   {
     'ekzd45vf': {
-      'ar': 'Switch to Dark Mode',
-      'en': '',
+      'ar': 'قم بالتبديل إلى الوضع الداكن',
+      'en': 'Switch to Dark Mode',
     },
     'wg6vumnn': {
-      'ar': 'Switch to Light Mode',
-      'en': '',
+      'ar': 'قم بالتبديل إلى وضع الإضاءة',
+      'en': 'Switch to Light Mode',
+    },
+    'ty6rs2ri': {
+      'ar': ' عربي  ',
+      'en': ' AR   ',
+    },
+    'gtxnenf4': {
+      'ar': 'انجليزي',
+      'en': 'ENG',
     },
     'wsh65opx': {
       'ar': 'السيرة الذاتية',
@@ -1336,19 +1328,19 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Address',
     },
     'xog3be4m': {
-      'ar': 'Work Experience',
-      'en': '',
+      'ar': 'خبرة في العمل',
+      'en': 'Work Experience',
     },
   },
   // MAIN_ChatCraftsman
   {
     'rhzabwn4': {
-      'ar': 'Messages',
-      'en': '',
+      'ar': 'رسائل',
+      'en': 'Messages',
     },
     's4lcz0un': {
-      'ar': 'Chats',
-      'en': '',
+      'ar': 'الدردشات',
+      'en': 'Chats',
     },
   },
   // MAINSavedJobsCraftsman
@@ -1358,12 +1350,16 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'My Jobs',
     },
     'kq9pvrta': {
-      'ar': 'الوظائف المقبولة ',
-      'en': 'Accepted Jobs',
+      'ar': ' المقبولة ',
+      'en': 'Accepted',
     },
     'pgqoqm4o': {
       'ar': 'قيد الانتظار',
       'en': 'Pending',
+    },
+    'lo4h2cy4': {
+      'ar': 'المنجزة',
+      'en': 'Finished',
     },
     '9qojjn9o': {
       'ar': ' ',
@@ -1388,72 +1384,72 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'clzntux0': {
-      'ar': 'Postition Title',
-      'en': '',
+      'ar': 'المسمى الوظيفي',
+      'en': 'Postition Title',
     },
     'h1uozzfx': {
-      'ar': 'Email',
-      'en': '',
+      'ar': 'بريد إلكتروني',
+      'en': 'Email',
     },
     'z0zwlc21': {
-      'ar': 'Short Description',
-      'en': '',
+      'ar': 'وصف قصير',
+      'en': 'Short Description',
     },
     '0ydbx1hy': {
-      'ar': 'Experience Level',
-      'en': '',
+      'ar': 'مستوى الخبرة',
+      'en': 'Experience Level',
     },
     'ixi1stxz': {
-      'ar': '< 6 Months',
-      'en': '',
+      'ar': '<6 أشهر',
+      'en': '< 6 Months',
     },
     'iipim0v4': {
       'ar': '6m - 1y',
-      'en': '',
+      'en': '6m - 1y',
     },
     'ngqyz33e': {
       'ar': '1y - 3y',
-      'en': '',
+      'en': '1y - 3y',
     },
     'hr297c0t': {
-      'ar': '+3 years',
-      'en': '',
+      'ar': '+3  سنوات',
+      'en': '+3 years',
     },
     '46tymedl': {
-      'ar': '+5 years',
-      'en': '',
+      'ar': '+5  سنوات',
+      'en': '+5 years',
     },
     'gx726o2n': {
-      'ar': '+8 years',
-      'en': '',
+      'ar': '+8  سنوات',
+      'en': '+8 years',
     },
     'l8u3sybu': {
-      'ar': 'Experience LEvel',
-      'en': '',
+      'ar': 'مستوى الخبرة',
+      'en': 'Experience LEvel',
     },
     '6rp8qdhq': {
-      'ar': 'Company',
-      'en': '',
+      'ar': 'شركة',
+      'en': 'Company',
     },
     'bec95w9t': {
-      'ar': 'Salary',
-      'en': '',
+      'ar': 'الراتب',
+      'en': 'Salary',
     },
     'v3zgqvcm': {
       'ar': '\$40,000',
-      'en': '',
+      'en': '\$40,000',
     },
     'eh7227zx': {
       'ar': '\$150,000+',
-      'en': '',
+      'en': '\$150,000+',
     },
     'wle8rhwa': {
-      'ar': 'Save Changes',
-      'en': '',
+      'ar': 'حفظ التغييرات',
+      'en': 'Save Changes',
     },
     'ziudyova': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // editProfileCraftsman
@@ -1543,8 +1539,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please select in the city',
     },
     'y0w64wdj': {
-      'ar': 'Search for an item...',
-      'en': '',
+      'ar': 'البحث عن عنصر ...',
+      'en': 'Search for an item...',
     },
     'n4j767op': {
       'ar': 'نوع العمل:',
@@ -1638,12 +1634,12 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Please select in the city',
     },
     '58lnoqhs': {
-      'ar': 'Search for an item...',
-      'en': '',
+      'ar': 'البحث عن عنصر ...',
+      'en': 'Search for an item...',
     },
     'kexsyo01': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // JobPost_Accepted
@@ -1657,8 +1653,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Job Status :  Accepted',
     },
     'i3id9au7': {
-      'ar': 'Home',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // JobPost_Pending
@@ -1668,43 +1664,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': 'Job status: Pending',
     },
     '6fs9fy85': {
-      'ar': 'Home',
-      'en': '',
-    },
-  },
-  // WorkExp_Edit
-  {
-    '2pw221ef': {
-      'ar': 'Work Experience',
-      'en': '',
-    },
-    'zqanj86y': {
-      'ar': 'Add Credentials below.',
-      'en': '',
-    },
-    'q2g2iswb': {
-      'ar': 'Position Title',
-      'en': '',
-    },
-    '8ts48khk': {
-      'ar': 'Company',
-      'en': '',
-    },
-    'kpji1lye': {
-      'ar': 'Start Date',
-      'en': '',
-    },
-    'zqo3nhd7': {
-      'ar': 'End Date',
-      'en': '',
-    },
-    '257ox33z': {
-      'ar': 'What did you do here?',
-      'en': '',
-    },
-    'f879az5k': {
-      'ar': 'Save Work Experience',
-      'en': '',
+      'ar': 'الصفحة الرئيسية',
+      'en': 'Home',
     },
   },
   // ChangPhoto
@@ -1736,7 +1697,7 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
     },
     'fxqxtvbp': {
       'ar': 'قيم الحرفي وادخل تعليقك على عمله...',
-      'en': '',
+      'en': 'Rate the craftsman and enter your comment on his work...',
     },
     'nncrdhoq': {
       'ar': '',
@@ -1782,6 +1743,14 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'c65jg8b1': {
+      'ar': '',
+      'en': '',
+    },
+    'vewm8o5x': {
+      'ar': '',
+      'en': '',
+    },
+    'nuv03voe': {
       'ar': '',
       'en': '',
     },

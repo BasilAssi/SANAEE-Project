@@ -309,7 +309,7 @@ class _EditProfileForCustomerWidgetState
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'clzntux0' /* Postition Title */,
+                                      'clzntux0' /* المسمى الوظيفي */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -390,7 +390,7 @@ class _EditProfileForCustomerWidgetState
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'h1uozzfx' /* Email */,
+                                      'h1uozzfx' /* بريد إلكتروني */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -475,7 +475,7 @@ class _EditProfileForCustomerWidgetState
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      'z0zwlc21' /* Short Description */,
+                                      'z0zwlc21' /* وصف قصير */,
                                     ),
                                     labelStyle: FlutterFlowTheme.of(context)
                                         .titleSmall
@@ -560,7 +560,7 @@ class _EditProfileForCustomerWidgetState
                                   16.0, 0.0, 0.0, 0.0),
                               child: Text(
                                 FFLocalizations.of(context).getText(
-                                  '0ydbx1hy' /* Experience Level */,
+                                  '0ydbx1hy' /* مستوى الخبرة */,
                                 ),
                                 style: FlutterFlowTheme.of(context).bodySmall,
                               ),
@@ -590,7 +590,7 @@ class _EditProfileForCustomerWidgetState
                                       ),
                                       options: [
                                         FFLocalizations.of(context).getText(
-                                          'ixi1stxz' /* < 6 Months */,
+                                          'ixi1stxz' /* <6 أشهر */,
                                         ),
                                         FFLocalizations.of(context).getText(
                                           'iipim0v4' /* 6m - 1y */,
@@ -599,13 +599,13 @@ class _EditProfileForCustomerWidgetState
                                           'ngqyz33e' /* 1y - 3y */,
                                         ),
                                         FFLocalizations.of(context).getText(
-                                          'hr297c0t' /* +3 years */,
+                                          'hr297c0t' /* +3  سنوات */,
                                         ),
                                         FFLocalizations.of(context).getText(
-                                          '46tymedl' /* +5 years */,
+                                          '46tymedl' /* +5  سنوات */,
                                         ),
                                         FFLocalizations.of(context).getText(
-                                          'gx726o2n' /* +8 years */,
+                                          'gx726o2n' /* +8  سنوات */,
                                         )
                                       ],
                                       onChanged: (val) => setState(
@@ -616,7 +616,7 @@ class _EditProfileForCustomerWidgetState
                                           .bodyMedium,
                                       hintText:
                                           FFLocalizations.of(context).getText(
-                                        'l8u3sybu' /* Experience LEvel */,
+                                        'l8u3sybu' /* مستوى الخبرة */,
                                       ),
                                       icon: FaIcon(
                                         FontAwesomeIcons.chevronDown,
@@ -667,7 +667,7 @@ class _EditProfileForCustomerWidgetState
                                   decoration: InputDecoration(
                                     labelText:
                                         FFLocalizations.of(context).getText(
-                                      '6rp8qdhq' /* Company */,
+                                      '6rp8qdhq' /* شركة */,
                                     ),
                                     labelStyle:
                                         FlutterFlowTheme.of(context).bodySmall,
@@ -735,7 +735,7 @@ class _EditProfileForCustomerWidgetState
                           children: [
                             Text(
                               FFLocalizations.of(context).getText(
-                                'bec95w9t' /* Salary */,
+                                'bec95w9t' /* الراتب */,
                               ),
                               style: FlutterFlowTheme.of(context).bodyMedium,
                             ),
@@ -816,7 +816,7 @@ class _EditProfileForCustomerWidgetState
                             context.pop();
                           },
                           text: FFLocalizations.of(context).getText(
-                            'wle8rhwa' /* Save Changes */,
+                            'wle8rhwa' /* حفظ التغييرات */,
                           ),
                           options: FFButtonOptions(
                             width: 130.0,

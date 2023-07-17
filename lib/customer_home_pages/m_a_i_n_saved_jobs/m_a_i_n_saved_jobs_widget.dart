@@ -1,9 +1,11 @@
+import '/auth/firebase_auth/auth_util.dart';
 import '/backend/backend.dart';
 import '/components/rate_craftsman/rate_craftsman_widget.dart';
 import '/flutter_flow/flutter_flow_theme.dart';
 import '/flutter_flow/flutter_flow_util.dart';
 import '/flutter_flow/flutter_flow_widgets.dart';
 import 'package:auto_size_text/auto_size_text.dart';
+import 'package:cloud_firestore/cloud_firestore.dart';
 import 'package:flutter/material.dart';
 import 'package:flutter_spinkit/flutter_spinkit.dart';
 import 'package:google_fonts/google_fonts.dart';
@@ -241,38 +243,58 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                                           CrossAxisAlignment
                                                                               .start,
                                                                       children: [
-                                                                        Row(
+                                                                        Padding(
+                                                                          padding: EdgeInsetsDirectional.fromSTEB(
+                                                                              0.0,
+                                                                              0.0,
+                                                                              0.0,
+                                                                              5.0),
+                                                                          child:
+                                                                              Column(
+                                                                            mainAxisSize:
+                                                                                MainAxisSize.max,
+                                                                            children: [
+                                                                              Text(
+                                                                                jobPostCardPostRecord.jobTitle,
+                                                                                style: FlutterFlowTheme.of(context).titleMedium,
+                                                                              ),
+                                                                            ],
+                                                                          ),
+                                                                        ),
+                                                                        Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
-                                                                          mainAxisAlignment:
-                                                                              MainAxisAlignment.spaceEvenly,
                                                                           children: [
-                                                                            Text(
-                                                                              jobPostCardPostRecord.jobTitle,
-                                                                              style: FlutterFlowTheme.of(context).titleMedium,
-                                                                            ),
-                                                                            Text(
-                                                                              jobPostCardPostRecord.jobType,
-                                                                              style: FlutterFlowTheme.of(context).titleMedium,
+                                                                            Padding(
+                                                                              padding: EdgeInsetsDirectional.fromSTEB(0.0, 0.0, 0.0, 5.0),
+                                                                              child: Text(
+                                                                                jobPostCardPostRecord.jobType,
+                                                                                style: FlutterFlowTheme.of(context).titleMedium,
+                                                                              ),
                                                                             ),
                                                                           ],
                                                                         ),
-                                                                        Row(
+                                                                        Column(
                                                                           mainAxisSize:
                                                                               MainAxisSize.max,
                                                                           children: [
-                                                                            Expanded(
-                                                                              child: Padding(
-                                                                                padding: EdgeInsetsDirectional.fromSTEB(12.0, 10.0, 12.0, 5.0),
-                                                                                child: AutoSizeText(
-                                                                                  jobPostCardPostRecord.shortDescription.maybeHandleOverflow(
-                                                                                    maxChars: 120,
-                                                                                    replacement: '…',
+                                                                            Row(
+                                                                              mainAxisSize: MainAxisSize.max,
+                                                                              children: [
+                                                                                Expanded(
+                                                                                  child: Padding(
+                                                                                    padding: EdgeInsetsDirectional.fromSTEB(12.0, 10.0, 12.0, 5.0),
+                                                                                    child: AutoSizeText(
+                                                                                      jobPostCardPostRecord.shortDescription.maybeHandleOverflow(
+                                                                                        maxChars: 120,
+                                                                                        replacement: '…',
+                                                                                      ),
+                                                                                      textAlign: TextAlign.start,
+                                                                                      style: FlutterFlowTheme.of(context).bodySmall,
+                                                                                    ),
                                                                                   ),
-                                                                                  textAlign: TextAlign.start,
-                                                                                  style: FlutterFlowTheme.of(context).bodySmall,
                                                                                 ),
-                                                                              ),
+                                                                              ],
                                                                             ),
                                                                           ],
                                                                         ),
@@ -288,27 +310,38 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                     ),
                                                   ],
                                                 ),
-                                                Row(
+                                                Column(
                                                   mainAxisSize:
                                                       MainAxisSize.max,
-                                                  mainAxisAlignment:
-                                                      MainAxisAlignment
-                                                          .spaceEvenly,
                                                   children: [
                                                     Padding(
                                                       padding:
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
-                                                                  8.0,
-                                                                  12.0,
-                                                                  8.0),
-                                                      child: Text(
-                                                        'Location: ${jobPostCardPostRecord.jobLocation}',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        12.0,
+                                                                        8.0,
+                                                                        12.0,
+                                                                        8.0),
+                                                            child: Text(
+                                                              'Created on : ${jobPostCardPostRecord.timeCreated?.toString()}',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                     Padding(
@@ -316,15 +349,32 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                           EdgeInsetsDirectional
                                                               .fromSTEB(
                                                                   12.0,
-                                                                  8.0,
-                                                                  12.0,
-                                                                  8.0),
-                                                      child: Text(
-                                                        'Created on : ${jobPostCardPostRecord.timeCreated?.toString()}',
-                                                        style:
-                                                            FlutterFlowTheme.of(
-                                                                    context)
-                                                                .bodyMedium,
+                                                                  0.0,
+                                                                  0.0,
+                                                                  0.0),
+                                                      child: Row(
+                                                        mainAxisSize:
+                                                            MainAxisSize.max,
+                                                        mainAxisAlignment:
+                                                            MainAxisAlignment
+                                                                .spaceEvenly,
+                                                        children: [
+                                                          Padding(
+                                                            padding:
+                                                                EdgeInsetsDirectional
+                                                                    .fromSTEB(
+                                                                        0.0,
+                                                                        8.0,
+                                                                        240.0,
+                                                                        8.0),
+                                                            child: Text(
+                                                              'Location: ${jobPostCardPostRecord.jobLocation}',
+                                                              style: FlutterFlowTheme
+                                                                      .of(context)
+                                                                  .bodyMedium,
+                                                            ),
+                                                          ),
+                                                        ],
                                                       ),
                                                     ),
                                                   ],
@@ -362,6 +412,12 @@ class _MAINSavedJobsWidgetState extends State<MAINSavedJobsWidget> {
                                                           ).then((value) =>
                                                               setState(() {}));
 
+                                                          await listViewApplicationsRecord
+                                                              .reference
+                                                              .update(
+                                                                  createApplicationsRecordData(
+                                                            status: 'Finshed',
+                                                          ));
                                                           await launchURL(
                                                               'https://play.google.com/store/apps/details?id=com.arabbank.neobank&hl=ar&gl=US');
                                                         },

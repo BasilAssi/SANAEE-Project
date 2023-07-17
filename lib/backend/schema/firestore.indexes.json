@@ -29,20 +29,6 @@
       ]
     },
     {
-      "collectionGroup": "workHistory",
-      "queryScope": "COLLECTION",
-      "fields": [
-        {
-          "fieldPath": "user",
-          "order": "ASCENDING"
-        },
-        {
-          "fieldPath": "endDate",
-          "order": "DESCENDING"
-        }
-      ]
-    },
-    {
       "collectionGroup": "chat_messages",
       "queryScope": "COLLECTION",
       "fields": [

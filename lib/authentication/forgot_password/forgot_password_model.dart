@@ -17,13 +17,13 @@ class ForgotPasswordModel extends FlutterFlowModel {
   String? _emailAddressControllerValidator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'lkkdbwnt' /* Email is required */,
+        'lkkdbwnt' /* البريد الالكتروني مطلوب */,
       );
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        'an8p149a' /* Should be a valid email addres... */,
+        'an8p149a' /* يجب أن يكون عنوان بريد إلكترون... */,
       );
     }
     return null;
