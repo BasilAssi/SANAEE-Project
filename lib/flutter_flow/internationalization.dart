@@ -156,8 +156,8 @@ final kTranslationsMap = <Map<String, Map<String, String>>>[
       'en': '',
     },
     'mmagg0f3': {
-      'ar': '',
-      'en': 'Should be a valid email address',
+      'ar': 'Should be a valid email address',
+      'en': '',
     },
     'bhx8fux8': {
       'ar': 'Please choose an option from the dropdown',

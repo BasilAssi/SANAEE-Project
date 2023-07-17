@@ -23,7 +23,9 @@ class LoginModel extends FlutterFlowModel {
     }
 
     if (!RegExp(kTextValidatorEmailRegex).hasMatch(val)) {
-      return 'Has to be a valid email address.';
+      return FFLocalizations.of(context).getText(
+        'mmagg0f3' /* Should be a valid email addres... */,
+      );
     }
     return null;
   }
