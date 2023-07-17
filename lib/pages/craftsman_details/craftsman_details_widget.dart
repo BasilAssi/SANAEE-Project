@@ -440,8 +440,10 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                 children: [
                                   FFButtonWidget(
                                     onPressed: () async {
-                                      await widget.candidateDetails!
-                                          .update(createUsersRecordData());
+                                      await widget.application!.reference
+                                          .update(createApplicationsRecordData(
+                                        status: 'Accepted',
+                                      ));
                                     },
                                     text: FFLocalizations.of(context).getText(
                                       'dr2wx4gg' /* قبول */,
