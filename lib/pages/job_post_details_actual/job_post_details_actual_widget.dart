@@ -14,6 +14,8 @@ import 'job_post_details_actual_model.dart';
 export 'job_post_details_actual_model.dart';
 
 class JobPostDetailsActualWidget extends StatefulWidget {
+
+
   const JobPostDetailsActualWidget({
     Key? key,
     this.userCustomer,
@@ -22,6 +24,7 @@ class JobPostDetailsActualWidget extends StatefulWidget {
 
   final DocumentReference? userCustomer;
   final DocumentReference? posts;
+
 
   @override
   _JobPostDetailsActualWidgetState createState() =>
@@ -33,6 +36,8 @@ class _JobPostDetailsActualWidgetState
   late JobPostDetailsActualModel _model;
 
   final scaffoldKey = GlobalKey<ScaffoldState>();
+
+  bool _isEnabled = true;
 
   @override
   void initState() {
@@ -420,26 +425,28 @@ class _JobPostDetailsActualWidgetState
                                     padding: EdgeInsetsDirectional.fromSTEB(
                                         20.0, 50.0, 20.0, 30.0),
                                     child: FFButtonWidget(
-                                      onPressed: _model.clicked == true
+                                      onPressed: _isEnabled == true
                                           ? null
                                           : () async {
                                               await ApplicationsRecord
                                                   .collection
                                                   .doc()
                                                   .set(
-                                                      createApplicationsRecordData(
+                                                  createApplicationsRecordData(
                                                     status: 'Pending',
                                                     craftsmanApplied:
                                                         currentUserReference,
                                                     jobApplied: widget.posts,
                                                     timeApplied:
-                                                        getCurrentTimestamp,
-                                                    jobId: '12',
+                                                    getCurrentTimestamp,
+                                                        jobId: widget.posts?.id,
+
                                                   ));
                                               setState(() {
                                                 _model.applyToWork =
                                                     'Applied Successfully';
                                               });
+                                              _isEnabled = false;
                                             },
                                       text: _model.applyToWork,
                                       options: FFButtonOptions(
