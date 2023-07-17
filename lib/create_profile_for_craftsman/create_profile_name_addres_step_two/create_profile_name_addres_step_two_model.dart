@@ -17,32 +17,27 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
 
   final unfocusNode = FocusNode();
   final formKey = GlobalKey<FormState>();
-  // State field(s) for TextField_idNumber widget.
-  final textFieldIdNumberKey = GlobalKey();
-  TextEditingController? textFieldIdNumberController;
-  String? textFieldIdNumberSelectedOption;
-  String? Function(BuildContext, String?)? textFieldIdNumberControllerValidator;
-  String? _textFieldIdNumberControllerValidator(
-      BuildContext context, String? val) {
+  // State field(s) for TextField widget.
+  TextEditingController? textController1;
+  String? Function(BuildContext, String?)? textController1Validator;
+  String? _textController1Validator(BuildContext context, String? val) {
     if (val == null || val.isEmpty) {
       return FFLocalizations.of(context).getText(
-        'j0hv1wkr' /* id number is required */,
-      );
-    }
-    if (val != textFieldIdNumberSelectedOption) {
-      return FFLocalizations.of(context).getText(
-        'r75guw8g' /* Please choose an option from t... */,
+        'lf70u77t' /* رقم الهوية مطلوب */,
       );
     }
 
+    if (val.length < 8) {
+      return 'Requires at least 8 characters.';
+    }
     if (val.length > 9) {
       return FFLocalizations.of(context).getText(
-        'qtpqfssd' /* The maximum ID number */,
+        'zooiy5db' /*  الحد الأقصى لرقم الهوية 9 */,
       );
     }
-    if (!RegExp('^\\d{9}\$').hasMatch(val)) {
+    if (!RegExp('^(?=.*[a-zA-Z0-9]).{8,9}\$').hasMatch(val)) {
       return FFLocalizations.of(context).getText(
-        '5bdnd8dt' /* The maximum ID number 9,only n... */,
+        '2yy1gee6' /* الرقم التعريفي الأقصى 9 ، الرق... */,
       );
     }
     return null;
@@ -62,12 +57,12 @@ class CreateProfileNameAddresStepTwoModel extends FlutterFlowModel {
   /// Initialization and disposal methods.
 
   void initState(BuildContext context) {
-    textFieldIdNumberControllerValidator =
-        _textFieldIdNumberControllerValidator;
+    textController1Validator = _textController1Validator;
   }
 
   void dispose() {
     unfocusNode.dispose();
+    textController1?.dispose();
   }
 
   /// Action blocks are added here.

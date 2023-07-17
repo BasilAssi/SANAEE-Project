@@ -295,7 +295,7 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                         }
                                         return [
                                           FFLocalizations.of(context).getText(
-                                            'ab3ez11s' /* Option 1 */,
+                                            'ab3ez11s' /* الخيار 1 */,
                                           )
                                         ].where((option) {
                                           final lowercaseOption =
@@ -362,7 +362,14 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                             ),
                                             hintStyle:
                                                 FlutterFlowTheme.of(context)
-                                                    .titleSmall,
+                                                    .titleSmall
+                                                    .override(
+                                                      fontFamily: 'Outfit',
+                                                      color:
+                                                          FlutterFlowTheme.of(
+                                                                  context)
+                                                              .primary,
+                                                    ),
                                             enabledBorder: OutlineInputBorder(
                                               borderSide: BorderSide(
                                                 color:
@@ -413,6 +420,9 @@ class _CreateProfileNameAddresStepTwoCustomarWidgetState
                                               .headlineMedium
                                               .override(
                                                 fontFamily: 'Outfit',
+                                                color:
+                                                    FlutterFlowTheme.of(context)
+                                                        .primary,
                                                 fontSize: 20.0,
                                                 fontWeight: FontWeight.w600,
                                               ),

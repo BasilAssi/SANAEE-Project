@@ -162,7 +162,7 @@ class _CreateProfileBioStepFourWidgetState
                                               return [
                                                 FFLocalizations.of(context)
                                                     .getText(
-                                                  'fcgz39qd' /* Option 1 */,
+                                                  'fcgz39qd' /* الخيار 1 */,
                                                 )
                                               ].where((option) {
                                                 final lowercaseOption =
