@@ -628,7 +628,6 @@ class _ReviewCreateProfileCraftmanWidgetState
                                       displayName:
                                           '${valueOrDefault(currentUserDocument?.firstnameCraftsman, '')} ${valueOrDefault(currentUserDocument?.familyNameCraftsman, '')}',
                                       idNumber: FFAppState().idNumber,
-                                      email: '',
                                       craftType: FFAppState().craftType,
                                       rate: 3.0,
                                       numberOfRates: 1,
