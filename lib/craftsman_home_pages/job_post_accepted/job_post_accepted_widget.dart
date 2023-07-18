@@ -265,7 +265,7 @@ class _JobPostAcceptedWidgetState extends State<JobPostAcceptedWidget> {
                                           Padding(
                                             padding:
                                                 EdgeInsetsDirectional.fromSTEB(
-                                                    0.0, 20.0, 0.0, 0.0),
+                                                    0.0, 15.0, 0.0, 0.0),
                                             child: Text(
                                               FFLocalizations.of(context)
                                                   .getText(
