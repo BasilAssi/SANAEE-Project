@@ -210,6 +210,8 @@ class _CreateAccountThreeCustomerWidgetState
                                   city: FFAppState().city,
                                   address: FFAppState().address,
                                   idNumber: _model.textController.text,
+                                  displayName:
+                                      '${valueOrDefault(currentUserDocument?.firstNameCustomer, '')} ${valueOrDefault(currentUserDocument?.lastNameCustomer, '')}',
                                 ));
 
                                 context.pushNamed('MAINHomeCustomer');
