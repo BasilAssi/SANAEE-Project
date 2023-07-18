@@ -270,7 +270,7 @@ class _JobPostPendingWidgetState extends State<JobPostPendingWidget> {
                                                   Padding(
                                                     padding:
                                                         EdgeInsetsDirectional
-                                                            .fromSTEB(0.0, 20.0,
+                                                            .fromSTEB(0.0, 15.0,
                                                                 0.0, 0.0),
                                                     child: Text(
                                                       FFLocalizations.of(
