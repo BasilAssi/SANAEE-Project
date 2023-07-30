@@ -337,8 +337,9 @@ class _MAINProfileCraftsmanWidgetState extends State<MAINProfileCraftsmanWidget>
                                                             ),
                                                             direction:
                                                                 Axis.horizontal,
-                                                            rating: mAINProfileCraftsmanUsersRecord
-                                                                .craftsmanStarRating,
+                                                            rating:
+                                                                mAINProfileCraftsmanUsersRecord
+                                                                    .rate,
                                                             unratedColor:
                                                                 FlutterFlowTheme.of(
                                                                         context)
