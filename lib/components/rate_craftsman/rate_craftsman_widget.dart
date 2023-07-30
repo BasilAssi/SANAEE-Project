@@ -233,6 +233,7 @@ class _RateCraftsmanWidgetState extends State<RateCraftsmanWidget> {
                                     FieldValue.arrayUnion([widget.comment]),
                                 'numberOfRates': FieldValue.increment(1),
                               });
+                              Navigator.pop(context);
                             },
                             text: FFLocalizations.of(context).getText(
                               'cm7pefeo' /* حفظ وارسال  */,
