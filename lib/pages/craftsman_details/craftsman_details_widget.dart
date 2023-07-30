@@ -197,7 +197,7 @@ class _CraftsmanDetailsWidgetState extends State<CraftsmanDetailsWidget> {
                                                   direction: Axis.horizontal,
                                                   rating:
                                                       craftsmanDetailsUsersRecord
-                                                          .craftsmanStarRating,
+                                                          .rate,
                                                   unratedColor:
                                                       FlutterFlowTheme.of(
                                                               context)

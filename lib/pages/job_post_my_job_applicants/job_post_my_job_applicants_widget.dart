@@ -590,12 +590,8 @@ class _JobPostMyJobApplicantsWidgetState
                                                                   direction: Axis
                                                                       .horizontal,
                                                                   rating:
-                                                                      valueOrDefault<
-                                                                          double>(
-                                                                    containerUsersRecord
-                                                                        .craftsmanStarRating,
-                                                                    0.0,
-                                                                  ),
+                                                                      containerUsersRecord
+                                                                          .rate,
                                                                   unratedColor:
                                                                       FlutterFlowTheme.of(
                                                                               context)
